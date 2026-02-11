@@ -1,30 +1,16 @@
-import { test, expect } from '@playwright/test';
-import fs from 'fs';
-import path from 'path';
-import { ContactPage } from '../../../../pages/contact/contact.page.js';
+import { test } from '@playwright/test';
+import { pageRegistry } from '../../../../test-data/page-registry.js';
+import { runContentSnapshotTest } from '../../../../utils/module-test-runner.js';
 
-const expectationsPath = path.join(process.cwd(), 'test-data', 'expectations', 'contact.json');
-const expectations = JSON.parse(fs.readFileSync(expectationsPath, 'utf8'));
+const pageEntry = pageRegistry.find(
+  (page) => page.moduleKey === 'contact' && page.slug === 'contact'
+);
 
-test.describe('Contact - Contact Us content (Figma exact)', () => {
-  test('Matches exact contact copy and ordering', async ({ page }) => {
-    const contact = new ContactPage(page);
-    await contact.open();
+const moduleLabel = pageEntry?.moduleLabel || 'contact';
+const pageLabel = pageEntry?.pageLabel || 'contact';
 
-    const heroText = contact.normalizeTextList(
-      await contact.getSectionTextByAnchors(expectations.hero)
-    );
-    expect(heroText).toEqual(expectations.hero);
-
-    const officesText = contact.normalizeTextList(
-      await contact.getSectionTextByHeading(expectations.offices[0])
-    );
-    const officesOnly = officesText.filter((text) => expectations.offices.includes(text));
-    expect(officesOnly).toEqual(expectations.offices);
-
-    const formText = contact.normalizeTextList(
-      await contact.getSectionTextByAnchors(expectations.form)
-    );
-    expect(formText).toEqual(expectations.form);
+test.describe(`${moduleLabel} - ${pageLabel} content (Snapshot)`, () => {
+  test('Content snapshot matches', async ({ page }) => {
+    await runContentSnapshotTest({ page, pageEntry });
   });
 });

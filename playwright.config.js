@@ -1,4 +1,18 @@
 import { defineConfig } from '@playwright/test';
+import fs from 'fs';
+import path from 'path';
+
+process.env.PLAYWRIGHT_BROWSERS_PATH ||= path.join(process.cwd(), '.playwright');
+const CHROMIUM_EXECUTABLE = path.join(
+  process.cwd(),
+  '.playwright',
+  'chromium_headless_shell-1200',
+  'chrome-headless-shell-mac-x64',
+  'chrome-headless-shell'
+);
+const launchOptions = fs.existsSync(CHROMIUM_EXECUTABLE)
+  ? { executablePath: CHROMIUM_EXECUTABLE }
+  : {};
 
 export default defineConfig({
   testDir: './tests',
@@ -7,6 +21,8 @@ export default defineConfig({
   use: {
     baseURL: 'https://www.shunyalabs.ai',
     headless: true,
+
+    launchOptions,
 
     navigationTimeout: 120000, // Increased to 120s for very slow pages
     actionTimeout: 30000,
@@ -29,11 +45,11 @@ export default defineConfig({
     bypassCSP: false,
   },
 
-  retries: 2, // Increased retries for flaky tests
+  retries: 0, // Do not retry; fail fast on first failure
   workers: 1, // Important for marketing sites to avoid rate limiting
 
   reporter: [
-    ['html', { outputFolder: 'reports/html-report' }],
+    ['html', { outputFolder: 'reports/html-report', open: 'never' }],
     ['json', { outputFile: 'reports/json-report.json' }],
     ['list']
   ],
