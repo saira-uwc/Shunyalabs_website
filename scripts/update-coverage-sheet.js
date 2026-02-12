@@ -13,6 +13,8 @@ const DASHBOARD_PUBLIC_URL =
   process.env.DASHBOARD_PUBLIC_URL || 'https://saira-uwc.github.io/Shunyalabs_website/';
 const WEB_APP_URL = process.env.GOOGLE_SHEETS_WEB_APP_URL ||
   'https://script.google.com/macros/s/AKfycbxor9Iu_orul6S6J6msmVTW69zVFSYd324EKvrQ4eDFKkCYttEl3a0d3WNuBrZIqaJ3yQ/exec';
+const SPREADSHEET_ID = process.env.GOOGLE_SHEETS_SPREADSHEET_ID || '';
+const SHEET_NAME = process.env.GOOGLE_SHEETS_SHEET_NAME || 'test-coverage';
 
 function normalizeStatus(status) {
   if (status === 'passed') return 'PASS';
@@ -129,6 +131,8 @@ async function main() {
       body: JSON.stringify({
         action: 'updateCoverage',
         rows,
+        ...(SPREADSHEET_ID ? { spreadsheetId: SPREADSHEET_ID } : {}),
+        ...(SHEET_NAME ? { sheetName: SHEET_NAME } : {}),
       }),
     });
     if (!response.ok) {
