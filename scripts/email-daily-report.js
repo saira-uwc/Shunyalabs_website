@@ -22,8 +22,9 @@ function getDateKey(date) {
 }
 
 function formatDate(date) {
-  return new Intl.DateTimeFormat('en-GB', {
+  return new Intl.DateTimeFormat('en-US', {
     timeZone: TZ,
+    weekday: 'long',
     year: 'numeric',
     month: 'short',
     day: '2-digit',
@@ -64,24 +65,93 @@ function buildSummary(runsForDay) {
 
 function buildEmailBody(dateLabel, summary) {
   const passLines = Array.from(summary.modulePass.entries())
-    .map(([module, count]) => `• ${module} – ${count} Passed`);
+    .map(([module, count]) => `<li><strong>${module}</strong> – ${count} Passed</li>`);
   const failLines = Array.from(summary.moduleFail.entries())
-    .map(([module, count]) => `• ${module} – ${count} Failed`);
+    .map(([module, count]) => `<li><strong>${module}</strong> – ${count} Failed</li>`);
 
-  const passSection = passLines.length ? passLines.join('\n') : '• None';
-  const failSection = failLines.length ? failLines.join('\n') : '• None';
+  const passSection = passLines.length ? passLines.join('') : '<li>None</li>';
+  const failSection = failLines.length ? failLines.join('') : '<li>None</li>';
 
-  return `Hi Team,\n\n` +
-    `Project: ${PROJECT_NAME}\n\n` +
-    `Total Runs: ${summary.totalRuns}\n` +
-    `Total Passed: ${summary.totalPassed}\n` +
-    `Total Failed: ${summary.totalFailed}\n\n` +
-    `Module-wise Summary:\n\n` +
-    `Pass:\n${passSection}\n\n` +
-    `Fail:\n${failSection}\n\n` +
-    `For more details, follow the link:\n${DASHBOARD_URL}\n\n` +
-    `Thanks & Regards,\n` +
-    `Saira Automation BOT\n`;
+  const passRate = summary.totalPassed + summary.totalFailed > 0
+    ? Math.round((summary.totalPassed / (summary.totalPassed + summary.totalFailed)) * 100)
+    : 0;
+
+  return `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; max-width: 700px; margin: 0 auto; }
+    .container { background: #ffffff; padding: 30px; }
+    .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 25px; border-radius: 10px; margin-bottom: 30px; }
+    .header h1 { margin: 0 0 10px 0; font-size: 24px; font-weight: 600; }
+    .header p { margin: 0; font-size: 14px; opacity: 0.9; }
+    .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin: 25px 0; }
+    .stat-card { background: #f8f9fa; padding: 20px; border-radius: 8px; text-align: center; border-left: 4px solid #667eea; }
+    .stat-card.passed { border-left-color: #22c55e; }
+    .stat-card.failed { border-left-color: #ef4444; }
+    .stat-card.rate { border-left-color: #f59e0b; }
+    .stat-label { font-size: 12px; text-transform: uppercase; color: #6b7280; font-weight: 600; margin-bottom: 8px; }
+    .stat-value { font-size: 32px; font-weight: 700; color: #1f2937; }
+    .section { margin: 30px 0; }
+    .section-title { font-size: 18px; font-weight: 700; color: #1f2937; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 2px solid #e5e7eb; }
+    ul { list-style: none; padding: 0; margin: 0; }
+    li { padding: 10px 15px; margin: 8px 0; background: #f8f9fa; border-radius: 6px; border-left: 3px solid #667eea; }
+    .passed-list li { border-left-color: #22c55e; background: #f0fdf4; }
+    .failed-list li { border-left-color: #ef4444; background: #fef2f2; }
+    .cta-button { display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 15px 30px; text-decoration: none; border-radius: 8px; font-weight: 600; margin: 20px 0; }
+    .footer { text-align: center; padding: 20px; color: #6b7280; font-size: 13px; border-top: 1px solid #e5e7eb; margin-top: 30px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🎯 QC Automation Report</h1>
+      <p>${PROJECT_NAME}</p>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-label">Total Runs</div>
+        <div class="stat-value">${summary.totalRuns}</div>
+      </div>
+      <div class="stat-card passed">
+        <div class="stat-label">Passed</div>
+        <div class="stat-value">${summary.totalPassed}</div>
+      </div>
+      <div class="stat-card failed">
+        <div class="stat-label">Failed</div>
+        <div class="stat-value">${summary.totalFailed}</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">✅ Passed Tests by Module</div>
+      <ul class="passed-list">
+        ${passSection}
+      </ul>
+    </div>
+
+    <div class="section">
+      <div class="section-title">❌ Failed Tests by Module</div>
+      <ul class="failed-list">
+        ${failSection}
+      </ul>
+    </div>
+
+    <div style="text-align: center;">
+      <a href="${DASHBOARD_URL}" class="cta-button">📊 View Full Dashboard</a>
+    </div>
+
+    <div class="footer">
+      <p><strong>Thanks & Regards,</strong></p>
+      <p>Saira Automation BOT 🤖</p>
+      <p style="margin-top: 15px; font-size: 11px;">This is an automated report. For issues, contact your QA team.</p>
+    </div>
+  </div>
+</body>
+</html>`;
 }
 
 async function sendEmail(subject, text) {
@@ -117,7 +187,7 @@ async function main() {
 
   const summary = buildSummary(todayRuns);
   const dateLabel = formatDate(new Date());
-  const subject = `QC Automation Report – ${dateLabel}`;
+  const subject = `QC Shunya Labs Website Automation Report – ${dateLabel}`;
   const body = buildEmailBody(dateLabel, summary);
 
   await sendEmail(subject, body);
