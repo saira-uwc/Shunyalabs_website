@@ -29,6 +29,8 @@ jobs:
           fi
 
       - name: Install Playwright browsers
+        env:
+          PLAYWRIGHT_BROWSERS_PATH: ${{ github.workspace }}/.playwright
         run: npx playwright install chromium
 
       - name: Configure git user
@@ -39,6 +41,9 @@ jobs:
       - name: Run tests + update dashboard
         env:
           GOOGLE_SHEETS_WEB_APP_URL: ${{ secrets.GOOGLE_SHEETS_WEB_APP_URL }}
+          GOOGLE_SHEETS_SPREADSHEET_ID: ${{ secrets.GOOGLE_SHEETS_SPREADSHEET_ID }}
+          GOOGLE_SHEETS_SHEET_NAME: ${{ secrets.GOOGLE_SHEETS_SHEET_NAME }}
           DASHBOARD_PUBLIC_URL: https://saira-uwc.github.io/Shunyalabs_website/
+          PLAYWRIGHT_BROWSERS_PATH: ${{ github.workspace }}/.playwright
           PLAYWRIGHT_HTML_OPEN: never
         run: bash scripts/run-tests-and-dashboard.sh || true
