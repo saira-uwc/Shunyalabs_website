@@ -44,4 +44,4 @@ jobs:
           GOOGLE_SHEETS_WEB_APP_URL: ${{ secrets.GOOGLE_SHEETS_WEB_APP_URL }}
           DASHBOARD_PUBLIC_URL: https://saira-uwc.github.io/Shunyalabs_website/
           PLAYWRIGHT_HTML_OPEN: never
-        run: npm test || true
+        run: bash scripts/run-tests-and-dashboard.sh || true
