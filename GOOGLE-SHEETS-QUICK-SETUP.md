@@ -18,10 +18,15 @@ function doPost(e) {
     if (data.action === 'updateCoverage') {
       const sheet = spreadsheet.getSheetByName('test-coverage') || spreadsheet.getActiveSheet();
       const headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0];
+      const idCol = headers.indexOf('Testcase ID') + 1;
       const nameCol = headers.indexOf('Test Name') + 1;
+      const descCol = headers.indexOf('Description') + 1;
       const updatedCol = headers.indexOf('Update Date & time') + 1;
       const statusCol = headers.indexOf('Status') + 1;
-      const commentCol = headers.indexOf('Comment') + 1;
+      const commentCol =
+        headers.indexOf('Comment') + 1 ||
+        headers.indexOf('Comment(proof)') + 1 ||
+        headers.indexOf('Comment (proof)') + 1;
 
       if (!nameCol || !updatedCol || !statusCol || !commentCol) {
         return ContentService.createTextOutput(JSON.stringify({success: false, error: 'Missing columns'}))
@@ -29,7 +34,9 @@ function doPost(e) {
       }
 
       const lastRow = sheet.getLastRow();
-      const names = sheet.getRange(2, nameCol, Math.max(0, lastRow - 1), 1).getValues();
+      const names = lastRow > 1
+        ? sheet.getRange(2, nameCol, lastRow - 1, 1).getValues()
+        : [];
       const nameToRow = {};
       names.forEach((row, i) => {
         if (row[0]) nameToRow[row[0]] = i + 2;
@@ -38,6 +45,12 @@ function doPost(e) {
       (data.rows || []).forEach(item => {
         const rowIndex = nameToRow[item.testName];
         if (rowIndex) {
+          if (idCol && item.testId && !sheet.getRange(rowIndex, idCol).getValue()) {
+            sheet.getRange(rowIndex, idCol).setValue(item.testId);
+          }
+          if (descCol && item.description && !sheet.getRange(rowIndex, descCol).getValue()) {
+            sheet.getRange(rowIndex, descCol).setValue(item.description);
+          }
           sheet.getRange(rowIndex, updatedCol).setValue(item.updatedAt || new Date().toISOString());
           sheet.getRange(rowIndex, statusCol).setValue(item.status || '');
           sheet.getRange(rowIndex, commentCol).setValue(item.comment || '');

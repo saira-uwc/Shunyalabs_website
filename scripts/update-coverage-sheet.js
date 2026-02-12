@@ -2,11 +2,15 @@
 import fs from 'fs';
 import path from 'path';
 import dotenv from 'dotenv';
+import crypto from 'crypto';
 
 dotenv.config();
 
 const ROOT = process.cwd();
 const JSON_REPORT = path.join(ROOT, 'reports', 'json-report.json');
+const DASHBOARD_HISTORY = path.join(ROOT, 'dashboard', 'history', 'runs.json');
+const DASHBOARD_PUBLIC_URL =
+  process.env.DASHBOARD_PUBLIC_URL || 'https://saira-uwc.github.io/Shunyalabs_website/';
 const WEB_APP_URL = process.env.GOOGLE_SHEETS_WEB_APP_URL ||
   'https://script.google.com/macros/s/AKfycbxor9Iu_orul6S6J6msmVTW69zVFSYd324EKvrQ4eDFKkCYttEl3a0d3WNuBrZIqaJ3yQ/exec';
 
@@ -17,7 +21,51 @@ function normalizeStatus(status) {
 }
 
 function buildRows(report) {
+  const attachmentMap = new Map();
+  if (fs.existsSync(DASHBOARD_HISTORY)) {
+    try {
+      const history = JSON.parse(fs.readFileSync(DASHBOARD_HISTORY, 'utf8'));
+      const latest = Array.isArray(history) ? history[history.length - 1] : null;
+      const tests = latest?.tests || [];
+      tests.forEach((test) => {
+        if (!test?.testPoint) return;
+        const urls = (test.attachments || [])
+          .map((att) => {
+            if (!att?.url) return null;
+            const base = DASHBOARD_PUBLIC_URL.endsWith('/') ? DASHBOARD_PUBLIC_URL : `${DASHBOARD_PUBLIC_URL}/`;
+            return `${base}${att.url}`;
+          })
+          .filter(Boolean);
+        if (urls.length) {
+          attachmentMap.set(test.testPoint, urls);
+        }
+      });
+    } catch (error) {
+      // ignore history parsing errors
+    }
+  }
+
+  const createTestId = (name) => {
+    const hash = crypto.createHash('sha1').update(name || '').digest('hex').slice(0, 6).toUpperCase();
+    return `TC${hash}`;
+  };
+
+  const createDescription = (name) => {
+    if (!name) return '';
+    const parts = name.split('›').map((part) => part.trim()).filter(Boolean);
+    const leaf = parts[parts.length - 1] || name;
+    return `Validates: ${leaf}`;
+  };
+
   const rows = [];
+  const findAttachments = (name) => {
+    if (!name) return [];
+    if (attachmentMap.has(name)) return attachmentMap.get(name);
+    for (const [key, urls] of attachmentMap.entries()) {
+      if (name.endsWith(key)) return urls;
+    }
+    return [];
+  };
   const walkSuite = (suite, titlePath = []) => {
     const suiteTitles = suite.title ? [...titlePath, suite.title] : titlePath;
     (suite.specs || []).forEach(spec => {
@@ -35,11 +83,16 @@ function buildRows(report) {
         const errorMessage = result?.errors?.length
           ? (result.errors[0].message || result.errors[0].value || '')
           : (result?.error?.message || '');
+        const attachments = findAttachments(testName);
+        const proof = attachments.length ? `Proof: ${attachments.join(' | ')}` : '';
+        const comment = [errorMessage, proof].filter(Boolean).join('\n');
 
         rows.push({
+          testId: createTestId(testName),
+          description: createDescription(testName),
           testName,
           status,
-          comment: errorMessage,
+          comment,
           updatedAt: new Date().toISOString(),
         });
       });

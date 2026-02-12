@@ -13,8 +13,8 @@ export PLAYWRIGHT_HOST_PLATFORM="${PLAYWRIGHT_HOST_PLATFORM:-darwin-x64}"
 export PLAYWRIGHT_HTML_OPEN="never"
 npx playwright test || TEST_EXIT=$?
 
-node scripts/update-coverage-sheet.js || true
 node dashboard/generate-dashboard.js
+node scripts/update-coverage-sheet.js || true
 bash scripts/publish-dashboard.sh
 
 exit "$TEST_EXIT"

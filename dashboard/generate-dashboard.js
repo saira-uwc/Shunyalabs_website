@@ -671,7 +671,7 @@ function generateDashboard(currentResults, history, playwrightRun) {
       background: var(--bg-card);
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 24px;
+      padding: 16px;
       margin-bottom: 24px;
     }
 
@@ -679,15 +679,15 @@ function generateDashboard(currentResults, history, playwrightRun) {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 20px;
+      margin-bottom: 12px;
     }
 
     .calendar-nav { display: flex; gap: 8px; }
 
     .calendar-nav button {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
+      width: 52px;
+      height: 30px;
+      border-radius: 8px;
       border: 1px solid var(--border);
       background: var(--bg-secondary);
       color: var(--text-primary);
@@ -697,59 +697,62 @@ function generateDashboard(currentResults, history, playwrightRun) {
 
     .calendar-nav button:hover { background: var(--bg-hover); }
 
-    .calendar-month { font-size: 18px; font-weight: 600; }
+    .calendar-month { font-size: 14px; font-weight: 600; }
 
     .calendar-grid {
       display: grid;
-      grid-template-columns: repeat(7, 1fr);
-      gap: 4px;
+      grid-template-columns: repeat(7, minmax(120px, 1fr));
+      gap: 8px;
     }
 
     .calendar-day-header {
-      text-align: center;
-      padding: 8px;
-      font-size: 12px;
+      text-align: left;
+      padding: 4px 8px;
+      font-size: 11px;
       color: var(--text-muted);
       font-weight: 600;
     }
 
     .calendar-day {
-      aspect-ratio: 1;
+      height: 86px;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      align-items: flex-start;
+      justify-content: space-between;
+      padding: 8px 10px;
       border-radius: var(--radius-sm);
       cursor: pointer;
       transition: all 0.2s;
       position: relative;
-      font-size: 14px;
+      font-size: 12px;
+      border: 1px solid var(--border);
+      background: var(--bg-secondary);
     }
 
     .calendar-day:hover { background: var(--bg-hover); }
     .calendar-day.other-month { color: var(--text-muted); opacity: 0.5; }
-    .calendar-day.today { background: var(--accent-primary); color: white; }
+    .calendar-day.today { border-color: var(--accent-primary); box-shadow: 0 0 0 1px var(--accent-primary); }
 
-    .calendar-day.has-runs {
-      background: var(--success-bg);
-      border: 1px solid var(--success);
+    .calendar-day.has-runs { border-color: var(--success); }
+    .calendar-day.has-runs.has-failures { border-color: var(--warning); }
+    .calendar-day.has-runs.all-failures { border-color: var(--danger); }
+
+    .calendar-day-number {
+      font-weight: 600;
+      font-size: 12px;
+      color: var(--text-primary);
     }
-
-    .calendar-day.has-runs.has-failures {
-      background: var(--warning-bg);
-      border: 1px solid var(--warning);
+    .calendar-day-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      font-size: 11px;
+      color: var(--text-secondary);
     }
-
-    .calendar-day.has-runs.all-failures {
-      background: var(--danger-bg);
-      border: 1px solid var(--danger);
-    }
-
-    .run-indicator {
-      position: absolute;
-      bottom: 4px;
+    .calendar-day-rate {
       font-size: 10px;
       font-weight: 600;
+      color: var(--text-muted);
     }
 
     /* History List */
@@ -1443,7 +1446,7 @@ function generateDashboard(currentResults, history, playwrightRun) {
       // Previous month days
       for (let i = firstDay - 1; i >= 0; i--) {
         const day = daysInPrevMonth - i;
-        html += '<div class="calendar-day other-month">' + day + '</div>';
+        html += '<div class="calendar-day other-month"><div class="calendar-day-number">' + day + '</div></div>';
       }
       
       // Current month days
@@ -1462,10 +1465,17 @@ function generateDashboard(currentResults, history, playwrightRun) {
           else if (!allPass) classes += ' has-failures';
         }
         
+        const passRate = runs.length
+          ? Math.round(runs.reduce((sum, run) => sum + (run.passRate || 0), 0) / runs.length)
+          : null;
+
         html += '<div class="' + classes + '" onclick="showDateRuns(\\'' + dateStr + '\\')">';
-        html += day;
+        html += '<div class="calendar-day-number">' + day + '</div>';
         if (runs.length > 0) {
-          html += '<span class="run-indicator">' + runs.length + ' run' + (runs.length > 1 ? 's' : '') + '</span>';
+          html += '<div class="calendar-day-meta">';
+          html += '<div>' + runs.length + ' run' + (runs.length > 1 ? 's' : '') + '</div>';
+          html += '<div class="calendar-day-rate">' + passRate + '% pass</div>';
+          html += '</div>';
         }
         html += '</div>';
       }
@@ -1473,7 +1483,7 @@ function generateDashboard(currentResults, history, playwrightRun) {
       // Next month days
       const totalCells = Math.ceil((firstDay + daysInMonth) / 7) * 7;
       for (let i = 1; i <= totalCells - firstDay - daysInMonth; i++) {
-        html += '<div class="calendar-day other-month">' + i + '</div>';
+        html += '<div class="calendar-day other-month"><div class="calendar-day-number">' + i + '</div></div>';
       }
       
       document.getElementById('calendarGrid').innerHTML = html;

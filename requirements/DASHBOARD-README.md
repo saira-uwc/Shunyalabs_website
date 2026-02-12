@@ -41,6 +41,19 @@ npm run test:dashboard:publish
 
 ---
 
+## ✅ Scheduled Runs (IST)
+GitHub Actions runs tests automatically at:
+- 9:00 AM IST
+- 12:00 PM IST
+- 3:00 PM IST
+
+Daily email summary at:
+- 6:00 PM IST
+
+Email delivery uses Google Apps Script (no SMTP).
+
+---
+
 ## ✅ Quick one‑liner for the team
 ```
 Run: npm test → Dashboard updates at https://saira-uwc.github.io/Shunyalabs_website/
