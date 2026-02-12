@@ -1,9 +1,6 @@
 name: Daily Email Report
 
 on:
-  schedule:
-    # 18:00 IST (UTC+5:30) -> 12:30 UTC
-    - cron: "30 12 * * *"
   workflow_dispatch:
 
 permissions:
