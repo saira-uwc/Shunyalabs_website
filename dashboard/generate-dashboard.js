@@ -28,12 +28,18 @@ function toTitleCase(value) {
 
 function deriveModuleName(filePath) {
   if (!filePath) return 'Playwright';
-  const marker = `${path.sep}tests${path.sep}modules${path.sep}`;
-  const index = filePath.indexOf(marker);
-  if (index === -1) return 'Playwright';
-  const rest = filePath.slice(index + marker.length);
-  const moduleKey = rest.split(path.sep)[0];
-  return toTitleCase(moduleKey || 'Playwright');
+  // Normalize separators and try both absolute and relative paths
+  const normalized = filePath.replace(/\\/g, '/');
+  const patterns = ['/tests/modules/', 'tests/modules/'];
+  for (const pattern of patterns) {
+    const index = normalized.indexOf(pattern);
+    if (index !== -1) {
+      const rest = normalized.slice(index + pattern.length);
+      const moduleKey = rest.split('/')[0];
+      if (moduleKey) return toTitleCase(moduleKey);
+    }
+  }
+  return 'Playwright';
 }
 
 /**

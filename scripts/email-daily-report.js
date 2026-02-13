@@ -9,16 +9,17 @@ const RECIPIENTS = (process.env.REPORT_RECIPIENTS || '').split(',').map((e) => e
 const EMAIL_WEB_APP_URL = process.env.EMAIL_WEB_APP_URL || '';
 const TZ = 'Asia/Kolkata';
 
-function getDateKey(date) {
-  const parts = new Intl.DateTimeFormat('en-CA', {
+function formatDateTime(date) {
+  return new Intl.DateTimeFormat('en-IN', {
     timeZone: TZ,
+    weekday: 'short',
     year: 'numeric',
-    month: '2-digit',
+    month: 'short',
     day: '2-digit',
-  }).formatToParts(date);
-  const map = {};
-  parts.forEach((p) => { map[p.type] = p.value; });
-  return `${map.year}-${map.month}-${map.day}`;
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: true,
+  }).format(date);
 }
 
 function formatDate(date) {
@@ -40,121 +41,177 @@ function loadRuns() {
   }
 }
 
-function buildSummary(runsForDay) {
-  const totalRuns = runsForDay.length;
-  let totalPassed = 0;
-  let totalFailed = 0;
-  const modulePass = new Map();
-  const moduleFail = new Map();
+function buildLatestRunSummary(run) {
+  const total = run.total || 0;
+  const passed = run.passed || 0;
+  const failed = run.failed || 0;
+  const passRate = total > 0 ? Math.round((passed / total) * 100) : 0;
+  const runDate = formatDateTime(new Date(run.runDate));
 
-  runsForDay.forEach((run) => {
-    totalPassed += run.passed || 0;
-    totalFailed += run.failed || 0;
-    (run.tests || []).forEach((test) => {
-      const moduleName = (test.moduleName || 'General').trim() || 'General';
-      if (test.status === 'PASS') {
-        modulePass.set(moduleName, (modulePass.get(moduleName) || 0) + 1);
-      } else if (test.status === 'FAIL') {
-        moduleFail.set(moduleName, (moduleFail.get(moduleName) || 0) + 1);
-      }
-    });
+  // Group tests by module
+  const modules = new Map();
+  (run.tests || []).forEach((test) => {
+    const moduleName = (test.moduleName || 'General').trim() || 'General';
+    if (!modules.has(moduleName)) {
+      modules.set(moduleName, { passed: 0, failed: 0, tests: [] });
+    }
+    const mod = modules.get(moduleName);
+    if (test.status === 'PASS') mod.passed++;
+    else if (test.status === 'FAIL') mod.failed++;
+    mod.tests.push(test);
   });
 
-  return { totalRuns, totalPassed, totalFailed, modulePass, moduleFail };
+  return { total, passed, failed, passRate, runDate, modules };
 }
 
 function buildEmailBody(dateLabel, summary) {
-  const passLines = Array.from(summary.modulePass.entries())
-    .map(([module, count]) => `<li><strong>${module}</strong> – ${count} Passed</li>`);
-  const failLines = Array.from(summary.moduleFail.entries())
-    .map(([module, count]) => `<li><strong>${module}</strong> – ${count} Failed</li>`);
+  const passRateColor = summary.passRate >= 90 ? '#22c55e' : summary.passRate >= 70 ? '#f59e0b' : '#ef4444';
+  const passRateEmoji = summary.passRate === 100 ? '🎉' : summary.passRate >= 90 ? '✅' : summary.passRate >= 70 ? '⚠️' : '🔴';
 
-  const passSection = passLines.length ? passLines.join('') : '<li>None</li>';
-  const failSection = failLines.length ? failLines.join('') : '<li>None</li>';
+  // Build module rows for the table
+  const moduleRows = Array.from(summary.modules.entries())
+    .sort((a, b) => {
+      // Failed modules first, then by name
+      const aFail = a[1].failed > 0 ? 0 : 1;
+      const bFail = b[1].failed > 0 ? 0 : 1;
+      if (aFail !== bFail) return aFail - bFail;
+      return a[0].localeCompare(b[0]);
+    })
+    .map(([name, data]) => {
+      const modTotal = data.passed + data.failed;
+      const modRate = modTotal > 0 ? Math.round((data.passed / modTotal) * 100) : 0;
+      const statusIcon = data.failed === 0 ? '✅' : '❌';
+      const rowBg = data.failed > 0 ? '#fef2f2' : '#f0fdf4';
+      return `
+        <tr style="background: ${rowBg};">
+          <td style="padding: 12px 16px; border-bottom: 1px solid #e5e7eb; font-weight: 500;">${statusIcon} ${name}</td>
+          <td style="padding: 12px 16px; border-bottom: 1px solid #e5e7eb; text-align: center; color: #22c55e; font-weight: 600;">${data.passed}</td>
+          <td style="padding: 12px 16px; border-bottom: 1px solid #e5e7eb; text-align: center; color: ${data.failed > 0 ? '#ef4444' : '#6b7280'}; font-weight: 600;">${data.failed}</td>
+          <td style="padding: 12px 16px; border-bottom: 1px solid #e5e7eb; text-align: center; font-weight: 600;">${modRate}%</td>
+        </tr>`;
+    })
+    .join('');
 
-  const passRate = summary.totalPassed + summary.totalFailed > 0
-    ? Math.round((summary.totalPassed / (summary.totalPassed + summary.totalFailed)) * 100)
-    : 0;
+  // Build failed test details (only if there are failures)
+  let failedDetails = '';
+  if (summary.failed > 0) {
+    const failedTests = [];
+    summary.modules.forEach((data, moduleName) => {
+      data.tests.filter(t => t.status === 'FAIL').forEach(t => {
+        failedTests.push({ module: moduleName, name: t.testPoint || t.testName || 'Unknown', comment: (t.comment || '').substring(0, 200) });
+      });
+    });
+
+    if (failedTests.length > 0) {
+      const failedRows = failedTests.slice(0, 15).map(t => `
+        <tr>
+          <td style="padding: 10px 16px; border-bottom: 1px solid #fecaca; font-size: 13px;">
+            <strong style="color: #991b1b;">${t.module}</strong><br>
+            <span style="color: #374151;">${t.name}</span>
+            ${t.comment ? `<br><span style="color: #9ca3af; font-size: 11px;">${t.comment}</span>` : ''}
+          </td>
+        </tr>`).join('');
+
+      failedDetails = `
+      <div style="margin: 30px 0;">
+        <h3 style="font-size: 16px; font-weight: 700; color: #991b1b; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid #fecaca;">
+          ❌ Failed Tests (${failedTests.length})
+        </h3>
+        <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse: collapse; background: #fff; border: 1px solid #fecaca; border-radius: 8px;">
+          ${failedRows}
+          ${failedTests.length > 15 ? `<tr><td style="padding: 10px 16px; text-align: center; color: #9ca3af; font-size: 12px;">... and ${failedTests.length - 15} more. <a href="${DASHBOARD_URL}" style="color: #667eea;">View all on dashboard</a></td></tr>` : ''}
+        </table>
+      </div>`;
+    }
+  }
 
   return `
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
-  <style>
-    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; max-width: 700px; margin: 0 auto; }
-    .container { background: #ffffff; padding: 30px; }
-    .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 25px; border-radius: 10px; margin-bottom: 30px; }
-    .header h1 { margin: 0 0 10px 0; font-size: 24px; font-weight: 600; }
-    .header p { margin: 0; font-size: 14px; opacity: 0.9; }
-    .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin: 25px 0; }
-    .stat-card { background: #f8f9fa; padding: 20px; border-radius: 8px; text-align: center; border-left: 4px solid #667eea; }
-    .stat-card.passed { border-left-color: #22c55e; }
-    .stat-card.failed { border-left-color: #ef4444; }
-    .stat-card.rate { border-left-color: #f59e0b; }
-    .stat-label { font-size: 12px; text-transform: uppercase; color: #6b7280; font-weight: 600; margin-bottom: 8px; }
-    .stat-value { font-size: 32px; font-weight: 700; color: #1f2937; }
-    .section { margin: 30px 0; }
-    .section-title { font-size: 18px; font-weight: 700; color: #1f2937; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 2px solid #e5e7eb; }
-    ul { list-style: none; padding: 0; margin: 0; }
-    li { padding: 10px 15px; margin: 8px 0; background: #f8f9fa; border-radius: 6px; border-left: 3px solid #667eea; }
-    .passed-list li { border-left-color: #22c55e; background: #f0fdf4; }
-    .failed-list li { border-left-color: #ef4444; background: #fef2f2; }
-    .cta-button { display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 15px 30px; text-decoration: none; border-radius: 8px; font-weight: 600; margin: 20px 0; }
-    .footer { text-align: center; padding: 20px; color: #6b7280; font-size: 13px; border-top: 1px solid #e5e7eb; margin-top: 30px; }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body>
-  <div class="container">
-    <div class="header">
-      <h1>🎯 QC Automation Report</h1>
-      <p>${PROJECT_NAME}</p>
+<body style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background: #f3f4f6;">
+  <div style="max-width: 680px; margin: 0 auto; padding: 20px;">
+    <!-- Header -->
+    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 28px 32px; border-radius: 12px 12px 0 0;">
+      <h1 style="margin: 0 0 6px 0; font-size: 22px; font-weight: 700;">🎯 QC Automation Report</h1>
+      <p style="margin: 0; font-size: 14px; opacity: 0.9;">${PROJECT_NAME}</p>
+      <p style="margin: 8px 0 0 0; font-size: 12px; opacity: 0.75;">Latest Run: ${summary.runDate}</p>
     </div>
 
-    <div class="stats-grid">
-      <div class="stat-card">
-        <div class="stat-label">Total Runs</div>
-        <div class="stat-value">${summary.totalRuns}</div>
+    <div style="background: #ffffff; padding: 32px; border-radius: 0 0 12px 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+      <!-- Stats Cards -->
+      <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom: 28px;">
+        <tr>
+          <td width="25%" style="padding: 4px;">
+            <div style="background: #f0f4ff; padding: 18px 12px; border-radius: 10px; text-align: center; border: 1px solid #e0e7ff;">
+              <div style="font-size: 11px; text-transform: uppercase; color: #6366f1; font-weight: 700; letter-spacing: 0.5px;">Total Tests</div>
+              <div style="font-size: 30px; font-weight: 800; color: #4338ca; margin-top: 4px;">${summary.total}</div>
+            </div>
+          </td>
+          <td width="25%" style="padding: 4px;">
+            <div style="background: #f0fdf4; padding: 18px 12px; border-radius: 10px; text-align: center; border: 1px solid #bbf7d0;">
+              <div style="font-size: 11px; text-transform: uppercase; color: #16a34a; font-weight: 700; letter-spacing: 0.5px;">Passed</div>
+              <div style="font-size: 30px; font-weight: 800; color: #15803d; margin-top: 4px;">${summary.passed}</div>
+            </div>
+          </td>
+          <td width="25%" style="padding: 4px;">
+            <div style="background: #fef2f2; padding: 18px 12px; border-radius: 10px; text-align: center; border: 1px solid #fecaca;">
+              <div style="font-size: 11px; text-transform: uppercase; color: #dc2626; font-weight: 700; letter-spacing: 0.5px;">Failed</div>
+              <div style="font-size: 30px; font-weight: 800; color: #b91c1c; margin-top: 4px;">${summary.failed}</div>
+            </div>
+          </td>
+          <td width="25%" style="padding: 4px;">
+            <div style="background: #fffbeb; padding: 18px 12px; border-radius: 10px; text-align: center; border: 1px solid #fde68a;">
+              <div style="font-size: 11px; text-transform: uppercase; color: #d97706; font-weight: 700; letter-spacing: 0.5px;">Pass Rate</div>
+              <div style="font-size: 30px; font-weight: 800; color: ${passRateColor}; margin-top: 4px;">${passRateEmoji} ${summary.passRate}%</div>
+            </div>
+          </td>
+        </tr>
+      </table>
+
+      <!-- Module Breakdown -->
+      <div style="margin: 28px 0;">
+        <h3 style="font-size: 16px; font-weight: 700; color: #1f2937; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid #e5e7eb;">
+          📋 Results by Module
+        </h3>
+        <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse: collapse; background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; overflow: hidden;">
+          <thead>
+            <tr style="background: #f9fafb;">
+              <th style="padding: 10px 16px; text-align: left; font-size: 12px; color: #6b7280; font-weight: 600; border-bottom: 2px solid #e5e7eb;">Module</th>
+              <th style="padding: 10px 16px; text-align: center; font-size: 12px; color: #22c55e; font-weight: 600; border-bottom: 2px solid #e5e7eb;">Pass</th>
+              <th style="padding: 10px 16px; text-align: center; font-size: 12px; color: #ef4444; font-weight: 600; border-bottom: 2px solid #e5e7eb;">Fail</th>
+              <th style="padding: 10px 16px; text-align: center; font-size: 12px; color: #6b7280; font-weight: 600; border-bottom: 2px solid #e5e7eb;">Rate</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${moduleRows}
+          </tbody>
+        </table>
       </div>
-      <div class="stat-card passed">
-        <div class="stat-label">Passed</div>
-        <div class="stat-value">${summary.totalPassed}</div>
+
+      ${failedDetails}
+
+      <!-- CTA Button -->
+      <div style="text-align: center; margin: 32px 0 20px 0;">
+        <a href="${DASHBOARD_URL}" style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 14px 36px; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 15px;">📊 View Full Dashboard</a>
       </div>
-      <div class="stat-card failed">
-        <div class="stat-label">Failed</div>
-        <div class="stat-value">${summary.totalFailed}</div>
+
+      <!-- Footer -->
+      <div style="text-align: center; padding: 20px 0 0 0; color: #9ca3af; font-size: 12px; border-top: 1px solid #e5e7eb; margin-top: 24px;">
+        <p style="margin: 0;"><strong>Thanks & Regards,</strong></p>
+        <p style="margin: 4px 0 0 0;">Saira Automation BOT 🤖</p>
+        <p style="margin: 12px 0 0 0; font-size: 11px; color: #d1d5db;">This is an automated report generated from the latest test run.</p>
       </div>
-    </div>
-
-    <div class="section">
-      <div class="section-title">✅ Passed Tests by Module</div>
-      <ul class="passed-list">
-        ${passSection}
-      </ul>
-    </div>
-
-    <div class="section">
-      <div class="section-title">❌ Failed Tests by Module</div>
-      <ul class="failed-list">
-        ${failSection}
-      </ul>
-    </div>
-
-    <div style="text-align: center;">
-      <a href="${DASHBOARD_URL}" class="cta-button">📊 View Full Dashboard</a>
-    </div>
-
-    <div class="footer">
-      <p><strong>Thanks & Regards,</strong></p>
-      <p>Saira Automation BOT 🤖</p>
-      <p style="margin-top: 15px; font-size: 11px;">This is an automated report. For issues, contact your QA team.</p>
     </div>
   </div>
 </body>
 </html>`;
 }
 
-async function sendEmail(subject, text) {
+async function sendEmail(subject, body) {
   if (!EMAIL_WEB_APP_URL) {
     throw new Error('Missing EMAIL_WEB_APP_URL. Set the Apps Script web app URL in secrets.');
   }
@@ -162,7 +219,7 @@ async function sendEmail(subject, text) {
   const payload = JSON.stringify({
     to: RECIPIENTS.join(','),
     subject,
-    body: text,
+    body,
   });
 
   // Google Apps Script redirects POST (302) → fetch converts POST to GET,
@@ -198,16 +255,20 @@ async function main() {
   }
 
   const runs = loadRuns();
-  const todayKey = getDateKey(new Date());
-  const todayRuns = runs.filter((run) => getDateKey(new Date(run.runDate)) === todayKey);
+  if (!runs.length) {
+    console.log('No runs found in history. Skipping email.');
+    return;
+  }
 
-  const summary = buildSummary(todayRuns);
-  const dateLabel = formatDate(new Date());
-  const subject = `QC Shunya Labs Website Automation Report – ${dateLabel}`;
+  // Use the LATEST run only (not all runs for the day)
+  const latestRun = runs[runs.length - 1];
+  const summary = buildLatestRunSummary(latestRun);
+  const dateLabel = formatDate(new Date(latestRun.runDate));
+  const subject = `QC ${PROJECT_NAME} – ${dateLabel} – ${summary.passRate}% Pass Rate`;
   const body = buildEmailBody(dateLabel, summary);
 
   await sendEmail(subject, body);
-  console.log(`✅ Daily report email sent to ${RECIPIENTS.join(', ')}`);
+  console.log(`✅ Report email sent to ${RECIPIENTS.join(', ')} (${summary.total} tests, ${summary.passRate}% pass rate)`);
 }
 
 main().catch((error) => {
