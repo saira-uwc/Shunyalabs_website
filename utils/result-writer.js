@@ -1,6 +1,5 @@
 import fs from 'fs';
 import path from 'path';
-import { writeToSheet, initializeSheet } from './sheets-writer.js';
 
 const DEFAULT_HEADERS = 'Date/Time,Module Name,Test Point,Status,Output/Comment\n';
 
@@ -8,8 +7,6 @@ export async function createResultWriter({
   moduleName,
   reportFileName = 'module-pages-report.csv',
 }) {
-  await initializeSheet();
-
   const csvFile = path.join(process.cwd(), 'test-results', reportFileName);
   const csvDir = path.dirname(csvFile);
 
@@ -29,7 +26,6 @@ export async function createResultWriter({
 
     const csvLine = `${timestamp},"${moduleName}","${testPoint}",${status},"${safeComment}"\n`;
     fs.appendFileSync(csvFile, csvLine);
-    await writeToSheet(moduleName, testPoint, status, comment || '');
   };
 
   return { writeResult, csvFile };

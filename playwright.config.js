@@ -44,7 +44,7 @@ export default defineConfig({
   },
 
   fullyParallel: true,
-  retries: 1,
+  retries: 0,
   workers: process.env.CI ? 3 : undefined, // 3 on CI, auto locally
 
   reporter: [
