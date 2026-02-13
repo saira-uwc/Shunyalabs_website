@@ -12,6 +12,7 @@ fi
 
 REMOTE_NAME="origin"
 PAGES_BRANCH="${DASHBOARD_PAGES_BRANCH:-$(git rev-parse --abbrev-ref HEAD)}"
+BRANCH="$(git rev-parse --abbrev-ref HEAD)"
 
 if ! git remote get-url origin >/dev/null 2>&1; then
   echo "Git remote 'origin' not found. Set it to your GitHub repo first."
@@ -19,9 +20,13 @@ if ! git remote get-url origin >/dev/null 2>&1; then
 fi
 
 REMOTE_URL="$(git remote get-url origin)"
-
 echo "Publishing to: ${REMOTE_URL}"
 
+# Pull latest remote changes FIRST to avoid non-fast-forward rejection
+echo "Pulling latest changes from ${REMOTE_NAME}/${PAGES_BRANCH}..."
+git pull --rebase "${REMOTE_NAME}" "${PAGES_BRANCH}" 2>&1 || echo "Pull failed or no remote branch yet (continuing...)"
+
+# Stage dashboard files
 git add dashboard/index.html dashboard/history/runs.json
 if [[ -d "dashboard/playwright-artifacts" ]]; then
   git add dashboard/playwright-artifacts
@@ -35,7 +40,7 @@ fi
 COMMIT_MSG="Update dashboard $(date -u +"%Y-%m-%d %H:%M UTC")"
 git commit -m "${COMMIT_MSG}"
 
-BRANCH="$(git rev-parse --abbrev-ref HEAD)"
+echo "Pushing to ${REMOTE_NAME} ${BRANCH}:${PAGES_BRANCH}..."
 git push "${REMOTE_NAME}" "${BRANCH}:${PAGES_BRANCH}"
 
 echo "✅ Dashboard published."

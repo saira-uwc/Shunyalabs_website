@@ -17,8 +17,13 @@ fi
 export PLAYWRIGHT_HTML_OPEN="never"
 npx playwright test || TEST_EXIT=$?
 
+echo "--- Generating dashboard ---"
 node dashboard/generate-dashboard.js
-node scripts/update-coverage-sheet.js || true
-bash scripts/publish-dashboard.sh
+
+echo "--- Updating coverage sheet ---"
+node scripts/update-coverage-sheet.js || echo "⚠️  Coverage sheet update failed (non-fatal)"
+
+echo "--- Publishing dashboard ---"
+bash scripts/publish-dashboard.sh || echo "⚠️  Dashboard publish failed (non-fatal)"
 
 exit "$TEST_EXIT"

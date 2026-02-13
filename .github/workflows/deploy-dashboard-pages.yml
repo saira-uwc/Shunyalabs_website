@@ -6,6 +6,8 @@ on:
     paths:
       - "dashboard/**"
       - ".github/workflows/deploy-dashboard-pages.yml"
+  repository_dispatch:
+    types: [deploy-dashboard]
   workflow_dispatch:
 
 permissions:

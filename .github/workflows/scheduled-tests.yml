@@ -50,3 +50,14 @@ jobs:
           PLAYWRIGHT_BROWSERS_PATH: ${{ github.workspace }}/.playwright
           PLAYWRIGHT_HTML_OPEN: never
         run: bash scripts/run-tests-and-dashboard.sh || true
+
+      - name: Trigger dashboard deployment
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_PAT || secrets.GITHUB_TOKEN }}
+        run: |
+          curl -s -X POST \
+            -H "Authorization: token $GH_TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/${{ github.repository }}/dispatches" \
+            -d '{"event_type":"deploy-dashboard"}' || echo "⚠️ Dashboard deploy trigger failed (non-fatal)"
