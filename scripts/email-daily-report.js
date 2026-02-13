@@ -64,7 +64,7 @@ function buildLatestRunSummary(run) {
   return { total, passed, failed, passRate, runDate, modules };
 }
 
-function buildEmailBody(dateLabel, summary) {
+function buildEmailBody(summary) {
   const passRateColor = summary.passRate >= 90 ? '#22c55e' : summary.passRate >= 70 ? '#f59e0b' : '#ef4444';
   const passRateEmoji = summary.passRate === 100 ? '🎉' : summary.passRate >= 90 ? '✅' : summary.passRate >= 70 ? '⚠️' : '🔴';
 
@@ -92,38 +92,6 @@ function buildEmailBody(dateLabel, summary) {
     })
     .join('');
 
-  // Build failed test details (only if there are failures)
-  let failedDetails = '';
-  if (summary.failed > 0) {
-    const failedTests = [];
-    summary.modules.forEach((data, moduleName) => {
-      data.tests.filter(t => t.status === 'FAIL').forEach(t => {
-        failedTests.push({ module: moduleName, name: t.testPoint || t.testName || 'Unknown', comment: (t.comment || '').substring(0, 200) });
-      });
-    });
-
-    if (failedTests.length > 0) {
-      const failedRows = failedTests.slice(0, 15).map(t => `
-        <tr>
-          <td style="padding: 10px 16px; border-bottom: 1px solid #fecaca; font-size: 13px;">
-            <strong style="color: #991b1b;">${t.module}</strong><br>
-            <span style="color: #374151;">${t.name}</span>
-            ${t.comment ? `<br><span style="color: #9ca3af; font-size: 11px;">${t.comment}</span>` : ''}
-          </td>
-        </tr>`).join('');
-
-      failedDetails = `
-      <div style="margin: 30px 0;">
-        <h3 style="font-size: 16px; font-weight: 700; color: #991b1b; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid #fecaca;">
-          ❌ Failed Tests (${failedTests.length})
-        </h3>
-        <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse: collapse; background: #fff; border: 1px solid #fecaca; border-radius: 8px;">
-          ${failedRows}
-          ${failedTests.length > 15 ? `<tr><td style="padding: 10px 16px; text-align: center; color: #9ca3af; font-size: 12px;">... and ${failedTests.length - 15} more. <a href="${DASHBOARD_URL}" style="color: #667eea;">View all on dashboard</a></td></tr>` : ''}
-        </table>
-      </div>`;
-    }
-  }
 
   return `
 <!DOCTYPE html>
@@ -191,8 +159,6 @@ function buildEmailBody(dateLabel, summary) {
           </tbody>
         </table>
       </div>
-
-      ${failedDetails}
 
       <!-- CTA Button -->
       <div style="text-align: center; margin: 32px 0 20px 0;">
@@ -265,7 +231,7 @@ async function main() {
   const summary = buildLatestRunSummary(latestRun);
   const dateLabel = formatDate(new Date(latestRun.runDate));
   const subject = `QC ${PROJECT_NAME} – ${dateLabel} – ${summary.passRate}% Pass Rate`;
-  const body = buildEmailBody(dateLabel, summary);
+  const body = buildEmailBody(summary);
 
   await sendEmail(subject, body);
   console.log(`✅ Report email sent to ${RECIPIENTS.join(', ')} (${summary.total} tests, ${summary.passRate}% pass rate)`);
