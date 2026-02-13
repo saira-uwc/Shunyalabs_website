@@ -16,7 +16,7 @@ const launchOptions = fs.existsSync(CHROMIUM_EXECUTABLE)
 
 export default defineConfig({
   testDir: './tests',
-  timeout: 300 * 1000, // Increased timeout for CTA navigation checks
+  timeout: 120 * 1000, // 2 minutes per test (was 5 min)
 
   use: {
     baseURL: 'https://www.shunyalabs.ai',
@@ -24,29 +24,24 @@ export default defineConfig({
 
     launchOptions,
 
-    navigationTimeout: 120000, // Increased to 120s for very slow pages
-    actionTimeout: 30000,
+    navigationTimeout: 30000, // 30s for navigation (was 120s)
+    actionTimeout: 15000,
     expect: {
-      timeout: 20000, // Increased timeout for expect assertions
+      timeout: 10000,
     },
 
     trace: 'on-first-retry',
     video: 'retain-on-failure',
     screenshot: 'only-on-failure',
-    
-    // Viewport settings
+
     viewport: { width: 1920, height: 1080 },
-    
-    // More reliable wait strategy
-    waitForTimeout: 2000, // Reduced to avoid unnecessary waits
-    
-    // Prevent automatic navigation issues
+
     ignoreHTTPSErrors: false,
     bypassCSP: false,
   },
 
-  retries: 0, // Do not retry; fail fast on first failure
-  workers: 1, // Important for marketing sites to avoid rate limiting
+  retries: 0,
+  workers: 3, // Parallel execution across modules
 
   reporter: [
     ['html', { outputFolder: 'reports/html-report', open: 'never' }],

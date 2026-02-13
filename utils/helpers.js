@@ -13,13 +13,13 @@ export async function scrollToElement(page, selector, options = {}) {
     try {
       const element = await page.locator(selector).first();
       await element.scrollIntoViewIfNeeded({ timeout });
-      await page.waitForTimeout(500); // Wait for any animations
+      await page.waitForTimeout(200); // Brief pause for scroll animations
       return true;
     } catch (error) {
       if (i === maxRetries - 1) {
         throw new Error(`Failed to scroll to element after ${maxRetries} attempts: ${error.message}`);
       }
-      await page.waitForTimeout(1000);
+      await page.waitForTimeout(300);
     }
   }
 }

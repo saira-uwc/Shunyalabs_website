@@ -20,8 +20,7 @@ async function clickAndResolveUrl({ page, locator }) {
   const popupPromise = page
     .waitForEvent('popup', { timeout: CTA_NAV_TIMEOUT_MS })
     .then(async (popup) => {
-      await popup.waitForLoadState('load').catch(() => {});
-      await popup.waitForTimeout(1000);
+      await popup.waitForLoadState('domcontentloaded').catch(() => {});
       const url = popup.url();
       await popup.close().catch(() => {});
       return { url };

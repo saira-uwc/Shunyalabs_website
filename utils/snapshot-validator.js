@@ -39,8 +39,7 @@ export async function validateSnapshotForPage({ page, moduleLabel, pageLabel, mo
   }
 
   await page.goto(pagePath, { waitUntil: 'domcontentloaded' });
-  await page.waitForLoadState('load').catch(() => {});
-  await page.waitForTimeout(1500);
+  await page.waitForLoadState('networkidle', { timeout: 5000 }).catch(() => {});
 
   const actual = normalizeSnapshot(await capturePageSnapshot(page));
   const expected = JSON.parse(fs.readFileSync(snapshotPath, 'utf8'));

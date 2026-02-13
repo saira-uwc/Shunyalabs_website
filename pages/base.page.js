@@ -8,8 +8,7 @@ export class BasePage {
 
   async open() {
     await this.page.goto(this.path, { waitUntil: 'domcontentloaded' });
-    await this.page.waitForLoadState('load').catch(() => {});
-    await this.page.waitForTimeout(1500);
+    await this.page.waitForLoadState('networkidle', { timeout: 5000 }).catch(() => {});
   }
 
   async getMainCTAs() {
