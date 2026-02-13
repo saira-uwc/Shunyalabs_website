@@ -52504,5 +52504,2333 @@
         ]
       }
     ]
+  },
+  {
+    "runId": "run_1770971699293_ajawo3td3",
+    "runDate": "2026-02-13T08:23:16.736Z",
+    "passed": 62,
+    "failed": 55,
+    "total": 117,
+    "passRate": 53,
+    "tests": [
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/contact/contact/actions.spec.js › Contact - Contact Us actions (Figma exact) › Form fields and checkboxes visible",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-13T08:23:11.422Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/contact/contact/content.spec.js › Contact - Contact Us content (Snapshot) › Content snapshot matches",
+        "status": "FAIL",
+        "comment": "Error: headerNav mismatch at index 7: expected \"Get Started\" vs \"Sign In\" | mainText mismatch at index 7: expected \"Get Started\" vs \"Sign In\"\n\n   at ../utils/snapshot-validator.js:54\n\n  52 |     const message = formatDiff(diff);\n  53 |     await writeResult(`${pageLabel} snapshot`, 'FAIL', message);\n> 54 |     throw new Error(message);\n     |           ^\n  55 |   }\n  56 |\n  57 |   await writeResult(`${pageLabel} snapshot`, 'PASS', `Snapshot matches (${csvFile})`);\n    at validateSnapshotForPage ",
+        "timestamp": "2026-02-13T08:23:24.143Z",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/08fdcbd412-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/40c1a77777-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/a2125e9179-error-context.md"
+          },
+          {
+            "name": "trace",
+            "contentType": "application/zip",
+            "url": "playwright-artifacts/b5fc50e0ff-trace.zip"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/contact/contact/cta.spec.js › Contact - Contact Us CTAs (Figma exact) › CTA visibility",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-13T08:23:11.593Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/homepage/homepage/actions.spec.js › Homepage - actions (Figma exact) › Playground actions are enabled",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-13T08:23:23.115Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/homepage/homepage/content.spec.js › Homepage - Homepage content (Snapshot) › Content snapshot matches",
+        "status": "FAIL",
+        "comment": "Error: headerNav mismatch at index 7: expected \"Get Started\" vs \"Sign In\"\n\n   at ../utils/snapshot-validator.js:54\n\n  52 |     const message = formatDiff(diff);\n  53 |     await writeResult(`${pageLabel} snapshot`, 'FAIL', message);\n> 54 |     throw new Error(message);\n     |           ^\n  55 |   }\n  56 |\n  57 |   await writeResult(`${pageLabel} snapshot`, 'PASS', `Snapshot matches (${csvFile})`);\n    at validateSnapshotForPage (/home/runner/work/Shunyalabs_website/Shunyalabs_website/utils/snaps",
+        "timestamp": "2026-02-13T08:23:39.671Z",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/7968fde47a-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/f5713069c4-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/e4bd64b034-error-context.md"
+          },
+          {
+            "name": "trace",
+            "contentType": "application/zip",
+            "url": "playwright-artifacts/9b07b304af-trace.zip"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/homepage/homepage/cta.spec.js › Homepage - CTAs (Figma exact) › CTA labels + destinations",
+        "status": "FAIL",
+        "comment": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('The fastest way to add voice AI to your products').locator('..').getByRole('link', { name: 'Get Started' }).first()\nExpected: \u001b[32m\"/pricing\"\u001b[39m\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('The fastest way to add voice AI to your products').locator('..').getByRole('",
+        "timestamp": "2026-02-13T08:24:30.025Z",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/65e2208362-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/efb0e69783-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/5893692dc0-error-context.md"
+          },
+          {
+            "name": "trace",
+            "contentType": "application/zip",
+            "url": "playwright-artifacts/31a0c7f49e-trace.zip"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/homepage/homepage/footer.spec.js › Homepage - footer menu (Figma exact) › Footer columns, follow us, copyright",
+        "status": "FAIL",
+        "comment": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"Follow us on\"\u001b[39m\nReceived: \u001b[31m\"\"\u001b[39m\n\n  24 |\n  25 |     const footerData = await homepage.getFooterMenuStructure();\n> 26 |     expect(footerData.followUs).toBe(footerExpectations.followUs);\n     |                                 ^\n  27 |     expect(footerData.copyright).toBe(footerExpectations.copyright);\n  28 |\n  29 |     const expectedColumns = footerExpect",
+        "timestamp": "2026-02-13T08:23:57.607Z",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/ddb9ecead4-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/d9fbbb0fc5-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/3d90f13e8f-error-context.md"
+          },
+          {
+            "name": "trace",
+            "contentType": "application/zip",
+            "url": "playwright-artifacts/d4c82a64e8-trace.zip"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/homepage/homepage/nav.spec.js › Homepage - navigation (Figma exact) › Top nav dropdowns match labels, descriptions, and hrefs",
+        "status": "FAIL",
+        "comment": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 32\u001b[39m\n\u001b[31m+ Received  +  1\u001b[39m\n\n\u001b[32m- Array [\u001b[39m\n\u001b[32m-   Object {\u001b[39m\n\u001b[32m-     \"description\": \"High-level view of the Shunya Labs AI ecosystem\",\u001b[39m\n\u001b[32m-     \"href\": \"/overview\",\u001b[39m\n\u001b[32m-     \"label\": \"Overview\",\u001b[39m\n\u001b[32m-   },\u001b[39m\n\u001b[32m-   Object {\u001b[39m\n\u001b[32m-     \"description\": \"Explore detailed specifications of our AI models\",\u001b[39m\n\u001b[32m- ",
+        "timestamp": "2026-02-13T08:24:08.657Z",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/f4a299003e-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/28743f4d62-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/0768b01569-error-context.md"
+          },
+          {
+            "name": "trace",
+            "contentType": "application/zip",
+            "url": "playwright-artifacts/8c90de338e-trace.zip"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/homepage/homepage/widget.spec.js › Homepage - widget (Figma exact) › Widget content and actions",
+        "status": "FAIL",
+        "comment": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 17\u001b[39m\n\u001b[31m+ Received  +  1\u001b[39m\n\n\u001b[32m- Array [\u001b[39m\n\u001b[32m-   \"Speech To Text\",\u001b[39m\n\u001b[32m-   \"Medical Transcription\",\u001b[39m\n\u001b[32m-   \"Language\",\u001b[39m\n\u001b[32m-   \"🇺🇸English\",\u001b[39m\n\u001b[32m-   \"Input Audio\",\u001b[39m\n\u001b[32m-   \"Pre-recorded\",\u001b[39m\n\u001b[32m-   \"Customer Support Call\",\u001b[39m\n\u001b[32m-   \"Podcast\",\u001b[39m\n\u001b[32m-   \"Upload your file\",\u001b[39m\n\u001b[32m-   \"or\",\u001b[39m\n\u001b[32m-",
+        "timestamp": "2026-02-13T08:24:20.109Z",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/9b69b41c76-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/d2e416f454-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/9207aca741-error-context.md"
+          },
+          {
+            "name": "trace",
+            "contentType": "application/zip",
+            "url": "playwright-artifacts/a6e8b14968-trace.zip"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/models/language-models/actions.spec.js › Models - Language Models actions (Figma exact) › Try now links visible",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-13T08:24:16.445Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/models/language-models/content.spec.js › Models - Language Models content (Snapshot) › Content snapshot matches",
+        "status": "FAIL",
+        "comment": "Error: headerNav mismatch at index 7: expected \"Get Started\" vs \"Sign In\" | mainText mismatch at index 7: expected \"Get Started\" vs \"Sign In\"\n\n   at ../utils/snapshot-validator.js:54\n\n  52 |     const message = formatDiff(diff);\n  53 |     await writeResult(`${pageLabel} snapshot`, 'FAIL', message);\n> 54 |     throw new Error(message);\n     |           ^\n  55 |   }\n  56 |\n  57 |   await writeResult(`${pageLabel} snapshot`, 'PASS', `Snapshot matches (${csvFile})`);\n    at validateSnapshotForPage ",
+        "timestamp": "2026-02-13T08:24:38.019Z",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/538ea9a94a-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/d3e8d5c90f-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/f2de315649-error-context.md"
+          },
+          {
+            "name": "trace",
+            "contentType": "application/zip",
+            "url": "playwright-artifacts/c09cf172bd-trace.zip"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/models/language-models/cta.spec.js › Models - Language Models CTAs (Figma exact) › CTA hrefs",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-13T08:24:27.726Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/models/on-device-models/actions.spec.js › Models - On Device Models actions (Figma exact) › Contact Us visible",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-13T08:24:49.354Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/models/on-device-models/content.spec.js › Models - On Device Models content (Snapshot) › Content snapshot matches",
+        "status": "FAIL",
+        "comment": "Error: headerNav mismatch at index 7: expected \"Get Started\" vs \"Sign In\" | mainText mismatch at index 7: expected \"Get Started\" vs \"Sign In\"\n\n   at ../utils/snapshot-validator.js:54\n\n  52 |     const message = formatDiff(diff);\n  53 |     await writeResult(`${pageLabel} snapshot`, 'FAIL', message);\n> 54 |     throw new Error(message);\n     |           ^\n  55 |   }\n  56 |\n  57 |   await writeResult(`${pageLabel} snapshot`, 'PASS', `Snapshot matches (${csvFile})`);\n    at validateSnapshotForPage ",
+        "timestamp": "2026-02-13T08:25:07.776Z",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/a2121ab579-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/85d073fb57-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/54dbc9ddc8-error-context.md"
+          },
+          {
+            "name": "trace",
+            "contentType": "application/zip",
+            "url": "playwright-artifacts/326a4b6f99-trace.zip"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/models/on-device-models/cta.spec.js › Models - On Device Models CTAs (Figma exact) › CTA hrefs",
+        "status": "FAIL",
+        "comment": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('link', { name: 'Contact Us' }).first()\nExpected: \u001b[32m\"\u001b[7m/\u001b[27mcontact\"\u001b[39m\nReceived: \u001b[31m\"contact\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('link', { name: 'Contact Us' }).first()\u001b[22m\n\u001b[2m    9 × locator resolved to <a href=\"contact\" class=\"px-10 py-3 rounded-full text-white text",
+        "timestamp": "2026-02-13T08:25:24.072Z",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/c210e9e4ad-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/c037a3fe2c-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/805a3d8bd7-error-context.md"
+          },
+          {
+            "name": "trace",
+            "contentType": "application/zip",
+            "url": "playwright-artifacts/2d516cbb5f-trace.zip"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/models/specialised-models/actions.spec.js › Models - Specialised Models actions (Figma exact) › Try now / Learn now visible",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-13T08:25:20.874Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/models/specialised-models/content.spec.js › Models - Specialised Models content (Snapshot) › Content snapshot matches",
+        "status": "FAIL",
+        "comment": "Error: headerNav mismatch at index 7: expected \"Get Started\" vs \"Sign In\" | mainText mismatch at index 7: expected \"Get Started\" vs \"Sign In\"\n\n   at ../utils/snapshot-validator.js:54\n\n  52 |     const message = formatDiff(diff);\n  53 |     await writeResult(`${pageLabel} snapshot`, 'FAIL', message);\n> 54 |     throw new Error(message);\n     |           ^\n  55 |   }\n  56 |\n  57 |   await writeResult(`${pageLabel} snapshot`, 'PASS', `Snapshot matches (${csvFile})`);\n    at validateSnapshotForPage ",
+        "timestamp": "2026-02-13T08:25:35.697Z",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/03d63905cd-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/6e5b671cd8-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/de26e83346-error-context.md"
+          },
+          {
+            "name": "trace",
+            "contentType": "application/zip",
+            "url": "playwright-artifacts/dd8fef742e-trace.zip"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/models/specialised-models/cta.spec.js › Models - Specialised Models CTAs (Figma exact) › CTA hrefs",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-13T08:25:31.435Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/models/zero-stt-codeswitch/actions.spec.js › Models - Zero STT Codeswitch actions (Figma exact) › Widget buttons enabled",
+        "status": "FAIL",
+        "comment": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeEnabled\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('button', { name: 'Customer Support Call' }).first()\nExpected: enabled\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeEnabled\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Customer Support Call' }).first()\u001b[22m\n\n\n  23 |     for (const label of enabledButtons) {\n  24 |       const button = page.getByRole('button', { name: label }).f",
+        "timestamp": "2026-02-13T08:25:44.729Z",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/96bb6820a1-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/8704fb167e-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/2c377e4357-error-context.md"
+          },
+          {
+            "name": "trace",
+            "contentType": "application/zip",
+            "url": "playwright-artifacts/4df44f4252-trace.zip"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/models/zero-stt-codeswitch/content.spec.js › Models - Zero STT Codeswitch content (Snapshot) › Content snapshot matches",
+        "status": "FAIL",
+        "comment": "Error: headerNav mismatch at index 7: expected \"Get Started\" vs \"Sign In\" | mainText mismatch at index 1: expected \"Customer Support Call\" vs \"Sample Audio\"\n\n   at ../utils/snapshot-validator.js:54\n\n  52 |     const message = formatDiff(diff);\n  53 |     await writeResult(`${pageLabel} snapshot`, 'FAIL', message);\n> 54 |     throw new Error(message);\n     |           ^\n  55 |   }\n  56 |\n  57 |   await writeResult(`${pageLabel} snapshot`, 'PASS', `Snapshot matches (${csvFile})`);\n    at validateS",
+        "timestamp": "2026-02-13T08:25:54.856Z",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/93c4ce4f27-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/2a4fe18794-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/673d41de2e-error-context.md"
+          },
+          {
+            "name": "trace",
+            "contentType": "application/zip",
+            "url": "playwright-artifacts/9b13cd7edb-trace.zip"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/models/zero-stt-codeswitch/cta.spec.js › Models - Zero STT Codeswitch CTAs (Figma exact) › CTA hrefs",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-13T08:25:55.095Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/models/zero-stt-indic/actions.spec.js › Models - Zero STT Indic actions (Figma exact) › Try now link visible",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-13T08:25:58.496Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/models/zero-stt-indic/content.spec.js › Models - Zero STT Indic content (Snapshot) › Content snapshot matches",
+        "status": "FAIL",
+        "comment": "Error: headerNav mismatch at index 7: expected \"Get Started\" vs \"Sign In\" | mainText mismatch at index 7: expected \"Get Started\" vs \"Sign In\"\n\n   at ../utils/snapshot-validator.js:54\n\n  52 |     const message = formatDiff(diff);\n  53 |     await writeResult(`${pageLabel} snapshot`, 'FAIL', message);\n> 54 |     throw new Error(message);\n     |           ^\n  55 |   }\n  56 |\n  57 |   await writeResult(`${pageLabel} snapshot`, 'PASS', `Snapshot matches (${csvFile})`);\n    at validateSnapshotForPage ",
+        "timestamp": "2026-02-13T08:26:22.402Z",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/2fbfc8c4eb-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/0e1790e360-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/d1cae24985-error-context.md"
+          },
+          {
+            "name": "trace",
+            "contentType": "application/zip",
+            "url": "playwright-artifacts/abe69d0fcf-trace.zip"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/models/zero-stt-indic/cta.spec.js › Models - Zero STT Indic CTAs (Figma exact) › CTA hrefs",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-13T08:26:09.914Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/models/zero-stt-med/actions.spec.js › Models - Zero STT Med actions › Actions",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-13T08:26:17.357Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/models/zero-stt-med/content.spec.js › Models - Zero STT Med content (Snapshot) › Content snapshot matches",
+        "status": "FAIL",
+        "comment": "Error: headerNav mismatch at index 7: expected \"Get Started\" vs \"Sign In\" | mainText mismatch at index 4: expected \"Customer Support Call\" vs \"Patient Notes\"\n\n   at ../utils/snapshot-validator.js:54\n\n  52 |     const message = formatDiff(diff);\n  53 |     await writeResult(`${pageLabel} snapshot`, 'FAIL', message);\n> 54 |     throw new Error(message);\n     |           ^\n  55 |   }\n  56 |\n  57 |   await writeResult(`${pageLabel} snapshot`, 'PASS', `Snapshot matches (${csvFile})`);\n    at validate",
+        "timestamp": "2026-02-13T08:26:38.708Z",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/de380855bc-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/0cb649a328-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/7691a9131e-error-context.md"
+          },
+          {
+            "name": "trace",
+            "contentType": "application/zip",
+            "url": "playwright-artifacts/92d9d57aba-trace.zip"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/models/zero-stt-med/cta.spec.js › Models - Zero STT Med CTAs › CTAs",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-13T08:26:35.331Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/models/zero-stt-universal/actions.spec.js › Models - Zero STT Universal actions (Figma exact) › Widget buttons enabled",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-13T08:26:44.794Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/models/zero-stt-universal/content.spec.js › Models - Zero STT Universal content (Snapshot) › Content snapshot matches",
+        "status": "FAIL",
+        "comment": "Error: headerNav mismatch at index 7: expected \"Get Started\" vs \"Sign In\"\n\n   at ../utils/snapshot-validator.js:54\n\n  52 |     const message = formatDiff(diff);\n  53 |     await writeResult(`${pageLabel} snapshot`, 'FAIL', message);\n> 54 |     throw new Error(message);\n     |           ^\n  55 |   }\n  56 |\n  57 |   await writeResult(`${pageLabel} snapshot`, 'PASS', `Snapshot matches (${csvFile})`);\n    at validateSnapshotForPage (/home/runner/work/Shunyalabs_website/Shunyalabs_website/utils/snaps",
+        "timestamp": "2026-02-13T08:27:01.850Z",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/f3817422a3-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/159957fab3-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/2670261b60-error-context.md"
+          },
+          {
+            "name": "trace",
+            "contentType": "application/zip",
+            "url": "playwright-artifacts/aa6a7f43a2-trace.zip"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/models/zero-stt-universal/cta.spec.js › Models - Zero STT Universal CTAs (Figma exact) › CTA hrefs",
+        "status": "FAIL",
+        "comment": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('link', { name: 'Try for Free' }).first()\nExpected: \u001b[32m\"/pricing\"\u001b[39m\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('link', { name: 'Try for Free' }).first()\u001b[22m\n\n\n  18 |\n  19 |     const bottomTry = page.getByRole('link', { name: 'Try for Free' }).first();\n> 20 |   ",
+        "timestamp": "2026-02-13T08:27:06.370Z",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/4c2cafa3e3-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/324da86876-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/7d22b47b42-error-context.md"
+          },
+          {
+            "name": "trace",
+            "contentType": "application/zip",
+            "url": "playwright-artifacts/ed9551afa6-trace.zip"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/pricing/pricing/actions.spec.js › Pricing - Pricing actions (Figma exact) › Tabs and slider visible",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-13T08:27:01.759Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/pricing/pricing/content.spec.js › Pricing - Pricing content (Snapshot) › Content snapshot matches",
+        "status": "FAIL",
+        "comment": "Error: headerNav mismatch at index 7: expected \"Get Started\" vs \"Sign In\" | mainText mismatch at index 7: expected \"Get Started\" vs \"Sign In\"\n\n   at ../utils/snapshot-validator.js:54\n\n  52 |     const message = formatDiff(diff);\n  53 |     await writeResult(`${pageLabel} snapshot`, 'FAIL', message);\n> 54 |     throw new Error(message);\n     |           ^\n  55 |   }\n  56 |\n  57 |   await writeResult(`${pageLabel} snapshot`, 'PASS', `Snapshot matches (${csvFile})`);\n    at validateSnapshotForPage ",
+        "timestamp": "2026-02-13T08:27:26.092Z",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/fe47d41b6f-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/5b2b6b2204-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/10a948e8fb-error-context.md"
+          },
+          {
+            "name": "trace",
+            "contentType": "application/zip",
+            "url": "playwright-artifacts/3501c48f8a-trace.zip"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/pricing/pricing/cta.spec.js › Pricing - Pricing CTAs (Figma exact) › CTA hrefs",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-13T08:27:14.237Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/product/audio-processing/actions.spec.js › Product - Audio Processing actions (Figma exact) › Contact CTA visible",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-13T08:27:25.207Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/product/audio-processing/content.spec.js › Product - Audio Processing content (Snapshot) › Content snapshot matches",
+        "status": "FAIL",
+        "comment": "Error: headerNav mismatch at index 7: expected \"Get Started\" vs \"Sign In\" | mainText mismatch at index 7: expected \"Get Started\" vs \"Sign In\"\n\n   at ../utils/snapshot-validator.js:54\n\n  52 |     const message = formatDiff(diff);\n  53 |     await writeResult(`${pageLabel} snapshot`, 'FAIL', message);\n> 54 |     throw new Error(message);\n     |           ^\n  55 |   }\n  56 |\n  57 |   await writeResult(`${pageLabel} snapshot`, 'PASS', `Snapshot matches (${csvFile})`);\n    at validateSnapshotForPage ",
+        "timestamp": "2026-02-13T08:27:45.217Z",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/3c163d20d2-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/2ecd747044-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/d903ce97e4-error-context.md"
+          },
+          {
+            "name": "trace",
+            "contentType": "application/zip",
+            "url": "playwright-artifacts/6ddb39258b-trace.zip"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/product/audio-processing/cta.spec.js › Product - Audio Processing CTAs (Figma exact) › CTA hrefs",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-13T08:27:35.957Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/product/deployment/actions.spec.js › Product - Deployment actions (Figma exact) › Contact CTA visible",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-13T08:27:42.256Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/product/deployment/content.spec.js › Product - Deployment content (Snapshot) › Content snapshot matches",
+        "status": "FAIL",
+        "comment": "Error: headerNav mismatch at index 7: expected \"Get Started\" vs \"Sign In\" | mainText mismatch at index 7: expected \"Get Started\" vs \"Sign In\"\n\n   at ../utils/snapshot-validator.js:54\n\n  52 |     const message = formatDiff(diff);\n  53 |     await writeResult(`${pageLabel} snapshot`, 'FAIL', message);\n> 54 |     throw new Error(message);\n     |           ^\n  55 |   }\n  56 |\n  57 |   await writeResult(`${pageLabel} snapshot`, 'PASS', `Snapshot matches (${csvFile})`);\n    at validateSnapshotForPage ",
+        "timestamp": "2026-02-13T08:27:55.963Z",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/e603cac0a8-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/66516a7deb-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/9ae255a095-error-context.md"
+          },
+          {
+            "name": "trace",
+            "contentType": "application/zip",
+            "url": "playwright-artifacts/74fb02946c-trace.zip"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/product/deployment/cta.spec.js › Product - Deployment CTAs (Figma exact) › CTA hrefs",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-13T08:27:51.749Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/product/models/actions.spec.js › Product - Models actions › Actions",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-13T08:27:55.431Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/product/models/content.spec.js › Product - Models content (Snapshot) › Content snapshot matches",
+        "status": "FAIL",
+        "comment": "Error: headerNav mismatch at index 7: expected \"Get Started\" vs \"Sign In\" | mainText mismatch at index 7: expected \"Get Started\" vs \"Sign In\"\n\n   at ../utils/snapshot-validator.js:54\n\n  52 |     const message = formatDiff(diff);\n  53 |     await writeResult(`${pageLabel} snapshot`, 'FAIL', message);\n> 54 |     throw new Error(message);\n     |           ^\n  55 |   }\n  56 |\n  57 |   await writeResult(`${pageLabel} snapshot`, 'PASS', `Snapshot matches (${csvFile})`);\n    at validateSnapshotForPage ",
+        "timestamp": "2026-02-13T08:28:13.706Z",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/80129a0971-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/9a29be09cf-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/8e8af8cb66-error-context.md"
+          },
+          {
+            "name": "trace",
+            "contentType": "application/zip",
+            "url": "playwright-artifacts/408aef7f01-trace.zip"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/product/models/cta.spec.js › Product - Models CTAs › CTAs",
+        "status": "FAIL",
+        "comment": "\u001b[31mTest timeout of 120000ms exceeded.\u001b[39m",
+        "timestamp": "2026-02-13T08:30:07.289Z",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/20c64bbb4b-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/0482b1bd01-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/858e107357-error-context.md"
+          },
+          {
+            "name": "trace",
+            "contentType": "application/zip",
+            "url": "playwright-artifacts/e793365f7b-trace.zip"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/product/overview/actions.spec.js › Product - Overview actions › Actions",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-13T08:28:18.149Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/product/overview/content.spec.js › Product - Overview content (Snapshot) › Content snapshot matches",
+        "status": "FAIL",
+        "comment": "Error: headerNav mismatch at index 7: expected \"Get Started\" vs \"Sign In\" | mainText mismatch at index 7: expected \"Get Started\" vs \"Sign In\"\n\n   at ../utils/snapshot-validator.js:54\n\n  52 |     const message = formatDiff(diff);\n  53 |     await writeResult(`${pageLabel} snapshot`, 'FAIL', message);\n> 54 |     throw new Error(message);\n     |           ^\n  55 |   }\n  56 |\n  57 |   await writeResult(`${pageLabel} snapshot`, 'PASS', `Snapshot matches (${csvFile})`);\n    at validateSnapshotForPage ",
+        "timestamp": "2026-02-13T08:28:32.122Z",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/fe3636cbb6-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/d9bce91c83-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/d6650f2f98-error-context.md"
+          },
+          {
+            "name": "trace",
+            "contentType": "application/zip",
+            "url": "playwright-artifacts/f408d71936-trace.zip"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/product/overview/cta.spec.js › Product - Overview CTAs › CTAs",
+        "status": "FAIL",
+        "comment": "\u001b[31mTest timeout of 120000ms exceeded.\u001b[39m",
+        "timestamp": "2026-02-13T08:30:34.287Z",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/3695193dd6-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/0c4c5b8d71-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/4d33059097-error-context.md"
+          },
+          {
+            "name": "trace",
+            "contentType": "application/zip",
+            "url": "playwright-artifacts/0452bfe130-trace.zip"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/product/speech-intelligence/actions.spec.js › Product - Speech Intelligence actions (Figma exact) › Try Now CTA visible",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-13T08:28:40.490Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/product/speech-intelligence/content.spec.js › Product - Speech Intelligence content (Snapshot) › Content snapshot matches",
+        "status": "FAIL",
+        "comment": "Error: headerNav mismatch at index 7: expected \"Get Started\" vs \"Sign In\" | mainText mismatch at index 7: expected \"Get Started\" vs \"Sign In\"\n\n   at ../utils/snapshot-validator.js:54\n\n  52 |     const message = formatDiff(diff);\n  53 |     await writeResult(`${pageLabel} snapshot`, 'FAIL', message);\n> 54 |     throw new Error(message);\n     |           ^\n  55 |   }\n  56 |\n  57 |   await writeResult(`${pageLabel} snapshot`, 'PASS', `Snapshot matches (${csvFile})`);\n    at validateSnapshotForPage ",
+        "timestamp": "2026-02-13T08:28:53.011Z",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/667e100f99-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/7767a90f72-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/9e6f732de4-error-context.md"
+          },
+          {
+            "name": "trace",
+            "contentType": "application/zip",
+            "url": "playwright-artifacts/cbce4476b8-trace.zip"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/product/speech-intelligence/cta.spec.js › Product - Speech Intelligence CTAs (Figma exact) › CTA hrefs",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-13T08:29:02.533Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/product/voice-agents/actions.spec.js › Product - Voice Agents actions (Figma exact) › CTA button enabled states",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-13T08:29:12.696Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/product/voice-agents/content.spec.js › Product - Voice Agents content (Snapshot) › Content snapshot matches",
+        "status": "FAIL",
+        "comment": "Error: headerNav mismatch at index 7: expected \"Get Started\" vs \"Sign In\" | mainText mismatch at index 7: expected \"Get Started\" vs \"Sign In\"\n\n   at ../utils/snapshot-validator.js:54\n\n  52 |     const message = formatDiff(diff);\n  53 |     await writeResult(`${pageLabel} snapshot`, 'FAIL', message);\n> 54 |     throw new Error(message);\n     |           ^\n  55 |   }\n  56 |\n  57 |   await writeResult(`${pageLabel} snapshot`, 'PASS', `Snapshot matches (${csvFile})`);\n    at validateSnapshotForPage ",
+        "timestamp": "2026-02-13T08:29:25.921Z",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/971fd957ba-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/18fa56768d-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/dd2d813f90-error-context.md"
+          },
+          {
+            "name": "trace",
+            "contentType": "application/zip",
+            "url": "playwright-artifacts/5f97650baa-trace.zip"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/product/voice-agents/cta.spec.js › Product - Voice Agents CTAs (Figma exact) › CTA hrefs",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-13T08:29:32.700Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/resources/benchmarks/actions.spec.js › Resources - Benchmarks actions (Figma exact) › Tabs and chart controls visible",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-13T08:29:46.985Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/resources/benchmarks/content.spec.js › Resources - Benchmarks content (Snapshot) › Content snapshot matches",
+        "status": "FAIL",
+        "comment": "Error: headerNav mismatch at index 7: expected \"Get Started\" vs \"Sign In\" | mainText mismatch at index 7: expected \"Get Started\" vs \"Sign In\"\n\n   at ../utils/snapshot-validator.js:54\n\n  52 |     const message = formatDiff(diff);\n  53 |     await writeResult(`${pageLabel} snapshot`, 'FAIL', message);\n> 54 |     throw new Error(message);\n     |           ^\n  55 |   }\n  56 |\n  57 |   await writeResult(`${pageLabel} snapshot`, 'PASS', `Snapshot matches (${csvFile})`);\n    at validateSnapshotForPage ",
+        "timestamp": "2026-02-13T08:30:01.882Z",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/bbf5f01fc7-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/c37f750e82-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/b1b3eb5d1d-error-context.md"
+          },
+          {
+            "name": "trace",
+            "contentType": "application/zip",
+            "url": "playwright-artifacts/a087a1cec2-trace.zip"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/resources/benchmarks/cta.spec.js › Resources - Benchmarks CTAs (Figma exact) › CTA hrefs",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-13T08:30:12.096Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/resources/blogs/actions.spec.js › Resources - Blogs actions (Figma exact) › Search and pagination available",
+        "status": "FAIL",
+        "comment": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('main').locator('input[type=\"search\"], input[type=\"text\"]').first()\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('main').locator('input[type=\"search\"], input[type=\"text\"]').first()\u001b[22m\n\n\n  14 |\n  15 |     const searchInput = page.locator('main').locator('input[type=\"search\"], inpu",
+        "timestamp": "2026-02-13T08:30:37.596Z",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/e88ff8d318-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/0630f2d054-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/d434514cae-error-context.md"
+          },
+          {
+            "name": "trace",
+            "contentType": "application/zip",
+            "url": "playwright-artifacts/057e90cd2f-trace.zip"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/resources/blogs/content.spec.js › Resources - Blogs content (Snapshot) › Content snapshot matches",
+        "status": "FAIL",
+        "comment": "Error: headerNav mismatch at index 7: expected \"Get Started\" vs \"Sign In\" | mainText mismatch at index 0: expected \"Product\" vs \"Product Why Multilingual Voice AI Fails on Real-World Audio — and How We Fixed It 03 Nov 2025\"\n\n   at ../utils/snapshot-validator.js:54\n\n  52 |     const message = formatDiff(diff);\n  53 |     await writeResult(`${pageLabel} snapshot`, 'FAIL', message);\n> 54 |     throw new Error(message);\n     |           ^\n  55 |   }\n  56 |\n  57 |   await writeResult(`${pageLabel} sn",
+        "timestamp": "2026-02-13T08:31:01.948Z",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/3ed1ac2b36-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/aa998896fb-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/cdc0bc5a5a-error-context.md"
+          },
+          {
+            "name": "trace",
+            "contentType": "application/zip",
+            "url": "playwright-artifacts/11c9596ed6-trace.zip"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/resources/blogs/cta.spec.js › Resources - Blogs CTAs (Figma exact) › CTA hrefs",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-13T08:31:10.453Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/resources/patents/actions.spec.js › Resources - Patents actions (Figma exact) › Patent cards visible",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-13T08:31:50.777Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/resources/patents/content.spec.js › Resources - Patents content (Snapshot) › Content snapshot matches",
+        "status": "FAIL",
+        "comment": "Error: headerNav mismatch at index 7: expected \"Get Started\" vs \"Sign In\" | mainText mismatch at index 7: expected \"Get Started\" vs \"Sign In\"\n\n   at ../utils/snapshot-validator.js:54\n\n  52 |     const message = formatDiff(diff);\n  53 |     await writeResult(`${pageLabel} snapshot`, 'FAIL', message);\n> 54 |     throw new Error(message);\n     |           ^\n  55 |   }\n  56 |\n  57 |   await writeResult(`${pageLabel} snapshot`, 'PASS', `Snapshot matches (${csvFile})`);\n    at validateSnapshotForPage ",
+        "timestamp": "2026-02-13T08:32:11.311Z",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/741c448a78-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/d7749a33f1-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/2a8daa50bf-error-context.md"
+          },
+          {
+            "name": "trace",
+            "contentType": "application/zip",
+            "url": "playwright-artifacts/49cd43ac78-trace.zip"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/resources/patents/cta.spec.js › Resources - Patents CTAs (Figma exact) › CTA hrefs",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-13T08:32:13.605Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/solutions/contact-centers/actions.spec.js › Solutions - Contact Centers actions (Figma exact) › Try Now buttons enabled",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-13T08:32:21.519Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/solutions/contact-centers/content.spec.js › Solutions - Contact Centers content (Snapshot) › Content snapshot matches",
+        "status": "FAIL",
+        "comment": "Error: headerNav mismatch at index 7: expected \"Get Started\" vs \"Sign In\" | mainText mismatch at index 7: expected \"Get Started\" vs \"Sign In\"\n\n   at ../utils/snapshot-validator.js:54\n\n  52 |     const message = formatDiff(diff);\n  53 |     await writeResult(`${pageLabel} snapshot`, 'FAIL', message);\n> 54 |     throw new Error(message);\n     |           ^\n  55 |   }\n  56 |\n  57 |   await writeResult(`${pageLabel} snapshot`, 'PASS', `Snapshot matches (${csvFile})`);\n    at validateSnapshotForPage ",
+        "timestamp": "2026-02-13T08:32:40.025Z",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/bafa335151-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/8fdf4d156b-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/0f81867ca7-error-context.md"
+          },
+          {
+            "name": "trace",
+            "contentType": "application/zip",
+            "url": "playwright-artifacts/b7427117e7-trace.zip"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/solutions/contact-centers/cta.spec.js › Solutions - Contact Centers CTAs (Figma exact) › CTA hrefs",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-13T08:32:36.234Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/solutions/healthcare/actions.spec.js › Solutions - Healthcare actions (Figma exact) › Try Now buttons enabled",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-13T08:32:40.160Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/solutions/healthcare/content.spec.js › Solutions - Healthcare content (Snapshot) › Content snapshot matches",
+        "status": "FAIL",
+        "comment": "Error: headerNav mismatch at index 7: expected \"Get Started\" vs \"Sign In\" | mainText mismatch at index 7: expected \"Get Started\" vs \"Sign In\"\n\n   at ../utils/snapshot-validator.js:54\n\n  52 |     const message = formatDiff(diff);\n  53 |     await writeResult(`${pageLabel} snapshot`, 'FAIL', message);\n> 54 |     throw new Error(message);\n     |           ^\n  55 |   }\n  56 |\n  57 |   await writeResult(`${pageLabel} snapshot`, 'PASS', `Snapshot matches (${csvFile})`);\n    at validateSnapshotForPage ",
+        "timestamp": "2026-02-13T08:32:54.974Z",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/cc461a4316-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/f484e948d8-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/a2690ad97c-error-context.md"
+          },
+          {
+            "name": "trace",
+            "contentType": "application/zip",
+            "url": "playwright-artifacts/9a43e3f51f-trace.zip"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/solutions/healthcare/cta.spec.js › Solutions - Healthcare CTAs (Figma exact) › CTA hrefs",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-13T08:32:48.796Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/solutions/media-entertainment/actions.spec.js › Solutions - Media & Entertainment actions (Figma exact) › Contact Sales CTA visible",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-13T08:32:51.528Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/solutions/media-entertainment/content.spec.js › Solutions - Media & Entertainment content (Snapshot) › Content snapshot matches",
+        "status": "FAIL",
+        "comment": "Error: headerNav mismatch at index 7: expected \"Get Started\" vs \"Sign In\" | mainText mismatch at index 7: expected \"Get Started\" vs \"Sign In\"\n\n   at ../utils/snapshot-validator.js:54\n\n  52 |     const message = formatDiff(diff);\n  53 |     await writeResult(`${pageLabel} snapshot`, 'FAIL', message);\n> 54 |     throw new Error(message);\n     |           ^\n  55 |   }\n  56 |\n  57 |   await writeResult(`${pageLabel} snapshot`, 'PASS', `Snapshot matches (${csvFile})`);\n    at validateSnapshotForPage ",
+        "timestamp": "2026-02-13T08:33:05.156Z",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/3b49f4a404-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/616abcfd8b-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/b8f7df6647-error-context.md"
+          },
+          {
+            "name": "trace",
+            "contentType": "application/zip",
+            "url": "playwright-artifacts/0ecf3ce953-trace.zip"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/solutions/media-entertainment/cta.spec.js › Solutions - Media & Entertainment CTAs (Figma exact) › CTA hrefs",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-13T08:33:01.895Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/solutions/use-cases/actions.spec.js › Solutions - Use Cases actions (Figma exact) › Learn more CTAs visible",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-13T08:33:03.948Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/solutions/use-cases/content.spec.js › Solutions - Use Cases content (Snapshot) › Content snapshot matches",
+        "status": "FAIL",
+        "comment": "Error: headerNav mismatch at index 7: expected \"Get Started\" vs \"Sign In\" | mainText mismatch at index 7: expected \"Get Started\" vs \"Sign In\"\n\n   at ../utils/snapshot-validator.js:54\n\n  52 |     const message = formatDiff(diff);\n  53 |     await writeResult(`${pageLabel} snapshot`, 'FAIL', message);\n> 54 |     throw new Error(message);\n     |           ^\n  55 |   }\n  56 |\n  57 |   await writeResult(`${pageLabel} snapshot`, 'PASS', `Snapshot matches (${csvFile})`);\n    at validateSnapshotForPage ",
+        "timestamp": "2026-02-13T08:33:16.619Z",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/fd52c6a205-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/641db1f0c0-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/fa3f9af6c3-error-context.md"
+          },
+          {
+            "name": "trace",
+            "contentType": "application/zip",
+            "url": "playwright-artifacts/1bc0b3b6f6-trace.zip"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/solutions/use-cases/cta.spec.js › Solutions - Use Cases CTAs (Figma exact) › CTA hrefs",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-13T08:33:12.650Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "snapshots/generate-page-snapshots.spec.js › Generate page content snapshots › snapshot Homepage - Homepage",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-13T08:33:14.130Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "snapshots/generate-page-snapshots.spec.js › Generate page content snapshots › snapshot Product - Overview",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-13T08:33:17.542Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "snapshots/generate-page-snapshots.spec.js › Generate page content snapshots › snapshot Product - Models",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-13T08:33:20.173Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "snapshots/generate-page-snapshots.spec.js › Generate page content snapshots › snapshot Product - Voice Agents",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-13T08:33:22.852Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "snapshots/generate-page-snapshots.spec.js › Generate page content snapshots › snapshot Product - Speech Intelligence",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-13T08:33:24.335Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "snapshots/generate-page-snapshots.spec.js › Generate page content snapshots › snapshot Product - Audio Processing",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-13T08:33:25.609Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "snapshots/generate-page-snapshots.spec.js › Generate page content snapshots › snapshot Product - Deployment",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-13T08:33:27.309Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "snapshots/generate-page-snapshots.spec.js › Generate page content snapshots › snapshot Solutions - Use Cases",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-13T08:33:28.821Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "snapshots/generate-page-snapshots.spec.js › Generate page content snapshots › snapshot Solutions - Contact Centers",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-13T08:33:29.951Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "snapshots/generate-page-snapshots.spec.js › Generate page content snapshots › snapshot Solutions - Media & Entertainment",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-13T08:33:31.919Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "snapshots/generate-page-snapshots.spec.js › Generate page content snapshots › snapshot Solutions - Healthcare",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-13T08:33:32.749Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "snapshots/generate-page-snapshots.spec.js › Generate page content snapshots › snapshot Models - Language Models",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-13T08:33:34.851Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "snapshots/generate-page-snapshots.spec.js › Generate page content snapshots › snapshot Models - Zero STT Indic",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-13T08:33:35.318Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "snapshots/generate-page-snapshots.spec.js › Generate page content snapshots › snapshot Models - Zero STT Codeswitch",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-13T08:33:37.650Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "snapshots/generate-page-snapshots.spec.js › Generate page content snapshots › snapshot Models - Zero STT Universal",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-13T08:33:38.692Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "snapshots/generate-page-snapshots.spec.js › Generate page content snapshots › snapshot Models - Specialised Models",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-13T08:33:38.740Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "snapshots/generate-page-snapshots.spec.js › Generate page content snapshots › snapshot Models - Zero STT Med",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-13T08:33:41.039Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "snapshots/generate-page-snapshots.spec.js › Generate page content snapshots › snapshot Models - On Device Models",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-13T08:33:41.591Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "snapshots/generate-page-snapshots.spec.js › Generate page content snapshots › snapshot Resources - Blogs",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-13T08:33:41.740Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "snapshots/generate-page-snapshots.spec.js › Generate page content snapshots › snapshot Resources - Benchmarks",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-13T08:33:44.425Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "snapshots/generate-page-snapshots.spec.js › Generate page content snapshots › snapshot Resources - Patents",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-13T08:33:44.534Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "snapshots/generate-page-snapshots.spec.js › Generate page content snapshots › snapshot Pricing - Pricing",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-13T08:33:45.347Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "snapshots/generate-page-snapshots.spec.js › Generate page content snapshots › snapshot Contact - Contact Us",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-13T08:33:47.768Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "visual/figma-visual.spec.js › Figma visual regression › visual Homepage - Homepage",
+        "status": "FAIL",
+        "comment": "Error: A snapshot doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/tests/visual/figma-visual.spec.js-snapshots/homepage/homepage-homepage-linux.png, writing actual.\n\n  55 |         return;\n  56 |       }\n> 57 |       await expect(page).toHaveScreenshot([pageEntry.moduleKey, screenshotName], {\n     |       ^\n  58 |         fullPage: true,\n  59 |         animations: 'disabled',\n  60 |         maxDiffPixels: 0,\n    at /home/runner/work/Shunyalabs_website/Shunyalabs_website/t",
+        "timestamp": "2026-02-13T08:33:48.063Z",
+        "attachments": [
+          {
+            "name": "homepage/homepage-homepage-expected.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/840f4e263f-homepage-homepage-linux.png"
+          },
+          {
+            "name": "homepage/homepage-homepage-actual.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/4a7756fd4d-homepage-homepage-actual.png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/9f1fbd1113-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/02c2873e71-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/d3066ab2dd-error-context.md"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "visual/figma-visual.spec.js › Figma visual regression › visual Product - Overview",
+        "status": "FAIL",
+        "comment": "Error: A snapshot doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/tests/visual/figma-visual.spec.js-snapshots/product/product-overview-linux.png, writing actual.\n\n  55 |         return;\n  56 |       }\n> 57 |       await expect(page).toHaveScreenshot([pageEntry.moduleKey, screenshotName], {\n     |       ^\n  58 |         fullPage: true,\n  59 |         animations: 'disabled',\n  60 |         maxDiffPixels: 0,\n    at /home/runner/work/Shunyalabs_website/Shunyalabs_website/tes",
+        "timestamp": "2026-02-13T08:33:48.305Z",
+        "attachments": [
+          {
+            "name": "product/product-overview-expected.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/ccab529273-product-overview-linux.png"
+          },
+          {
+            "name": "product/product-overview-actual.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/d037e78f1a-product-overview-actual.png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/2c0bf16705-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/a2fd010a4b-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/3718adeaf6-error-context.md"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "visual/figma-visual.spec.js › Figma visual regression › visual Product - Models",
+        "status": "FAIL",
+        "comment": "Error: A snapshot doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/tests/visual/figma-visual.spec.js-snapshots/product/product-models-linux.png, writing actual.\n\n  55 |         return;\n  56 |       }\n> 57 |       await expect(page).toHaveScreenshot([pageEntry.moduleKey, screenshotName], {\n     |       ^\n  58 |         fullPage: true,\n  59 |         animations: 'disabled',\n  60 |         maxDiffPixels: 0,\n    at /home/runner/work/Shunyalabs_website/Shunyalabs_website/tests",
+        "timestamp": "2026-02-13T08:33:50.962Z",
+        "attachments": [
+          {
+            "name": "product/product-models-expected.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/b9739757f4-product-models-linux.png"
+          },
+          {
+            "name": "product/product-models-actual.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/578009336e-product-models-actual.png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/f278163e7b-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/7604d1e786-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/3b18423720-error-context.md"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "visual/figma-visual.spec.js › Figma visual regression › visual Product - Voice Agents",
+        "status": "FAIL",
+        "comment": "Error: A snapshot doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/tests/visual/figma-visual.spec.js-snapshots/product/product-voice-agents-linux.png, writing actual.\n\n  55 |         return;\n  56 |       }\n> 57 |       await expect(page).toHaveScreenshot([pageEntry.moduleKey, screenshotName], {\n     |       ^\n  58 |         fullPage: true,\n  59 |         animations: 'disabled',\n  60 |         maxDiffPixels: 0,\n    at /home/runner/work/Shunyalabs_website/Shunyalabs_website",
+        "timestamp": "2026-02-13T08:33:57.513Z",
+        "attachments": [
+          {
+            "name": "product/product-voice-agents-expected.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/714d09a5e1-product-voice-agents-linux.png"
+          },
+          {
+            "name": "product/product-voice-agents-actual.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/d8c6b06809-product-voice-agents-actual.png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/0d871c5954-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/68d92c550b-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/aae289eac8-error-context.md"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "visual/figma-visual.spec.js › Figma visual regression › visual Product - Speech Intelligence",
+        "status": "FAIL",
+        "comment": "Error: A snapshot doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/tests/visual/figma-visual.spec.js-snapshots/product/product-speech-intelligence-linux.png, writing actual.\n\n  55 |         return;\n  56 |       }\n> 57 |       await expect(page).toHaveScreenshot([pageEntry.moduleKey, screenshotName], {\n     |       ^\n  58 |         fullPage: true,\n  59 |         animations: 'disabled',\n  60 |         maxDiffPixels: 0,\n    at /home/runner/work/Shunyalabs_website/Shunyalabs_",
+        "timestamp": "2026-02-13T08:33:58.096Z",
+        "attachments": [
+          {
+            "name": "product/product-speech-intelligence-expected.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/6a315031f0-product-speech-intelligence-linux.png"
+          },
+          {
+            "name": "product/product-speech-intelligence-actual.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/f5b3e83550-product-speech-intelligence-actual.png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/483a8e411c-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/9ac1128767-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/8f9e948760-error-context.md"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "visual/figma-visual.spec.js › Figma visual regression › visual Product - Audio Processing",
+        "status": "FAIL",
+        "comment": "Error: A snapshot doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/tests/visual/figma-visual.spec.js-snapshots/product/product-audio-processing-linux.png, writing actual.\n\n  55 |         return;\n  56 |       }\n> 57 |       await expect(page).toHaveScreenshot([pageEntry.moduleKey, screenshotName], {\n     |       ^\n  58 |         fullPage: true,\n  59 |         animations: 'disabled',\n  60 |         maxDiffPixels: 0,\n    at /home/runner/work/Shunyalabs_website/Shunyalabs_web",
+        "timestamp": "2026-02-13T08:34:01.353Z",
+        "attachments": [
+          {
+            "name": "product/product-audio-processing-expected.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/30fd75e50e-product-audio-processing-linux.png"
+          },
+          {
+            "name": "product/product-audio-processing-actual.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/4b3fa64f34-product-audio-processing-actual.png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/5d301565a5-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/0aa33ac3e9-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/78054d5ed5-error-context.md"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "visual/figma-visual.spec.js › Figma visual regression › visual Product - Deployment",
+        "status": "FAIL",
+        "comment": "Error: A snapshot doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/tests/visual/figma-visual.spec.js-snapshots/product/product-deployment-linux.png, writing actual.\n\n  55 |         return;\n  56 |       }\n> 57 |       await expect(page).toHaveScreenshot([pageEntry.moduleKey, screenshotName], {\n     |       ^\n  58 |         fullPage: true,\n  59 |         animations: 'disabled',\n  60 |         maxDiffPixels: 0,\n    at /home/runner/work/Shunyalabs_website/Shunyalabs_website/t",
+        "timestamp": "2026-02-13T08:34:05.135Z",
+        "attachments": [
+          {
+            "name": "product/product-deployment-expected.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/9b2e2648e1-product-deployment-linux.png"
+          },
+          {
+            "name": "product/product-deployment-actual.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/3e522fc09c-product-deployment-actual.png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/9dc8708e65-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/fe7b9e3962-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/0457c765fe-error-context.md"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "visual/figma-visual.spec.js › Figma visual regression › visual Solutions - Use Cases",
+        "status": "FAIL",
+        "comment": "Error: A snapshot doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/tests/visual/figma-visual.spec.js-snapshots/solutions/solutions-use-cases-linux.png, writing actual.\n\n  55 |         return;\n  56 |       }\n> 57 |       await expect(page).toHaveScreenshot([pageEntry.moduleKey, screenshotName], {\n     |       ^\n  58 |         fullPage: true,\n  59 |         animations: 'disabled',\n  60 |         maxDiffPixels: 0,\n    at /home/runner/work/Shunyalabs_website/Shunyalabs_websit",
+        "timestamp": "2026-02-13T08:34:05.758Z",
+        "attachments": [
+          {
+            "name": "solutions/solutions-use-cases-expected.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/07da3e77f1-solutions-use-cases-linux.png"
+          },
+          {
+            "name": "solutions/solutions-use-cases-actual.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/e71c245044-solutions-use-cases-actual.png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/24fb739d8b-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/5ea16b60a9-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/599dda5012-error-context.md"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "visual/figma-visual.spec.js › Figma visual regression › visual Solutions - Contact Centers",
+        "status": "FAIL",
+        "comment": "Error: A snapshot doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/tests/visual/figma-visual.spec.js-snapshots/solutions/solutions-contact-centers-linux.png, writing actual.\n\n  55 |         return;\n  56 |       }\n> 57 |       await expect(page).toHaveScreenshot([pageEntry.moduleKey, screenshotName], {\n     |       ^\n  58 |         fullPage: true,\n  59 |         animations: 'disabled',\n  60 |         maxDiffPixels: 0,\n    at /home/runner/work/Shunyalabs_website/Shunyalabs_",
+        "timestamp": "2026-02-13T08:34:09.141Z",
+        "attachments": [
+          {
+            "name": "solutions/solutions-contact-centers-expected.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/9b3cc01fe5-solutions-contact-centers-linux.png"
+          },
+          {
+            "name": "solutions/solutions-contact-centers-actual.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/2cd18a241b-solutions-contact-centers-actual.png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/6454d95220-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/7d1a3df8cf-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/d95482b35e-error-context.md"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "visual/figma-visual.spec.js › Figma visual regression › visual Solutions - Media & Entertainment",
+        "status": "FAIL",
+        "comment": "Error: A snapshot doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/tests/visual/figma-visual.spec.js-snapshots/solutions/solutions-media-entertainment-linux.png, writing actual.\n\n  55 |         return;\n  56 |       }\n> 57 |       await expect(page).toHaveScreenshot([pageEntry.moduleKey, screenshotName], {\n     |       ^\n  58 |         fullPage: true,\n  59 |         animations: 'disabled',\n  60 |         maxDiffPixels: 0,\n    at /home/runner/work/Shunyalabs_website/Shunyal",
+        "timestamp": "2026-02-13T08:34:13.684Z",
+        "attachments": [
+          {
+            "name": "solutions/solutions-media-entertainment-expected.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/832dadadc1-solutions-media-entertainment-linux.png"
+          },
+          {
+            "name": "solutions/solutions-media-entertainment-actual.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/f4139580b5-solutions-media-entertainment-actual.png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/98301627cf-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/2e6e91a0ed-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/f4f70de4b3-error-context.md"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "visual/figma-visual.spec.js › Figma visual regression › visual Solutions - Healthcare",
+        "status": "FAIL",
+        "comment": "Error: A snapshot doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/tests/visual/figma-visual.spec.js-snapshots/solutions/solutions-healthcare-linux.png, writing actual.\n\n  55 |         return;\n  56 |       }\n> 57 |       await expect(page).toHaveScreenshot([pageEntry.moduleKey, screenshotName], {\n     |       ^\n  58 |         fullPage: true,\n  59 |         animations: 'disabled',\n  60 |         maxDiffPixels: 0,\n    at /home/runner/work/Shunyalabs_website/Shunyalabs_websi",
+        "timestamp": "2026-02-13T08:34:16.346Z",
+        "attachments": [
+          {
+            "name": "solutions/solutions-healthcare-expected.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/7c78707cbe-solutions-healthcare-linux.png"
+          },
+          {
+            "name": "solutions/solutions-healthcare-actual.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/e020ff9cf0-solutions-healthcare-actual.png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/0d5ebdd7a4-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/9b5b0280b1-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/ac4b465a1a-error-context.md"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "visual/figma-visual.spec.js › Figma visual regression › visual Models - Language Models",
+        "status": "FAIL",
+        "comment": "Error: A snapshot doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/tests/visual/figma-visual.spec.js-snapshots/models/models-language-models-linux.png, writing actual.\n\n  55 |         return;\n  56 |       }\n> 57 |       await expect(page).toHaveScreenshot([pageEntry.moduleKey, screenshotName], {\n     |       ^\n  58 |         fullPage: true,\n  59 |         animations: 'disabled',\n  60 |         maxDiffPixels: 0,\n    at /home/runner/work/Shunyalabs_website/Shunyalabs_websit",
+        "timestamp": "2026-02-13T08:34:21.723Z",
+        "attachments": [
+          {
+            "name": "models/models-language-models-expected.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/ac2e092706-models-language-models-linux.png"
+          },
+          {
+            "name": "models/models-language-models-actual.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/f6193ea116-models-language-models-actual.png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/ff1163c177-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/6b5c67d284-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/cccdc58126-error-context.md"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "visual/figma-visual.spec.js › Figma visual regression › visual Models - Zero STT Indic",
+        "status": "FAIL",
+        "comment": "Error: A snapshot doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/tests/visual/figma-visual.spec.js-snapshots/models/models-zero-stt-indic-linux.png, writing actual.\n\n  55 |         return;\n  56 |       }\n> 57 |       await expect(page).toHaveScreenshot([pageEntry.moduleKey, screenshotName], {\n     |       ^\n  58 |         fullPage: true,\n  59 |         animations: 'disabled',\n  60 |         maxDiffPixels: 0,\n    at /home/runner/work/Shunyalabs_website/Shunyalabs_website",
+        "timestamp": "2026-02-13T08:34:23.428Z",
+        "attachments": [
+          {
+            "name": "models/models-zero-stt-indic-expected.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/989b1e76eb-models-zero-stt-indic-linux.png"
+          },
+          {
+            "name": "models/models-zero-stt-indic-actual.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/6a594cd330-models-zero-stt-indic-actual.png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/8fd535c5ff-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/764954006a-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/4d4da58fae-error-context.md"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "visual/figma-visual.spec.js › Figma visual regression › visual Models - Zero STT Universal",
+        "status": "FAIL",
+        "comment": "Error: A snapshot doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/tests/visual/figma-visual.spec.js-snapshots/models/models-zero-stt-universal-linux.png, writing actual.\n\n  55 |         return;\n  56 |       }\n> 57 |       await expect(page).toHaveScreenshot([pageEntry.moduleKey, screenshotName], {\n     |       ^\n  58 |         fullPage: true,\n  59 |         animations: 'disabled',\n  60 |         maxDiffPixels: 0,\n    at /home/runner/work/Shunyalabs_website/Shunyalabs_web",
+        "timestamp": "2026-02-13T08:34:30.660Z",
+        "attachments": [
+          {
+            "name": "models/models-zero-stt-universal-expected.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/14390b44ee-models-zero-stt-universal-linux.png"
+          },
+          {
+            "name": "models/models-zero-stt-universal-actual.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/695ea1005b-models-zero-stt-universal-actual.png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/a31afb74e8-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/1b8372b38c-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/88bcd62a49-error-context.md"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "visual/figma-visual.spec.js › Figma visual regression › visual Models - Specialised Models",
+        "status": "FAIL",
+        "comment": "Error: A snapshot doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/tests/visual/figma-visual.spec.js-snapshots/models/models-specialised-models-linux.png, writing actual.\n\n  55 |         return;\n  56 |       }\n> 57 |       await expect(page).toHaveScreenshot([pageEntry.moduleKey, screenshotName], {\n     |       ^\n  58 |         fullPage: true,\n  59 |         animations: 'disabled',\n  60 |         maxDiffPixels: 0,\n    at /home/runner/work/Shunyalabs_website/Shunyalabs_web",
+        "timestamp": "2026-02-13T08:34:28.962Z",
+        "attachments": [
+          {
+            "name": "models/models-specialised-models-expected.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/3edd1578c0-models-specialised-models-linux.png"
+          },
+          {
+            "name": "models/models-specialised-models-actual.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/4879f05b15-models-specialised-models-actual.png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/5b17ffe562-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/270aca22b6-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/9cd9411b43-error-context.md"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "visual/figma-visual.spec.js › Figma visual regression › visual Models - Zero STT Med",
+        "status": "FAIL",
+        "comment": "Error: A snapshot doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/tests/visual/figma-visual.spec.js-snapshots/models/models-zero-stt-med-linux.png, writing actual.\n\n  55 |         return;\n  56 |       }\n> 57 |       await expect(page).toHaveScreenshot([pageEntry.moduleKey, screenshotName], {\n     |       ^\n  58 |         fullPage: true,\n  59 |         animations: 'disabled',\n  60 |         maxDiffPixels: 0,\n    at /home/runner/work/Shunyalabs_website/Shunyalabs_website/t",
+        "timestamp": "2026-02-13T08:34:31.930Z",
+        "attachments": [
+          {
+            "name": "models/models-zero-stt-med-expected.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/ea3b86fb04-models-zero-stt-med-linux.png"
+          },
+          {
+            "name": "models/models-zero-stt-med-actual.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/e473631455-models-zero-stt-med-actual.png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/c5bf73d269-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/06f6395404-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/3c13b5626e-error-context.md"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "visual/figma-visual.spec.js › Figma visual regression › visual Models - On Device Models",
+        "status": "FAIL",
+        "comment": "Error: A snapshot doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/tests/visual/figma-visual.spec.js-snapshots/models/models-on-device-models-linux.png, writing actual.\n\n  55 |         return;\n  56 |       }\n> 57 |       await expect(page).toHaveScreenshot([pageEntry.moduleKey, screenshotName], {\n     |       ^\n  58 |         fullPage: true,\n  59 |         animations: 'disabled',\n  60 |         maxDiffPixels: 0,\n    at /home/runner/work/Shunyalabs_website/Shunyalabs_websi",
+        "timestamp": "2026-02-13T08:34:36.812Z",
+        "attachments": [
+          {
+            "name": "models/models-on-device-models-expected.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/08d63e729f-models-on-device-models-linux.png"
+          },
+          {
+            "name": "models/models-on-device-models-actual.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/5e61fbaf2c-models-on-device-models-actual.png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/c9ff6ca611-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/d429c56c29-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/7515b7b60a-error-context.md"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "visual/figma-visual.spec.js › Figma visual regression › visual Resources - Blogs",
+        "status": "FAIL",
+        "comment": "Error: A snapshot doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/tests/visual/figma-visual.spec.js-snapshots/resources/resources-blogs-linux.png, writing actual.\n\n  55 |         return;\n  56 |       }\n> 57 |       await expect(page).toHaveScreenshot([pageEntry.moduleKey, screenshotName], {\n     |       ^\n  58 |         fullPage: true,\n  59 |         animations: 'disabled',\n  60 |         maxDiffPixels: 0,\n    at /home/runner/work/Shunyalabs_website/Shunyalabs_website/te",
+        "timestamp": "2026-02-13T08:34:39.674Z",
+        "attachments": [
+          {
+            "name": "resources/resources-blogs-expected.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/d9fafcf1b5-resources-blogs-linux.png"
+          },
+          {
+            "name": "resources/resources-blogs-actual.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/835894b11c-resources-blogs-actual.png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/959a5c9ebd-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/d7024a9e5b-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/55876862d4-error-context.md"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "visual/figma-visual.spec.js › Figma visual regression › visual Resources - Benchmarks",
+        "status": "FAIL",
+        "comment": "Error: A snapshot doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/tests/visual/figma-visual.spec.js-snapshots/resources/resources-benchmarks-linux.png, writing actual.\n\n  55 |         return;\n  56 |       }\n> 57 |       await expect(page).toHaveScreenshot([pageEntry.moduleKey, screenshotName], {\n     |       ^\n  58 |         fullPage: true,\n  59 |         animations: 'disabled',\n  60 |         maxDiffPixels: 0,\n    at /home/runner/work/Shunyalabs_website/Shunyalabs_websi",
+        "timestamp": "2026-02-13T08:34:39.723Z",
+        "attachments": [
+          {
+            "name": "resources/resources-benchmarks-expected.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/171dccab9d-resources-benchmarks-linux.png"
+          },
+          {
+            "name": "resources/resources-benchmarks-actual.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/fda0540ea3-resources-benchmarks-actual.png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/d7b681fe3d-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/a2a3324d84-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/92a47625a0-error-context.md"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "visual/figma-visual.spec.js › Figma visual regression › visual Resources - Patents",
+        "status": "FAIL",
+        "comment": "Error: A snapshot doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/tests/visual/figma-visual.spec.js-snapshots/resources/resources-patents-linux.png, writing actual.\n\n  55 |         return;\n  56 |       }\n> 57 |       await expect(page).toHaveScreenshot([pageEntry.moduleKey, screenshotName], {\n     |       ^\n  58 |         fullPage: true,\n  59 |         animations: 'disabled',\n  60 |         maxDiffPixels: 0,\n    at /home/runner/work/Shunyalabs_website/Shunyalabs_website/",
+        "timestamp": "2026-02-13T08:34:44.997Z",
+        "attachments": [
+          {
+            "name": "resources/resources-patents-expected.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/cf79129cfe-resources-patents-linux.png"
+          },
+          {
+            "name": "resources/resources-patents-actual.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/ee63ade71e-resources-patents-actual.png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/87cd9a17d4-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/351bea6f56-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/1ecb0119d2-error-context.md"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "visual/figma-visual.spec.js › Figma visual regression › visual Pricing - Pricing",
+        "status": "FAIL",
+        "comment": "Error: A snapshot doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/tests/visual/figma-visual.spec.js-snapshots/pricing/pricing-pricing-linux.png, writing actual.\n\n  55 |         return;\n  56 |       }\n> 57 |       await expect(page).toHaveScreenshot([pageEntry.moduleKey, screenshotName], {\n     |       ^\n  58 |         fullPage: true,\n  59 |         animations: 'disabled',\n  60 |         maxDiffPixels: 0,\n    at /home/runner/work/Shunyalabs_website/Shunyalabs_website/test",
+        "timestamp": "2026-02-13T08:34:50.234Z",
+        "attachments": [
+          {
+            "name": "pricing/pricing-pricing-expected.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/228ea5b8a8-pricing-pricing-linux.png"
+          },
+          {
+            "name": "pricing/pricing-pricing-actual.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/baf159c596-pricing-pricing-actual.png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/a1cc7367e6-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/1a603ed6ac-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/a4b075acdf-error-context.md"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "visual/figma-visual.spec.js › Figma visual regression › visual Contact - Contact Us",
+        "status": "FAIL",
+        "comment": "Error: A snapshot doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/tests/visual/figma-visual.spec.js-snapshots/contact/contact-contact-linux.png, writing actual.\n\n  55 |         return;\n  56 |       }\n> 57 |       await expect(page).toHaveScreenshot([pageEntry.moduleKey, screenshotName], {\n     |       ^\n  58 |         fullPage: true,\n  59 |         animations: 'disabled',\n  60 |         maxDiffPixels: 0,\n    at /home/runner/work/Shunyalabs_website/Shunyalabs_website/test",
+        "timestamp": "2026-02-13T08:34:53.147Z",
+        "attachments": [
+          {
+            "name": "contact/contact-contact-expected.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/aecd6a222e-contact-contact-linux.png"
+          },
+          {
+            "name": "contact/contact-contact-actual.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/8bcb621d55-contact-contact-actual.png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/ac25ba5e8c-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/35e19e4b33-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/0c7f732f61-error-context.md"
+          }
+        ]
+      }
+    ]
   }
 ]
