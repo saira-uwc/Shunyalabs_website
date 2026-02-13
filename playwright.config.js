@@ -2,7 +2,10 @@ import { defineConfig } from '@playwright/test';
 import fs from 'fs';
 import path from 'path';
 
-process.env.PLAYWRIGHT_BROWSERS_PATH ||= path.join(process.cwd(), '.playwright');
+// Only override browser path locally (CI uses default ~/.cache/ms-playwright)
+if (!process.env.CI) {
+  process.env.PLAYWRIGHT_BROWSERS_PATH ||= path.join(process.cwd(), '.playwright');
+}
 const CHROMIUM_EXECUTABLE = path.join(
   process.cwd(),
   '.playwright',
