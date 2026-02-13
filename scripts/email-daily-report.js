@@ -41,6 +41,21 @@ function loadRuns() {
   }
 }
 
+function toTitleCase(value) {
+  return (value || '').replace(/[-_]/g, ' ').replace(/\b\w/g, l => l.toUpperCase()).trim();
+}
+
+function resolveModuleName(test) {
+  // Use stored moduleName if it's already a real module (not "Playwright" or "General")
+  const stored = (test.moduleName || '').trim();
+  if (stored && stored !== 'Playwright' && stored !== 'General') return stored;
+  // Derive from testPoint: "modules/{module}/... › ..." or "tests/modules/{module}/..."
+  const tp = test.testPoint || '';
+  const match = tp.match(/(?:tests\/)?modules\/([^/]+)\//);
+  if (match) return toTitleCase(match[1]);
+  return stored || 'General';
+}
+
 function buildLatestRunSummary(run) {
   const total = run.total || 0;
   const passed = run.passed || 0;
@@ -51,7 +66,7 @@ function buildLatestRunSummary(run) {
   // Group tests by module
   const modules = new Map();
   (run.tests || []).forEach((test) => {
-    const moduleName = (test.moduleName || 'General').trim() || 'General';
+    const moduleName = resolveModuleName(test);
     if (!modules.has(moduleName)) {
       modules.set(moduleName, { passed: 0, failed: 0, tests: [] });
     }

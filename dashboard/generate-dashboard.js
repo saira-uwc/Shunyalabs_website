@@ -222,16 +222,31 @@ function readPlaywrightReport() {
 }
 
 /**
+ * Resolve module name from test data (fallback for old history with "Playwright")
+ */
+function resolveModuleName(test) {
+  const stored = (test.moduleName || '').trim();
+  if (stored && stored !== 'Playwright' && stored !== 'General') return stored;
+  const tp = test.testPoint || '';
+  const match = tp.match(/(?:tests\/)?modules\/([^/]+)\//);
+  if (match) return toTitleCase(match[1]);
+  return stored || 'General';
+}
+
+/**
  * Load historical data and normalize format
  */
 function loadHistory() {
   const historyFile = path.join(HISTORY_DIR, 'runs.json');
   if (fs.existsSync(historyFile)) {
     const history = JSON.parse(fs.readFileSync(historyFile, 'utf8'));
-    // Normalize: ensure all runs have 'tests' array (support old 'results' format)
+    // Normalize: ensure all runs have 'tests' array and resolved module names
     return history.map(run => ({
       ...run,
-      tests: run.tests || run.results || []
+      tests: (run.tests || run.results || []).map(t => ({
+        ...t,
+        moduleName: resolveModuleName(t),
+      })),
     }));
   }
   return [];
