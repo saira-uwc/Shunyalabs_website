@@ -186,7 +186,7 @@ jobs:
       - name: Send daily report
         env:
           PROJECT_NAME: "Shunya Labs Website Automation Report"
-          REPORT_RECIPIENTS: "testsaira2001@gmail.com,sairashaik36@gmail.com"
+          REPORT_RECIPIENTS: ${{ secrets.REPORT_RECIPIENTS }}
           DASHBOARD_PUBLIC_URL: "https://saira-uwc.github.io/Shunyalabs_website/"
           EMAIL_WEB_APP_URL: ${{ secrets.EMAIL_WEB_APP_URL }}
         run: node scripts/email-daily-report.js
