@@ -124,19 +124,39 @@ async function main() {
     return;
   }
 
+  const payload = JSON.stringify({
+    action: 'updateCoverage',
+    rows,
+    ...(SPREADSHEET_ID ? { spreadsheetId: SPREADSHEET_ID } : {}),
+    ...(SHEET_NAME ? { sheetName: SHEET_NAME } : {}),
+  });
+
   try {
-    const response = await fetch(WEB_APP_URL, {
+    // Google Apps Script redirects POST (302) which causes fetch() to convert
+    // POST→GET, dropping the body. Use redirect:'manual' and re-POST to the
+    // redirect URL to preserve the body.
+    let response = await fetch(WEB_APP_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        action: 'updateCoverage',
-        rows,
-        ...(SPREADSHEET_ID ? { spreadsheetId: SPREADSHEET_ID } : {}),
-        ...(SHEET_NAME ? { sheetName: SHEET_NAME } : {}),
-      }),
+      body: payload,
+      redirect: 'manual',
     });
+
+    if (response.status >= 300 && response.status < 400) {
+      const redirectUrl = response.headers.get('location');
+      if (redirectUrl) {
+        console.log(`  Following redirect to Apps Script...`);
+        response = await fetch(redirectUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: payload,
+        });
+      }
+    }
+
     if (!response.ok) {
-      console.log(`⚠️  Coverage update failed: HTTP ${response.status}`);
+      const text = await response.text().catch(() => '');
+      console.log(`⚠️  Coverage update failed: HTTP ${response.status} ${text.slice(0, 200)}`);
       return;
     }
     const result = await response.json().catch(() => null);
@@ -150,7 +170,7 @@ async function main() {
         console.log('   redeploy the Apps Script with updateCoverage support.');
       }
     } else {
-      console.log('⚠️  Coverage update response:', result || 'unknown');
+      console.log('⚠️  Coverage update response:', JSON.stringify(result) || 'unknown');
     }
   } catch (error) {
     console.log('⚠️  Coverage update failed:', error.message);

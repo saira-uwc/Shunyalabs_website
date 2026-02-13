@@ -159,15 +159,31 @@ async function sendEmail(subject, text) {
     throw new Error('Missing EMAIL_WEB_APP_URL. Set the Apps Script web app URL in secrets.');
   }
 
-  const response = await fetch(EMAIL_WEB_APP_URL, {
+  const payload = JSON.stringify({
+    to: RECIPIENTS.join(','),
+    subject,
+    body: text,
+  });
+
+  // Google Apps Script redirects POST (302) → fetch converts POST to GET,
+  // dropping the body. Use redirect:'manual' and re-POST to the redirect URL.
+  let response = await fetch(EMAIL_WEB_APP_URL, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      to: RECIPIENTS.join(','),
-      subject,
-      body: text,
-    }),
+    body: payload,
+    redirect: 'manual',
   });
+
+  if (response.status >= 300 && response.status < 400) {
+    const redirectUrl = response.headers.get('location');
+    if (redirectUrl) {
+      response = await fetch(redirectUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: payload,
+      });
+    }
+  }
 
   if (!response.ok) {
     const message = await response.text().catch(() => '');
