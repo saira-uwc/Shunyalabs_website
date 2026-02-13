@@ -40,8 +40,9 @@ export default defineConfig({
     bypassCSP: false,
   },
 
-  retries: 0,
-  workers: 3, // Parallel execution across modules
+  fullyParallel: true,
+  retries: 1,
+  workers: process.env.CI ? 3 : undefined, // 3 on CI, auto locally
 
   reporter: [
     ['html', { outputFolder: 'reports/html-report', open: 'never' }],

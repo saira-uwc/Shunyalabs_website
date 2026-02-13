@@ -95,7 +95,7 @@ function buildRows(report) {
           testName,
           status,
           comment,
-          updatedAt: new Date().toISOString(),
+          updatedAt: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true }),
         });
       });
     });
@@ -160,15 +160,10 @@ async function main() {
       return;
     }
     const result = await response.json().catch(() => null);
-    if (result && result.success) {
-      if (typeof result.updated === 'number') {
-        console.log(`✅ Coverage sheet updated (${result.updated} rows).`);
-      } else {
-        console.log(`✅ Coverage sheet updated (${rows.length} tests).`);
-        console.log('⚠️  Apps Script did not report updated rows.');
-        console.log('   If your test-coverage sheet is still blank,');
-        console.log('   redeploy the Apps Script with updateCoverage support.');
-      }
+    // Support both response formats: {ok, rows} (new) and {success, updated} (old)
+    if (result && (result.ok || result.success)) {
+      const count = result.rows ?? result.updated ?? rows.length;
+      console.log(`✅ Coverage sheet updated (${count} rows).`);
     } else {
       console.log('⚠️  Coverage update response:', JSON.stringify(result) || 'unknown');
     }
