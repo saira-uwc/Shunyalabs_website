@@ -4,6 +4,15 @@ on:
   repository_dispatch:
     types: [run-tests, send-email, deploy-dashboard]
   workflow_dispatch:
+    inputs:
+      mode:
+        description: 'What to run'
+        required: false
+        default: 'run-tests'
+        type: choice
+        options:
+          - run-tests
+          - deploy-dashboard
 
 permissions:
   contents: write
@@ -17,7 +26,10 @@ concurrency:
 jobs:
   # ─── Job 1: Run tests, generate dashboard, update sheet, commit & upload ───
   run-tests:
-    if: github.event.action != 'send-email' && github.event.action != 'deploy-dashboard'
+    if: >-
+      github.event.action != 'send-email' &&
+      github.event.action != 'deploy-dashboard' &&
+      (github.event_name != 'workflow_dispatch' || inputs.mode != 'deploy-dashboard')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -102,7 +114,7 @@ jobs:
 
   # ─── Job 1b: Rebuild dashboard from history (no tests) ───
   rebuild-dashboard:
-    if: github.event.action == 'deploy-dashboard'
+    if: github.event.action == 'deploy-dashboard' || (github.event_name == 'workflow_dispatch' && inputs.mode == 'deploy-dashboard')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
