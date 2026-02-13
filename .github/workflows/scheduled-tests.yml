@@ -2,7 +2,7 @@ name: Scheduled Test Runs
 
 on:
   repository_dispatch:
-    types: [run-tests, send-email]
+    types: [run-tests, send-email, deploy-dashboard]
   workflow_dispatch:
 
 permissions:
@@ -17,7 +17,7 @@ concurrency:
 jobs:
   # ─── Job 1: Run tests, generate dashboard, update sheet, commit & upload ───
   run-tests:
-    if: github.event.action != 'send-email'
+    if: github.event.action != 'send-email' && github.event.action != 'deploy-dashboard'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -100,10 +100,47 @@ jobs:
         if: steps.tests.outputs.exit_code != '0'
         run: exit 1
 
+  # ─── Job 1b: Rebuild dashboard from history (no tests) ───
+  rebuild-dashboard:
+    if: github.event.action == 'deploy-dashboard'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_PAT || secrets.GITHUB_TOKEN }}
+          persist-credentials: true
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Rebuild dashboard from history
+        run: node dashboard/generate-dashboard.js --rebuild
+
+      - name: Commit dashboard changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add dashboard/
+          if ! git diff --cached --quiet; then
+            git commit -m "Rebuild dashboard $(date -u +'%Y-%m-%d %H:%M UTC')"
+            git pull --rebase origin ${{ github.ref_name }} || true
+            git push origin HEAD:${{ github.ref_name }}
+          else
+            echo "No dashboard changes to commit."
+          fi
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dashboard
+
   # ─── Job 2: Deploy dashboard to GitHub Pages ───
   deploy:
-    needs: run-tests
-    if: always() && needs.run-tests.result != 'cancelled'
+    needs: [run-tests, rebuild-dashboard]
+    if: always() && !cancelled() && (needs.run-tests.result == 'success' || needs.run-tests.result == 'failure' || needs.rebuild-dashboard.result == 'success')
     runs-on: ubuntu-latest
     environment:
       name: github-pages

@@ -1913,29 +1913,52 @@ function generateDashboard(currentResults, history, playwrightRun) {
 }
 
 // Main execution
-console.log('📊 Generating Test Report Dashboard...\n');
+const isRebuild = process.argv.includes('--rebuild');
+console.log(`📊 ${isRebuild ? 'Rebuilding' : 'Generating'} Test Report Dashboard...\n`);
 
-const results = readAllResults();
-const playwrightRun = readPlaywrightReport();
+let history, html, total, passed, failed;
 
-if (results.length === 0 && !playwrightRun) {
-  console.log('❌ No test results found in test-results folder.');
-  console.log('   Run tests first: npm test');
-  process.exit(1);
+if (isRebuild) {
+  // Rebuild from existing history only — no new test results needed
+  history = loadHistory();
+  if (!history.length) {
+    console.log('❌ No history found. Nothing to rebuild.');
+    process.exit(1);
+  }
+  const latestRun = history[history.length - 1];
+  // Use latest run's tests as "current results" for the dashboard
+  const currentResults = (latestRun.tests || []);
+  const mockPlaywright = {
+    summary: { total: latestRun.total, passed: latestRun.passed, failed: latestRun.failed, passRate: latestRun.passRate },
+    tests: currentResults,
+  };
+  html = generateDashboard([], history, mockPlaywright);
+  passed = latestRun.passed;
+  failed = latestRun.failed;
+  total = latestRun.total;
+} else {
+  const results = readAllResults();
+  const playwrightRun = readPlaywrightReport();
+
+  if (results.length === 0 && !playwrightRun) {
+    console.log('❌ No test results found in test-results folder.');
+    console.log('   Run tests first: npm test');
+    process.exit(1);
+  }
+
+  history = saveToHistory(results, playwrightRun);
+  html = generateDashboard(results, history, playwrightRun);
+
+  const testResults = results.filter(r => r.status === 'PASS' || r.status === 'FAIL');
+  passed = playwrightRun?.summary?.passed ?? testResults.filter(r => r.status === 'PASS').length;
+  failed = playwrightRun?.summary?.failed ?? testResults.filter(r => r.status === 'FAIL').length;
+  total = playwrightRun?.summary?.total ?? (passed + failed);
 }
-
-const history = saveToHistory(results, playwrightRun);
-const html = generateDashboard(results, history, playwrightRun);
 
 fs.writeFileSync(DASHBOARD_FILE, html);
 
-const testResults = results.filter(r => r.status === 'PASS' || r.status === 'FAIL');
-const passed = playwrightRun?.summary?.passed ?? testResults.filter(r => r.status === 'PASS').length;
-const failed = playwrightRun?.summary?.failed ?? testResults.filter(r => r.status === 'FAIL').length;
-const total = playwrightRun?.summary?.total ?? (passed + failed);
-
 console.log('✅ Dashboard generated successfully!\n');
-console.log(`📈 Current Run Summary:`);
+console.log(`📈 ${isRebuild ? 'Latest Run' : 'Current Run'} Summary:`);
 console.log(`   Total Tests: ${total}`);
 console.log(`   Passed: ${passed}`);
 console.log(`   Failed: ${failed}`);
