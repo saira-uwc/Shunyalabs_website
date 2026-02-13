@@ -1,6 +1,8 @@
 name: Scheduled Test Runs
 
 on:
+  repository_dispatch:
+    types: [run-tests]
   workflow_dispatch:
 
 permissions:

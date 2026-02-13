@@ -1,6 +1,8 @@
 name: Daily Email Report
 
 on:
+  repository_dispatch:
+    types: [send-email]
   workflow_dispatch:
 
 permissions:

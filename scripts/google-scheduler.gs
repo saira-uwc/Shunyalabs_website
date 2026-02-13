@@ -1,37 +1,37 @@
+function postDispatch(eventType) {
+  var props = PropertiesService.getScriptProperties();
+  var owner = props.getProperty("GITHUB_OWNER");
+  var repo = props.getProperty("GITHUB_REPO");
+  var token = props.getProperty("GITHUB_PAT");
+
+  if (!owner || !repo || !token) {
+    throw new Error("Missing GITHUB_OWNER/GITHUB_REPO/GITHUB_PAT in script properties.");
+  }
+
+  var url = "https://api.github.com/repos/" + owner + "/" + repo + "/dispatches";
+  var payload = JSON.stringify({ event_type: eventType });
+
+  var options = {
+    method: "post",
+    contentType: "application/json",
+    headers: {
+      Authorization: "token " + token,
+      Accept: "application/vnd.github+json",
+    },
+    payload: payload,
+    muteHttpExceptions: true,
+  };
+
+  var response = UrlFetchApp.fetch(url, options);
+  if (response.getResponseCode() >= 300) {
+    throw new Error("GitHub dispatch failed: " + response.getResponseCode() + " " + response.getContentText());
+  }
+}
+
 function triggerRunTests() {
-  triggerWorkflow('scheduled-tests.yml');
+  postDispatch("run-tests");
 }
 
 function triggerSendEmail() {
-  triggerWorkflow('daily-email-report.yml');
-}
-
-function triggerWorkflow(workflowFile) {
-  const props = PropertiesService.getScriptProperties();
-  const owner = props.getProperty('GITHUB_OWNER');
-  const repo = props.getProperty('GITHUB_REPO');
-  const pat = props.getProperty('GITHUB_PAT');
-  const ref = props.getProperty('GITHUB_REF') || 'saira-website';
-
-  if (!owner || !repo || !pat) {
-    throw new Error('Missing script properties: GITHUB_OWNER, GITHUB_REPO, GITHUB_PAT');
-  }
-
-  const url = `https://api.github.com/repos/${owner}/${repo}/actions/workflows/${workflowFile}/dispatches`;
-  const payload = JSON.stringify({ ref });
-
-  const response = UrlFetchApp.fetch(url, {
-    method: 'post',
-    contentType: 'application/json',
-    payload,
-    headers: {
-      Authorization: `Bearer ${pat}`,
-      Accept: 'application/vnd.github+json',
-    },
-    muteHttpExceptions: true,
-  });
-
-  if (response.getResponseCode() !== 204) {
-    throw new Error(`GitHub dispatch failed: ${response.getResponseCode()} ${response.getContentText()}`);
-  }
+  postDispatch("send-email");
 }
