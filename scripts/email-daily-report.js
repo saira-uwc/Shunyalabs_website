@@ -83,8 +83,8 @@ function buildEmailBody(summary) {
   const passRateColor = summary.passRate >= 90 ? '#22c55e' : summary.passRate >= 70 ? '#f59e0b' : '#ef4444';
   const passRateEmoji = summary.passRate === 100 ? '🎉' : summary.passRate >= 90 ? '✅' : summary.passRate >= 70 ? '⚠️' : '🔴';
 
-  // Build module rows for the table
-  const moduleRows = Array.from(summary.modules.entries())
+  // Build module highlight cards
+  const moduleCards = Array.from(summary.modules.entries())
     .sort((a, b) => {
       // Failed modules first, then by name
       const aFail = a[1].failed > 0 ? 0 : 1;
@@ -95,15 +95,41 @@ function buildEmailBody(summary) {
     .map(([name, data]) => {
       const modTotal = data.passed + data.failed;
       const modRate = modTotal > 0 ? Math.round((data.passed / modTotal) * 100) : 0;
-      const statusIcon = data.failed === 0 ? '✅' : '❌';
-      const rowBg = data.failed > 0 ? '#fef2f2' : '#f0fdf4';
+      const isAllPass = data.failed === 0;
+      const borderColor = isAllPass ? '#22c55e' : '#ef4444';
+      const bgColor = isAllPass ? '#f0fdf4' : '#fef2f2';
+      const statusBadgeBg = isAllPass ? '#dcfce7' : '#fee2e2';
+      const statusBadgeColor = isAllPass ? '#15803d' : '#b91c1c';
+      const statusLabel = isAllPass ? 'ALL PASS' : `${data.failed} FAILED`;
+      const statusIcon = isAllPass ? '✅' : '❌';
+      const barColor = isAllPass ? '#22c55e' : modRate >= 70 ? '#f59e0b' : '#ef4444';
+
       return `
-        <tr style="background: ${rowBg};">
-          <td style="padding: 12px 16px; border-bottom: 1px solid #e5e7eb; font-weight: 500;">${statusIcon} ${name}</td>
-          <td style="padding: 12px 16px; border-bottom: 1px solid #e5e7eb; text-align: center; color: #22c55e; font-weight: 600;">${data.passed}</td>
-          <td style="padding: 12px 16px; border-bottom: 1px solid #e5e7eb; text-align: center; color: ${data.failed > 0 ? '#ef4444' : '#6b7280'}; font-weight: 600;">${data.failed}</td>
-          <td style="padding: 12px 16px; border-bottom: 1px solid #e5e7eb; text-align: center; font-weight: 600;">${modRate}%</td>
-        </tr>`;
+            <div style="background: ${bgColor}; border-left: 4px solid ${borderColor}; border-radius: 8px; padding: 16px 18px; margin-bottom: 10px;">
+              <table width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td style="vertical-align: middle;">
+                    <div style="font-size: 15px; font-weight: 700; color: #1f2937; margin-bottom: 2px;">${statusIcon} ${name}</div>
+                    <div style="font-size: 12px; color: #6b7280;">${modTotal} tests</div>
+                  </td>
+                  <td style="text-align: right; vertical-align: middle;">
+                    <div style="display: inline-block; background: ${statusBadgeBg}; color: ${statusBadgeColor}; padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 700; letter-spacing: 0.3px;">${statusLabel}</div>
+                  </td>
+                </tr>
+              </table>
+              <!-- Progress bar -->
+              <div style="background: #e5e7eb; border-radius: 6px; height: 8px; margin-top: 12px; overflow: hidden;">
+                <div style="background: ${barColor}; height: 8px; border-radius: 6px; width: ${modRate}%;"></div>
+              </div>
+              <!-- Pass / Fail counts -->
+              <table width="100%" cellpadding="0" cellspacing="0" style="margin-top: 8px;">
+                <tr>
+                  <td style="font-size: 12px; color: #22c55e; font-weight: 600;">✓ ${data.passed} passed</td>
+                  <td style="font-size: 12px; color: ${data.failed > 0 ? '#ef4444' : '#9ca3af'}; font-weight: 600; text-align: center;">✗ ${data.failed} failed</td>
+                  <td style="font-size: 13px; font-weight: 800; color: ${statusBadgeColor}; text-align: right;">${modRate}%</td>
+                </tr>
+              </table>
+            </div>`;
     })
     .join('');
 
@@ -155,24 +181,12 @@ function buildEmailBody(summary) {
         </tr>
       </table>
 
-      <!-- Module Breakdown -->
+      <!-- Module Highlights -->
       <div style="margin: 28px 0;">
-        <h3 style="font-size: 16px; font-weight: 700; color: #1f2937; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid #e5e7eb;">
-          📋 Results by Module
+        <h3 style="font-size: 16px; font-weight: 700; color: #1f2937; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 2px solid #e5e7eb;">
+          📋 Module Highlights
         </h3>
-        <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse: collapse; background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; overflow: hidden;">
-          <thead>
-            <tr style="background: #f9fafb;">
-              <th style="padding: 10px 16px; text-align: left; font-size: 12px; color: #6b7280; font-weight: 600; border-bottom: 2px solid #e5e7eb;">Module</th>
-              <th style="padding: 10px 16px; text-align: center; font-size: 12px; color: #22c55e; font-weight: 600; border-bottom: 2px solid #e5e7eb;">Pass</th>
-              <th style="padding: 10px 16px; text-align: center; font-size: 12px; color: #ef4444; font-weight: 600; border-bottom: 2px solid #e5e7eb;">Fail</th>
-              <th style="padding: 10px 16px; text-align: center; font-size: 12px; color: #6b7280; font-weight: 600; border-bottom: 2px solid #e5e7eb;">Rate</th>
-            </tr>
-          </thead>
-          <tbody>
-            ${moduleRows}
-          </tbody>
-        </table>
+        ${moduleCards}
       </div>
 
       <!-- CTA Button -->

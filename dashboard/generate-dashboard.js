@@ -1241,7 +1241,7 @@ function generateDashboard(currentResults, history, playwrightRun) {
         <div class="logo">
           <div class="logo-icon">📊</div>
           <div class="logo-text">
-            <h1>Shunya Labs</h1>
+            <h1>Shunya Labs Website</h1>
             <span>Test Automation Dashboard</span>
           </div>
         </div>
