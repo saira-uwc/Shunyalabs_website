@@ -4,6 +4,7 @@ import path from 'path';
 const ROOT = process.cwd();
 const HISTORY_FILE = path.join(ROOT, 'dashboard', 'history', 'runs.json');
 const DASHBOARD_URL = process.env.DASHBOARD_PUBLIC_URL || 'https://saira-uwc.github.io/Shunyalabs_website/';
+const SHEET_URL = process.env.GOOGLE_SHEET_URL || '';
 const PROJECT_NAME = process.env.PROJECT_NAME || 'Shunya Labs Website Automation Report';
 const RECIPIENTS = (process.env.REPORT_RECIPIENTS || '').split(',').map((e) => e.trim()).filter(Boolean);
 const EMAIL_WEB_APP_URL = process.env.EMAIL_WEB_APP_URL || '';
@@ -45,15 +46,21 @@ function toTitleCase(value) {
   return (value || '').replace(/[-_]/g, ' ').replace(/\b\w/g, l => l.toUpperCase()).trim();
 }
 
-function resolveModuleName(test) {
-  // Use stored moduleName if it's already a real module (not "Playwright" or "General")
-  const stored = (test.moduleName || '').trim();
-  if (stored && stored !== 'Playwright' && stored !== 'General') return stored;
-  // Derive from testPoint: "modules/{module}/... › ..." or "tests/modules/{module}/..."
+function parseTestInfo(test) {
   const tp = test.testPoint || '';
-  const match = tp.match(/(?:tests\/)?modules\/([^/]+)\//);
-  if (match) return toTitleCase(match[1]);
-  return stored || 'General';
+  // Extract viewport: [desktop] or [mobile] prefix
+  const vpMatch = tp.match(/^\[(desktop|mobile)\]\s*/);
+  const viewport = vpMatch ? vpMatch[1] : 'desktop';
+  const cleanTp = vpMatch ? tp.slice(vpMatch[0].length) : tp;
+
+  // Extract module name
+  const stored = (test.moduleName || '').trim();
+  if (stored && stored !== 'Playwright' && stored !== 'General') {
+    return { moduleName: stored, viewport };
+  }
+  const match = cleanTp.match(/(?:tests\/)?modules\/([^/]+)\//);
+  if (match) return { moduleName: toTitleCase(match[1]), viewport };
+  return { moduleName: stored || 'General', viewport };
 }
 
 function buildLatestRunSummary(run) {
@@ -63,76 +70,119 @@ function buildLatestRunSummary(run) {
   const passRate = total > 0 ? Math.round((passed / total) * 100) : 0;
   const runDate = formatDateTime(new Date(run.runDate));
 
-  // Group tests by module
+  // Group tests by module, then by viewport
   const modules = new Map();
+  let desktopTotal = 0, desktopPassed = 0, mobileTotal = 0, mobilePassed = 0;
+
   (run.tests || []).forEach((test) => {
-    const moduleName = resolveModuleName(test);
+    const { moduleName, viewport } = parseTestInfo(test);
     if (!modules.has(moduleName)) {
-      modules.set(moduleName, { passed: 0, failed: 0, tests: [] });
+      modules.set(moduleName, {
+        desktop: { passed: 0, failed: 0 },
+        mobile: { passed: 0, failed: 0 },
+        failedTests: [],
+      });
     }
     const mod = modules.get(moduleName);
-    if (test.status === 'PASS') mod.passed++;
-    else if (test.status === 'FAIL') mod.failed++;
-    mod.tests.push(test);
+    const isPassed = test.status === 'PASS';
+
+    if (viewport === 'mobile') {
+      mobileTotal++;
+      if (isPassed) { mod.mobile.passed++; mobilePassed++; }
+      else { mod.mobile.failed++; }
+    } else {
+      desktopTotal++;
+      if (isPassed) { mod.desktop.passed++; desktopPassed++; }
+      else { mod.desktop.failed++; }
+    }
+
+    if (!isPassed) {
+      // Extract clean test name for failure list
+      const tp = test.testPoint || '';
+      const shortName = tp.replace(/^\[(desktop|mobile)\]\s*/, '').split(' › ').pop() || tp;
+      mod.failedTests.push({ name: shortName, viewport, comment: test.comment || '' });
+    }
   });
 
-  return { total, passed, failed, passRate, runDate, modules };
+  return {
+    total, passed, failed, passRate, runDate, modules,
+    desktopTotal, desktopPassed, mobileTotal, mobilePassed,
+  };
 }
 
 function buildEmailBody(summary) {
   const passRateColor = summary.passRate >= 90 ? '#22c55e' : summary.passRate >= 70 ? '#f59e0b' : '#ef4444';
-  const passRateEmoji = summary.passRate === 100 ? '🎉' : summary.passRate >= 90 ? '✅' : summary.passRate >= 70 ? '⚠️' : '🔴';
 
-  // Build module highlight cards
-  const moduleCards = Array.from(summary.modules.entries())
-    .sort((a, b) => {
-      // Failed modules first, then by name
-      const aFail = a[1].failed > 0 ? 0 : 1;
-      const bFail = b[1].failed > 0 ? 0 : 1;
-      if (aFail !== bFail) return aFail - bFail;
-      return a[0].localeCompare(b[0]);
-    })
+  // Build module rows for the table
+  const sortedModules = Array.from(summary.modules.entries()).sort((a, b) => {
+    const aFail = a[1].desktop.failed + a[1].mobile.failed;
+    const bFail = b[1].desktop.failed + b[1].mobile.failed;
+    if (aFail !== bFail) return bFail - aFail; // Most failures first
+    return a[0].localeCompare(b[0]);
+  });
+
+  const moduleRows = sortedModules.map(([name, data]) => {
+    const dTotal = data.desktop.passed + data.desktop.failed;
+    const mTotal = data.mobile.passed + data.mobile.failed;
+    const totalFailed = data.desktop.failed + data.mobile.failed;
+    const isAllPass = totalFailed === 0;
+
+    const rowBg = isAllPass ? '#f8fffe' : '#fffbfb';
+    const statusColor = isAllPass ? '#16a34a' : '#dc2626';
+    const statusLabel = isAllPass ? 'PASS' : `${totalFailed} FAIL`;
+
+    // Desktop cell
+    const dCell = dTotal > 0
+      ? `<span style="color: #16a34a; font-weight: 600;">${data.desktop.passed}</span>${data.desktop.failed > 0 ? ` / <span style="color: #dc2626; font-weight: 600;">${data.desktop.failed}</span>` : ''} <span style="color: #9ca3af;">of ${dTotal}</span>`
+      : '<span style="color: #d1d5db;">—</span>';
+
+    // Mobile cell
+    const mCell = mTotal > 0
+      ? `<span style="color: #16a34a; font-weight: 600;">${data.mobile.passed}</span>${data.mobile.failed > 0 ? ` / <span style="color: #dc2626; font-weight: 600;">${data.mobile.failed}</span>` : ''} <span style="color: #9ca3af;">of ${mTotal}</span>`
+      : '<span style="color: #d1d5db;">—</span>';
+
+    return `
+              <tr style="background: ${rowBg};">
+                <td style="padding: 12px 14px; border-bottom: 1px solid #f3f4f6; font-weight: 600; color: #1f2937; font-size: 13px;">${name}</td>
+                <td style="padding: 12px 10px; border-bottom: 1px solid #f3f4f6; text-align: center; font-size: 12px;">${dCell}</td>
+                <td style="padding: 12px 10px; border-bottom: 1px solid #f3f4f6; text-align: center; font-size: 12px;">${mCell}</td>
+                <td style="padding: 12px 10px; border-bottom: 1px solid #f3f4f6; text-align: center;">
+                  <span style="display: inline-block; background: ${isAllPass ? '#dcfce7' : '#fee2e2'}; color: ${statusColor}; padding: 3px 10px; border-radius: 12px; font-size: 11px; font-weight: 700;">${statusLabel}</span>
+                </td>
+              </tr>`;
+  }).join('');
+
+  // Build failure details (only if there are failures)
+  const allFailures = sortedModules
+    .filter(([, data]) => data.failedTests.length > 0)
     .map(([name, data]) => {
-      const modTotal = data.passed + data.failed;
-      const modRate = modTotal > 0 ? Math.round((data.passed / modTotal) * 100) : 0;
-      const isAllPass = data.failed === 0;
-      const borderColor = isAllPass ? '#22c55e' : '#ef4444';
-      const bgColor = isAllPass ? '#f0fdf4' : '#fef2f2';
-      const statusBadgeBg = isAllPass ? '#dcfce7' : '#fee2e2';
-      const statusBadgeColor = isAllPass ? '#15803d' : '#b91c1c';
-      const statusLabel = isAllPass ? 'ALL PASS' : `${data.failed} FAILED`;
-      const statusIcon = isAllPass ? '✅' : '❌';
-      const barColor = isAllPass ? '#22c55e' : modRate >= 70 ? '#f59e0b' : '#ef4444';
-
+      const items = data.failedTests.map(f => {
+        const vpLabel = f.viewport === 'mobile' ? '📱' : '🖥️';
+        const reason = f.comment ? ` — ${f.comment.substring(0, 120)}` : '';
+        return `<li style="margin-bottom: 6px; font-size: 12px; color: #4b5563;">${vpLabel} ${f.name}${reason}</li>`;
+      }).join('');
       return `
-            <div style="background: ${bgColor}; border-left: 4px solid ${borderColor}; border-radius: 8px; padding: 16px 18px; margin-bottom: 10px;">
-              <table width="100%" cellpadding="0" cellspacing="0">
-                <tr>
-                  <td style="vertical-align: middle;">
-                    <div style="font-size: 15px; font-weight: 700; color: #1f2937; margin-bottom: 2px;">${statusIcon} ${name}</div>
-                    <div style="font-size: 12px; color: #6b7280;">${modTotal} tests</div>
-                  </td>
-                  <td style="text-align: right; vertical-align: middle;">
-                    <div style="display: inline-block; background: ${statusBadgeBg}; color: ${statusBadgeColor}; padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 700; letter-spacing: 0.3px;">${statusLabel}</div>
-                  </td>
-                </tr>
-              </table>
-              <!-- Progress bar -->
-              <div style="background: #e5e7eb; border-radius: 6px; height: 8px; margin-top: 12px; overflow: hidden;">
-                <div style="background: ${barColor}; height: 8px; border-radius: 6px; width: ${modRate}%;"></div>
-              </div>
-              <!-- Pass / Fail counts -->
-              <table width="100%" cellpadding="0" cellspacing="0" style="margin-top: 8px;">
-                <tr>
-                  <td style="font-size: 12px; color: #22c55e; font-weight: 600;">✓ ${data.passed} passed</td>
-                  <td style="font-size: 12px; color: ${data.failed > 0 ? '#ef4444' : '#9ca3af'}; font-weight: 600; text-align: center;">✗ ${data.failed} failed</td>
-                  <td style="font-size: 13px; font-weight: 800; color: ${statusBadgeColor}; text-align: right;">${modRate}%</td>
-                </tr>
-              </table>
-            </div>`;
-    })
-    .join('');
+              <div style="margin-bottom: 12px;">
+                <div style="font-size: 13px; font-weight: 700; color: #991b1b; margin-bottom: 4px;">${name}</div>
+                <ul style="margin: 0; padding-left: 20px;">${items}</ul>
+              </div>`;
+    }).join('');
 
+  const failureSection = summary.failed > 0 ? `
+      <div style="margin: 24px 0;">
+        <h3 style="font-size: 14px; font-weight: 700; color: #991b1b; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid #fecaca;">
+          Failure Details
+        </h3>
+        ${allFailures}
+      </div>` : '';
+
+  // Desktop/Mobile summary stats
+  const desktopRate = summary.desktopTotal > 0 ? Math.round((summary.desktopPassed / summary.desktopTotal) * 100) : 0;
+  const mobileRate = summary.mobileTotal > 0 ? Math.round((summary.mobilePassed / summary.mobileTotal) * 100) : 0;
+
+  // Sheet button (only if URL is configured)
+  const sheetButton = SHEET_URL ? `
+        <a href="${SHEET_URL}" style="display: inline-block; background: #ffffff; color: #16a34a; padding: 12px 28px; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 14px; border: 2px solid #16a34a; margin-left: 12px;">📋 View Test Sheet</a>` : '';
 
   return `
 <!DOCTYPE html>
@@ -145,59 +195,97 @@ function buildEmailBody(summary) {
   <div style="max-width: 680px; margin: 0 auto; padding: 20px;">
     <!-- Header -->
     <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 28px 32px; border-radius: 12px 12px 0 0;">
-      <h1 style="margin: 0 0 6px 0; font-size: 22px; font-weight: 700;">🎯 QC Automation Report</h1>
+      <h1 style="margin: 0 0 6px 0; font-size: 22px; font-weight: 700;">QC Automation Report</h1>
       <p style="margin: 0; font-size: 14px; opacity: 0.9;">${PROJECT_NAME}</p>
       <p style="margin: 8px 0 0 0; font-size: 12px; opacity: 0.75;">Latest Run: ${summary.runDate}</p>
     </div>
 
-    <div style="background: #ffffff; padding: 32px; border-radius: 0 0 12px 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
-      <!-- Stats Cards -->
-      <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom: 28px;">
+    <div style="background: #ffffff; padding: 28px 32px; border-radius: 0 0 12px 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+      <!-- Overall Stats -->
+      <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom: 24px;">
         <tr>
           <td width="25%" style="padding: 4px;">
-            <div style="background: #f0f4ff; padding: 18px 12px; border-radius: 10px; text-align: center; border: 1px solid #e0e7ff;">
-              <div style="font-size: 11px; text-transform: uppercase; color: #6366f1; font-weight: 700; letter-spacing: 0.5px;">Total Tests</div>
-              <div style="font-size: 30px; font-weight: 800; color: #4338ca; margin-top: 4px;">${summary.total}</div>
+            <div style="background: #f0f4ff; padding: 16px 10px; border-radius: 10px; text-align: center; border: 1px solid #e0e7ff;">
+              <div style="font-size: 10px; text-transform: uppercase; color: #6366f1; font-weight: 700; letter-spacing: 0.5px;">Total</div>
+              <div style="font-size: 28px; font-weight: 800; color: #4338ca; margin-top: 2px;">${summary.total}</div>
             </div>
           </td>
           <td width="25%" style="padding: 4px;">
-            <div style="background: #f0fdf4; padding: 18px 12px; border-radius: 10px; text-align: center; border: 1px solid #bbf7d0;">
-              <div style="font-size: 11px; text-transform: uppercase; color: #16a34a; font-weight: 700; letter-spacing: 0.5px;">Passed</div>
-              <div style="font-size: 30px; font-weight: 800; color: #15803d; margin-top: 4px;">${summary.passed}</div>
+            <div style="background: #f0fdf4; padding: 16px 10px; border-radius: 10px; text-align: center; border: 1px solid #bbf7d0;">
+              <div style="font-size: 10px; text-transform: uppercase; color: #16a34a; font-weight: 700; letter-spacing: 0.5px;">Passed</div>
+              <div style="font-size: 28px; font-weight: 800; color: #15803d; margin-top: 2px;">${summary.passed}</div>
             </div>
           </td>
           <td width="25%" style="padding: 4px;">
-            <div style="background: #fef2f2; padding: 18px 12px; border-radius: 10px; text-align: center; border: 1px solid #fecaca;">
-              <div style="font-size: 11px; text-transform: uppercase; color: #dc2626; font-weight: 700; letter-spacing: 0.5px;">Failed</div>
-              <div style="font-size: 30px; font-weight: 800; color: #b91c1c; margin-top: 4px;">${summary.failed}</div>
+            <div style="background: ${summary.failed > 0 ? '#fef2f2' : '#f0fdf4'}; padding: 16px 10px; border-radius: 10px; text-align: center; border: 1px solid ${summary.failed > 0 ? '#fecaca' : '#bbf7d0'};">
+              <div style="font-size: 10px; text-transform: uppercase; color: ${summary.failed > 0 ? '#dc2626' : '#16a34a'}; font-weight: 700; letter-spacing: 0.5px;">Failed</div>
+              <div style="font-size: 28px; font-weight: 800; color: ${summary.failed > 0 ? '#b91c1c' : '#15803d'}; margin-top: 2px;">${summary.failed}</div>
             </div>
           </td>
           <td width="25%" style="padding: 4px;">
-            <div style="background: #fffbeb; padding: 18px 12px; border-radius: 10px; text-align: center; border: 1px solid #fde68a;">
-              <div style="font-size: 11px; text-transform: uppercase; color: #d97706; font-weight: 700; letter-spacing: 0.5px;">Pass Rate</div>
-              <div style="font-size: 30px; font-weight: 800; color: ${passRateColor}; margin-top: 4px;">${passRateEmoji} ${summary.passRate}%</div>
+            <div style="background: #fffbeb; padding: 16px 10px; border-radius: 10px; text-align: center; border: 1px solid #fde68a;">
+              <div style="font-size: 10px; text-transform: uppercase; color: #d97706; font-weight: 700; letter-spacing: 0.5px;">Pass Rate</div>
+              <div style="font-size: 28px; font-weight: 800; color: ${passRateColor}; margin-top: 2px;">${summary.passRate}%</div>
             </div>
           </td>
         </tr>
       </table>
 
-      <!-- Module Highlights -->
-      <div style="margin: 28px 0;">
-        <h3 style="font-size: 16px; font-weight: 700; color: #1f2937; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 2px solid #e5e7eb;">
-          📋 Module Highlights
-        </h3>
-        ${moduleCards}
-      </div>
+      <!-- Viewport Summary -->
+      <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom: 24px;">
+        <tr>
+          <td width="50%" style="padding: 0 4px 0 0;">
+            <div style="background: #fafbff; padding: 12px 16px; border-radius: 8px; border: 1px solid #e8ecf4;">
+              <table width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td style="font-size: 13px; font-weight: 600; color: #374151;">🖥️ Desktop</td>
+                  <td style="text-align: right; font-size: 13px; font-weight: 700; color: ${desktopRate >= 90 ? '#16a34a' : desktopRate >= 70 ? '#d97706' : '#dc2626'};">${summary.desktopPassed}/${summary.desktopTotal} (${desktopRate}%)</td>
+                </tr>
+              </table>
+            </div>
+          </td>
+          <td width="50%" style="padding: 0 0 0 4px;">
+            <div style="background: #fafbff; padding: 12px 16px; border-radius: 8px; border: 1px solid #e8ecf4;">
+              <table width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td style="font-size: 13px; font-weight: 600; color: #374151;">📱 Mobile</td>
+                  <td style="text-align: right; font-size: 13px; font-weight: 700; color: ${mobileRate >= 90 ? '#16a34a' : mobileRate >= 70 ? '#d97706' : '#dc2626'};">${summary.mobilePassed}/${summary.mobileTotal} (${mobileRate}%)</td>
+                </tr>
+              </table>
+            </div>
+          </td>
+        </tr>
+      </table>
 
-      <!-- CTA Button -->
+      <!-- Module Results Table -->
+      <h3 style="font-size: 15px; font-weight: 700; color: #1f2937; margin: 0 0 12px 0; padding-bottom: 8px; border-bottom: 2px solid #e5e7eb;">
+        Module Results
+      </h3>
+      <table width="100%" cellpadding="0" cellspacing="0" style="border-radius: 8px; overflow: hidden; border: 1px solid #e5e7eb;">
+        <thead>
+          <tr style="background: #f9fafb;">
+            <th style="padding: 10px 14px; text-align: left; font-size: 11px; font-weight: 700; color: #6b7280; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 2px solid #e5e7eb;">Module</th>
+            <th style="padding: 10px 10px; text-align: center; font-size: 11px; font-weight: 700; color: #6b7280; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 2px solid #e5e7eb;">🖥️ Desktop</th>
+            <th style="padding: 10px 10px; text-align: center; font-size: 11px; font-weight: 700; color: #6b7280; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 2px solid #e5e7eb;">📱 Mobile</th>
+            <th style="padding: 10px 10px; text-align: center; font-size: 11px; font-weight: 700; color: #6b7280; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 2px solid #e5e7eb;">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${moduleRows}
+        </tbody>
+      </table>
+
+      ${failureSection}
+
+      <!-- CTA Buttons -->
       <div style="text-align: center; margin: 32px 0 20px 0;">
-        <a href="${DASHBOARD_URL}" style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 14px 36px; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 15px;">📊 View Full Dashboard</a>
+        <a href="${DASHBOARD_URL}" style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 12px 28px; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 14px;">📊 View Dashboard</a>${sheetButton}
       </div>
 
       <!-- Footer -->
       <div style="text-align: center; padding: 20px 0 0 0; color: #9ca3af; font-size: 12px; border-top: 1px solid #e5e7eb; margin-top: 24px;">
         <p style="margin: 0;"><strong>Thanks & Regards,</strong></p>
-        <p style="margin: 4px 0 0 0;">Saira Automation BOT 🤖</p>
+        <p style="margin: 4px 0 0 0;">Saira Automation BOT</p>
         <p style="margin: 12px 0 0 0; font-size: 11px; color: #d1d5db;">This is an automated report generated from the latest test run.</p>
       </div>
     </div>

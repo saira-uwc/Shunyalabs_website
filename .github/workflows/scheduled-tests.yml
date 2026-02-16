@@ -189,4 +189,5 @@ jobs:
           REPORT_RECIPIENTS: ${{ secrets.REPORT_RECIPIENTS }}
           DASHBOARD_PUBLIC_URL: "https://saira-uwc.github.io/Shunyalabs_website/"
           EMAIL_WEB_APP_URL: ${{ secrets.EMAIL_WEB_APP_URL }}
+          GOOGLE_SHEET_URL: ${{ secrets.GOOGLE_SHEET_URL }}
         run: node scripts/email-daily-report.js
