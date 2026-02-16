@@ -4,7 +4,8 @@ import path from 'path';
 const ROOT = process.cwd();
 const HISTORY_FILE = path.join(ROOT, 'dashboard', 'history', 'runs.json');
 const DASHBOARD_URL = process.env.DASHBOARD_PUBLIC_URL || 'https://saira-uwc.github.io/Shunyalabs_website/';
-const SHEET_URL = process.env.GOOGLE_SHEET_URL || '';
+const SPREADSHEET_ID = process.env.GOOGLE_SHEETS_SPREADSHEET_ID || '';
+const SHEET_URL = SPREADSHEET_ID ? `https://docs.google.com/spreadsheets/d/${SPREADSHEET_ID}` : '';
 const PROJECT_NAME = process.env.PROJECT_NAME || 'Shunya Labs Website Automation Report';
 const RECIPIENTS = (process.env.REPORT_RECIPIENTS || '').split(',').map((e) => e.trim()).filter(Boolean);
 const EMAIL_WEB_APP_URL = process.env.EMAIL_WEB_APP_URL || '';
@@ -197,7 +198,7 @@ function buildEmailBody(summary) {
     <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 28px 32px; border-radius: 12px 12px 0 0;">
       <h1 style="margin: 0 0 6px 0; font-size: 22px; font-weight: 700;">QC Automation Report</h1>
       <p style="margin: 0; font-size: 14px; opacity: 0.9;">${PROJECT_NAME}</p>
-      <p style="margin: 8px 0 0 0; font-size: 12px; opacity: 0.75;">Latest Run: ${summary.runDate}</p>
+      <p style="margin: 8px 0 0 0; font-size: 12px; opacity: 0.75;">Latest Run: ${summary.runDate}${summary.totalRuns ? ` | Total Runs: ${summary.totalRuns}` : ''}</p>
     </div>
 
     <div style="background: #ffffff; padding: 28px 32px; border-radius: 0 0 12px 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
@@ -346,6 +347,7 @@ async function main() {
   // Use the LATEST run only (not all runs for the day)
   const latestRun = runs[runs.length - 1];
   const summary = buildLatestRunSummary(latestRun);
+  summary.totalRuns = runs.length;
   const dateLabel = formatDate(new Date(latestRun.runDate));
   const subject = `QC ${PROJECT_NAME} – ${dateLabel} – ${summary.passRate}% Pass Rate`;
   const body = buildEmailBody(summary);
