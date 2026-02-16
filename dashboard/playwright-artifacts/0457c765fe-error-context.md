@@ -22,202 +22,210 @@
             - text: Resources
             - img [ref=e23]
           - link "Documentation" [ref=e25] [cursor=pointer]:
-            - /url: /documentation/batch-transcriptions/quickstart
+            - /url: https://docs.shunyalabs.ai/overview
           - link "About Us" [ref=e26] [cursor=pointer]:
             - /url: /about
           - link "Pricing" [ref=e27] [cursor=pointer]:
             - /url: /pricing
-        - generic [ref=e28]:
-          - button "Sign In" [ref=e29] [cursor=pointer]
-          - link "Get Started" [ref=e30] [cursor=pointer]:
-            - /url: /pricing
-          - link "Contact Sales" [ref=e31] [cursor=pointer]:
+        - link "Playground" [ref=e28] [cursor=pointer]:
+          - /url: https://playground.shunyalabs.ai/
+          - img [ref=e29]
+          - text: Playground
+        - generic [ref=e31]:
+          - button "Sign In" [ref=e32] [cursor=pointer]
+          - link "Contact Sales" [ref=e33] [cursor=pointer]:
             - /url: /contact
-    - generic [ref=e33]:
-      - heading "Deploy Anywhere, Your Way" [level=1] [ref=e34]
-      - heading "Flexible deployment options for your security, performance, and compliance needs." [level=2] [ref=e35]
-    - generic [ref=e37]:
-      - generic [ref=e38]:
-        - generic [ref=e39]:
-          - img [ref=e41]
-          - heading "Cloud" [level=3] [ref=e43]
-        - paragraph [ref=e44]: Fully managed infrastructure for rapid deployment and effortless scaling.
-        - heading "Capabilities" [level=4] [ref=e45]
-        - list [ref=e46]:
-          - listitem [ref=e47]:
-            - img [ref=e48]
-            - generic [ref=e50]: Zero infrastructure management
-          - listitem [ref=e51]:
-            - img [ref=e52]
-            - generic [ref=e54]: Instant auto-scaling
-          - listitem [ref=e55]:
-            - img [ref=e56]
-            - generic [ref=e58]: Global low-latency access
-        - generic [ref=e59]:
-          - heading "Ideal for:" [level=5] [ref=e60]
-          - paragraph [ref=e61]: Startups and fast-growing companies prioritizing speed to market.
-      - generic [ref=e62]:
-        - generic [ref=e63]:
-          - img [ref=e65]
-          - heading "Edge" [level=3] [ref=e70]
-        - paragraph [ref=e71]: Ultra-low latency processing at the network edge.
-        - heading "Capabilities" [level=4] [ref=e72]
-        - list [ref=e73]:
-          - listitem [ref=e74]:
-            - img [ref=e75]
-            - generic [ref=e77]: Regional data residency
-          - listitem [ref=e78]:
-            - img [ref=e79]
-            - generic [ref=e81]: Reduced bandwidth costs
-          - listitem [ref=e82]:
-            - img [ref=e83]
-            - generic [ref=e85]: Continues during network disruptions
-        - generic [ref=e87]:
-          - heading "Ideal for:" [level=5] [ref=e88]
-          - paragraph [ref=e89]: Real-time applications, IoT, telecom, and multi-region deployments.
-      - generic [ref=e90]:
-        - generic [ref=e91]:
-          - img [ref=e93]
-          - heading "On-Premises" [level=3] [ref=e95]
-        - paragraph [ref=e96]: Complete control within your infrastructure.
-        - heading "Capabilities" [level=4] [ref=e97]
-        - list [ref=e98]:
-          - listitem [ref=e99]:
-            - img [ref=e100]
-            - generic [ref=e102]: Full data sovereignty
-          - listitem [ref=e103]:
-            - img [ref=e104]
-            - generic [ref=e106]: Air-gapped deployment option
-          - listitem [ref=e107]:
-            - img [ref=e108]
-            - generic [ref=e110]: Custom security integration
-        - generic [ref=e112]:
-          - heading "Ideal for:" [level=5] [ref=e113]
-          - paragraph [ref=e114]: Startups and fast-growing companies prioritizing speed to market.
-    - link "Contact Us" [ref=e116] [cursor=pointer]:
+    - generic [ref=e35]:
+      - heading "Deploy Anywhere, Your Way" [level=1] [ref=e36]
+      - heading "Flexible deployment options for your security, performance, and compliance needs." [level=2] [ref=e37]
+    - generic [ref=e39]:
+      - generic [ref=e40]:
+        - generic [ref=e41]:
+          - img [ref=e43]
+          - heading "Cloud" [level=3] [ref=e45]
+        - paragraph [ref=e46]: Fully managed infrastructure for rapid deployment and effortless scaling.
+        - heading "Capabilities" [level=4] [ref=e47]
+        - list [ref=e48]:
+          - listitem [ref=e49]:
+            - img [ref=e50]
+            - generic [ref=e52]: Zero infrastructure management
+          - listitem [ref=e53]:
+            - img [ref=e54]
+            - generic [ref=e56]: Instant auto-scaling
+          - listitem [ref=e57]:
+            - img [ref=e58]
+            - generic [ref=e60]: Global low-latency access
+        - generic [ref=e61]:
+          - heading "Ideal for:" [level=5] [ref=e62]
+          - paragraph [ref=e63]: Startups and fast-growing companies prioritizing speed to market.
+      - generic [ref=e64]:
+        - generic [ref=e65]:
+          - img [ref=e67]
+          - heading "Edge" [level=3] [ref=e72]
+        - paragraph [ref=e73]: Ultra-low latency processing at the network edge.
+        - heading "Capabilities" [level=4] [ref=e74]
+        - list [ref=e75]:
+          - listitem [ref=e76]:
+            - img [ref=e77]
+            - generic [ref=e79]: Regional data residency
+          - listitem [ref=e80]:
+            - img [ref=e81]
+            - generic [ref=e83]: Reduced bandwidth costs
+          - listitem [ref=e84]:
+            - img [ref=e85]
+            - generic [ref=e87]: Continues during network disruptions
+        - generic [ref=e89]:
+          - heading "Ideal for:" [level=5] [ref=e90]
+          - paragraph [ref=e91]: Real-time applications, IoT, telecom, and multi-region deployments.
+      - generic [ref=e92]:
+        - generic [ref=e93]:
+          - img [ref=e95]
+          - heading "On-Premises" [level=3] [ref=e97]
+        - paragraph [ref=e98]: Complete control within your infrastructure.
+        - heading "Capabilities" [level=4] [ref=e99]
+        - list [ref=e100]:
+          - listitem [ref=e101]:
+            - img [ref=e102]
+            - generic [ref=e104]: Full data sovereignty
+          - listitem [ref=e105]:
+            - img [ref=e106]
+            - generic [ref=e108]: Air-gapped deployment option
+          - listitem [ref=e109]:
+            - img [ref=e110]
+            - generic [ref=e112]: Custom security integration
+        - generic [ref=e114]:
+          - heading "Ideal for:" [level=5] [ref=e115]
+          - paragraph [ref=e116]: Startups and fast-growing companies prioritizing speed to market.
+    - link "Contact Us" [ref=e118] [cursor=pointer]:
       - /url: /contact
-    - contentinfo [ref=e117]:
-      - generic [ref=e121]:
-        - paragraph [ref=e122]: The fastest way to add voice AI to your products
-        - paragraph [ref=e123]: One platform for speech in and speech out—secure by design, built to scale.
-        - generic [ref=e124]:
-          - link "Go to Pricing page" [ref=e125] [cursor=pointer]:
+    - contentinfo [ref=e119]:
+      - generic [ref=e123]:
+        - paragraph [ref=e124]: The fastest way to add voice AI to your products
+        - paragraph [ref=e125]: One platform for speech in and speech out—secure by design, built to scale.
+        - generic [ref=e126]:
+          - link "Go to Pricing page" [ref=e127] [cursor=pointer]:
             - /url: /pricing
             - text: Get Started
-          - link "Contact Sales" [ref=e126] [cursor=pointer]:
+          - link "Contact Sales" [ref=e128] [cursor=pointer]:
             - /url: /contact
-    - contentinfo [ref=e127]:
-      - generic [ref=e128]:
-        - generic [ref=e129]:
-          - img "Shunya Labs" [ref=e130]
-          - paragraph [ref=e131]: Shunya Labs, Inc.
-        - generic [ref=e132]:
-          - paragraph [ref=e133]: Product
-          - list [ref=e134]:
-            - listitem [ref=e135]:
-              - link "Overview" [ref=e136] [cursor=pointer]:
-                - /url: /overview
+    - contentinfo [ref=e129]:
+      - generic [ref=e130]:
+        - generic [ref=e131]:
+          - img "Shunya Labs" [ref=e132]
+          - paragraph [ref=e133]: Shunya Labs, Inc.
+        - generic [ref=e134]:
+          - paragraph [ref=e135]: Product
+          - list [ref=e136]:
             - listitem [ref=e137]:
-              - link "Models" [ref=e138] [cursor=pointer]:
-                - /url: /models-page
+              - link "Overview" [ref=e138] [cursor=pointer]:
+                - /url: /overview
             - listitem [ref=e139]:
-              - link "Voice Agents" [ref=e140] [cursor=pointer]:
-                - /url: /voice-agent
+              - link "Models" [ref=e140] [cursor=pointer]:
+                - /url: /models-page
             - listitem [ref=e141]:
-              - link "Speech Intelligence" [ref=e142] [cursor=pointer]:
-                - /url: /speech-intelligence-page
+              - link "Voice Agents" [ref=e142] [cursor=pointer]:
+                - /url: /voice-agent
             - listitem [ref=e143]:
-              - link "Audio Processing" [ref=e144] [cursor=pointer]:
-                - /url: /audio-processing
+              - link "Speech Intelligence" [ref=e144] [cursor=pointer]:
+                - /url: /speech-intelligence-page
             - listitem [ref=e145]:
-              - link "Deployment" [ref=e146] [cursor=pointer]:
+              - link "Audio Processing" [ref=e146] [cursor=pointer]:
+                - /url: /audio-processing
+            - listitem [ref=e147]:
+              - link "Deployment" [ref=e148] [cursor=pointer]:
                 - /url: /deployment
-        - generic [ref=e147]:
-          - paragraph [ref=e148]: Models
-          - list [ref=e149]:
-            - listitem [ref=e150]:
-              - link "Language Models" [ref=e151] [cursor=pointer]:
-                - /url: /language-models
+        - generic [ref=e149]:
+          - paragraph [ref=e150]: Models
+          - list [ref=e151]:
             - listitem [ref=e152]:
-              - link "Zero STT Indic" [ref=e153] [cursor=pointer]:
-                - /url: /zero-indic
+              - link "Language Models" [ref=e153] [cursor=pointer]:
+                - /url: /language-models
             - listitem [ref=e154]:
-              - link "Zero STT Codeswitch" [ref=e155] [cursor=pointer]:
-                - /url: /zero-code-switch
+              - link "Zero STT Indic" [ref=e155] [cursor=pointer]:
+                - /url: /zero-indic
             - listitem [ref=e156]:
-              - link "Zero STT Universal" [ref=e157] [cursor=pointer]:
-                - /url: /zero-stt
+              - link "Zero STT Codeswitch" [ref=e157] [cursor=pointer]:
+                - /url: /zero-code-switch
             - listitem [ref=e158]:
-              - link "Specialised Models" [ref=e159] [cursor=pointer]:
-                - /url: /domain-specialisation
+              - link "Zero STT Universal" [ref=e159] [cursor=pointer]:
+                - /url: /zero-stt
             - listitem [ref=e160]:
-              - link "Zero STT Med" [ref=e161] [cursor=pointer]:
-                - /url: /zero-med
+              - link "Specialised Models" [ref=e161] [cursor=pointer]:
+                - /url: /domain-specialisation
             - listitem [ref=e162]:
-              - link "On Device Models" [ref=e163] [cursor=pointer]:
+              - link "Zero STT Med" [ref=e163] [cursor=pointer]:
+                - /url: /zero-med
+            - listitem [ref=e164]:
+              - link "On Device Models" [ref=e165] [cursor=pointer]:
                 - /url: /on-device-models
-        - generic [ref=e164]:
-          - paragraph [ref=e165]: Solutions
-          - list [ref=e166]:
-            - listitem [ref=e167]:
-              - link "Contact Centers" [ref=e168] [cursor=pointer]:
-                - /url: /contact-centers
+        - generic [ref=e166]:
+          - paragraph [ref=e167]: Solutions
+          - list [ref=e168]:
             - listitem [ref=e169]:
-              - link "Media & Entertainment" [ref=e170] [cursor=pointer]:
-                - /url: /media-entertainment
+              - link "Contact Centers" [ref=e170] [cursor=pointer]:
+                - /url: /contact-centers
             - listitem [ref=e171]:
-              - link "Healthcare" [ref=e172] [cursor=pointer]:
+              - link "Media & Entertainment" [ref=e172] [cursor=pointer]:
+                - /url: /media-entertainment
+            - listitem [ref=e173]:
+              - link "Healthcare" [ref=e174] [cursor=pointer]:
                 - /url: /healthcare
-        - generic [ref=e173]:
-          - paragraph [ref=e174]: Resources
-          - list [ref=e175]:
-            - listitem [ref=e176]:
-              - link "Blogs" [ref=e177] [cursor=pointer]:
-                - /url: /blog
+        - generic [ref=e175]:
+          - paragraph [ref=e176]: Resources
+          - list [ref=e177]:
             - listitem [ref=e178]:
-              - link "Benchmarks" [ref=e179] [cursor=pointer]:
-                - /url: /benchmarks
+              - link "Blogs" [ref=e179] [cursor=pointer]:
+                - /url: /blog
             - listitem [ref=e180]:
-              - link "News & Media" [ref=e181] [cursor=pointer]:
+              - link "Benchmarks" [ref=e181] [cursor=pointer]:
+                - /url: /benchmarks
+            - listitem [ref=e182]:
+              - link "News & Media" [ref=e183] [cursor=pointer]:
                 - /url: /media
-        - paragraph [ref=e183]:
-          - link "Documentation" [ref=e184] [cursor=pointer]:
-            - /url: /documentation/batch-transcriptions/quickstart
-        - list [ref=e186]:
-          - listitem [ref=e187]:
-            - link "About us" [ref=e188] [cursor=pointer]:
+            - listitem [ref=e184]:
+              - link "Patents" [ref=e185] [cursor=pointer]:
+                - /url: /patents
+            - listitem [ref=e186]:
+              - link "Research" [ref=e187] [cursor=pointer]:
+                - /url: /research
+        - paragraph [ref=e189]:
+          - link "Documentation" [ref=e190] [cursor=pointer]:
+            - /url: https://docs.shunyalabs.ai/overview
+        - list [ref=e192]:
+          - listitem [ref=e193]:
+            - link "About us" [ref=e194] [cursor=pointer]:
               - /url: /about
-        - list [ref=e190]:
-          - listitem [ref=e191]:
-            - link "Pricing" [ref=e192] [cursor=pointer]:
+        - list [ref=e196]:
+          - listitem [ref=e197]:
+            - link "Pricing" [ref=e198] [cursor=pointer]:
               - /url: /pricing
-      - generic [ref=e193]:
-        - paragraph [ref=e194]: Follow us on
-        - generic [ref=e195]:
-          - link [ref=e196] [cursor=pointer]:
-            - /url: https://www.linkedin.com/company/shunya-labs-ai/
-            - img [ref=e197]
-          - link [ref=e199] [cursor=pointer]:
-            - /url: https://www.facebook.com/people/ShunyaLabsAI/61577801851308/
-            - img [ref=e200]
+      - generic [ref=e199]:
+        - paragraph [ref=e200]: Follow us on
+        - generic [ref=e201]:
           - link [ref=e202] [cursor=pointer]:
-            - /url: https://www.instagram.com/shunyalabsai/
+            - /url: https://www.linkedin.com/company/shunya-labs-ai/
             - img [ref=e203]
           - link [ref=e205] [cursor=pointer]:
-            - /url: https://x.com/ShunyaLabsAI
+            - /url: https://www.facebook.com/people/ShunyaLabsAI/61577801851308/
             - img [ref=e206]
-      - generic [ref=e208]:
-        - paragraph [ref=e209]: © 2026 Shunya Labs Inc. All rights reserved.
-        - generic [ref=e210]:
-          - link "Privacy" [ref=e211] [cursor=pointer]:
+          - link [ref=e208] [cursor=pointer]:
+            - /url: https://www.instagram.com/shunyalabsai/
+            - img [ref=e209]
+          - link [ref=e211] [cursor=pointer]:
+            - /url: https://x.com/ShunyaLabsAI
+            - img [ref=e212]
+      - generic [ref=e214]:
+        - paragraph [ref=e215]: © 2026 Shunya Labs Inc. All rights reserved.
+        - generic [ref=e216]:
+          - link "Privacy" [ref=e217] [cursor=pointer]:
             - /url: /privacy-policy
-          - link "Terms" [ref=e212] [cursor=pointer]:
+          - link "Terms" [ref=e218] [cursor=pointer]:
             - /url: /terms-conditions
-          - link "Security" [ref=e213] [cursor=pointer]:
+          - link "Security" [ref=e219] [cursor=pointer]:
             - /url: /security-policy
-          - link "General License" [ref=e214] [cursor=pointer]:
+          - link "General License" [ref=e220] [cursor=pointer]:
             - /url: /general-rail-m-license
-          - link "Custom License" [ref=e215] [cursor=pointer]:
+          - link "Custom License" [ref=e221] [cursor=pointer]:
             - /url: /shunya-labs-custom-model-rail-m-license
-  - alert [ref=e216]
+  - alert [ref=e222]
 ```

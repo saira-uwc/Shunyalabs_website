@@ -22,192 +22,200 @@
             - text: Resources
             - img [ref=e23]
           - link "Documentation" [ref=e25] [cursor=pointer]:
-            - /url: /documentation/batch-transcriptions/quickstart
+            - /url: https://docs.shunyalabs.ai/overview
           - link "About Us" [ref=e26] [cursor=pointer]:
             - /url: /about
           - link "Pricing" [ref=e27] [cursor=pointer]:
             - /url: /pricing
-        - generic [ref=e28]:
-          - button "Sign In" [ref=e29] [cursor=pointer]
-          - link "Get Started" [ref=e30] [cursor=pointer]:
-            - /url: /pricing
-          - link "Contact Sales" [ref=e31] [cursor=pointer]:
+        - link "Playground" [ref=e28] [cursor=pointer]:
+          - /url: https://playground.shunyalabs.ai/
+          - img [ref=e29]
+          - text: Playground
+        - generic [ref=e31]:
+          - button "Sign In" [ref=e32] [cursor=pointer]
+          - link "Contact Sales" [ref=e33] [cursor=pointer]:
             - /url: /contact
-    - generic [ref=e33]:
-      - generic [ref=e34]:
-        - heading "Transform complex clinical conversations into precise documentation" [level=1] [ref=e35]
-        - paragraph [ref=e36]: Zero Med delivers 11.1% WER and 5.1% CER on noisy, multi-speaker medical audio, trained on specialized medical data to ensure critical terminology is captured correctly every time.
-      - main [ref=e39]:
-        - generic [ref=e44]:
-          - generic [ref=e48]:
-            - generic [ref=e50]:
-              - generic [ref=e51]: Language
-              - button "🇺🇸English" [ref=e54] [cursor=pointer]:
-                - generic [ref=e55]: 🇺🇸English
+    - generic [ref=e35]:
+      - generic [ref=e36]:
+        - heading "Transform complex clinical conversations into precise documentation" [level=1] [ref=e37]
+        - paragraph [ref=e38]: Zero Med delivers 11.1% WER and 5.1% CER on noisy, multi-speaker medical audio, trained on specialized medical data to ensure critical terminology is captured correctly every time.
+      - main [ref=e41]:
+        - generic [ref=e46]:
+          - generic [ref=e50]:
+            - generic [ref=e52]:
+              - generic [ref=e53]: Language
+              - button "🇺🇸English" [ref=e56] [cursor=pointer]:
+                - generic [ref=e57]: 🇺🇸English
                 - generic:
                   - img
-            - generic [ref=e57]:
-              - generic [ref=e58]: Input Audio
-              - generic [ref=e59]:
-                - generic [ref=e60]: Pre-recorded
-                - generic [ref=e63]:
-                  - button "Patient Notes" [ref=e64] [cursor=pointer]
-                  - button "Doctor's Appointment" [ref=e65] [cursor=pointer]
-                  - button "Upload your file" [ref=e66] [cursor=pointer]
-            - generic [ref=e68]:
-              - generic [ref=e70]: or
-              - generic [ref=e71]:
-                - generic [ref=e73]: Live recording
-                - button "Start Speaking" [ref=e74] [cursor=pointer]:
-                  - generic [ref=e75]: Start Speaking
-          - generic [ref=e79]:
-            - generic [ref=e80]:
-              - button "Play audio" [ref=e83] [cursor=pointer]:
-                - img [ref=e84]
-              - button "No conversation to copy" [disabled] [ref=e151]:
-                - img [ref=e152]
-            - generic [ref=e161]:
-              - img [ref=e164]
-              - paragraph [ref=e168]: Pick a sample, upload a file, or start speaking to capture live audio.
-      - link "Get Zero STT Med API now" [ref=e170] [cursor=pointer]:
+            - generic [ref=e59]:
+              - generic [ref=e60]: Input Audio
+              - generic [ref=e61]:
+                - generic [ref=e62]: Pre-recorded
+                - generic [ref=e65]:
+                  - button "Patient Notes" [ref=e66] [cursor=pointer]
+                  - button "Doctor's Appointment" [ref=e67] [cursor=pointer]
+                  - button "Upload your file" [ref=e68] [cursor=pointer]
+            - generic [ref=e70]:
+              - generic [ref=e72]: or
+              - generic [ref=e73]:
+                - generic [ref=e75]: Live recording
+                - button "Start Speaking" [ref=e76] [cursor=pointer]:
+                  - generic [ref=e77]: Start Speaking
+          - generic [ref=e81]:
+            - generic [ref=e82]:
+              - button "Play audio" [ref=e85] [cursor=pointer]:
+                - img [ref=e86]
+              - button "No conversation to copy" [disabled] [ref=e153]:
+                - img [ref=e154]
+            - generic [ref=e163]:
+              - img [ref=e166]
+              - paragraph [ref=e170]: Pick a sample, upload a file, or start speaking to capture live audio.
+      - link "Get Zero STT Med API now" [ref=e172] [cursor=pointer]:
         - /url: /documentation/medical-transcription
-    - generic [ref=e172]:
-      - heading "Speech recognition built for healthcare" [level=2] [ref=e173]
-      - paragraph [ref=e174]: Reduce administrative burden and improve accuracy—so healthcare professionals can focus more on patient care.
-      - generic [ref=e175]:
-        - generic [ref=e176]:
-          - heading "Accurate Real-Time Transcripts" [level=3] [ref=e177]
-          - paragraph [ref=e178]: Delivers 11.1% WER and 5.1% CER on challenging medical audio with real-time processing. Purpose-built for clinical environments where every word matters.
-        - generic [ref=e179]:
-          - heading "Clinical Terminology Precision" [level=3] [ref=e180]
-          - paragraph [ref=e181]: Specialized training on clinical conversations ensures accurate capture of complex medical terms—from rare drug names to procedural terminology that generic models miss.
-        - generic [ref=e182]:
-          - heading "Language Support" [level=3] [ref=e183]
-          - paragraph [ref=e184]: Processes speech in real hospital environments—handling background noise, equipment sounds, and overlapping conversations across English, Japanese, and Korean, with more languages coming soon.
-      - link "Contact Us" [ref=e186] [cursor=pointer]:
+    - generic [ref=e174]:
+      - heading "Speech recognition built for healthcare" [level=2] [ref=e175]
+      - paragraph [ref=e176]: Reduce administrative burden and improve accuracy—so healthcare professionals can focus more on patient care.
+      - generic [ref=e177]:
+        - generic [ref=e178]:
+          - heading "Accurate Real-Time Transcripts" [level=3] [ref=e179]
+          - paragraph [ref=e180]: Delivers 11.1% WER and 5.1% CER on challenging medical audio with real-time processing. Purpose-built for clinical environments where every word matters.
+        - generic [ref=e181]:
+          - heading "Clinical Terminology Precision" [level=3] [ref=e182]
+          - paragraph [ref=e183]: Specialized training on clinical conversations ensures accurate capture of complex medical terms—from rare drug names to procedural terminology that generic models miss.
+        - generic [ref=e184]:
+          - heading "Language Support" [level=3] [ref=e185]
+          - paragraph [ref=e186]: Processes speech in real hospital environments—handling background noise, equipment sounds, and overlapping conversations across English, Japanese, and Korean, with more languages coming soon.
+      - link "Contact Us" [ref=e188] [cursor=pointer]:
         - /url: /contact
-    - contentinfo [ref=e187]:
-      - generic [ref=e191]:
-        - paragraph [ref=e192]: The fastest way to add voice AI to your products
-        - paragraph [ref=e193]: One platform for speech in and speech out—secure by design, built to scale.
-        - generic [ref=e194]:
-          - link "Go to Pricing page" [ref=e195] [cursor=pointer]:
+    - contentinfo [ref=e189]:
+      - generic [ref=e193]:
+        - paragraph [ref=e194]: The fastest way to add voice AI to your products
+        - paragraph [ref=e195]: One platform for speech in and speech out—secure by design, built to scale.
+        - generic [ref=e196]:
+          - link "Go to Pricing page" [ref=e197] [cursor=pointer]:
             - /url: /pricing
             - text: Get Started
-          - link "Contact Sales" [ref=e196] [cursor=pointer]:
+          - link "Contact Sales" [ref=e198] [cursor=pointer]:
             - /url: /contact
-    - contentinfo [ref=e197]:
-      - generic [ref=e198]:
-        - generic [ref=e199]:
-          - img "Shunya Labs" [ref=e200]
-          - paragraph [ref=e201]: Shunya Labs, Inc.
-        - generic [ref=e202]:
-          - paragraph [ref=e203]: Product
-          - list [ref=e204]:
-            - listitem [ref=e205]:
-              - link "Overview" [ref=e206] [cursor=pointer]:
-                - /url: /overview
+    - contentinfo [ref=e199]:
+      - generic [ref=e200]:
+        - generic [ref=e201]:
+          - img "Shunya Labs" [ref=e202]
+          - paragraph [ref=e203]: Shunya Labs, Inc.
+        - generic [ref=e204]:
+          - paragraph [ref=e205]: Product
+          - list [ref=e206]:
             - listitem [ref=e207]:
-              - link "Models" [ref=e208] [cursor=pointer]:
-                - /url: /models-page
+              - link "Overview" [ref=e208] [cursor=pointer]:
+                - /url: /overview
             - listitem [ref=e209]:
-              - link "Voice Agents" [ref=e210] [cursor=pointer]:
-                - /url: /voice-agent
+              - link "Models" [ref=e210] [cursor=pointer]:
+                - /url: /models-page
             - listitem [ref=e211]:
-              - link "Speech Intelligence" [ref=e212] [cursor=pointer]:
-                - /url: /speech-intelligence-page
+              - link "Voice Agents" [ref=e212] [cursor=pointer]:
+                - /url: /voice-agent
             - listitem [ref=e213]:
-              - link "Audio Processing" [ref=e214] [cursor=pointer]:
-                - /url: /audio-processing
+              - link "Speech Intelligence" [ref=e214] [cursor=pointer]:
+                - /url: /speech-intelligence-page
             - listitem [ref=e215]:
-              - link "Deployment" [ref=e216] [cursor=pointer]:
+              - link "Audio Processing" [ref=e216] [cursor=pointer]:
+                - /url: /audio-processing
+            - listitem [ref=e217]:
+              - link "Deployment" [ref=e218] [cursor=pointer]:
                 - /url: /deployment
-        - generic [ref=e217]:
-          - paragraph [ref=e218]: Models
-          - list [ref=e219]:
-            - listitem [ref=e220]:
-              - link "Language Models" [ref=e221] [cursor=pointer]:
-                - /url: /language-models
+        - generic [ref=e219]:
+          - paragraph [ref=e220]: Models
+          - list [ref=e221]:
             - listitem [ref=e222]:
-              - link "Zero STT Indic" [ref=e223] [cursor=pointer]:
-                - /url: /zero-indic
+              - link "Language Models" [ref=e223] [cursor=pointer]:
+                - /url: /language-models
             - listitem [ref=e224]:
-              - link "Zero STT Codeswitch" [ref=e225] [cursor=pointer]:
-                - /url: /zero-code-switch
+              - link "Zero STT Indic" [ref=e225] [cursor=pointer]:
+                - /url: /zero-indic
             - listitem [ref=e226]:
-              - link "Zero STT Universal" [ref=e227] [cursor=pointer]:
-                - /url: /zero-stt
+              - link "Zero STT Codeswitch" [ref=e227] [cursor=pointer]:
+                - /url: /zero-code-switch
             - listitem [ref=e228]:
-              - link "Specialised Models" [ref=e229] [cursor=pointer]:
-                - /url: /domain-specialisation
+              - link "Zero STT Universal" [ref=e229] [cursor=pointer]:
+                - /url: /zero-stt
             - listitem [ref=e230]:
-              - link "Zero STT Med" [ref=e231] [cursor=pointer]:
-                - /url: /zero-med
+              - link "Specialised Models" [ref=e231] [cursor=pointer]:
+                - /url: /domain-specialisation
             - listitem [ref=e232]:
-              - link "On Device Models" [ref=e233] [cursor=pointer]:
+              - link "Zero STT Med" [ref=e233] [cursor=pointer]:
+                - /url: /zero-med
+            - listitem [ref=e234]:
+              - link "On Device Models" [ref=e235] [cursor=pointer]:
                 - /url: /on-device-models
-        - generic [ref=e234]:
-          - paragraph [ref=e235]: Solutions
-          - list [ref=e236]:
-            - listitem [ref=e237]:
-              - link "Contact Centers" [ref=e238] [cursor=pointer]:
-                - /url: /contact-centers
+        - generic [ref=e236]:
+          - paragraph [ref=e237]: Solutions
+          - list [ref=e238]:
             - listitem [ref=e239]:
-              - link "Media & Entertainment" [ref=e240] [cursor=pointer]:
-                - /url: /media-entertainment
+              - link "Contact Centers" [ref=e240] [cursor=pointer]:
+                - /url: /contact-centers
             - listitem [ref=e241]:
-              - link "Healthcare" [ref=e242] [cursor=pointer]:
+              - link "Media & Entertainment" [ref=e242] [cursor=pointer]:
+                - /url: /media-entertainment
+            - listitem [ref=e243]:
+              - link "Healthcare" [ref=e244] [cursor=pointer]:
                 - /url: /healthcare
-        - generic [ref=e243]:
-          - paragraph [ref=e244]: Resources
-          - list [ref=e245]:
-            - listitem [ref=e246]:
-              - link "Blogs" [ref=e247] [cursor=pointer]:
-                - /url: /blog
+        - generic [ref=e245]:
+          - paragraph [ref=e246]: Resources
+          - list [ref=e247]:
             - listitem [ref=e248]:
-              - link "Benchmarks" [ref=e249] [cursor=pointer]:
-                - /url: /benchmarks
+              - link "Blogs" [ref=e249] [cursor=pointer]:
+                - /url: /blog
             - listitem [ref=e250]:
-              - link "News & Media" [ref=e251] [cursor=pointer]:
+              - link "Benchmarks" [ref=e251] [cursor=pointer]:
+                - /url: /benchmarks
+            - listitem [ref=e252]:
+              - link "News & Media" [ref=e253] [cursor=pointer]:
                 - /url: /media
-        - paragraph [ref=e253]:
-          - link "Documentation" [ref=e254] [cursor=pointer]:
-            - /url: /documentation/batch-transcriptions/quickstart
-        - list [ref=e256]:
-          - listitem [ref=e257]:
-            - link "About us" [ref=e258] [cursor=pointer]:
+            - listitem [ref=e254]:
+              - link "Patents" [ref=e255] [cursor=pointer]:
+                - /url: /patents
+            - listitem [ref=e256]:
+              - link "Research" [ref=e257] [cursor=pointer]:
+                - /url: /research
+        - paragraph [ref=e259]:
+          - link "Documentation" [ref=e260] [cursor=pointer]:
+            - /url: https://docs.shunyalabs.ai/overview
+        - list [ref=e262]:
+          - listitem [ref=e263]:
+            - link "About us" [ref=e264] [cursor=pointer]:
               - /url: /about
-        - list [ref=e260]:
-          - listitem [ref=e261]:
-            - link "Pricing" [ref=e262] [cursor=pointer]:
+        - list [ref=e266]:
+          - listitem [ref=e267]:
+            - link "Pricing" [ref=e268] [cursor=pointer]:
               - /url: /pricing
-      - generic [ref=e263]:
-        - paragraph [ref=e264]: Follow us on
-        - generic [ref=e265]:
-          - link [ref=e266] [cursor=pointer]:
-            - /url: https://www.linkedin.com/company/shunya-labs-ai/
-            - img [ref=e267]
-          - link [ref=e269] [cursor=pointer]:
-            - /url: https://www.facebook.com/people/ShunyaLabsAI/61577801851308/
-            - img [ref=e270]
+      - generic [ref=e269]:
+        - paragraph [ref=e270]: Follow us on
+        - generic [ref=e271]:
           - link [ref=e272] [cursor=pointer]:
-            - /url: https://www.instagram.com/shunyalabsai/
+            - /url: https://www.linkedin.com/company/shunya-labs-ai/
             - img [ref=e273]
           - link [ref=e275] [cursor=pointer]:
-            - /url: https://x.com/ShunyaLabsAI
+            - /url: https://www.facebook.com/people/ShunyaLabsAI/61577801851308/
             - img [ref=e276]
-      - generic [ref=e278]:
-        - paragraph [ref=e279]: © 2026 Shunya Labs Inc. All rights reserved.
-        - generic [ref=e280]:
-          - link "Privacy" [ref=e281] [cursor=pointer]:
+          - link [ref=e278] [cursor=pointer]:
+            - /url: https://www.instagram.com/shunyalabsai/
+            - img [ref=e279]
+          - link [ref=e281] [cursor=pointer]:
+            - /url: https://x.com/ShunyaLabsAI
+            - img [ref=e282]
+      - generic [ref=e284]:
+        - paragraph [ref=e285]: © 2026 Shunya Labs Inc. All rights reserved.
+        - generic [ref=e286]:
+          - link "Privacy" [ref=e287] [cursor=pointer]:
             - /url: /privacy-policy
-          - link "Terms" [ref=e282] [cursor=pointer]:
+          - link "Terms" [ref=e288] [cursor=pointer]:
             - /url: /terms-conditions
-          - link "Security" [ref=e283] [cursor=pointer]:
+          - link "Security" [ref=e289] [cursor=pointer]:
             - /url: /security-policy
-          - link "General License" [ref=e284] [cursor=pointer]:
+          - link "General License" [ref=e290] [cursor=pointer]:
             - /url: /general-rail-m-license
-          - link "Custom License" [ref=e285] [cursor=pointer]:
+          - link "Custom License" [ref=e291] [cursor=pointer]:
             - /url: /shunya-labs-custom-model-rail-m-license
-  - alert [ref=e286]
+  - alert [ref=e292]
 ```

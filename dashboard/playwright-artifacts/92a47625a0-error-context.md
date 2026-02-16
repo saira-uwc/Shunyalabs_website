@@ -23,47 +23,49 @@
               - text: Resources
               - img [ref=e23]
             - link "Documentation" [ref=e25] [cursor=pointer]:
-              - /url: /documentation/batch-transcriptions/quickstart
+              - /url: https://docs.shunyalabs.ai/overview
             - link "About Us" [ref=e26] [cursor=pointer]:
               - /url: /about
             - link "Pricing" [ref=e27] [cursor=pointer]:
               - /url: /pricing
-          - generic [ref=e28]:
-            - button "Sign In" [ref=e29] [cursor=pointer]
-            - link "Get Started" [ref=e30] [cursor=pointer]:
-              - /url: /pricing
-            - link "Contact Sales" [ref=e31] [cursor=pointer]:
+          - link "Playground" [ref=e28] [cursor=pointer]:
+            - /url: https://playground.shunyalabs.ai/
+            - img [ref=e29]
+            - text: Playground
+          - generic [ref=e31]:
+            - button "Sign In" [ref=e32] [cursor=pointer]
+            - link "Contact Sales" [ref=e33] [cursor=pointer]:
               - /url: /contact
-      - generic [ref=e33]:
-        - heading "Proven performance, backed by data" [level=1] [ref=e34]
-        - heading "Shunyalabs’ transcription leads the way — producing 48% fewer errors than the next best model." [level=2] [ref=e35]
-      - button "Book a Meeting" [ref=e37] [cursor=pointer]
-      - generic [ref=e38]:
-        - generic [ref=e39]:
-          - heading "Highest Word Accuracy Rate" [level=2] [ref=e40]
-          - img "upper" [ref=e42]
-        - generic [ref=e43]:
-          - generic [ref=e46]:
-            - button "Tedlium Ted Talks" [ref=e47] [cursor=pointer]:
-              - generic [ref=e48]:
+      - generic [ref=e35]:
+        - heading "Proven performance, backed by data" [level=1] [ref=e36]
+        - heading "Shunyalabs’ transcription leads the way — producing 48% fewer errors than the next best model." [level=2] [ref=e37]
+      - button "Book a Meeting" [ref=e39] [cursor=pointer]
+      - generic [ref=e40]:
+        - generic [ref=e41]:
+          - heading "Highest Word Accuracy Rate" [level=2] [ref=e42]
+          - img "upper" [ref=e44]
+        - generic [ref=e45]:
+          - generic [ref=e48]:
+            - button "Tedlium Ted Talks" [ref=e49] [cursor=pointer]:
+              - generic [ref=e50]:
                 - text: Tedlium
                 - text: Ted Talks
-            - button "LibriSpeech Clean Audiobooks, Clear speech" [ref=e49] [cursor=pointer]:
-              - generic [ref=e50]:
+            - button "LibriSpeech Clean Audiobooks, Clear speech" [ref=e51] [cursor=pointer]:
+              - generic [ref=e52]:
                 - text: LibriSpeech Clean
                 - text: Audiobooks, Clear speech
-            - button "LibriSpeech Other Audiobooks, noisy audio" [ref=e51] [cursor=pointer]:
-              - generic [ref=e52]:
+            - button "LibriSpeech Other Audiobooks, noisy audio" [ref=e53] [cursor=pointer]:
+              - generic [ref=e54]:
                 - text: LibriSpeech Other
                 - text: Audiobooks, noisy audio
-            - button "SPGISpeech Financial earnings calls" [ref=e53] [cursor=pointer]:
-              - generic [ref=e54]:
+            - button "SPGISpeech Financial earnings calls" [ref=e55] [cursor=pointer]:
+              - generic [ref=e56]:
                 - text: SPGISpeech
                 - text: Financial earnings calls
-          - button [ref=e55] [cursor=pointer]:
-            - img [ref=e56]
-        - generic [ref=e58]:
-          - generic [ref=e59]:
+          - button [ref=e57] [cursor=pointer]:
+            - img [ref=e58]
+        - generic [ref=e60]:
+          - generic [ref=e61]:
             - generic:
               - generic: "100"
             - generic:
@@ -72,45 +74,45 @@
               - generic: "90"
             - generic:
               - generic: "85"
-            - generic [ref=e60]:
-              - generic [ref=e63]: 98.57%
-              - generic [ref=e67]: 97.29%
-              - generic [ref=e71]: 96.60%
-              - generic [ref=e75]: 97.06%
-              - generic [ref=e79]: 96.62%
-              - generic [ref=e83]: 96.88%
-          - generic [ref=e85]:
-            - generic [ref=e86]:
-              - generic [ref=e87]: Pingala-v1-universal
-              - paragraph [ref=e88]: Shunya Labs
-            - generic [ref=e89]:
-              - generic [ref=e90]: canary-qwen-2.5b
-              - paragraph [ref=e91]: NVIDIA
-            - generic [ref=e92]:
-              - generic [ref=e93]: granite-speech-3.3-8b
-              - paragraph [ref=e94]: IBM
-            - generic [ref=e95]:
-              - generic [ref=e96]: Phi-4-multimodal-instruct
-              - paragraph [ref=e97]: Microsoft
-            - generic [ref=e98]:
-              - generic [ref=e99]: parakeet-tdt-0.6b
-              - paragraph [ref=e100]: NVIDIA
-            - generic [ref=e101]:
-              - generic [ref=e102]: canary-1b-flash
-              - paragraph [ref=e103]: NVIDIA
-      - generic [ref=e104]:
-        - generic [ref=e105]:
-          - heading "Lowest Total Word Error Rate" [level=2] [ref=e106]
-          - img "lower" [ref=e108]
-        - generic [ref=e109]:
-          - generic [ref=e110]:
-            - generic [ref=e111]: 3.10 %
-            - generic [ref=e112]: 5.63 %
-            - generic [ref=e113]: 5.74 %
-            - generic [ref=e114]: 6.02 %
-            - generic [ref=e115]: 6.05 %
-            - generic [ref=e116]: 6.35 %
-          - generic [ref=e117]:
+            - generic [ref=e62]:
+              - generic [ref=e65]: 98.57%
+              - generic [ref=e69]: 97.29%
+              - generic [ref=e73]: 96.60%
+              - generic [ref=e77]: 97.06%
+              - generic [ref=e81]: 96.62%
+              - generic [ref=e85]: 96.88%
+          - generic [ref=e87]:
+            - generic [ref=e88]:
+              - generic [ref=e89]: Pingala-v1-universal
+              - paragraph [ref=e90]: Shunya Labs
+            - generic [ref=e91]:
+              - generic [ref=e92]: canary-qwen-2.5b
+              - paragraph [ref=e93]: NVIDIA
+            - generic [ref=e94]:
+              - generic [ref=e95]: granite-speech-3.3-8b
+              - paragraph [ref=e96]: IBM
+            - generic [ref=e97]:
+              - generic [ref=e98]: Phi-4-multimodal-instruct
+              - paragraph [ref=e99]: Microsoft
+            - generic [ref=e100]:
+              - generic [ref=e101]: parakeet-tdt-0.6b
+              - paragraph [ref=e102]: NVIDIA
+            - generic [ref=e103]:
+              - generic [ref=e104]: canary-1b-flash
+              - paragraph [ref=e105]: NVIDIA
+      - generic [ref=e106]:
+        - generic [ref=e107]:
+          - heading "Lowest Total Word Error Rate" [level=2] [ref=e108]
+          - img "lower" [ref=e110]
+        - generic [ref=e111]:
+          - generic [ref=e112]:
+            - generic [ref=e113]: 3.10 %
+            - generic [ref=e114]: 5.63 %
+            - generic [ref=e115]: 5.74 %
+            - generic [ref=e116]: 6.02 %
+            - generic [ref=e117]: 6.05 %
+            - generic [ref=e118]: 6.35 %
+          - generic [ref=e119]:
             - generic:
               - generic: "8"
             - generic:
@@ -121,164 +123,170 @@
               - generic: "2"
             - generic:
               - generic: "0"
-          - generic [ref=e131]:
-            - generic [ref=e132]:
-              - generic [ref=e133]: Pingala-v1-universal
-              - paragraph [ref=e134]: Shunya Labs
-            - generic [ref=e135]:
-              - generic [ref=e136]: canary-qwen-2.5b
-              - paragraph [ref=e137]: NVIDIA
-            - generic [ref=e138]:
-              - generic [ref=e139]: granite-speech-3.3-8b
-              - paragraph [ref=e140]: IBM
-            - generic [ref=e141]:
-              - generic [ref=e142]: Phi-4-multimodal-instruct
-              - paragraph [ref=e143]: Microsoft
-            - generic [ref=e144]:
-              - generic [ref=e145]: parakeet-tdt-0.6b
-              - paragraph [ref=e146]: NVIDIA
-            - generic [ref=e147]:
-              - generic [ref=e148]: canary-1b-flash
-              - paragraph [ref=e149]: NVIDIA
-      - generic [ref=e151]:
-        - heading "Milestones" [level=2] [ref=e152]
-        - generic [ref=e153]:
-          - generic [ref=e154]:
-            - paragraph [ref=e155]: 0ms
-            - paragraph [ref=e156]: round-trip latency in production
-          - generic [ref=e157]:
-            - paragraph [ref=e158]: "0"
-            - paragraph [ref=e159]: languages & dialects
-        - generic [ref=e160]:
-          - generic [ref=e161]:
-            - paragraph [ref=e162]: 85%
-            - paragraph [ref=e163]: GPU cost saved for a Fortune 100 logistics client
-          - generic [ref=e164]:
-            - paragraph [ref=e165]:
-              - generic [ref=e166]: 3.10%
-            - paragraph [ref=e167]: Word error rate
-    - contentinfo [ref=e168]:
-      - generic [ref=e172]:
-        - paragraph [ref=e173]: The fastest way to add voice AI to your products
-        - paragraph [ref=e174]: One platform for speech in and speech out—secure by design, built to scale.
-        - generic [ref=e175]:
-          - link "Go to Pricing page" [ref=e176] [cursor=pointer]:
+          - generic [ref=e133]:
+            - generic [ref=e134]:
+              - generic [ref=e135]: Pingala-v1-universal
+              - paragraph [ref=e136]: Shunya Labs
+            - generic [ref=e137]:
+              - generic [ref=e138]: canary-qwen-2.5b
+              - paragraph [ref=e139]: NVIDIA
+            - generic [ref=e140]:
+              - generic [ref=e141]: granite-speech-3.3-8b
+              - paragraph [ref=e142]: IBM
+            - generic [ref=e143]:
+              - generic [ref=e144]: Phi-4-multimodal-instruct
+              - paragraph [ref=e145]: Microsoft
+            - generic [ref=e146]:
+              - generic [ref=e147]: parakeet-tdt-0.6b
+              - paragraph [ref=e148]: NVIDIA
+            - generic [ref=e149]:
+              - generic [ref=e150]: canary-1b-flash
+              - paragraph [ref=e151]: NVIDIA
+      - generic [ref=e153]:
+        - heading "Milestones" [level=2] [ref=e154]
+        - generic [ref=e155]:
+          - generic [ref=e156]:
+            - paragraph [ref=e157]: 0ms
+            - paragraph [ref=e158]: round-trip latency in production
+          - generic [ref=e159]:
+            - paragraph [ref=e160]: "0"
+            - paragraph [ref=e161]: languages & dialects
+        - generic [ref=e162]:
+          - generic [ref=e163]:
+            - paragraph [ref=e164]: 85%
+            - paragraph [ref=e165]: GPU cost saved for a Fortune 100 logistics client
+          - generic [ref=e166]:
+            - paragraph [ref=e167]:
+              - generic [ref=e168]: 3.10%
+            - paragraph [ref=e169]: Word error rate
+    - contentinfo [ref=e170]:
+      - generic [ref=e174]:
+        - paragraph [ref=e175]: The fastest way to add voice AI to your products
+        - paragraph [ref=e176]: One platform for speech in and speech out—secure by design, built to scale.
+        - generic [ref=e177]:
+          - link "Go to Pricing page" [ref=e178] [cursor=pointer]:
             - /url: /pricing
             - text: Get Started
-          - link "Contact Sales" [ref=e177] [cursor=pointer]:
+          - link "Contact Sales" [ref=e179] [cursor=pointer]:
             - /url: /contact
-    - contentinfo [ref=e178]:
-      - generic [ref=e179]:
-        - generic [ref=e180]:
-          - img "Shunya Labs" [ref=e181]
-          - paragraph [ref=e182]: Shunya Labs, Inc.
-        - generic [ref=e183]:
-          - paragraph [ref=e184]: Product
-          - list [ref=e185]:
-            - listitem [ref=e186]:
-              - link "Overview" [ref=e187] [cursor=pointer]:
-                - /url: /overview
+    - contentinfo [ref=e180]:
+      - generic [ref=e181]:
+        - generic [ref=e182]:
+          - img "Shunya Labs" [ref=e183]
+          - paragraph [ref=e184]: Shunya Labs, Inc.
+        - generic [ref=e185]:
+          - paragraph [ref=e186]: Product
+          - list [ref=e187]:
             - listitem [ref=e188]:
-              - link "Models" [ref=e189] [cursor=pointer]:
-                - /url: /models-page
+              - link "Overview" [ref=e189] [cursor=pointer]:
+                - /url: /overview
             - listitem [ref=e190]:
-              - link "Voice Agents" [ref=e191] [cursor=pointer]:
-                - /url: /voice-agent
+              - link "Models" [ref=e191] [cursor=pointer]:
+                - /url: /models-page
             - listitem [ref=e192]:
-              - link "Speech Intelligence" [ref=e193] [cursor=pointer]:
-                - /url: /speech-intelligence-page
+              - link "Voice Agents" [ref=e193] [cursor=pointer]:
+                - /url: /voice-agent
             - listitem [ref=e194]:
-              - link "Audio Processing" [ref=e195] [cursor=pointer]:
-                - /url: /audio-processing
+              - link "Speech Intelligence" [ref=e195] [cursor=pointer]:
+                - /url: /speech-intelligence-page
             - listitem [ref=e196]:
-              - link "Deployment" [ref=e197] [cursor=pointer]:
+              - link "Audio Processing" [ref=e197] [cursor=pointer]:
+                - /url: /audio-processing
+            - listitem [ref=e198]:
+              - link "Deployment" [ref=e199] [cursor=pointer]:
                 - /url: /deployment
-        - generic [ref=e198]:
-          - paragraph [ref=e199]: Models
-          - list [ref=e200]:
-            - listitem [ref=e201]:
-              - link "Language Models" [ref=e202] [cursor=pointer]:
-                - /url: /language-models
+        - generic [ref=e200]:
+          - paragraph [ref=e201]: Models
+          - list [ref=e202]:
             - listitem [ref=e203]:
-              - link "Zero STT Indic" [ref=e204] [cursor=pointer]:
-                - /url: /zero-indic
+              - link "Language Models" [ref=e204] [cursor=pointer]:
+                - /url: /language-models
             - listitem [ref=e205]:
-              - link "Zero STT Codeswitch" [ref=e206] [cursor=pointer]:
-                - /url: /zero-code-switch
+              - link "Zero STT Indic" [ref=e206] [cursor=pointer]:
+                - /url: /zero-indic
             - listitem [ref=e207]:
-              - link "Zero STT Universal" [ref=e208] [cursor=pointer]:
-                - /url: /zero-stt
+              - link "Zero STT Codeswitch" [ref=e208] [cursor=pointer]:
+                - /url: /zero-code-switch
             - listitem [ref=e209]:
-              - link "Specialised Models" [ref=e210] [cursor=pointer]:
-                - /url: /domain-specialisation
+              - link "Zero STT Universal" [ref=e210] [cursor=pointer]:
+                - /url: /zero-stt
             - listitem [ref=e211]:
-              - link "Zero STT Med" [ref=e212] [cursor=pointer]:
-                - /url: /zero-med
+              - link "Specialised Models" [ref=e212] [cursor=pointer]:
+                - /url: /domain-specialisation
             - listitem [ref=e213]:
-              - link "On Device Models" [ref=e214] [cursor=pointer]:
+              - link "Zero STT Med" [ref=e214] [cursor=pointer]:
+                - /url: /zero-med
+            - listitem [ref=e215]:
+              - link "On Device Models" [ref=e216] [cursor=pointer]:
                 - /url: /on-device-models
-        - generic [ref=e215]:
-          - paragraph [ref=e216]: Solutions
-          - list [ref=e217]:
-            - listitem [ref=e218]:
-              - link "Contact Centers" [ref=e219] [cursor=pointer]:
-                - /url: /contact-centers
+        - generic [ref=e217]:
+          - paragraph [ref=e218]: Solutions
+          - list [ref=e219]:
             - listitem [ref=e220]:
-              - link "Media & Entertainment" [ref=e221] [cursor=pointer]:
-                - /url: /media-entertainment
+              - link "Contact Centers" [ref=e221] [cursor=pointer]:
+                - /url: /contact-centers
             - listitem [ref=e222]:
-              - link "Healthcare" [ref=e223] [cursor=pointer]:
+              - link "Media & Entertainment" [ref=e223] [cursor=pointer]:
+                - /url: /media-entertainment
+            - listitem [ref=e224]:
+              - link "Healthcare" [ref=e225] [cursor=pointer]:
                 - /url: /healthcare
-        - generic [ref=e224]:
-          - paragraph [ref=e225]: Resources
-          - list [ref=e226]:
-            - listitem [ref=e227]:
-              - link "Blogs" [ref=e228] [cursor=pointer]:
-                - /url: /blog
+        - generic [ref=e226]:
+          - paragraph [ref=e227]: Resources
+          - list [ref=e228]:
             - listitem [ref=e229]:
-              - link "Benchmarks" [ref=e230] [cursor=pointer]:
-                - /url: /benchmarks
+              - link "Blogs" [ref=e230] [cursor=pointer]:
+                - /url: /blog
             - listitem [ref=e231]:
-              - link "News & Media" [ref=e232] [cursor=pointer]:
+              - link "Benchmarks" [ref=e232] [cursor=pointer]:
+                - /url: /benchmarks
+            - listitem [ref=e233]:
+              - link "News & Media" [ref=e234] [cursor=pointer]:
                 - /url: /media
-        - paragraph [ref=e234]:
-          - link "Documentation" [ref=e235] [cursor=pointer]:
-            - /url: /documentation/batch-transcriptions/quickstart
-        - list [ref=e237]:
-          - listitem [ref=e238]:
-            - link "About us" [ref=e239] [cursor=pointer]:
+            - listitem [ref=e235]:
+              - link "Patents" [ref=e236] [cursor=pointer]:
+                - /url: /patents
+            - listitem [ref=e237]:
+              - link "Research" [ref=e238] [cursor=pointer]:
+                - /url: /research
+        - paragraph [ref=e240]:
+          - link "Documentation" [ref=e241] [cursor=pointer]:
+            - /url: https://docs.shunyalabs.ai/overview
+        - list [ref=e243]:
+          - listitem [ref=e244]:
+            - link "About us" [ref=e245] [cursor=pointer]:
               - /url: /about
-        - list [ref=e241]:
-          - listitem [ref=e242]:
-            - link "Pricing" [ref=e243] [cursor=pointer]:
+        - list [ref=e247]:
+          - listitem [ref=e248]:
+            - link "Pricing" [ref=e249] [cursor=pointer]:
               - /url: /pricing
-      - generic [ref=e244]:
-        - paragraph [ref=e245]: Follow us on
-        - generic [ref=e246]:
-          - link [ref=e247] [cursor=pointer]:
-            - /url: https://www.linkedin.com/company/shunya-labs-ai/
-            - img [ref=e248]
-          - link [ref=e250] [cursor=pointer]:
-            - /url: https://www.facebook.com/people/ShunyaLabsAI/61577801851308/
-            - img [ref=e251]
+      - generic [ref=e250]:
+        - paragraph [ref=e251]: Follow us on
+        - generic [ref=e252]:
           - link [ref=e253] [cursor=pointer]:
-            - /url: https://www.instagram.com/shunyalabsai/
+            - /url: https://www.linkedin.com/company/shunya-labs-ai/
             - img [ref=e254]
           - link [ref=e256] [cursor=pointer]:
-            - /url: https://x.com/ShunyaLabsAI
+            - /url: https://www.facebook.com/people/ShunyaLabsAI/61577801851308/
             - img [ref=e257]
-      - generic [ref=e259]:
-        - paragraph [ref=e260]: © 2026 Shunya Labs Inc. All rights reserved.
-        - generic [ref=e261]:
-          - link "Privacy" [ref=e262] [cursor=pointer]:
+          - link [ref=e259] [cursor=pointer]:
+            - /url: https://www.instagram.com/shunyalabsai/
+            - img [ref=e260]
+          - link [ref=e262] [cursor=pointer]:
+            - /url: https://x.com/ShunyaLabsAI
+            - img [ref=e263]
+      - generic [ref=e265]:
+        - paragraph [ref=e266]: © 2026 Shunya Labs Inc. All rights reserved.
+        - generic [ref=e267]:
+          - link "Privacy" [ref=e268] [cursor=pointer]:
             - /url: /privacy-policy
-          - link "Terms" [ref=e263] [cursor=pointer]:
+          - link "Terms" [ref=e269] [cursor=pointer]:
             - /url: /terms-conditions
-          - link "Security" [ref=e264] [cursor=pointer]:
+          - link "Security" [ref=e270] [cursor=pointer]:
             - /url: /security-policy
-          - link "General License" [ref=e265] [cursor=pointer]:
+          - link "General License" [ref=e271] [cursor=pointer]:
             - /url: /general-rail-m-license
-          - link "Custom License" [ref=e266] [cursor=pointer]:
+          - link "Custom License" [ref=e272] [cursor=pointer]:
             - /url: /shunya-labs-custom-model-rail-m-license
-  - alert [ref=e267]
+  - alert [ref=e273]
 ```

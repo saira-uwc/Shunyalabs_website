@@ -52,798 +52,806 @@
               - text: Resources
               - img [ref=e47]
             - link "Documentation" [ref=e49] [cursor=pointer]:
-              - /url: /documentation/batch-transcriptions/quickstart
+              - /url: https://docs.shunyalabs.ai/overview
             - link "About Us" [ref=e50] [cursor=pointer]:
               - /url: /about
             - link "Pricing" [ref=e51] [cursor=pointer]:
               - /url: /pricing
-          - generic [ref=e52]:
-            - button "Sign In" [ref=e53] [cursor=pointer]
-            - link "Get Started" [ref=e54] [cursor=pointer]:
-              - /url: /pricing
-            - link "Contact Sales" [ref=e55] [cursor=pointer]:
+          - link "Playground" [ref=e52] [cursor=pointer]:
+            - /url: https://playground.shunyalabs.ai/
+            - img [ref=e53]
+            - text: Playground
+          - generic [ref=e55]:
+            - button "Sign In" [ref=e56] [cursor=pointer]
+            - link "Contact Sales" [ref=e57] [cursor=pointer]:
               - /url: /contact
-      - generic [ref=e57]:
-        - heading "Voice AI on your terms" [level=1] [ref=e58]
-        - heading "Foundation models to voice agents, complete voice AI stack." [level=2] [ref=e59]
+      - generic [ref=e59]:
+        - heading "Voice AI on your terms" [level=1] [ref=e60]
+        - heading "Foundation models to voice agents, complete voice AI stack." [level=2] [ref=e61]
         - text: Built for developers. Ready for enterprises.
-      - main [ref=e62]:
-        - generic [ref=e66]:
-          - generic [ref=e70]:
-            - button "Speech To Text" [ref=e71] [cursor=pointer]:
-              - generic [ref=e72]:
-                - img [ref=e74]
-                - generic [ref=e78]: Speech To Text
-            - button "Medical Transcription" [ref=e79] [cursor=pointer]:
-              - generic [ref=e80]:
-                - img [ref=e82]
-                - generic [ref=e86]: Medical Transcription
-            - button "Codeswitch" [ref=e87] [cursor=pointer]:
-              - generic [ref=e88]:
-                - img [ref=e90]
-                - generic [ref=e95]: Codeswitch
-          - generic [ref=e96]:
-            - generic [ref=e100]:
-              - generic [ref=e102]:
-                - generic [ref=e103]: Language
-                - button "🇺🇸English" [ref=e106] [cursor=pointer]:
-                  - generic [ref=e107]: 🇺🇸English
+      - main [ref=e64]:
+        - generic [ref=e68]:
+          - generic [ref=e72]:
+            - button "Speech To Text" [ref=e73] [cursor=pointer]:
+              - generic [ref=e74]:
+                - img [ref=e76]
+                - generic [ref=e80]: Speech To Text
+            - button "Medical Transcription" [ref=e81] [cursor=pointer]:
+              - generic [ref=e82]:
+                - img [ref=e84]
+                - generic [ref=e88]: Medical Transcription
+            - button "Codeswitch" [ref=e89] [cursor=pointer]:
+              - generic [ref=e90]:
+                - img [ref=e92]
+                - generic [ref=e97]: Codeswitch
+          - generic [ref=e98]:
+            - generic [ref=e102]:
+              - generic [ref=e104]:
+                - generic [ref=e105]: Language
+                - button "🇺🇸English" [ref=e108] [cursor=pointer]:
+                  - generic [ref=e109]: 🇺🇸English
                   - generic:
                     - img
-              - generic [ref=e109]:
-                - generic [ref=e110]: Input Audio
-                - generic [ref=e111]:
-                  - generic [ref=e112]: Pre-recorded
-                  - generic [ref=e115]:
-                    - button "Customer Support Call" [ref=e116] [cursor=pointer]
-                    - button "Podcast" [ref=e117] [cursor=pointer]
-                    - button "Upload your file" [ref=e118] [cursor=pointer]
-              - generic [ref=e120]:
-                - generic [ref=e122]: or
-                - generic [ref=e123]:
-                  - generic [ref=e125]: Live recording
-                  - button "Start Speaking" [ref=e126] [cursor=pointer]:
-                    - generic [ref=e127]: Start Speaking
-            - generic [ref=e131]:
-              - generic [ref=e132]:
-                - button "Play audio" [ref=e135] [cursor=pointer]:
-                  - img [ref=e136]
-                - button "No conversation to copy" [disabled] [ref=e203]:
-                  - img [ref=e204]
-              - generic [ref=e213]:
-                - img [ref=e216]
-                - paragraph [ref=e220]: Select your input language, then pick a sample, upload a file, or start speaking to capture live audio.
-      - generic [ref=e222]:
-        - link "Cloud API Production Ready →" [ref=e223] [cursor=pointer]:
+              - generic [ref=e111]:
+                - generic [ref=e112]: Input Audio
+                - generic [ref=e113]:
+                  - generic [ref=e114]: Pre-recorded
+                  - generic [ref=e117]:
+                    - button "Customer Support Call" [ref=e118] [cursor=pointer]
+                    - button "Podcast" [ref=e119] [cursor=pointer]
+                    - button "Upload your file" [ref=e120] [cursor=pointer]
+              - generic [ref=e122]:
+                - generic [ref=e124]: or
+                - generic [ref=e125]:
+                  - generic [ref=e127]: Live recording
+                  - button "Start Speaking" [ref=e128] [cursor=pointer]:
+                    - generic [ref=e129]: Start Speaking
+            - generic [ref=e133]:
+              - generic [ref=e134]:
+                - button "Play audio" [ref=e137] [cursor=pointer]:
+                  - img [ref=e138]
+                - button "No conversation to copy" [disabled] [ref=e205]:
+                  - img [ref=e206]
+              - generic [ref=e215]:
+                - img [ref=e218]
+                - paragraph [ref=e222]: Select your input language, then pick a sample, upload a file, or start speaking to capture live audio.
+      - generic [ref=e224]:
+        - link "Cloud API Production Ready →" [ref=e225] [cursor=pointer]:
           - /url: /pricing
-          - generic [ref=e224]:
-            - generic [ref=e225]: Cloud API
-            - generic [ref=e226]: Production Ready
-          - generic [ref=e227]: →
-        - link "Developer Documentation Local Deployment →" [ref=e228] [cursor=pointer]:
-          - /url: /documentation/batch-transcriptions/quickstart
-          - generic [ref=e229]:
-            - generic [ref=e230]: Developer Documentation
-            - generic [ref=e231]: Local Deployment
-          - generic [ref=e232]: →
-        - link "Hugging Face Open Models →" [ref=e233] [cursor=pointer]:
+          - generic [ref=e226]:
+            - generic [ref=e227]: Cloud API
+            - generic [ref=e228]: Production Ready
+          - generic [ref=e229]: →
+        - link "Developer Documentation Local Deployment →" [ref=e230] [cursor=pointer]:
+          - /url: https://docs.shunyalabs.ai/overview
+          - generic [ref=e231]:
+            - generic [ref=e232]: Developer Documentation
+            - generic [ref=e233]: Local Deployment
+          - generic [ref=e234]: →
+        - link "Hugging Face Open Models →" [ref=e235] [cursor=pointer]:
           - /url: https://huggingface.co/shunyalabs
-          - generic [ref=e234]:
-            - generic [ref=e235]: Hugging Face
-            - generic [ref=e236]: Open Models
-          - generic [ref=e237]: →
-      - generic [ref=e239]:
-        - heading "A full-stack voice platform-low latency, modular APIs, and accuracy engineered for enterprise scale." [level=2] [ref=e240]
-        - generic [ref=e241]:
-          - generic [ref=e243]:
-            - img "Foundation Models" [ref=e245]
-            - heading "Foundation Models" [level=2] [ref=e246]
+          - generic [ref=e236]:
+            - generic [ref=e237]: Hugging Face
+            - generic [ref=e238]: Open Models
+          - generic [ref=e239]: →
+      - generic [ref=e241]:
+        - heading "A full-stack voice platform-low latency, modular APIs, and accuracy engineered for enterprise scale." [level=2] [ref=e242]
+        - generic [ref=e243]:
+          - generic [ref=e245]:
+            - img "Foundation Models" [ref=e247]
+            - heading "Foundation Models" [level=2] [ref=e248]
             - heading [level=2]
             - heading [level=3]
-            - paragraph [ref=e247]: State-of-the-art speech models from multilingual transcription to medical-grade precision and ultra-natural synthesis.
-          - generic [ref=e249]:
-            - img "Voice Agents" [ref=e251]
-            - heading "Voice Agents" [level=2] [ref=e252]
+            - paragraph [ref=e249]: State-of-the-art speech models from multilingual transcription to medical-grade precision and ultra-natural synthesis.
+          - generic [ref=e251]:
+            - img "Voice Agents" [ref=e253]
+            - heading "Voice Agents" [level=2] [ref=e254]
             - heading [level=2]
             - heading [level=3]
-            - paragraph [ref=e253]: Build intelligent conversational experiences with our orchestration API. Deploy production-ready agents at scale.
-          - generic [ref=e255]:
-            - img "Intelligence Layer" [ref=e257]
-            - heading "Intelligence Layer" [level=2] [ref=e258]
+            - paragraph [ref=e255]: Build intelligent conversational experiences with our orchestration API. Deploy production-ready agents at scale.
+          - generic [ref=e257]:
+            - img "Intelligence Layer" [ref=e259]
+            - heading "Intelligence Layer" [level=2] [ref=e260]
             - heading [level=2]
             - heading [level=3]
-            - paragraph [ref=e259]: Extract insights from every conversation. Intent recognition, entity extraction, sentiment analysis, and more.
-          - generic [ref=e261]:
-            - img "Developer First" [ref=e263]
-            - heading "Developer First" [level=2] [ref=e264]
-            - heading "Enterprise Ready" [level=2] [ref=e265]
+            - paragraph [ref=e261]: Extract insights from every conversation. Intent recognition, entity extraction, sentiment analysis, and more.
+          - generic [ref=e263]:
+            - img "Developer First" [ref=e265]
+            - heading "Developer First" [level=2] [ref=e266]
+            - heading "Enterprise Ready" [level=2] [ref=e267]
             - heading [level=3]
-            - paragraph [ref=e266]: Start in minutes with tiny, friendly APIs. Scale seamlessly to cloud, edge, or on-premises when you're ready.
-    - generic [ref=e268]:
-      - generic [ref=e269]:
-        - heading "Why Shunya Labs?" [level=2] [ref=e270]
-        - paragraph [ref=e271]: We solve the fundamental problems that make voice AI expensive, slow, and insecure.
-      - generic [ref=e272]:
-        - generic [ref=e275]:
-          - img [ref=e277]
-          - heading "Built for accurate performance" [level=3] [ref=e279]
-          - generic [ref=e280]: Under-3% WER
-          - paragraph [ref=e281]: Very low error rates and strong noise handling—call floors, street audio, you name it
-        - generic [ref=e284]:
-          - img [ref=e286]
-          - heading "CPU-compatible Architecture" [level=3] [ref=e289]
-          - generic [ref=e290]: Deploy anywhere, anytime
-          - paragraph [ref=e291]: Runs fast on standard servers—no GPUs required, no vendor lock-in
-        - generic [ref=e294]:
-          - img [ref=e296]
-          - heading "Blazing fast" [level=3] [ref=e298]
-          - generic [ref=e299]: Sub-100 ms latency
-          - paragraph [ref=e300]: Sub-100 ms latency end to end—responsive captions and prompts that stay smooth under bursty traffic
-        - generic [ref=e303]:
-          - img [ref=e305]
-          - heading "Privacy by design" [level=3] [ref=e308]
-          - generic [ref=e309]: Your data stays yours
-          - paragraph [ref=e310]: Keeps data on your own systems. Air-gap friendly with enterprise compliance (HIPAA, SOC 2)
-        - generic [ref=e313]:
-          - img [ref=e315]
-          - heading "Open & Portable" [level=3] [ref=e318]
-          - generic [ref=e319]: No platform prison
-          - paragraph [ref=e320]: Standard APIs, multiple SDKs, container-ready. Integrate with your existing stack in minutes
-    - generic [ref=e322]:
-      - img [ref=e324]
-      - generic [ref=e328]:
-        - heading "Industry-leading standards for enterprise security" [level=2] [ref=e329]
-        - generic [ref=e330]:
-          - generic [ref=e331]:
-            - img "SOC 2 Type II" [ref=e333]
-            - heading "SOC 2 Type II" [level=3] [ref=e334]
-            - paragraph [ref=e335]: Trusted where privacy matters most — SOC 2 Type II certified.
-          - generic [ref=e336]:
-            - img "ISO 27001" [ref=e338]
-            - heading "ISO 27001" [level=3] [ref=e339]
-            - paragraph [ref=e340]: Privacy and compliance built in with our ISO/IEC 27001:2022 accreditation.
-          - generic [ref=e341]:
-            - img "HIPAA" [ref=e343]
-            - heading "HIPAA" [level=3] [ref=e344]
-            - paragraph [ref=e345]: Fully compliant with the health insurance portability and accountability act.
-          - generic [ref=e346]:
-            - img "Two-Sided Encryption" [ref=e348]
-            - heading "Two-Sided Encryption" [level=3] [ref=e349]
-            - paragraph [ref=e350]: Data is encrypted in transit and at rest—TLS for every connection, AES-256 for storage, with keys managed in your cloud.
-    - generic [ref=e352]:
-      - heading "Understand Everyone. Speak to Anyone" [level=2] [ref=e353]
-      - paragraph [ref=e354]: We solve the fundamental problems that make voice AI expensive, slow, and insecure.
-      - generic [ref=e355]:
-        - generic [ref=e356]:
-          - paragraph [ref=e357]: "0"
-          - paragraph [ref=e358]: Language Supported
-        - generic [ref=e359]:
-          - paragraph [ref=e360]: 0.0%
-          - paragraph [ref=e361]: Global Population Coverage
-        - generic [ref=e362]:
-          - paragraph [ref=e363]: 0K
-          - paragraph [ref=e364]: Minimum Native Speakers
-    - generic [ref=e365]:
-      - generic [ref=e367]:
-        - paragraph [ref=e368]: Language Regions
-        - paragraph [ref=e369]: Explore our comprehensive language coverage across the globe
-      - generic [ref=e370]:
-        - generic [ref=e371]:
-          - button "Akan Akan" [ref=e372] [cursor=pointer]:
-            - generic [ref=e373]:
-              - generic [ref=e374]:
+            - paragraph [ref=e268]: Start in minutes with tiny, friendly APIs. Scale seamlessly to cloud, edge, or on-premises when you're ready.
+    - generic [ref=e270]:
+      - generic [ref=e271]:
+        - heading "Why Shunya Labs?" [level=2] [ref=e272]
+        - paragraph [ref=e273]: We solve the fundamental problems that make voice AI expensive, slow, and insecure.
+      - generic [ref=e274]:
+        - generic [ref=e277]:
+          - img [ref=e279]
+          - heading "Built for accurate performance" [level=3] [ref=e281]
+          - generic [ref=e282]: Under-3% WER
+          - paragraph [ref=e283]: Very low error rates and strong noise handling—call floors, street audio, you name it
+        - generic [ref=e286]:
+          - img [ref=e288]
+          - heading "CPU-compatible Architecture" [level=3] [ref=e291]
+          - generic [ref=e292]: Deploy anywhere, anytime
+          - paragraph [ref=e293]: Runs fast on standard servers—no GPUs required, no vendor lock-in
+        - generic [ref=e296]:
+          - img [ref=e298]
+          - heading "Blazing fast" [level=3] [ref=e300]
+          - generic [ref=e301]: Sub-100 ms latency
+          - paragraph [ref=e302]: Sub-100 ms latency end to end—responsive captions and prompts that stay smooth under bursty traffic
+        - generic [ref=e305]:
+          - img [ref=e307]
+          - heading "Privacy by design" [level=3] [ref=e310]
+          - generic [ref=e311]: Your data stays yours
+          - paragraph [ref=e312]: Keeps data on your own systems. Air-gap friendly with enterprise compliance (HIPAA, SOC 2)
+        - generic [ref=e315]:
+          - img [ref=e317]
+          - heading "Open & Portable" [level=3] [ref=e320]
+          - generic [ref=e321]: No platform prison
+          - paragraph [ref=e322]: Standard APIs, multiple SDKs, container-ready. Integrate with your existing stack in minutes
+    - generic [ref=e324]:
+      - img [ref=e326]
+      - generic [ref=e330]:
+        - heading "Industry-leading standards for enterprise security" [level=2] [ref=e331]
+        - generic [ref=e332]:
+          - generic [ref=e333]:
+            - img "SOC 2 Type II" [ref=e335]
+            - heading "SOC 2 Type II" [level=3] [ref=e336]
+            - paragraph [ref=e337]: Trusted where privacy matters most — SOC 2 Type II certified.
+          - generic [ref=e338]:
+            - img "ISO 27001" [ref=e340]
+            - heading "ISO 27001" [level=3] [ref=e341]
+            - paragraph [ref=e342]: Privacy and compliance built in with our ISO/IEC 27001:2022 accreditation.
+          - generic [ref=e343]:
+            - img "HIPAA" [ref=e345]
+            - heading "HIPAA" [level=3] [ref=e346]
+            - paragraph [ref=e347]: Fully compliant with the health insurance portability and accountability act.
+          - generic [ref=e348]:
+            - img "Two-Sided Encryption" [ref=e350]
+            - heading "Two-Sided Encryption" [level=3] [ref=e351]
+            - paragraph [ref=e352]: Data is encrypted in transit and at rest—TLS for every connection, AES-256 for storage, with keys managed in your cloud.
+    - generic [ref=e354]:
+      - heading "Understand Everyone. Speak to Anyone" [level=2] [ref=e355]
+      - paragraph [ref=e356]: We solve the fundamental problems that make voice AI expensive, slow, and insecure.
+      - generic [ref=e357]:
+        - generic [ref=e358]:
+          - paragraph [ref=e359]: "0"
+          - paragraph [ref=e360]: Language Supported
+        - generic [ref=e361]:
+          - paragraph [ref=e362]: 0.0%
+          - paragraph [ref=e363]: Global Population Coverage
+        - generic [ref=e364]:
+          - paragraph [ref=e365]: 0K
+          - paragraph [ref=e366]: Minimum Native Speakers
+    - generic [ref=e367]:
+      - generic [ref=e369]:
+        - paragraph [ref=e370]: Language Regions
+        - paragraph [ref=e371]: Explore our comprehensive language coverage across the globe
+      - generic [ref=e372]:
+        - generic [ref=e373]:
+          - button "Akan Akan" [ref=e374] [cursor=pointer]:
+            - generic [ref=e375]:
+              - generic [ref=e376]:
                 - img "Akan"
-              - generic [ref=e375]: Akan
-            - img [ref=e376]
-          - button "Arabic (Global) Arabic (Global)" [ref=e378] [cursor=pointer]:
-            - generic [ref=e379]:
-              - generic [ref=e380]:
+              - generic [ref=e377]: Akan
+            - img [ref=e378]
+          - button "Arabic (Global) Arabic (Global)" [ref=e380] [cursor=pointer]:
+            - generic [ref=e381]:
+              - generic [ref=e382]:
                 - img "Arabic (Global)"
-              - generic [ref=e381]: Arabic (Global)
-            - img [ref=e382]
-          - button "Assamese Assamese" [ref=e384] [cursor=pointer]:
-            - generic [ref=e385]:
-              - generic [ref=e386]:
+              - generic [ref=e383]: Arabic (Global)
+            - img [ref=e384]
+          - button "Assamese Assamese" [ref=e386] [cursor=pointer]:
+            - generic [ref=e387]:
+              - generic [ref=e388]:
                 - img "Assamese"
-              - generic [ref=e387]: Assamese
-            - img [ref=e388]
-          - button "Awadhi Awadhi" [ref=e390] [cursor=pointer]:
-            - generic [ref=e391]:
-              - generic [ref=e392]:
+              - generic [ref=e389]: Assamese
+            - img [ref=e390]
+          - button "Awadhi Awadhi" [ref=e392] [cursor=pointer]:
+            - generic [ref=e393]:
+              - generic [ref=e394]:
                 - img "Awadhi"
-              - generic [ref=e393]: Awadhi
-            - img [ref=e394]
-          - button "Azerbaijani Azerbaijani" [ref=e396] [cursor=pointer]:
-            - generic [ref=e397]:
-              - generic [ref=e398]:
+              - generic [ref=e395]: Awadhi
+            - img [ref=e396]
+          - button "Azerbaijani Azerbaijani" [ref=e398] [cursor=pointer]:
+            - generic [ref=e399]:
+              - generic [ref=e400]:
                 - img "Azerbaijani"
-              - generic [ref=e399]: Azerbaijani
-            - img [ref=e400]
-          - button "Bambara Bambara" [ref=e402] [cursor=pointer]:
-            - generic [ref=e403]:
-              - generic [ref=e404]:
+              - generic [ref=e401]: Azerbaijani
+            - img [ref=e402]
+          - button "Bambara Bambara" [ref=e404] [cursor=pointer]:
+            - generic [ref=e405]:
+              - generic [ref=e406]:
                 - img "Bambara"
-              - generic [ref=e405]: Bambara
-            - img [ref=e406]
-          - button "Bavarian Bavarian" [ref=e408] [cursor=pointer]:
-            - generic [ref=e409]:
-              - generic [ref=e410]:
+              - generic [ref=e407]: Bambara
+            - img [ref=e408]
+          - button "Bavarian Bavarian" [ref=e410] [cursor=pointer]:
+            - generic [ref=e411]:
+              - generic [ref=e412]:
                 - img "Bavarian"
-              - generic [ref=e411]: Bavarian
-            - img [ref=e412]
-          - button "Bengali (Bangladesh) Bengali (Bangladesh)" [ref=e414] [cursor=pointer]:
-            - generic [ref=e415]:
-              - generic [ref=e416]:
+              - generic [ref=e413]: Bavarian
+            - img [ref=e414]
+          - button "Bengali (Bangladesh) Bengali (Bangladesh)" [ref=e416] [cursor=pointer]:
+            - generic [ref=e417]:
+              - generic [ref=e418]:
                 - img "Bengali (Bangladesh)"
-              - generic [ref=e417]: Bengali (Bangladesh)
-            - img [ref=e418]
-          - button "Berber (Tamazight) Berber (Tamazight)" [ref=e420] [cursor=pointer]:
-            - generic [ref=e421]:
-              - generic [ref=e422]:
+              - generic [ref=e419]: Bengali (Bangladesh)
+            - img [ref=e420]
+          - button "Berber (Tamazight) Berber (Tamazight)" [ref=e422] [cursor=pointer]:
+            - generic [ref=e423]:
+              - generic [ref=e424]:
                 - img "Berber (Tamazight)"
-              - generic [ref=e423]: Berber (Tamazight)
-            - img [ref=e424]
-          - button "Bhojpuri Bhojpuri" [ref=e426] [cursor=pointer]:
-            - generic [ref=e427]:
-              - generic [ref=e428]:
+              - generic [ref=e425]: Berber (Tamazight)
+            - img [ref=e426]
+          - button "Bhojpuri Bhojpuri" [ref=e428] [cursor=pointer]:
+            - generic [ref=e429]:
+              - generic [ref=e430]:
                 - img "Bhojpuri"
-              - generic [ref=e429]: Bhojpuri
-            - img [ref=e430]
-          - button "Catalan Catalan" [ref=e432] [cursor=pointer]:
-            - generic [ref=e433]:
-              - generic [ref=e434]:
+              - generic [ref=e431]: Bhojpuri
+            - img [ref=e432]
+          - button "Catalan Catalan" [ref=e434] [cursor=pointer]:
+            - generic [ref=e435]:
+              - generic [ref=e436]:
                 - img "Catalan"
-              - generic [ref=e435]: Catalan
-            - img [ref=e436]
-          - button "Cebuano Cebuano" [ref=e438] [cursor=pointer]:
-            - generic [ref=e439]:
-              - generic [ref=e440]:
+              - generic [ref=e437]: Catalan
+            - img [ref=e438]
+          - button "Cebuano Cebuano" [ref=e440] [cursor=pointer]:
+            - generic [ref=e441]:
+              - generic [ref=e442]:
                 - img "Cebuano"
-              - generic [ref=e441]: Cebuano
-            - img [ref=e442]
-          - button "Chhattisgarhi Chhattisgarhi" [ref=e444] [cursor=pointer]:
-            - generic [ref=e445]:
-              - generic [ref=e446]:
+              - generic [ref=e443]: Cebuano
+            - img [ref=e444]
+          - button "Chhattisgarhi Chhattisgarhi" [ref=e446] [cursor=pointer]:
+            - generic [ref=e447]:
+              - generic [ref=e448]:
                 - img "Chhattisgarhi"
-              - generic [ref=e447]: Chhattisgarhi
-            - img [ref=e448]
-          - button "Chichewa Chichewa" [ref=e450] [cursor=pointer]:
-            - generic [ref=e451]:
-              - generic [ref=e452]:
+              - generic [ref=e449]: Chhattisgarhi
+            - img [ref=e450]
+          - button "Chichewa Chichewa" [ref=e452] [cursor=pointer]:
+            - generic [ref=e453]:
+              - generic [ref=e454]:
                 - img "Chichewa"
-              - generic [ref=e453]: Chichewa
-            - img [ref=e454]
-          - button "Chinese (Global) Chinese (Global)" [ref=e456] [cursor=pointer]:
-            - generic [ref=e457]:
-              - generic [ref=e458]:
+              - generic [ref=e455]: Chichewa
+            - img [ref=e456]
+          - button "Chinese (Global) Chinese (Global)" [ref=e458] [cursor=pointer]:
+            - generic [ref=e459]:
+              - generic [ref=e460]:
                 - img "Chinese (Global)"
-              - generic [ref=e459]: Chinese (Global)
-            - img [ref=e460]
-          - button "Czech Czech" [ref=e462] [cursor=pointer]:
-            - generic [ref=e463]:
-              - generic [ref=e464]:
+              - generic [ref=e461]: Chinese (Global)
+            - img [ref=e462]
+          - button "Czech Czech" [ref=e464] [cursor=pointer]:
+            - generic [ref=e465]:
+              - generic [ref=e466]:
                 - img "Czech"
-              - generic [ref=e465]: Czech
-            - img [ref=e466]
-          - button "Dari Dari" [ref=e468] [cursor=pointer]:
-            - generic [ref=e469]:
-              - generic [ref=e470]:
+              - generic [ref=e467]: Czech
+            - img [ref=e468]
+          - button "Dari Dari" [ref=e470] [cursor=pointer]:
+            - generic [ref=e471]:
+              - generic [ref=e472]:
                 - img "Dari"
-              - generic [ref=e471]: Dari
-            - img [ref=e472]
-          - button "Dutch Dutch" [ref=e474] [cursor=pointer]:
-            - generic [ref=e475]:
-              - generic [ref=e476]:
+              - generic [ref=e473]: Dari
+            - img [ref=e474]
+          - button "Dutch Dutch" [ref=e476] [cursor=pointer]:
+            - generic [ref=e477]:
+              - generic [ref=e478]:
                 - img "Dutch"
-              - generic [ref=e477]: Dutch
-            - img [ref=e478]
-          - button "English English" [ref=e480] [cursor=pointer]:
-            - generic [ref=e481]:
-              - generic [ref=e482]:
+              - generic [ref=e479]: Dutch
+            - img [ref=e480]
+          - button "English English" [ref=e482] [cursor=pointer]:
+            - generic [ref=e483]:
+              - generic [ref=e484]:
                 - img "English"
-              - generic [ref=e483]: English
-            - img [ref=e484]
-          - button "French French" [ref=e486] [cursor=pointer]:
-            - generic [ref=e487]:
-              - generic [ref=e488]:
+              - generic [ref=e485]: English
+            - img [ref=e486]
+          - button "French French" [ref=e488] [cursor=pointer]:
+            - generic [ref=e489]:
+              - generic [ref=e490]:
                 - img "French"
-              - generic [ref=e489]: French
-            - img [ref=e490]
-          - button "Fulani Fulani" [ref=e492] [cursor=pointer]:
-            - generic [ref=e493]:
-              - generic [ref=e494]:
+              - generic [ref=e491]: French
+            - img [ref=e492]
+          - button "Fulani Fulani" [ref=e494] [cursor=pointer]:
+            - generic [ref=e495]:
+              - generic [ref=e496]:
                 - img "Fulani"
-              - generic [ref=e495]: Fulani
-            - img [ref=e496]
-          - button "German German" [ref=e498] [cursor=pointer]:
-            - generic [ref=e499]:
-              - generic [ref=e500]:
+              - generic [ref=e497]: Fulani
+            - img [ref=e498]
+          - button "German German" [ref=e500] [cursor=pointer]:
+            - generic [ref=e501]:
+              - generic [ref=e502]:
                 - img "German"
-              - generic [ref=e501]: German
-            - img [ref=e502]
-          - button "Greek Greek" [ref=e504] [cursor=pointer]:
-            - generic [ref=e505]:
-              - generic [ref=e506]:
+              - generic [ref=e503]: German
+            - img [ref=e504]
+          - button "Greek Greek" [ref=e506] [cursor=pointer]:
+            - generic [ref=e507]:
+              - generic [ref=e508]:
                 - img "Greek"
-              - generic [ref=e507]: Greek
-            - img [ref=e508]
-          - button "Gujarati Gujarati" [ref=e510] [cursor=pointer]:
-            - generic [ref=e511]:
-              - generic [ref=e512]:
+              - generic [ref=e509]: Greek
+            - img [ref=e510]
+          - button "Gujarati Gujarati" [ref=e512] [cursor=pointer]:
+            - generic [ref=e513]:
+              - generic [ref=e514]:
                 - img "Gujarati"
-              - generic [ref=e513]: Gujarati
-            - img [ref=e514]
-          - button "Haitian Creole Haitian Creole" [ref=e516] [cursor=pointer]:
-            - generic [ref=e517]:
-              - generic [ref=e518]:
+              - generic [ref=e515]: Gujarati
+            - img [ref=e516]
+          - button "Haitian Creole Haitian Creole" [ref=e518] [cursor=pointer]:
+            - generic [ref=e519]:
+              - generic [ref=e520]:
                 - img "Haitian Creole"
-              - generic [ref=e519]: Haitian Creole
-            - img [ref=e520]
-          - button "Haryanvi Haryanvi" [ref=e522] [cursor=pointer]:
-            - generic [ref=e523]:
-              - generic [ref=e524]:
+              - generic [ref=e521]: Haitian Creole
+            - img [ref=e522]
+          - button "Haryanvi Haryanvi" [ref=e524] [cursor=pointer]:
+            - generic [ref=e525]:
+              - generic [ref=e526]:
                 - img "Haryanvi"
-              - generic [ref=e525]: Haryanvi
-            - img [ref=e526]
-          - button "Hausa Hausa" [ref=e528] [cursor=pointer]:
-            - generic [ref=e529]:
-              - generic [ref=e530]:
+              - generic [ref=e527]: Haryanvi
+            - img [ref=e528]
+          - button "Hausa Hausa" [ref=e530] [cursor=pointer]:
+            - generic [ref=e531]:
+              - generic [ref=e532]:
                 - img "Hausa"
-              - generic [ref=e531]: Hausa
-            - img [ref=e532]
-          - button "Hindi Hindi" [ref=e534] [cursor=pointer]:
-            - generic [ref=e535]:
-              - generic [ref=e536]:
+              - generic [ref=e533]: Hausa
+            - img [ref=e534]
+          - button "Hindi Hindi" [ref=e536] [cursor=pointer]:
+            - generic [ref=e537]:
+              - generic [ref=e538]:
                 - img "Hindi"
-              - generic [ref=e537]: Hindi
-            - img [ref=e538]
-          - button "Hungarian Hungarian" [ref=e540] [cursor=pointer]:
-            - generic [ref=e541]:
-              - generic [ref=e542]:
+              - generic [ref=e539]: Hindi
+            - img [ref=e540]
+          - button "Hungarian Hungarian" [ref=e542] [cursor=pointer]:
+            - generic [ref=e543]:
+              - generic [ref=e544]:
                 - img "Hungarian"
-              - generic [ref=e543]: Hungarian
-            - img [ref=e544]
-          - button "Igbo Igbo" [ref=e546] [cursor=pointer]:
-            - generic [ref=e547]:
-              - generic [ref=e548]:
+              - generic [ref=e545]: Hungarian
+            - img [ref=e546]
+          - button "Igbo Igbo" [ref=e548] [cursor=pointer]:
+            - generic [ref=e549]:
+              - generic [ref=e550]:
                 - img "Igbo"
-              - generic [ref=e549]: Igbo
-            - img [ref=e550]
-          - button "Indonesian Indonesian" [ref=e552] [cursor=pointer]:
-            - generic [ref=e553]:
-              - generic [ref=e554]:
+              - generic [ref=e551]: Igbo
+            - img [ref=e552]
+          - button "Indonesian Indonesian" [ref=e554] [cursor=pointer]:
+            - generic [ref=e555]:
+              - generic [ref=e556]:
                 - img "Indonesian"
-              - generic [ref=e555]: Indonesian
-            - img [ref=e556]
-          - button "Italian Italian" [ref=e558] [cursor=pointer]:
-            - generic [ref=e559]:
-              - generic [ref=e560]:
+              - generic [ref=e557]: Indonesian
+            - img [ref=e558]
+          - button "Italian Italian" [ref=e560] [cursor=pointer]:
+            - generic [ref=e561]:
+              - generic [ref=e562]:
                 - img "Italian"
-              - generic [ref=e561]: Italian
-            - img [ref=e562]
-          - button "Japanese Japanese" [ref=e564] [cursor=pointer]:
-            - generic [ref=e565]:
-              - generic [ref=e566]:
+              - generic [ref=e563]: Italian
+            - img [ref=e564]
+          - button "Japanese Japanese" [ref=e566] [cursor=pointer]:
+            - generic [ref=e567]:
+              - generic [ref=e568]:
                 - img "Japanese"
-              - generic [ref=e567]: Japanese
-            - img [ref=e568]
-          - button "Javanese Javanese" [ref=e570] [cursor=pointer]:
-            - generic [ref=e571]:
-              - generic [ref=e572]:
+              - generic [ref=e569]: Japanese
+            - img [ref=e570]
+          - button "Javanese Javanese" [ref=e572] [cursor=pointer]:
+            - generic [ref=e573]:
+              - generic [ref=e574]:
                 - img "Javanese"
-              - generic [ref=e573]: Javanese
-            - img [ref=e574]
-          - button "Kannada Kannada" [ref=e576] [cursor=pointer]:
-            - generic [ref=e577]:
-              - generic [ref=e578]:
+              - generic [ref=e575]: Javanese
+            - img [ref=e576]
+          - button "Kannada Kannada" [ref=e578] [cursor=pointer]:
+            - generic [ref=e579]:
+              - generic [ref=e580]:
                 - img "Kannada"
-              - generic [ref=e579]: Kannada
-            - img [ref=e580]
-          - button "Kazakh Kazakh" [ref=e582] [cursor=pointer]:
-            - generic [ref=e583]:
-              - generic [ref=e584]:
+              - generic [ref=e581]: Kannada
+            - img [ref=e582]
+          - button "Kazakh Kazakh" [ref=e584] [cursor=pointer]:
+            - generic [ref=e585]:
+              - generic [ref=e586]:
                 - img "Kazakh"
-              - generic [ref=e585]: Kazakh
-            - img [ref=e586]
-          - button "Kikongo Kikongo" [ref=e588] [cursor=pointer]:
-            - generic [ref=e589]:
-              - generic [ref=e590]:
+              - generic [ref=e587]: Kazakh
+            - img [ref=e588]
+          - button "Kikongo Kikongo" [ref=e590] [cursor=pointer]:
+            - generic [ref=e591]:
+              - generic [ref=e592]:
                 - img "Kikongo"
-              - generic [ref=e591]: Kikongo
-            - img [ref=e592]
-          - button "Kinyarwanda Kinyarwanda" [ref=e594] [cursor=pointer]:
-            - generic [ref=e595]:
-              - generic [ref=e596]:
+              - generic [ref=e593]: Kikongo
+            - img [ref=e594]
+          - button "Kinyarwanda Kinyarwanda" [ref=e596] [cursor=pointer]:
+            - generic [ref=e597]:
+              - generic [ref=e598]:
                 - img "Kinyarwanda"
-              - generic [ref=e597]: Kinyarwanda
-            - img [ref=e598]
-          - button "Kirundi Kirundi" [ref=e600] [cursor=pointer]:
-            - generic [ref=e601]:
-              - generic [ref=e602]:
+              - generic [ref=e599]: Kinyarwanda
+            - img [ref=e600]
+          - button "Kirundi Kirundi" [ref=e602] [cursor=pointer]:
+            - generic [ref=e603]:
+              - generic [ref=e604]:
                 - img "Kirundi"
-              - generic [ref=e603]: Kirundi
-            - img [ref=e604]
-          - button "Korean Korean" [ref=e606] [cursor=pointer]:
-            - generic [ref=e607]:
-              - generic [ref=e608]:
+              - generic [ref=e605]: Kirundi
+            - img [ref=e606]
+          - button "Korean Korean" [ref=e608] [cursor=pointer]:
+            - generic [ref=e609]:
+              - generic [ref=e610]:
                 - img "Korean"
-              - generic [ref=e609]: Korean
-            - img [ref=e610]
-          - button "Kurdish (Kurmanji) Kurdish (Kurmanji)" [ref=e612] [cursor=pointer]:
-            - generic [ref=e613]:
-              - generic [ref=e614]:
+              - generic [ref=e611]: Korean
+            - img [ref=e612]
+          - button "Kurdish (Kurmanji) Kurdish (Kurmanji)" [ref=e614] [cursor=pointer]:
+            - generic [ref=e615]:
+              - generic [ref=e616]:
                 - img "Kurdish (Kurmanji)"
-              - generic [ref=e615]: Kurdish (Kurmanji)
-            - img [ref=e616]
-          - button "Lingala Lingala" [ref=e618] [cursor=pointer]:
-            - generic [ref=e619]:
-              - generic [ref=e620]:
+              - generic [ref=e617]: Kurdish (Kurmanji)
+            - img [ref=e618]
+          - button "Lingala Lingala" [ref=e620] [cursor=pointer]:
+            - generic [ref=e621]:
+              - generic [ref=e622]:
                 - img "Lingala"
-              - generic [ref=e621]: Lingala
-            - img [ref=e622]
-          - button "Madurese Madurese" [ref=e624] [cursor=pointer]:
-            - generic [ref=e625]:
-              - generic [ref=e626]:
+              - generic [ref=e623]: Lingala
+            - img [ref=e624]
+          - button "Madurese Madurese" [ref=e626] [cursor=pointer]:
+            - generic [ref=e627]:
+              - generic [ref=e628]:
                 - img "Madurese"
-              - generic [ref=e627]: Madurese
-            - img [ref=e628]
-          - button "Magahi Magahi" [ref=e630] [cursor=pointer]:
-            - generic [ref=e631]:
-              - generic [ref=e632]:
+              - generic [ref=e629]: Madurese
+            - img [ref=e630]
+          - button "Magahi Magahi" [ref=e632] [cursor=pointer]:
+            - generic [ref=e633]:
+              - generic [ref=e634]:
                 - img "Magahi"
-              - generic [ref=e633]: Magahi
-            - img [ref=e634]
-          - button "Maithili Maithili" [ref=e636] [cursor=pointer]:
-            - generic [ref=e637]:
-              - generic [ref=e638]:
+              - generic [ref=e635]: Magahi
+            - img [ref=e636]
+          - button "Maithili Maithili" [ref=e638] [cursor=pointer]:
+            - generic [ref=e639]:
+              - generic [ref=e640]:
                 - img "Maithili"
-              - generic [ref=e639]: Maithili
-            - img [ref=e640]
-          - button "Malagasy Malagasy" [ref=e642] [cursor=pointer]:
-            - generic [ref=e643]:
-              - generic [ref=e644]:
+              - generic [ref=e641]: Maithili
+            - img [ref=e642]
+          - button "Malagasy Malagasy" [ref=e644] [cursor=pointer]:
+            - generic [ref=e645]:
+              - generic [ref=e646]:
                 - img "Malagasy"
-              - generic [ref=e645]: Malagasy
-            - img [ref=e646]
-          - button "Malay Malay" [ref=e648] [cursor=pointer]:
-            - generic [ref=e649]:
-              - generic [ref=e650]:
+              - generic [ref=e647]: Malagasy
+            - img [ref=e648]
+          - button "Malay Malay" [ref=e650] [cursor=pointer]:
+            - generic [ref=e651]:
+              - generic [ref=e652]:
                 - img "Malay"
-              - generic [ref=e651]: Malay
-            - img [ref=e652]
-          - button "Malayalam Malayalam" [ref=e654] [cursor=pointer]:
-            - generic [ref=e655]:
-              - generic [ref=e656]:
+              - generic [ref=e653]: Malay
+            - img [ref=e654]
+          - button "Malayalam Malayalam" [ref=e656] [cursor=pointer]:
+            - generic [ref=e657]:
+              - generic [ref=e658]:
                 - img "Malayalam"
-              - generic [ref=e657]: Malayalam
-            - img [ref=e658]
-          - button "Marathi Marathi" [ref=e660] [cursor=pointer]:
-            - generic [ref=e661]:
-              - generic [ref=e662]:
+              - generic [ref=e659]: Malayalam
+            - img [ref=e660]
+          - button "Marathi Marathi" [ref=e662] [cursor=pointer]:
+            - generic [ref=e663]:
+              - generic [ref=e664]:
                 - img "Marathi"
-              - generic [ref=e663]: Marathi
-            - img [ref=e664]
-          - button "Marwari Marwari" [ref=e666] [cursor=pointer]:
-            - generic [ref=e667]:
-              - generic [ref=e668]:
+              - generic [ref=e665]: Marathi
+            - img [ref=e666]
+          - button "Marwari Marwari" [ref=e668] [cursor=pointer]:
+            - generic [ref=e669]:
+              - generic [ref=e670]:
                 - img "Marwari"
-              - generic [ref=e669]: Marwari
-            - img [ref=e670]
-          - button "Nepali Nepali" [ref=e672] [cursor=pointer]:
-            - generic [ref=e673]:
-              - generic [ref=e674]:
+              - generic [ref=e671]: Marwari
+            - img [ref=e672]
+          - button "Nepali Nepali" [ref=e674] [cursor=pointer]:
+            - generic [ref=e675]:
+              - generic [ref=e676]:
                 - img "Nepali"
-              - generic [ref=e675]: Nepali
-            - img [ref=e676]
-          - button "Oromo Oromo" [ref=e678] [cursor=pointer]:
-            - generic [ref=e679]:
-              - generic [ref=e680]:
+              - generic [ref=e677]: Nepali
+            - img [ref=e678]
+          - button "Oromo Oromo" [ref=e680] [cursor=pointer]:
+            - generic [ref=e681]:
+              - generic [ref=e682]:
                 - img "Oromo"
-              - generic [ref=e681]: Oromo
-            - img [ref=e682]
-          - button "Pashto Pashto" [ref=e684] [cursor=pointer]:
-            - generic [ref=e685]:
-              - generic [ref=e686]:
+              - generic [ref=e683]: Oromo
+            - img [ref=e684]
+          - button "Pashto Pashto" [ref=e686] [cursor=pointer]:
+            - generic [ref=e687]:
+              - generic [ref=e688]:
                 - img "Pashto"
-              - generic [ref=e687]: Pashto
-            - img [ref=e688]
-          - button "Persian Persian" [ref=e690] [cursor=pointer]:
-            - generic [ref=e691]:
-              - generic [ref=e692]:
+              - generic [ref=e689]: Pashto
+            - img [ref=e690]
+          - button "Persian Persian" [ref=e692] [cursor=pointer]:
+            - generic [ref=e693]:
+              - generic [ref=e694]:
                 - img "Persian"
-              - generic [ref=e693]: Persian
-            - img [ref=e694]
-          - button "Polish Polish" [ref=e696] [cursor=pointer]:
-            - generic [ref=e697]:
-              - generic [ref=e698]:
+              - generic [ref=e695]: Persian
+            - img [ref=e696]
+          - button "Polish Polish" [ref=e698] [cursor=pointer]:
+            - generic [ref=e699]:
+              - generic [ref=e700]:
                 - img "Polish"
-              - generic [ref=e699]: Polish
-            - img [ref=e700]
-          - button "Portuguese Portuguese" [ref=e702] [cursor=pointer]:
-            - generic [ref=e703]:
-              - generic [ref=e704]:
+              - generic [ref=e701]: Polish
+            - img [ref=e702]
+          - button "Portuguese Portuguese" [ref=e704] [cursor=pointer]:
+            - generic [ref=e705]:
+              - generic [ref=e706]:
                 - img "Portuguese"
-              - generic [ref=e705]: Portuguese
-            - img [ref=e706]
-          - button "Punjabi Punjabi" [ref=e708] [cursor=pointer]:
-            - generic [ref=e709]:
-              - generic [ref=e710]:
+              - generic [ref=e707]: Portuguese
+            - img [ref=e708]
+          - button "Punjabi Punjabi" [ref=e710] [cursor=pointer]:
+            - generic [ref=e711]:
+              - generic [ref=e712]:
                 - img "Punjabi"
-              - generic [ref=e711]: Punjabi
-            - img [ref=e712]
-          - button "Rajasthani Rajasthani" [ref=e714] [cursor=pointer]:
-            - generic [ref=e715]:
-              - generic [ref=e716]:
+              - generic [ref=e713]: Punjabi
+            - img [ref=e714]
+          - button "Rajasthani Rajasthani" [ref=e716] [cursor=pointer]:
+            - generic [ref=e717]:
+              - generic [ref=e718]:
                 - img "Rajasthani"
-              - generic [ref=e717]: Rajasthani
-            - img [ref=e718]
-          - button "Romanian Romanian" [ref=e720] [cursor=pointer]:
-            - generic [ref=e721]:
-              - generic [ref=e722]:
+              - generic [ref=e719]: Rajasthani
+            - img [ref=e720]
+          - button "Romanian Romanian" [ref=e722] [cursor=pointer]:
+            - generic [ref=e723]:
+              - generic [ref=e724]:
                 - img "Romanian"
-              - generic [ref=e723]: Romanian
-            - img [ref=e724]
-          - button "Russian Russian" [ref=e726] [cursor=pointer]:
-            - generic [ref=e727]:
-              - generic [ref=e728]:
+              - generic [ref=e725]: Romanian
+            - img [ref=e726]
+          - button "Russian Russian" [ref=e728] [cursor=pointer]:
+            - generic [ref=e729]:
+              - generic [ref=e730]:
                 - img "Russian"
-              - generic [ref=e729]: Russian
-            - img [ref=e730]
-          - button "Shona Shona" [ref=e732] [cursor=pointer]:
-            - generic [ref=e733]:
-              - generic [ref=e734]:
+              - generic [ref=e731]: Russian
+            - img [ref=e732]
+          - button "Shona Shona" [ref=e734] [cursor=pointer]:
+            - generic [ref=e735]:
+              - generic [ref=e736]:
                 - img "Shona"
-              - generic [ref=e735]: Shona
-            - img [ref=e736]
-          - button "Sindhi Sindhi" [ref=e738] [cursor=pointer]:
-            - generic [ref=e739]:
-              - generic [ref=e740]:
+              - generic [ref=e737]: Shona
+            - img [ref=e738]
+          - button "Sindhi Sindhi" [ref=e740] [cursor=pointer]:
+            - generic [ref=e741]:
+              - generic [ref=e742]:
                 - img "Sindhi"
-              - generic [ref=e741]: Sindhi
-            - img [ref=e742]
-          - button "Somali Somali" [ref=e744] [cursor=pointer]:
-            - generic [ref=e745]:
-              - generic [ref=e746]:
+              - generic [ref=e743]: Sindhi
+            - img [ref=e744]
+          - button "Somali Somali" [ref=e746] [cursor=pointer]:
+            - generic [ref=e747]:
+              - generic [ref=e748]:
                 - img "Somali"
-              - generic [ref=e747]: Somali
-            - img [ref=e748]
-          - button "Spanish Spanish" [ref=e750] [cursor=pointer]:
-            - generic [ref=e751]:
-              - generic [ref=e752]:
+              - generic [ref=e749]: Somali
+            - img [ref=e750]
+          - button "Spanish Spanish" [ref=e752] [cursor=pointer]:
+            - generic [ref=e753]:
+              - generic [ref=e754]:
                 - img "Spanish"
-              - generic [ref=e753]: Spanish
-            - img [ref=e754]
-          - button "Sundanese Sundanese" [ref=e756] [cursor=pointer]:
-            - generic [ref=e757]:
-              - generic [ref=e758]:
+              - generic [ref=e755]: Spanish
+            - img [ref=e756]
+          - button "Sundanese Sundanese" [ref=e758] [cursor=pointer]:
+            - generic [ref=e759]:
+              - generic [ref=e760]:
                 - img "Sundanese"
-              - generic [ref=e759]: Sundanese
-            - img [ref=e760]
-          - button "Swahili Swahili" [ref=e762] [cursor=pointer]:
-            - generic [ref=e763]:
-              - generic [ref=e764]:
+              - generic [ref=e761]: Sundanese
+            - img [ref=e762]
+          - button "Swahili Swahili" [ref=e764] [cursor=pointer]:
+            - generic [ref=e765]:
+              - generic [ref=e766]:
                 - img "Swahili"
-              - generic [ref=e765]: Swahili
-            - img [ref=e766]
-          - button "Swedish Swedish" [ref=e768] [cursor=pointer]:
-            - generic [ref=e769]:
-              - generic [ref=e770]:
+              - generic [ref=e767]: Swahili
+            - img [ref=e768]
+          - button "Swedish Swedish" [ref=e770] [cursor=pointer]:
+            - generic [ref=e771]:
+              - generic [ref=e772]:
                 - img "Swedish"
-              - generic [ref=e771]: Swedish
-            - img [ref=e772]
-          - button "Tagalog Tagalog" [ref=e774] [cursor=pointer]:
-            - generic [ref=e775]:
-              - generic [ref=e776]:
+              - generic [ref=e773]: Swedish
+            - img [ref=e774]
+          - button "Tagalog Tagalog" [ref=e776] [cursor=pointer]:
+            - generic [ref=e777]:
+              - generic [ref=e778]:
                 - img "Tagalog"
-              - generic [ref=e777]: Tagalog
-            - img [ref=e778]
-          - button "Tamil Tamil" [ref=e780] [cursor=pointer]:
-            - generic [ref=e781]:
-              - generic [ref=e782]:
+              - generic [ref=e779]: Tagalog
+            - img [ref=e780]
+          - button "Tamil Tamil" [ref=e782] [cursor=pointer]:
+            - generic [ref=e783]:
+              - generic [ref=e784]:
                 - img "Tamil"
-              - generic [ref=e783]: Tamil
-            - img [ref=e784]
-          - button "Telugu Telugu" [ref=e786] [cursor=pointer]:
-            - generic [ref=e787]:
-              - generic [ref=e788]:
+              - generic [ref=e785]: Tamil
+            - img [ref=e786]
+          - button "Telugu Telugu" [ref=e788] [cursor=pointer]:
+            - generic [ref=e789]:
+              - generic [ref=e790]:
                 - img "Telugu"
-              - generic [ref=e789]: Telugu
-            - img [ref=e790]
-          - button "Thai Thai" [ref=e792] [cursor=pointer]:
-            - generic [ref=e793]:
-              - generic [ref=e794]:
+              - generic [ref=e791]: Telugu
+            - img [ref=e792]
+          - button "Thai Thai" [ref=e794] [cursor=pointer]:
+            - generic [ref=e795]:
+              - generic [ref=e796]:
                 - img "Thai"
-              - generic [ref=e795]: Thai
-            - img [ref=e796]
-          - button "Turkish Turkish" [ref=e798] [cursor=pointer]:
-            - generic [ref=e799]:
-              - generic [ref=e800]:
+              - generic [ref=e797]: Thai
+            - img [ref=e798]
+          - button "Turkish Turkish" [ref=e800] [cursor=pointer]:
+            - generic [ref=e801]:
+              - generic [ref=e802]:
                 - img "Turkish"
-              - generic [ref=e801]: Turkish
-            - img [ref=e802]
-          - button "Twi Twi" [ref=e804] [cursor=pointer]:
-            - generic [ref=e805]:
-              - generic [ref=e806]:
+              - generic [ref=e803]: Turkish
+            - img [ref=e804]
+          - button "Twi Twi" [ref=e806] [cursor=pointer]:
+            - generic [ref=e807]:
+              - generic [ref=e808]:
                 - img "Twi"
-              - generic [ref=e807]: Twi
-            - img [ref=e808]
-          - button "Ukrainian Ukrainian" [ref=e810] [cursor=pointer]:
-            - generic [ref=e811]:
-              - generic [ref=e812]:
+              - generic [ref=e809]: Twi
+            - img [ref=e810]
+          - button "Ukrainian Ukrainian" [ref=e812] [cursor=pointer]:
+            - generic [ref=e813]:
+              - generic [ref=e814]:
                 - img "Ukrainian"
-              - generic [ref=e813]: Ukrainian
-            - img [ref=e814]
-          - button "Urdu Urdu" [ref=e816] [cursor=pointer]:
-            - generic [ref=e817]:
-              - generic [ref=e818]:
+              - generic [ref=e815]: Ukrainian
+            - img [ref=e816]
+          - button "Urdu Urdu" [ref=e818] [cursor=pointer]:
+            - generic [ref=e819]:
+              - generic [ref=e820]:
                 - img "Urdu"
-              - generic [ref=e819]: Urdu
-            - img [ref=e820]
-          - button "Uyghur Uyghur" [ref=e822] [cursor=pointer]:
-            - generic [ref=e823]:
-              - generic [ref=e824]:
+              - generic [ref=e821]: Urdu
+            - img [ref=e822]
+          - button "Uyghur Uyghur" [ref=e824] [cursor=pointer]:
+            - generic [ref=e825]:
+              - generic [ref=e826]:
                 - img "Uyghur"
-              - generic [ref=e825]: Uyghur
-            - img [ref=e826]
-          - button "Uzbek Uzbek" [ref=e828] [cursor=pointer]:
-            - generic [ref=e829]:
-              - generic [ref=e830]:
+              - generic [ref=e827]: Uyghur
+            - img [ref=e828]
+          - button "Uzbek Uzbek" [ref=e830] [cursor=pointer]:
+            - generic [ref=e831]:
+              - generic [ref=e832]:
                 - img "Uzbek"
-              - generic [ref=e831]: Uzbek
-            - img [ref=e832]
-          - button "Vietnamese Vietnamese" [ref=e834] [cursor=pointer]:
-            - generic [ref=e835]:
-              - generic [ref=e836]:
+              - generic [ref=e833]: Uzbek
+            - img [ref=e834]
+          - button "Vietnamese Vietnamese" [ref=e836] [cursor=pointer]:
+            - generic [ref=e837]:
+              - generic [ref=e838]:
                 - img "Vietnamese"
-              - generic [ref=e837]: Vietnamese
-            - img [ref=e838]
-          - button "Wolof Wolof" [ref=e840] [cursor=pointer]:
-            - generic [ref=e841]:
-              - generic [ref=e842]:
+              - generic [ref=e839]: Vietnamese
+            - img [ref=e840]
+          - button "Wolof Wolof" [ref=e842] [cursor=pointer]:
+            - generic [ref=e843]:
+              - generic [ref=e844]:
                 - img "Wolof"
-              - generic [ref=e843]: Wolof
-            - img [ref=e844]
-          - button "Yoruba Yoruba" [ref=e846] [cursor=pointer]:
-            - generic [ref=e847]:
-              - generic [ref=e848]:
+              - generic [ref=e845]: Wolof
+            - img [ref=e846]
+          - button "Yoruba Yoruba" [ref=e848] [cursor=pointer]:
+            - generic [ref=e849]:
+              - generic [ref=e850]:
                 - img "Yoruba"
-              - generic [ref=e849]: Yoruba
-            - img [ref=e850]
-          - button "Zulu Zulu" [ref=e852] [cursor=pointer]:
-            - generic [ref=e853]:
-              - generic [ref=e854]:
+              - generic [ref=e851]: Yoruba
+            - img [ref=e852]
+          - button "Zulu Zulu" [ref=e854] [cursor=pointer]:
+            - generic [ref=e855]:
+              - generic [ref=e856]:
                 - img "Zulu"
-              - generic [ref=e855]: Zulu
-            - img [ref=e856]
-        - link "See the full list of languages supported by Shunya Labs" [ref=e859] [cursor=pointer]:
+              - generic [ref=e857]: Zulu
+            - img [ref=e858]
+        - link "See the full list of languages supported by Shunya Labs" [ref=e861] [cursor=pointer]:
           - /url: documentation/languages
           - text: See the full list of languages supported by Shunya Labs
-          - img [ref=e860]
-    - contentinfo [ref=e862]:
-      - generic [ref=e866]:
-        - paragraph [ref=e867]: The fastest way to add voice AI to your products
-        - paragraph [ref=e868]: One platform for speech in and speech out—secure by design, built to scale.
-        - generic [ref=e869]:
-          - link "Go to Pricing page" [ref=e870] [cursor=pointer]:
+          - img [ref=e862]
+    - contentinfo [ref=e864]:
+      - generic [ref=e868]:
+        - paragraph [ref=e869]: The fastest way to add voice AI to your products
+        - paragraph [ref=e870]: One platform for speech in and speech out—secure by design, built to scale.
+        - generic [ref=e871]:
+          - link "Go to Pricing page" [ref=e872] [cursor=pointer]:
             - /url: /pricing
             - text: Get Started
-          - link "Contact Sales" [ref=e871] [cursor=pointer]:
+          - link "Contact Sales" [ref=e873] [cursor=pointer]:
             - /url: /contact
-    - contentinfo [ref=e872]:
-      - generic [ref=e873]:
-        - generic [ref=e874]:
-          - img "Shunya Labs" [ref=e875]
-          - paragraph [ref=e876]: Shunya Labs, Inc.
-        - generic [ref=e877]:
-          - paragraph [ref=e878]: Product
-          - list [ref=e879]:
-            - listitem [ref=e880]:
-              - link "Overview" [ref=e881] [cursor=pointer]:
-                - /url: /overview
+    - contentinfo [ref=e874]:
+      - generic [ref=e875]:
+        - generic [ref=e876]:
+          - img "Shunya Labs" [ref=e877]
+          - paragraph [ref=e878]: Shunya Labs, Inc.
+        - generic [ref=e879]:
+          - paragraph [ref=e880]: Product
+          - list [ref=e881]:
             - listitem [ref=e882]:
-              - link "Models" [ref=e883] [cursor=pointer]:
-                - /url: /models-page
+              - link "Overview" [ref=e883] [cursor=pointer]:
+                - /url: /overview
             - listitem [ref=e884]:
-              - link "Voice Agents" [ref=e885] [cursor=pointer]:
-                - /url: /voice-agent
+              - link "Models" [ref=e885] [cursor=pointer]:
+                - /url: /models-page
             - listitem [ref=e886]:
-              - link "Speech Intelligence" [ref=e887] [cursor=pointer]:
-                - /url: /speech-intelligence-page
+              - link "Voice Agents" [ref=e887] [cursor=pointer]:
+                - /url: /voice-agent
             - listitem [ref=e888]:
-              - link "Audio Processing" [ref=e889] [cursor=pointer]:
-                - /url: /audio-processing
+              - link "Speech Intelligence" [ref=e889] [cursor=pointer]:
+                - /url: /speech-intelligence-page
             - listitem [ref=e890]:
-              - link "Deployment" [ref=e891] [cursor=pointer]:
+              - link "Audio Processing" [ref=e891] [cursor=pointer]:
+                - /url: /audio-processing
+            - listitem [ref=e892]:
+              - link "Deployment" [ref=e893] [cursor=pointer]:
                 - /url: /deployment
-        - generic [ref=e892]:
-          - paragraph [ref=e893]: Models
-          - list [ref=e894]:
-            - listitem [ref=e895]:
-              - link "Language Models" [ref=e896] [cursor=pointer]:
-                - /url: /language-models
+        - generic [ref=e894]:
+          - paragraph [ref=e895]: Models
+          - list [ref=e896]:
             - listitem [ref=e897]:
-              - link "Zero STT Indic" [ref=e898] [cursor=pointer]:
-                - /url: /zero-indic
+              - link "Language Models" [ref=e898] [cursor=pointer]:
+                - /url: /language-models
             - listitem [ref=e899]:
-              - link "Zero STT Codeswitch" [ref=e900] [cursor=pointer]:
-                - /url: /zero-code-switch
+              - link "Zero STT Indic" [ref=e900] [cursor=pointer]:
+                - /url: /zero-indic
             - listitem [ref=e901]:
-              - link "Zero STT Universal" [ref=e902] [cursor=pointer]:
-                - /url: /zero-stt
+              - link "Zero STT Codeswitch" [ref=e902] [cursor=pointer]:
+                - /url: /zero-code-switch
             - listitem [ref=e903]:
-              - link "Specialised Models" [ref=e904] [cursor=pointer]:
-                - /url: /domain-specialisation
+              - link "Zero STT Universal" [ref=e904] [cursor=pointer]:
+                - /url: /zero-stt
             - listitem [ref=e905]:
-              - link "Zero STT Med" [ref=e906] [cursor=pointer]:
-                - /url: /zero-med
+              - link "Specialised Models" [ref=e906] [cursor=pointer]:
+                - /url: /domain-specialisation
             - listitem [ref=e907]:
-              - link "On Device Models" [ref=e908] [cursor=pointer]:
+              - link "Zero STT Med" [ref=e908] [cursor=pointer]:
+                - /url: /zero-med
+            - listitem [ref=e909]:
+              - link "On Device Models" [ref=e910] [cursor=pointer]:
                 - /url: /on-device-models
-        - generic [ref=e909]:
-          - paragraph [ref=e910]: Solutions
-          - list [ref=e911]:
-            - listitem [ref=e912]:
-              - link "Contact Centers" [ref=e913] [cursor=pointer]:
-                - /url: /contact-centers
+        - generic [ref=e911]:
+          - paragraph [ref=e912]: Solutions
+          - list [ref=e913]:
             - listitem [ref=e914]:
-              - link "Media & Entertainment" [ref=e915] [cursor=pointer]:
-                - /url: /media-entertainment
+              - link "Contact Centers" [ref=e915] [cursor=pointer]:
+                - /url: /contact-centers
             - listitem [ref=e916]:
-              - link "Healthcare" [ref=e917] [cursor=pointer]:
+              - link "Media & Entertainment" [ref=e917] [cursor=pointer]:
+                - /url: /media-entertainment
+            - listitem [ref=e918]:
+              - link "Healthcare" [ref=e919] [cursor=pointer]:
                 - /url: /healthcare
-        - generic [ref=e918]:
-          - paragraph [ref=e919]: Resources
-          - list [ref=e920]:
-            - listitem [ref=e921]:
-              - link "Blogs" [ref=e922] [cursor=pointer]:
-                - /url: /blog
+        - generic [ref=e920]:
+          - paragraph [ref=e921]: Resources
+          - list [ref=e922]:
             - listitem [ref=e923]:
-              - link "Benchmarks" [ref=e924] [cursor=pointer]:
-                - /url: /benchmarks
+              - link "Blogs" [ref=e924] [cursor=pointer]:
+                - /url: /blog
             - listitem [ref=e925]:
-              - link "News & Media" [ref=e926] [cursor=pointer]:
+              - link "Benchmarks" [ref=e926] [cursor=pointer]:
+                - /url: /benchmarks
+            - listitem [ref=e927]:
+              - link "News & Media" [ref=e928] [cursor=pointer]:
                 - /url: /media
-        - paragraph [ref=e928]:
-          - link "Documentation" [ref=e929] [cursor=pointer]:
-            - /url: /documentation/batch-transcriptions/quickstart
-        - list [ref=e931]:
-          - listitem [ref=e932]:
-            - link "About us" [ref=e933] [cursor=pointer]:
+            - listitem [ref=e929]:
+              - link "Patents" [ref=e930] [cursor=pointer]:
+                - /url: /patents
+            - listitem [ref=e931]:
+              - link "Research" [ref=e932] [cursor=pointer]:
+                - /url: /research
+        - paragraph [ref=e934]:
+          - link "Documentation" [ref=e935] [cursor=pointer]:
+            - /url: https://docs.shunyalabs.ai/overview
+        - list [ref=e937]:
+          - listitem [ref=e938]:
+            - link "About us" [ref=e939] [cursor=pointer]:
               - /url: /about
-        - list [ref=e935]:
-          - listitem [ref=e936]:
-            - link "Pricing" [ref=e937] [cursor=pointer]:
+        - list [ref=e941]:
+          - listitem [ref=e942]:
+            - link "Pricing" [ref=e943] [cursor=pointer]:
               - /url: /pricing
-      - generic [ref=e938]:
-        - paragraph [ref=e939]: Follow us on
-        - generic [ref=e940]:
-          - link [ref=e941] [cursor=pointer]:
-            - /url: https://www.linkedin.com/company/shunya-labs-ai/
-            - img [ref=e942]
-          - link [ref=e944] [cursor=pointer]:
-            - /url: https://www.facebook.com/people/ShunyaLabsAI/61577801851308/
-            - img [ref=e945]
+      - generic [ref=e944]:
+        - paragraph [ref=e945]: Follow us on
+        - generic [ref=e946]:
           - link [ref=e947] [cursor=pointer]:
-            - /url: https://www.instagram.com/shunyalabsai/
+            - /url: https://www.linkedin.com/company/shunya-labs-ai/
             - img [ref=e948]
           - link [ref=e950] [cursor=pointer]:
-            - /url: https://x.com/ShunyaLabsAI
+            - /url: https://www.facebook.com/people/ShunyaLabsAI/61577801851308/
             - img [ref=e951]
-      - generic [ref=e953]:
-        - paragraph [ref=e954]: © 2026 Shunya Labs Inc. All rights reserved.
-        - generic [ref=e955]:
-          - link "Privacy" [ref=e956] [cursor=pointer]:
+          - link [ref=e953] [cursor=pointer]:
+            - /url: https://www.instagram.com/shunyalabsai/
+            - img [ref=e954]
+          - link [ref=e956] [cursor=pointer]:
+            - /url: https://x.com/ShunyaLabsAI
+            - img [ref=e957]
+      - generic [ref=e959]:
+        - paragraph [ref=e960]: © 2026 Shunya Labs Inc. All rights reserved.
+        - generic [ref=e961]:
+          - link "Privacy" [ref=e962] [cursor=pointer]:
             - /url: /privacy-policy
-          - link "Terms" [ref=e957] [cursor=pointer]:
+          - link "Terms" [ref=e963] [cursor=pointer]:
             - /url: /terms-conditions
-          - link "Security" [ref=e958] [cursor=pointer]:
+          - link "Security" [ref=e964] [cursor=pointer]:
             - /url: /security-policy
-          - link "General License" [ref=e959] [cursor=pointer]:
+          - link "General License" [ref=e965] [cursor=pointer]:
             - /url: /general-rail-m-license
-          - link "Custom License" [ref=e960] [cursor=pointer]:
+          - link "Custom License" [ref=e966] [cursor=pointer]:
             - /url: /shunya-labs-custom-model-rail-m-license
-  - alert [ref=e961]
-  - iframe [ref=e964]:
+  - alert [ref=e967]
+  - iframe [ref=e970]:
     - generic [ref=f1e2]:
       - generic [ref=f1e5]:
         - link "Privacy" [ref=f1e6] [cursor=pointer]:
