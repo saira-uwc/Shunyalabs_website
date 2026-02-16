@@ -5,8 +5,14 @@ import { createResultWriter } from './result-writer.js';
 
 const SNAPSHOT_DIR = path.join(process.cwd(), 'test-data', 'snapshots');
 
-function buildSnapshotPath(moduleKey, slug) {
-  return path.join(SNAPSHOT_DIR, moduleKey, `${slug}.json`);
+function buildSnapshotPath(moduleKey, slug, viewport = 'desktop') {
+  const suffix = viewport === 'mobile' ? '.mobile.json' : '.json';
+  return path.join(SNAPSHOT_DIR, moduleKey, `${slug}${suffix}`);
+}
+
+function detectViewport(page) {
+  const size = page.viewportSize();
+  return size && size.width <= 768 ? 'mobile' : 'desktop';
 }
 
 function formatDiff(diff) {
@@ -31,9 +37,11 @@ export async function validateSnapshotForPage({ page, moduleLabel, pageLabel, mo
     moduleName: moduleLabel,
   });
 
-  const snapshotPath = buildSnapshotPath(moduleKey, slug);
+  const viewport = detectViewport(page);
+  const snapshotPath = buildSnapshotPath(moduleKey, slug, viewport);
   if (!fs.existsSync(snapshotPath)) {
-    const message = `Missing snapshot for ${moduleLabel} - ${pageLabel}. Run: npm run snapshot:pages`;
+    const cmd = viewport === 'mobile' ? 'npm run snapshot:pages:mobile' : 'npm run snapshot:pages';
+    const message = `Missing ${viewport} snapshot for ${moduleLabel} - ${pageLabel}. Run: ${cmd}`;
     await writeResult(`${pageLabel} snapshot`, 'FAIL', message);
     throw new Error(message);
   }

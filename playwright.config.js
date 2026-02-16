@@ -37,11 +37,18 @@ export default defineConfig({
     video: 'retain-on-failure',
     screenshot: 'only-on-failure',
 
-    viewport: { width: 1920, height: 1080 },
-
     ignoreHTTPSErrors: false,
     bypassCSP: false,
   },
+
+  projects: [
+    { name: 'desktop', use: { viewport: { width: 1920, height: 1080 } } },
+    {
+      name: 'mobile',
+      use: { viewport: { width: 375, height: 667 } },
+      testIgnore: /\/(nav|footer|widget)\.spec\.js/,
+    },
+  ],
 
   fullyParallel: true,
   retries: 0,

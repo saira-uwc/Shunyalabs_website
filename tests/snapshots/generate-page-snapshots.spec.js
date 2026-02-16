@@ -21,7 +21,9 @@ test.describe('Generate page content snapshots', () => {
 
       const snapshot = normalizeSnapshot(await capturePageSnapshot(page));
       const moduleDir = path.join(SNAPSHOT_DIR, pageEntry.moduleKey);
-      const snapshotPath = path.join(moduleDir, `${pageEntry.slug}.json`);
+      const size = page.viewportSize();
+      const suffix = size && size.width <= 768 ? '.mobile.json' : '.json';
+      const snapshotPath = path.join(moduleDir, `${pageEntry.slug}${suffix}`);
 
       if (!fs.existsSync(moduleDir)) {
         fs.mkdirSync(moduleDir, { recursive: true });

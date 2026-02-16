@@ -25,7 +25,13 @@
     "parse:figma": "node scripts/parse-figma-specs.js",
     "parse:figma:generate": "node scripts/parse-figma-specs.js --generate",
     "test:design": "npx playwright test --grep \"design compliance\"",
-    "baseline:design": "npx playwright test tests/snapshots/generate-design-baselines.spec.js"
+    "test:desktop": "npx playwright test --project=desktop",
+    "test:mobile": "npx playwright test --project=mobile",
+    "baseline:design": "npx playwright test tests/snapshots/generate-design-baselines.spec.js",
+    "baseline:design:desktop": "npx playwright test tests/snapshots/generate-design-baselines.spec.js --project=desktop",
+    "baseline:design:mobile": "npx playwright test tests/snapshots/generate-design-baselines.spec.js --project=mobile",
+    "snapshot:pages:desktop": "npx playwright test tests/snapshots/generate-page-snapshots.spec.js --project=desktop",
+    "snapshot:pages:mobile": "npx playwright test tests/snapshots/generate-page-snapshots.spec.js --project=mobile"
   },
   "keywords": [],
   "author": "",

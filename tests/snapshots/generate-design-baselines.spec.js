@@ -30,7 +30,9 @@ test.describe('Generate design baselines', () => {
         fs.mkdirSync(DESIGN_SPECS_DIR, { recursive: true });
       }
 
-      const filePath = path.join(DESIGN_SPECS_DIR, `${pageEntry.moduleKey}-${pageEntry.slug}.design.json`);
+      const size = page.viewportSize();
+      const suffix = size && size.width <= 768 ? '.mobile.design.json' : '.design.json';
+      const filePath = path.join(DESIGN_SPECS_DIR, `${pageEntry.moduleKey}-${pageEntry.slug}${suffix}`);
       fs.writeFileSync(filePath, JSON.stringify(baseline, null, 2));
     });
   }

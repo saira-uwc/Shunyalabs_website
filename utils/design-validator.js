@@ -86,10 +86,16 @@ function fontFamilyMatches(actual, expected) {
 
 // ─── Baseline Loading ───
 
-export function loadDesignSpec(moduleKey, slug) {
-  const specPath = path.join(DESIGN_SPECS_DIR, `${moduleKey}-${slug}.design.json`);
+export function loadDesignSpec(moduleKey, slug, viewport = 'desktop') {
+  const suffix = viewport === 'mobile' ? '.mobile.design.json' : '.design.json';
+  const specPath = path.join(DESIGN_SPECS_DIR, `${moduleKey}-${slug}${suffix}`);
   if (!fs.existsSync(specPath)) return null;
   return JSON.parse(fs.readFileSync(specPath, 'utf8'));
+}
+
+function detectViewport(page) {
+  const size = page.viewportSize();
+  return size && size.width <= 768 ? 'mobile' : 'desktop';
 }
 
 // ─── Comprehensive Page Data Extraction (runs in browser) ───
@@ -546,9 +552,11 @@ export async function runDesignComplianceTest({ page, pageEntry }) {
     reportFileName: 'module-design-report.csv',
   });
 
-  const designSpec = loadDesignSpec(moduleKey, slug);
+  const viewport = detectViewport(page);
+  const designSpec = loadDesignSpec(moduleKey, slug, viewport);
   if (!designSpec) {
-    const msg = `No design baseline found for ${moduleLabel} - ${pageLabel}. Run: npm run baseline:design`;
+    const cmd = viewport === 'mobile' ? 'npm run baseline:design:mobile' : 'npm run baseline:design';
+    const msg = `No ${viewport} design baseline found for ${moduleLabel} - ${pageLabel}. Run: ${cmd}`;
     await writeResult(`${pageLabel} design compliance`, 'FAIL', msg);
     return [{ section: 'setup', property: 'baseline', message: msg }];
   }
@@ -601,6 +609,8 @@ export async function captureDesignBaseline(page, pageEntry) {
   await page.waitForTimeout(3500);
 
   const data = await extractPageDesignData(page);
+  const viewport = detectViewport(page);
+  const size = page.viewportSize();
 
   return {
     moduleKey: pageEntry.moduleKey,
@@ -608,6 +618,8 @@ export async function captureDesignBaseline(page, pageEntry) {
     pageLabel: pageEntry.pageLabel,
     slug: pageEntry.slug,
     path: pageEntry.path,
+    viewport,
+    viewportWidth: size ? size.width : null,
     capturedAt: new Date().toISOString(),
     headings: data.headings.map((h) => ({ text: h.text, tag: h.tag, style: h.style })),
     images: data.images.map((img) => ({ src: img.src, alt: img.alt, loaded: img.loaded, naturalWidth: img.naturalWidth, naturalHeight: img.naturalHeight })),
