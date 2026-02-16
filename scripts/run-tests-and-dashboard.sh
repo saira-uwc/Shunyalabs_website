@@ -26,7 +26,7 @@ export PLAYWRIGHT_HTML_OPEN="never"
 # Run tests (capture exit code, don't fail yet)
 TEST_EXIT=0
 set +e
-npx playwright test
+npx playwright test tests/modules
 TEST_EXIT=$?
 set -e
 

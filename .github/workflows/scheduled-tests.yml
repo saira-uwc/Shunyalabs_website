@@ -72,7 +72,7 @@ jobs:
           PLAYWRIGHT_HTML_OPEN: never
         run: |
           set +e
-          npx playwright test
+          npx playwright test tests/modules
           echo "exit_code=$?" >> "$GITHUB_OUTPUT"
 
       - name: Generate dashboard

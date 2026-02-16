@@ -77,12 +77,14 @@ function buildRows(report) {
         const status = normalizeStatus(result?.status || test.outcome || test.expectedStatus);
         const testTitle = test.title || '';
         const specFile = spec.file ? spec.file.replace(/^tests\//, '') : '';
+        const projectName = test.projectName || '';
         const titleParts = [...suiteTitles, spec.title].filter(Boolean);
         if (testTitle && testTitle !== spec.title) titleParts.push(testTitle);
         const hasFilePrefix = specFile && titleParts[0] === specFile;
-        const testName = (hasFilePrefix ? titleParts : [specFile, ...titleParts])
+        const baseName = (hasFilePrefix ? titleParts : [specFile, ...titleParts])
           .filter(Boolean)
           .join(' › ');
+        const testName = projectName ? `[${projectName}] ${baseName}` : baseName;
         const rawError = result?.errors?.length
           ? (result.errors[0].message || result.errors[0].value || '')
           : (result?.error?.message || '');

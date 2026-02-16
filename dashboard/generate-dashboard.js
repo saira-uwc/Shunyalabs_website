@@ -205,7 +205,9 @@ function readPlaywrightReport() {
         const status = normalizeStatus(result?.status || test.outcome || test.expectedStatus);
         if (!status) return;
 
-        const testPoint = buildTestPoint(suiteTitles, spec.title, test.title || '');
+        const baseTestPoint = buildTestPoint(suiteTitles, spec.title, test.title || '');
+        const projectName = test.projectName || '';
+        const testPoint = projectName ? `[${projectName}] ${baseTestPoint}` : baseTestPoint;
         const errorMessage = extractErrorMessage(result);
         const attachments = (result?.attachments || [])
           .map(mapAttachment)
