@@ -1,5 +1,6 @@
 /**
- * Translate raw Playwright error messages into plain, human-readable descriptions.
+ * Translate raw Playwright error messages into plain, human-readable descriptions
+ * framed as "As per Figma design" vs "on the live website".
  * Used by both the dashboard generator and the Google Sheets updater.
  */
 
@@ -14,7 +15,8 @@ function stripAnsi(str) {
 }
 
 /**
- * Convert a raw Playwright error into a short, plain-English explanation.
+ * Convert a raw Playwright error into a short, plain-English explanation
+ * that clearly states what was expected (per Figma) and what was found on the live site.
  *
  * @param {string} rawError - The raw error.message from Playwright JSON report
  * @returns {string} Human-readable failure reason
@@ -23,24 +25,28 @@ function humanizeError(rawError) {
   if (!rawError) return '';
   const err = stripAnsi(rawError);
 
-  // ── Snapshot-validator mismatches (from old content snapshot tests) ─
+  // ── Snapshot-validator mismatches (headerNav / mainText / footerNav) ─
   const navMismatch = err.match(/headerNav mismatch.*?expected "([^"]*)" vs "([^"]*)"/);
   if (navMismatch) {
     const parts = [];
-    parts.push(`Navigation menu changed: "${navMismatch[1]}" is now "${navMismatch[2]}"`);
+    parts.push(`As per Figma, navigation should show "${navMismatch[1]}" but the live website shows "${navMismatch[2]}"`);
     const mainMismatch = err.match(/mainText mismatch.*?expected "([^"]*)" vs "([^"]*)"/);
-    if (mainMismatch) parts.push(`Page text changed: "${mainMismatch[1]}" is now "${mainMismatch[2]}"`);
+    if (mainMismatch) parts.push(`As per Figma, page text should be "${mainMismatch[1]}" but the live website shows "${mainMismatch[2]}"`);
     const footerMismatch = err.match(/footerNav mismatch.*?expected "([^"]*)" vs "([^"]*)"/);
-    if (footerMismatch) parts.push(`Footer link changed: "${footerMismatch[1]}" is now "${footerMismatch[2]}"`);
+    if (footerMismatch) parts.push(`As per Figma, footer should show "${footerMismatch[1]}" but the live website shows "${footerMismatch[2]}"`);
     return parts.join('. ');
   }
   if (err.includes('mainText mismatch')) {
     const m = err.match(/mainText mismatch.*?expected "([^"]*)" vs "([^"]*)"/);
-    return m ? `Page text changed: "${m[1]}" is now "${m[2]}"` : 'Page text content has changed from expected';
+    return m
+      ? `As per Figma, page text should be "${m[1]}" but the live website shows "${m[2]}"`
+      : 'Page text on the live website does not match the Figma design';
   }
   if (err.includes('footerNav mismatch')) {
     const m = err.match(/footerNav mismatch.*?expected "([^"]*)" vs "([^"]*)"/);
-    return m ? `Footer link changed: "${m[1]}" is now "${m[2]}"` : 'Footer navigation has changed from expected';
+    return m
+      ? `As per Figma, footer should show "${m[1]}" but the live website shows "${m[2]}"`
+      : 'Footer on the live website does not match the Figma design';
   }
   if (err.includes('Missing snapshot for')) {
     return 'Baseline snapshot has not been created yet — run baseline generation first';
@@ -48,18 +54,26 @@ function humanizeError(rawError) {
 
   // ── Design compliance soft-assertion failures ──────────────────────
   // These use expect.soft(null, `[section] message`).toBeTruthy()
-  // The custom message is already human-readable.
+  // The message is already structured; prefix with Figma context.
   const designSections = ['headings', 'images', 'content', 'links', 'buttons', 'layout', 'global', 'console'];
   const sectionPattern = new RegExp(`\\[(${designSections.join('|')})\\]\\s*(.+?)(?:\\n|$)`);
   const sectionMatch = err.match(sectionPattern);
   if (sectionMatch) {
-    return sectionMatch[2].trim();
+    const msg = sectionMatch[2].trim();
+    // Already mentions "expected" / "got" — add Figma framing
+    if (msg.includes('expected') && msg.includes('got')) {
+      return `As per Figma design: ${msg}`;
+    }
+    if (msg.includes('missing') || msg.includes('not found') || msg.includes('not loaded')) {
+      return `As per Figma, this should exist but is missing on the live website: ${msg}`;
+    }
+    return `Figma design mismatch: ${msg}`;
   }
 
-  // Aggregate "N design issues found" → list the soft failures
+  // Aggregate "N design issues found"
   const designCountMatch = err.match(/(\d+)\s+design issues? found/);
   if (designCountMatch) {
-    return `${designCountMatch[1]} design issues detected on this page (see individual failures above)`;
+    return `${designCountMatch[1]} design mismatches found between Figma and the live website`;
   }
 
   // ── Visual snapshot missing ────────────────────────────────────────
@@ -70,8 +84,8 @@ function humanizeError(rawError) {
   // ── Visual regression mismatch ─────────────────────────────────────
   if (err.includes('toHaveScreenshot')) {
     const pixelMatch = err.match(/(\d+)\s*pixels?\s*.*differ/i);
-    if (pixelMatch) return `Visual regression: ${pixelMatch[1]} pixels differ from the baseline screenshot`;
-    return 'Visual regression: the page screenshot does not match the baseline';
+    if (pixelMatch) return `Live website looks different from Figma baseline — ${pixelMatch[1]} pixels differ`;
+    return 'Live website screenshot does not match the Figma baseline';
   }
 
   // ── Timeout ────────────────────────────────────────────────────────
@@ -79,8 +93,8 @@ function humanizeError(rawError) {
     const msMatch = err.match(/(\d+)\s*ms/);
     const seconds = msMatch ? Math.round(parseInt(msMatch[1]) / 1000) : null;
     return seconds
-      ? `Test timed out after ${seconds}s — the page or an element took too long to respond`
-      : 'Test timed out — the page or an element took too long to respond';
+      ? `Live website timed out after ${seconds}s — the page or element took too long to load`
+      : 'Live website timed out — the page or element took too long to load';
   }
 
   // ── toBe with Expected / Received ──────────────────────────────────
@@ -88,70 +102,66 @@ function humanizeError(rawError) {
     const expected = err.match(/Expected:\s*"?([^"\n]*?)"?\s*(?:\n|Received)/)?.[1]?.trim();
     const received = err.match(/Received:\s*"?([^"\n]*?)"?\s*(?:\n|$)/)?.[1]?.trim();
     if (expected !== undefined && received !== undefined) {
-      if (!received || received === '""' || received === "''") {
-        return `Expected "${expected}" but the value was empty or missing on the page`;
-      }
-      // Keep short
       const exp = expected.length > 60 ? expected.substring(0, 57) + '...' : expected;
+      if (!received || received === '""' || received === "''") {
+        return `As per Figma, "${exp}" should be present but it is missing on the live website`;
+      }
       const rec = received.length > 60 ? received.substring(0, 57) + '...' : received;
-      return `Expected "${exp}" but got "${rec}"`;
+      return `As per Figma, expected "${exp}" but the live website shows "${rec}"`;
     }
   }
 
   // ── toEqual (array / object mismatch) ──────────────────────────────
   if (err.includes('toEqual')) {
-    // Try to identify what's being compared from surrounding context
     if (err.includes('dropdown') || err.includes('nav') || err.includes('Nav')) {
-      return 'Navigation dropdown items do not match the expected menu structure';
+      return 'As per Figma, navigation dropdown items do not match what is shown on the live website';
     }
     if (err.includes('footer') || err.includes('Footer') || err.includes('column')) {
-      return 'Footer content does not match the expected layout';
+      return 'As per Figma, footer content does not match what is shown on the live website';
     }
     if (err.includes('widget') || err.includes('Widget') || err.includes('playground')) {
-      return 'Widget content does not match the expected text';
+      return 'As per Figma, widget content does not match what is shown on the live website';
     }
-    return 'Page content does not match the expected values';
+    return 'As per Figma, page content does not match what is shown on the live website';
   }
 
   // ── Common Playwright matchers ─────────────────────────────────────
-  if (err.includes('toBeEnabled')) return 'A button or element is not enabled when it should be';
-  if (err.includes('toBeDisabled')) return 'A button or element is not disabled when it should be';
-  if (err.includes('toBeVisible')) return 'An element is not visible on the page when it should be';
-  if (err.includes('toBeHidden')) return 'An element is still visible on the page when it should be hidden';
+  if (err.includes('toBeEnabled')) return 'As per Figma, a button should be enabled but it is disabled on the live website';
+  if (err.includes('toBeDisabled')) return 'As per Figma, a button should be disabled but it is enabled on the live website';
+  if (err.includes('toBeVisible')) return 'As per Figma, an element should be visible but it is missing on the live website';
+  if (err.includes('toBeHidden')) return 'As per Figma, an element should be hidden but it is visible on the live website';
   if (err.includes('toHaveAttribute')) {
     const attrMatch = err.match(/Locator:\s*(.+?)(?:\n|$)/);
     return attrMatch
-      ? `Element attribute does not match expected value for: ${attrMatch[1].trim().substring(0, 80)}`
-      : 'An element attribute does not match the expected value';
+      ? `As per Figma, element attribute does not match on the live website: ${attrMatch[1].trim().substring(0, 80)}`
+      : 'As per Figma, an element attribute does not match on the live website';
   }
   if (err.includes('toContainText')) {
     const textMatch = err.match(/Expected string:\s*"([^"]+)"/);
     return textMatch
-      ? `Page does not contain the expected text "${textMatch[1]}"`
-      : 'Page does not contain the expected text';
+      ? `As per Figma, "${textMatch[1]}" should be on the page but is missing on the live website`
+      : 'As per Figma, expected text is missing on the live website';
   }
-  if (err.includes('toHaveURL')) return 'Page did not navigate to the expected URL';
-  if (err.includes('toHaveTitle')) return 'Page title does not match the expected value';
-  if (err.includes('toHaveCount')) return 'Number of elements on the page does not match the expected count';
+  if (err.includes('toHaveURL')) return 'Live website did not navigate to the expected URL as per Figma';
+  if (err.includes('toHaveTitle')) return 'Live website page title does not match the Figma design';
+  if (err.includes('toHaveCount')) return 'As per Figma, number of elements does not match what is on the live website';
 
   // ── Network / page errors ──────────────────────────────────────────
-  if (err.includes('net::ERR_')) return 'Network error — the page or a resource failed to load';
+  if (err.includes('net::ERR_')) return 'Live website error — the page or a resource failed to load';
   if (err.includes('Navigation failed') || err.includes('ERR_CONNECTION')) {
-    return 'Could not navigate to the page — connection failed';
+    return 'Could not open the live website page — connection failed';
   }
 
   // ── Fallback: first meaningful line without code/stack traces ──────
   const lines = err.split('\n');
   for (const line of lines) {
     const trimmed = line.trim();
-    // Skip stack trace lines, code snippets, and empty lines
     if (!trimmed) continue;
-    if (/^\d+\s*\|/.test(trimmed)) continue;        // code line numbers like "25 |"
-    if (trimmed.startsWith('at ')) continue;           // stack trace
-    if (trimmed.startsWith('>')) continue;              // pointer lines
-    if (trimmed.startsWith('|')) continue;              // continuation
-    if (/^(Expected|Received):/.test(trimmed)) continue; // already handled above
-    // Clean up Error: prefix
+    if (/^\d+\s*\|/.test(trimmed)) continue;
+    if (trimmed.startsWith('at ')) continue;
+    if (trimmed.startsWith('>')) continue;
+    if (trimmed.startsWith('|')) continue;
+    if (/^(Expected|Received):/.test(trimmed)) continue;
     const cleaned = trimmed.replace(/^Error:\s*/, '').trim();
     if (cleaned.length > 10) {
       return cleaned.length > 200 ? cleaned.substring(0, 197) + '...' : cleaned;

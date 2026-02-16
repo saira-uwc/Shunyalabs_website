@@ -86,16 +86,16 @@ function buildRows(report) {
         const rawError = result?.errors?.length
           ? (result.errors[0].message || result.errors[0].value || '')
           : (result?.error?.message || '');
-        const errorMessage = humanizeError(rawError);
+        const reason = humanizeError(rawError);
         const attachments = findAttachments(testName);
-        const proof = attachments.length ? `Proof: ${attachments.join(' | ')}` : '';
-        const comment = [errorMessage, proof].filter(Boolean).join('\n');
+        const comment = attachments.length ? attachments.join('\n') : '';
 
         rows.push({
           testId: createTestId(testName),
           description: createDescription(testName),
           testName,
           status,
+          reason,
           comment,
           updatedAt: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true }),
         });

@@ -14,15 +14,16 @@ function doPost(e) {
       const descCol = headers.indexOf('Description') + 1;
       const updatedCol = headers.indexOf('Update Date & time') + 1;
       const statusCol = headers.indexOf('Status') + 1;
+      const reasonCol = headers.indexOf('Reason') + 1;
       const commentCol =
-        headers.indexOf('Comment') + 1 ||
         headers.indexOf('Comment(proof)') + 1 ||
-        headers.indexOf('Comment (proof)') + 1;
+        headers.indexOf('Comment (proof)') + 1 ||
+        headers.indexOf('Comment') + 1;
 
-      if (!nameCol || !updatedCol || !statusCol || !commentCol) {
+      if (!nameCol || !updatedCol || !statusCol) {
         return ContentService.createTextOutput(JSON.stringify({
           success: false,
-          error: 'Missing required columns. Need: Test Name, Update Date & time, Status, Comment'
+          error: 'Missing required columns. Need: Test Name, Update Date & time, Status'
         }))
           .setMimeType(ContentService.MimeType.JSON);
       }
@@ -49,7 +50,8 @@ function doPost(e) {
           }
           sheet.getRange(rowIndex, updatedCol).setValue(item.updatedAt || new Date().toISOString());
           sheet.getRange(rowIndex, statusCol).setValue(item.status || '');
-          sheet.getRange(rowIndex, commentCol).setValue(item.comment || '');
+          if (reasonCol) sheet.getRange(rowIndex, reasonCol).setValue(item.reason || '');
+          if (commentCol) sheet.getRange(rowIndex, commentCol).setValue(item.comment || '');
         }
       });
 

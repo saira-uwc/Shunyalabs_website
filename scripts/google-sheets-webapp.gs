@@ -3,12 +3,12 @@
  * Deploy as: Web app → Execute as Me → Anyone has access
  *
  * Expected headers in sheet row 1:
- *   Testcase ID | Test Name | Description | Update Date & time | Status | Comment(proof)
+ *   Testcase ID | Test Name | Description | Update Date & time | Status | Reason | Comment(proof)
  *
  * POST payload:
  *   { action: "updateCoverage", rows: [...], spreadsheetId?, sheetName?, clearSheet? }
  *
- * Each row: { testId, testName, description, status, comment, updatedAt }
+ * Each row: { testId, testName, description, status, reason, comment, updatedAt }
  */
 
 function doPost(e) {
@@ -24,7 +24,7 @@ function doPost(e) {
       // Create sheet with headers if it doesn't exist
       if (!sheet) {
         sheet = spreadsheet.insertSheet(sheetName);
-        sheet.appendRow(["Testcase ID", "Test Name", "Description", "Update Date & time", "Status", "Comment(proof)"]);
+        sheet.appendRow(["Testcase ID", "Test Name", "Description", "Update Date & time", "Status", "Reason", "Comment(proof)"]);
       }
 
       var headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0];
@@ -32,7 +32,9 @@ function doPost(e) {
       ["Testcase ID", "Test Name", "Description", "Update Date & time", "Status"].forEach(function(h) {
         col[h] = headers.indexOf(h) + 1;
       });
-      // Comment column — try several common names
+      // Reason column — human-readable failure explanation
+      col["Reason"] = headers.indexOf("Reason") + 1;
+      // Comment column — proof links (screenshots, videos)
       col["Comment"] = headers.indexOf("Comment(proof)") + 1
         || headers.indexOf("Comment (proof)") + 1
         || headers.indexOf("Comment") + 1;
@@ -70,6 +72,7 @@ function doPost(e) {
           if (col["Description"] && item.description) sheet.getRange(rowIdx, col["Description"]).setValue(item.description);
           if (col["Update Date & time"]) sheet.getRange(rowIdx, col["Update Date & time"]).setValue(item.updatedAt || new Date().toISOString());
           if (col["Status"]) sheet.getRange(rowIdx, col["Status"]).setValue(item.status || "");
+          if (col["Reason"]) sheet.getRange(rowIdx, col["Reason"]).setValue(item.reason || "");
           if (col["Comment"]) sheet.getRange(rowIdx, col["Comment"]).setValue(item.comment || "");
         } else {
           // Append new row
@@ -80,6 +83,7 @@ function doPost(e) {
           if (col["Description"]) newRow[col["Description"] - 1] = item.description || "";
           if (col["Update Date & time"]) newRow[col["Update Date & time"] - 1] = item.updatedAt || new Date().toISOString();
           if (col["Status"]) newRow[col["Status"] - 1] = item.status || "";
+          if (col["Reason"]) newRow[col["Reason"] - 1] = item.reason || "";
           if (col["Comment"]) newRow[col["Comment"] - 1] = item.comment || "";
           sheet.appendRow(newRow);
           // Update lookup for subsequent items
