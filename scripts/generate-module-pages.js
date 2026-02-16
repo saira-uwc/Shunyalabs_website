@@ -40,55 +40,27 @@ export class ${className} extends BasePage {
 `;
 };
 
-const buildContentSpec = (entry) => {
-  const className = `${toPascalCase(entry.slug)}Page`;
-  return `import { test } from '@playwright/test';
+const buildDesignSpec = (entry) => {
+  return `import { test, expect } from '@playwright/test';
 import { pageRegistry } from '../../../../test-data/page-registry.js';
-import { ${className} } from '../../../../pages/${entry.moduleKey}/${entry.slug}.page.js';
-import { runContentSnapshotTest } from '../../../../utils/module-test-runner.js';
+import { runDesignComplianceTest } from '../../../../utils/design-validator.js';
 
-const pageEntry = pageRegistry.find((page) => page.slug === '${entry.slug}');
+const pageEntry = pageRegistry.find(
+  (page) => page.moduleKey === '${entry.moduleKey}' && page.slug === '${entry.slug}'
+);
 
-test.describe('${entry.moduleLabel} - ${entry.pageLabel} content', () => {
-  test('Content snapshot', async ({ page }) => {
-    const pageObject = new ${className}(page);
-    await runContentSnapshotTest({ page, pageEntry, pageObject });
-  });
-});
-`;
-};
+const moduleLabel = pageEntry?.moduleLabel || '${entry.moduleKey}';
+const pageLabel = pageEntry?.pageLabel || '${entry.slug}';
 
-const buildCtaSpec = (entry) => {
-  const className = `${toPascalCase(entry.slug)}Page`;
-  return `import { test } from '@playwright/test';
-import { pageRegistry } from '../../../../test-data/page-registry.js';
-import { ${className} } from '../../../../pages/${entry.moduleKey}/${entry.slug}.page.js';
-import { runCtaTest } from '../../../../utils/module-test-runner.js';
+test.describe(\`\${moduleLabel} - \${pageLabel} design compliance\`, () => {
+  test('Figma design compliance', async ({ page }) => {
+    const failures = await runDesignComplianceTest({ page, pageEntry });
 
-const pageEntry = pageRegistry.find((page) => page.slug === '${entry.slug}');
+    for (const f of failures) {
+      expect.soft(null, \`[\${f.section}] \${f.message}\`).toBeTruthy();
+    }
 
-test.describe('${entry.moduleLabel} - ${entry.pageLabel} CTAs', () => {
-  test('CTAs', async ({ page }) => {
-    const pageObject = new ${className}(page);
-    await runCtaTest({ page, pageEntry, pageObject });
-  });
-});
-`;
-};
-
-const buildActionsSpec = (entry) => {
-  const className = `${toPascalCase(entry.slug)}Page`;
-  return `import { test } from '@playwright/test';
-import { pageRegistry } from '../../../../test-data/page-registry.js';
-import { ${className} } from '../../../../pages/${entry.moduleKey}/${entry.slug}.page.js';
-import { runActionsTest } from '../../../../utils/module-test-runner.js';
-
-const pageEntry = pageRegistry.find((page) => page.slug === '${entry.slug}');
-
-test.describe('${entry.moduleLabel} - ${entry.pageLabel} actions', () => {
-  test('Actions', async ({ page }) => {
-    const pageObject = new ${className}(page);
-    await runActionsTest({ page, pageEntry, pageObject });
+    expect(failures.length, \`\${failures.length} design compliance issue(s) found\`).toBe(0);
   });
 });
 `;
@@ -105,9 +77,13 @@ for (const entry of activePages) {
   const testDir = path.join(rootDir, 'tests', 'modules', entry.moduleKey, entry.slug);
   ensureDir(testDir);
 
-  fs.writeFileSync(path.join(testDir, 'content.spec.js'), buildContentSpec(entry));
-  fs.writeFileSync(path.join(testDir, 'cta.spec.js'), buildCtaSpec(entry));
-  fs.writeFileSync(path.join(testDir, 'actions.spec.js'), buildActionsSpec(entry));
+  // Remove legacy spec files if they exist (now covered by design.spec.js)
+  for (const legacy of ['content.spec.js', 'cta.spec.js', 'actions.spec.js']) {
+    const legacyPath = path.join(testDir, legacy);
+    if (fs.existsSync(legacyPath)) fs.unlinkSync(legacyPath);
+  }
+
+  fs.writeFileSync(path.join(testDir, 'design.spec.js'), buildDesignSpec(entry));
 }
 
 console.log(`Generated page objects and tests for ${activePages.length} pages.`);

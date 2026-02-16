@@ -19,6 +19,20 @@ if (!fs.existsSync(HISTORY_DIR)) {
   fs.mkdirSync(HISTORY_DIR, { recursive: true });
 }
 
+function stripAnsi(str) {
+  return (str || '')
+    .replace(/\x1b\[[0-9;]*[a-zA-Z]/g, '')  // ESC [ ... letter
+    .replace(/\x1b\[[0-9;]*/g, '')            // truncated ESC [ sequences
+    .replace(/\x1b./g, '')                     // ESC + any char
+    .replace(/\x1b/g, '')                      // bare ESC
+    .replace(/\[\d+m/g, '')                    // leftover [31m style codes
+    .replace(/\[0m/g, '');
+}
+
+function escapeHtmlAttr(str) {
+  return stripAnsi(str).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
 function toTitleCase(value) {
   return (value || '')
     .replace(/[-_]/g, ' ')
@@ -92,12 +106,10 @@ function parseCSV(content) {
 function readAllResults() {
   const allResults = [];
   const csvFiles = [
-    'content-validation-report.csv',
-    'cta-redirections-report.csv',
-    'actions-report.csv',
     'module-pages-report.csv',
     'module-cta-report.csv',
     'module-actions-report.csv',
+    'module-design-report.csv',
   ];
   
   for (const file of csvFiles) {
@@ -198,7 +210,7 @@ function readPlaywrightReport() {
           moduleName: deriveModuleName(suite.file || test.location?.file || ''),
           testPoint,
           status,
-          comment: errorMessage,
+          comment: stripAnsi(errorMessage),
           timestamp: result?.startTime || report.startTime || new Date().toISOString(),
           attachments,
         });
@@ -246,6 +258,7 @@ function loadHistory() {
       tests: (run.tests || run.results || []).map(t => ({
         ...t,
         moduleName: resolveModuleName(t),
+        comment: stripAnsi(t.comment || ''),
       })),
     }));
   }
@@ -285,7 +298,7 @@ function saveToHistory(results, playwrightRun) {
       moduleName: r.moduleName,
       testPoint: r.testPoint,
       status: r.status,
-      comment: r.comment.substring(0, 500), // Limit comment size
+      comment: stripAnsi(r.comment || '').substring(0, 500),
       timestamp: r.dateTime || r.timestamp,
       attachments: r.attachments || []
     }))
@@ -364,7 +377,26 @@ function generateDashboard(currentResults, history, playwrightRun) {
   });
 
   const displayFailures = failureTests.length ? failureTests : currentTestResults.filter(r => r.status === 'FAIL');
-  
+
+  // Extract clean test name and type from testPoint
+  const cleanTestPoint = (testPoint) => {
+    const tp = testPoint || '';
+    if (tp.includes('design compliance')) return { name: 'Design Compliance', type: 'design', icon: '🎨' };
+    if (tp.includes('navigation') || tp.includes('Nav')) return { name: 'Navigation', type: 'nav', icon: '🧭' };
+    if (tp.includes('widget') || tp.includes('Widget')) return { name: 'Widget & Actions', type: 'widget', icon: '🔧' };
+    if (tp.includes('footer') || tp.includes('Footer')) return { name: 'Footer', type: 'footer', icon: '📄' };
+    // Fallback: try to extract the last meaningful part
+    const parts = tp.split(' › ');
+    return { name: parts[parts.length - 1] || tp, type: 'other', icon: '🔬' };
+  };
+
+  // Design compliance overview stats
+  const designTests = currentTestResults.filter(r => (r.testPoint || '').includes('design compliance'));
+  const designPassed = designTests.filter(r => r.status === 'PASS').length;
+  const designFailed = designTests.filter(r => r.status === 'FAIL').length;
+  const designTotal = designPassed + designFailed;
+  const designRate = designTotal > 0 ? Math.round((designPassed / designTotal) * 100) : 0;
+
   // Group history by date for calendar (IST)
   const toISTDate = (iso) => {
     return new Date(iso).toLocaleDateString('en-CA', { timeZone: 'Asia/Kolkata' });
@@ -1232,6 +1264,106 @@ function generateDashboard(currentResults, history, playwrightRun) {
     .summary-card, .chart-card, .category-card, .run-card {
       animation: fadeIn 0.4s ease forwards;
     }
+
+    /* Design Compliance Section */
+    .design-overview {
+      background: linear-gradient(135deg, var(--bg-card) 0%, rgba(99, 102, 241, 0.08) 100%);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      margin-bottom: 32px;
+    }
+
+    .design-overview-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .design-overview-title {
+      font-size: 18px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .design-overview-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px;
+    }
+
+    .design-module-chip {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-size: 14px;
+      transition: all 0.2s ease;
+    }
+
+    .design-module-chip:hover { border-color: var(--border-hover); }
+    .design-module-chip.pass { border-left: 3px solid var(--success); }
+    .design-module-chip.fail { border-left: 3px solid var(--danger); }
+
+    .design-module-chip .chip-status {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      flex-shrink: 0;
+    }
+
+    .design-module-chip .chip-status.pass { background: var(--success-bg); color: var(--success); }
+    .design-module-chip .chip-status.fail { background: var(--danger-bg); color: var(--danger); }
+
+    .design-module-chip .chip-name { flex: 1; color: var(--text-secondary); }
+
+    .design-rate-badge {
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .design-rate-badge.good { background: var(--success-bg); color: var(--success); }
+    .design-rate-badge.warning { background: var(--warning-bg); color: var(--warning); }
+    .design-rate-badge.bad { background: var(--danger-bg); color: var(--danger); }
+
+    /* Test type badges in module cards */
+    .test-type-badge {
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      white-space: nowrap;
+    }
+
+    .test-type-badge.design { background: rgba(99, 102, 241, 0.15); color: #818cf8; }
+    .test-type-badge.nav { background: rgba(14, 165, 233, 0.15); color: #38bdf8; }
+    .test-type-badge.widget { background: rgba(168, 85, 247, 0.15); color: #c084fc; }
+    .test-type-badge.footer { background: rgba(107, 114, 128, 0.15); color: #9ca3af; }
+    .test-type-badge.other { background: rgba(245, 158, 11, 0.15); color: #fbbf24; }
+
+    .test-comment {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 4px;
+      line-height: 1.4;
+      max-width: 600px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
   </style>
 </head>
 <body>
@@ -1316,10 +1448,34 @@ function generateDashboard(currentResults, history, playwrightRun) {
         </div>
       </div>
 
+      <!-- Design Compliance Overview -->
+      ${designTotal > 0 ? `
+      <div class="design-overview">
+        <div class="design-overview-header">
+          <div class="design-overview-title">
+            <span>🎨</span> Figma Design Compliance
+            <span style="font-size: 13px; font-weight: 400; color: var(--text-muted);">${designTotal} pages checked</span>
+          </div>
+          <span class="design-rate-badge ${designRate === 100 ? 'good' : designRate >= 80 ? 'warning' : 'bad'}">${designPassed}/${designTotal} Compliant (${designRate}%)</span>
+        </div>
+        <div class="design-overview-grid">
+          ${designTests.map(t => {
+            const pageName = (t.testPoint || '').split(' design compliance')[0].replace(/^.*? - /, '');
+            return `<div class="design-module-chip ${t.status.toLowerCase()}">
+              <div class="chip-status ${t.status.toLowerCase()}">${t.status === 'PASS' ? '✓' : '✗'}</div>
+              <div class="chip-name">${pageName}</div>
+            </div>`;
+          }).join('')}
+        </div>
+      </div>
+      ` : ''}
+
       <!-- Module Breakdown -->
       <h2 class="section-title">Test Results by Module</h2>
       <div class="category-grid">
-        ${Object.entries(byModule).map(([moduleName, data]) => `
+        ${Object.entries(byModule).map(([moduleName, data]) => {
+          const moduleRate = data.passed + data.failed > 0 ? Math.round((data.passed / (data.passed + data.failed)) * 100) : 0;
+          return `
         <div class="category-card">
           <div class="category-header">
             <div class="category-name">${moduleName}</div>
@@ -1329,15 +1485,21 @@ function generateDashboard(currentResults, history, playwrightRun) {
             </div>
           </div>
           <div class="category-tests">
-            ${data.tests.map(t => `
-            <div class="test-item">
+            ${data.tests.map(t => {
+              const ct = cleanTestPoint(t.testPoint);
+              return `
+            <div class="test-item" style="flex-wrap: wrap;">
               <div class="test-status ${t.status.toLowerCase()}">${t.status === 'PASS' ? '✓' : '✗'}</div>
-              <div class="test-name">${t.testPoint} <span style="color: var(--text-muted); font-size: 12px;">• ${t.category || 'Test'}</span></div>
-            </div>
-            `).join('')}
+              <div class="test-name" style="flex: 1;">
+                ${ct.name}
+                <span class="test-type-badge ${ct.type}">${ct.icon} ${ct.type.toUpperCase()}</span>
+              </div>
+              ${t.status === 'FAIL' && t.comment ? `<div class="test-comment" style="width: 100%; padding-left: 36px;" title="${escapeHtmlAttr(t.comment)}">${stripAnsi(t.comment).substring(0, 120)}${t.comment.length > 120 ? '...' : ''}</div>` : ''}
+            </div>`;
+            }).join('')}
           </div>
-        </div>
-        `).join('')}
+        </div>`;
+        }).join('')}
       </div>
     </div>
 

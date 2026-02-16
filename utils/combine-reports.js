@@ -19,12 +19,10 @@ function combineReports() {
 
   // List of report files to combine
   const reportFiles = [
-    'content-validation-report.csv',
-    'cta-redirections-report.csv',
-    'actions-report.csv',
     'module-pages-report.csv',
     'module-cta-report.csv',
-    'module-actions-report.csv'
+    'module-actions-report.csv',
+    'module-design-report.csv',
   ];
 
   let totalRows = 0;

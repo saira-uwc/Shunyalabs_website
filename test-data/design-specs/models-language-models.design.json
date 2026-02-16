@@ -1,0 +1,1575 @@
+{
+  "moduleKey": "models",
+  "moduleLabel": "Models",
+  "pageLabel": "Language Models",
+  "slug": "language-models",
+  "path": "/language-models",
+  "capturedAt": "2026-02-16T07:37:20.819Z",
+  "headings": [
+    {
+      "text": "One API for 200+ languages and multilingual transcriptions",
+      "tag": "h1",
+      "style": {
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "fontSize": "36px",
+        "fontWeight": "700",
+        "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "textAlign": "center"
+      }
+    },
+    {
+      "text": "Zero STT Indic",
+      "tag": "h3",
+      "style": {
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "fontSize": "20px",
+        "fontWeight": "600",
+        "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "textAlign": "center"
+      }
+    },
+    {
+      "text": "Zero STT Code-switch",
+      "tag": "h3",
+      "style": {
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "fontSize": "20px",
+        "fontWeight": "600",
+        "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "textAlign": "center"
+      }
+    },
+    {
+      "text": "Zero STT",
+      "tag": "h3",
+      "style": {
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "fontSize": "20px",
+        "fontWeight": "600",
+        "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "textAlign": "center"
+      }
+    },
+    {
+      "text": "Experience the magic of Shunya Labs’ code-switching transcription",
+      "tag": "h2",
+      "style": {
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "fontSize": "30px",
+        "fontWeight": "600",
+        "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "textAlign": "center"
+      }
+    },
+    {
+      "text": "Transcribe Indian languages like never before",
+      "tag": "h2",
+      "style": {
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "fontSize": "30px",
+        "fontWeight": "600",
+        "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "textAlign": "center"
+      }
+    }
+  ],
+  "images": [
+    {
+      "src": "/_next/static/media/sl-logo.772b3166.png",
+      "alt": "Shunya Labs Logo",
+      "loaded": true,
+      "naturalWidth": 716,
+      "naturalHeight": 151
+    },
+    {
+      "src": "/_next/image?url=%2Fassets%2Fimages%2F1-03%201.png&w=1920&q=100",
+      "alt": "img1",
+      "loaded": true,
+      "naturalWidth": 828,
+      "naturalHeight": 306
+    },
+    {
+      "src": "/_next/image?url=%2Fassets%2Fimages%2F1-04%201.png&w=1920&q=100",
+      "alt": "img1",
+      "loaded": true,
+      "naturalWidth": 828,
+      "naturalHeight": 306
+    },
+    {
+      "src": "/data/flags/4x3/gh.svg",
+      "alt": "Akan",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/sa.svg",
+      "alt": "Arabic (Global)",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/in.svg",
+      "alt": "Assamese",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/in.svg",
+      "alt": "Awadhi",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/az.svg",
+      "alt": "Azerbaijani",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/ml.svg",
+      "alt": "Bambara",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/de.svg",
+      "alt": "Bavarian",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/bd.svg",
+      "alt": "Bengali (Bangladesh)",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/ma.svg",
+      "alt": "Berber (Tamazight)",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/in.svg",
+      "alt": "Bhojpuri",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/es.svg",
+      "alt": "Catalan",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/ph.svg",
+      "alt": "Cebuano",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/in.svg",
+      "alt": "Chhattisgarhi",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/mw.svg",
+      "alt": "Chichewa",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/cn.svg",
+      "alt": "Chinese (Global)",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/cz.svg",
+      "alt": "Czech",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/af.svg",
+      "alt": "Dari",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/nl.svg",
+      "alt": "Dutch",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/us.svg",
+      "alt": "English",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/fr.svg",
+      "alt": "French",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/sn.svg",
+      "alt": "Fulani",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/de.svg",
+      "alt": "German",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/gr.svg",
+      "alt": "Greek",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/in.svg",
+      "alt": "Gujarati",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/ht.svg",
+      "alt": "Haitian Creole",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/in.svg",
+      "alt": "Haryanvi",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/ng.svg",
+      "alt": "Hausa",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/in.svg",
+      "alt": "Hindi",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/hu.svg",
+      "alt": "Hungarian",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/ng.svg",
+      "alt": "Igbo",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/id.svg",
+      "alt": "Indonesian",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/it.svg",
+      "alt": "Italian",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/jp.svg",
+      "alt": "Japanese",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/id.svg",
+      "alt": "Javanese",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/in.svg",
+      "alt": "Kannada",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/kz.svg",
+      "alt": "Kazakh",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/cd.svg",
+      "alt": "Kikongo",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/rw.svg",
+      "alt": "Kinyarwanda",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/bi.svg",
+      "alt": "Kirundi",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/kr.svg",
+      "alt": "Korean",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/tr.svg",
+      "alt": "Kurdish (Kurmanji)",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/cd.svg",
+      "alt": "Lingala",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/id.svg",
+      "alt": "Madurese",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/in.svg",
+      "alt": "Magahi",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/in.svg",
+      "alt": "Maithili",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/mg.svg",
+      "alt": "Malagasy",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/my.svg",
+      "alt": "Malay",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/in.svg",
+      "alt": "Malayalam",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/in.svg",
+      "alt": "Marathi",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/in.svg",
+      "alt": "Marwari",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/np.svg",
+      "alt": "Nepali",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/et.svg",
+      "alt": "Oromo",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/af.svg",
+      "alt": "Pashto",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/ir.svg",
+      "alt": "Persian",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/pl.svg",
+      "alt": "Polish",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/pt.svg",
+      "alt": "Portuguese",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/in.svg",
+      "alt": "Punjabi",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/in.svg",
+      "alt": "Rajasthani",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/ro.svg",
+      "alt": "Romanian",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/ru.svg",
+      "alt": "Russian",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/zw.svg",
+      "alt": "Shona",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/in.svg",
+      "alt": "Sindhi",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/so.svg",
+      "alt": "Somali",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/es.svg",
+      "alt": "Spanish",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/id.svg",
+      "alt": "Sundanese",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/tz.svg",
+      "alt": "Swahili",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/se.svg",
+      "alt": "Swedish",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/ph.svg",
+      "alt": "Tagalog",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/in.svg",
+      "alt": "Tamil",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/in.svg",
+      "alt": "Telugu",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/th.svg",
+      "alt": "Thai",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/tr.svg",
+      "alt": "Turkish",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/gh.svg",
+      "alt": "Twi",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/ua.svg",
+      "alt": "Ukrainian",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/in.svg",
+      "alt": "Urdu",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/cn.svg",
+      "alt": "Uyghur",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/uz.svg",
+      "alt": "Uzbek",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/vn.svg",
+      "alt": "Vietnamese",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/sn.svg",
+      "alt": "Wolof",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/data/flags/4x3/ng.svg",
+      "alt": "Yoruba",
+      "loaded": true,
+      "naturalWidth": 200,
+      "naturalHeight": 150
+    },
+    {
+      "src": "/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fsl-logo.772b3166.png&w=384&q=75",
+      "alt": "Shunya Labs",
+      "loaded": false,
+      "naturalWidth": 0,
+      "naturalHeight": 0
+    }
+  ],
+  "totalImages": 84,
+  "sections": [
+    {
+      "name": "One API for 200+ languages and multilingual transcriptions",
+      "index": 0,
+      "backgroundColor": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "name": "Experience the magic of Shunya Labs’ code-switching transcription",
+      "index": 1,
+      "backgroundColor": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "name": "Transcribe Indian languages like never before",
+      "index": 2,
+      "backgroundColor": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "name": "Section 4",
+      "index": 3,
+      "backgroundColor": "rgba(0, 0, 0, 0)"
+    }
+  ],
+  "headerNav": [
+    "Product",
+    "Models",
+    "Solutions",
+    "Resources",
+    "Documentation",
+    "About Us",
+    "Pricing",
+    "Playground",
+    "Sign In",
+    "Contact Sales"
+  ],
+  "mainText": [
+    "Product",
+    "Models",
+    "Solutions",
+    "Resources",
+    "Documentation",
+    "About Us",
+    "Pricing",
+    "Playground",
+    "Sign In",
+    "Contact Sales",
+    "One API for 200+ languages and multilingual transcriptions",
+    "Reach the largest possible audience in real time—without juggling multiple language APIs or wrestling with complex setup.",
+    "Zero STT Indic",
+    "Superior Indic models for industry best accuracy and speed in transcribing speech in Hindi, Bengali, Kannada and Telugu.",
+    "Learn more",
+    "Learn more",
+    "Zero STT Code-switch",
+    "The only model in the world that processes and returns output in mixed langauge tokens. Now available for Hinglish.",
+    "Learn more",
+    "Learn more",
+    "Zero STT",
+    "Universal language model that supports everyday conversational speech transcription in 200+ languages.",
+    "Learn more",
+    "Learn more",
+    "Experience the magic of Shunya Labs’ code-switching transcription",
+    "Shunya Labs’ code-switching ASR is the only in the world that returns native Hinglish transcripts in real time. Keep the natural flow of conversation and still get fast, accurate, mixed-language transcription.",
+    "Try now",
+    "Try now",
+    "Transcribe Indian languages like never before",
+    "Zero Indic is purpose-built for Indian speech, delivering up to 200% better accuracy than the next-best model. Unlock world-class support for your users with reliable, real-time transcripts that keep pace with the natural rhythm of conversation.",
+    "Try now",
+    "Try now",
+    "One API for 200+ languages, covering 97% of the global population",
+    "Zero STT is the world's most accurate speech-to-text model designed to support conversational speech in 200+ languages in noisy real world scenarios with speaker overlap. Transcribe audio in sub second latency for captions that feels natural.",
+    "Akan",
+    "Akan",
+    "Arabic (Global)",
+    "Arabic (Global)",
+    "Assamese",
+    "Assamese",
+    "Awadhi",
+    "Awadhi",
+    "Azerbaijani",
+    "Azerbaijani",
+    "Bambara",
+    "Bambara",
+    "Bavarian",
+    "Bavarian",
+    "Bengali (Bangladesh)",
+    "Bengali (Bangladesh)",
+    "Berber (Tamazight)",
+    "Berber (Tamazight)",
+    "Bhojpuri",
+    "Bhojpuri",
+    "Catalan",
+    "Catalan",
+    "Cebuano",
+    "Cebuano",
+    "Chhattisgarhi",
+    "Chhattisgarhi",
+    "Chichewa",
+    "Chichewa",
+    "Chinese (Global)",
+    "Chinese (Global)",
+    "Czech",
+    "Czech",
+    "Dari",
+    "Dari",
+    "Dutch",
+    "Dutch",
+    "English",
+    "English",
+    "French",
+    "French",
+    "Fulani",
+    "Fulani",
+    "German",
+    "German",
+    "Greek",
+    "Greek",
+    "Gujarati",
+    "Gujarati",
+    "Haitian Creole",
+    "Haitian Creole",
+    "Haryanvi",
+    "Haryanvi",
+    "Hausa",
+    "Hausa",
+    "Hindi",
+    "Hindi",
+    "Hungarian",
+    "Hungarian",
+    "Igbo",
+    "Igbo",
+    "Indonesian",
+    "Indonesian",
+    "Italian",
+    "Italian",
+    "Japanese",
+    "Japanese",
+    "Javanese",
+    "Javanese",
+    "Kannada",
+    "Kannada",
+    "Kazakh",
+    "Kazakh",
+    "Kikongo",
+    "Kikongo",
+    "Kinyarwanda",
+    "Kinyarwanda",
+    "Kirundi",
+    "Kirundi",
+    "Korean",
+    "Korean",
+    "Kurdish (Kurmanji)",
+    "Kurdish (Kurmanji)",
+    "Lingala",
+    "Lingala",
+    "Madurese",
+    "Madurese",
+    "Magahi",
+    "Magahi",
+    "Maithili",
+    "Maithili",
+    "Malagasy",
+    "Malagasy",
+    "Malay",
+    "Malay",
+    "Malayalam",
+    "Malayalam",
+    "Marathi",
+    "Marathi",
+    "Marwari",
+    "Marwari",
+    "Nepali",
+    "Nepali",
+    "Oromo",
+    "Oromo",
+    "Pashto",
+    "Pashto",
+    "Persian",
+    "Persian",
+    "Polish",
+    "Polish",
+    "Portuguese",
+    "Portuguese",
+    "Punjabi",
+    "Punjabi",
+    "Rajasthani",
+    "Rajasthani",
+    "Romanian",
+    "Romanian",
+    "Russian",
+    "Russian",
+    "Shona",
+    "Shona",
+    "Sindhi",
+    "Sindhi",
+    "Somali",
+    "Somali",
+    "Spanish",
+    "Spanish",
+    "Sundanese",
+    "Sundanese",
+    "Swahili",
+    "Swahili",
+    "Swedish",
+    "Swedish",
+    "Tagalog",
+    "Tagalog",
+    "Tamil",
+    "Tamil",
+    "Telugu",
+    "Telugu",
+    "Thai",
+    "Thai",
+    "Turkish",
+    "Turkish",
+    "Twi",
+    "Twi",
+    "Ukrainian",
+    "Ukrainian",
+    "Urdu",
+    "Urdu",
+    "Uyghur",
+    "Uyghur",
+    "Uzbek",
+    "Uzbek",
+    "Vietnamese",
+    "Vietnamese",
+    "Wolof",
+    "Wolof",
+    "Yoruba",
+    "Yoruba",
+    "Zulu",
+    "Zulu",
+    "See the full list of languages supported by Shunya Labs",
+    "The fastest way to add voice AI to your products",
+    "One platform for speech in and speech out—secure by design, built to scale.",
+    "Get Started",
+    "Contact Sales",
+    "Shunya Labs, Inc.",
+    "Product",
+    "Overview",
+    "Overview",
+    "Models",
+    "Models",
+    "Voice Agents",
+    "Voice Agents",
+    "Speech Intelligence",
+    "Speech Intelligence",
+    "Audio Processing",
+    "Audio Processing",
+    "Deployment",
+    "Deployment",
+    "Models",
+    "Language Models",
+    "Language Models",
+    "Zero STT Indic",
+    "Zero STT Indic",
+    "Zero STT Codeswitch",
+    "Zero STT Codeswitch",
+    "Zero STT Universal",
+    "Zero STT Universal",
+    "Specialised Models",
+    "Specialised Models",
+    "Zero STT Med",
+    "Zero STT Med",
+    "On Device Models",
+    "On Device Models",
+    "Solutions",
+    "Contact Centers",
+    "Contact Centers",
+    "Media & Entertainment",
+    "Media & Entertainment",
+    "Healthcare",
+    "Healthcare",
+    "Resources",
+    "Blogs",
+    "Blogs",
+    "Benchmarks",
+    "Benchmarks",
+    "News & Media",
+    "News & Media",
+    "Patents",
+    "Patents",
+    "Research",
+    "Research",
+    "Documentation",
+    "Documentation",
+    "About us",
+    "About us",
+    "Pricing",
+    "Pricing",
+    "Follow us on",
+    "© 2026 Shunya Labs Inc. All rights reserved.",
+    "Privacy",
+    "Terms",
+    "Security",
+    "General License",
+    "Custom License"
+  ],
+  "footerNav": [
+    "The fastest way to add voice AI to your products",
+    "One platform for speech in and speech out—secure by design, built to scale.",
+    "Get Started",
+    "Contact Sales"
+  ],
+  "pageTitle": "Shunya Labs Documentation",
+  "links": [
+    {
+      "text": "",
+      "href": "/",
+      "target": ""
+    },
+    {
+      "text": "Documentation",
+      "href": "https://docs.shunyalabs.ai/overview",
+      "target": "_blank"
+    },
+    {
+      "text": "About Us",
+      "href": "/about",
+      "target": ""
+    },
+    {
+      "text": "Pricing",
+      "href": "/pricing",
+      "target": ""
+    },
+    {
+      "text": "Playground",
+      "href": "https://playground.shunyalabs.ai/",
+      "target": "_blank"
+    },
+    {
+      "text": "Contact Sales",
+      "href": "/contact",
+      "target": ""
+    },
+    {
+      "text": "Learn more",
+      "href": "/zero-indic",
+      "target": ""
+    },
+    {
+      "text": "Learn more",
+      "href": "/zero-code-switch",
+      "target": ""
+    },
+    {
+      "text": "Learn more",
+      "href": "/zero-stt",
+      "target": ""
+    },
+    {
+      "text": "Try now",
+      "href": "/documentation/models/language-models",
+      "target": ""
+    },
+    {
+      "text": "Try now",
+      "href": "/documentation/models/language-models",
+      "target": ""
+    },
+    {
+      "text": "See the full list of languages supported by Shunya Labs",
+      "href": "documentation/languages",
+      "target": ""
+    },
+    {
+      "text": "Get Started",
+      "href": "/pricing",
+      "target": ""
+    },
+    {
+      "text": "Contact Sales",
+      "href": "/contact",
+      "target": ""
+    },
+    {
+      "text": "Overview",
+      "href": "/overview",
+      "target": ""
+    },
+    {
+      "text": "Models",
+      "href": "/models-page",
+      "target": ""
+    },
+    {
+      "text": "Voice Agents",
+      "href": "/voice-agent",
+      "target": ""
+    },
+    {
+      "text": "Speech Intelligence",
+      "href": "/speech-intelligence-page",
+      "target": ""
+    },
+    {
+      "text": "Audio Processing",
+      "href": "/audio-processing",
+      "target": ""
+    },
+    {
+      "text": "Deployment",
+      "href": "/deployment",
+      "target": ""
+    },
+    {
+      "text": "Language Models",
+      "href": "/language-models",
+      "target": ""
+    },
+    {
+      "text": "Zero STT Indic",
+      "href": "/zero-indic",
+      "target": ""
+    },
+    {
+      "text": "Zero STT Codeswitch",
+      "href": "/zero-code-switch",
+      "target": ""
+    },
+    {
+      "text": "Zero STT Universal",
+      "href": "/zero-stt",
+      "target": ""
+    },
+    {
+      "text": "Specialised Models",
+      "href": "/domain-specialisation",
+      "target": ""
+    },
+    {
+      "text": "Zero STT Med",
+      "href": "/zero-med",
+      "target": ""
+    },
+    {
+      "text": "On Device Models",
+      "href": "/on-device-models",
+      "target": ""
+    },
+    {
+      "text": "Contact Centers",
+      "href": "/contact-centers",
+      "target": ""
+    },
+    {
+      "text": "Media & Entertainment",
+      "href": "/media-entertainment",
+      "target": ""
+    },
+    {
+      "text": "Healthcare",
+      "href": "/healthcare",
+      "target": ""
+    },
+    {
+      "text": "Blogs",
+      "href": "/blog",
+      "target": ""
+    },
+    {
+      "text": "Benchmarks",
+      "href": "/benchmarks",
+      "target": ""
+    },
+    {
+      "text": "News & Media",
+      "href": "/media",
+      "target": ""
+    },
+    {
+      "text": "Patents",
+      "href": "/patents",
+      "target": ""
+    },
+    {
+      "text": "Research",
+      "href": "/research",
+      "target": ""
+    },
+    {
+      "text": "Documentation",
+      "href": "https://docs.shunyalabs.ai/overview",
+      "target": "_blank"
+    },
+    {
+      "text": "About us",
+      "href": "/about",
+      "target": ""
+    },
+    {
+      "text": "Pricing",
+      "href": "/pricing",
+      "target": ""
+    },
+    {
+      "text": "",
+      "href": "https://www.linkedin.com/company/shunya-labs-ai/",
+      "target": "_blank"
+    },
+    {
+      "text": "",
+      "href": "https://www.facebook.com/people/ShunyaLabsAI/61577801851308/",
+      "target": "_blank"
+    },
+    {
+      "text": "",
+      "href": "https://www.instagram.com/shunyalabsai/",
+      "target": "_blank"
+    },
+    {
+      "text": "",
+      "href": "https://x.com/ShunyaLabsAI",
+      "target": "_blank"
+    },
+    {
+      "text": "Privacy",
+      "href": "/privacy-policy",
+      "target": ""
+    },
+    {
+      "text": "Terms",
+      "href": "/terms-conditions",
+      "target": ""
+    },
+    {
+      "text": "Security",
+      "href": "/security-policy",
+      "target": ""
+    },
+    {
+      "text": "General License",
+      "href": "/general-rail-m-license",
+      "target": ""
+    },
+    {
+      "text": "Custom License",
+      "href": "/shunya-labs-custom-model-rail-m-license",
+      "target": ""
+    }
+  ],
+  "buttons": [
+    {
+      "label": "Product",
+      "disabled": false
+    },
+    {
+      "label": "Models",
+      "disabled": false
+    },
+    {
+      "label": "Solutions",
+      "disabled": false
+    },
+    {
+      "label": "Resources",
+      "disabled": false
+    },
+    {
+      "label": "Sign In",
+      "disabled": false
+    },
+    {
+      "label": "Try now",
+      "disabled": false
+    },
+    {
+      "label": "Try now",
+      "disabled": false
+    },
+    {
+      "label": "Akan",
+      "disabled": false
+    },
+    {
+      "label": "Arabic (Global)",
+      "disabled": false
+    },
+    {
+      "label": "Assamese",
+      "disabled": false
+    },
+    {
+      "label": "Awadhi",
+      "disabled": false
+    },
+    {
+      "label": "Azerbaijani",
+      "disabled": false
+    },
+    {
+      "label": "Bambara",
+      "disabled": false
+    },
+    {
+      "label": "Bavarian",
+      "disabled": false
+    },
+    {
+      "label": "Bengali (Bangladesh)",
+      "disabled": false
+    },
+    {
+      "label": "Berber (Tamazight)",
+      "disabled": false
+    },
+    {
+      "label": "Bhojpuri",
+      "disabled": false
+    },
+    {
+      "label": "Catalan",
+      "disabled": false
+    },
+    {
+      "label": "Cebuano",
+      "disabled": false
+    },
+    {
+      "label": "Chhattisgarhi",
+      "disabled": false
+    },
+    {
+      "label": "Chichewa",
+      "disabled": false
+    },
+    {
+      "label": "Chinese (Global)",
+      "disabled": false
+    },
+    {
+      "label": "Czech",
+      "disabled": false
+    },
+    {
+      "label": "Dari",
+      "disabled": false
+    },
+    {
+      "label": "Dutch",
+      "disabled": false
+    },
+    {
+      "label": "English",
+      "disabled": false
+    },
+    {
+      "label": "French",
+      "disabled": false
+    },
+    {
+      "label": "Fulani",
+      "disabled": false
+    },
+    {
+      "label": "German",
+      "disabled": false
+    },
+    {
+      "label": "Greek",
+      "disabled": false
+    },
+    {
+      "label": "Gujarati",
+      "disabled": false
+    },
+    {
+      "label": "Haitian Creole",
+      "disabled": false
+    },
+    {
+      "label": "Haryanvi",
+      "disabled": false
+    },
+    {
+      "label": "Hausa",
+      "disabled": false
+    },
+    {
+      "label": "Hindi",
+      "disabled": false
+    },
+    {
+      "label": "Hungarian",
+      "disabled": false
+    },
+    {
+      "label": "Igbo",
+      "disabled": false
+    },
+    {
+      "label": "Indonesian",
+      "disabled": false
+    },
+    {
+      "label": "Italian",
+      "disabled": false
+    },
+    {
+      "label": "Japanese",
+      "disabled": false
+    },
+    {
+      "label": "Javanese",
+      "disabled": false
+    },
+    {
+      "label": "Kannada",
+      "disabled": false
+    },
+    {
+      "label": "Kazakh",
+      "disabled": false
+    },
+    {
+      "label": "Kikongo",
+      "disabled": false
+    },
+    {
+      "label": "Kinyarwanda",
+      "disabled": false
+    },
+    {
+      "label": "Kirundi",
+      "disabled": false
+    },
+    {
+      "label": "Korean",
+      "disabled": false
+    },
+    {
+      "label": "Kurdish (Kurmanji)",
+      "disabled": false
+    },
+    {
+      "label": "Lingala",
+      "disabled": false
+    },
+    {
+      "label": "Madurese",
+      "disabled": false
+    },
+    {
+      "label": "Magahi",
+      "disabled": false
+    },
+    {
+      "label": "Maithili",
+      "disabled": false
+    },
+    {
+      "label": "Malagasy",
+      "disabled": false
+    },
+    {
+      "label": "Malay",
+      "disabled": false
+    },
+    {
+      "label": "Malayalam",
+      "disabled": false
+    },
+    {
+      "label": "Marathi",
+      "disabled": false
+    },
+    {
+      "label": "Marwari",
+      "disabled": false
+    },
+    {
+      "label": "Nepali",
+      "disabled": false
+    },
+    {
+      "label": "Oromo",
+      "disabled": false
+    },
+    {
+      "label": "Pashto",
+      "disabled": false
+    },
+    {
+      "label": "Persian",
+      "disabled": false
+    },
+    {
+      "label": "Polish",
+      "disabled": false
+    },
+    {
+      "label": "Portuguese",
+      "disabled": false
+    },
+    {
+      "label": "Punjabi",
+      "disabled": false
+    },
+    {
+      "label": "Rajasthani",
+      "disabled": false
+    },
+    {
+      "label": "Romanian",
+      "disabled": false
+    },
+    {
+      "label": "Russian",
+      "disabled": false
+    },
+    {
+      "label": "Shona",
+      "disabled": false
+    },
+    {
+      "label": "Sindhi",
+      "disabled": false
+    },
+    {
+      "label": "Somali",
+      "disabled": false
+    },
+    {
+      "label": "Spanish",
+      "disabled": false
+    },
+    {
+      "label": "Sundanese",
+      "disabled": false
+    },
+    {
+      "label": "Swahili",
+      "disabled": false
+    },
+    {
+      "label": "Swedish",
+      "disabled": false
+    },
+    {
+      "label": "Tagalog",
+      "disabled": false
+    },
+    {
+      "label": "Tamil",
+      "disabled": false
+    },
+    {
+      "label": "Telugu",
+      "disabled": false
+    },
+    {
+      "label": "Thai",
+      "disabled": false
+    },
+    {
+      "label": "Turkish",
+      "disabled": false
+    },
+    {
+      "label": "Twi",
+      "disabled": false
+    },
+    {
+      "label": "Ukrainian",
+      "disabled": false
+    },
+    {
+      "label": "Urdu",
+      "disabled": false
+    },
+    {
+      "label": "Uyghur",
+      "disabled": false
+    },
+    {
+      "label": "Uzbek",
+      "disabled": false
+    },
+    {
+      "label": "Vietnamese",
+      "disabled": false
+    },
+    {
+      "label": "Wolof",
+      "disabled": false
+    },
+    {
+      "label": "Yoruba",
+      "disabled": false
+    },
+    {
+      "label": "Zulu",
+      "disabled": false
+    }
+  ],
+  "globalStyles": {
+    "bodyFontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+    "bodyColor": "rgb(0, 0, 0)",
+    "bodyBackgroundColor": "rgba(0, 0, 0, 0)",
+    "navBackgroundColor": "rgba(255, 255, 255, 0)",
+    "footerBackgroundColor": "rgba(0, 0, 0, 0)"
+  }
+}
