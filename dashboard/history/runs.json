@@ -75427,7 +75427,7 @@
     "tests": [
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Contact",
         "testPoint": "modules/contact/contact/design.spec.js › Contact - Contact Us design compliance › Figma design compliance",
         "status": "PASS",
         "comment": "",
@@ -75436,7 +75436,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Homepage",
         "testPoint": "modules/homepage/homepage/design.spec.js › Homepage - Homepage design compliance › Figma design compliance",
         "status": "PASS",
         "comment": "",
@@ -75445,7 +75445,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Homepage",
         "testPoint": "modules/homepage/homepage/footer.spec.js › Homepage - footer menu (Figma exact) › Footer columns, follow us, copyright",
         "status": "FAIL",
         "comment": "Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: \"Follow us on\"\nReceived: \"\"\n\n  24 |\n  25 |     const footerData = await homepage.getFooterMenuStructure();\n> 26 |     expect(footerData.followUs).toBe(footerExpectations.followUs);\n     |                                 ^\n  27 |     expect(footerData.copyright).toBe(footerExpectations.copyright);\n  28 |\n  29 |     const expectedColumns = footerExpectations.columns;\n    at /home/runner/work/Shunyalabs_website/Shunyalabs_websi",
@@ -75470,7 +75470,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Homepage",
         "testPoint": "modules/homepage/homepage/nav.spec.js › Homepage - navigation (Figma exact) › Top nav dropdowns match labels, descriptions, and hrefs",
         "status": "FAIL",
         "comment": "Error: expect(received).toEqual(expected) // deep equality\n\n- Expected  - 32\n+ Received  +  1\n\n- Array [\n-   Object {\n-     \"description\": \"High-level view of the Shunya Labs AI ecosystem\",\n-     \"href\": \"/overview\",\n-     \"label\": \"Overview\",\n-   },\n-   Object {\n-     \"description\": \"Explore detailed specifications of our AI models\",\n-     \"href\": \"/models-page\",\n-     \"label\": \"Models\",\n-   },\n-   Object {\n-     \"description\": \"Build intelligent conversational voice assistant workflows\",\n-    ",
@@ -75495,7 +75495,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Homepage",
         "testPoint": "modules/homepage/homepage/widget.spec.js › Homepage - widget (Figma exact) › Widget content and actions",
         "status": "FAIL",
         "comment": "Error: expect(received).toEqual(expected) // deep equality\n\n- Expected  - 17\n+ Received  +  1\n\n- Array [\n-   \"Speech To Text\",\n-   \"Medical Transcription\",\n-   \"Language\",\n-   \"🇺🇸English\",\n-   \"Input Audio\",\n-   \"Pre-recorded\",\n-   \"Customer Support Call\",\n-   \"Podcast\",\n-   \"Upload your file\",\n-   \"or\",\n-   \"Live recording\",\n-   \"Start Speaking\",\n-   \"Play audio\",\n-   \"No conversation to copy\",\n-   \"Select your input language, then pick a sample, upload a file, or start speaking to capture li",
@@ -75520,7 +75520,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Models",
         "testPoint": "modules/models/language-models/design.spec.js › Models - Language Models design compliance › Figma design compliance",
         "status": "FAIL",
         "comment": "Error: [images] Image \"Swahili\" not found on page\n\nexpect(received).toBeTruthy()\n\nReceived: null\n\n  15 |\n  16 |     for (const f of failures) {\n> 17 |       expect.soft(null, `[${f.section}] ${f.message}`).toBeTruthy();\n     |                                                        ^\n  18 |     }\n  19 |\n  20 |     expect(failures.length, `${failures.length} design compliance issue(s) found`).toBe(0);\n    at /home/runner/work/Shunyalabs_website/Shunyalabs_website/tests/modules/models/language-mode",
@@ -75545,7 +75545,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Models",
         "testPoint": "modules/models/on-device-models/design.spec.js › Models - On Device Models design compliance › Figma design compliance",
         "status": "PASS",
         "comment": "",
@@ -75554,7 +75554,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Models",
         "testPoint": "modules/models/specialised-models/design.spec.js › Models - Specialised Models design compliance › Figma design compliance",
         "status": "PASS",
         "comment": "",
@@ -75563,7 +75563,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Models",
         "testPoint": "modules/models/zero-stt-codeswitch/design.spec.js › Models - Zero STT Codeswitch design compliance › Figma design compliance",
         "status": "FAIL",
         "comment": "Error: [content] Text content \"Customer Support Call\" not found on page\n\nexpect(received).toBeTruthy()\n\nReceived: null\n\n  15 |\n  16 |     for (const f of failures) {\n> 17 |       expect.soft(null, `[${f.section}] ${f.message}`).toBeTruthy();\n     |                                                        ^\n  18 |     }\n  19 |\n  20 |     expect(failures.length, `${failures.length} design compliance issue(s) found`).toBe(0);\n    at /home/runner/work/Shunyalabs_website/Shunyalabs_website/tests/module",
@@ -75588,7 +75588,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Models",
         "testPoint": "modules/models/zero-stt-indic/design.spec.js › Models - Zero STT Indic design compliance › Figma design compliance",
         "status": "PASS",
         "comment": "",
@@ -75597,7 +75597,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Models",
         "testPoint": "modules/models/zero-stt-med/design.spec.js › Models - Zero STT Med design compliance › Figma design compliance",
         "status": "FAIL",
         "comment": "Error: [content] Text content \"Customer Support Call\" not found on page\n\nexpect(received).toBeTruthy()\n\nReceived: null\n\n  15 |\n  16 |     for (const f of failures) {\n> 17 |       expect.soft(null, `[${f.section}] ${f.message}`).toBeTruthy();\n     |                                                        ^\n  18 |     }\n  19 |\n  20 |     expect(failures.length, `${failures.length} design compliance issue(s) found`).toBe(0);\n    at /home/runner/work/Shunyalabs_website/Shunyalabs_website/tests/module",
@@ -75622,7 +75622,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Models",
         "testPoint": "modules/models/zero-stt-universal/design.spec.js › Models - Zero STT Universal design compliance › Figma design compliance",
         "status": "PASS",
         "comment": "",
@@ -75631,7 +75631,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Pricing",
         "testPoint": "modules/pricing/pricing/design.spec.js › Pricing - Pricing design compliance › Figma design compliance",
         "status": "PASS",
         "comment": "",
@@ -75640,7 +75640,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Product",
         "testPoint": "modules/product/audio-processing/design.spec.js › Product - Audio Processing design compliance › Figma design compliance",
         "status": "PASS",
         "comment": "",
@@ -75649,7 +75649,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Product",
         "testPoint": "modules/product/deployment/design.spec.js › Product - Deployment design compliance › Figma design compliance",
         "status": "PASS",
         "comment": "",
@@ -75658,7 +75658,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Product",
         "testPoint": "modules/product/models/design.spec.js › Product - Models design compliance › Figma design compliance",
         "status": "PASS",
         "comment": "",
@@ -75667,7 +75667,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Product",
         "testPoint": "modules/product/overview/design.spec.js › Product - Overview design compliance › Figma design compliance",
         "status": "PASS",
         "comment": "",
@@ -75676,7 +75676,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Product",
         "testPoint": "modules/product/speech-intelligence/design.spec.js › Product - Speech Intelligence design compliance › Figma design compliance",
         "status": "PASS",
         "comment": "",
@@ -75685,7 +75685,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Product",
         "testPoint": "modules/product/voice-agents/design.spec.js › Product - Voice Agents design compliance › Figma design compliance",
         "status": "PASS",
         "comment": "",
@@ -75694,7 +75694,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Resources",
         "testPoint": "modules/resources/benchmarks/design.spec.js › Resources - Benchmarks design compliance › Figma design compliance",
         "status": "PASS",
         "comment": "",
@@ -75703,7 +75703,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Resources",
         "testPoint": "modules/resources/blogs/design.spec.js › Resources - Blogs design compliance › Figma design compliance",
         "status": "FAIL",
         "comment": "Error: [images] Image count: expected 3 but found 9\n\nexpect(received).toBeTruthy()\n\nReceived: null\n\n  15 |\n  16 |     for (const f of failures) {\n> 17 |       expect.soft(null, `[${f.section}] ${f.message}`).toBeTruthy();\n     |                                                        ^\n  18 |     }\n  19 |\n  20 |     expect(failures.length, `${failures.length} design compliance issue(s) found`).toBe(0);\n    at /home/runner/work/Shunyalabs_website/Shunyalabs_website/tests/modules/resources/blogs/de",
@@ -75728,7 +75728,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Resources",
         "testPoint": "modules/resources/patents/design.spec.js › Resources - Patents design compliance › Figma design compliance",
         "status": "PASS",
         "comment": "",
@@ -75737,7 +75737,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Solutions",
         "testPoint": "modules/solutions/contact-centers/design.spec.js › Solutions - Contact Centers design compliance › Figma design compliance",
         "status": "PASS",
         "comment": "",
@@ -75746,7 +75746,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Solutions",
         "testPoint": "modules/solutions/healthcare/design.spec.js › Solutions - Healthcare design compliance › Figma design compliance",
         "status": "PASS",
         "comment": "",
@@ -75755,7 +75755,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Solutions",
         "testPoint": "modules/solutions/media-entertainment/design.spec.js › Solutions - Media & Entertainment design compliance › Figma design compliance",
         "status": "PASS",
         "comment": "",
@@ -75764,7 +75764,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Solutions",
         "testPoint": "modules/solutions/use-cases/design.spec.js › Solutions - Use Cases design compliance › Figma design compliance",
         "status": "PASS",
         "comment": "",
@@ -76927,6 +76927,1546 @@
         "status": "FAIL",
         "comment": "Error: A snapshot doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/tests/visual/figma-visual.spec.js-snapshots/contact/contact-contact-linux.png, writing actual.\n\n  55 |         return;\n  56 |       }\n> 57 |       await expect(page).toHaveScreenshot([pageEntry.moduleKey, screenshotName], {\n     |       ^\n  58 |         fullPage: true,\n  59 |         animations: 'disabled',\n  60 |         maxDiffPixels: 0,\n    at /home/runner/work/Shunyalabs_website/Shunyalabs_website/test",
         "timestamp": "2026-02-16T09:23:05.204Z",
+        "attachments": [
+          {
+            "name": "contact/contact-contact-expected.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/aecd6a222e-contact-contact-linux.png"
+          },
+          {
+            "name": "contact/contact-contact-actual.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/8bcb621d55-contact-contact-actual.png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/ac25ba5e8c-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/35e19e4b33-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/0c7f732f61-error-context.md"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "runId": "run_1771235973067_qkxkzpig0",
+    "runDate": "2026-02-16T09:55:20.561Z",
+    "passed": 65,
+    "failed": 29,
+    "total": 94,
+    "passRate": 69,
+    "tests": [
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/contact/contact/design.spec.js › Contact - Contact Us design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-16T09:55:11.538Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/homepage/homepage/design.spec.js › Homepage - Homepage design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-16T09:55:11.545Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/homepage/homepage/footer.spec.js › Homepage - footer menu (Figma exact) › Footer columns, follow us, copyright",
+        "status": "FAIL",
+        "comment": "Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: \"Follow us on\"\nReceived: \"\"\n\n  24 |\n  25 |     const footerData = await homepage.getFooterMenuStructure();\n> 26 |     expect(footerData.followUs).toBe(footerExpectations.followUs);\n     |                                 ^\n  27 |     expect(footerData.copyright).toBe(footerExpectations.copyright);\n  28 |\n  29 |     const expectedColumns = footerExpectations.columns;\n    at /home/runner/work/Shunyalabs_website/Shunyalabs_websi",
+        "timestamp": "2026-02-16T09:55:11.482Z",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/fd167db702-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/cafebeec4d-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/421710098b-error-context.md"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/homepage/homepage/nav.spec.js › Homepage - navigation (Figma exact) › Top nav dropdowns match labels, descriptions, and hrefs",
+        "status": "FAIL",
+        "comment": "Error: expect(received).toEqual(expected) // deep equality\n\n- Expected  - 32\n+ Received  +  1\n\n- Array [\n-   Object {\n-     \"description\": \"High-level view of the Shunya Labs AI ecosystem\",\n-     \"href\": \"/overview\",\n-     \"label\": \"Overview\",\n-   },\n-   Object {\n-     \"description\": \"Explore detailed specifications of our AI models\",\n-     \"href\": \"/models-page\",\n-     \"label\": \"Models\",\n-   },\n-   Object {\n-     \"description\": \"Build intelligent conversational voice assistant workflows\",\n-    ",
+        "timestamp": "2026-02-16T09:55:18.959Z",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/078ced8bf2-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/96223451a6-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/3ac503a5d4-error-context.md"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/homepage/homepage/widget.spec.js › Homepage - widget (Figma exact) › Widget content and actions",
+        "status": "FAIL",
+        "comment": "Error: expect(received).toEqual(expected) // deep equality\n\n- Expected  - 17\n+ Received  +  1\n\n- Array [\n-   \"Speech To Text\",\n-   \"Medical Transcription\",\n-   \"Language\",\n-   \"🇺🇸English\",\n-   \"Input Audio\",\n-   \"Pre-recorded\",\n-   \"Customer Support Call\",\n-   \"Podcast\",\n-   \"Upload your file\",\n-   \"or\",\n-   \"Live recording\",\n-   \"Start Speaking\",\n-   \"Play audio\",\n-   \"No conversation to copy\",\n-   \"Select your input language, then pick a sample, upload a file, or start speaking to capture li",
+        "timestamp": "2026-02-16T09:55:21.226Z",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/8bd7dff6d9-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/1dfb31b15c-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/e1ed5da7dd-error-context.md"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/models/language-models/design.spec.js › Models - Language Models design compliance › Figma design compliance",
+        "status": "FAIL",
+        "comment": "Error: [images] Image \"Swahili\" not found on page\n\nexpect(received).toBeTruthy()\n\nReceived: null\n\n  15 |\n  16 |     for (const f of failures) {\n> 17 |       expect.soft(null, `[${f.section}] ${f.message}`).toBeTruthy();\n     |                                                        ^\n  18 |     }\n  19 |\n  20 |     expect(failures.length, `${failures.length} design compliance issue(s) found`).toBe(0);\n    at /home/runner/work/Shunyalabs_website/Shunyalabs_website/tests/modules/models/language-mode",
+        "timestamp": "2026-02-16T09:55:22.114Z",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/b05db296f1-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/19a2059dd4-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/b9ab494cb8-error-context.md"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/models/on-device-models/design.spec.js › Models - On Device Models design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-16T09:55:25.718Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/models/specialised-models/design.spec.js › Models - Specialised Models design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-16T09:55:27.049Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/models/zero-stt-codeswitch/design.spec.js › Models - Zero STT Codeswitch design compliance › Figma design compliance",
+        "status": "FAIL",
+        "comment": "Error: [content] Text content \"Customer Support Call\" not found on page\n\nexpect(received).toBeTruthy()\n\nReceived: null\n\n  15 |\n  16 |     for (const f of failures) {\n> 17 |       expect.soft(null, `[${f.section}] ${f.message}`).toBeTruthy();\n     |                                                        ^\n  18 |     }\n  19 |\n  20 |     expect(failures.length, `${failures.length} design compliance issue(s) found`).toBe(0);\n    at /home/runner/work/Shunyalabs_website/Shunyalabs_website/tests/module",
+        "timestamp": "2026-02-16T09:55:30.576Z",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/8a05c104af-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/3c1b2a07e7-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/729347fe8c-error-context.md"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/models/zero-stt-indic/design.spec.js › Models - Zero STT Indic design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-16T09:55:33.374Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/models/zero-stt-med/design.spec.js › Models - Zero STT Med design compliance › Figma design compliance",
+        "status": "FAIL",
+        "comment": "Error: [content] Text content \"Customer Support Call\" not found on page\n\nexpect(received).toBeTruthy()\n\nReceived: null\n\n  15 |\n  16 |     for (const f of failures) {\n> 17 |       expect.soft(null, `[${f.section}] ${f.message}`).toBeTruthy();\n     |                                                        ^\n  18 |     }\n  19 |\n  20 |     expect(failures.length, `${failures.length} design compliance issue(s) found`).toBe(0);\n    at /home/runner/work/Shunyalabs_website/Shunyalabs_website/tests/module",
+        "timestamp": "2026-02-16T09:55:34.994Z",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/904f706943-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/c650433343-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/af735575e4-error-context.md"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/models/zero-stt-universal/design.spec.js › Models - Zero STT Universal design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-16T09:55:39.062Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/pricing/pricing/design.spec.js › Pricing - Pricing design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-16T09:55:41.648Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/product/audio-processing/design.spec.js › Product - Audio Processing design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-16T09:55:44.630Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/product/deployment/design.spec.js › Product - Deployment design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-16T09:55:46.467Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/product/models/design.spec.js › Product - Models design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-16T09:55:48.680Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/product/overview/design.spec.js › Product - Overview design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-16T09:55:52.290Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/product/speech-intelligence/design.spec.js › Product - Speech Intelligence design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-16T09:55:53.581Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/product/voice-agents/design.spec.js › Product - Voice Agents design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-16T09:55:55.454Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/resources/benchmarks/design.spec.js › Resources - Benchmarks design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-16T09:55:59.156Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/resources/blogs/design.spec.js › Resources - Blogs design compliance › Figma design compliance",
+        "status": "FAIL",
+        "comment": "Error: [images] Image count: expected 3 but found 9\n\nexpect(received).toBeTruthy()\n\nReceived: null\n\n  15 |\n  16 |     for (const f of failures) {\n> 17 |       expect.soft(null, `[${f.section}] ${f.message}`).toBeTruthy();\n     |                                                        ^\n  18 |     }\n  19 |\n  20 |     expect(failures.length, `${failures.length} design compliance issue(s) found`).toBe(0);\n    at /home/runner/work/Shunyalabs_website/Shunyalabs_website/tests/modules/resources/blogs/de",
+        "timestamp": "2026-02-16T09:56:01.060Z",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/87b248ba62-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/b8fa837904-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/0316db2f4a-error-context.md"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/resources/patents/design.spec.js › Resources - Patents design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-16T09:56:02.725Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/solutions/contact-centers/design.spec.js › Solutions - Contact Centers design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-16T09:56:06.610Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/solutions/healthcare/design.spec.js › Solutions - Healthcare design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-16T09:56:10.633Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/solutions/media-entertainment/design.spec.js › Solutions - Media & Entertainment design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-16T09:56:10.010Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/solutions/use-cases/design.spec.js › Solutions - Use Cases design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-16T09:56:13.729Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "snapshots/generate-design-baselines.spec.js › Generate design baselines › baseline Homepage - Homepage",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-16T09:56:17.956Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "snapshots/generate-design-baselines.spec.js › Generate design baselines › baseline Product - Overview",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-16T09:56:18.413Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "snapshots/generate-design-baselines.spec.js › Generate design baselines › baseline Product - Models",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-16T09:56:20.941Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "snapshots/generate-design-baselines.spec.js › Generate design baselines › baseline Product - Voice Agents",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-16T09:56:25.586Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "snapshots/generate-design-baselines.spec.js › Generate design baselines › baseline Product - Speech Intelligence",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-16T09:56:25.692Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "snapshots/generate-design-baselines.spec.js › Generate design baselines › baseline Product - Audio Processing",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-16T09:56:28.088Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "snapshots/generate-design-baselines.spec.js › Generate design baselines › baseline Product - Deployment",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-16T09:56:32.684Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "snapshots/generate-design-baselines.spec.js › Generate design baselines › baseline Solutions - Use Cases",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-16T09:56:32.810Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "snapshots/generate-design-baselines.spec.js › Generate design baselines › baseline Solutions - Contact Centers",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-16T09:56:35.130Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "snapshots/generate-design-baselines.spec.js › Generate design baselines › baseline Solutions - Media & Entertainment",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-16T09:56:39.578Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "snapshots/generate-design-baselines.spec.js › Generate design baselines › baseline Solutions - Healthcare",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-16T09:56:40.108Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "snapshots/generate-design-baselines.spec.js › Generate design baselines › baseline Models - Language Models",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-16T09:56:42.732Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "snapshots/generate-design-baselines.spec.js › Generate design baselines › baseline Models - Zero STT Indic",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-16T09:56:47.042Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "snapshots/generate-design-baselines.spec.js › Generate design baselines › baseline Models - Zero STT Codeswitch",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-16T09:56:47.797Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "snapshots/generate-design-baselines.spec.js › Generate design baselines › baseline Models - Zero STT Universal",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-16T09:56:49.990Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "snapshots/generate-design-baselines.spec.js › Generate design baselines › baseline Models - Specialised Models",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-16T09:56:54.186Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "snapshots/generate-design-baselines.spec.js › Generate design baselines › baseline Models - Zero STT Med",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-16T09:56:55.088Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "snapshots/generate-design-baselines.spec.js › Generate design baselines › baseline Models - On Device Models",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-16T09:56:57.484Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "snapshots/generate-design-baselines.spec.js › Generate design baselines › baseline Resources - Blogs",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-16T09:57:01.342Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "snapshots/generate-design-baselines.spec.js › Generate design baselines › baseline Resources - Benchmarks",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-16T09:57:05.105Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "snapshots/generate-design-baselines.spec.js › Generate design baselines › baseline Resources - Patents",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-16T09:57:09.634Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "snapshots/generate-design-baselines.spec.js › Generate design baselines › baseline Pricing - Pricing",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-16T09:57:12.175Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "snapshots/generate-design-baselines.spec.js › Generate design baselines › baseline Contact - Contact Us",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-16T09:57:19.053Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "snapshots/generate-page-snapshots.spec.js › Generate page content snapshots › snapshot Homepage - Homepage",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-16T09:57:22.334Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "snapshots/generate-page-snapshots.spec.js › Generate page content snapshots › snapshot Product - Overview",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-16T09:57:25.326Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "snapshots/generate-page-snapshots.spec.js › Generate page content snapshots › snapshot Product - Models",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-16T09:57:26.197Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "snapshots/generate-page-snapshots.spec.js › Generate page content snapshots › snapshot Product - Voice Agents",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-16T09:57:26.298Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "snapshots/generate-page-snapshots.spec.js › Generate page content snapshots › snapshot Product - Speech Intelligence",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-16T09:57:28.640Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "snapshots/generate-page-snapshots.spec.js › Generate page content snapshots › snapshot Product - Audio Processing",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-16T09:57:28.736Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "snapshots/generate-page-snapshots.spec.js › Generate page content snapshots › snapshot Product - Deployment",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-16T09:57:29.080Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "snapshots/generate-page-snapshots.spec.js › Generate page content snapshots › snapshot Solutions - Use Cases",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-16T09:57:31.226Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "snapshots/generate-page-snapshots.spec.js › Generate page content snapshots › snapshot Solutions - Contact Centers",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-16T09:57:32.128Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "snapshots/generate-page-snapshots.spec.js › Generate page content snapshots › snapshot Solutions - Media & Entertainment",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-16T09:57:32.295Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "snapshots/generate-page-snapshots.spec.js › Generate page content snapshots › snapshot Solutions - Healthcare",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-16T09:57:36.135Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "snapshots/generate-page-snapshots.spec.js › Generate page content snapshots › snapshot Models - Language Models",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-16T09:57:36.154Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "snapshots/generate-page-snapshots.spec.js › Generate page content snapshots › snapshot Models - Zero STT Indic",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-16T09:57:37.186Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "snapshots/generate-page-snapshots.spec.js › Generate page content snapshots › snapshot Models - Zero STT Codeswitch",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-16T09:57:39.906Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "snapshots/generate-page-snapshots.spec.js › Generate page content snapshots › snapshot Models - Zero STT Universal",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-16T09:57:40.037Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "snapshots/generate-page-snapshots.spec.js › Generate page content snapshots › snapshot Models - Specialised Models",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-16T09:57:42.291Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "snapshots/generate-page-snapshots.spec.js › Generate page content snapshots › snapshot Models - Zero STT Med",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-16T09:57:46.318Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "snapshots/generate-page-snapshots.spec.js › Generate page content snapshots › snapshot Models - On Device Models",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-16T09:57:48.005Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "snapshots/generate-page-snapshots.spec.js › Generate page content snapshots › snapshot Resources - Blogs",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-16T09:57:48.707Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "snapshots/generate-page-snapshots.spec.js › Generate page content snapshots › snapshot Resources - Benchmarks",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-16T09:57:49.494Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "snapshots/generate-page-snapshots.spec.js › Generate page content snapshots › snapshot Resources - Patents",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-16T09:57:50.763Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "snapshots/generate-page-snapshots.spec.js › Generate page content snapshots › snapshot Pricing - Pricing",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-16T09:57:51.847Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "snapshots/generate-page-snapshots.spec.js › Generate page content snapshots › snapshot Contact - Contact Us",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-02-16T09:57:52.645Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "visual/figma-visual.spec.js › Figma visual regression › visual Homepage - Homepage",
+        "status": "FAIL",
+        "comment": "Error: A snapshot doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/tests/visual/figma-visual.spec.js-snapshots/homepage/homepage-homepage-linux.png, writing actual.\n\n  55 |         return;\n  56 |       }\n> 57 |       await expect(page).toHaveScreenshot([pageEntry.moduleKey, screenshotName], {\n     |       ^\n  58 |         fullPage: true,\n  59 |         animations: 'disabled',\n  60 |         maxDiffPixels: 0,\n    at /home/runner/work/Shunyalabs_website/Shunyalabs_website/t",
+        "timestamp": "2026-02-16T09:57:53.321Z",
+        "attachments": [
+          {
+            "name": "homepage/homepage-homepage-expected.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/840f4e263f-homepage-homepage-linux.png"
+          },
+          {
+            "name": "homepage/homepage-homepage-actual.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/4a7756fd4d-homepage-homepage-actual.png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/9f1fbd1113-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/02c2873e71-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/d3066ab2dd-error-context.md"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "visual/figma-visual.spec.js › Figma visual regression › visual Product - Overview",
+        "status": "FAIL",
+        "comment": "Error: A snapshot doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/tests/visual/figma-visual.spec.js-snapshots/product/product-overview-linux.png, writing actual.\n\n  55 |         return;\n  56 |       }\n> 57 |       await expect(page).toHaveScreenshot([pageEntry.moduleKey, screenshotName], {\n     |       ^\n  58 |         fullPage: true,\n  59 |         animations: 'disabled',\n  60 |         maxDiffPixels: 0,\n    at /home/runner/work/Shunyalabs_website/Shunyalabs_website/tes",
+        "timestamp": "2026-02-16T09:57:54.942Z",
+        "attachments": [
+          {
+            "name": "product/product-overview-expected.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/ccab529273-product-overview-linux.png"
+          },
+          {
+            "name": "product/product-overview-actual.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/d037e78f1a-product-overview-actual.png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/2c0bf16705-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/a2fd010a4b-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/3718adeaf6-error-context.md"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "visual/figma-visual.spec.js › Figma visual regression › visual Product - Models",
+        "status": "FAIL",
+        "comment": "Error: A snapshot doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/tests/visual/figma-visual.spec.js-snapshots/product/product-models-linux.png, writing actual.\n\n  55 |         return;\n  56 |       }\n> 57 |       await expect(page).toHaveScreenshot([pageEntry.moduleKey, screenshotName], {\n     |       ^\n  58 |         fullPage: true,\n  59 |         animations: 'disabled',\n  60 |         maxDiffPixels: 0,\n    at /home/runner/work/Shunyalabs_website/Shunyalabs_website/tests",
+        "timestamp": "2026-02-16T09:57:57.201Z",
+        "attachments": [
+          {
+            "name": "product/product-models-expected.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/b9739757f4-product-models-linux.png"
+          },
+          {
+            "name": "product/product-models-actual.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/578009336e-product-models-actual.png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/f278163e7b-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/7604d1e786-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/3b18423720-error-context.md"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "visual/figma-visual.spec.js › Figma visual regression › visual Product - Voice Agents",
+        "status": "FAIL",
+        "comment": "Error: A snapshot doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/tests/visual/figma-visual.spec.js-snapshots/product/product-voice-agents-linux.png, writing actual.\n\n  55 |         return;\n  56 |       }\n> 57 |       await expect(page).toHaveScreenshot([pageEntry.moduleKey, screenshotName], {\n     |       ^\n  58 |         fullPage: true,\n  59 |         animations: 'disabled',\n  60 |         maxDiffPixels: 0,\n    at /home/runner/work/Shunyalabs_website/Shunyalabs_website",
+        "timestamp": "2026-02-16T09:58:03.995Z",
+        "attachments": [
+          {
+            "name": "product/product-voice-agents-expected.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/714d09a5e1-product-voice-agents-linux.png"
+          },
+          {
+            "name": "product/product-voice-agents-actual.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/d8c6b06809-product-voice-agents-actual.png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/0d871c5954-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/68d92c550b-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/aae289eac8-error-context.md"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "visual/figma-visual.spec.js › Figma visual regression › visual Product - Speech Intelligence",
+        "status": "FAIL",
+        "comment": "Error: A snapshot doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/tests/visual/figma-visual.spec.js-snapshots/product/product-speech-intelligence-linux.png, writing actual.\n\n  55 |         return;\n  56 |       }\n> 57 |       await expect(page).toHaveScreenshot([pageEntry.moduleKey, screenshotName], {\n     |       ^\n  58 |         fullPage: true,\n  59 |         animations: 'disabled',\n  60 |         maxDiffPixels: 0,\n    at /home/runner/work/Shunyalabs_website/Shunyalabs_",
+        "timestamp": "2026-02-16T09:58:04.784Z",
+        "attachments": [
+          {
+            "name": "product/product-speech-intelligence-expected.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/6a315031f0-product-speech-intelligence-linux.png"
+          },
+          {
+            "name": "product/product-speech-intelligence-actual.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/f5b3e83550-product-speech-intelligence-actual.png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/483a8e411c-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/9ac1128767-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/8f9e948760-error-context.md"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "visual/figma-visual.spec.js › Figma visual regression › visual Product - Audio Processing",
+        "status": "FAIL",
+        "comment": "Error: A snapshot doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/tests/visual/figma-visual.spec.js-snapshots/product/product-audio-processing-linux.png, writing actual.\n\n  55 |         return;\n  56 |       }\n> 57 |       await expect(page).toHaveScreenshot([pageEntry.moduleKey, screenshotName], {\n     |       ^\n  58 |         fullPage: true,\n  59 |         animations: 'disabled',\n  60 |         maxDiffPixels: 0,\n    at /home/runner/work/Shunyalabs_website/Shunyalabs_web",
+        "timestamp": "2026-02-16T09:58:06.452Z",
+        "attachments": [
+          {
+            "name": "product/product-audio-processing-expected.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/30fd75e50e-product-audio-processing-linux.png"
+          },
+          {
+            "name": "product/product-audio-processing-actual.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/4b3fa64f34-product-audio-processing-actual.png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/5d301565a5-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/0aa33ac3e9-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/78054d5ed5-error-context.md"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "visual/figma-visual.spec.js › Figma visual regression › visual Product - Deployment",
+        "status": "FAIL",
+        "comment": "Error: A snapshot doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/tests/visual/figma-visual.spec.js-snapshots/product/product-deployment-linux.png, writing actual.\n\n  55 |         return;\n  56 |       }\n> 57 |       await expect(page).toHaveScreenshot([pageEntry.moduleKey, screenshotName], {\n     |       ^\n  58 |         fullPage: true,\n  59 |         animations: 'disabled',\n  60 |         maxDiffPixels: 0,\n    at /home/runner/work/Shunyalabs_website/Shunyalabs_website/t",
+        "timestamp": "2026-02-16T09:58:11.128Z",
+        "attachments": [
+          {
+            "name": "product/product-deployment-expected.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/9b2e2648e1-product-deployment-linux.png"
+          },
+          {
+            "name": "product/product-deployment-actual.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/3e522fc09c-product-deployment-actual.png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/9dc8708e65-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/fe7b9e3962-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/0457c765fe-error-context.md"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "visual/figma-visual.spec.js › Figma visual regression › visual Solutions - Use Cases",
+        "status": "FAIL",
+        "comment": "Error: A snapshot doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/tests/visual/figma-visual.spec.js-snapshots/solutions/solutions-use-cases-linux.png, writing actual.\n\n  55 |         return;\n  56 |       }\n> 57 |       await expect(page).toHaveScreenshot([pageEntry.moduleKey, screenshotName], {\n     |       ^\n  58 |         fullPage: true,\n  59 |         animations: 'disabled',\n  60 |         maxDiffPixels: 0,\n    at /home/runner/work/Shunyalabs_website/Shunyalabs_websit",
+        "timestamp": "2026-02-16T09:58:12.138Z",
+        "attachments": [
+          {
+            "name": "solutions/solutions-use-cases-expected.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/07da3e77f1-solutions-use-cases-linux.png"
+          },
+          {
+            "name": "solutions/solutions-use-cases-actual.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/e71c245044-solutions-use-cases-actual.png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/24fb739d8b-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/5ea16b60a9-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/599dda5012-error-context.md"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "visual/figma-visual.spec.js › Figma visual regression › visual Solutions - Contact Centers",
+        "status": "FAIL",
+        "comment": "Error: A snapshot doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/tests/visual/figma-visual.spec.js-snapshots/solutions/solutions-contact-centers-linux.png, writing actual.\n\n  55 |         return;\n  56 |       }\n> 57 |       await expect(page).toHaveScreenshot([pageEntry.moduleKey, screenshotName], {\n     |       ^\n  58 |         fullPage: true,\n  59 |         animations: 'disabled',\n  60 |         maxDiffPixels: 0,\n    at /home/runner/work/Shunyalabs_website/Shunyalabs_",
+        "timestamp": "2026-02-16T09:58:13.005Z",
+        "attachments": [
+          {
+            "name": "solutions/solutions-contact-centers-expected.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/9b3cc01fe5-solutions-contact-centers-linux.png"
+          },
+          {
+            "name": "solutions/solutions-contact-centers-actual.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/2cd18a241b-solutions-contact-centers-actual.png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/6454d95220-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/7d1a3df8cf-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/d95482b35e-error-context.md"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "visual/figma-visual.spec.js › Figma visual regression › visual Solutions - Media & Entertainment",
+        "status": "FAIL",
+        "comment": "Error: A snapshot doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/tests/visual/figma-visual.spec.js-snapshots/solutions/solutions-media-entertainment-linux.png, writing actual.\n\n  55 |         return;\n  56 |       }\n> 57 |       await expect(page).toHaveScreenshot([pageEntry.moduleKey, screenshotName], {\n     |       ^\n  58 |         fullPage: true,\n  59 |         animations: 'disabled',\n  60 |         maxDiffPixels: 0,\n    at /home/runner/work/Shunyalabs_website/Shunyal",
+        "timestamp": "2026-02-16T09:58:18.570Z",
+        "attachments": [
+          {
+            "name": "solutions/solutions-media-entertainment-expected.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/832dadadc1-solutions-media-entertainment-linux.png"
+          },
+          {
+            "name": "solutions/solutions-media-entertainment-actual.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/f4139580b5-solutions-media-entertainment-actual.png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/98301627cf-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/2e6e91a0ed-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/f4f70de4b3-error-context.md"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "visual/figma-visual.spec.js › Figma visual regression › visual Solutions - Healthcare",
+        "status": "FAIL",
+        "comment": "Error: A snapshot doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/tests/visual/figma-visual.spec.js-snapshots/solutions/solutions-healthcare-linux.png, writing actual.\n\n  55 |         return;\n  56 |       }\n> 57 |       await expect(page).toHaveScreenshot([pageEntry.moduleKey, screenshotName], {\n     |       ^\n  58 |         fullPage: true,\n  59 |         animations: 'disabled',\n  60 |         maxDiffPixels: 0,\n    at /home/runner/work/Shunyalabs_website/Shunyalabs_websi",
+        "timestamp": "2026-02-16T09:58:21.864Z",
+        "attachments": [
+          {
+            "name": "solutions/solutions-healthcare-expected.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/7c78707cbe-solutions-healthcare-linux.png"
+          },
+          {
+            "name": "solutions/solutions-healthcare-actual.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/e020ff9cf0-solutions-healthcare-actual.png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/0d5ebdd7a4-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/9b5b0280b1-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/ac4b465a1a-error-context.md"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "visual/figma-visual.spec.js › Figma visual regression › visual Models - Language Models",
+        "status": "FAIL",
+        "comment": "Error: A snapshot doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/tests/visual/figma-visual.spec.js-snapshots/models/models-language-models-linux.png, writing actual.\n\n  55 |         return;\n  56 |       }\n> 57 |       await expect(page).toHaveScreenshot([pageEntry.moduleKey, screenshotName], {\n     |       ^\n  58 |         fullPage: true,\n  59 |         animations: 'disabled',\n  60 |         maxDiffPixels: 0,\n    at /home/runner/work/Shunyalabs_website/Shunyalabs_websit",
+        "timestamp": "2026-02-16T09:58:23.484Z",
+        "attachments": [
+          {
+            "name": "models/models-language-models-expected.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/ac2e092706-models-language-models-linux.png"
+          },
+          {
+            "name": "models/models-language-models-actual.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/f6193ea116-models-language-models-actual.png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/ff1163c177-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/6b5c67d284-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/cccdc58126-error-context.md"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "visual/figma-visual.spec.js › Figma visual regression › visual Models - Zero STT Indic",
+        "status": "FAIL",
+        "comment": "Error: A snapshot doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/tests/visual/figma-visual.spec.js-snapshots/models/models-zero-stt-indic-linux.png, writing actual.\n\n  55 |         return;\n  56 |       }\n> 57 |       await expect(page).toHaveScreenshot([pageEntry.moduleKey, screenshotName], {\n     |       ^\n  58 |         fullPage: true,\n  59 |         animations: 'disabled',\n  60 |         maxDiffPixels: 0,\n    at /home/runner/work/Shunyalabs_website/Shunyalabs_website",
+        "timestamp": "2026-02-16T09:58:30.714Z",
+        "attachments": [
+          {
+            "name": "models/models-zero-stt-indic-expected.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/989b1e76eb-models-zero-stt-indic-linux.png"
+          },
+          {
+            "name": "models/models-zero-stt-indic-actual.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/6a594cd330-models-zero-stt-indic-actual.png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/8fd535c5ff-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/764954006a-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/4d4da58fae-error-context.md"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "visual/figma-visual.spec.js › Figma visual regression › visual Models - Zero STT Universal",
+        "status": "FAIL",
+        "comment": "Error: A snapshot doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/tests/visual/figma-visual.spec.js-snapshots/models/models-zero-stt-universal-linux.png, writing actual.\n\n  55 |         return;\n  56 |       }\n> 57 |       await expect(page).toHaveScreenshot([pageEntry.moduleKey, screenshotName], {\n     |       ^\n  58 |         fullPage: true,\n  59 |         animations: 'disabled',\n  60 |         maxDiffPixels: 0,\n    at /home/runner/work/Shunyalabs_website/Shunyalabs_web",
+        "timestamp": "2026-02-16T09:58:36.364Z",
+        "attachments": [
+          {
+            "name": "models/models-zero-stt-universal-expected.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/14390b44ee-models-zero-stt-universal-linux.png"
+          },
+          {
+            "name": "models/models-zero-stt-universal-actual.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/695ea1005b-models-zero-stt-universal-actual.png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/a31afb74e8-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/1b8372b38c-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/88bcd62a49-error-context.md"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "visual/figma-visual.spec.js › Figma visual regression › visual Models - Specialised Models",
+        "status": "FAIL",
+        "comment": "Error: A snapshot doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/tests/visual/figma-visual.spec.js-snapshots/models/models-specialised-models-linux.png, writing actual.\n\n  55 |         return;\n  56 |       }\n> 57 |       await expect(page).toHaveScreenshot([pageEntry.moduleKey, screenshotName], {\n     |       ^\n  58 |         fullPage: true,\n  59 |         animations: 'disabled',\n  60 |         maxDiffPixels: 0,\n    at /home/runner/work/Shunyalabs_website/Shunyalabs_web",
+        "timestamp": "2026-02-16T09:59:09.190Z",
+        "attachments": [
+          {
+            "name": "models/models-specialised-models-expected.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/3edd1578c0-models-specialised-models-linux.png"
+          },
+          {
+            "name": "models/models-specialised-models-actual.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/4879f05b15-models-specialised-models-actual.png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/5b17ffe562-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/270aca22b6-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/9cd9411b43-error-context.md"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "visual/figma-visual.spec.js › Figma visual regression › visual Models - Zero STT Med",
+        "status": "FAIL",
+        "comment": "Error: A snapshot doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/tests/visual/figma-visual.spec.js-snapshots/models/models-zero-stt-med-linux.png, writing actual.\n\n  55 |         return;\n  56 |       }\n> 57 |       await expect(page).toHaveScreenshot([pageEntry.moduleKey, screenshotName], {\n     |       ^\n  58 |         fullPage: true,\n  59 |         animations: 'disabled',\n  60 |         maxDiffPixels: 0,\n    at /home/runner/work/Shunyalabs_website/Shunyalabs_website/t",
+        "timestamp": "2026-02-16T09:59:09.361Z",
+        "attachments": [
+          {
+            "name": "models/models-zero-stt-med-expected.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/ea3b86fb04-models-zero-stt-med-linux.png"
+          },
+          {
+            "name": "models/models-zero-stt-med-actual.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/e473631455-models-zero-stt-med-actual.png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/c5bf73d269-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/06f6395404-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/3c13b5626e-error-context.md"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "visual/figma-visual.spec.js › Figma visual regression › visual Models - On Device Models",
+        "status": "FAIL",
+        "comment": "Error: A snapshot doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/tests/visual/figma-visual.spec.js-snapshots/models/models-on-device-models-linux.png, writing actual.\n\n  55 |         return;\n  56 |       }\n> 57 |       await expect(page).toHaveScreenshot([pageEntry.moduleKey, screenshotName], {\n     |       ^\n  58 |         fullPage: true,\n  59 |         animations: 'disabled',\n  60 |         maxDiffPixels: 0,\n    at /home/runner/work/Shunyalabs_website/Shunyalabs_websi",
+        "timestamp": "2026-02-16T09:59:10.187Z",
+        "attachments": [
+          {
+            "name": "models/models-on-device-models-expected.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/08d63e729f-models-on-device-models-linux.png"
+          },
+          {
+            "name": "models/models-on-device-models-actual.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/5e61fbaf2c-models-on-device-models-actual.png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/c9ff6ca611-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/d429c56c29-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/7515b7b60a-error-context.md"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "visual/figma-visual.spec.js › Figma visual regression › visual Resources - Blogs",
+        "status": "FAIL",
+        "comment": "Error: A snapshot doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/tests/visual/figma-visual.spec.js-snapshots/resources/resources-blogs-linux.png, writing actual.\n\n  55 |         return;\n  56 |       }\n> 57 |       await expect(page).toHaveScreenshot([pageEntry.moduleKey, screenshotName], {\n     |       ^\n  58 |         fullPage: true,\n  59 |         animations: 'disabled',\n  60 |         maxDiffPixels: 0,\n    at /home/runner/work/Shunyalabs_website/Shunyalabs_website/te",
+        "timestamp": "2026-02-16T09:59:16.788Z",
+        "attachments": [
+          {
+            "name": "resources/resources-blogs-expected.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/d9fafcf1b5-resources-blogs-linux.png"
+          },
+          {
+            "name": "resources/resources-blogs-actual.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/835894b11c-resources-blogs-actual.png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/959a5c9ebd-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/d7024a9e5b-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/55876862d4-error-context.md"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "visual/figma-visual.spec.js › Figma visual regression › visual Resources - Benchmarks",
+        "status": "FAIL",
+        "comment": "Error: A snapshot doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/tests/visual/figma-visual.spec.js-snapshots/resources/resources-benchmarks-linux.png, writing actual.\n\n  55 |         return;\n  56 |       }\n> 57 |       await expect(page).toHaveScreenshot([pageEntry.moduleKey, screenshotName], {\n     |       ^\n  58 |         fullPage: true,\n  59 |         animations: 'disabled',\n  60 |         maxDiffPixels: 0,\n    at /home/runner/work/Shunyalabs_website/Shunyalabs_websi",
+        "timestamp": "2026-02-16T09:59:16.964Z",
+        "attachments": [
+          {
+            "name": "resources/resources-benchmarks-expected.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/171dccab9d-resources-benchmarks-linux.png"
+          },
+          {
+            "name": "resources/resources-benchmarks-actual.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/fda0540ea3-resources-benchmarks-actual.png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/d7b681fe3d-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/a2a3324d84-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/92a47625a0-error-context.md"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "visual/figma-visual.spec.js › Figma visual regression › visual Resources - Patents",
+        "status": "FAIL",
+        "comment": "Error: A snapshot doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/tests/visual/figma-visual.spec.js-snapshots/resources/resources-patents-linux.png, writing actual.\n\n  55 |         return;\n  56 |       }\n> 57 |       await expect(page).toHaveScreenshot([pageEntry.moduleKey, screenshotName], {\n     |       ^\n  58 |         fullPage: true,\n  59 |         animations: 'disabled',\n  60 |         maxDiffPixels: 0,\n    at /home/runner/work/Shunyalabs_website/Shunyalabs_website/",
+        "timestamp": "2026-02-16T09:59:17.417Z",
+        "attachments": [
+          {
+            "name": "resources/resources-patents-expected.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/cf79129cfe-resources-patents-linux.png"
+          },
+          {
+            "name": "resources/resources-patents-actual.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/ee63ade71e-resources-patents-actual.png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/87cd9a17d4-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/351bea6f56-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/1ecb0119d2-error-context.md"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "visual/figma-visual.spec.js › Figma visual regression › visual Pricing - Pricing",
+        "status": "FAIL",
+        "comment": "Error: A snapshot doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/tests/visual/figma-visual.spec.js-snapshots/pricing/pricing-pricing-linux.png, writing actual.\n\n  55 |         return;\n  56 |       }\n> 57 |       await expect(page).toHaveScreenshot([pageEntry.moduleKey, screenshotName], {\n     |       ^\n  58 |         fullPage: true,\n  59 |         animations: 'disabled',\n  60 |         maxDiffPixels: 0,\n    at /home/runner/work/Shunyalabs_website/Shunyalabs_website/test",
+        "timestamp": "2026-02-16T09:59:24.707Z",
+        "attachments": [
+          {
+            "name": "pricing/pricing-pricing-expected.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/228ea5b8a8-pricing-pricing-linux.png"
+          },
+          {
+            "name": "pricing/pricing-pricing-actual.png",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/baf159c596-pricing-pricing-actual.png"
+          },
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/a1cc7367e6-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/1a603ed6ac-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/a4b075acdf-error-context.md"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "visual/figma-visual.spec.js › Figma visual regression › visual Contact - Contact Us",
+        "status": "FAIL",
+        "comment": "Error: A snapshot doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/tests/visual/figma-visual.spec.js-snapshots/contact/contact-contact-linux.png, writing actual.\n\n  55 |         return;\n  56 |       }\n> 57 |       await expect(page).toHaveScreenshot([pageEntry.moduleKey, screenshotName], {\n     |       ^\n  58 |         fullPage: true,\n  59 |         animations: 'disabled',\n  60 |         maxDiffPixels: 0,\n    at /home/runner/work/Shunyalabs_website/Shunyalabs_website/test",
+        "timestamp": "2026-02-16T09:59:25.626Z",
         "attachments": [
           {
             "name": "contact/contact-contact-expected.png",
