@@ -7,6 +7,7 @@
 import fs from 'fs';
 import path from 'path';
 import crypto from 'crypto';
+import { humanizeError } from '../utils/humanize-error.js';
 
 const RESULTS_DIR = path.join(process.cwd(), 'test-results');
 const HISTORY_DIR = path.join(process.cwd(), 'dashboard', 'history');
@@ -145,7 +146,12 @@ function readPlaywrightReport() {
 
   if (!report || !Array.isArray(report.suites)) return null;
 
-  if (!fs.existsSync(PLAYWRIGHT_ARTIFACTS_DIR)) {
+  // Clean old artifacts so only the current run's screenshots/videos are served
+  if (fs.existsSync(PLAYWRIGHT_ARTIFACTS_DIR)) {
+    for (const f of fs.readdirSync(PLAYWRIGHT_ARTIFACTS_DIR)) {
+      fs.unlinkSync(path.join(PLAYWRIGHT_ARTIFACTS_DIR, f));
+    }
+  } else {
     fs.mkdirSync(PLAYWRIGHT_ARTIFACTS_DIR, { recursive: true });
   }
 
@@ -210,7 +216,7 @@ function readPlaywrightReport() {
           moduleName: deriveModuleName(suite.file || test.location?.file || ''),
           testPoint,
           status,
-          comment: stripAnsi(errorMessage),
+          comment: humanizeError(errorMessage),
           timestamp: result?.startTime || report.startTime || new Date().toISOString(),
           attachments,
         });
@@ -258,7 +264,7 @@ function loadHistory() {
       tests: (run.tests || run.results || []).map(t => ({
         ...t,
         moduleName: resolveModuleName(t),
-        comment: stripAnsi(t.comment || ''),
+        comment: humanizeError(t.comment || ''),
       })),
     }));
   }
@@ -298,7 +304,7 @@ function saveToHistory(results, playwrightRun) {
       moduleName: r.moduleName,
       testPoint: r.testPoint,
       status: r.status,
-      comment: stripAnsi(r.comment || '').substring(0, 500),
+      comment: humanizeError(r.comment || '').substring(0, 500),
       timestamp: r.dateTime || r.timestamp,
       attachments: r.attachments || []
     }))

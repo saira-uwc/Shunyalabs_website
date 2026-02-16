@@ -3,6 +3,7 @@ import fs from 'fs';
 import path from 'path';
 import dotenv from 'dotenv';
 import crypto from 'crypto';
+import { humanizeError, stripAnsi } from '../utils/humanize-error.js';
 
 dotenv.config();
 
@@ -82,9 +83,10 @@ function buildRows(report) {
         const testName = (hasFilePrefix ? titleParts : [specFile, ...titleParts])
           .filter(Boolean)
           .join(' › ');
-        const errorMessage = result?.errors?.length
+        const rawError = result?.errors?.length
           ? (result.errors[0].message || result.errors[0].value || '')
           : (result?.error?.message || '');
+        const errorMessage = humanizeError(rawError);
         const attachments = findAttachments(testName);
         const proof = attachments.length ? `Proof: ${attachments.join(' | ')}` : '';
         const comment = [errorMessage, proof].filter(Boolean).join('\n');
