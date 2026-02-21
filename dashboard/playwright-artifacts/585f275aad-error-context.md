@@ -1,0 +1,500 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - navigation [ref=e4]:
+      - generic [ref=e5]:
+        - link "Shunya Labs Logo" [ref=e6] [cursor=pointer]:
+          - /url: /
+          - img "Shunya Labs Logo" [ref=e7]
+        - button "☰" [ref=e8] [cursor=pointer]
+      - generic:
+        - generic:
+          - generic:
+            - button "Product":
+              - generic: Product
+              - img
+          - generic:
+            - button "Models":
+              - generic: Models
+              - img
+          - generic:
+            - button "Solutions":
+              - generic: Solutions
+              - img
+          - generic:
+            - button "Resources":
+              - generic: Resources
+              - img
+          - link "Documentation":
+            - /url: https://docs.shunyalabs.ai/overview
+          - link "About Us":
+            - /url: /about
+          - link "Pricing":
+            - /url: /pricing
+          - generic:
+            - link "Playground":
+              - /url: https://playground.shunyalabs.ai/
+              - img
+              - text: Playground
+            - button "Sign In"
+            - link "Contact Sales":
+              - /url: /contact
+    - generic [ref=e10]:
+      - heading "Shunya Labs Plans" [level=1] [ref=e11]
+      - heading "Flexible pricing for every scenario" [level=2] [ref=e12]
+    - generic [ref=e14]:
+      - generic [ref=e16]:
+        - heading "Pay as you go" [level=3] [ref=e17]
+        - generic [ref=e19]:
+          - paragraph [ref=e20]: Free
+          - paragraph [ref=e21]: $200
+          - paragraph [ref=e22]: of Credit
+        - paragraph [ref=e23]: Then pay-as-you-go. No minimums. No expiration. No credit card required.
+        - list [ref=e24]:
+          - listitem [ref=e25]:
+            - img [ref=e27]
+            - generic [ref=e29]: Industry leading speech to text foundation models
+          - listitem [ref=e30]:
+            - img [ref=e32]
+            - generic [ref=e34]: Advanced intelligence features
+          - listitem [ref=e35]:
+            - img [ref=e37]
+            - generic [ref=e39]: Custom voice agent orchestrations
+        - button "Start for free" [ref=e40] [cursor=pointer]
+      - generic [ref=e44]:
+        - heading "Volume" [level=3] [ref=e45]
+        - paragraph [ref=e47]: $500
+        - paragraph [ref=e48]: Prepaid credits for the year with up to 10% lower rates on all services. Credits are redeemed against actual usage.
+        - list [ref=e49]:
+          - listitem [ref=e50]:
+            - img [ref=e53]
+            - generic [ref=e55]: Industry leading speech to text foundation models
+          - listitem [ref=e56]:
+            - img [ref=e59]
+            - generic [ref=e61]: Advanced intelligence features
+          - listitem [ref=e62]:
+            - img [ref=e65]
+            - generic [ref=e67]: Custom voice agent orchestrations
+        - button "Buy Now" [ref=e68] [cursor=pointer]
+      - generic [ref=e70]:
+        - heading "Enterprise" [level=3] [ref=e71]
+        - paragraph [ref=e73]: Custom pricing
+        - paragraph [ref=e74]: For businesses with large volumes, data or deployment requirements, or support needs.
+        - list [ref=e75]:
+          - listitem [ref=e76]:
+            - img [ref=e78]
+            - generic [ref=e80]: Access all models with our best discounts
+          - listitem [ref=e81]:
+            - img [ref=e83]
+            - generic [ref=e85]: Access to custom-trained speech-to-text models and intelligence features
+          - listitem [ref=e86]:
+            - img [ref=e88]
+            - generic [ref=e90]: Highest concurrency support
+          - listitem [ref=e91]:
+            - img [ref=e93]
+            - generic [ref=e95]: Self-hosted deployment options
+          - listitem [ref=e96]:
+            - img [ref=e98]
+            - generic [ref=e100]: Dedicated SLAs and support
+        - button "Contact Sales" [ref=e101] [cursor=pointer]
+    - generic [ref=e102]:
+      - generic [ref=e103]:
+        - heading "Voice Agents" [level=2] [ref=e104]
+        - paragraph [ref=e105]: Calculate your per minute cost for voice agents.
+      - generic [ref=e106]:
+        - generic [ref=e107]:
+          - generic [ref=e108]:
+            - generic [ref=e109]:
+              - img [ref=e111]
+              - heading "Speech to text" [level=4] [ref=e114]
+            - generic [ref=e115]:
+              - generic [ref=e116]:
+                - text: Provider
+                - button "Shunya Labs" [ref=e118] [cursor=pointer]:
+                  - generic [ref=e119]: Shunya Labs
+                  - img [ref=e120]
+              - generic [ref=e122]:
+                - text: Model
+                - button "Zero STT $0.0045/min" [ref=e124] [cursor=pointer]:
+                  - generic [ref=e125]: Zero STT
+                  - generic [ref=e126]:
+                    - generic [ref=e127]: $0.0045/min
+                    - img [ref=e128]
+          - generic [ref=e130]:
+            - generic [ref=e131]:
+              - img [ref=e133]
+              - heading "LLM" [level=4] [ref=e145]
+            - generic [ref=e146]:
+              - generic [ref=e147]:
+                - text: Provider
+                - button "Open AI" [ref=e149] [cursor=pointer]:
+                  - generic [ref=e150]: Open AI
+                  - img [ref=e151]
+              - generic [ref=e153]:
+                - text: Model
+                - button "gpt-4o-mini $0.0034/min" [ref=e155] [cursor=pointer]:
+                  - generic [ref=e156]: gpt-4o-mini
+                  - generic [ref=e157]:
+                    - generic [ref=e158]: $0.0034/min
+                    - img [ref=e159]
+          - generic [ref=e161]:
+            - generic [ref=e162]:
+              - img [ref=e164]
+              - heading "Text to Speech" [level=4] [ref=e168]
+            - generic [ref=e169]:
+              - generic [ref=e170]:
+                - text: Provider
+                - button "Open AI" [ref=e172] [cursor=pointer]:
+                  - generic [ref=e173]: Open AI
+                  - img [ref=e174]
+              - generic [ref=e176]:
+                - text: Model
+                - button "alloy $0.0075/min" [ref=e178] [cursor=pointer]:
+                  - generic [ref=e179]: alloy
+                  - generic [ref=e180]:
+                    - generic [ref=e181]: $0.0075/min
+                    - img [ref=e182]
+        - generic [ref=e184]:
+          - heading "Estimated cost/minute" [level=3] [ref=e185]
+          - generic [ref=e186]: $0.0154
+          - img [ref=e188]
+          - generic [ref=e192]:
+            - generic [ref=e193]:
+              - generic [ref=e196]: Speech to text
+              - generic [ref=e197]: $ 0.0045
+            - generic [ref=e198]:
+              - generic [ref=e201]: LLM
+              - generic [ref=e202]: $ 0.0034
+            - generic [ref=e203]:
+              - generic [ref=e206]: Text to Speech
+              - generic [ref=e207]: $ 0.0075
+      - generic [ref=e208]:
+        - generic [ref=e209]:
+          - generic [ref=e210]:
+            - heading "Estimate your monthly custom plan for voice agents:" [level=4] [ref=e211]
+            - generic [ref=e213]: $ 18.48
+          - generic [ref=e214]:
+            - slider [ref=e215] [cursor=pointer]: "1"
+            - generic [ref=e216]:
+              - generic [ref=e217]: "10"
+              - generic [ref=e218]: "500"
+          - generic [ref=e219]: Hours required per month
+        - link "Add $18 to wallet" [ref=e220] [cursor=pointer]:
+          - /url: /contact
+    - generic [ref=e221]:
+      - generic [ref=e222]:
+        - heading "Speech to Text" [level=2] [ref=e223]
+        - paragraph [ref=e224]: Industry-best speech to text foundation models for superior performance.
+      - generic [ref=e225]:
+        - button "Batch" [ref=e226] [cursor=pointer]
+        - button "Realtime" [ref=e227] [cursor=pointer]
+      - generic [ref=e228]:
+        - generic [ref=e229]:
+          - heading "Model" [level=3] [ref=e231]
+          - heading "Pay as you go (USD/min)" [level=3] [ref=e233]:
+            - text: Pay as you go
+            - generic [ref=e234]: (USD/min)
+          - heading "Volume (USD/min)" [level=3] [ref=e236]:
+            - text: Volume
+            - generic [ref=e237]: (USD/min)
+        - generic [ref=e238]:
+          - generic [ref=e239]:
+            - generic [ref=e240]:
+              - heading "Zero STT" [level=4] [ref=e241]
+              - paragraph [ref=e242]: Supports 200+ languages
+            - generic [ref=e244]: $0.0039
+            - generic [ref=e246]: $0.0035
+          - generic [ref=e247]:
+            - generic [ref=e248]:
+              - heading "Zero STT Indic" [level=4] [ref=e249]
+              - paragraph [ref=e250]: Superior accuracy for Indic languages
+            - generic [ref=e252]: $0.0045
+            - generic [ref=e254]: $0.0040
+          - generic [ref=e255]:
+            - generic [ref=e256]:
+              - heading "Zero STT Codeswitch" [level=4] [ref=e257]
+              - paragraph [ref=e258]: Native codeswitch model for multilingual speech
+            - generic [ref=e260]: $0.0050
+            - generic [ref=e262]: $0.0045
+          - generic [ref=e263]:
+            - generic [ref=e264]:
+              - heading "Zero STT Med" [level=4] [ref=e265]
+              - paragraph [ref=e266]: Specialised model for healthcare transcriptions
+            - generic [ref=e268]: $0.0050
+            - generic [ref=e270]: $0.0045
+          - generic [ref=e271]:
+            - generic [ref=e272]:
+              - heading "Zero STT Numerical" [level=4] [ref=e273]
+              - paragraph [ref=e274]: Specialised model for transcripts containing numerical values
+            - generic [ref=e276]: $0.0050
+            - generic [ref=e278]: $0.0045
+      - link "Contact Sales" [ref=e280] [cursor=pointer]:
+        - /url: /contact
+    - generic [ref=e281]:
+      - generic [ref=e282]:
+        - heading "Audio Processing" [level=2] [ref=e283]
+        - paragraph [ref=e284]: Get better transcripts with cleaner audio.
+      - generic [ref=e285]:
+        - generic [ref=e286]:
+          - heading "Product" [level=3] [ref=e288]
+          - heading "Pay as you go (USD/min)" [level=3] [ref=e290]:
+            - text: Pay as you go
+            - generic [ref=e291]: (USD/min)
+          - heading "Volume (USD/min)" [level=3] [ref=e293]:
+            - text: Volume
+            - generic [ref=e294]: (USD/min)
+        - generic [ref=e295]:
+          - generic [ref=e296]:
+            - heading "Denoiser" [level=4] [ref=e298]
+            - generic [ref=e300]: $0.0039
+            - generic [ref=e302]: $0.0034
+          - generic [ref=e303]:
+            - heading "Enhancer" [level=4] [ref=e305]
+            - generic [ref=e307]: $0.0039
+            - generic [ref=e309]: $0.0034
+    - generic [ref=e310]:
+      - generic [ref=e311]:
+        - heading "Speech Intelligence Features" [level=2] [ref=e312]
+        - paragraph [ref=e313]: Get analytics directly from speech and formatted outputs for integration into your workflows.
+      - generic [ref=e314]:
+        - generic [ref=e315]:
+          - heading "Feature" [level=3] [ref=e317]
+          - heading "Pay as you go (USD/min)" [level=3] [ref=e319]:
+            - text: Pay as you go
+            - generic [ref=e320]: (USD/min)
+          - heading "Volume (USD/min)" [level=3] [ref=e322]:
+            - text: Volume
+            - generic [ref=e323]: (USD/min)
+        - generic [ref=e324]:
+          - generic [ref=e325]:
+            - generic [ref=e326]:
+              - heading "Language Identification" [level=4] [ref=e327]
+              - paragraph [ref=e328]: Automatically detect the language in your audio files
+            - generic [ref=e330]: $0.0001
+            - generic [ref=e332]: $0.00009
+          - generic [ref=e333]:
+            - generic [ref=e334]:
+              - heading "Translation" [level=4] [ref=e335]
+              - paragraph [ref=e336]: Translate audio during or after transcription
+            - generic [ref=e338]: $0.0003
+            - generic [ref=e340]: $0.00027
+          - generic [ref=e341]:
+            - generic [ref=e342]:
+              - heading "Transliteration" [level=4] [ref=e343]
+              - paragraph [ref=e344]: Convert output to your preferred script
+            - generic [ref=e346]: $0.0003
+            - generic [ref=e348]: $0.00027
+          - generic [ref=e349]:
+            - generic [ref=e350]:
+              - heading "Speaker Diarization" [level=4] [ref=e351]
+              - paragraph [ref=e352]: Separate transcripts by speaker automatically
+            - generic [ref=e354]: $0.0012
+            - generic [ref=e356]: $0.00100
+          - generic [ref=e357]:
+            - generic [ref=e358]:
+              - heading "Speaker Identification" [level=4] [ref=e359]
+              - paragraph [ref=e360]: Customize speaker labels for personalized transcripts
+            - generic [ref=e362]: $0.0009
+            - generic [ref=e364]: $0.00080
+          - generic [ref=e365]:
+            - generic [ref=e366]:
+              - heading "Word Timestamps" [level=4] [ref=e367]
+              - paragraph [ref=e368]: Word-level timing for precise navigation
+            - generic [ref=e370]: $0.0012
+            - generic [ref=e372]: $0.00100
+          - generic [ref=e373]:
+            - generic [ref=e374]:
+              - heading "Profanity and Keyword Hashing" [level=4] [ref=e375]
+              - paragraph [ref=e376]: Filter and mask profanity or custom keywords
+            - generic [ref=e378]: $0.0003
+            - generic [ref=e380]: $0.00027
+          - generic [ref=e381]:
+            - generic [ref=e382]:
+              - heading "Intent Detection" [level=4] [ref=e383]
+              - paragraph [ref=e384]: Understand the purpose behind every conversation
+            - generic [ref=e386]: $0.0003
+            - generic [ref=e388]: $0.00027
+          - generic [ref=e389]:
+            - generic [ref=e390]:
+              - heading "Sentiment Analysis" [level=4] [ref=e391]
+              - paragraph [ref=e392]: Track emotional tone across interactions
+            - generic [ref=e394]: $0.0003
+            - generic [ref=e396]: $0.00027
+          - generic [ref=e397]:
+            - generic [ref=e398]:
+              - heading "Emotion Diarization" [level=4] [ref=e399]
+              - paragraph [ref=e400]: Get granular emotion tracking throughout conversations
+            - generic [ref=e402]: $0.0005
+            - generic [ref=e404]: $0.00045
+          - generic [ref=e405]:
+            - generic [ref=e406]:
+              - heading "Summarization" [level=4] [ref=e407]
+              - paragraph [ref=e408]: Generate concise summaries from audio or text
+            - generic [ref=e410]: $0.0003
+            - generic [ref=e412]: $0.00027
+          - generic [ref=e413]:
+            - generic [ref=e414]:
+              - heading "Keyword Normalization" [level=4] [ref=e415]
+              - paragraph [ref=e416]: Standardize brand names, acronyms, and custom terminology
+            - generic [ref=e418]: $0.0003
+            - generic [ref=e420]: $0.00027
+          - generic [ref=e421]:
+            - generic [ref=e422]:
+              - heading "Medical Keyterm Correction" [level=4] [ref=e423]
+              - paragraph [ref=e424]: Ensure accurate transcription of medical terminology
+            - generic [ref=e426]: $0.0003
+            - generic [ref=e428]: $0.00027
+    - generic [ref=e430]:
+      - heading "Frequently Asked Questions" [level=2] [ref=e431]
+      - generic [ref=e432]:
+        - button "What plans does Shunya Labs offer?" [ref=e434] [cursor=pointer]:
+          - generic [ref=e435]: What plans does Shunya Labs offer?
+          - img [ref=e437]
+        - button "How do I receive my free credits?" [ref=e440] [cursor=pointer]:
+          - generic [ref=e441]: How do I receive my free credits?
+          - img [ref=e443]
+        - button "Do my credits expire?" [ref=e446] [cursor=pointer]:
+          - generic [ref=e447]: Do my credits expire?
+          - img [ref=e449]
+        - button "What happens when I switch plans?" [ref=e452] [cursor=pointer]:
+          - generic [ref=e453]: What happens when I switch plans?
+          - img [ref=e455]
+        - button "What happens if I run out of credits on the Volume plan?" [ref=e458] [cursor=pointer]:
+          - generic [ref=e459]: What happens if I run out of credits on the Volume plan?
+          - img [ref=e461]
+    - contentinfo [ref=e463]:
+      - generic [ref=e464]:
+        - generic [ref=e465]:
+          - img "Shunya Labs" [ref=e466]
+          - paragraph [ref=e467]: Shunya Labs, Inc.
+        - generic [ref=e468]:
+          - paragraph [ref=e469]: Product
+          - list [ref=e470]:
+            - listitem [ref=e471]:
+              - link "Overview" [ref=e472] [cursor=pointer]:
+                - /url: /overview
+            - listitem [ref=e473]:
+              - link "Models" [ref=e474] [cursor=pointer]:
+                - /url: /models-page
+            - listitem [ref=e475]:
+              - link "Voice Agents" [ref=e476] [cursor=pointer]:
+                - /url: /voice-agent
+            - listitem [ref=e477]:
+              - link "Speech Intelligence" [ref=e478] [cursor=pointer]:
+                - /url: /speech-intelligence-page
+            - listitem [ref=e479]:
+              - link "Audio Processing" [ref=e480] [cursor=pointer]:
+                - /url: /audio-processing
+            - listitem [ref=e481]:
+              - link "Deployment" [ref=e482] [cursor=pointer]:
+                - /url: /deployment
+        - generic [ref=e483]:
+          - paragraph [ref=e484]: Models
+          - list [ref=e485]:
+            - listitem [ref=e486]:
+              - link "Language Models" [ref=e487] [cursor=pointer]:
+                - /url: /language-models
+            - listitem [ref=e488]:
+              - link "Zero STT Indic" [ref=e489] [cursor=pointer]:
+                - /url: /zero-indic
+            - listitem [ref=e490]:
+              - link "Zero STT Codeswitch" [ref=e491] [cursor=pointer]:
+                - /url: /zero-code-switch
+            - listitem [ref=e492]:
+              - link "Zero STT Universal" [ref=e493] [cursor=pointer]:
+                - /url: /zero-stt
+            - listitem [ref=e494]:
+              - link "Specialised Models" [ref=e495] [cursor=pointer]:
+                - /url: /domain-specialisation
+            - listitem [ref=e496]:
+              - link "Zero STT Med" [ref=e497] [cursor=pointer]:
+                - /url: /zero-med
+            - listitem [ref=e498]:
+              - link "On Device Models" [ref=e499] [cursor=pointer]:
+                - /url: /on-device-models
+        - generic [ref=e500]:
+          - paragraph [ref=e501]: Solutions
+          - list [ref=e502]:
+            - listitem [ref=e503]:
+              - link "Contact Centers" [ref=e504] [cursor=pointer]:
+                - /url: /contact-centers
+            - listitem [ref=e505]:
+              - link "Media & Entertainment" [ref=e506] [cursor=pointer]:
+                - /url: /media-entertainment
+            - listitem [ref=e507]:
+              - link "Healthcare" [ref=e508] [cursor=pointer]:
+                - /url: /healthcare
+        - generic [ref=e509]:
+          - paragraph [ref=e510]: Resources
+          - list [ref=e511]:
+            - listitem [ref=e512]:
+              - link "Blogs" [ref=e513] [cursor=pointer]:
+                - /url: /blog
+            - listitem [ref=e514]:
+              - link "Benchmarks" [ref=e515] [cursor=pointer]:
+                - /url: /benchmarks
+            - listitem [ref=e516]:
+              - link "News & Media" [ref=e517] [cursor=pointer]:
+                - /url: /media
+            - listitem [ref=e518]:
+              - link "Patents" [ref=e519] [cursor=pointer]:
+                - /url: /patents
+            - listitem [ref=e520]:
+              - link "Research" [ref=e521] [cursor=pointer]:
+                - /url: /research
+        - paragraph [ref=e523]:
+          - link "Documentation" [ref=e524] [cursor=pointer]:
+            - /url: https://docs.shunyalabs.ai/overview
+        - list [ref=e526]:
+          - listitem [ref=e527]:
+            - link "About us" [ref=e528] [cursor=pointer]:
+              - /url: /about
+        - list [ref=e530]:
+          - listitem [ref=e531]:
+            - link "Pricing" [ref=e532] [cursor=pointer]:
+              - /url: /pricing
+      - generic [ref=e533]:
+        - paragraph [ref=e534]: Follow us on
+        - generic [ref=e535]:
+          - link [ref=e536] [cursor=pointer]:
+            - /url: https://www.linkedin.com/company/shunya-labs-ai/
+            - img [ref=e537]
+          - link [ref=e539] [cursor=pointer]:
+            - /url: https://www.facebook.com/people/ShunyaLabsAI/61577801851308/
+            - img [ref=e540]
+          - link [ref=e542] [cursor=pointer]:
+            - /url: https://www.instagram.com/shunyalabsai/
+            - img [ref=e543]
+          - link [ref=e545] [cursor=pointer]:
+            - /url: https://x.com/ShunyaLabsAI
+            - img [ref=e546]
+      - generic [ref=e548]:
+        - paragraph [ref=e549]: © 2026 Shunya Labs Inc. All rights reserved.
+        - generic [ref=e550]:
+          - link "Privacy" [ref=e551] [cursor=pointer]:
+            - /url: /privacy-policy
+          - link "Terms" [ref=e552] [cursor=pointer]:
+            - /url: /terms-conditions
+          - link "Security" [ref=e553] [cursor=pointer]:
+            - /url: /security-policy
+          - link "General License" [ref=e554] [cursor=pointer]:
+            - /url: /general-rail-m-license
+          - link "Custom License" [ref=e555] [cursor=pointer]:
+            - /url: /shunya-labs-custom-model-rail-m-license
+  - alert [ref=e556]
+  - iframe [ref=e559]:
+    - generic [ref=f1e2]:
+      - generic [ref=f1e5]:
+        - link "Privacy" [ref=f1e6] [cursor=pointer]:
+          - /url: https://www.google.com/intl/en/policies/privacy/
+        - text: "-"
+        - link "Terms" [ref=f1e7] [cursor=pointer]:
+          - /url: https://www.google.com/intl/en/policies/terms/
+      - generic [ref=f1e8]:
+        - generic [ref=f1e9]:
+          - text: protected by
+          - strong [ref=f1e10]: reCAPTCHA
+        - generic [ref=f1e11]: "-"
+```
