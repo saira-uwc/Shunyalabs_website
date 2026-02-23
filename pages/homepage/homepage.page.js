@@ -151,7 +151,8 @@ export class HomepagePage extends BasePage {
         const rect = element.getBoundingClientRect();
         return rect.width > 0 && rect.height > 0;
       };
-      const footer = document.querySelector('footer');
+      const footers = document.querySelectorAll('footer');
+      const footer = footers[footers.length - 1];
       if (!footer) return [];
       return Array.from(footer.querySelectorAll('p, a, li'))
         .filter((element) => isVisible(element))
@@ -219,7 +220,8 @@ export class HomepagePage extends BasePage {
         return rect.width > 0 && rect.height > 0;
       };
 
-      const footer = document.querySelector('footer');
+      const footers = document.querySelectorAll('footer');
+      const footer = footers[footers.length - 1];
       if (!footer) return { columns: {}, followUs: '', copyright: '' };
 
       const columns = {};
@@ -233,7 +235,7 @@ export class HomepagePage extends BasePage {
         if (!parent) continue;
         const list = parent.querySelector('ul');
         if (list) {
-          const items = Array.from(list.querySelectorAll('a, li'))
+          const items = Array.from(list.querySelectorAll('li > a, li:not(:has(a))'))
             .filter((el) => isVisible(el))
             .map((el) => normalize(el.textContent))
             .filter(Boolean);
@@ -243,27 +245,20 @@ export class HomepagePage extends BasePage {
         }
       }
 
-      const docLink = footer.querySelector('a[href="/documentation/batch-transcriptions/quickstart"]');
-      if (docLink && isVisible(docLink)) {
-        const label = normalize(docLink.textContent);
-        if (label) {
-          columns[label] = [label];
-        }
-      }
-
-      const aboutLink = footer.querySelector('a[href="/about"]');
-      if (aboutLink && isVisible(aboutLink)) {
-        const label = normalize(aboutLink.textContent);
-        if (label) {
-          columns[label] = [label];
-        }
-      }
-
-      const pricingLink = footer.querySelector('a[href="/pricing"]');
-      if (pricingLink && isVisible(pricingLink)) {
-        const label = normalize(pricingLink.textContent);
-        if (label) {
-          columns[label] = [label];
+      // Standalone links that appear as single-item columns
+      const standaloneSelectors = [
+        'a[href*="docs.shunyalabs"]',
+        'a[href*="documentation"]',
+        'a[href="/about"]',
+        'a[href="/pricing"]',
+      ];
+      for (const sel of standaloneSelectors) {
+        const link = footer.querySelector(sel);
+        if (link && isVisible(link)) {
+          const label = normalize(link.textContent);
+          if (label && !columns[label]) {
+            columns[label] = [label];
+          }
         }
       }
 
