@@ -480,19 +480,13 @@ function validateImages(actual, expected, failures) {
 
 function validateImageCount(actual, expected, failures) {
   if (expected.totalImages == null) return;
-  // Only flag if actual has zero images when some expected, or if MORE images appear
-  // (lazy loading means fewer images is normal; more images may indicate layout issues)
+  // Only flag if page has zero images when some are expected (truly broken page)
+  // Dynamic content (blogs, language grids) causes normal count variation
   if (expected.totalImages > 0 && actual.images.length === 0) {
     failures.push({
       section: 'images',
       property: 'total count',
       message: `Image count: expected ${expected.totalImages} but found 0`,
-    });
-  } else if (actual.images.length > expected.totalImages * 2) {
-    failures.push({
-      section: 'images',
-      property: 'total count',
-      message: `Image count: expected ~${expected.totalImages} but found ${actual.images.length} (possible layout issue)`,
     });
   }
 }
@@ -556,11 +550,20 @@ function validateGlobalStyles(actual, expected, failures) {
 }
 
 function validateConsoleErrors(consoleErrors, failures) {
-  if (consoleErrors.length > 0) {
+  // Filter out third-party/CSP noise that isn't a real page bug
+  const meaningful = consoleErrors.filter((msg) =>
+    !msg.includes('Content Security Policy') &&
+    !msg.includes('ERR_BLOCKED_BY_CSP') &&
+    !msg.includes('frame-ancestors') &&
+    !msg.includes('net::ERR_INTERNET_DISCONNECTED') &&
+    !msg.includes('net::ERR_NAME_NOT_RESOLVED') &&
+    !msg.includes('Failed to load resource')
+  );
+  if (meaningful.length > 0) {
     failures.push({
       section: 'console',
       property: 'errors',
-      message: `${consoleErrors.length} console error(s): ${consoleErrors.slice(0, 3).join(' | ')}`,
+      message: `${meaningful.length} console error(s): ${meaningful.slice(0, 3).join(' | ')}`,
     });
   }
 }

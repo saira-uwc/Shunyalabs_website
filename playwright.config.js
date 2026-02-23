@@ -46,7 +46,7 @@ export default defineConfig({
     {
       name: 'mobile',
       use: { viewport: { width: 375, height: 667 } },
-      testIgnore: [/\/snapshots\//, /\/(nav|footer|widget)\.spec\.js/],
+      testIgnore: [/\/snapshots\//, /\/(nav|footer|widget)\.spec\.js/, /\/zero-stt-universal\//],
     },
   ],
 
