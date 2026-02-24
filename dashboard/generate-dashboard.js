@@ -464,6 +464,7 @@ function generateDashboard(currentResults, history, playwrightRun) {
       --border: rgba(255, 255, 255, 0.06);
       --border-hover: rgba(255, 255, 255, 0.12);
       --shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+      --accent-soft: rgba(99, 102, 241, 0.1);
       --radius: 16px;
       --radius-sm: 8px;
     }
@@ -732,93 +733,32 @@ function generateDashboard(currentResults, history, playwrightRun) {
     .test-name { flex: 1; font-size: 14px; color: var(--text-secondary); }
 
     /* Calendar */
-    .calendar-container {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 16px;
-      margin-bottom: 24px;
-    }
-
-    .calendar-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 12px;
-    }
-
-    .calendar-nav { display: flex; gap: 8px; }
-
-    .calendar-nav button {
-      width: 52px;
-      height: 30px;
-      border-radius: 8px;
-      border: 1px solid var(--border);
+    .calendar-nav { display: flex; align-items: center; gap: 16px; margin-bottom: 18px; }
+    .calendar-nav h3 { font-size: 16px; min-width: 180px; text-align: center; }
+    .calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; margin-bottom: 24px; }
+    .cal-head { font-size: 12px; color: var(--text-muted); text-align: center; padding: 8px 0; font-weight: 600; text-transform: capitalize; }
+    .cal-cell {
+      min-height: 100px;
       background: var(--bg-secondary);
-      color: var(--text-primary);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px 12px;
       cursor: pointer;
-      transition: all 0.2s;
-    }
-
-    .calendar-nav button:hover { background: var(--bg-hover); }
-
-    .calendar-month { font-size: 14px; font-weight: 600; }
-
-    .calendar-grid {
-      display: grid;
-      grid-template-columns: repeat(7, minmax(120px, 1fr));
-      gap: 8px;
-    }
-
-    .calendar-day-header {
-      text-align: left;
-      padding: 4px 8px;
-      font-size: 11px;
-      color: var(--text-muted);
-      font-weight: 600;
-    }
-
-    .calendar-day {
-      height: 86px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: space-between;
-      padding: 8px 10px;
-      border-radius: var(--radius-sm);
-      cursor: pointer;
-      transition: all 0.2s;
+      transition: .15s;
       position: relative;
-      font-size: 12px;
-      border: 1px solid var(--border);
-      background: var(--bg-secondary);
-    }
-
-    .calendar-day:hover { background: var(--bg-hover); }
-    .calendar-day.other-month { color: var(--text-muted); opacity: 0.5; }
-    .calendar-day.today { border-color: var(--accent-primary); box-shadow: 0 0 0 1px var(--accent-primary); }
-
-    .calendar-day.has-runs { border-color: var(--success); }
-    .calendar-day.has-runs.has-failures { border-color: var(--warning); }
-    .calendar-day.has-runs.all-failures { border-color: var(--danger); }
-
-    .calendar-day-number {
-      font-weight: 600;
-      font-size: 12px;
-      color: var(--text-primary);
-    }
-    .calendar-day-meta {
       display: flex;
       flex-direction: column;
-      gap: 4px;
-      font-size: 11px;
-      color: var(--text-secondary);
     }
-    .calendar-day-rate {
-      font-size: 10px;
-      font-weight: 600;
-      color: var(--text-muted);
-    }
+    .cal-cell.empty { background: transparent; border-color: transparent; cursor: default; }
+    .cal-cell:not(.empty):hover { border-color: var(--accent-primary); transform: translateY(-1px); }
+    .cal-cell.has-runs { border-color: var(--warning); border-width: 1.5px; }
+    .cal-cell.today { background: var(--accent-soft); border-color: var(--accent-primary); border-width: 2px; }
+    .cal-cell.selected { border-color: var(--accent-primary); background: var(--accent-soft); }
+    .cal-cell .day { font-size: 18px; font-weight: 700; margin-bottom: auto; }
+    .cal-cell .cal-runs { font-size: 12px; color: var(--text-muted); margin-top: 6px; }
+    .cal-cell .cal-rate { font-size: 12px; font-weight: 600; margin-top: 2px; }
+    .calendar-footer { text-align: center; color: var(--text-muted); font-size: 12px; padding: 16px 0; border-top: 1px solid var(--border); margin-top: 8px; }
+    #calendarRuns { margin-top: 8px; }
 
     /* History List */
     .history-list { margin-top: 24px; }
@@ -1548,17 +1488,7 @@ function generateDashboard(currentResults, history, playwrightRun) {
     </div>
 
     <!-- Calendar Tab -->
-    <div id="tab-calendar" class="tab-content">
-      <div class="calendar-container">
-        <div class="calendar-header">
-          <button class="btn" onclick="changeMonth(-1)">← Prev</button>
-          <div class="calendar-month" id="calendarMonth"></div>
-          <button class="btn" onclick="changeMonth(1)">Next →</button>
-        </div>
-        <div class="calendar-grid" id="calendarGrid"></div>
-      </div>
-      <div id="selectedDateRuns"></div>
-    </div>
+    <div id="tab-calendar" class="tab-content" id="calendarTab"></div>
   </main>
 
   <!-- Run Details Modal -->
@@ -1624,64 +1554,55 @@ function generateDashboard(currentResults, history, playwrightRun) {
 
     // Calendar rendering
     function renderCalendar() {
-      const monthNames = ['January', 'February', 'March', 'April', 'May', 'June',
-        'July', 'August', 'September', 'October', 'November', 'December'];
-      
-      document.getElementById('calendarMonth').textContent = monthNames[currentMonth] + ' ' + currentYear;
-      
+      const tab = document.getElementById('tab-calendar');
+      const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+      // Build runsByDate lookup from historyByDate (keyed YYYY-MM-DD)
+      const runsByDate = {};
+      for (const [dateStr, runs] of Object.entries(historyByDate)) {
+        const d = new Date(dateStr);
+        const key = d.getFullYear() + '-' + d.getMonth() + '-' + d.getDate();
+        runsByDate[key] = runs;
+      }
+
       const firstDay = new Date(currentYear, currentMonth, 1).getDay();
       const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
-      const daysInPrevMonth = new Date(currentYear, currentMonth, 0).getDate();
-      
-      let html = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
-        .map(d => '<div class="calendar-day-header">' + d + '</div>').join('');
-      
+      const monthName = new Date(currentYear, currentMonth).toLocaleString('en-US', { month: 'long', year: 'numeric' });
       const today = new Date();
-      
-      // Previous month days
-      for (let i = firstDay - 1; i >= 0; i--) {
-        const day = daysInPrevMonth - i;
-        html += '<div class="calendar-day other-month"><div class="calendar-day-number">' + day + '</div></div>';
-      }
-      
-      // Current month days
-      for (let day = 1; day <= daysInMonth; day++) {
-        const dateStr = currentYear + '-' + String(currentMonth + 1).padStart(2, '0') + '-' + String(day).padStart(2, '0');
-        const runs = historyByDate[dateStr] || [];
-        const isToday = today.getDate() === day && today.getMonth() === currentMonth && today.getFullYear() === currentYear;
-        
-        let classes = 'calendar-day';
-        if (isToday) classes += ' today';
-        if (runs.length > 0) {
-          classes += ' has-runs';
-          const allPass = runs.every(r => r.passRate === 100);
-          const allFail = runs.every(r => r.passRate === 0);
-          if (allFail) classes += ' all-failures';
-          else if (!allPass) classes += ' has-failures';
-        }
-        
-        const passRate = runs.length
-          ? Math.round(runs.reduce((sum, run) => sum + (run.passRate || 0), 0) / runs.length)
-          : null;
+      const isCurrentMonth = today.getFullYear() === currentYear && today.getMonth() === currentMonth;
 
-        html += '<div class="' + classes + '" onclick="showDateRuns(\\'' + dateStr + '\\')">';
-        html += '<div class="calendar-day-number">' + day + '</div>';
-        if (runs.length > 0) {
-          html += '<div class="calendar-day-meta">';
-          html += '<div>' + runs.length + ' run' + (runs.length > 1 ? 's' : '') + '</div>';
-          html += '<div class="calendar-day-rate">' + passRate + '% pass</div>';
-          html += '</div>';
+      let cells = dayNames.map(function(d) { return '<div class="cal-head">' + d + '</div>'; }).join('');
+
+      for (let i = 0; i < firstDay; i++) cells += '<div class="cal-cell empty"></div>';
+
+      for (let d = 1; d <= daysInMonth; d++) {
+        const key = currentYear + '-' + currentMonth + '-' + d;
+        const dayRuns = runsByDate[key] || [];
+        const count = dayRuns.length;
+        const avgRate = count > 0 ? Math.round(dayRuns.reduce(function(s, r) { return s + (r.passRate || 0); }, 0) / count) : -1;
+        const rateColor = avgRate >= 80 ? 'var(--success)' : avgRate >= 50 ? 'var(--warning)' : 'var(--danger)';
+        const isToday = isCurrentMonth && today.getDate() === d;
+        const classes = ['cal-cell'];
+        if (count > 0) classes.push('has-runs');
+        if (isToday) classes.push('today');
+        cells += '<div class="' + classes.join(' ') + '" onclick="selectCalDay(' + d + ')" data-day="' + d + '">';
+        cells += '<div class="day">' + d + '</div>';
+        if (count > 0) {
+          cells += '<div class="cal-runs">' + count + ' run' + (count > 1 ? 's' : '') + '</div>';
+          cells += '<div class="cal-rate" style="color:' + rateColor + '">' + avgRate + '% pass</div>';
         }
-        html += '</div>';
+        cells += '</div>';
       }
-      
-      // Next month days
-      const totalCells = Math.ceil((firstDay + daysInMonth) / 7) * 7;
-      for (let i = 1; i <= totalCells - firstDay - daysInMonth; i++) {
-        html += '<div class="calendar-day other-month"><div class="calendar-day-number">' + i + '</div></div>';
-      }
-      
-      document.getElementById('calendarGrid').innerHTML = html;
+
+      tab.innerHTML =
+        '<div class="calendar-nav">' +
+          '<button class="btn" onclick="changeMonth(-1)">&laquo; Prev</button>' +
+          '<h3>' + monthName + '</h3>' +
+          '<button class="btn" onclick="changeMonth(1)">Next &raquo;</button>' +
+        '</div>' +
+        '<div class="calendar-grid">' + cells + '</div>' +
+        '<div id="calendarRuns"></div>' +
+        '<div class="calendar-footer">Total runs stored: ' + historyData.length + ' | History retention: Last 100 runs</div>';
     }
 
     function changeMonth(delta) {
@@ -1691,32 +1612,35 @@ function generateDashboard(currentResults, history, playwrightRun) {
       renderCalendar();
     }
 
-    function showDateRuns(dateStr) {
+    function selectCalDay(day) {
+      document.querySelectorAll('.cal-cell').forEach(function(c) { c.classList.remove('selected'); });
+      const cell = document.querySelector('.cal-cell[data-day="' + day + '"]');
+      if (cell) cell.classList.add('selected');
+      const dateStr = currentYear + '-' + String(currentMonth + 1).padStart(2, '0') + '-' + String(day).padStart(2, '0');
       const runs = historyByDate[dateStr] || [];
-      const container = document.getElementById('selectedDateRuns');
-      
-      if (runs.length === 0) {
-        container.innerHTML = '<div style="text-align: center; padding: 40px; color: var(--text-muted);">No test runs on this date</div>';
+      const container = document.getElementById('calendarRuns');
+      if (!runs.length) {
+        container.innerHTML = '<p style="color:var(--text-muted);padding:12px">No runs on this day.</p>';
         return;
       }
-      
-      const dateObj = new Date(dateStr);
-      let html = '<h2 class="section-title">' + dateObj.toLocaleDateString('en-IN', { timeZone: 'Asia/Kolkata', weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }) + '</h2>';
-      
-      runs.sort((a, b) => new Date(b.runDate) - new Date(a.runDate)).forEach(run => {
-        html += \`
-        <div class="run-card" onclick="showRunDetails('\${run.runId}')">
-          <div class="run-card-header">
-            <div class="run-time">🕐 \${new Date(run.runDate).toLocaleTimeString('en-IN', { timeZone: 'Asia/Kolkata', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true })}</div>
-            <div class="run-stats">
-              <span class="run-stat pass">✓ \${run.passed}</span>
-              <span class="run-stat fail">✗ \${run.failed}</span>
-              <span class="run-pass-rate \${run.passRate === 100 ? 'good' : run.passRate >= 80 ? 'warning' : 'bad'}">\${run.passRate}%</span>
-            </div>
-          </div>
-        </div>\`;
+      let html = '<h3 style="font-size:15px;margin-bottom:12px">Runs for ' +
+        new Date(currentYear, currentMonth, day).toLocaleDateString('en-US', { month: 'long', day: 'numeric' }) + '</h3>';
+      html += '<div class="history-cards">';
+      runs.sort(function(a, b) { return new Date(b.runDate) - new Date(a.runDate); }).forEach(function(run) {
+        const time = new Date(run.runDate).toLocaleTimeString('en-IN', { timeZone: 'Asia/Kolkata', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true });
+        const rateColor = run.passRate >= 80 ? 'var(--success)' : 'var(--warning)';
+        html += '<div class="run-card" onclick="showRunDetails(\\'' + run.runId + '\\')">' +
+          '<div class="run-card-header">' +
+            '<div class="run-time">' + time + '</div>' +
+            '<div class="run-stats">' +
+              '<span class="run-stat pass">' + run.passed + ' passed</span>' +
+              (run.failed > 0 ? '<span class="run-stat fail">' + run.failed + ' failed</span>' : '') +
+              '<span style="color:' + rateColor + ';font-size:13px;font-weight:600">' + run.passRate + '%</span>' +
+            '</div>' +
+          '</div>' +
+        '</div>';
       });
-      
+      html += '</div>';
       container.innerHTML = html;
     }
 
