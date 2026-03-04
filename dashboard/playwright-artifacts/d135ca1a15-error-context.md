@@ -1,0 +1,222 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - navigation [ref=e4]:
+      - generic [ref=e5]:
+        - link "Shunya Labs Logo" [ref=e6] [cursor=pointer]:
+          - /url: /
+          - img "Shunya Labs Logo" [ref=e7]
+        - button "☰" [ref=e8] [cursor=pointer]
+      - generic:
+        - generic:
+          - generic:
+            - button "Product":
+              - generic: Product
+              - img
+          - generic:
+            - button "Models":
+              - generic: Models
+              - img
+          - generic:
+            - button "Solutions":
+              - generic: Solutions
+              - img
+          - generic:
+            - button "Resources":
+              - generic: Resources
+              - img
+          - link "Documentation":
+            - /url: https://docs.shunyalabs.ai/overview
+          - link "About Us":
+            - /url: /about
+          - link "Pricing":
+            - /url: /pricing
+          - generic:
+            - link "Playground":
+              - /url: https://playground.shunyalabs.ai/
+              - img
+              - text: Playground
+            - button "Sign In"
+            - link "Contact Sales":
+              - /url: /contact
+    - generic [ref=e10]:
+      - heading "Everything you need to build a Voice Agent" [level=1] [ref=e11]
+      - heading "Build complete voice agents with Shunya Labs' intelligence layer—a fully integrated platform from voice input to intelligent response." [level=2] [ref=e12]
+    - generic [ref=e15]:
+      - generic [ref=e16]:
+        - generic [ref=e17]:
+          - img "Speech-to-Text" [ref=e19]
+          - heading "Speech-to-Text" [level=3] [ref=e20]
+          - paragraph [ref=e21]: Foundation models convert audio to text across 200+ languages
+        - generic [ref=e22]:
+          - img "Orchestration Intelligence" [ref=e24]
+          - heading "Orchestration Intelligence" [level=3] [ref=e25]
+          - paragraph [ref=e26]: Manages context, memory, behavior, and LLM integration
+        - generic [ref=e27]:
+          - img "Text-to-Speech" [ref=e29]
+          - heading "Text-to-Speech" [level=3] [ref=e30]
+          - paragraph [ref=e31]: Generates natural-sounding voice responses
+      - link "Contact us" [ref=e32] [cursor=pointer]:
+        - /url: /contact
+    - generic [ref=e34]:
+      - heading "Build with Shunya Labs for an End-to-End Solution" [level=2] [ref=e35]
+      - paragraph [ref=e36]: One unified API delivering developer simplicity and enterprise-grade orchestration in a single platform.
+      - generic [ref=e37]:
+        - generic [ref=e38]:
+          - img [ref=e40]
+          - heading "Simple Voice Agent Integration" [level=3] [ref=e43]
+          - paragraph [ref=e44]: Single API integrating speech-to-text, LLM orchestration, and text-to-speech—no complex service integration required.
+        - generic [ref=e45]:
+          - img [ref=e47]
+          - heading "Optimized Full-Stack Performance" [level=3] [ref=e50]
+          - paragraph [ref=e51]: Custom-built voice stack with optimized STT, TTS, and runtime orchestration delivering minimal latency and maximum accuracy.
+        - generic [ref=e52]:
+          - img [ref=e54]
+          - heading "Flexible Deployment Options" [level=3] [ref=e56]
+          - paragraph [ref=e57]: Deploy fully managed or self-hosted with complete HIPAA and GDPR compliance support.
+    - contentinfo [ref=e58]:
+      - generic [ref=e62]:
+        - paragraph [ref=e63]: The fastest way to add voice AI to your products
+        - paragraph [ref=e64]: One platform for speech in and speech out—secure by design, built to scale.
+        - generic [ref=e65]:
+          - link "Go to Pricing page" [ref=e66] [cursor=pointer]:
+            - /url: /pricing
+            - text: Get Started
+          - link "Contact Sales" [ref=e67] [cursor=pointer]:
+            - /url: /contact
+    - contentinfo [ref=e68]:
+      - generic [ref=e69]:
+        - generic [ref=e70]:
+          - img "Shunya Labs" [ref=e71]
+          - paragraph [ref=e72]: Shunya Labs, Inc.
+        - generic [ref=e73]:
+          - paragraph [ref=e74]: Product
+          - list [ref=e75]:
+            - listitem [ref=e76]:
+              - link "Overview" [ref=e77] [cursor=pointer]:
+                - /url: /overview
+            - listitem [ref=e78]:
+              - link "Models" [ref=e79] [cursor=pointer]:
+                - /url: /models-page
+            - listitem [ref=e80]:
+              - link "Voice Agents" [ref=e81] [cursor=pointer]:
+                - /url: /voice-agent
+            - listitem [ref=e82]:
+              - link "Speech Intelligence" [ref=e83] [cursor=pointer]:
+                - /url: /speech-intelligence-page
+            - listitem [ref=e84]:
+              - link "Audio Processing" [ref=e85] [cursor=pointer]:
+                - /url: /audio-processing
+            - listitem [ref=e86]:
+              - link "Deployment" [ref=e87] [cursor=pointer]:
+                - /url: /deployment
+        - generic [ref=e88]:
+          - paragraph [ref=e89]: Models
+          - list [ref=e90]:
+            - listitem [ref=e91]:
+              - link "Language Models" [ref=e92] [cursor=pointer]:
+                - /url: /language-models
+            - listitem [ref=e93]:
+              - link "Zero STT Indic" [ref=e94] [cursor=pointer]:
+                - /url: /zero-indic
+            - listitem [ref=e95]:
+              - link "Zero STT Codeswitch" [ref=e96] [cursor=pointer]:
+                - /url: /zero-code-switch
+            - listitem [ref=e97]:
+              - link "Zero STT Universal" [ref=e98] [cursor=pointer]:
+                - /url: /zero-stt
+            - listitem [ref=e99]:
+              - link "Specialised Models" [ref=e100] [cursor=pointer]:
+                - /url: /domain-specialisation
+            - listitem [ref=e101]:
+              - link "Zero STT Med" [ref=e102] [cursor=pointer]:
+                - /url: /zero-med
+            - listitem [ref=e103]:
+              - link "On Device Models" [ref=e104] [cursor=pointer]:
+                - /url: /on-device-models
+        - generic [ref=e105]:
+          - paragraph [ref=e106]: Solutions
+          - list [ref=e107]:
+            - listitem [ref=e108]:
+              - link "Contact Centers" [ref=e109] [cursor=pointer]:
+                - /url: /contact-centers
+            - listitem [ref=e110]:
+              - link "Media & Entertainment" [ref=e111] [cursor=pointer]:
+                - /url: /media-entertainment
+            - listitem [ref=e112]:
+              - link "Healthcare" [ref=e113] [cursor=pointer]:
+                - /url: /healthcare
+        - generic [ref=e114]:
+          - paragraph [ref=e115]: Resources
+          - list [ref=e116]:
+            - listitem [ref=e117]:
+              - link "Blogs" [ref=e118] [cursor=pointer]:
+                - /url: /blog
+            - listitem [ref=e119]:
+              - link "Benchmarks" [ref=e120] [cursor=pointer]:
+                - /url: /benchmarks
+            - listitem [ref=e121]:
+              - link "News & Media" [ref=e122] [cursor=pointer]:
+                - /url: /media
+            - listitem [ref=e123]:
+              - link "Patents" [ref=e124] [cursor=pointer]:
+                - /url: /patents
+            - listitem [ref=e125]:
+              - link "Research" [ref=e126] [cursor=pointer]:
+                - /url: /research
+        - paragraph [ref=e128]:
+          - link "Documentation" [ref=e129] [cursor=pointer]:
+            - /url: https://docs.shunyalabs.ai/overview
+        - list [ref=e131]:
+          - listitem [ref=e132]:
+            - link "About us" [ref=e133] [cursor=pointer]:
+              - /url: /about
+        - list [ref=e135]:
+          - listitem [ref=e136]:
+            - link "Pricing" [ref=e137] [cursor=pointer]:
+              - /url: /pricing
+      - generic [ref=e138]:
+        - paragraph [ref=e139]: Follow us on
+        - generic [ref=e140]:
+          - link [ref=e141] [cursor=pointer]:
+            - /url: https://www.linkedin.com/company/shunya-labs-ai/
+            - img [ref=e142]
+          - link [ref=e144] [cursor=pointer]:
+            - /url: https://www.facebook.com/people/ShunyaLabsAI/61577801851308/
+            - img [ref=e145]
+          - link [ref=e147] [cursor=pointer]:
+            - /url: https://www.instagram.com/shunyalabsai/
+            - img [ref=e148]
+          - link [ref=e150] [cursor=pointer]:
+            - /url: https://x.com/ShunyaLabsAI
+            - img [ref=e151]
+      - generic [ref=e153]:
+        - paragraph [ref=e154]: © 2026 Shunya Labs Inc. All rights reserved.
+        - generic [ref=e155]:
+          - link "Privacy" [ref=e156] [cursor=pointer]:
+            - /url: /privacy-policy
+          - link "Terms" [ref=e157] [cursor=pointer]:
+            - /url: /terms-conditions
+          - link "Security" [ref=e158] [cursor=pointer]:
+            - /url: /security-policy
+          - link "General License" [ref=e159] [cursor=pointer]:
+            - /url: /general-rail-m-license
+          - link "Custom License" [ref=e160] [cursor=pointer]:
+            - /url: /shunya-labs-custom-model-rail-m-license
+  - alert [ref=e161]
+  - iframe [ref=e164]:
+    - generic [ref=f1e2]:
+      - generic [ref=f1e5]:
+        - link "Privacy" [ref=f1e6] [cursor=pointer]:
+          - /url: https://www.google.com/intl/en/policies/privacy/
+        - text: "-"
+        - link "Terms" [ref=f1e7] [cursor=pointer]:
+          - /url: https://www.google.com/intl/en/policies/terms/
+      - generic [ref=f1e8]:
+        - generic [ref=f1e9]:
+          - text: protected by
+          - strong [ref=f1e10]: reCAPTCHA
+        - generic [ref=f1e11]: "-"
+```
