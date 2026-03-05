@@ -629,12 +629,52 @@ export async function runDesignComplianceTest({ page, pageEntry }) {
 
 // ─── Baseline Capture ───
 
+// Buttons/text that are widget-state-dependent and must never be saved in baselines
+const UNSTABLE_BUTTONS = new Set([
+  'Play audio', 'No conversation to copy', 'Sample Audio',
+  'Customer Support Call', 'Podcast', 'Patient Notes', "Doctor's Appointment",
+]);
+const UNSTABLE_TEXT = new Set([
+  'Sample Audio', 'Customer Support Call', 'Podcast',
+  'Patient Notes', "Doctor's Appointment",
+]);
+const UNSTABLE_TEXT_PATTERNS = [
+  'Select your input language',
+  'Pick a sample, upload a file, or start speaking',
+];
+// Language flag images are lazy-loaded and unreliable in headless
+const LANGUAGE_FLAG_ALTS = new Set([
+  'Akan','Arabic (Global)','Assamese','Awadhi','Azerbaijani','Bambara','Bavarian',
+  'Bengali (Bangladesh)','Berber (Tamazight)','Bhojpuri','Catalan','Cebuano',
+  'Chhattisgarhi','Chichewa','Chinese (Global)','Czech','Dari','Dutch','English',
+  'French','Fulani','German','Greek','Gujarati','Haitian Creole','Haryanvi',
+  'Hausa','Hindi','Hungarian','Igbo','Indonesian','Italian','Japanese','Javanese',
+  'Kannada','Kazakh','Kikongo','Kinyarwanda','Kirundi','Korean','Kurdish (Kurmanji)',
+  'Lingala','Madurese','Magahi','Maithili','Malagasy','Malay','Malayalam','Marathi',
+  'Marwari','Nepali','Oromo','Pashto','Persian','Polish','Portuguese','Punjabi',
+  'Rajasthani','Romanian','Russian','Shona','Sindhi','Somali','Spanish','Sundanese',
+  'Swahili','Swedish','Tagalog','Tamil','Telugu','Thai','Turkish','Twi','Ukrainian',
+  'Urdu','Uyghur','Uzbek','Vietnamese','Wolof','Yoruba',
+]);
+
+function cleanCapturedData(data) {
+  const cleanedButtons = data.buttons.filter((b) => !UNSTABLE_BUTTONS.has(b.label) && !/^🇺🇸/.test(b.label));
+  const cleanedText = data.mainText.filter((t) =>
+    !UNSTABLE_TEXT.has(t) &&
+    !UNSTABLE_TEXT_PATTERNS.some((p) => t.includes(p)) &&
+    !/^🇺🇸/.test(t)
+  );
+  const cleanedImages = data.images.filter((img) => !LANGUAGE_FLAG_ALTS.has(img.alt));
+  return { ...data, buttons: cleanedButtons, mainText: cleanedText, images: cleanedImages };
+}
+
 export async function captureDesignBaseline(page, pageEntry) {
   await page.goto(pageEntry.path, { waitUntil: 'domcontentloaded' });
   await page.waitForLoadState('networkidle', { timeout: 15000 }).catch(() => {});
   await page.waitForTimeout(5000);
 
-  const data = await extractPageDesignData(page);
+  const raw = await extractPageDesignData(page);
+  const data = cleanCapturedData(raw);
   const viewport = detectViewport(page);
   const size = page.viewportSize();
 
