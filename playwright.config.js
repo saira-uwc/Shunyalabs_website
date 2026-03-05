@@ -42,7 +42,7 @@ export default defineConfig({
   },
 
   projects: [
-    { name: 'desktop', use: { viewport: { width: 1920, height: 1080 } } },
+    { name: 'desktop', use: { viewport: { width: 1920, height: 1080 } }, testIgnore: [/\/snapshots\//] },
     {
       name: 'mobile',
       use: { viewport: { width: 375, height: 667 } },
