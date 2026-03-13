@@ -1523,9 +1523,38 @@ function generateDashboard(currentResults, history, playwrightRun) {
   </footer>
 
   <script>
-    // Store all history data
-    const historyData = ${JSON.stringify(history)};
-    const historyByDate = ${JSON.stringify(historyByDate)};
+    // Store history data — full test details for last 14 runs, summary-only for older
+    const historyData = ${JSON.stringify((() => {
+      const recent = history.slice(-14);
+      const older = history.slice(0, -14);
+      return [
+        ...older.map(r => ({
+          runId: r.runId, runDate: r.runDate, passed: r.passed,
+          failed: r.failed, total: r.total, passRate: r.passRate, tests: []
+        })),
+        ...recent.map(r => ({
+          ...r,
+          tests: (r.tests || []).map(t => ({
+            ...t,
+            comment: t.comment ? t.comment.substring(0, 150) : '',
+            attachments: (t.attachments || []).map(a => ({ name: a.name, path: a.path }))
+          }))
+        }))
+      ];
+    })())};
+    const historyByDate = ${JSON.stringify(Object.fromEntries(
+      Object.entries(historyByDate).map(([date, runs]) => [
+        date,
+        runs.map(r => ({
+          runId: r.runId,
+          runDate: r.runDate,
+          passed: r.passed,
+          failed: r.failed,
+          total: r.total,
+          passRate: r.passRate
+        }))
+      ])
+    ))};
     
     let currentMonth = new Date().getMonth();
     let currentYear = new Date().getFullYear();
