@@ -1,1077 +1,5 @@
 [
   {
-    "runId": "run_1770893296171_98z8wslfi",
-    "runDate": "2026-02-12T10:48:16.170Z",
-    "passed": 0,
-    "failed": 118,
-    "total": 118,
-    "passRate": 0,
-    "tests": [
-      {
-        "category": "Playwright",
-        "moduleName": "Contact",
-        "testPoint": "modules/contact/contact/actions.spec.js › Contact - Contact Us actions (Figma exact) › Form fields and checkboxes visible",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:46:08.805Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Contact",
-        "testPoint": "modules/contact/contact/content.spec.js › Contact - Contact Us content (Snapshot) › Content snapshot matches",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:46:09.872Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Contact",
-        "testPoint": "modules/contact/contact/cta.spec.js › Contact - Contact Us CTAs (Figma exact) › CTA visibility",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:46:10.928Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Homepage",
-        "testPoint": "modules/homepage/homepage/actions.spec.js › Homepage - actions (Figma exact) › Playground actions are enabled",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:46:11.993Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Homepage",
-        "testPoint": "modules/homepage/homepage/content.spec.js › Homepage - Homepage content (Snapshot) › Content snapshot matches",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:46:13.085Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Homepage",
-        "testPoint": "modules/homepage/homepage/cta.spec.js › Homepage - CTAs (Figma exact) › CTA labels + destinations",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:46:14.153Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Homepage",
-        "testPoint": "modules/homepage/homepage/footer.spec.js › Homepage - footer menu (Figma exact) › Footer columns, follow us, copyright",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:46:15.242Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Homepage",
-        "testPoint": "modules/homepage/homepage/nav.spec.js › Homepage - navigation (Figma exact) › Top nav dropdowns match labels, descriptions, and hrefs",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:46:16.311Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Homepage",
-        "testPoint": "modules/homepage/homepage/widget.spec.js › Homepage - widget (Figma exact) › Widget content and actions",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:46:17.381Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Models",
-        "testPoint": "modules/models/language-models/actions.spec.js › Models - Language Models actions (Figma exact) › Try now links visible",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:46:18.456Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Models",
-        "testPoint": "modules/models/language-models/content.spec.js › Models - Language Models content (Snapshot) › Content snapshot matches",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:46:19.543Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Models",
-        "testPoint": "modules/models/language-models/cta.spec.js › Models - Language Models CTAs (Figma exact) › CTA hrefs",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:46:20.638Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Models",
-        "testPoint": "modules/models/on-device-models/actions.spec.js › Models - On Device Models actions (Figma exact) › Contact Us visible",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:46:21.729Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Models",
-        "testPoint": "modules/models/on-device-models/content.spec.js › Models - On Device Models content (Snapshot) › Content snapshot matches",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:46:22.816Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Models",
-        "testPoint": "modules/models/on-device-models/cta.spec.js › Models - On Device Models CTAs (Figma exact) › CTA hrefs",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:46:23.933Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Models",
-        "testPoint": "modules/models/specialised-models/actions.spec.js › Models - Specialised Models actions (Figma exact) › Try now / Learn now visible",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:46:25.047Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Models",
-        "testPoint": "modules/models/specialised-models/content.spec.js › Models - Specialised Models content (Snapshot) › Content snapshot matches",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:46:26.132Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Models",
-        "testPoint": "modules/models/specialised-models/cta.spec.js › Models - Specialised Models CTAs (Figma exact) › CTA hrefs",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:46:27.213Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Models",
-        "testPoint": "modules/models/zero-stt-codeswitch/actions.spec.js › Models - Zero STT Codeswitch actions (Figma exact) › Widget buttons enabled",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:46:28.301Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Models",
-        "testPoint": "modules/models/zero-stt-codeswitch/content.spec.js › Models - Zero STT Codeswitch content (Snapshot) › Content snapshot matches",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:46:29.380Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Models",
-        "testPoint": "modules/models/zero-stt-codeswitch/cta.spec.js › Models - Zero STT Codeswitch CTAs (Figma exact) › CTA hrefs",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:46:30.480Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Models",
-        "testPoint": "modules/models/zero-stt-indic/actions.spec.js › Models - Zero STT Indic actions (Figma exact) › Try now link visible",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:46:31.569Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Models",
-        "testPoint": "modules/models/zero-stt-indic/content.spec.js › Models - Zero STT Indic content (Snapshot) › Content snapshot matches",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:46:32.649Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Models",
-        "testPoint": "modules/models/zero-stt-indic/cta.spec.js › Models - Zero STT Indic CTAs (Figma exact) › CTA hrefs",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:46:33.747Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Models",
-        "testPoint": "modules/models/zero-stt-med/actions.spec.js › Models - Zero STT Med actions › Actions",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:46:34.846Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Models",
-        "testPoint": "modules/models/zero-stt-med/content.spec.js › Models - Zero STT Med content (Snapshot) › Content snapshot matches",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:46:35.931Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Models",
-        "testPoint": "modules/models/zero-stt-med/cta.spec.js › Models - Zero STT Med CTAs › CTAs",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:46:37.019Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Models",
-        "testPoint": "modules/models/zero-stt-universal/actions.spec.js › Models - Zero STT Universal actions (Figma exact) › Widget buttons enabled",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:46:38.095Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Models",
-        "testPoint": "modules/models/zero-stt-universal/content.spec.js › Models - Zero STT Universal content (Snapshot) › Content snapshot matches",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:46:39.163Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Models",
-        "testPoint": "modules/models/zero-stt-universal/cta.spec.js › Models - Zero STT Universal CTAs (Figma exact) › CTA hrefs",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:46:40.237Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Pricing",
-        "testPoint": "modules/pricing/pricing/actions.spec.js › Pricing - Pricing actions (Figma exact) › Tabs and slider visible",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:46:41.332Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Pricing",
-        "testPoint": "modules/pricing/pricing/content.spec.js › Pricing - Pricing content (Snapshot) › Content snapshot matches",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:46:42.404Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Pricing",
-        "testPoint": "modules/pricing/pricing/cta.spec.js › Pricing - Pricing CTAs (Figma exact) › CTA hrefs",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:46:43.494Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Product",
-        "testPoint": "modules/product/audio-processing/actions.spec.js › Product - Audio Processing actions (Figma exact) › Contact CTA visible",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:46:44.564Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Product",
-        "testPoint": "modules/product/audio-processing/content.spec.js › Product - Audio Processing content (Snapshot) › Content snapshot matches",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:46:45.649Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Product",
-        "testPoint": "modules/product/audio-processing/cta.spec.js › Product - Audio Processing CTAs (Figma exact) › CTA hrefs",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:46:46.749Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Product",
-        "testPoint": "modules/product/deployment/actions.spec.js › Product - Deployment actions (Figma exact) › Contact CTA visible",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:46:47.821Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Product",
-        "testPoint": "modules/product/deployment/content.spec.js › Product - Deployment content (Snapshot) › Content snapshot matches",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:46:48.912Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Product",
-        "testPoint": "modules/product/deployment/cta.spec.js › Product - Deployment CTAs (Figma exact) › CTA hrefs",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:46:50.003Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Product",
-        "testPoint": "modules/product/models/actions.spec.js › Product - Models actions › Actions",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:46:51.092Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Product",
-        "testPoint": "modules/product/models/content.spec.js › Product - Models content (Snapshot) › Content snapshot matches",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:46:52.183Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Product",
-        "testPoint": "modules/product/models/cta.spec.js › Product - Models CTAs › CTAs",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:46:53.277Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Product",
-        "testPoint": "modules/product/overview/actions.spec.js › Product - Overview actions › Actions",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:46:54.380Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Product",
-        "testPoint": "modules/product/overview/content.spec.js › Product - Overview content (Snapshot) › Content snapshot matches",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:46:55.481Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Product",
-        "testPoint": "modules/product/overview/cta.spec.js › Product - Overview CTAs › CTAs",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:46:56.579Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Product",
-        "testPoint": "modules/product/speech-intelligence/actions.spec.js › Product - Speech Intelligence actions (Figma exact) › Try Now CTA visible",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:46:57.656Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Product",
-        "testPoint": "modules/product/speech-intelligence/content.spec.js › Product - Speech Intelligence content (Snapshot) › Content snapshot matches",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:46:58.762Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Product",
-        "testPoint": "modules/product/speech-intelligence/cta.spec.js › Product - Speech Intelligence CTAs (Figma exact) › CTA hrefs",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:46:59.847Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Product",
-        "testPoint": "modules/product/voice-agents/actions.spec.js › Product - Voice Agents actions (Figma exact) › CTA button enabled states",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:47:00.944Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Product",
-        "testPoint": "modules/product/voice-agents/content.spec.js › Product - Voice Agents content (Snapshot) › Content snapshot matches",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:47:02.035Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Product",
-        "testPoint": "modules/product/voice-agents/cta.spec.js › Product - Voice Agents CTAs (Figma exact) › CTA hrefs",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:47:03.120Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Resources",
-        "testPoint": "modules/resources/benchmarks/actions.spec.js › Resources - Benchmarks actions (Figma exact) › Tabs and chart controls visible",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:47:04.214Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Resources",
-        "testPoint": "modules/resources/benchmarks/content.spec.js › Resources - Benchmarks content (Snapshot) › Content snapshot matches",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:47:05.313Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Resources",
-        "testPoint": "modules/resources/benchmarks/cta.spec.js › Resources - Benchmarks CTAs (Figma exact) › CTA hrefs",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:47:06.399Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Resources",
-        "testPoint": "modules/resources/blogs/actions.spec.js › Resources - Blogs actions (Figma exact) › Search and pagination available",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:47:07.490Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Resources",
-        "testPoint": "modules/resources/blogs/content.spec.js › Resources - Blogs content (Snapshot) › Content snapshot matches",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:47:08.581Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Resources",
-        "testPoint": "modules/resources/blogs/cta.spec.js › Resources - Blogs CTAs (Figma exact) › CTA hrefs",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:47:09.669Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Resources",
-        "testPoint": "modules/resources/patents/actions.spec.js › Resources - Patents actions (Figma exact) › Patent cards visible",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:47:10.756Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Resources",
-        "testPoint": "modules/resources/patents/content.spec.js › Resources - Patents content (Snapshot) › Content snapshot matches",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:47:11.840Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Resources",
-        "testPoint": "modules/resources/patents/cta.spec.js › Resources - Patents CTAs (Figma exact) › CTA hrefs",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:47:12.930Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Solutions",
-        "testPoint": "modules/solutions/contact-centers/actions.spec.js › Solutions - Contact Centers actions (Figma exact) › Try Now buttons enabled",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:47:14.015Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Solutions",
-        "testPoint": "modules/solutions/contact-centers/content.spec.js › Solutions - Contact Centers content (Snapshot) › Content snapshot matches",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:47:15.112Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Solutions",
-        "testPoint": "modules/solutions/contact-centers/cta.spec.js › Solutions - Contact Centers CTAs (Figma exact) › CTA hrefs",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:47:16.202Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Solutions",
-        "testPoint": "modules/solutions/healthcare/actions.spec.js › Solutions - Healthcare actions (Figma exact) › Try Now buttons enabled",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:47:17.274Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Solutions",
-        "testPoint": "modules/solutions/healthcare/content.spec.js › Solutions - Healthcare content (Snapshot) › Content snapshot matches",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:47:18.371Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Solutions",
-        "testPoint": "modules/solutions/healthcare/cta.spec.js › Solutions - Healthcare CTAs (Figma exact) › CTA hrefs",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:47:19.467Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Solutions",
-        "testPoint": "modules/solutions/media-entertainment/actions.spec.js › Solutions - Media & Entertainment actions (Figma exact) › Contact Sales CTA visible",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:47:20.564Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Solutions",
-        "testPoint": "modules/solutions/media-entertainment/content.spec.js › Solutions - Media & Entertainment content (Snapshot) › Content snapshot matches",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:47:21.659Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Solutions",
-        "testPoint": "modules/solutions/media-entertainment/cta.spec.js › Solutions - Media & Entertainment CTAs (Figma exact) › CTA hrefs",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:47:22.747Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Solutions",
-        "testPoint": "modules/solutions/use-cases/actions.spec.js › Solutions - Use Cases actions (Figma exact) › Learn more CTAs visible",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:47:23.849Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Solutions",
-        "testPoint": "modules/solutions/use-cases/content.spec.js › Solutions - Use Cases content (Snapshot) › Content snapshot matches",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:47:24.950Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Solutions",
-        "testPoint": "modules/solutions/use-cases/cta.spec.js › Solutions - Use Cases CTAs (Figma exact) › CTA hrefs",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:47:26.036Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Playwright",
-        "testPoint": "snapshots/generate-page-snapshots.spec.js › Generate page content snapshots › snapshot Homepage - Homepage",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:47:27.124Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Playwright",
-        "testPoint": "snapshots/generate-page-snapshots.spec.js › Generate page content snapshots › snapshot Product - Overview",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:47:28.214Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Playwright",
-        "testPoint": "snapshots/generate-page-snapshots.spec.js › Generate page content snapshots › snapshot Product - Models",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:47:29.291Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Playwright",
-        "testPoint": "snapshots/generate-page-snapshots.spec.js › Generate page content snapshots › snapshot Product - Voice Agents",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:47:30.379Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Playwright",
-        "testPoint": "snapshots/generate-page-snapshots.spec.js › Generate page content snapshots › snapshot Product - Speech Intelligence",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:47:31.460Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Playwright",
-        "testPoint": "snapshots/generate-page-snapshots.spec.js › Generate page content snapshots › snapshot Product - Audio Processing",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:47:32.552Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Playwright",
-        "testPoint": "snapshots/generate-page-snapshots.spec.js › Generate page content snapshots › snapshot Product - Deployment",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:47:33.615Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Playwright",
-        "testPoint": "snapshots/generate-page-snapshots.spec.js › Generate page content snapshots › snapshot Solutions - Use Cases",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:47:34.699Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Playwright",
-        "testPoint": "snapshots/generate-page-snapshots.spec.js › Generate page content snapshots › snapshot Solutions - Contact Centers",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:47:35.797Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Playwright",
-        "testPoint": "snapshots/generate-page-snapshots.spec.js › Generate page content snapshots › snapshot Solutions - Media & Entertainment",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:47:36.878Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Playwright",
-        "testPoint": "snapshots/generate-page-snapshots.spec.js › Generate page content snapshots › snapshot Solutions - Healthcare",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:47:37.956Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Playwright",
-        "testPoint": "snapshots/generate-page-snapshots.spec.js › Generate page content snapshots › snapshot Models - Language Models",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:47:39.039Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Playwright",
-        "testPoint": "snapshots/generate-page-snapshots.spec.js › Generate page content snapshots › snapshot Models - Zero STT Indic",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:47:40.128Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Playwright",
-        "testPoint": "snapshots/generate-page-snapshots.spec.js › Generate page content snapshots › snapshot Models - Zero STT Codeswitch",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:47:41.214Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Playwright",
-        "testPoint": "snapshots/generate-page-snapshots.spec.js › Generate page content snapshots › snapshot Models - Zero STT Universal",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:47:42.288Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Playwright",
-        "testPoint": "snapshots/generate-page-snapshots.spec.js › Generate page content snapshots › snapshot Models - Specialised Models",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:47:43.369Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Playwright",
-        "testPoint": "snapshots/generate-page-snapshots.spec.js › Generate page content snapshots › snapshot Models - Zero STT Med",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:47:44.451Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Playwright",
-        "testPoint": "snapshots/generate-page-snapshots.spec.js › Generate page content snapshots › snapshot Models - On Device Models",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:47:45.545Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Playwright",
-        "testPoint": "snapshots/generate-page-snapshots.spec.js › Generate page content snapshots › snapshot Resources - Blogs",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:47:46.624Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Playwright",
-        "testPoint": "snapshots/generate-page-snapshots.spec.js › Generate page content snapshots › snapshot Resources - Benchmarks",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:47:47.701Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Playwright",
-        "testPoint": "snapshots/generate-page-snapshots.spec.js › Generate page content snapshots › snapshot Resources - Patents",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:47:48.773Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Playwright",
-        "testPoint": "snapshots/generate-page-snapshots.spec.js › Generate page content snapshots › snapshot Pricing - Pricing",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:47:49.856Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Playwright",
-        "testPoint": "snapshots/generate-page-snapshots.spec.js › Generate page content snapshots › snapshot Contact - Contact Us",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:47:50.950Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Playwright",
-        "testPoint": "visual/figma-visual.spec.js › Figma visual regression › visual Homepage - Homepage",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:47:52.027Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Playwright",
-        "testPoint": "visual/figma-visual.spec.js › Figma visual regression › visual Product - Overview",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:47:53.113Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Playwright",
-        "testPoint": "visual/figma-visual.spec.js › Figma visual regression › visual Product - Models",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:47:54.197Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Playwright",
-        "testPoint": "visual/figma-visual.spec.js › Figma visual regression › visual Product - Voice Agents",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:47:55.272Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Playwright",
-        "testPoint": "visual/figma-visual.spec.js › Figma visual regression › visual Product - Speech Intelligence",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:47:56.351Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Playwright",
-        "testPoint": "visual/figma-visual.spec.js › Figma visual regression › visual Product - Audio Processing",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:47:57.438Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Playwright",
-        "testPoint": "visual/figma-visual.spec.js › Figma visual regression › visual Product - Deployment",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:47:58.520Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Playwright",
-        "testPoint": "visual/figma-visual.spec.js › Figma visual regression › visual Solutions - Use Cases",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:47:59.605Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Playwright",
-        "testPoint": "visual/figma-visual.spec.js › Figma visual regression › visual Solutions - Contact Centers",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:48:00.693Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Playwright",
-        "testPoint": "visual/figma-visual.spec.js › Figma visual regression › visual Solutions - Media & Entertainment",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:48:01.785Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Playwright",
-        "testPoint": "visual/figma-visual.spec.js › Figma visual regression › visual Solutions - Healthcare",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:48:02.887Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Playwright",
-        "testPoint": "visual/figma-visual.spec.js › Figma visual regression › visual Models - Language Models",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:48:03.966Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Playwright",
-        "testPoint": "visual/figma-visual.spec.js › Figma visual regression › visual Models - Zero STT Indic",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:48:05.053Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Playwright",
-        "testPoint": "visual/figma-visual.spec.js › Figma visual regression › visual Models - Zero STT Codeswitch",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:48:06.135Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Playwright",
-        "testPoint": "visual/figma-visual.spec.js › Figma visual regression › visual Models - Zero STT Universal",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:48:07.223Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Playwright",
-        "testPoint": "visual/figma-visual.spec.js › Figma visual regression › visual Models - Specialised Models",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:48:08.303Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Playwright",
-        "testPoint": "visual/figma-visual.spec.js › Figma visual regression › visual Models - Zero STT Med",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:48:09.398Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Playwright",
-        "testPoint": "visual/figma-visual.spec.js › Figma visual regression › visual Models - On Device Models",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:48:10.492Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Playwright",
-        "testPoint": "visual/figma-visual.spec.js › Figma visual regression › visual Resources - Blogs",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:48:11.564Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Playwright",
-        "testPoint": "visual/figma-visual.spec.js › Figma visual regression › visual Resources - Benchmarks",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:48:12.675Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Playwright",
-        "testPoint": "visual/figma-visual.spec.js › Figma visual regression › visual Resources - Patents",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:48:13.757Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Playwright",
-        "testPoint": "visual/figma-visual.spec.js › Figma visual regression › visual Pricing - Pricing",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:48:14.849Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Playwright",
-        "testPoint": "visual/figma-visual.spec.js › Figma visual regression › visual Contact - Contact Us",
-        "status": "FAIL",
-        "comment": "browserType.launch: Executable doesn't exist at /home/runner/work/Shunyalabs_website/Shunyalabs_website/.playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell",
-        "timestamp": "2026-02-12T10:48:15.931Z",
-        "attachments": []
-      }
-    ]
-  },
-  {
     "runId": "run_1770894736880_eui7blu1j",
     "runDate": "2026-02-12T11:12:16.880Z",
     "passed": 0,
@@ -89560,6 +88488,448 @@
   {
     "runId": "run_1773405023966_ea7b20io3",
     "runDate": "2026-03-13T12:09:24.982Z",
+    "passed": 48,
+    "failed": 0,
+    "total": 48,
+    "passRate": 100,
+    "tests": [
+      {
+        "category": "Playwright",
+        "moduleName": "Contact",
+        "testPoint": "[desktop] modules/contact/contact/design.spec.js › Contact - Contact Us design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-03-11T06:16:48.476Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Contact",
+        "testPoint": "[mobile] modules/contact/contact/design.spec.js › Contact - Contact Us design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-03-11T06:19:53.588Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Homepage",
+        "testPoint": "[desktop] modules/homepage/homepage/design.spec.js › Homepage - Homepage design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-03-11T06:16:48.487Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Homepage",
+        "testPoint": "[mobile] modules/homepage/homepage/design.spec.js › Homepage - Homepage design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-03-11T06:20:04.344Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Homepage",
+        "testPoint": "[desktop] modules/homepage/homepage/footer.spec.js › Homepage - footer menu (Figma exact) › Footer columns, follow us, copyright",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-03-11T06:16:48.475Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Homepage",
+        "testPoint": "[desktop] modules/homepage/homepage/nav.spec.js › Homepage - navigation (Figma exact) › Top nav dropdowns match labels, descriptions, and hrefs",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-03-11T06:16:48.476Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Homepage",
+        "testPoint": "[desktop] modules/homepage/homepage/widget.spec.js › Homepage - widget (Figma exact) › Widget content and actions",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-03-11T06:17:15.397Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Models",
+        "testPoint": "[desktop] modules/models/language-models/design.spec.js › Models - Language Models design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-03-11T06:17:15.835Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Models",
+        "testPoint": "[mobile] modules/models/language-models/design.spec.js › Models - Language Models design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-03-11T06:20:13.735Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Models",
+        "testPoint": "[desktop] modules/models/on-device-models/design.spec.js › Models - On Device Models design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-03-11T06:17:22.439Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Models",
+        "testPoint": "[mobile] modules/models/on-device-models/design.spec.js › Models - On Device Models design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-03-11T06:20:14.008Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Models",
+        "testPoint": "[desktop] modules/models/specialised-models/design.spec.js › Models - Specialised Models design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-03-11T06:17:25.481Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Models",
+        "testPoint": "[mobile] modules/models/specialised-models/design.spec.js › Models - Specialised Models design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-03-11T06:20:20.923Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Models",
+        "testPoint": "[desktop] modules/models/zero-stt-codeswitch/design.spec.js › Models - Zero STT Codeswitch design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-03-11T06:17:45.110Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Models",
+        "testPoint": "[mobile] modules/models/zero-stt-codeswitch/design.spec.js › Models - Zero STT Codeswitch design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-03-11T06:20:32.276Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Models",
+        "testPoint": "[desktop] modules/models/zero-stt-indic/design.spec.js › Models - Zero STT Indic design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-03-11T06:17:46.139Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Models",
+        "testPoint": "[mobile] modules/models/zero-stt-indic/design.spec.js › Models - Zero STT Indic design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-03-11T06:20:40.773Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Models",
+        "testPoint": "[desktop] modules/models/zero-stt-med/design.spec.js › Models - Zero STT Med design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-03-11T06:17:52.242Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Models",
+        "testPoint": "[mobile] modules/models/zero-stt-med/design.spec.js › Models - Zero STT Med design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-03-11T06:20:41.698Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Models",
+        "testPoint": "[desktop] modules/models/zero-stt-universal/design.spec.js › Models - Zero STT Universal design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-03-11T06:18:07.123Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Pricing",
+        "testPoint": "[desktop] modules/pricing/pricing/design.spec.js › Pricing - Pricing design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-03-11T06:18:15.820Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Pricing",
+        "testPoint": "[mobile] modules/pricing/pricing/design.spec.js › Pricing - Pricing design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-03-11T06:20:47.056Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Product",
+        "testPoint": "[desktop] modules/product/audio-processing/design.spec.js › Product - Audio Processing design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-03-11T06:18:17.877Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Product",
+        "testPoint": "[mobile] modules/product/audio-processing/design.spec.js › Product - Audio Processing design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-03-11T06:21:07.995Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Product",
+        "testPoint": "[desktop] modules/product/deployment/design.spec.js › Product - Deployment design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-03-11T06:18:26.934Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Product",
+        "testPoint": "[mobile] modules/product/deployment/design.spec.js › Product - Deployment design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-03-11T06:21:11.686Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Product",
+        "testPoint": "[desktop] modules/product/models/design.spec.js › Product - Models design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-03-11T06:18:40.132Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Product",
+        "testPoint": "[mobile] modules/product/models/design.spec.js › Product - Models design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-03-11T06:21:13.794Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Product",
+        "testPoint": "[desktop] modules/product/overview/design.spec.js › Product - Overview design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-03-11T06:18:47.017Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Product",
+        "testPoint": "[mobile] modules/product/overview/design.spec.js › Product - Overview design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-03-11T06:21:16.927Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Product",
+        "testPoint": "[desktop] modules/product/speech-intelligence/design.spec.js › Product - Speech Intelligence design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-03-11T06:18:47.754Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Product",
+        "testPoint": "[mobile] modules/product/speech-intelligence/design.spec.js › Product - Speech Intelligence design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-03-11T06:21:34.584Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Product",
+        "testPoint": "[desktop] modules/product/voice-agents/design.spec.js › Product - Voice Agents design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-03-11T06:18:54.090Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Product",
+        "testPoint": "[mobile] modules/product/voice-agents/design.spec.js › Product - Voice Agents design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-03-11T06:21:37.804Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Resources",
+        "testPoint": "[desktop] modules/resources/benchmarks/design.spec.js › Resources - Benchmarks design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-03-11T06:19:06.246Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Resources",
+        "testPoint": "[mobile] modules/resources/benchmarks/design.spec.js › Resources - Benchmarks design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-03-11T06:21:41.005Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Resources",
+        "testPoint": "[desktop] modules/resources/blogs/design.spec.js › Resources - Blogs design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-03-11T06:19:16.150Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Resources",
+        "testPoint": "[mobile] modules/resources/blogs/design.spec.js › Resources - Blogs design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-03-11T06:21:42.687Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Resources",
+        "testPoint": "[desktop] modules/resources/patents/design.spec.js › Resources - Patents design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-03-11T06:19:16.217Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Resources",
+        "testPoint": "[mobile] modules/resources/patents/design.spec.js › Resources - Patents design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-03-11T06:22:00.979Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Solutions",
+        "testPoint": "[desktop] modules/solutions/contact-centers/design.spec.js › Solutions - Contact Centers design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-03-11T06:19:23.043Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Solutions",
+        "testPoint": "[mobile] modules/solutions/contact-centers/design.spec.js › Solutions - Contact Centers design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-03-11T06:22:04.042Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Solutions",
+        "testPoint": "[desktop] modules/solutions/healthcare/design.spec.js › Solutions - Healthcare design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-03-11T06:19:35.720Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Solutions",
+        "testPoint": "[mobile] modules/solutions/healthcare/design.spec.js › Solutions - Healthcare design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-03-11T06:22:08.330Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Solutions",
+        "testPoint": "[desktop] modules/solutions/media-entertainment/design.spec.js › Solutions - Media & Entertainment design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-03-11T06:19:43.262Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Solutions",
+        "testPoint": "[mobile] modules/solutions/media-entertainment/design.spec.js › Solutions - Media & Entertainment design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-03-11T06:22:13.864Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Solutions",
+        "testPoint": "[desktop] modules/solutions/use-cases/design.spec.js › Solutions - Use Cases design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-03-11T06:19:44.301Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Solutions",
+        "testPoint": "[mobile] modules/solutions/use-cases/design.spec.js › Solutions - Use Cases design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-03-11T06:22:25.127Z",
+        "attachments": []
+      }
+    ]
+  },
+  {
+    "runId": "run_1773411281442_om1rotfi2",
+    "runDate": "2026-03-13T14:09:52.612Z",
     "passed": 48,
     "failed": 0,
     "total": 48,
