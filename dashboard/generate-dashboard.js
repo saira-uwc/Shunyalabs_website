@@ -1488,7 +1488,7 @@ function generateDashboard(currentResults, history, playwrightRun) {
     </div>
 
     <!-- Calendar Tab -->
-    <div id="tab-calendar" class="tab-content" id="calendarTab"></div>
+    <div id="tab-calendar" class="tab-content"></div>
   </main>
 
   <!-- Run Details Modal -->
