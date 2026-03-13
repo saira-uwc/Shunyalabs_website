@@ -1,0 +1,260 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - navigation [ref=e4]:
+        - generic [ref=e5]:
+          - link "Shunya Labs Logo" [ref=e6] [cursor=pointer]:
+            - /url: /
+            - img "Shunya Labs Logo" [ref=e7]
+          - generic [ref=e8]:
+            - button "Product" [ref=e10] [cursor=pointer]:
+              - text: Product
+              - img [ref=e11]
+            - button "Models" [ref=e14] [cursor=pointer]:
+              - text: Models
+              - img [ref=e15]
+            - button "Solutions" [ref=e18] [cursor=pointer]:
+              - text: Solutions
+              - img [ref=e19]
+            - button "Resources" [ref=e22] [cursor=pointer]:
+              - text: Resources
+              - img [ref=e23]
+            - link "Documentation" [ref=e25] [cursor=pointer]:
+              - /url: https://docs.shunyalabs.ai/overview
+            - link "About Us" [ref=e26] [cursor=pointer]:
+              - /url: /about
+            - link "Pricing" [ref=e27] [cursor=pointer]:
+              - /url: /pricing
+          - link "Playground" [ref=e28] [cursor=pointer]:
+            - /url: https://playground.shunyalabs.ai/
+            - img [ref=e29]
+            - text: Playground
+          - generic [ref=e31]:
+            - button "Sign In" [ref=e32] [cursor=pointer]
+            - link "Contact Sales" [ref=e33] [cursor=pointer]:
+              - /url: /contact
+      - heading "Our Blogs" [level=1] [ref=e36]
+      - link "Blog Banner 12 Mar 2026 Why Sub-100ms Voice AI Latency Is the New Table Stakes Voice AI latency below 500ms is no longer a differentiator. It is the baseline expectation. Here is where the time goes, why pipelines break, and how to fix each layer. AI Trends Navvya Jain" [ref=e38] [cursor=pointer]:
+        - /url: /blog/sub-100ms-voice-ai-latency-Is-the-new-table-stakes
+        - img "Blog Banner" [ref=e40]
+        - generic [ref=e42]: 12 Mar 2026
+        - heading "Why Sub-100ms Voice AI Latency Is the New Table Stakes" [level=2] [ref=e43]
+        - paragraph [ref=e44]: Voice AI latency below 500ms is no longer a differentiator. It is the baseline expectation. Here is where the time goes, why pipelines break, and how to fix each layer.
+        - generic [ref=e46]: AI Trends
+        - paragraph [ref=e47]: Navvya Jain
+      - generic [ref=e50]:
+        - generic [ref=e51]:
+          - heading "Topics" [level=2] [ref=e52]
+          - generic [ref=e53]:
+            - generic [ref=e54]:
+              - img [ref=e55]
+              - textbox "Search" [ref=e58]
+            - generic [ref=e59]:
+              - button "All" [ref=e60] [cursor=pointer]:
+                - generic [ref=e61]: All
+                - img [ref=e62]
+              - button "Engineering & Research" [ref=e65] [cursor=pointer]:
+                - generic [ref=e66]: Engineering & Research
+              - button "AI Trends" [ref=e67] [cursor=pointer]:
+                - generic [ref=e68]: AI Trends
+              - button "Product" [ref=e69] [cursor=pointer]:
+                - generic [ref=e70]: Product
+              - button "Build & Learn" [ref=e71] [cursor=pointer]:
+                - generic [ref=e72]: Build & Learn
+              - button "Use Cases" [ref=e73] [cursor=pointer]:
+                - generic [ref=e74]: Use Cases
+        - main [ref=e75]:
+          - 'link "Voice AI''s trillion-dollar opportunity: Conversation graphs AI Trends Voice AI''s trillion-dollar opportunity: Conversation graphs 11 Mar 2026" [ref=e76] [cursor=pointer]':
+            - /url: /blog/voice-al-trillion-dollar-opportunity
+            - 'img "Voice AI''s trillion-dollar opportunity: Conversation graphs" [ref=e78]'
+            - generic [ref=e79]:
+              - text: AI Trends
+              - 'heading "Voice AI''s trillion-dollar opportunity: Conversation graphs" [level=3] [ref=e80]'
+              - paragraph [ref=e81]: 11 Mar 2026
+          - link "Why Indic Language Voice AI Is the Biggest Untapped Opportunity in Tech AI Trends Why Indic Language Voice AI Is the Biggest Untapped Opportunity in Tech 10 Mar 2026" [ref=e82] [cursor=pointer]:
+            - /url: /blog/indic-language-voice-ai-biggest-untapped-opportunity
+            - img "Why Indic Language Voice AI Is the Biggest Untapped Opportunity in Tech" [ref=e84]
+            - generic [ref=e85]:
+              - text: AI Trends
+              - heading "Why Indic Language Voice AI Is the Biggest Untapped Opportunity in Tech" [level=3] [ref=e86]
+              - paragraph [ref=e87]: 10 Mar 2026
+          - 'link "Zero STT Med: Accurate, Real-Time Medical Speech-to-Text for Healthcare Professionals Product Zero STT Med: Accurate, Real-Time Medical Speech-to-Text for Healthcare Professionals 18 Nov 2025" [ref=e88] [cursor=pointer]':
+            - /url: /blog/introducing-zero-stt-med-medical-speech-to-text-for-healthcare
+            - 'img "Zero STT Med: Accurate, Real-Time Medical Speech-to-Text for Healthcare Professionals" [ref=e90]'
+            - generic [ref=e91]:
+              - text: Product
+              - 'heading "Zero STT Med: Accurate, Real-Time Medical Speech-to-Text for Healthcare Professionals" [level=3] [ref=e92]'
+              - paragraph [ref=e93]: 18 Nov 2025
+          - link "Why Multilingual Voice AI Fails on Real-World Audio — and How We Fixed It Product Why Multilingual Voice AI Fails on Real-World Audio — and How We Fixed It 03 Nov 2025" [ref=e94] [cursor=pointer]:
+            - /url: /blog/why-multilingual-voice-ai-fails-on-real-world-audio-and-how-we-fixed-it
+            - img "Why Multilingual Voice AI Fails on Real-World Audio — and How We Fixed It" [ref=e96]
+            - generic [ref=e97]:
+              - text: Product
+              - heading "Why Multilingual Voice AI Fails on Real-World Audio — and How We Fixed It" [level=3] [ref=e98]
+              - paragraph [ref=e99]: 03 Nov 2025
+          - 'link "Getting Started with ASR APIs: Python Quickstart Build & Learn Getting Started with ASR APIs: Python Quickstart 23 Oct 2025" [ref=e100] [cursor=pointer]':
+            - /url: /blog/getting-started-with-asr-apis-python-quickstart
+            - 'img "Getting Started with ASR APIs: Python Quickstart" [ref=e102]'
+            - generic [ref=e103]:
+              - text: Build & Learn
+              - 'heading "Getting Started with ASR APIs: Python Quickstart" [level=3] [ref=e104]'
+              - paragraph [ref=e105]: 23 Oct 2025
+          - 'link "Getting Started with ASR APIs: Node.js Quickstart Build & Learn Getting Started with ASR APIs: Node.js Quickstart 23 Oct 2025" [ref=e106] [cursor=pointer]':
+            - /url: /blog/getting-started-with-asr-apis-node-js-quickstart
+            - 'img "Getting Started with ASR APIs: Node.js Quickstart" [ref=e108]'
+            - generic [ref=e109]:
+              - text: Build & Learn
+              - 'heading "Getting Started with ASR APIs: Node.js Quickstart" [level=3] [ref=e110]'
+              - paragraph [ref=e111]: 23 Oct 2025
+        - generic [ref=e112]:
+          - button [disabled] [ref=e113]:
+            - img [ref=e114]
+          - button [ref=e116] [cursor=pointer]:
+            - img [ref=e117]
+    - contentinfo [ref=e119]:
+      - generic [ref=e123]:
+        - paragraph [ref=e124]: The fastest way to add voice AI to your products
+        - paragraph [ref=e125]: One platform for speech in and speech out—secure by design, built to scale.
+        - generic [ref=e126]:
+          - link "Go to Pricing page" [ref=e127] [cursor=pointer]:
+            - /url: /pricing
+            - text: Get Started
+          - link "Contact Sales" [ref=e128] [cursor=pointer]:
+            - /url: /contact
+    - contentinfo [ref=e129]:
+      - generic [ref=e130]:
+        - generic [ref=e131]:
+          - img "Shunya Labs" [ref=e132]
+          - paragraph [ref=e133]: Shunya Labs, Inc.
+        - generic [ref=e134]:
+          - paragraph [ref=e135]: Product
+          - list [ref=e136]:
+            - listitem [ref=e137]:
+              - link "Overview" [ref=e138] [cursor=pointer]:
+                - /url: /overview
+            - listitem [ref=e139]:
+              - link "Models" [ref=e140] [cursor=pointer]:
+                - /url: /models-page
+            - listitem [ref=e141]:
+              - link "Voice Agents" [ref=e142] [cursor=pointer]:
+                - /url: /voice-agent
+            - listitem [ref=e143]:
+              - link "Speech Intelligence" [ref=e144] [cursor=pointer]:
+                - /url: /speech-intelligence-page
+            - listitem [ref=e145]:
+              - link "Audio Processing" [ref=e146] [cursor=pointer]:
+                - /url: /audio-processing
+            - listitem [ref=e147]:
+              - link "Deployment" [ref=e148] [cursor=pointer]:
+                - /url: /deployment
+        - generic [ref=e149]:
+          - paragraph [ref=e150]: Models
+          - list [ref=e151]:
+            - listitem [ref=e152]:
+              - link "Language Models" [ref=e153] [cursor=pointer]:
+                - /url: /language-models
+            - listitem [ref=e154]:
+              - link "Zero STT Indic" [ref=e155] [cursor=pointer]:
+                - /url: /zero-indic
+            - listitem [ref=e156]:
+              - link "Zero STT Codeswitch" [ref=e157] [cursor=pointer]:
+                - /url: /zero-code-switch
+            - listitem [ref=e158]:
+              - link "Zero STT Universal" [ref=e159] [cursor=pointer]:
+                - /url: /zero-stt
+            - listitem [ref=e160]:
+              - link "Specialised Models" [ref=e161] [cursor=pointer]:
+                - /url: /domain-specialisation
+            - listitem [ref=e162]:
+              - link "Zero STT Med" [ref=e163] [cursor=pointer]:
+                - /url: /zero-med
+            - listitem [ref=e164]:
+              - link "On Device Models" [ref=e165] [cursor=pointer]:
+                - /url: /on-device-models
+        - generic [ref=e166]:
+          - paragraph [ref=e167]: Solutions
+          - list [ref=e168]:
+            - listitem [ref=e169]:
+              - link "Contact Centers" [ref=e170] [cursor=pointer]:
+                - /url: /contact-centers
+            - listitem [ref=e171]:
+              - link "Media & Entertainment" [ref=e172] [cursor=pointer]:
+                - /url: /media-entertainment
+            - listitem [ref=e173]:
+              - link "Healthcare" [ref=e174] [cursor=pointer]:
+                - /url: /healthcare
+        - generic [ref=e175]:
+          - paragraph [ref=e176]: Resources
+          - list [ref=e177]:
+            - listitem [ref=e178]:
+              - link "Blogs" [ref=e179] [cursor=pointer]:
+                - /url: /blog
+            - listitem [ref=e180]:
+              - link "Benchmarks" [ref=e181] [cursor=pointer]:
+                - /url: /benchmarks
+            - listitem [ref=e182]:
+              - link "News & Media" [ref=e183] [cursor=pointer]:
+                - /url: /media
+            - listitem [ref=e184]:
+              - link "Patents" [ref=e185] [cursor=pointer]:
+                - /url: /patents
+            - listitem [ref=e186]:
+              - link "Research" [ref=e187] [cursor=pointer]:
+                - /url: /research
+        - paragraph [ref=e189]:
+          - link "Documentation" [ref=e190] [cursor=pointer]:
+            - /url: https://docs.shunyalabs.ai/overview
+        - list [ref=e192]:
+          - listitem [ref=e193]:
+            - link "About us" [ref=e194] [cursor=pointer]:
+              - /url: /about
+        - list [ref=e196]:
+          - listitem [ref=e197]:
+            - link "Pricing" [ref=e198] [cursor=pointer]:
+              - /url: /pricing
+      - generic [ref=e199]:
+        - paragraph [ref=e200]: Follow us on
+        - generic [ref=e201]:
+          - link [ref=e202] [cursor=pointer]:
+            - /url: https://www.linkedin.com/company/shunya-labs-ai/
+            - img [ref=e203]
+          - link [ref=e205] [cursor=pointer]:
+            - /url: https://www.facebook.com/people/ShunyaLabsAI/61577801851308/
+            - img [ref=e206]
+          - link [ref=e208] [cursor=pointer]:
+            - /url: https://www.instagram.com/shunyalabsai/
+            - img [ref=e209]
+          - link [ref=e211] [cursor=pointer]:
+            - /url: https://x.com/ShunyaLabsAI
+            - img [ref=e212]
+      - generic [ref=e214]:
+        - paragraph [ref=e215]: © 2026 Shunya Labs Inc. All rights reserved.
+        - generic [ref=e216]:
+          - link "Privacy" [ref=e217] [cursor=pointer]:
+            - /url: /privacy-policy
+          - link "Terms" [ref=e218] [cursor=pointer]:
+            - /url: /terms-conditions
+          - link "Security" [ref=e219] [cursor=pointer]:
+            - /url: /security-policy
+          - link "General License" [ref=e220] [cursor=pointer]:
+            - /url: /general-rail-m-license
+          - link "Custom License" [ref=e221] [cursor=pointer]:
+            - /url: /shunya-labs-custom-model-rail-m-license
+  - alert [ref=e222]
+  - iframe [ref=e225]:
+    - generic [ref=f1e2]:
+      - generic [ref=f1e5]:
+        - link "Privacy" [ref=f1e6] [cursor=pointer]:
+          - /url: https://www.google.com/intl/en/policies/privacy/
+        - text: "-"
+        - link "Terms" [ref=f1e7] [cursor=pointer]:
+          - /url: https://www.google.com/intl/en/policies/terms/
+      - generic [ref=f1e8]:
+        - generic [ref=f1e9]:
+          - text: protected by
+          - strong [ref=f1e10]: reCAPTCHA
+        - generic [ref=f1e11]: "-"
+```
