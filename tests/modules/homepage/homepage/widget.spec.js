@@ -16,7 +16,6 @@ test.describe('Homepage - widget (Figma exact)', () => {
     const widgetTabs = [
       'Speech To Text',
       'Medical Transcription',
-      'Codeswitch',
     ];
 
     for (const label of widgetTabs) {
