@@ -549,85 +549,82 @@
               - link "Zero STT Codeswitch" [ref=e593] [cursor=pointer]:
                 - /url: /zero-code-switch
             - listitem [ref=e594]:
-              - link "Zero STT Universal" [ref=e595] [cursor=pointer]:
-                - /url: /zero-stt
-            - listitem [ref=e596]:
-              - link "Specialised Models" [ref=e597] [cursor=pointer]:
+              - link "Specialised Models" [ref=e595] [cursor=pointer]:
                 - /url: /domain-specialisation
-            - listitem [ref=e598]:
-              - link "Zero STT Med" [ref=e599] [cursor=pointer]:
+            - listitem [ref=e596]:
+              - link "Zero STT Med" [ref=e597] [cursor=pointer]:
                 - /url: /zero-med
-            - listitem [ref=e600]:
-              - link "On Device Models" [ref=e601] [cursor=pointer]:
+            - listitem [ref=e598]:
+              - link "On Device Models" [ref=e599] [cursor=pointer]:
                 - /url: /on-device-models
-        - generic [ref=e602]:
-          - paragraph [ref=e603]: Solutions
-          - list [ref=e604]:
-            - listitem [ref=e605]:
-              - link "Contact Centers" [ref=e606] [cursor=pointer]:
+        - generic [ref=e600]:
+          - paragraph [ref=e601]: Solutions
+          - list [ref=e602]:
+            - listitem [ref=e603]:
+              - link "Contact Centers" [ref=e604] [cursor=pointer]:
                 - /url: /contact-centers
-            - listitem [ref=e607]:
-              - link "Media & Entertainment" [ref=e608] [cursor=pointer]:
+            - listitem [ref=e605]:
+              - link "Media & Entertainment" [ref=e606] [cursor=pointer]:
                 - /url: /media-entertainment
-            - listitem [ref=e609]:
-              - link "Healthcare" [ref=e610] [cursor=pointer]:
+            - listitem [ref=e607]:
+              - link "Healthcare" [ref=e608] [cursor=pointer]:
                 - /url: /healthcare
-        - generic [ref=e611]:
-          - paragraph [ref=e612]: Resources
-          - list [ref=e613]:
-            - listitem [ref=e614]:
-              - link "Blogs" [ref=e615] [cursor=pointer]:
+        - generic [ref=e609]:
+          - paragraph [ref=e610]: Resources
+          - list [ref=e611]:
+            - listitem [ref=e612]:
+              - link "Blogs" [ref=e613] [cursor=pointer]:
                 - /url: /blog
-            - listitem [ref=e616]:
-              - link "Benchmarks" [ref=e617] [cursor=pointer]:
+            - listitem [ref=e614]:
+              - link "Benchmarks" [ref=e615] [cursor=pointer]:
                 - /url: /benchmarks
-            - listitem [ref=e618]:
-              - link "News & Media" [ref=e619] [cursor=pointer]:
+            - listitem [ref=e616]:
+              - link "News & Media" [ref=e617] [cursor=pointer]:
                 - /url: /media
-            - listitem [ref=e620]:
-              - link "Patents" [ref=e621] [cursor=pointer]:
+            - listitem [ref=e618]:
+              - link "Patents" [ref=e619] [cursor=pointer]:
                 - /url: /patents
-            - listitem [ref=e622]:
-              - link "Research" [ref=e623] [cursor=pointer]:
+            - listitem [ref=e620]:
+              - link "Research" [ref=e621] [cursor=pointer]:
                 - /url: /research
-        - paragraph [ref=e625]:
-          - link "Documentation" [ref=e626] [cursor=pointer]:
+        - paragraph [ref=e623]:
+          - link "Documentation" [ref=e624] [cursor=pointer]:
             - /url: https://docs.shunyalabs.ai/overview
-        - list [ref=e628]:
-          - listitem [ref=e629]:
-            - link "About us" [ref=e630] [cursor=pointer]:
+        - list [ref=e626]:
+          - listitem [ref=e627]:
+            - link "About us" [ref=e628] [cursor=pointer]:
               - /url: /about
-        - list [ref=e632]:
-          - listitem [ref=e633]:
-            - link "Pricing" [ref=e634] [cursor=pointer]:
+        - list [ref=e630]:
+          - listitem [ref=e631]:
+            - link "Pricing" [ref=e632] [cursor=pointer]:
               - /url: /pricing
-      - generic [ref=e635]:
-        - paragraph [ref=e636]: Follow us on
-        - generic [ref=e637]:
-          - link [ref=e638] [cursor=pointer]:
+      - generic [ref=e633]:
+        - paragraph [ref=e634]: Follow us on
+        - generic [ref=e635]:
+          - link [ref=e636] [cursor=pointer]:
             - /url: https://www.linkedin.com/company/shunya-labs-ai/
-            - img [ref=e639]
-          - link [ref=e641] [cursor=pointer]:
+            - img [ref=e637]
+          - link [ref=e639] [cursor=pointer]:
             - /url: https://www.facebook.com/people/ShunyaLabsAI/61577801851308/
-            - img [ref=e642]
-          - link [ref=e644] [cursor=pointer]:
+            - img [ref=e640]
+          - link [ref=e642] [cursor=pointer]:
             - /url: https://www.instagram.com/shunyalabsai/
-            - img [ref=e645]
-          - link [ref=e647] [cursor=pointer]:
+            - img [ref=e643]
+          - link [ref=e645] [cursor=pointer]:
             - /url: https://x.com/ShunyaLabsAI
-            - img [ref=e648]
-      - generic [ref=e650]:
-        - paragraph [ref=e651]: © 2026 Shunya Labs Inc. All rights reserved.
-        - generic [ref=e652]:
-          - link "Privacy" [ref=e653] [cursor=pointer]:
+            - img [ref=e646]
+      - generic [ref=e648]:
+        - paragraph [ref=e649]: © 2026 Shunya Labs Inc. All rights reserved.
+        - generic [ref=e650]:
+          - link "Privacy" [ref=e651] [cursor=pointer]:
             - /url: /privacy-policy
-          - link "Terms" [ref=e654] [cursor=pointer]:
+          - link "Terms" [ref=e652] [cursor=pointer]:
             - /url: /terms-conditions
-          - link "Security" [ref=e655] [cursor=pointer]:
+          - link "Security" [ref=e653] [cursor=pointer]:
             - /url: /security-policy
-          - link "General License" [ref=e656] [cursor=pointer]:
+          - link "General License" [ref=e654] [cursor=pointer]:
             - /url: /general-rail-m-license
-          - link "Custom License" [ref=e657] [cursor=pointer]:
+          - link "Custom License" [ref=e655] [cursor=pointer]:
             - /url: /shunya-labs-custom-model-rail-m-license
-  - alert [ref=e658]
+  - alert [ref=e656]
 ```
