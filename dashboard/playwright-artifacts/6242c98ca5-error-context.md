@@ -1,0 +1,238 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - navigation [ref=e4]:
+        - generic [ref=e5]:
+          - link "Shunya Labs Logo" [ref=e6] [cursor=pointer]:
+            - /url: /
+            - img "Shunya Labs Logo" [ref=e7]
+          - button "☰" [ref=e8] [cursor=pointer]
+        - generic:
+          - generic:
+            - generic:
+              - button "Product":
+                - generic: Product
+                - img
+            - generic:
+              - button "Models":
+                - generic: Models
+                - img
+            - generic:
+              - button "Solutions":
+                - generic: Solutions
+                - img
+            - generic:
+              - button "Resources":
+                - generic: Resources
+                - img
+            - link "Documentation":
+              - /url: https://docs.shunyalabs.ai/overview
+            - link "About Us":
+              - /url: /about
+            - link "Pricing":
+              - /url: /pricing
+            - generic:
+              - link "Playground":
+                - /url: https://playground.shunyalabs.ai/
+                - img
+                - text: Playground
+              - button "Sign In"
+              - link "Contact Sales":
+                - /url: /contact
+      - generic [ref=e9]:
+        - generic [ref=e11]:
+          - generic [ref=e12]:
+            - heading "Capture code-switching in conversations like never before" [level=1] [ref=e13]
+            - paragraph [ref=e14]: The only ASR to transcribe Hinglish like its actually spoken, our breakthrough code-switching STT generates mixed Hinglish outputs.
+          - main [ref=e17]:
+            - generic [ref=e22]:
+              - generic [ref=e26]:
+                - generic [ref=e28]:
+                  - generic [ref=e29]: Language
+                  - button "🇮🇳Hinglish" [disabled] [ref=e32]:
+                    - generic [ref=e33]: 🇮🇳Hinglish
+                    - generic:
+                      - img
+                - generic [ref=e34]:
+                  - generic [ref=e35]: Input Audio
+                  - generic [ref=e36]:
+                    - generic [ref=e37]: Pre-recorded
+                    - generic [ref=e40]:
+                      - button "Sample Audio" [ref=e41] [cursor=pointer]
+                      - button "Upload your file" [ref=e42] [cursor=pointer]
+                - generic [ref=e45]:
+                  - generic [ref=e47]: Live recording
+                  - button "Start Speaking" [ref=e48] [cursor=pointer]:
+                    - generic [ref=e49]: Start Speaking
+              - generic [ref=e53]:
+                - generic [ref=e54]:
+                  - button "Play audio" [ref=e57] [cursor=pointer]:
+                    - img [ref=e58]
+                  - button "No conversation to copy" [disabled] [ref=e80]:
+                    - img [ref=e81]
+                - generic [ref=e90]:
+                  - img [ref=e93]
+                  - paragraph [ref=e97]: Select your input language, then upload a file or start speaking to capture live audio.
+          - link "Get Hinglish API now" [ref=e99] [cursor=pointer]:
+            - /url: https://docs.shunyalabs.ai/models/language
+          - generic [ref=e102]:
+            - heading "A first of its kind Hinglish model" [level=2] [ref=e103]
+            - generic [ref=e104]:
+              - generic [ref=e105]:
+                - heading "Hinglish output" [level=3] [ref=e106]
+                - paragraph [ref=e107]: Zero Hinglish is a true Hinglish model, generating tokens directly in mixed Hindi–English instead of forcing everything into a single language.
+              - generic [ref=e109]:
+                - heading "Sentence-level context" [level=3] [ref=e110]
+                - paragraph [ref=e111]: Trained on genuine Hinglish, the model understands the entire sentence, delivering far more accurate transcripts in real time.
+              - generic [ref=e113]:
+                - heading "Faster than ever" [level=3] [ref=e114]
+                - paragraph [ref=e115]: A novel architecture keeps layers minimal while handling code-switched speech, so you get low-latency, production-ready Hinglish transcription.
+        - generic [ref=e117]:
+          - generic [ref=e118]:
+            - heading "ASR that transcribes like India speaks" [level=2] [ref=e119]
+            - paragraph [ref=e120]: Our breakthrough innovation means Zero Hinglish stays as fast and fluid as the code switch in the conversation itself.
+          - generic [ref=e121]:
+            - generic [ref=e122]:
+              - generic [ref=e123] [cursor=pointer]:
+                - heading "Podcasts" [level=3] [ref=e125]
+                - paragraph [ref=e126]: Capture every nuance in conversations held in the comfort of Hinglish.
+              - generic [ref=e127] [cursor=pointer]:
+                - heading "Interviews" [level=3] [ref=e128]
+                - paragraph [ref=e129]: Livestream or post-process episodes with native Hinglish transcripts.
+              - generic [ref=e130] [cursor=pointer]:
+                - heading "News & talk shows" [level=3] [ref=e131]
+                - paragraph [ref=e132]: Real-time, mixed-language captions for broadcast and digital.
+            - generic [ref=e135]:
+              - paragraph [ref=e137]: Podcasts
+              - paragraph [ref=e139]: Interviews
+              - paragraph [ref=e141]: News & talk shows
+    - contentinfo [ref=e142]:
+      - generic [ref=e143]:
+        - paragraph [ref=e144]: The fastest way to add voice AI to your products
+        - paragraph [ref=e145]: One platform for speech in and speech out—secure by design, built to scale.
+        - generic [ref=e146]:
+          - link "Try for Free" [ref=e147] [cursor=pointer]:
+            - /url: /pricing
+          - link "Contact Sales" [ref=e148] [cursor=pointer]:
+            - /url: /contact
+    - contentinfo [ref=e149]:
+      - generic [ref=e150]:
+        - generic [ref=e151]:
+          - img "Shunya Labs" [ref=e152]
+          - paragraph [ref=e153]: Shunya Labs, Inc.
+        - generic [ref=e154]:
+          - paragraph [ref=e155]: Product
+          - list [ref=e156]:
+            - listitem [ref=e157]:
+              - link "Overview" [ref=e158] [cursor=pointer]:
+                - /url: /overview
+            - listitem [ref=e159]:
+              - link "Models" [ref=e160] [cursor=pointer]:
+                - /url: /models-page
+            - listitem [ref=e161]:
+              - link "Voice Agents" [ref=e162] [cursor=pointer]:
+                - /url: /voice-agent
+            - listitem [ref=e163]:
+              - link "Speech Intelligence" [ref=e164] [cursor=pointer]:
+                - /url: /speech-intelligence-page
+            - listitem [ref=e165]:
+              - link "Audio Processing" [ref=e166] [cursor=pointer]:
+                - /url: /audio-processing
+            - listitem [ref=e167]:
+              - link "Deployment" [ref=e168] [cursor=pointer]:
+                - /url: /deployment
+        - generic [ref=e169]:
+          - paragraph [ref=e170]: Models
+          - list [ref=e171]:
+            - listitem [ref=e172]:
+              - link "Language Models" [ref=e173] [cursor=pointer]:
+                - /url: /language-models
+            - listitem [ref=e174]:
+              - link "Zero STT Indic" [ref=e175] [cursor=pointer]:
+                - /url: /zero-indic
+            - listitem [ref=e176]:
+              - link "Zero STT Codeswitch" [ref=e177] [cursor=pointer]:
+                - /url: /zero-code-switch
+            - listitem [ref=e178]:
+              - link "Specialised Models" [ref=e179] [cursor=pointer]:
+                - /url: /domain-specialisation
+            - listitem [ref=e180]:
+              - link "Zero STT Med" [ref=e181] [cursor=pointer]:
+                - /url: /zero-med
+            - listitem [ref=e182]:
+              - link "On Device Models" [ref=e183] [cursor=pointer]:
+                - /url: /on-device-models
+        - generic [ref=e184]:
+          - paragraph [ref=e185]: Solutions
+          - list [ref=e186]:
+            - listitem [ref=e187]:
+              - link "Contact Centers" [ref=e188] [cursor=pointer]:
+                - /url: /contact-centers
+            - listitem [ref=e189]:
+              - link "Media & Entertainment" [ref=e190] [cursor=pointer]:
+                - /url: /media-entertainment
+            - listitem [ref=e191]:
+              - link "Healthcare" [ref=e192] [cursor=pointer]:
+                - /url: /healthcare
+        - generic [ref=e193]:
+          - paragraph [ref=e194]: Resources
+          - list [ref=e195]:
+            - listitem [ref=e196]:
+              - link "Blogs" [ref=e197] [cursor=pointer]:
+                - /url: /blog
+            - listitem [ref=e198]:
+              - link "Benchmarks" [ref=e199] [cursor=pointer]:
+                - /url: /benchmarks
+            - listitem [ref=e200]:
+              - link "News & Media" [ref=e201] [cursor=pointer]:
+                - /url: /media
+            - listitem [ref=e202]:
+              - link "Patents" [ref=e203] [cursor=pointer]:
+                - /url: /patents
+            - listitem [ref=e204]:
+              - link "Research" [ref=e205] [cursor=pointer]:
+                - /url: /research
+        - paragraph [ref=e207]:
+          - link "Documentation" [ref=e208] [cursor=pointer]:
+            - /url: https://docs.shunyalabs.ai/overview
+        - list [ref=e210]:
+          - listitem [ref=e211]:
+            - link "About us" [ref=e212] [cursor=pointer]:
+              - /url: /about
+        - list [ref=e214]:
+          - listitem [ref=e215]:
+            - link "Pricing" [ref=e216] [cursor=pointer]:
+              - /url: /pricing
+      - generic [ref=e217]:
+        - paragraph [ref=e218]: Follow us on
+        - generic [ref=e219]:
+          - link [ref=e220] [cursor=pointer]:
+            - /url: https://www.linkedin.com/company/shunya-labs-ai/
+            - img [ref=e221]
+          - link [ref=e223] [cursor=pointer]:
+            - /url: https://www.facebook.com/people/ShunyaLabsAI/61577801851308/
+            - img [ref=e224]
+          - link [ref=e226] [cursor=pointer]:
+            - /url: https://www.instagram.com/shunyalabsai/
+            - img [ref=e227]
+          - link [ref=e229] [cursor=pointer]:
+            - /url: https://x.com/ShunyaLabsAI
+            - img [ref=e230]
+      - generic [ref=e232]:
+        - paragraph [ref=e233]: © 2026 Shunya Labs Inc. All rights reserved.
+        - generic [ref=e234]:
+          - link "Privacy" [ref=e235] [cursor=pointer]:
+            - /url: /privacy-policy
+          - link "Terms" [ref=e236] [cursor=pointer]:
+            - /url: /terms-conditions
+          - link "Security" [ref=e237] [cursor=pointer]:
+            - /url: /security-policy
+          - link "General License" [ref=e238] [cursor=pointer]:
+            - /url: /general-rail-m-license
+          - link "Custom License" [ref=e239] [cursor=pointer]:
+            - /url: /shunya-labs-custom-model-rail-m-license
+  - alert [ref=e240]
+```
