@@ -1,0 +1,200 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - navigation [ref=e4]:
+      - generic [ref=e5]:
+        - link "Shunya Labs Logo" [ref=e6] [cursor=pointer]:
+          - /url: /
+          - img "Shunya Labs Logo" [ref=e7]
+        - generic [ref=e8]:
+          - button "Product" [ref=e10] [cursor=pointer]:
+            - text: Product
+            - img [ref=e11]
+          - button "Models" [ref=e14] [cursor=pointer]:
+            - text: Models
+            - img [ref=e15]
+          - button "Solutions" [ref=e18] [cursor=pointer]:
+            - text: Solutions
+            - img [ref=e19]
+          - button "Resources" [ref=e22] [cursor=pointer]:
+            - text: Resources
+            - img [ref=e23]
+          - link "Documentation" [ref=e25] [cursor=pointer]:
+            - /url: https://docs.shunyalabs.ai/overview
+          - link "About Us" [ref=e26] [cursor=pointer]:
+            - /url: /about
+          - link "Pricing" [ref=e27] [cursor=pointer]:
+            - /url: /pricing
+        - link "Playground" [ref=e28] [cursor=pointer]:
+          - /url: https://playground.shunyalabs.ai/
+          - img [ref=e29]
+          - text: Playground
+        - generic [ref=e31]:
+          - button "Sign In" [ref=e32] [cursor=pointer]
+          - link "Contact Sales" [ref=e33] [cursor=pointer]:
+            - /url: /contact
+    - generic [ref=e34]:
+      - generic [ref=e35]:
+        - paragraph [ref=e36]: Connect with us
+        - heading "Speak with an expert" [level=1] [ref=e37]
+      - generic [ref=e38]:
+        - generic [ref=e39]:
+          - heading "Our Offices" [level=2] [ref=e40]
+          - generic [ref=e41]:
+            - generic [ref=e42]:
+              - img "USA flag" [ref=e44]
+              - heading "USA" [level=3] [ref=e45]
+              - paragraph [ref=e46]: 2810 N Church Street, Wilmington, Delaware 19802, USA
+              - paragraph
+            - generic [ref=e47]:
+              - img "Gurgaon, IN flag" [ref=e49]
+              - heading "Gurgaon, IN" [level=3] [ref=e50]
+              - paragraph [ref=e51]: 5th Floor, DLF Two Horizon Centre, Sector 43, Gurugram, Haryana 122009
+              - paragraph [ref=e52]: +91 99713 41448
+            - generic [ref=e53]:
+              - img "Singapore flag" [ref=e55]
+              - heading "Singapore" [level=3] [ref=e56]
+              - paragraph [ref=e57]: "133 Cecil street #14-01 keck Seng Tower, Singapore - 069535"
+              - paragraph
+        - generic [ref=e59]:
+          - generic [ref=e60]:
+            - generic [ref=e61]: Name *
+            - textbox [ref=e62]
+          - generic [ref=e63]:
+            - generic [ref=e64]:
+              - generic [ref=e65]: Work Email *
+              - textbox [ref=e66]
+            - generic [ref=e67]:
+              - generic [ref=e68]: Phone Number *
+              - textbox [ref=e69]
+          - generic [ref=e70]:
+            - generic [ref=e71]: Message *
+            - textbox [ref=e72]
+          - generic [ref=e73]:
+            - generic [ref=e74] [cursor=pointer]:
+              - checkbox "I agree to receive marketing communications from Shunya Labs." [ref=e76]
+              - generic [ref=e77]: I agree to receive marketing communications from Shunya Labs.
+            - generic [ref=e78] [cursor=pointer]:
+              - checkbox "I agree to the Privacy Policy and Terms & Conditions. *" [ref=e80]
+              - generic [ref=e81]: I agree to the Privacy Policy and Terms & Conditions. *
+          - button "Submit" [ref=e82] [cursor=pointer]
+    - contentinfo [ref=e83]:
+      - generic [ref=e84]:
+        - generic [ref=e85]:
+          - img "Shunya Labs" [ref=e86]
+          - paragraph [ref=e87]: Shunya Labs, Inc.
+        - generic [ref=e88]:
+          - paragraph [ref=e89]: Product
+          - list [ref=e90]:
+            - listitem [ref=e91]:
+              - link "Overview" [ref=e92] [cursor=pointer]:
+                - /url: /overview
+            - listitem [ref=e93]:
+              - link "Models" [ref=e94] [cursor=pointer]:
+                - /url: /models-page
+            - listitem [ref=e95]:
+              - link "Voice Agents" [ref=e96] [cursor=pointer]:
+                - /url: /voice-agent
+            - listitem [ref=e97]:
+              - link "Speech Intelligence" [ref=e98] [cursor=pointer]:
+                - /url: /speech-intelligence-page
+            - listitem [ref=e99]:
+              - link "Audio Processing" [ref=e100] [cursor=pointer]:
+                - /url: /audio-processing
+            - listitem [ref=e101]:
+              - link "Deployment" [ref=e102] [cursor=pointer]:
+                - /url: /deployment
+        - generic [ref=e103]:
+          - paragraph [ref=e104]: Models
+          - list [ref=e105]:
+            - listitem [ref=e106]:
+              - link "Language Models" [ref=e107] [cursor=pointer]:
+                - /url: /language-models
+            - listitem [ref=e108]:
+              - link "Zero STT Indic" [ref=e109] [cursor=pointer]:
+                - /url: /zero-indic
+            - listitem [ref=e110]:
+              - link "Zero STT Codeswitch" [ref=e111] [cursor=pointer]:
+                - /url: /zero-code-switch
+            - listitem [ref=e112]:
+              - link "Specialised Models" [ref=e113] [cursor=pointer]:
+                - /url: /domain-specialisation
+            - listitem [ref=e114]:
+              - link "Zero STT Med" [ref=e115] [cursor=pointer]:
+                - /url: /zero-med
+            - listitem [ref=e116]:
+              - link "On Device Models" [ref=e117] [cursor=pointer]:
+                - /url: /on-device-models
+        - generic [ref=e118]:
+          - paragraph [ref=e119]: Solutions
+          - list [ref=e120]:
+            - listitem [ref=e121]:
+              - link "Contact Centers" [ref=e122] [cursor=pointer]:
+                - /url: /contact-centers
+            - listitem [ref=e123]:
+              - link "Media & Entertainment" [ref=e124] [cursor=pointer]:
+                - /url: /media-entertainment
+            - listitem [ref=e125]:
+              - link "Healthcare" [ref=e126] [cursor=pointer]:
+                - /url: /healthcare
+        - generic [ref=e127]:
+          - paragraph [ref=e128]: Resources
+          - list [ref=e129]:
+            - listitem [ref=e130]:
+              - link "Blogs" [ref=e131] [cursor=pointer]:
+                - /url: /blog
+            - listitem [ref=e132]:
+              - link "Benchmarks" [ref=e133] [cursor=pointer]:
+                - /url: /benchmarks
+            - listitem [ref=e134]:
+              - link "News & Media" [ref=e135] [cursor=pointer]:
+                - /url: /media
+            - listitem [ref=e136]:
+              - link "Patents" [ref=e137] [cursor=pointer]:
+                - /url: /patents
+            - listitem [ref=e138]:
+              - link "Research" [ref=e139] [cursor=pointer]:
+                - /url: /research
+        - paragraph [ref=e141]:
+          - link "Documentation" [ref=e142] [cursor=pointer]:
+            - /url: https://docs.shunyalabs.ai/overview
+        - list [ref=e144]:
+          - listitem [ref=e145]:
+            - link "About us" [ref=e146] [cursor=pointer]:
+              - /url: /about
+        - list [ref=e148]:
+          - listitem [ref=e149]:
+            - link "Pricing" [ref=e150] [cursor=pointer]:
+              - /url: /pricing
+      - generic [ref=e151]:
+        - paragraph [ref=e152]: Follow us on
+        - generic [ref=e153]:
+          - link [ref=e154] [cursor=pointer]:
+            - /url: https://www.linkedin.com/company/shunya-labs-ai/
+            - img [ref=e155]
+          - link [ref=e157] [cursor=pointer]:
+            - /url: https://www.facebook.com/people/ShunyaLabsAI/61577801851308/
+            - img [ref=e158]
+          - link [ref=e160] [cursor=pointer]:
+            - /url: https://www.instagram.com/shunyalabsai/
+            - img [ref=e161]
+          - link [ref=e163] [cursor=pointer]:
+            - /url: https://x.com/ShunyaLabsAI
+            - img [ref=e164]
+      - generic [ref=e166]:
+        - paragraph [ref=e167]: © 2026 Shunya Labs Inc. All rights reserved.
+        - generic [ref=e168]:
+          - link "Privacy" [ref=e169] [cursor=pointer]:
+            - /url: /privacy-policy
+          - link "Terms" [ref=e170] [cursor=pointer]:
+            - /url: /terms-conditions
+          - link "Security" [ref=e171] [cursor=pointer]:
+            - /url: /security-policy
+          - link "General License" [ref=e172] [cursor=pointer]:
+            - /url: /general-rail-m-license
+          - link "Custom License" [ref=e173] [cursor=pointer]:
+            - /url: /shunya-labs-custom-model-rail-m-license
+  - alert [ref=e174]
+```
