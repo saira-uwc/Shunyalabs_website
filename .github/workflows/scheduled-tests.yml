@@ -165,6 +165,59 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 
+  # ─── Job 2b: Auto-send email after test run if there are failures ───
+  email-on-failure:
+    needs: run-tests
+    if: always() && needs.run-tests.result == 'failure'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: |
+          if [ -f package-lock.json ]; then
+            npm ci
+          else
+            npm install
+          fi
+
+      - name: Verify last run has failures
+        id: check-failures
+        run: |
+          FAILED=$(node -e "
+            const fs = require('fs');
+            const runs = JSON.parse(fs.readFileSync('dashboard/history/runs.json', 'utf8'));
+            const sorted = runs.sort((a,b) => new Date(b.runDate) - new Date(a.runDate));
+            const latest = sorted[0];
+            console.log(latest ? latest.failed : 0);
+          ")
+          echo "failed_count=$FAILED" >> "$GITHUB_OUTPUT"
+          if [ "$FAILED" -gt 0 ]; then
+            echo "has_failures=true" >> "$GITHUB_OUTPUT"
+            echo "Last run has $FAILED failure(s) — sending report."
+          else
+            echo "has_failures=false" >> "$GITHUB_OUTPUT"
+            echo "No test failures recorded in latest run — skipping email."
+          fi
+
+      - name: Send failure report
+        if: steps.check-failures.outputs.has_failures == 'true'
+        env:
+          PROJECT_NAME: "Shunya Labs Website Automation Report"
+          REPORT_RECIPIENTS: ${{ secrets.REPORT_RECIPIENTS }}
+          DASHBOARD_PUBLIC_URL: "https://saira-uwc.github.io/Shunyalabs_website/"
+          EMAIL_WEB_APP_URL: ${{ secrets.EMAIL_WEB_APP_URL }}
+          GOOGLE_SHEETS_SPREADSHEET_ID: ${{ secrets.GOOGLE_SHEETS_SPREADSHEET_ID }}
+        run: node scripts/email-daily-report.js
+
   # ─── Job 3: Send daily email report (only if last run has failures) ───
   send-daily-email:
     if: github.event.action == 'send-email'
