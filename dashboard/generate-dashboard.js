@@ -1539,7 +1539,9 @@ function generateDashboard(currentResults, history, playwrightRun) {
           tests: (r.tests || []).map(t => ({
             ...t,
             comment: t.comment ? t.comment.substring(0, 150) : '',
-            attachments: (t.attachments || []).map(a => ({ name: a.name, path: a.path }))
+            attachments: (t.attachments || [])
+              .filter(a => a.url && fs.existsSync(path.join(process.cwd(), 'dashboard', a.url)))
+              .map(a => ({ name: a.name, contentType: a.contentType, url: a.url }))
           }))
         }))
       ];
@@ -1745,9 +1747,10 @@ function generateDashboard(currentResults, history, playwrightRun) {
         };
 
         filteredTests.forEach((test, index) => {
-          const attachmentsHtml = test.attachments && test.attachments.length
+          const validAttachments = (test.attachments || []).filter(att => att && att.url);
+          const attachmentsHtml = validAttachments.length
             ? '<div class="modal-test-attachments">' +
-              test.attachments.map(att =>
+              validAttachments.map(att =>
                 '<a class="attachment-link" href="' + att.url + '" target="_blank" rel="noreferrer">' +
                 attachmentLabel(att) +
                 '</a>'
