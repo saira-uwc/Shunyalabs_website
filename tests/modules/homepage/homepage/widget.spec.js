@@ -2,8 +2,8 @@ import { test, expect } from '@playwright/test';
 import { HomepagePage } from '../../../../pages/homepage/homepage.page.js';
 import { createResultWriter } from '../../../../utils/result-writer.js';
 
-test.describe('Homepage - widget (Figma exact)', () => {
-  test('Widget content and actions', async ({ page }) => {
+test.describe('Homepage - hero demo (Vāk)', () => {
+  test('Live translation demo loads and shows primary controls', async ({ page }) => {
     const homepage = new HomepagePage(page);
     await homepage.open();
 
@@ -12,50 +12,24 @@ test.describe('Homepage - widget (Figma exact)', () => {
       reportFileName: 'module-actions-report.csv',
     });
 
-    // Verify widget tab buttons exist and are visible
-    const widgetTabs = [
-      'Zero STT Indic',
-      'Zero STT Codeswitch',
-      'Zero STT Med',
-      'Zero TTS Indic',
-    ];
-
-    // Widget renders lazily via client-side JS; use page.evaluate to check
-    // DOM presence which is more reliable than Playwright locators under load
-    const foundTabs = await page.evaluate(async (expectedTabs) => {
-      // Poll for up to 60s for widget buttons to appear
+    // Homepage embeds the Vāk real-time speech translation demo (replaces legacy STT playground tabs).
+    const demoReady = await page.evaluate(async () => {
       const deadline = Date.now() + 60000;
       while (Date.now() < deadline) {
-        const buttons = Array.from(document.querySelectorAll('button'));
-        const tabTexts = buttons.map(b => b.textContent.trim());
-        if (expectedTabs.every(t => tabTexts.includes(t))) {
-          return expectedTabs.map(t => ({ label: t, found: true }));
-        }
-        await new Promise(r => setTimeout(r, 500));
+        const t = document.body?.innerText || '';
+        const hasHeadline =
+          t.includes('Real-Time Speech-to-Speech') || t.includes('Speech-to-Speech Translation');
+        const hasLanguages = t.includes('55 Languages');
+        const hasInputHint =
+          t.includes('Tap mic to speak') || t.includes('type and press Enter');
+        if (hasHeadline && hasLanguages && hasInputHint) return true;
+        await new Promise((r) => setTimeout(r, 500));
       }
-      // Return what was found
-      const buttons = Array.from(document.querySelectorAll('button'));
-      const tabTexts = buttons.map(b => b.textContent.trim());
-      return expectedTabs.map(t => ({ label: t, found: tabTexts.includes(t) }));
-    }, widgetTabs);
+      return false;
+    });
 
-    for (const tab of foundTabs) {
-      expect(tab.found, `Widget tab "${tab.label}" should be present`).toBe(true);
-      await writeResult(`Homepage Widget Tab - ${tab.label}`, 'PASS', 'Tab visible');
-    }
+    expect(demoReady).toBe(true);
 
-    // Verify widget action buttons exist and are enabled
-    const widgetButtons = [
-      'Customer Support Call',
-      'Podcast',
-      'Upload your file',
-      'Start Speaking',
-    ];
-
-    for (const label of widgetButtons) {
-      const button = page.getByRole('button', { name: label }).first();
-      await expect(button).toBeEnabled({ timeout: 15000 });
-      await writeResult(`Homepage Widget - ${label}`, 'PASS', 'Button enabled');
-    }
+    await writeResult('Homepage Vāk demo', 'PASS', 'Translation demo section visible');
   });
 });

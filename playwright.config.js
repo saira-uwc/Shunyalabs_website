@@ -2,20 +2,23 @@ import { defineConfig } from '@playwright/test';
 import fs from 'fs';
 import path from 'path';
 
-// Only override browser path locally (CI uses default ~/.cache/ms-playwright)
-if (!process.env.CI) {
-  process.env.PLAYWRIGHT_BROWSERS_PATH ||= path.join(process.cwd(), '.playwright');
-}
+// Only override browser path locally when a matching vendored Chromium exists.
+// Otherwise leave PLAYWRIGHT_BROWSERS_PATH unset so Playwright uses the default
+// cache (~/.cache/ms-playwright) after `npx playwright install`.
+const chromiumArchDir =
+  process.arch === 'arm64' ? 'chrome-headless-shell-mac-arm64' : 'chrome-headless-shell-mac-x64';
 const CHROMIUM_EXECUTABLE = path.join(
   process.cwd(),
   '.playwright',
   'chromium_headless_shell-1200',
-  'chrome-headless-shell-mac-x64',
+  chromiumArchDir,
   'chrome-headless-shell'
 );
-const launchOptions = fs.existsSync(CHROMIUM_EXECUTABLE)
-  ? { executablePath: CHROMIUM_EXECUTABLE }
-  : {};
+const hasBundledChromium = fs.existsSync(CHROMIUM_EXECUTABLE);
+if (!process.env.CI && hasBundledChromium) {
+  process.env.PLAYWRIGHT_BROWSERS_PATH ??= path.join(process.cwd(), '.playwright');
+}
+const launchOptions = hasBundledChromium ? { executablePath: CHROMIUM_EXECUTABLE } : {};
 
 export default defineConfig({
   testDir: './tests',

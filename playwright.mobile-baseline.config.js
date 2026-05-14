@@ -6,16 +6,20 @@ import { defineConfig } from '@playwright/test';
 import fs from 'fs';
 import path from 'path';
 
-if (!process.env.CI) {
-  process.env.PLAYWRIGHT_BROWSERS_PATH ||= path.join(process.cwd(), '.playwright');
-}
+const chromiumArchDir =
+  process.arch === 'arm64' ? 'chrome-headless-shell-mac-arm64' : 'chrome-headless-shell-mac-x64';
 const CHROMIUM_EXECUTABLE = path.join(
-  process.cwd(), '.playwright', 'chromium_headless_shell-1200',
-  'chrome-headless-shell-mac-x64', 'chrome-headless-shell'
+  process.cwd(),
+  '.playwright',
+  'chromium_headless_shell-1200',
+  chromiumArchDir,
+  'chrome-headless-shell'
 );
-const launchOptions = fs.existsSync(CHROMIUM_EXECUTABLE)
-  ? { executablePath: CHROMIUM_EXECUTABLE }
-  : {};
+const hasBundledChromium = fs.existsSync(CHROMIUM_EXECUTABLE);
+if (!process.env.CI && hasBundledChromium) {
+  process.env.PLAYWRIGHT_BROWSERS_PATH ??= path.join(process.cwd(), '.playwright');
+}
+const launchOptions = hasBundledChromium ? { executablePath: CHROMIUM_EXECUTABLE } : {};
 
 export default defineConfig({
   testDir: './tests',
