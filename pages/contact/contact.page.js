@@ -43,11 +43,64 @@ export class ContactPage extends BasePage {
   }
 
   /**
-   * Success copy is shown in a floating toast after submit. Prefer this over matching on
-   * `body` text so the test only passes when the toast is actually visible.
+   * Exact success toast copy from production (Screenshot / live site). Apostrophe may be ASCII
+   * or Unicode RIGHT SINGLE QUOTATION MARK (U+2019) in “We’ll”.
    */
+  expectedSuccessToastPattern() {
+    return /We have received your response\.\s+We['\u2019]ll contact you shortly\.\s+Thank you!/i;
+  }
+
+  strictSuccessToastLocator() {
+    const re = this.expectedSuccessToastPattern();
+    const sonner = this.page.locator('[data-sonner-toast]').filter({ hasText: re });
+    return sonner.or(this.page.getByText(re));
+  }
+
+  /** @deprecated Prefer strict matcher — kept for readability in logs */
   successToastLocator() {
-    return this.page.getByText(/received your response/i).first();
+    return this.strictSuccessToastLocator().first();
+  }
+
+  async waitForSuccessToastVisible({ timeout = 15_000 } = {}) {
+    await this.strictSuccessToastLocator().first().waitFor({ state: 'visible', timeout });
+  }
+
+  /**
+   * Fails when a typical error toast is visibly shown (Sonner markup or common failure copy).
+   */
+  async assertNoVisibleSubmissionErrorToast() {
+    const ok = this.expectedSuccessToastPattern();
+    const sonnerErr = this.page.locator('[data-sonner-toast][data-type="error"]');
+    for (let i = 0; i < Math.min(await sonnerErr.count(), 10); i++) {
+      const loc = sonnerErr.nth(i);
+      if (await loc.isVisible()) {
+        const text = await loc.innerText().catch(() => '');
+        throw new Error(
+          `Error toast appeared (expected success toaster only): "${text.trim().slice(0, 300)}"`
+        );
+      }
+    }
+
+    const failureCopy =
+      /reCAPTCHA\s+verification\s+failed|Verification\s+failed\.?|Something went wrong|Failed to submit|Unable to (submit|send)|please try again|Network error|\b\d{3}\s+error\b/i;
+
+    const matches = this.page.getByText(failureCopy);
+    const max = Math.min(await matches.count(), 25);
+    for (let i = 0; i < max; i++) {
+      const loc = matches.nth(i);
+      if (!(await loc.isVisible())) continue;
+      const text = (await loc.innerText().catch(() => '')).replace(/\s+/g, ' ').trim();
+      if (ok.test(text)) continue;
+      throw new Error(`Failure UI text is visible after submit (expected success toaster only): "${text.slice(0, 300)}"`);
+    }
+  }
+
+  /**
+   * Pass only when the canonical success toaster is visible and no submission error toaster/text is visible.
+   */
+  async assertLeadFeedbackSuccessPresentationOnly({ toastTimeout = 15_000 } = {}) {
+    await this.waitForSuccessToastVisible({ timeout: toastTimeout });
+    await this.assertNoVisibleSubmissionErrorToast();
   }
 
   /**

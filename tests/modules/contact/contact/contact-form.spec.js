@@ -5,7 +5,8 @@ import { createResultWriter } from '../../../../utils/result-writer.js';
 
 /**
  * Real POSTs to `/api/send-mail` by default so failures (reCAPTCHA, server errors) match
- * production and the test cannot pass on a green mock while the site shows an error toast.
+ * production. The test only passes when the API reports success AND the exact success
+ * toaster copy is visible, with no visible error toast (see ContactPage.assertLeadFeedbackSuccessPresentationOnly).
  *
  * CI cannot complete reCAPTCHA — set CONTACT_MAIL_MOCK=true (see scheduled-tests workflow)
  * to stub a successful API only for that environment.
@@ -54,9 +55,9 @@ test.describe('Contact — lead form', () => {
     const sendMailRes = await sendMailDone;
 
     await contact.assertLeadCaptureApiSucceeded(sendMailRes);
-    await contact.waitForSuccessToastVisible({ timeout: 15_000 });
+    await contact.assertLeadFeedbackSuccessPresentationOnly({ toastTimeout: 15_000 });
 
     const note = contactMailMockEnabled() ? 'CONTACT_MAIL_MOCK' : 'live send-mail';
-    await writeResult('Contact Sales lead form', 'PASS', `Success toast + API ok (${note})`);
+    await writeResult('Contact Sales lead form', 'PASS', `Strict success toaster + no error toast + API ok (${note})`);
   });
 });
