@@ -18,6 +18,10 @@ Google Sheets reporting and a generated dashboard.
 - Generate dashboard: `npm run dashboard`
 - Publish dashboard: `npm run dashboard:publish`
 
+## Contact lead form test
+- Uses the real `/api/send-mail` response by default — the test fails when the API returns an error (same as the site’s error toaster), e.g. failed reCAPTCHA or server validation.
+- CI sets `CONTACT_MAIL_MOCK=true` in `.github/workflows/scheduled-tests.yml` so the job can pass without solving reCAPTCHA. Do not enable that locally if you want automation to match production behavior.
+
 ## Reporting
 - CSV outputs in `test-results/` (ignored by git)
 - Google Sheets integration via `GOOGLE-SHEETS-SETUP.md`

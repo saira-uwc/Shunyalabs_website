@@ -73,6 +73,8 @@ jobs:
         id: tests
         env:
           PLAYWRIGHT_HTML_OPEN: never
+          # Contact form cannot pass real reCAPTCHA in GitHub Actions; stub send-mail there only.
+          CONTACT_MAIL_MOCK: "true"
         run: |
           set +e
           npx playwright test tests/modules

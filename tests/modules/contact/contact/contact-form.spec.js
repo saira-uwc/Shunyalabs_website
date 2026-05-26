@@ -4,11 +4,22 @@ import { ContactPage } from '../../../../pages/contact/contact.page.js';
 import { createResultWriter } from '../../../../utils/result-writer.js';
 
 /**
- * The live form POSTs to `/api/send-mail` behind reCAPTCHA; unmocked runs return 403 in automation.
- * We mock the API to validate the full UX: Contact Sales → fill → submit → visible success toast.
+ * Real POSTs to `/api/send-mail` by default so failures (reCAPTCHA, server errors) match
+ * production and the test cannot pass on a green mock while the site shows an error toast.
+ *
+ * CI cannot complete reCAPTCHA — set CONTACT_MAIL_MOCK=true (see scheduled-tests workflow)
+ * to stub a successful API only for that environment.
  */
+function contactMailMockEnabled() {
+  const v = process.env.CONTACT_MAIL_MOCK;
+  return v === 'true' || v === '1';
+}
+
 test.describe('Contact — lead form', () => {
   test.beforeEach(async ({ page }) => {
+    if (!contactMailMockEnabled()) {
+      return;
+    }
     await page.route('**/api/send-mail', async (route) => {
       await route.fulfill({
         status: 200,
@@ -41,10 +52,11 @@ test.describe('Contact — lead form', () => {
     const sendMailDone = contact.waitForLeadFormSubmissionResponse();
     await contact.submitLeadForm();
     const sendMailRes = await sendMailDone;
-    expect(sendMailRes.ok()).toBeTruthy();
 
+    await contact.assertLeadCaptureApiSucceeded(sendMailRes);
     await contact.waitForSuccessToastVisible({ timeout: 15_000 });
 
-    await writeResult('Contact Sales lead form', 'PASS', 'Success toast visible (mocked send-mail)');
+    const note = contactMailMockEnabled() ? 'CONTACT_MAIL_MOCK' : 'live send-mail';
+    await writeResult('Contact Sales lead form', 'PASS', `Success toast + API ok (${note})`);
   });
 });

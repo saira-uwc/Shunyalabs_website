@@ -51,9 +51,29 @@ export class ContactPage extends BasePage {
   }
 
   /**
-   * Throws (fails test) unless the success toast renders visibly within timeout.
+   * Throws if send-mail HTTP status or JSON `success` is not a real success — matches what
+   * production uses to decide success vs error toasts.
    */
-  async waitForSuccessToastVisible({ timeout = 15_000 } = {}) {
-    await this.successToastLocator().waitFor({ state: 'visible', timeout });
+  async assertLeadCaptureApiSucceeded(sendMailResponse) {
+    const status = sendMailResponse.status();
+    const raw = await sendMailResponse.text();
+    let payload = {};
+    try {
+      payload = raw ? JSON.parse(raw) : {};
+    } catch {
+      payload = { success: false, message: raw ? `Non-JSON body: ${raw.slice(0, 200)}` : 'Empty body' };
+    }
+
+    const businessOk = payload && payload.success === true;
+    if (!sendMailResponse.ok() || !businessOk) {
+      const msg =
+        typeof payload.message === 'string' && payload.message.length > 0
+          ? payload.message
+          : JSON.stringify(payload);
+      throw new Error(
+        `Lead form send-mail did not succeed (HTTP ${status}). API: ${msg}. ` +
+          `The site should show an error toast for this; fix the integration or set CONTACT_MAIL_MOCK=true only for CI/smoke.`
+      );
+    }
   }
 }
