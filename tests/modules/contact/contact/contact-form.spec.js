@@ -5,7 +5,7 @@ import { createResultWriter } from '../../../../utils/result-writer.js';
 
 /**
  * The live form POSTs to `/api/send-mail` behind reCAPTCHA; unmocked runs return 403 in automation.
- * We mock the API to validate the full UX: Contact Sales → fill → submit → thank-you copy.
+ * We mock the API to validate the full UX: Contact Sales → fill → submit → visible success toast.
  */
 test.describe('Contact — lead form', () => {
   test.beforeEach(async ({ page }) => {
@@ -43,8 +43,8 @@ test.describe('Contact — lead form', () => {
     const sendMailRes = await sendMailDone;
     expect(sendMailRes.ok()).toBeTruthy();
 
-    await expect(page.locator('body')).toContainText(/received your response/i, { timeout: 15_000 });
+    await contact.waitForSuccessToastVisible({ timeout: 15_000 });
 
-    await writeResult('Contact Sales lead form', 'PASS', 'Submission success UI (mocked send-mail)');
+    await writeResult('Contact Sales lead form', 'PASS', 'Success toast visible (mocked send-mail)');
   });
 });

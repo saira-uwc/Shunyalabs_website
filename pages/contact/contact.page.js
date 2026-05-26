@@ -41,4 +41,19 @@ export class ContactPage extends BasePage {
       { timeout }
     );
   }
+
+  /**
+   * Success copy is shown in a floating toast after submit. Prefer this over matching on
+   * `body` text so the test only passes when the toast is actually visible.
+   */
+  successToastLocator() {
+    return this.page.getByText(/received your response/i).first();
+  }
+
+  /**
+   * Throws (fails test) unless the success toast renders visibly within timeout.
+   */
+  async waitForSuccessToastVisible({ timeout = 15_000 } = {}) {
+    await this.successToastLocator().waitFor({ state: 'visible', timeout });
+  }
 }
