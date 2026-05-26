@@ -273,4 +273,28 @@ export class HomepagePage extends BasePage {
       return { columns, followUs, copyright };
     });
   }
+
+  /**
+   * Primary nav CTA — lands on the Contact Us page with the lead form.
+   * Opens the drawer on small viewports first. Reloads once so Next.js App Router
+   * navigation leaves inputs interactive (otherwise submit may never POST).
+   */
+  async navigateToContactViaContactSalesLink() {
+    const nav = this.page.locator('nav');
+    const width = this.page.viewportSize()?.width ?? 1920;
+
+    if (width <= 768) {
+      const menuToggle = nav.getByRole('button', { name: '☰' });
+      await menuToggle.click();
+    }
+
+    const link = nav.getByRole('link', { name: 'Contact Sales', exact: true }).first();
+    await link.scrollIntoViewIfNeeded();
+    await link.click();
+
+    await this.page.waitForURL(/\/contact(?:\?|$)/, { timeout: 15_000 });
+    await this.page.reload({ waitUntil: 'domcontentloaded' });
+    await this.page.waitForTimeout(750);
+    await this.page.waitForLoadState('networkidle', { timeout: 15_000 }).catch(() => {});
+  }
 }
