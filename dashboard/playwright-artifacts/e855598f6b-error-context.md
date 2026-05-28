@@ -12,7 +12,7 @@
 # Error details
 
 ```
-Error: [content] Page title: expected "Voice AI Models for Speech-to-Text & Multilingual AI | Shunya Labs" but got "Voice AI Models for Speech-to-Text & Multilingual | Shunya"
+Error: [content] Page title: expected "Voice AI Models for Speech-to-Text & Multilingual AI | Shunya Labs" but got "Voice AI Models: Speech-to-Text & Multilingual | Shunya Labs"
 
 expect(received).toBeTruthy()
 
