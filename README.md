@@ -19,8 +19,9 @@ Google Sheets reporting and a generated dashboard.
 - Publish dashboard: `npm run dashboard:publish`
 
 ## Contact lead form test
-- By default the test calls the real `/api/send-mail` and **fails unless** the JSON has `success: true`, the **exact** success toaster copy is visible (`We have received your response. We'll contact you shortly. Thank you!`, allowing a curly apostrophe in *We’ll*), and **no** visible error toast (Sonner `[data-type="error"]` or common failure copy).
-- CI sets `CONTACT_MAIL_MOCK=true` in `.github/workflows/scheduled-tests.yml` so the job can pass without reCAPTCHA; keep that off locally when validating production behavior.
+- By default the test calls the real `/api/send-mail` and **fails unless** the JSON has `success: true`, the **exact** success toaster copy is visible, and **no** visible error toast.
+- **CI schedule:** the **first run each day** (local hours **00:00–01:59** in `Asia/Kolkata`, ~00:13 IST) uses a **real** send-mail call — at most **one lead email per day**. Every other ~2-hourly run sets `CONTACT_MAIL_MOCK=true` so the API is stubbed and no email is sent.
+- If the daily live run fails (e.g. reCAPTCHA), the test fails and you know production mail is broken; mocked runs still validate the UI only.
 
 ## Reporting
 - CSV outputs in `test-results/` (ignored by git)

@@ -69,12 +69,31 @@ jobs:
       - name: Verify Playwright browser exists
         run: npx playwright install chromium --with-deps
 
+      # Contact form: one REAL send-mail per calendar day on the first ~2-hourly run
+      # (after midnight in CONTACT_MAIL_LIVE_TZ). All other runs mock the API to avoid spam.
+      - name: Set contact form mail mode (live once per day)
+        id: contact_mail
+        env:
+          CONTACT_MAIL_LIVE_TZ: Asia/Kolkata
+        run: |
+          TZ="${CONTACT_MAIL_LIVE_TZ:-UTC}"
+          HOUR=$(TZ="$TZ" date +%H)
+          DAY=$(TZ="$TZ" date +%Y-%m-%d)
+          # First scheduled slot after midnight is ~00:13 IST (18:43 UTC) → local hours 0–1.
+          if [ "$HOUR" -lt "2" ]; then
+            echo "mode=live" >> "$GITHUB_OUTPUT"
+            echo "Contact form ($DAY $TZ): LIVE send-mail — one real submission today"
+          else
+            echo "mode=mock" >> "$GITHUB_OUTPUT"
+            echo "Contact form ($DAY $TZ): mocked send-mail — no email this run"
+          fi
+
       - name: Run tests
         id: tests
         env:
           PLAYWRIGHT_HTML_OPEN: never
-          # Contact form cannot pass real reCAPTCHA in GitHub Actions; stub send-mail there only.
-          CONTACT_MAIL_MOCK: "true"
+          CONTACT_MAIL_MOCK: ${{ steps.contact_mail.outputs.mode == 'mock' && 'true' || 'false' }}
+          CONTACT_MAIL_MODE: ${{ steps.contact_mail.outputs.mode }}
         run: |
           set +e
           npx playwright test tests/modules

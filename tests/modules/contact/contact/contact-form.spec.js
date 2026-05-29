@@ -4,16 +4,22 @@ import { ContactPage } from '../../../../pages/contact/contact.page.js';
 import { createResultWriter } from '../../../../utils/result-writer.js';
 
 /**
- * Real POSTs to `/api/send-mail` by default so failures (reCAPTCHA, server errors) match
- * production. The test only passes when the API reports success AND the exact success
- * toaster copy is visible, with no visible error toast (see ContactPage.assertLeadFeedbackSuccessPresentationOnly).
- *
- * CI cannot complete reCAPTCHA — set CONTACT_MAIL_MOCK=true (see scheduled-tests workflow)
- * to stub a successful API only for that environment.
+ * send-mail behaviour:
+ * - Local / CONTACT_MAIL_MOCK=false → real POST (needs reCAPTCHA in browser).
+ * - CONTACT_MAIL_MOCK=true → stub API (no email); used for most CI runs.
+ * - CI first run of the day (00:00–01:59 Asia/Kolkata): CONTACT_MAIL_MOCK=false so one
+ *   real lead email is sent per day; remaining ~2-hourly runs stay mocked.
  */
 function contactMailMockEnabled() {
   const v = process.env.CONTACT_MAIL_MOCK;
   return v === 'true' || v === '1';
+}
+
+function contactMailModeLabel() {
+  if (process.env.CONTACT_MAIL_MODE === 'live' || process.env.CONTACT_MAIL_MODE === 'mock') {
+    return process.env.CONTACT_MAIL_MODE;
+  }
+  return contactMailMockEnabled() ? 'mock' : 'live';
 }
 
 test.describe('Contact — lead form', () => {
@@ -57,7 +63,10 @@ test.describe('Contact — lead form', () => {
     await contact.assertLeadCaptureApiSucceeded(sendMailRes);
     await contact.assertLeadFeedbackSuccessPresentationOnly({ toastTimeout: 15_000 });
 
-    const note = contactMailMockEnabled() ? 'CONTACT_MAIL_MOCK' : 'live send-mail';
-    await writeResult('Contact Sales lead form', 'PASS', `Strict success toaster + no error toast + API ok (${note})`);
+    const note =
+      contactMailModeLabel() === 'live'
+        ? 'LIVE send-mail (daily smoke — real email if reCAPTCHA passes)'
+        : 'mocked send-mail (no email this run)';
+    await writeResult('Contact Sales lead form', 'PASS', `Success toaster + API ok (${note})`);
   });
 });
