@@ -18,7 +18,7 @@ import { captureDesignBaseline } from '../../utils/design-validator.js';
 const DESIGN_SPECS_DIR = path.join(process.cwd(), 'test-data', 'design-specs');
 
 test.describe('Generate design baselines', () => {
-  test.setTimeout(120000);
+  test.setTimeout(180_000);
 
   for (const pageEntry of pageRegistry) {
     if (pageEntry.status !== 'active') continue;

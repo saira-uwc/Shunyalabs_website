@@ -16,6 +16,7 @@
 import fs from 'fs';
 import path from 'path';
 import { createResultWriter } from './result-writer.js';
+import { gotoAndWaitForPageReady } from './page-readiness.js';
 
 const DESIGN_SPECS_DIR = path.join(process.cwd(), 'test-data', 'design-specs');
 
@@ -589,9 +590,7 @@ export async function runDesignComplianceTest({ page, pageEntry }) {
 
   const consoleErrors = setupConsoleCapture(page);
 
-  await page.goto(pagePath, { waitUntil: 'domcontentloaded' });
-  await page.waitForLoadState('networkidle', { timeout: 15000 }).catch(() => {});
-  await page.waitForTimeout(5000);
+  await gotoAndWaitForPageReady(page, pagePath, { waitForImages: true });
 
   const actualData = await extractPageDesignData(page);
   const failures = [];
@@ -669,9 +668,7 @@ function cleanCapturedData(data) {
 }
 
 export async function captureDesignBaseline(page, pageEntry) {
-  await page.goto(pageEntry.path, { waitUntil: 'domcontentloaded' });
-  await page.waitForLoadState('networkidle', { timeout: 15000 }).catch(() => {});
-  await page.waitForTimeout(5000);
+  await gotoAndWaitForPageReady(page, pageEntry.path, { waitForImages: true });
 
   const raw = await extractPageDesignData(page);
   const data = cleanCapturedData(raw);

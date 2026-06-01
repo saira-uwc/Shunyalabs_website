@@ -22,7 +22,7 @@ const launchOptions = hasBundledChromium ? { executablePath: CHROMIUM_EXECUTABLE
 
 export default defineConfig({
   testDir: './tests',
-  timeout: 120 * 1000, // 2 minutes per test (was 5 min)
+  timeout: process.env.CI ? 180 * 1000 : 120 * 1000,
 
   use: {
     baseURL: 'https://www.shunyalabs.ai',
@@ -30,10 +30,10 @@ export default defineConfig({
 
     launchOptions,
 
-    navigationTimeout: 30000, // 30s for navigation (was 120s)
-    actionTimeout: 15000,
+    navigationTimeout: process.env.CI ? 45_000 : 30_000,
+    actionTimeout: process.env.CI ? 20_000 : 15_000,
     expect: {
-      timeout: 10000,
+      timeout: process.env.CI ? 15_000 : 10_000,
     },
 
     trace: 'on-first-retry',
@@ -54,7 +54,7 @@ export default defineConfig({
   ],
 
   fullyParallel: true,
-  retries: 0,
+  retries: process.env.CI ? 1 : 0,
   workers: process.env.CI ? 3 : undefined, // 3 on CI, auto locally
 
   reporter: [

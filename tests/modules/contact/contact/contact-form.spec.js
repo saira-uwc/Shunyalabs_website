@@ -21,7 +21,6 @@ function contactMailModeLabel() {
 }
 
 test.describe('Contact — lead form', () => {
-  test.describe.configure({ retries: process.env.CI ? 1 : 0 });
   test.setTimeout(180_000);
 
   test.beforeEach(async ({ page }) => {

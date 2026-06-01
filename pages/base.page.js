@@ -1,3 +1,5 @@
+import { gotoAndWaitForPageReady } from '../utils/page-readiness.js';
+
 export class BasePage {
   constructor(page, { path, moduleLabel, pageLabel }) {
     this.page = page;
@@ -6,9 +8,8 @@ export class BasePage {
     this.pageLabel = pageLabel;
   }
 
-  async open() {
-    await this.page.goto(this.path, { waitUntil: 'domcontentloaded' });
-    await this.page.waitForLoadState('networkidle', { timeout: 5000 }).catch(() => {});
+  async open(options = {}) {
+    await gotoAndWaitForPageReady(this.page, this.path, options);
   }
 
   async getMainCTAs() {

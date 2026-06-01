@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { capturePageSnapshot, normalizeSnapshot, diffSnapshots } from './page-snapshot.js';
 import { createResultWriter } from './result-writer.js';
+import { gotoAndWaitForPageReady } from './page-readiness.js';
 
 const SNAPSHOT_DIR = path.join(process.cwd(), 'test-data', 'snapshots');
 
@@ -46,8 +47,7 @@ export async function validateSnapshotForPage({ page, moduleLabel, pageLabel, mo
     throw new Error(message);
   }
 
-  await page.goto(pagePath, { waitUntil: 'domcontentloaded' });
-  await page.waitForLoadState('networkidle', { timeout: 5000 }).catch(() => {});
+  await gotoAndWaitForPageReady(page, pagePath, { waitForImages: true });
 
   const actual = normalizeSnapshot(await capturePageSnapshot(page));
   const expected = JSON.parse(fs.readFileSync(snapshotPath, 'utf8'));

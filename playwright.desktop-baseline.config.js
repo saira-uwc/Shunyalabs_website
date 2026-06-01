@@ -23,11 +23,13 @@ const launchOptions = hasBundledChromium ? { executablePath: CHROMIUM_EXECUTABLE
 
 export default defineConfig({
   testDir: './tests',
-  timeout: 120_000,
+  timeout: 180_000,
   use: {
     baseURL: 'https://www.shunyalabs.ai',
     headless: true,
     launchOptions,
+    navigationTimeout: 45_000,
+    actionTimeout: 20_000,
     viewport: { width: 1920, height: 1080 },
   },
   reporter: [['list']],

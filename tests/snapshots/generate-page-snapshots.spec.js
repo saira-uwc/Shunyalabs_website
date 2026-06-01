@@ -3,6 +3,7 @@ import fs from 'fs';
 import path from 'path';
 import { pageRegistry } from '../../test-data/page-registry.js';
 import { capturePageSnapshot, normalizeSnapshot } from '../../utils/page-snapshot.js';
+import { gotoAndWaitForPageReady } from '../../utils/page-readiness.js';
 
 const SNAPSHOT_DIR = path.join(process.cwd(), 'test-data', 'snapshots');
 
@@ -15,9 +16,7 @@ test.describe('Generate page content snapshots', () => {
     }
 
     test(`snapshot ${pageEntry.moduleLabel} - ${pageEntry.pageLabel}`, async ({ page }) => {
-      await page.goto(pageEntry.path, { waitUntil: 'domcontentloaded' });
-      await page.waitForLoadState('load').catch(() => {});
-      await page.waitForTimeout(1500);
+      await gotoAndWaitForPageReady(page, pageEntry.path, { waitForImages: true });
 
       const snapshot = normalizeSnapshot(await capturePageSnapshot(page));
       const moduleDir = path.join(SNAPSHOT_DIR, pageEntry.moduleKey);
