@@ -45,11 +45,24 @@ export default defineConfig({
   },
 
   projects: [
-    { name: 'desktop', use: { viewport: { width: 1920, height: 1080 } }, testIgnore: [/\/snapshots\//] },
+    {
+      name: 'api-contact',
+      testMatch: /contact-daily-mail\.api\.spec\.js/,
+    },
+    {
+      name: 'desktop',
+      use: { viewport: { width: 1920, height: 1080 } },
+      testIgnore: [/\/snapshots\//, /contact-daily-mail\.api\.spec\.js/],
+    },
     {
       name: 'mobile',
       use: { viewport: { width: 375, height: 667 } },
-      testIgnore: [/\/snapshots\//, /\/(nav|footer|widget)\.spec\.js/, /\/zero-stt-universal\//],
+      testIgnore: [
+        /\/snapshots\//,
+        /\/(nav|footer|widget)\.spec\.js/,
+        /\/zero-stt-universal\//,
+        /contact-daily-mail\.api\.spec\.js/,
+      ],
     },
   ],
 

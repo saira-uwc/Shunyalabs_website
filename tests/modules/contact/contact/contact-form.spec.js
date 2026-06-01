@@ -4,10 +4,11 @@ import { ContactPage } from '../../../../pages/contact/contact.page.js';
 import { createResultWriter } from '../../../../utils/result-writer.js';
 import { pageReadyTimeout, MODULE_TEST_TIMEOUT } from '../../../../utils/page-readiness.js';
 
+import { CONTACT_AUTOMATION_EMAIL } from '../../../../utils/contact-daily-e2e-mail.js';
+
 /**
- * send-mail behaviour:
- * - CONTACT_MAIL_MOCK=true (CI default) → stub API (no email).
- * - CONTACT_MAIL_MOCK=false → real POST (needs reCAPTCHA or automation secret in browser).
+ * Browser UI test — send-mail is mocked in CI (CONTACT_MAIL_MOCK=true).
+ * Daily real email delivery uses contact-daily-mail.api.spec.js + X-Automation-Secret.
  */
 function contactMailMockEnabled() {
   const v = process.env.CONTACT_MAIL_MOCK;
@@ -52,7 +53,7 @@ test.describe('Contact — lead form', () => {
 
     await contact.fillLeadForm({
       name: 'Automated Test User',
-      email: 'automated-test@example.com',
+      email: CONTACT_AUTOMATION_EMAIL,
       phone: '+15555550123',
       message: 'Playwright automation — please ignore.',
     });
@@ -67,8 +68,8 @@ test.describe('Contact — lead form', () => {
 
     const note =
       contactMailModeLabel() === 'live'
-        ? 'LIVE send-mail (real email if reCAPTCHA passes)'
-        : 'mocked send-mail (no email this run)';
+        ? 'LIVE send-mail (local only — browser cannot send automation secret)'
+        : 'mocked send-mail (UI validation — no email this run)';
     await writeResult('Contact Sales lead form', 'PASS', `Success toaster + API ok (${note})`);
   });
 });

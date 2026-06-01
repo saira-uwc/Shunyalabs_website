@@ -18,10 +18,23 @@ Google Sheets reporting and a generated dashboard.
 - Generate dashboard: `npm run dashboard`
 - Publish dashboard: `npm run dashboard:publish`
 
-## Contact lead form test
-- By default the test calls the real `/api/send-mail` and **fails unless** the JSON has `success: true`, the **exact** success toaster copy is visible, and **no** visible error toast.
-- **CI schedule:** the **first run each day** (local hours **00:00–01:59** in `Asia/Kolkata`, ~00:13 IST) uses a **real** send-mail call — at most **one lead email per day**. Every other ~2-hourly run sets `CONTACT_MAIL_MOCK=true` so the API is stubbed and no email is sent.
-- If the daily live run fails (e.g. reCAPTCHA), the test fails and you know production mail is broken; mocked runs still validate the UI only.
+## Contact lead form tests
+
+### Browser UI (every ~2 hours)
+- `contact-form.spec.js` validates Contact Sales → fill form → success toaster.
+- **CI always mocks** `/api/send-mail` (`CONTACT_MAIL_MOCK=true`) — no real email, no reCAPTCHA.
+- Uses test address: `automated-test@example.com`
+
+### Daily E2E email delivery (API — once per day)
+- `contact-daily-mail.api.spec.js` calls `POST /api/send-mail` with header **`X-Automation-Secret`** (cannot be sent from the browser form).
+- Runs on the **first CI slot after midnight IST** (~00:13 IST).
+- **GitHub secret required:** `CONTACT_AUTOMATION_SECRET` (value shared separately by the web team).
+- **HTTP 200** → real email sent (once per 24h). **HTTP 429** → already ran today (pass). **HTTP 403** → secret missing/wrong (fail).
+
+Manual run:
+```bash
+CONTACT_AUTOMATION_SECRET='...' node scripts/contact-daily-e2e-mail.js
+```
 
 ## Reporting
 - CSV outputs in `test-results/` (ignored by git)

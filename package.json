@@ -18,7 +18,7 @@
     "snapshot:pages": "npx playwright test tests/snapshots/generate-page-snapshots.spec.js",
     "test:visual": "npx playwright test tests/visual",
     "test:visual:update": "npx playwright test tests/visual --update-snapshots",
-    "test:modules": "npx playwright test tests/modules",
+    "test:contact-daily-mail": "node scripts/contact-daily-e2e-mail.js",
     "generate:modules": "node scripts/generate-module-pages.js",
     "combine-reports": "node utils/combine-reports.js",
     "test-sheets": "node test-sheets-connection.js",
