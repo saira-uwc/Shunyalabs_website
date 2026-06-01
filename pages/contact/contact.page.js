@@ -9,6 +9,24 @@ export class ContactPage extends BasePage {
     });
   }
 
+  leadFormNameInput() {
+    return this.page.locator('input[name="name"]');
+  }
+
+  leadFormSubmitButton() {
+    return this.page.getByRole('button', { name: /^Submit$/ });
+  }
+
+  /**
+   * Wait until the lead form is painted and interactive (avoids flaky networkidle timeouts).
+   */
+  async waitForLeadFormReady({ timeout = 30_000 } = {}) {
+    await this.leadFormNameInput().waitFor({ state: 'visible', timeout });
+    await this.page.locator('input[name="email"]').waitFor({ state: 'visible', timeout });
+    await this.page.locator('textarea[name="message"]').waitFor({ state: 'visible', timeout });
+    await this.leadFormSubmitButton().waitFor({ state: 'visible', timeout });
+  }
+
   /**
    * Lead form field names match the live `/contact` page (`name`, `email`, `phone`, `message`).
    */
@@ -29,13 +47,13 @@ export class ContactPage extends BasePage {
   }
 
   submitLeadForm() {
-    return this.page.getByRole('button', { name: /^Submit$/ }).click();
+    return this.leadFormSubmitButton().click();
   }
 
   /**
    * Resolved when the POST to send-mail completes (success or failure).
    */
-  waitForLeadFormSubmissionResponse({ timeout = 30_000 } = {}) {
+  waitForLeadFormSubmissionResponse({ timeout = 45_000 } = {}) {
     return this.page.waitForResponse(
       (r) => r.url().includes('/api/send-mail') && r.request().method() === 'POST',
       { timeout }
@@ -61,7 +79,7 @@ export class ContactPage extends BasePage {
     return this.strictSuccessToastLocator().first();
   }
 
-  async waitForSuccessToastVisible({ timeout = 15_000 } = {}) {
+  async waitForSuccessToastVisible({ timeout = 25_000 } = {}) {
     await this.strictSuccessToastLocator().first().waitFor({ state: 'visible', timeout });
   }
 

@@ -279,22 +279,24 @@ export class HomepagePage extends BasePage {
    * Opens the drawer on small viewports first. Reloads once so Next.js App Router
    * navigation leaves inputs interactive (otherwise submit may never POST).
    */
-  async navigateToContactViaContactSalesLink() {
+  async navigateToContactViaContactSalesLink({ timeout = 30_000 } = {}) {
     const nav = this.page.locator('nav');
     const width = this.page.viewportSize()?.width ?? 1920;
 
     if (width <= 768) {
       const menuToggle = nav.getByRole('button', { name: '☰' });
+      await menuToggle.waitFor({ state: 'visible', timeout });
       await menuToggle.click();
     }
 
     const link = nav.getByRole('link', { name: 'Contact Sales', exact: true }).first();
+    await link.waitFor({ state: 'visible', timeout });
     await link.scrollIntoViewIfNeeded();
     await link.click();
 
-    await this.page.waitForURL(/\/contact(?:\?|$)/, { timeout: 15_000 });
-    await this.page.reload({ waitUntil: 'domcontentloaded' });
-    await this.page.waitForTimeout(750);
-    await this.page.waitForLoadState('networkidle', { timeout: 15_000 }).catch(() => {});
+    await this.page.waitForURL(/\/contact(?:\?|$)/, { timeout });
+    // Reload so App Router client nav leaves inputs submittable; wait for form fields, not networkidle.
+    await this.page.reload({ waitUntil: 'domcontentloaded', timeout });
+    await this.page.locator('input[name="name"]').waitFor({ state: 'visible', timeout });
   }
 }

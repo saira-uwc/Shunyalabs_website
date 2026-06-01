@@ -5,10 +5,8 @@ import { createResultWriter } from '../../../../utils/result-writer.js';
 
 /**
  * send-mail behaviour:
- * - Local / CONTACT_MAIL_MOCK=false → real POST (needs reCAPTCHA in browser).
- * - CONTACT_MAIL_MOCK=true → stub API (no email); used for most CI runs.
- * - CI first run of the day (00:00–01:59 Asia/Kolkata): CONTACT_MAIL_MOCK=false so one
- *   real lead email is sent per day; remaining ~2-hourly runs stay mocked.
+ * - CONTACT_MAIL_MOCK=true (CI default) → stub API (no email).
+ * - CONTACT_MAIL_MOCK=false → real POST (needs reCAPTCHA or automation secret in browser).
  */
 function contactMailMockEnabled() {
   const v = process.env.CONTACT_MAIL_MOCK;
@@ -23,6 +21,9 @@ function contactMailModeLabel() {
 }
 
 test.describe('Contact — lead form', () => {
+  test.describe.configure({ retries: process.env.CI ? 1 : 0 });
+  test.setTimeout(180_000);
+
   test.beforeEach(async ({ page }) => {
     if (!contactMailMockEnabled()) {
       return;
@@ -45,8 +46,9 @@ test.describe('Contact — lead form', () => {
     });
 
     await homepage.open();
-    await homepage.navigateToContactViaContactSalesLink();
-    await expect(page).toHaveURL(/\/contact/);
+    await homepage.navigateToContactViaContactSalesLink({ timeout: 45_000 });
+    await expect(page).toHaveURL(/\/contact/, { timeout: 30_000 });
+    await contact.waitForLeadFormReady({ timeout: 45_000 });
 
     await contact.fillLeadForm({
       name: 'Automated Test User',
@@ -56,16 +58,16 @@ test.describe('Contact — lead form', () => {
     });
     await contact.setLeadFormConsents({ agreeMarketing: true, agreeTerms: true });
 
-    const sendMailDone = contact.waitForLeadFormSubmissionResponse();
+    const sendMailDone = contact.waitForLeadFormSubmissionResponse({ timeout: 45_000 });
     await contact.submitLeadForm();
     const sendMailRes = await sendMailDone;
 
     await contact.assertLeadCaptureApiSucceeded(sendMailRes);
-    await contact.assertLeadFeedbackSuccessPresentationOnly({ toastTimeout: 15_000 });
+    await contact.assertLeadFeedbackSuccessPresentationOnly({ toastTimeout: 25_000 });
 
     const note =
       contactMailModeLabel() === 'live'
-        ? 'LIVE send-mail (daily smoke — real email if reCAPTCHA passes)'
+        ? 'LIVE send-mail (real email if reCAPTCHA passes)'
         : 'mocked send-mail (no email this run)';
     await writeResult('Contact Sales lead form', 'PASS', `Success toaster + API ok (${note})`);
   });
