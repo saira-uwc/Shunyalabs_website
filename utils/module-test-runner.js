@@ -1,8 +1,9 @@
 import { createResultWriter } from './result-writer.js';
 import { validateSnapshotForPage } from './snapshot-validator.js';
+import { pageReadyTimeout, actionReadyTimeout } from './page-readiness.js';
 
-const CTA_NAV_TIMEOUT_MS = Number(process.env.CTA_NAV_TIMEOUT_MS) || 30000;
-const CTA_CLICK_TIMEOUT_MS = Number(process.env.CTA_CLICK_TIMEOUT_MS) || 10000;
+const CTA_NAV_TIMEOUT_MS = Number(process.env.CTA_NAV_TIMEOUT_MS) || pageReadyTimeout();
+const CTA_CLICK_TIMEOUT_MS = Number(process.env.CTA_CLICK_TIMEOUT_MS) || actionReadyTimeout();
 
 function formatLabel(label) {
   return label.replace(/\s+/g, ' ').trim();
@@ -20,7 +21,8 @@ async function clickAndResolveUrl({ page, locator }) {
   const popupPromise = page
     .waitForEvent('popup', { timeout: CTA_NAV_TIMEOUT_MS })
     .then(async (popup) => {
-      await popup.waitForLoadState('domcontentloaded').catch(() => {});
+      await popup.waitForLoadState('domcontentloaded', { timeout: CTA_NAV_TIMEOUT_MS }).catch(() => {});
+      await popup.waitForLoadState('load', { timeout: CTA_NAV_TIMEOUT_MS }).catch(() => {});
       const url = popup.url();
       await popup.close().catch(() => {});
       return { url };

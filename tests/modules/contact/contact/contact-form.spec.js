@@ -2,6 +2,7 @@ import { test, expect } from '@playwright/test';
 import { HomepagePage } from '../../../../pages/homepage/homepage.page.js';
 import { ContactPage } from '../../../../pages/contact/contact.page.js';
 import { createResultWriter } from '../../../../utils/result-writer.js';
+import { pageReadyTimeout, MODULE_TEST_TIMEOUT } from '../../../../utils/page-readiness.js';
 
 /**
  * send-mail behaviour:
@@ -21,7 +22,7 @@ function contactMailModeLabel() {
 }
 
 test.describe('Contact — lead form', () => {
-  test.setTimeout(180_000);
+  test.setTimeout(MODULE_TEST_TIMEOUT);
 
   test.beforeEach(async ({ page }) => {
     if (!contactMailMockEnabled()) {
@@ -45,9 +46,9 @@ test.describe('Contact — lead form', () => {
     });
 
     await homepage.open();
-    await homepage.navigateToContactViaContactSalesLink({ timeout: 45_000 });
-    await expect(page).toHaveURL(/\/contact/, { timeout: 30_000 });
-    await contact.waitForLeadFormReady({ timeout: 45_000 });
+    await homepage.navigateToContactViaContactSalesLink({ timeout: pageReadyTimeout() });
+    await expect(page).toHaveURL(/\/contact/, { timeout: pageReadyTimeout() });
+    await contact.waitForLeadFormReady({ timeout: pageReadyTimeout() });
 
     await contact.fillLeadForm({
       name: 'Automated Test User',
@@ -57,12 +58,12 @@ test.describe('Contact — lead form', () => {
     });
     await contact.setLeadFormConsents({ agreeMarketing: true, agreeTerms: true });
 
-    const sendMailDone = contact.waitForLeadFormSubmissionResponse({ timeout: 45_000 });
+    const sendMailDone = contact.waitForLeadFormSubmissionResponse();
     await contact.submitLeadForm();
     const sendMailRes = await sendMailDone;
 
     await contact.assertLeadCaptureApiSucceeded(sendMailRes);
-    await contact.assertLeadFeedbackSuccessPresentationOnly({ toastTimeout: 25_000 });
+    await contact.assertLeadFeedbackSuccessPresentationOnly();
 
     const note =
       contactMailModeLabel() === 'live'

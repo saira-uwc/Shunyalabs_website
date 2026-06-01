@@ -1,4 +1,5 @@
 import { BasePage } from '../base.page.js';
+import { pageReadyTimeout } from '../../utils/page-readiness.js';
 
 export class ContactPage extends BasePage {
   constructor(page) {
@@ -20,7 +21,7 @@ export class ContactPage extends BasePage {
   /**
    * Wait until the lead form is painted and interactive (avoids flaky networkidle timeouts).
    */
-  async waitForLeadFormReady({ timeout = 30_000 } = {}) {
+  async waitForLeadFormReady({ timeout = pageReadyTimeout() } = {}) {
     await this.leadFormNameInput().waitFor({ state: 'visible', timeout });
     await this.page.locator('input[name="email"]').waitFor({ state: 'visible', timeout });
     await this.page.locator('textarea[name="message"]').waitFor({ state: 'visible', timeout });
@@ -53,7 +54,7 @@ export class ContactPage extends BasePage {
   /**
    * Resolved when the POST to send-mail completes (success or failure).
    */
-  waitForLeadFormSubmissionResponse({ timeout = 45_000 } = {}) {
+  waitForLeadFormSubmissionResponse({ timeout = pageReadyTimeout() } = {}) {
     return this.page.waitForResponse(
       (r) => r.url().includes('/api/send-mail') && r.request().method() === 'POST',
       { timeout }
@@ -79,7 +80,7 @@ export class ContactPage extends BasePage {
     return this.strictSuccessToastLocator().first();
   }
 
-  async waitForSuccessToastVisible({ timeout = 25_000 } = {}) {
+  async waitForSuccessToastVisible({ timeout = pageReadyTimeout() } = {}) {
     await this.strictSuccessToastLocator().first().waitFor({ state: 'visible', timeout });
   }
 
@@ -116,7 +117,7 @@ export class ContactPage extends BasePage {
   /**
    * Pass only when the canonical success toaster is visible and no submission error toaster/text is visible.
    */
-  async assertLeadFeedbackSuccessPresentationOnly({ toastTimeout = 15_000 } = {}) {
+  async assertLeadFeedbackSuccessPresentationOnly({ toastTimeout = pageReadyTimeout() } = {}) {
     await this.waitForSuccessToastVisible({ timeout: toastTimeout });
     await this.assertNoVisibleSubmissionErrorToast();
   }

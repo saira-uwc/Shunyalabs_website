@@ -7,6 +7,12 @@ export function pageReadyTimeout() {
   return process.env.CI ? 45_000 : 30_000;
 }
 
+export function actionReadyTimeout() {
+  return process.env.CI ? 20_000 : 15_000;
+}
+
+export const MODULE_TEST_TIMEOUT = process.env.CI ? 180_000 : 120_000;
+
 /**
  * Navigate to a path (relative to baseURL) and wait until the page shell is interactive.
  * @param {import('@playwright/test').Page} page
@@ -55,4 +61,16 @@ export async function waitForVisibleImagesLoaded(page, timeout = pageReadyTimeou
       { timeout }
     )
     .catch(() => {});
+}
+
+/**
+ * Reload the current page and wait until a key selector is visible.
+ * @param {import('@playwright/test').Page} page
+ * @param {string} selector
+ * @param {number} [timeout]
+ */
+export async function reloadAndWaitForSelector(page, selector, timeout = pageReadyTimeout()) {
+  await page.reload({ waitUntil: 'domcontentloaded', timeout });
+  await page.locator(selector).first().waitFor({ state: 'visible', timeout });
+  await page.waitForLoadState('load', { timeout: Math.min(timeout, 20_000) }).catch(() => {});
 }

@@ -3,12 +3,12 @@ import fs from 'fs';
 import path from 'path';
 import { pageRegistry } from '../../test-data/page-registry.js';
 import { capturePageSnapshot, normalizeSnapshot } from '../../utils/page-snapshot.js';
-import { gotoAndWaitForPageReady } from '../../utils/page-readiness.js';
+import { gotoAndWaitForPageReady, MODULE_TEST_TIMEOUT } from '../../utils/page-readiness.js';
 
 const SNAPSHOT_DIR = path.join(process.cwd(), 'test-data', 'snapshots');
 
 test.describe('Generate page content snapshots', () => {
-  test.setTimeout(120000);
+  test.setTimeout(MODULE_TEST_TIMEOUT);
 
   for (const pageEntry of pageRegistry) {
     if (pageEntry.status !== 'active') {

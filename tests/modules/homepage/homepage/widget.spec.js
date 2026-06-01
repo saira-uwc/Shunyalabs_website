@@ -1,9 +1,10 @@
 import { test, expect } from '@playwright/test';
 import { HomepagePage } from '../../../../pages/homepage/homepage.page.js';
 import { createResultWriter } from '../../../../utils/result-writer.js';
+import { MODULE_TEST_TIMEOUT } from '../../../../utils/page-readiness.js';
 
 test.describe('Homepage - hero demo (Vāk)', () => {
-  test.setTimeout(180_000);
+  test.setTimeout(MODULE_TEST_TIMEOUT);
 
   test('Live translation demo loads and shows primary controls', async ({ page }) => {
     const homepage = new HomepagePage(page);

@@ -1,4 +1,5 @@
 import { BasePage } from '../base.page.js';
+import { pageReadyTimeout, reloadAndWaitForSelector } from '../../utils/page-readiness.js';
 
 export class HomepagePage extends BasePage {
   constructor(page) {
@@ -279,7 +280,7 @@ export class HomepagePage extends BasePage {
    * Opens the drawer on small viewports first. Reloads once so Next.js App Router
    * navigation leaves inputs interactive (otherwise submit may never POST).
    */
-  async navigateToContactViaContactSalesLink({ timeout = 30_000 } = {}) {
+  async navigateToContactViaContactSalesLink({ timeout = pageReadyTimeout() } = {}) {
     const nav = this.page.locator('nav');
     const width = this.page.viewportSize()?.width ?? 1920;
 
@@ -295,8 +296,6 @@ export class HomepagePage extends BasePage {
     await link.click();
 
     await this.page.waitForURL(/\/contact(?:\?|$)/, { timeout });
-    // Reload so App Router client nav leaves inputs submittable; wait for form fields, not networkidle.
-    await this.page.reload({ waitUntil: 'domcontentloaded', timeout });
-    await this.page.locator('input[name="name"]').waitFor({ state: 'visible', timeout });
+    await reloadAndWaitForSelector(this.page, 'input[name="name"]', timeout);
   }
 }

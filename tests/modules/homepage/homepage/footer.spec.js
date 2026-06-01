@@ -3,6 +3,7 @@ import fs from 'fs';
 import path from 'path';
 import { HomepagePage } from '../../../../pages/homepage/homepage.page.js';
 import { createResultWriter } from '../../../../utils/result-writer.js';
+import { MODULE_TEST_TIMEOUT } from '../../../../utils/page-readiness.js';
 
 const footerExpectationsPath = path.join(
   process.cwd(),
@@ -13,6 +14,8 @@ const footerExpectationsPath = path.join(
 const footerExpectations = JSON.parse(fs.readFileSync(footerExpectationsPath, 'utf8'));
 
 test.describe('Homepage - footer menu (Figma exact)', () => {
+  test.setTimeout(MODULE_TEST_TIMEOUT);
+
   test('Footer columns, follow us, copyright', async ({ page }) => {
     const homepage = new HomepagePage(page);
     await homepage.open();

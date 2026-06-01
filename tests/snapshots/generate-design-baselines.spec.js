@@ -14,11 +14,12 @@ import fs from 'fs';
 import path from 'path';
 import { pageRegistry } from '../../test-data/page-registry.js';
 import { captureDesignBaseline } from '../../utils/design-validator.js';
+import { MODULE_TEST_TIMEOUT } from '../../utils/page-readiness.js';
 
 const DESIGN_SPECS_DIR = path.join(process.cwd(), 'test-data', 'design-specs');
 
 test.describe('Generate design baselines', () => {
-  test.setTimeout(180_000);
+  test.setTimeout(MODULE_TEST_TIMEOUT);
 
   for (const pageEntry of pageRegistry) {
     if (pageEntry.status !== 'active') continue;
