@@ -1,15 +1,18 @@
 import { test, expect } from '@playwright/test';
 import { HomepagePage } from '../../../../pages/homepage/homepage.page.js';
 import { createResultWriter } from '../../../../utils/result-writer.js';
-import { MODULE_TEST_TIMEOUT } from '../../../../utils/page-readiness.js';
+import { MODULE_TEST_TIMEOUT, pageReadyTimeout } from '../../../../utils/page-readiness.js';
 
 test.describe('Homepage - hero demo (Vāk)', () => {
   test.setTimeout(MODULE_TEST_TIMEOUT);
 
   test('Live translation demo loads and shows primary controls', async ({ page }) => {
     const homepage = new HomepagePage(page);
+    const timeout = pageReadyTimeout();
     await homepage.open();
-    await page.getByRole('heading', { name: /Vāk/i }).last().scrollIntoViewIfNeeded();
+    const vakHeading = page.getByRole('heading', { name: /Vāk/i }).last();
+    await vakHeading.scrollIntoViewIfNeeded({ timeout });
+    await expect(vakHeading).toBeVisible({ timeout });
 
     const { writeResult } = await createResultWriter({
       moduleName: 'Homepage',

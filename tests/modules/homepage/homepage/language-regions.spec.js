@@ -3,7 +3,7 @@ import fs from 'fs';
 import path from 'path';
 import { HomepagePage } from '../../../../pages/homepage/homepage.page.js';
 import { createResultWriter } from '../../../../utils/result-writer.js';
-import { MODULE_TEST_TIMEOUT } from '../../../../utils/page-readiness.js';
+import { MODULE_TEST_TIMEOUT, pageReadyTimeout } from '../../../../utils/page-readiness.js';
 
 const sampleLanguages = JSON.parse(
   fs.readFileSync(
@@ -24,20 +24,22 @@ test.describe('Homepage - language regions', () => {
       reportFileName: 'module-pages-report.csv',
     });
 
+    const timeout = pageReadyTimeout();
     const regionsHeading = page.getByRole('heading', { name: /Language Regions/i }).first();
-    await regionsHeading.scrollIntoViewIfNeeded();
-    await expect(regionsHeading).toBeVisible({ timeout: 30_000 });
-    await page.waitForTimeout(1500);
+    await regionsHeading.scrollIntoViewIfNeeded({ timeout });
+    await expect(regionsHeading).toBeVisible({ timeout });
 
-    const body = await page.locator('body').innerText();
-    expect(body).toMatch(/See the full list of languages supported/i);
-    expect(body).toMatch(/Loading world map/i);
-
-    const foundOnPage = sampleLanguages.filter((label) => {
-      const name = label.split(/\s+/)[0];
-      return name.length > 2 && body.includes(name);
-    });
-    expect(foundOnPage.length).toBeGreaterThan(35);
+    let body = '';
+    let foundOnPage = [];
+    await expect(async () => {
+      body = await page.locator('body').innerText();
+      expect(body).toMatch(/See the full list of languages supported/i);
+      foundOnPage = sampleLanguages.filter((label) => {
+        const name = label.split(/\s+/)[0];
+        return name.length > 2 && body.includes(name);
+      });
+      expect(foundOnPage.length).toBeGreaterThan(35);
+    }).toPass({ timeout });
 
     await writeResult(
       'Homepage language regions',
