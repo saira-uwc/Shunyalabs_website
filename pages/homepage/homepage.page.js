@@ -132,10 +132,25 @@ export class HomepagePage extends BasePage {
         .find((el) => normalize(el.textContent) === 'Language Regions');
       const section = heading?.closest('section') || heading?.parentElement;
       if (!section) return [];
-      return Array.from(section.querySelectorAll('button'))
+
+      const fromButtons = Array.from(section.querySelectorAll('button'))
         .filter((button) => isVisible(button))
         .map((button) => normalize(button.textContent))
         .filter(Boolean);
+
+      if (fromButtons.length > 0) return fromButtons;
+
+      // Live site renders languages as grid cells (div/span), not buttons.
+      const labels = new Set();
+      section.querySelectorAll('div, span, li').forEach((el) => {
+        if (!isVisible(el)) return;
+        const text = normalize(el.textContent);
+        if (!text || text.length > 48 || text.includes('Language Regions')) return;
+        if (/^(Loading|See the full)/i.test(text)) return;
+        if (el.children.length > 2) return;
+        labels.add(text);
+      });
+      return [...labels];
     });
   }
 
@@ -280,6 +295,76 @@ export class HomepagePage extends BasePage {
    * Opens the drawer on small viewports first. Reloads once so Next.js App Router
    * navigation leaves inputs interactive (otherwise submit may never POST).
    */
+  /** Custom SLMs carousel step labels (live homepage, 01–04). */
+  static customSlmsCarouselSteps() {
+    return [
+      { step: '01 / 04', headingPattern: /Small, sharp/i },
+      { step: '02 / 04', headingPattern: /Trained on what/i },
+      { step: '03 / 04', headingPattern: /One layer in a/i },
+      { step: '04 / 04', headingPattern: /Built to run/i },
+    ];
+  }
+
+  async scrollToCustomSlmsSection() {
+    const section = this.page.getByRole('heading', { name: /Custom Built/i }).first();
+    await section.scrollIntoViewIfNeeded();
+    await section.waitFor({ state: 'visible', timeout: pageReadyTimeout() });
+  }
+
+  async clickCustomSlmsCarouselStep(stepLabel) {
+    const tab = this.page.getByText(stepLabel, { exact: false }).first();
+    await tab.waitFor({ state: 'visible', timeout: pageReadyTimeout() });
+    await tab.click();
+    await this.page.waitForTimeout(600);
+  }
+
+  async getVisibleCustomSlmsHeadingTexts() {
+    return this.page.evaluate(() => {
+      const normalize = (s) => (s || '').replace(/\s+/g, ' ').trim();
+      return Array.from(document.querySelectorAll('h2, h3'))
+        .filter((el) => {
+          const r = el.getBoundingClientRect();
+          return r.width > 0 && r.height > 0 && r.top < window.innerHeight && r.bottom > 0;
+        })
+        .map((el) => normalize(el.textContent))
+        .filter(Boolean);
+    });
+  }
+
+  async collectNavAndFooterHrefs() {
+    return this.page.evaluate(() => {
+      const hrefs = new Set();
+      document.querySelectorAll('nav a[href], footer a[href]').forEach((a) => {
+        const h = a.getAttribute('href');
+        if (h) hrefs.add(h);
+      });
+      return [...hrefs];
+    });
+  }
+
+  async collectFooterHrefs() {
+    return this.page.evaluate(() => {
+      const hrefs = new Set();
+      const footers = document.querySelectorAll('footer');
+      const footer = footers[footers.length - 1];
+      if (!footer) return [];
+      footer.querySelectorAll('a[href]').forEach((a) => {
+        const h = a.getAttribute('href');
+        if (h) hrefs.add(h);
+      });
+      return [...hrefs];
+    });
+  }
+
+  async getHomepageSectionHeadings() {
+    return this.page.evaluate(() => {
+      const normalize = (s) => (s || '').replace(/\s+/g, ' ').trim();
+      return Array.from(document.querySelectorAll('h1, h2'))
+        .map((el) => normalize(el.textContent))
+        .filter(Boolean);
+    });
+  }
+
   async navigateToContactViaContactSalesLink({ timeout = pageReadyTimeout() } = {}) {
     const nav = this.page.locator('nav');
     const width = this.page.viewportSize()?.width ?? 1920;

@@ -114,6 +114,14 @@ export const pageRegistry = [
   {
     moduleKey: 'models',
     moduleLabel: 'Models',
+    pageLabel: 'Translation Models (Vāk)',
+    slug: 'vak',
+    path: '/vak',
+    status: 'active',
+  },
+  {
+    moduleKey: 'models',
+    moduleLabel: 'Models',
     pageLabel: 'Language Models',
     slug: 'language-models',
     path: '/language-models',
@@ -189,7 +197,15 @@ export const pageRegistry = [
     pageLabel: 'News & Media',
     slug: 'news-media',
     path: '/media',
-    status: 'coming-soon',
+    status: 'active',
+  },
+  {
+    moduleKey: 'resources',
+    moduleLabel: 'Resources',
+    pageLabel: 'Research',
+    slug: 'research',
+    path: '/research',
+    status: 'active',
   },
   {
     moduleKey: 'resources',
@@ -221,7 +237,7 @@ export const pageRegistry = [
     pageLabel: 'Documentation',
     slug: 'documentation',
     path: '/documentation/batch-transcriptions/quickstart',
-    status: 'coming-soon',
+    status: 'active',
   },
   {
     moduleKey: 'about',
@@ -229,7 +245,7 @@ export const pageRegistry = [
     pageLabel: 'About Us',
     slug: 'about-us',
     path: '/about',
-    status: 'coming-soon',
+    status: 'active',
   },
   {
     moduleKey: 'playground',

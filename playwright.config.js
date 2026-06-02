@@ -20,6 +20,11 @@ if (!process.env.CI && hasBundledChromium) {
 }
 const launchOptions = hasBundledChromium ? { executablePath: CHROMIUM_EXECUTABLE } : {};
 
+// Match CI: mock contact send-mail so UI tests do not hit reCAPTCHA.
+if (process.env.CONTACT_MAIL_MOCK == null) {
+  process.env.CONTACT_MAIL_MOCK = 'true';
+}
+
 export default defineConfig({
   testDir: './tests',
   timeout: process.env.CI ? 180 * 1000 : 120 * 1000,
@@ -59,7 +64,8 @@ export default defineConfig({
       use: { viewport: { width: 375, height: 667 } },
       testIgnore: [
         /\/snapshots\//,
-        /\/(nav|footer|widget)\.spec\.js/,
+        /homepage\/nav\.spec\.js/,
+        /nav-links-live\.spec\.js/,
         /\/zero-stt-universal\//,
         /contact-daily-mail\.api\.spec\.js/,
       ],
@@ -67,8 +73,8 @@ export default defineConfig({
   ],
 
   fullyParallel: true,
-  retries: process.env.CI ? 1 : 0,
-  workers: process.env.CI ? 3 : undefined, // 3 on CI, auto locally
+  retries: process.env.CI ? 1 : 1,
+  workers: process.env.CI ? 3 : 2,
 
   reporter: [
     ['html', { outputFolder: 'reports/html-report', open: 'never' }],

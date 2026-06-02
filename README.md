@@ -12,6 +12,11 @@ Google Sheets reporting and a generated dashboard.
 - `dashboard/` Generated report dashboard
 - `requirements/` Deployment and automation guides
 
+## Coverage (live site)
+- **28 active pages** in `test-data/page-registry.js` (desktop + mobile design compliance each)
+- **New routes:** `/vak`, `/research`, `/about`, `/media`, `/documentation/batch-transcriptions/quickstart`
+- **Homepage actions:** Custom SLMs carousel, major sections, language regions, hero/footer CTAs, nav/footer link health, Vāk demo iframe
+
 ## Common Commands
 - Run all tests: `npm test`
 - Run one module: `npx playwright test tests/modules/<module>`

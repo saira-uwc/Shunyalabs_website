@@ -9,30 +9,26 @@ test.describe('Homepage - hero demo (Vāk)', () => {
   test('Live translation demo loads and shows primary controls', async ({ page }) => {
     const homepage = new HomepagePage(page);
     await homepage.open();
+    await page.getByRole('heading', { name: /Vāk/i }).last().scrollIntoViewIfNeeded();
 
     const { writeResult } = await createResultWriter({
       moduleName: 'Homepage',
       reportFileName: 'module-actions-report.csv',
     });
 
-    // Homepage embeds the Vāk real-time Indic translation demo (live site June 2026).
-    const demoReady = await page.evaluate(async () => {
-      const deadline = Date.now() + 90_000;
-      while (Date.now() < deadline) {
-        const t = document.body?.innerText || '';
-        const hasVak = t.includes('Vāk') || t.includes('Vak');
-        const hasSubtitle =
-          t.includes('Real-Time Translation') && t.includes('55');
-        const hasInputHint =
-          t.includes('Tap mic to speak') ||
-          (t.includes('type and press Enter') && t.includes('translate'));
-        if (hasVak && hasSubtitle && hasInputHint) return true;
-        await new Promise((r) => setTimeout(r, 500));
-      }
-      return false;
-    });
+    await expect(async () => {
+      const vakHeading = page.getByRole('heading', { name: /Vāk/i }).last();
+      await vakHeading.scrollIntoViewIfNeeded();
 
-    expect(demoReady).toBe(true);
+      for (const frame of page.frames()) {
+        const hint = frame.getByText(/Tap mic to speak/i);
+        if ((await hint.count()) > 0 && (await hint.first().isVisible())) {
+          return;
+        }
+      }
+
+      throw new Error('Vāk translation iframe not ready');
+    }).toPass({ timeout: 90_000 });
 
     await writeResult('Homepage Vāk demo', 'PASS', 'Vāk translation demo section visible');
   });

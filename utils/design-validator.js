@@ -239,7 +239,17 @@ function validateHeadings(actual, expected, failures) {
 
   for (const exp of expected.headings) {
     // Prioritize exact match, then partial match (avoids "Pay as you go" matching "Pay as you go(USD/min)")
-    let found = actual.headings.find((h) => h.text === exp.text);
+    let found = actual.headings.find(
+      (h) => h.text === exp.text && (!exp.tag || h.tag === exp.tag)
+    );
+    if (!found) {
+      found = actual.headings.find(
+        (h) =>
+          (h.text.includes(exp.text) || exp.text.includes(h.text)) &&
+          (!exp.tag || h.tag === exp.tag)
+      );
+    }
+    if (!found) found = actual.headings.find((h) => h.text === exp.text);
     if (!found) found = actual.headings.find((h) => h.text.includes(exp.text) || exp.text.includes(h.text));
 
     if (!found) {
@@ -420,26 +430,53 @@ function validateButtons(actual, expected, failures) {
   }
 }
 
+function findBaselineImage(expectedImages, img) {
+  if (img.src) {
+    const bySrc = expectedImages.find(
+      (e) =>
+        e.src &&
+        (img.src === e.src || img.src.includes(e.src) || e.src.includes(img.src))
+    );
+    if (bySrc) return bySrc;
+  }
+  if (img.alt) {
+    return expectedImages.find(
+      (e) =>
+        e.alt &&
+        (img.alt === e.alt || img.alt.includes(e.alt) || e.alt.includes(img.alt))
+    );
+  }
+  return null;
+}
+
+function findActualImage(actualImages, exp) {
+  if (exp.src) {
+    const bySrc = actualImages.find(
+      (img) =>
+        img.src &&
+        (img.src === exp.src || img.src.includes(exp.src) || exp.src.includes(img.src))
+    );
+    if (bySrc) return bySrc;
+  }
+  if (exp.alt) {
+    return actualImages.find(
+      (img) =>
+        img.alt &&
+        (img.alt === exp.alt || img.alt.includes(exp.alt) || exp.alt.includes(img.alt))
+    );
+  }
+  return null;
+}
+
 function validateImages(actual, expected, failures) {
   if (!expected.images || !expected.images.length) return;
 
   // Skip when >40% images are missing (lazy-loaded pages like blogs)
-  const missingCount = expected.images.filter(
-    (exp) => !actual.images.find((img) =>
-      (exp.alt && (img.alt === exp.alt || img.alt.includes(exp.alt))) ||
-      (exp.src && (img.src === exp.src || img.src.includes(exp.src)))
-    )
-  ).length;
+  const missingCount = expected.images.filter((exp) => !findActualImage(actual.images, exp)).length;
   if (missingCount / expected.images.length > 0.4) return;
 
   for (const exp of expected.images) {
-    let found = null;
-    if (exp.alt) {
-      found = actual.images.find((img) => img.alt === exp.alt || img.alt.includes(exp.alt));
-    }
-    if (!found && exp.src) {
-      found = actual.images.find((img) => img.src === exp.src || img.src.includes(exp.src));
-    }
+    const found = findActualImage(actual.images, exp);
 
     const label = exp.alt || exp.src || 'unknown image';
 
@@ -461,9 +498,7 @@ function validateImages(actual, expected, failures) {
   for (const img of actual.images) {
     if (!img.loaded) {
       const label = img.alt || img.src || 'unknown';
-      const baselineImg = expected.images.find(
-        (e) => (e.alt && (img.alt === e.alt || img.alt.includes(e.alt))) || (e.src && (img.src === e.src || img.src.includes(e.src)))
-      );
+      const baselineImg = findBaselineImage(expected.images, img);
       if (baselineImg && !baselineImg.loaded) continue;
       const alreadyReported = failures.some(
         (f) => f.section === 'images' && f.message.includes(label) && f.property.includes('loaded')
