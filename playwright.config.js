@@ -74,7 +74,7 @@ export default defineConfig({
 
   fullyParallel: true,
   retries: process.env.CI ? 1 : 1,
-  workers: process.env.CI ? 3 : 2,
+  workers: process.env.CI ? 2 : 2,
 
   reporter: [
     ['html', { outputFolder: 'reports/html-report', open: 'never' }],

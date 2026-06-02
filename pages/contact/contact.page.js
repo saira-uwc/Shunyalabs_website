@@ -1,3 +1,4 @@
+import { expect } from '@playwright/test';
 import { BasePage } from '../base.page.js';
 import { pageReadyTimeout } from '../../utils/page-readiness.js';
 
@@ -47,8 +48,12 @@ export class ContactPage extends BasePage {
     }
   }
 
-  submitLeadForm() {
-    return this.leadFormSubmitButton().click();
+  async submitLeadForm({ timeout = pageReadyTimeout() } = {}) {
+    const button = this.leadFormSubmitButton();
+    await button.scrollIntoViewIfNeeded({ timeout });
+    await button.waitFor({ state: 'visible', timeout });
+    await expect(button).toBeEnabled({ timeout });
+    await button.click();
   }
 
   /**

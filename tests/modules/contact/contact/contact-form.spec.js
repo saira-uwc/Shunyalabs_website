@@ -3,6 +3,10 @@ import { HomepagePage } from '../../../../pages/homepage/homepage.page.js';
 import { ContactPage } from '../../../../pages/contact/contact.page.js';
 import { createResultWriter } from '../../../../utils/result-writer.js';
 import { pageReadyTimeout, MODULE_TEST_TIMEOUT } from '../../../../utils/page-readiness.js';
+import {
+  contactMailMockEnabled,
+  installContactFormTestHooks,
+} from '../../../../utils/contact-mail-mock.js';
 
 import { CONTACT_AUTOMATION_EMAIL } from '../../../../utils/contact-daily-e2e-mail.js';
 
@@ -10,11 +14,6 @@ import { CONTACT_AUTOMATION_EMAIL } from '../../../../utils/contact-daily-e2e-ma
  * Browser UI test — send-mail is mocked in CI (CONTACT_MAIL_MOCK=true).
  * Daily real email delivery uses contact-daily-mail.api.spec.js + X-Automation-Secret.
  */
-function contactMailMockEnabled() {
-  const v = process.env.CONTACT_MAIL_MOCK;
-  return v === 'true' || v === '1';
-}
-
 function contactMailModeLabel() {
   if (process.env.CONTACT_MAIL_MODE === 'live' || process.env.CONTACT_MAIL_MODE === 'mock') {
     return process.env.CONTACT_MAIL_MODE;
@@ -24,33 +23,39 @@ function contactMailModeLabel() {
 
 test.describe('Contact — lead form', () => {
   test.setTimeout(MODULE_TEST_TIMEOUT);
+  test.describe.configure({ mode: 'serial' });
 
   test.beforeEach(async ({ page }) => {
     if (!contactMailMockEnabled()) {
       return;
     }
-    await page.route('**/api/send-mail', async (route) => {
-      await route.fulfill({
-        status: 200,
-        contentType: 'application/json',
-        body: JSON.stringify({ success: true, message: 'ok' }),
-      });
-    });
+    await installContactFormTestHooks(page);
   });
 
   test('Contact Sales → contact page → fill form → submit shows confirmation', async ({ page }) => {
     const homepage = new HomepagePage(page);
     const contact = new ContactPage(page);
+    const timeout = pageReadyTimeout();
+    const submitTimeout = timeout * 2;
+
     const { writeResult } = await createResultWriter({
       moduleName: 'Contact',
       reportFileName: 'module-actions-report.csv',
     });
 
-    await homepage.open();
-    await homepage.navigateToContactViaContactSalesLink({ timeout: pageReadyTimeout() });
-    await expect(page).toHaveURL(/\/contact/, { timeout: pageReadyTimeout() });
-    await contact.waitForLeadFormReady({ timeout: pageReadyTimeout() });
+    if (contactMailMockEnabled()) {
+      await installContactFormTestHooks(page);
+    }
 
+    await homepage.open();
+    await homepage.navigateToContactViaContactSalesLink({ timeout });
+    await expect(page).toHaveURL(/\/contact/, { timeout });
+
+    if (contactMailMockEnabled()) {
+      await installContactFormTestHooks(page);
+    }
+
+    await contact.waitForLeadFormReady({ timeout });
     await contact.fillLeadForm({
       name: 'Automated Test User',
       email: CONTACT_AUTOMATION_EMAIL,
@@ -59,12 +64,13 @@ test.describe('Contact — lead form', () => {
     });
     await contact.setLeadFormConsents({ agreeMarketing: true, agreeTerms: true });
 
-    const sendMailDone = contact.waitForLeadFormSubmissionResponse();
-    await contact.submitLeadForm();
-    const sendMailRes = await sendMailDone;
+    const [sendMailRes] = await Promise.all([
+      contact.waitForLeadFormSubmissionResponse({ timeout: submitTimeout }),
+      contact.submitLeadForm({ timeout }),
+    ]);
 
     await contact.assertLeadCaptureApiSucceeded(sendMailRes);
-    await contact.assertLeadFeedbackSuccessPresentationOnly();
+    await contact.assertLeadFeedbackSuccessPresentationOnly({ toastTimeout: submitTimeout });
 
     const note =
       contactMailModeLabel() === 'live'

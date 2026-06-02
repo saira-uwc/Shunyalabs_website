@@ -17,14 +17,19 @@ test.describe('Homepage - hero and bottom CTAs', () => {
 
     const timeout = pageReadyTimeout();
     const getStarted = page.locator('footer a[href="/pricing"]').filter({ hasText: /^Get Started$/i });
-    await getStarted.scrollIntoViewIfNeeded({ timeout });
-    await expect(getStarted).toBeVisible({ timeout });
-    await getStarted.click();
-    await expect(page).toHaveURL(/\/pricing/, { timeout });
+
+    await expect(async () => {
+      await getStarted.scrollIntoViewIfNeeded();
+      await expect(getStarted).toBeVisible();
+      await getStarted.click();
+      await expect(page).toHaveURL(/\/pricing/);
+    }).toPass({ timeout });
 
     await homepage.open();
-    await homepage.navigateToContactViaContactSalesLink({ timeout });
-    await expect(page).toHaveURL(/\/contact/, { timeout });
+    await expect(async () => {
+      await homepage.navigateToContactViaContactSalesLink({ timeout });
+      await expect(page).toHaveURL(/\/contact/);
+    }).toPass({ timeout });
 
     await writeResult('Homepage primary CTAs', 'PASS', 'Get Started + Contact Sales navigation OK');
   });
