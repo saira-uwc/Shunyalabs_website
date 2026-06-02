@@ -12,126 +12,6 @@
 # Error details
 
 ```
-Error: [images] Image "Default Architecture" not found on page
-
-expect(received).toBeTruthy()
-
-Received: null
-```
-
-```
-Error: [images] Broken image: src="/_next/image?url=%2Fimages%2Ftrusted-by%2Fzet.webp&w=3840&q=75" alt="ZET"
-
-expect(received).toBeTruthy()
-
-Received: null
-```
-
-```
-Error: [images] Broken image: src="/_next/image?url=%2Fimages%2Ftrusted-by%2Fzet.webp&w=3840&q=75" alt=""
-
-expect(received).toBeTruthy()
-
-Received: null
-```
-
-```
-Error: [images] Broken image: src="/_next/image?url=%2Fimages%2Ftrusted-by%2Fzet.webp&w=3840&q=75" alt=""
-
-expect(received).toBeTruthy()
-
-Received: null
-```
-
-```
-Error: [images] Broken image: src="/_next/image?url=%2Fimages%2Ftrusted-by%2Fzet.webp&w=3840&q=75" alt=""
-
-expect(received).toBeTruthy()
-
-Received: null
-```
-
-```
-Error: [layout] Section "Custom Models for Modular Voice Agents" not found on page
-
-expect(received).toBeTruthy()
-
-Received: null
-```
-
-```
-Error: [layout] Section "Vāķ" not found on page
-
-expect(received).toBeTruthy()
-
-Received: null
-```
-
-```
-Error: [layout] Section "Understand Everyone. Speak to Anyone" not found on page
-
-expect(received).toBeTruthy()
-
-Received: null
-```
-
-```
-Error: [layout] Section "Industry-leading standards for enterprise security" not found on page
-
-expect(received).toBeTruthy()
-
-Received: null
-```
-
-```
-Error: [layout] Section "Section 6" not found on page
-
-expect(received).toBeTruthy()
-
-Received: null
-```
-
-```
-Error: [global] Footer background: expected rgb(0, 0, 0) but got rgb(255, 255, 255)
-
-expect(received).toBeTruthy()
-
-Received: null
-```
-
-```
-Error: [content] Footer item "One platform for speech in and speech out—secure by design, built to scale." not found
-
-expect(received).toBeTruthy()
-
-Received: null
-```
-
-```
-Error: [content] Page title: expected "Voice AI Platform for Developers & Enterprises | Shunya Labs" but got "Voice AI on Your Terms | Shunya Labs"
-
-expect(received).toBeTruthy()
-
-Received: null
-```
-
-```
-Error: [buttons] Button "Upload your file" not found on page
-
-expect(received).toBeTruthy()
-
-Received: null
-```
-
-```
-Error: [buttons] Button "Start Speaking" not found on page
-
-expect(received).toBeTruthy()
-
-Received: null
-```
-
-```
 Error: [console] 1 console error(s): [VAK] Token fetch error: TypeError: Failed to fetch
     at https://stage-widget.shunyalabs.ai/_next/static/chunks/app/page-ed8f7ca286679783.js?dpl=dpl_2f9Gd6RWfAu4YnKxmAZHmADTHqx1:1:749
     at c (https://stage-widget.shunyalabs.ai/_next/static/chunks/app/page-ed8f7ca286679783.js?dpl=dpl_2f9Gd6RWfAu4YnKxmAZHmADTHqx1:1:1147)
@@ -150,12 +30,12 @@ Received: null
 ```
 
 ```
-Error: 16 design compliance issue(s) found
+Error: 1 design compliance issue(s) found
 
 expect(received).toBe(expected) // Object.is equality
 
 Expected: 0
-Received: 16
+Received: 1
 ```
 
 # Page snapshot
@@ -968,8 +848,8 @@ Received: 16
         - paragraph [ref=e516]: Explore our comprehensive language coverage across the globe.
       - generic [ref=e517]:
         - generic:
-          - button "Show languages in Indic Languages" [ref=e519] [cursor=pointer]
-          - button "Show languages in Indic Languages" [ref=e520] [cursor=pointer]: Indic Languages
+          - button "Show languages in India" [ref=e519] [cursor=pointer]
+          - button "Show languages in India" [ref=e520] [cursor=pointer]: India
           - button "Show languages in Africa"
           - button "Show languages in Africa": Africa
           - button "Show languages in Europe"
@@ -1670,7 +1550,7 @@ Received: 16
   28 |       }
   29 | 
 > 30 |       expect(failures.length, `${failures.length} design compliance issue(s) found`).toBe(0);
-     |                                                                                      ^ Error: 16 design compliance issue(s) found
+     |                                                                                      ^ Error: 1 design compliance issue(s) found
   31 |     });
   32 |   });
   33 | }

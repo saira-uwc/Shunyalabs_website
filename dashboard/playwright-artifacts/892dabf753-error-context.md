@@ -12,7 +12,7 @@
 # Error details
 
 ```
-Error: [global] Footer background: expected rgb(0, 0, 0) but got rgb(255, 255, 255)
+Error: [images] Image "Meeting Transcription" failed to load (was previously loaded, now broken)
 
 expect(received).toBeTruthy()
 
@@ -20,36 +20,12 @@ Received: null
 ```
 
 ```
-Error: [content] Footer item "One platform for speech in and speech out—secure by design, built to scale." not found
-
-expect(received).toBeTruthy()
-
-Received: null
-```
-
-```
-Error: [content] Text content "One platform for speech in and speech out—secure by design, built to scale." not found on page
-
-expect(received).toBeTruthy()
-
-Received: null
-```
-
-```
-Error: [content] Text content "© 2026 Shunya Labs Inc. All rights reserved." not found on page
-
-expect(received).toBeTruthy()
-
-Received: null
-```
-
-```
-Error: 4 design compliance issue(s) found
+Error: 1 design compliance issue(s) found
 
 expect(received).toBe(expected) // Object.is equality
 
 Expected: 0
-Received: 4
+Received: 1
 ```
 
 # Page snapshot
@@ -416,7 +392,7 @@ Received: 4
   28 |       }
   29 | 
 > 30 |       expect(failures.length, `${failures.length} design compliance issue(s) found`).toBe(0);
-     |                                                                                      ^ Error: 4 design compliance issue(s) found
+     |                                                                                      ^ Error: 1 design compliance issue(s) found
   31 |     });
   32 |   });
   33 | }
