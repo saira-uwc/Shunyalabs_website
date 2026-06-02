@@ -773,671 +773,671 @@ Received: 1
         - generic:
           - button "Show languages in India" [ref=e385] [cursor=pointer]
           - button "Show languages in India" [ref=e386] [cursor=pointer]: India
-          - button "Show languages in Africa"
-          - button "Show languages in Africa": Africa
-          - button "Show languages in Europe"
-          - button "Show languages in Europe": Europe
-          - button "Show languages in East Asia" [ref=e387] [cursor=pointer]
-          - button "Show languages in East Asia" [ref=e388] [cursor=pointer]: East Asia
-          - button "Show languages in Japan" [ref=e389] [cursor=pointer]
-          - button "Show languages in Japan" [ref=e390] [cursor=pointer]: Japan
-          - button "Show languages in Southeast Asia" [ref=e391] [cursor=pointer]
-          - button "Show languages in Southeast Asia" [ref=e392] [cursor=pointer]: Southeast Asia
-          - button "Show languages in West Asia (Middle East & Caucasus)"
-          - button "Show languages in West Asia (Middle East & Caucasus)": West Asia (Middle East & Caucasus)
-          - button "Show languages in Americas" [ref=e393] [cursor=pointer]
-          - button "Show languages in Americas" [ref=e394] [cursor=pointer]: Americas
-          - button "Show languages in Pacific & Oceania" [ref=e395] [cursor=pointer]
-          - button "Show languages in Pacific & Oceania" [ref=e396] [cursor=pointer]: Pacific & Oceania
+          - button "Show languages in Africa" [ref=e387] [cursor=pointer]
+          - button "Show languages in Africa" [ref=e388] [cursor=pointer]: Africa
+          - button "Show languages in Europe" [ref=e389] [cursor=pointer]
+          - button "Show languages in Europe" [ref=e390] [cursor=pointer]: Europe
+          - button "Show languages in East Asia"
+          - button "Show languages in East Asia": East Asia
+          - button "Show languages in Japan"
+          - button "Show languages in Japan": Japan
+          - button "Show languages in Southeast Asia"
+          - button "Show languages in Southeast Asia": Southeast Asia
+          - button "Show languages in West Asia (Middle East & Caucasus)" [ref=e391] [cursor=pointer]
+          - button "Show languages in West Asia (Middle East & Caucasus)" [ref=e392] [cursor=pointer]: West Asia (Middle East & Caucasus)
+          - button "Show languages in Americas"
+          - button "Show languages in Americas": Americas
+          - button "Show languages in Pacific & Oceania"
+          - button "Show languages in Pacific & Oceania": Pacific & Oceania
         - generic: Loading world map…
-      - generic [ref=e398]:
-        - generic [ref=e400] [cursor=pointer]: Afar
-        - generic [ref=e402] [cursor=pointer]: Abkhaz
-        - generic [ref=e404] [cursor=pointer]: Avestan
-        - generic [ref=e406] [cursor=pointer]: Afrikaans
-        - generic [ref=e408] [cursor=pointer]: Akan
-        - generic [ref=e410] [cursor=pointer]: Amharic
-        - generic [ref=e412] [cursor=pointer]: Aragonese
-        - generic [ref=e414] [cursor=pointer]: Arabic
-        - generic [ref=e416] [cursor=pointer]: Assamese
-        - generic [ref=e418] [cursor=pointer]: Avaric
-        - generic [ref=e420] [cursor=pointer]: Aymara
-        - generic [ref=e422] [cursor=pointer]: Azerbaijani
-        - generic [ref=e424] [cursor=pointer]: Bashkir
-        - generic [ref=e426] [cursor=pointer]: Belarusian
-        - generic [ref=e428] [cursor=pointer]: Bulgarian
-        - generic [ref=e430] [cursor=pointer]: Bihari
-        - generic [ref=e432] [cursor=pointer]: Bislama
-        - generic [ref=e434] [cursor=pointer]: Bambara
-        - generic [ref=e436] [cursor=pointer]: Bengali
-        - generic [ref=e438] [cursor=pointer]: Tibetan
-        - generic [ref=e440] [cursor=pointer]: Breton
-        - generic [ref=e442] [cursor=pointer]: Bosnian
-        - generic [ref=e444] [cursor=pointer]: Catalan
-        - generic [ref=e446] [cursor=pointer]: Chechen
-        - generic [ref=e448] [cursor=pointer]: Chamorro
-        - generic [ref=e450] [cursor=pointer]: Corsican
-        - generic [ref=e452] [cursor=pointer]: Cree
-        - generic [ref=e454] [cursor=pointer]: Czech
-        - generic [ref=e456] [cursor=pointer]: Old Church Slavonic
-        - generic [ref=e458] [cursor=pointer]: Chuvash
-        - generic [ref=e460] [cursor=pointer]: Welsh
-        - generic [ref=e462] [cursor=pointer]: Danish
-        - generic [ref=e464] [cursor=pointer]: German
-        - generic [ref=e466] [cursor=pointer]: Divehi
-        - generic [ref=e468] [cursor=pointer]: Dzongkha
-        - generic [ref=e470] [cursor=pointer]: Ewe
-        - generic [ref=e472] [cursor=pointer]: Greek
-        - generic [ref=e474] [cursor=pointer]: English
-        - generic [ref=e476] [cursor=pointer]: Esperanto
-        - generic [ref=e478] [cursor=pointer]: Spanish
-        - generic [ref=e480] [cursor=pointer]: Estonian
-        - generic [ref=e482] [cursor=pointer]: Basque
-        - generic [ref=e484] [cursor=pointer]: Persian
-        - generic [ref=e486] [cursor=pointer]: Fula
-        - generic [ref=e488] [cursor=pointer]: Finnish
-        - generic [ref=e490] [cursor=pointer]: Fijian
-        - generic [ref=e492] [cursor=pointer]: Faroese
-        - generic [ref=e494] [cursor=pointer]: French
-        - generic [ref=e496] [cursor=pointer]: Western Frisian
-        - generic [ref=e498] [cursor=pointer]: Irish
-        - generic [ref=e500] [cursor=pointer]: Scottish Gaelic
-        - generic [ref=e502] [cursor=pointer]: Galician
-        - generic [ref=e504] [cursor=pointer]: Guaraní
-        - generic [ref=e506] [cursor=pointer]: Gujarati
-        - generic [ref=e508] [cursor=pointer]: Manx
-        - generic [ref=e510] [cursor=pointer]: Hausa
-        - generic [ref=e512] [cursor=pointer]: Hebrew
-        - generic [ref=e514] [cursor=pointer]: Hindi
-        - generic [ref=e516] [cursor=pointer]: Hiri Motu
-        - generic [ref=e518] [cursor=pointer]: Croatian
-        - generic [ref=e520] [cursor=pointer]: Haitian
-        - generic [ref=e522] [cursor=pointer]: Hungarian
-        - generic [ref=e524] [cursor=pointer]: Armenian
-        - generic [ref=e526] [cursor=pointer]: Herero
-        - generic [ref=e528] [cursor=pointer]: Interlingua
-        - generic [ref=e530] [cursor=pointer]: Indonesian
-        - generic [ref=e532] [cursor=pointer]: Interlingue
-        - generic [ref=e534] [cursor=pointer]: Igbo
-        - generic [ref=e536] [cursor=pointer]: Nuosu
-        - generic [ref=e538] [cursor=pointer]: Inupiaq
-        - generic [ref=e540] [cursor=pointer]: Ido
-        - generic [ref=e542] [cursor=pointer]: Icelandic
-        - generic [ref=e544] [cursor=pointer]: Italian
-        - generic [ref=e546] [cursor=pointer]: Inuktitut
-        - generic [ref=e548] [cursor=pointer]: Japanese
-        - generic [ref=e550] [cursor=pointer]: Javanese
-        - generic [ref=e552] [cursor=pointer]: Georgian
-        - generic [ref=e554] [cursor=pointer]: Kongo
-        - generic [ref=e556] [cursor=pointer]: Kikuyu
-        - generic [ref=e558] [cursor=pointer]: Kwanyama
-        - generic [ref=e560] [cursor=pointer]: Kazakh
-        - generic [ref=e562] [cursor=pointer]: Kalaallisut
-        - generic [ref=e564] [cursor=pointer]: Khmer
-        - generic [ref=e566] [cursor=pointer]: Kannada
-        - generic [ref=e568] [cursor=pointer]: Korean
-        - generic [ref=e570] [cursor=pointer]: Kanuri
-        - generic [ref=e572] [cursor=pointer]: Kashmiri
-        - generic [ref=e574] [cursor=pointer]: Kurdish
-        - generic [ref=e576] [cursor=pointer]: Komi
-        - generic [ref=e578] [cursor=pointer]: Cornish
-        - generic [ref=e580] [cursor=pointer]: Kyrgyz
-        - generic [ref=e582] [cursor=pointer]: Latin
-        - generic [ref=e584] [cursor=pointer]: Luxembourgish
-        - generic [ref=e586] [cursor=pointer]: Ganda
-        - generic [ref=e588] [cursor=pointer]: Limburgish
-        - generic [ref=e590] [cursor=pointer]: Lingala
-        - generic [ref=e592] [cursor=pointer]: Lao
-        - generic [ref=e594] [cursor=pointer]: Lithuanian
-        - generic [ref=e596] [cursor=pointer]: Luba-Katanga
-        - generic [ref=e598] [cursor=pointer]: Latvian
-        - generic [ref=e600] [cursor=pointer]: Malagasy
-        - generic [ref=e602] [cursor=pointer]: Marshallese
-        - generic [ref=e604] [cursor=pointer]: Māori
-        - generic [ref=e606] [cursor=pointer]: Macedonian
-        - generic [ref=e608] [cursor=pointer]: Malayalam
-        - generic [ref=e610] [cursor=pointer]: Mongolian
-        - generic [ref=e612] [cursor=pointer]: Marathi
-        - generic [ref=e614] [cursor=pointer]: Malay
-        - generic [ref=e616] [cursor=pointer]: Maltese
-        - generic [ref=e618] [cursor=pointer]: Burmese
-        - generic [ref=e620] [cursor=pointer]: Nauru
-        - generic [ref=e622] [cursor=pointer]: Norwegian Bokmål
-        - generic [ref=e624] [cursor=pointer]: Northern Ndebele
-        - generic [ref=e626] [cursor=pointer]: Nepali
-        - generic [ref=e628] [cursor=pointer]: Ndonga
-        - generic [ref=e630] [cursor=pointer]: Dutch
-        - generic [ref=e632] [cursor=pointer]: Norwegian Nynorsk
-        - generic [ref=e634] [cursor=pointer]: Norwegian
-        - generic [ref=e636] [cursor=pointer]: Southern Ndebele
-        - generic [ref=e638] [cursor=pointer]: Navajo
-        - generic [ref=e640] [cursor=pointer]: Chichewa
-        - generic [ref=e642] [cursor=pointer]: Occitan
-        - generic [ref=e644] [cursor=pointer]: Ojibwe
-        - generic [ref=e646] [cursor=pointer]: Oromo
-        - generic [ref=e648] [cursor=pointer]: Odia
-        - generic [ref=e650] [cursor=pointer]: Ossetian
-        - generic [ref=e652] [cursor=pointer]: Punjabi
-        - generic [ref=e654] [cursor=pointer]: Pāli
-        - generic [ref=e656] [cursor=pointer]: Polish
-        - generic [ref=e658] [cursor=pointer]: Pashto
-        - generic [ref=e660] [cursor=pointer]: Portuguese
-        - generic [ref=e662] [cursor=pointer]: Quechua
-        - generic [ref=e664] [cursor=pointer]: Romansh
-        - generic [ref=e666] [cursor=pointer]: Kirundi
-        - generic [ref=e668] [cursor=pointer]: Romanian
-        - generic [ref=e670] [cursor=pointer]: Russian
-        - generic [ref=e672] [cursor=pointer]: Kinyarwanda
-        - generic [ref=e674] [cursor=pointer]: Sanskrit
-        - generic [ref=e676] [cursor=pointer]: Sardinian
-        - generic [ref=e678] [cursor=pointer]: Sindhi
-        - generic [ref=e680] [cursor=pointer]: Northern Sami
-        - generic [ref=e682] [cursor=pointer]: Sango
-        - generic [ref=e684] [cursor=pointer]: Sinhala
-        - generic [ref=e686] [cursor=pointer]: Slovak
-        - generic [ref=e688] [cursor=pointer]: Slovenian
-        - generic [ref=e690] [cursor=pointer]: Samoan
-        - generic [ref=e692] [cursor=pointer]: Shona
-        - generic [ref=e694] [cursor=pointer]: Somali
-        - generic [ref=e696] [cursor=pointer]: Albanian
-        - generic [ref=e698] [cursor=pointer]: Serbian
-        - generic [ref=e700] [cursor=pointer]: Swati
-        - generic [ref=e702] [cursor=pointer]: Southern Sotho
-        - generic [ref=e704] [cursor=pointer]: Sundanese
-        - generic [ref=e706] [cursor=pointer]: Swedish
-        - generic [ref=e708] [cursor=pointer]: Swahili
-        - generic [ref=e710] [cursor=pointer]: Tamil
-        - generic [ref=e712] [cursor=pointer]: Telugu
-        - generic [ref=e714] [cursor=pointer]: Tajik
-        - generic [ref=e716] [cursor=pointer]: Thai
-        - generic [ref=e718] [cursor=pointer]: Tigrinya
-        - generic [ref=e720] [cursor=pointer]: Turkmen
-        - generic [ref=e722] [cursor=pointer]: Tagalog
-        - generic [ref=e724] [cursor=pointer]: Tswana
-        - generic [ref=e726] [cursor=pointer]: Tonga
-        - generic [ref=e728] [cursor=pointer]: Turkish
-        - generic [ref=e730] [cursor=pointer]: Tsonga
-        - generic [ref=e732] [cursor=pointer]: Tatar
-        - generic [ref=e734] [cursor=pointer]: Twi
-        - generic [ref=e736] [cursor=pointer]: Tahitian
-        - generic [ref=e738] [cursor=pointer]: Uyghur
-        - generic [ref=e740] [cursor=pointer]: Ukrainian
-        - generic [ref=e742] [cursor=pointer]: Urdu
-        - generic [ref=e744] [cursor=pointer]: Uzbek
-        - generic [ref=e746] [cursor=pointer]: Venda
-        - generic [ref=e748] [cursor=pointer]: Vietnamese
-        - generic [ref=e750] [cursor=pointer]: Volapük
-        - generic [ref=e752] [cursor=pointer]: Walloon
-        - generic [ref=e754] [cursor=pointer]: Wolof
-        - generic [ref=e756] [cursor=pointer]: Xhosa
-        - generic [ref=e758] [cursor=pointer]: Yiddish
-        - generic [ref=e760] [cursor=pointer]: Yoruba
-        - generic [ref=e762] [cursor=pointer]: Zhuang
-        - generic [ref=e764] [cursor=pointer]: Chinese
-        - generic [ref=e766] [cursor=pointer]: Zulu
-        - generic [ref=e768] [cursor=pointer]: Filipino
-        - generic [ref=e770] [cursor=pointer]: Mandarin Chinese
-        - generic [ref=e772] [cursor=pointer]: Yue Chinese
-        - generic [ref=e774] [cursor=pointer]: Najdi Arabic
-        - generic [ref=e776] [cursor=pointer]: Moroccan Arabic
-        - generic [ref=e778] [cursor=pointer]: Egyptian Arabic
-        - generic [ref=e780] [cursor=pointer]: Dari
-        - generic [ref=e782] [cursor=pointer]: Iranian Persian
-        - generic [ref=e784] [cursor=pointer]: Bhojpuri
-        - generic [ref=e786] [cursor=pointer]: Maithili
-        - generic [ref=e788] [cursor=pointer]: Fiji Hindi
-        - generic [ref=e790] [cursor=pointer]: Central Atlas Tamazight
-        - generic [ref=e792] [cursor=pointer]: Kabyle
-        - generic [ref=e794] [cursor=pointer]: Berber
-        - generic [ref=e796] [cursor=pointer]: Sardinian
-        - generic [ref=e798] [cursor=pointer]: Asturian
-        - generic [ref=e800] [cursor=pointer]: Ladino
-        - generic [ref=e802] [cursor=pointer]: Lombard
-        - generic [ref=e804] [cursor=pointer]: Neapolitan
-        - generic [ref=e806] [cursor=pointer]: Central Kurdish
-        - generic [ref=e808] [cursor=pointer]: Hindi
-        - generic [ref=e810] [cursor=pointer]: Bengali
-        - generic [ref=e812] [cursor=pointer]: Telugu
-        - generic [ref=e814] [cursor=pointer]: Marathi
-        - generic [ref=e816] [cursor=pointer]: Kannada
-        - generic [ref=e818] [cursor=pointer]: Tamil
-        - generic [ref=e820] [cursor=pointer]: Malayalam
-        - generic [ref=e822] [cursor=pointer]: Gujarati
-        - generic [ref=e824] [cursor=pointer]: Punjabi
-        - generic [ref=e826] [cursor=pointer]: Odia
-        - generic [ref=e828] [cursor=pointer]: Assamese
-        - generic [ref=e830] [cursor=pointer]: English
-        - generic [ref=e832] [cursor=pointer]: Urdu
-        - generic [ref=e834] [cursor=pointer]: Kashmiri
-        - generic [ref=e836] [cursor=pointer]: Nepali
-        - generic [ref=e838] [cursor=pointer]: Sindhi
-        - generic [ref=e840] [cursor=pointer]: Sanskrit
-        - generic [ref=e842] [cursor=pointer]: Maithili
-        - generic [ref=e844] [cursor=pointer]: Bhojpuri
-        - generic [ref=e846] [cursor=pointer]: Magahi
-        - generic [ref=e848] [cursor=pointer]: Chhattisgarhi
-        - generic [ref=e850] [cursor=pointer]: Rajasthani
-        - generic [ref=e852] [cursor=pointer]: Dogri
-        - generic [ref=e854] [cursor=pointer]: Konkani
-        - generic [ref=e856] [cursor=pointer]: Santali
-        - generic [ref=e858] [cursor=pointer]: Bodo
-        - generic [ref=e860] [cursor=pointer]: Manipuri
-        - generic [ref=e862] [cursor=pointer]: Garo
-        - generic [ref=e864] [cursor=pointer]: Marwari
-        - generic [ref=e866] [cursor=pointer]: Haryanvi
-        - generic [ref=e868] [cursor=pointer]: Awadhi
-        - generic [ref=e870] [cursor=pointer]: Braj
-        - generic [ref=e872] [cursor=pointer]: Garhwali
-        - generic [ref=e874] [cursor=pointer]: Lambadi
-        - generic [ref=e876] [cursor=pointer]: Bhili
-        - generic [ref=e878] [cursor=pointer]: Bagri
-        - generic [ref=e880] [cursor=pointer]: Kumaoni
-        - generic [ref=e882] [cursor=pointer]: Kangri
-        - generic [ref=e884] [cursor=pointer]: Bagheli
-        - generic [ref=e886] [cursor=pointer]: Nimadi
-        - generic [ref=e888] [cursor=pointer]: Rajbanshi
-        - generic [ref=e890] [cursor=pointer]: Marwari
-        - generic [ref=e892] [cursor=pointer]: Mewari
-        - generic [ref=e894] [cursor=pointer]: Wagdi
-        - generic [ref=e896] [cursor=pointer]: Hadoti
-        - generic [ref=e898] [cursor=pointer]: Goan Konkani
-        - generic [ref=e900] [cursor=pointer]: Ahirani
-        - generic [ref=e902] [cursor=pointer]: Surgujia
-        - generic [ref=e904] [cursor=pointer]: Kurukh
-        - generic [ref=e906] [cursor=pointer]: Mundari
-        - generic [ref=e908] [cursor=pointer]: Sambalpuri
-        - generic [ref=e910] [cursor=pointer]: Kutchi
-        - generic [ref=e912] [cursor=pointer]: Tulu
-        - generic [ref=e914] [cursor=pointer]: Kodava
-        - generic [ref=e916] [cursor=pointer]: Sadri
-        - generic [ref=e918] [cursor=pointer]: Afar
-        - generic [ref=e920] [cursor=pointer]: Abkhaz
-        - generic [ref=e922] [cursor=pointer]: Avestan
-        - generic [ref=e924] [cursor=pointer]: Afrikaans
-        - generic [ref=e926] [cursor=pointer]: Akan
-        - generic [ref=e928] [cursor=pointer]: Amharic
-        - generic [ref=e930] [cursor=pointer]: Aragonese
-        - generic [ref=e932] [cursor=pointer]: Arabic
-        - generic [ref=e934] [cursor=pointer]: Assamese
-        - generic [ref=e936] [cursor=pointer]: Avaric
-        - generic [ref=e938] [cursor=pointer]: Aymara
-        - generic [ref=e940] [cursor=pointer]: Azerbaijani
-        - generic [ref=e942] [cursor=pointer]: Bashkir
-        - generic [ref=e944] [cursor=pointer]: Belarusian
-        - generic [ref=e946] [cursor=pointer]: Bulgarian
-        - generic [ref=e948] [cursor=pointer]: Bihari
-        - generic [ref=e950] [cursor=pointer]: Bislama
-        - generic [ref=e952] [cursor=pointer]: Bambara
-        - generic [ref=e954] [cursor=pointer]: Bengali
-        - generic [ref=e956] [cursor=pointer]: Tibetan
-        - generic [ref=e958] [cursor=pointer]: Breton
-        - generic [ref=e960] [cursor=pointer]: Bosnian
-        - generic [ref=e962] [cursor=pointer]: Catalan
-        - generic [ref=e964] [cursor=pointer]: Chechen
-        - generic [ref=e966] [cursor=pointer]: Chamorro
-        - generic [ref=e968] [cursor=pointer]: Corsican
-        - generic [ref=e970] [cursor=pointer]: Cree
-        - generic [ref=e972] [cursor=pointer]: Czech
-        - generic [ref=e974] [cursor=pointer]: Old Church Slavonic
-        - generic [ref=e976] [cursor=pointer]: Chuvash
-        - generic [ref=e978] [cursor=pointer]: Welsh
-        - generic [ref=e980] [cursor=pointer]: Danish
-        - generic [ref=e982] [cursor=pointer]: German
-        - generic [ref=e984] [cursor=pointer]: Divehi
-        - generic [ref=e986] [cursor=pointer]: Dzongkha
-        - generic [ref=e988] [cursor=pointer]: Ewe
-        - generic [ref=e990] [cursor=pointer]: Greek
-        - generic [ref=e992] [cursor=pointer]: English
-        - generic [ref=e994] [cursor=pointer]: Esperanto
-        - generic [ref=e996] [cursor=pointer]: Spanish
-        - generic [ref=e998] [cursor=pointer]: Estonian
-        - generic [ref=e1000] [cursor=pointer]: Basque
-        - generic [ref=e1002] [cursor=pointer]: Persian
-        - generic [ref=e1004] [cursor=pointer]: Fula
-        - generic [ref=e1006] [cursor=pointer]: Finnish
-        - generic [ref=e1008] [cursor=pointer]: Fijian
-        - generic [ref=e1010] [cursor=pointer]: Faroese
-        - generic [ref=e1012] [cursor=pointer]: French
-        - generic [ref=e1014] [cursor=pointer]: Western Frisian
-        - generic [ref=e1016] [cursor=pointer]: Irish
-        - generic [ref=e1018] [cursor=pointer]: Scottish Gaelic
-        - generic [ref=e1020] [cursor=pointer]: Galician
-        - generic [ref=e1022] [cursor=pointer]: Guaraní
-        - generic [ref=e1024] [cursor=pointer]: Gujarati
-        - generic [ref=e1026] [cursor=pointer]: Manx
-        - generic [ref=e1028] [cursor=pointer]: Hausa
-        - generic [ref=e1030] [cursor=pointer]: Hebrew
-        - generic [ref=e1032] [cursor=pointer]: Hindi
-        - generic [ref=e1034] [cursor=pointer]: Hiri Motu
-        - generic [ref=e1036] [cursor=pointer]: Croatian
-        - generic [ref=e1038] [cursor=pointer]: Haitian
-        - generic [ref=e1040] [cursor=pointer]: Hungarian
-        - generic [ref=e1042] [cursor=pointer]: Armenian
-        - generic [ref=e1044] [cursor=pointer]: Herero
-        - generic [ref=e1046] [cursor=pointer]: Interlingua
-        - generic [ref=e1048] [cursor=pointer]: Indonesian
-        - generic [ref=e1050] [cursor=pointer]: Interlingue
-        - generic [ref=e1052] [cursor=pointer]: Igbo
-        - generic [ref=e1054] [cursor=pointer]: Nuosu
-        - generic [ref=e1056] [cursor=pointer]: Inupiaq
-        - generic [ref=e1058] [cursor=pointer]: Ido
-        - generic [ref=e1060] [cursor=pointer]: Icelandic
-        - generic [ref=e1062] [cursor=pointer]: Italian
-        - generic [ref=e1064] [cursor=pointer]: Inuktitut
-        - generic [ref=e1066] [cursor=pointer]: Japanese
-        - generic [ref=e1068] [cursor=pointer]: Javanese
-        - generic [ref=e1070] [cursor=pointer]: Georgian
-        - generic [ref=e1072] [cursor=pointer]: Kongo
-        - generic [ref=e1074] [cursor=pointer]: Kikuyu
-        - generic [ref=e1076] [cursor=pointer]: Kwanyama
-        - generic [ref=e1078] [cursor=pointer]: Kazakh
-        - generic [ref=e1080] [cursor=pointer]: Kalaallisut
-        - generic [ref=e1082] [cursor=pointer]: Khmer
-        - generic [ref=e1084] [cursor=pointer]: Kannada
-        - generic [ref=e1086] [cursor=pointer]: Korean
-        - generic [ref=e1088] [cursor=pointer]: Kanuri
-        - generic [ref=e1090] [cursor=pointer]: Kashmiri
-        - generic [ref=e1092] [cursor=pointer]: Kurdish
-        - generic [ref=e1094] [cursor=pointer]: Komi
-        - generic [ref=e1096] [cursor=pointer]: Cornish
-        - generic [ref=e1098] [cursor=pointer]: Kyrgyz
-        - generic [ref=e1100] [cursor=pointer]: Latin
-        - generic [ref=e1102] [cursor=pointer]: Luxembourgish
-        - generic [ref=e1104] [cursor=pointer]: Ganda
-        - generic [ref=e1106] [cursor=pointer]: Limburgish
-        - generic [ref=e1108] [cursor=pointer]: Lingala
-        - generic [ref=e1110] [cursor=pointer]: Lao
-        - generic [ref=e1112] [cursor=pointer]: Lithuanian
-        - generic [ref=e1114] [cursor=pointer]: Luba-Katanga
-        - generic [ref=e1116] [cursor=pointer]: Latvian
-        - generic [ref=e1118] [cursor=pointer]: Malagasy
-        - generic [ref=e1120] [cursor=pointer]: Marshallese
-        - generic [ref=e1122] [cursor=pointer]: Māori
-        - generic [ref=e1124] [cursor=pointer]: Macedonian
-        - generic [ref=e1126] [cursor=pointer]: Malayalam
-        - generic [ref=e1128] [cursor=pointer]: Mongolian
-        - generic [ref=e1130] [cursor=pointer]: Marathi
-        - generic [ref=e1132] [cursor=pointer]: Malay
-        - generic [ref=e1134] [cursor=pointer]: Maltese
-        - generic [ref=e1136] [cursor=pointer]: Burmese
-        - generic [ref=e1138] [cursor=pointer]: Nauru
-        - generic [ref=e1140] [cursor=pointer]: Norwegian Bokmål
-        - generic [ref=e1142] [cursor=pointer]: Northern Ndebele
-        - generic [ref=e1144] [cursor=pointer]: Nepali
-        - generic [ref=e1146] [cursor=pointer]: Ndonga
-        - generic [ref=e1148] [cursor=pointer]: Dutch
-        - generic [ref=e1150] [cursor=pointer]: Norwegian Nynorsk
-        - generic [ref=e1152] [cursor=pointer]: Norwegian
-        - generic [ref=e1154] [cursor=pointer]: Southern Ndebele
-        - generic [ref=e1156] [cursor=pointer]: Navajo
-        - generic [ref=e1158] [cursor=pointer]: Chichewa
-        - generic [ref=e1160] [cursor=pointer]: Occitan
-        - generic [ref=e1162] [cursor=pointer]: Ojibwe
-        - generic [ref=e1164] [cursor=pointer]: Oromo
-        - generic [ref=e1166] [cursor=pointer]: Odia
-        - generic [ref=e1168] [cursor=pointer]: Ossetian
-        - generic [ref=e1170] [cursor=pointer]: Punjabi
-        - generic [ref=e1172] [cursor=pointer]: Pāli
-        - generic [ref=e1174] [cursor=pointer]: Polish
-        - generic [ref=e1176] [cursor=pointer]: Pashto
-        - generic [ref=e1178] [cursor=pointer]: Portuguese
-        - generic [ref=e1180] [cursor=pointer]: Quechua
-        - generic [ref=e1182] [cursor=pointer]: Romansh
-        - generic [ref=e1184] [cursor=pointer]: Kirundi
-        - generic [ref=e1186] [cursor=pointer]: Romanian
-        - generic [ref=e1188] [cursor=pointer]: Russian
-        - generic [ref=e1190] [cursor=pointer]: Kinyarwanda
-        - generic [ref=e1192] [cursor=pointer]: Sanskrit
-        - generic [ref=e1194] [cursor=pointer]: Sardinian
-        - generic [ref=e1196] [cursor=pointer]: Sindhi
-        - generic [ref=e1198] [cursor=pointer]: Northern Sami
-        - generic [ref=e1200] [cursor=pointer]: Sango
-        - generic [ref=e1202] [cursor=pointer]: Sinhala
-        - generic [ref=e1204] [cursor=pointer]: Slovak
-        - generic [ref=e1206] [cursor=pointer]: Slovenian
-        - generic [ref=e1208] [cursor=pointer]: Samoan
-        - generic [ref=e1210] [cursor=pointer]: Shona
-        - generic [ref=e1212] [cursor=pointer]: Somali
-        - generic [ref=e1214] [cursor=pointer]: Albanian
-        - generic [ref=e1216] [cursor=pointer]: Serbian
-        - generic [ref=e1218] [cursor=pointer]: Swati
-        - generic [ref=e1220] [cursor=pointer]: Southern Sotho
-        - generic [ref=e1222] [cursor=pointer]: Sundanese
-        - generic [ref=e1224] [cursor=pointer]: Swedish
-        - generic [ref=e1226] [cursor=pointer]: Swahili
-        - generic [ref=e1228] [cursor=pointer]: Tamil
-        - generic [ref=e1230] [cursor=pointer]: Telugu
-        - generic [ref=e1232] [cursor=pointer]: Tajik
-        - generic [ref=e1234] [cursor=pointer]: Thai
-        - generic [ref=e1236] [cursor=pointer]: Tigrinya
-        - generic [ref=e1238] [cursor=pointer]: Turkmen
-        - generic [ref=e1240] [cursor=pointer]: Tagalog
-        - generic [ref=e1242] [cursor=pointer]: Tswana
-        - generic [ref=e1244] [cursor=pointer]: Tonga
-        - generic [ref=e1246] [cursor=pointer]: Turkish
-        - generic [ref=e1248] [cursor=pointer]: Tsonga
-        - generic [ref=e1250] [cursor=pointer]: Tatar
-        - generic [ref=e1252] [cursor=pointer]: Twi
-        - generic [ref=e1254] [cursor=pointer]: Tahitian
-        - generic [ref=e1256] [cursor=pointer]: Uyghur
-        - generic [ref=e1258] [cursor=pointer]: Ukrainian
-        - generic [ref=e1260] [cursor=pointer]: Urdu
-        - generic [ref=e1262] [cursor=pointer]: Uzbek
-        - generic [ref=e1264] [cursor=pointer]: Venda
-        - generic [ref=e1266] [cursor=pointer]: Vietnamese
-        - generic [ref=e1268] [cursor=pointer]: Volapük
-        - generic [ref=e1270] [cursor=pointer]: Walloon
-        - generic [ref=e1272] [cursor=pointer]: Wolof
-        - generic [ref=e1274] [cursor=pointer]: Xhosa
-        - generic [ref=e1276] [cursor=pointer]: Yiddish
-        - generic [ref=e1278] [cursor=pointer]: Yoruba
-        - generic [ref=e1280] [cursor=pointer]: Zhuang
-        - generic [ref=e1282] [cursor=pointer]: Chinese
-        - generic [ref=e1284] [cursor=pointer]: Zulu
-        - generic [ref=e1286] [cursor=pointer]: Filipino
-        - generic [ref=e1288] [cursor=pointer]: Mandarin Chinese
-        - generic [ref=e1290] [cursor=pointer]: Yue Chinese
-        - generic [ref=e1292] [cursor=pointer]: Najdi Arabic
-        - generic [ref=e1294] [cursor=pointer]: Moroccan Arabic
-        - generic [ref=e1296] [cursor=pointer]: Egyptian Arabic
-        - generic [ref=e1298] [cursor=pointer]: Dari
-        - generic [ref=e1300] [cursor=pointer]: Iranian Persian
-        - generic [ref=e1302] [cursor=pointer]: Bhojpuri
-        - generic [ref=e1304] [cursor=pointer]: Maithili
-        - generic [ref=e1306] [cursor=pointer]: Fiji Hindi
-        - generic [ref=e1308] [cursor=pointer]: Central Atlas Tamazight
-        - generic [ref=e1310] [cursor=pointer]: Kabyle
-        - generic [ref=e1312] [cursor=pointer]: Berber
-        - generic [ref=e1314] [cursor=pointer]: Sardinian
-        - generic [ref=e1316] [cursor=pointer]: Asturian
-        - generic [ref=e1318] [cursor=pointer]: Ladino
-        - generic [ref=e1320] [cursor=pointer]: Lombard
-        - generic [ref=e1322] [cursor=pointer]: Neapolitan
-        - generic [ref=e1324] [cursor=pointer]: Central Kurdish
-        - generic [ref=e1326] [cursor=pointer]: Hindi
-        - generic [ref=e1328] [cursor=pointer]: Bengali
-        - generic [ref=e1330] [cursor=pointer]: Telugu
-        - generic [ref=e1332] [cursor=pointer]: Marathi
-        - generic [ref=e1334] [cursor=pointer]: Kannada
-        - generic [ref=e1336] [cursor=pointer]: Tamil
-        - generic [ref=e1338] [cursor=pointer]: Malayalam
-        - generic [ref=e1340] [cursor=pointer]: Gujarati
-        - generic [ref=e1342] [cursor=pointer]: Punjabi
-        - generic [ref=e1344] [cursor=pointer]: Odia
-        - generic [ref=e1346] [cursor=pointer]: Assamese
-        - generic [ref=e1348] [cursor=pointer]: English
-        - generic [ref=e1350] [cursor=pointer]: Urdu
-        - generic [ref=e1352] [cursor=pointer]: Kashmiri
-        - generic [ref=e1354] [cursor=pointer]: Nepali
-        - generic [ref=e1356] [cursor=pointer]: Sindhi
-        - generic [ref=e1358] [cursor=pointer]: Sanskrit
-        - generic [ref=e1360] [cursor=pointer]: Maithili
-        - generic [ref=e1362] [cursor=pointer]: Bhojpuri
-        - generic [ref=e1364] [cursor=pointer]: Magahi
-        - generic [ref=e1366] [cursor=pointer]: Chhattisgarhi
-        - generic [ref=e1368] [cursor=pointer]: Rajasthani
-        - generic [ref=e1370] [cursor=pointer]: Dogri
-        - generic [ref=e1372] [cursor=pointer]: Konkani
-        - generic [ref=e1374] [cursor=pointer]: Santali
-        - generic [ref=e1376] [cursor=pointer]: Bodo
-        - generic [ref=e1378] [cursor=pointer]: Manipuri
-        - generic [ref=e1380] [cursor=pointer]: Garo
-        - generic [ref=e1382] [cursor=pointer]: Marwari
-        - generic [ref=e1384] [cursor=pointer]: Haryanvi
-        - generic [ref=e1386] [cursor=pointer]: Awadhi
-        - generic [ref=e1388] [cursor=pointer]: Braj
-        - generic [ref=e1390] [cursor=pointer]: Garhwali
-        - generic [ref=e1392] [cursor=pointer]: Lambadi
-        - generic [ref=e1394] [cursor=pointer]: Bhili
-        - generic [ref=e1396] [cursor=pointer]: Bagri
-        - generic [ref=e1398] [cursor=pointer]: Kumaoni
-        - generic [ref=e1400] [cursor=pointer]: Kangri
-        - generic [ref=e1402] [cursor=pointer]: Bagheli
-        - generic [ref=e1404] [cursor=pointer]: Nimadi
-        - generic [ref=e1406] [cursor=pointer]: Rajbanshi
-        - generic [ref=e1408] [cursor=pointer]: Marwari
-        - generic [ref=e1410] [cursor=pointer]: Mewari
-        - generic [ref=e1412] [cursor=pointer]: Wagdi
-        - generic [ref=e1414] [cursor=pointer]: Hadoti
-        - generic [ref=e1416] [cursor=pointer]: Goan Konkani
-        - generic [ref=e1418] [cursor=pointer]: Ahirani
-        - generic [ref=e1420] [cursor=pointer]: Surgujia
-        - generic [ref=e1422] [cursor=pointer]: Kurukh
-        - generic [ref=e1424] [cursor=pointer]: Mundari
-        - generic [ref=e1426] [cursor=pointer]: Sambalpuri
-        - generic [ref=e1428] [cursor=pointer]: Kutchi
-        - generic [ref=e1430] [cursor=pointer]: Tulu
-        - generic [ref=e1432] [cursor=pointer]: Kodava
-        - generic [ref=e1434] [cursor=pointer]: Sadri
-      - link "See the full list of languages supported by Shunya Labs →" [ref=e1436] [cursor=pointer]:
+      - generic [ref=e394]:
+        - generic [ref=e396] [cursor=pointer]: Afar
+        - generic [ref=e398] [cursor=pointer]: Abkhaz
+        - generic [ref=e400] [cursor=pointer]: Avestan
+        - generic [ref=e402] [cursor=pointer]: Afrikaans
+        - generic [ref=e404] [cursor=pointer]: Akan
+        - generic [ref=e406] [cursor=pointer]: Amharic
+        - generic [ref=e408] [cursor=pointer]: Aragonese
+        - generic [ref=e410] [cursor=pointer]: Arabic
+        - generic [ref=e412] [cursor=pointer]: Assamese
+        - generic [ref=e414] [cursor=pointer]: Avaric
+        - generic [ref=e416] [cursor=pointer]: Aymara
+        - generic [ref=e418] [cursor=pointer]: Azerbaijani
+        - generic [ref=e420] [cursor=pointer]: Bashkir
+        - generic [ref=e422] [cursor=pointer]: Belarusian
+        - generic [ref=e424] [cursor=pointer]: Bulgarian
+        - generic [ref=e426] [cursor=pointer]: Bihari
+        - generic [ref=e428] [cursor=pointer]: Bislama
+        - generic [ref=e430] [cursor=pointer]: Bambara
+        - generic [ref=e432] [cursor=pointer]: Bengali
+        - generic [ref=e434] [cursor=pointer]: Tibetan
+        - generic [ref=e436] [cursor=pointer]: Breton
+        - generic [ref=e438] [cursor=pointer]: Bosnian
+        - generic [ref=e440] [cursor=pointer]: Catalan
+        - generic [ref=e442] [cursor=pointer]: Chechen
+        - generic [ref=e444] [cursor=pointer]: Chamorro
+        - generic [ref=e446] [cursor=pointer]: Corsican
+        - generic [ref=e448] [cursor=pointer]: Cree
+        - generic [ref=e450] [cursor=pointer]: Czech
+        - generic [ref=e452] [cursor=pointer]: Old Church Slavonic
+        - generic [ref=e454] [cursor=pointer]: Chuvash
+        - generic [ref=e456] [cursor=pointer]: Welsh
+        - generic [ref=e458] [cursor=pointer]: Danish
+        - generic [ref=e460] [cursor=pointer]: German
+        - generic [ref=e462] [cursor=pointer]: Divehi
+        - generic [ref=e464] [cursor=pointer]: Dzongkha
+        - generic [ref=e466] [cursor=pointer]: Ewe
+        - generic [ref=e468] [cursor=pointer]: Greek
+        - generic [ref=e470] [cursor=pointer]: English
+        - generic [ref=e472] [cursor=pointer]: Esperanto
+        - generic [ref=e474] [cursor=pointer]: Spanish
+        - generic [ref=e476] [cursor=pointer]: Estonian
+        - generic [ref=e478] [cursor=pointer]: Basque
+        - generic [ref=e480] [cursor=pointer]: Persian
+        - generic [ref=e482] [cursor=pointer]: Fula
+        - generic [ref=e484] [cursor=pointer]: Finnish
+        - generic [ref=e486] [cursor=pointer]: Fijian
+        - generic [ref=e488] [cursor=pointer]: Faroese
+        - generic [ref=e490] [cursor=pointer]: French
+        - generic [ref=e492] [cursor=pointer]: Western Frisian
+        - generic [ref=e494] [cursor=pointer]: Irish
+        - generic [ref=e496] [cursor=pointer]: Scottish Gaelic
+        - generic [ref=e498] [cursor=pointer]: Galician
+        - generic [ref=e500] [cursor=pointer]: Guaraní
+        - generic [ref=e502] [cursor=pointer]: Gujarati
+        - generic [ref=e504] [cursor=pointer]: Manx
+        - generic [ref=e506] [cursor=pointer]: Hausa
+        - generic [ref=e508] [cursor=pointer]: Hebrew
+        - generic [ref=e510] [cursor=pointer]: Hindi
+        - generic [ref=e512] [cursor=pointer]: Hiri Motu
+        - generic [ref=e514] [cursor=pointer]: Croatian
+        - generic [ref=e516] [cursor=pointer]: Haitian
+        - generic [ref=e518] [cursor=pointer]: Hungarian
+        - generic [ref=e520] [cursor=pointer]: Armenian
+        - generic [ref=e522] [cursor=pointer]: Herero
+        - generic [ref=e524] [cursor=pointer]: Interlingua
+        - generic [ref=e526] [cursor=pointer]: Indonesian
+        - generic [ref=e528] [cursor=pointer]: Interlingue
+        - generic [ref=e530] [cursor=pointer]: Igbo
+        - generic [ref=e532] [cursor=pointer]: Nuosu
+        - generic [ref=e534] [cursor=pointer]: Inupiaq
+        - generic [ref=e536] [cursor=pointer]: Ido
+        - generic [ref=e538] [cursor=pointer]: Icelandic
+        - generic [ref=e540] [cursor=pointer]: Italian
+        - generic [ref=e542] [cursor=pointer]: Inuktitut
+        - generic [ref=e544] [cursor=pointer]: Japanese
+        - generic [ref=e546] [cursor=pointer]: Javanese
+        - generic [ref=e548] [cursor=pointer]: Georgian
+        - generic [ref=e550] [cursor=pointer]: Kongo
+        - generic [ref=e552] [cursor=pointer]: Kikuyu
+        - generic [ref=e554] [cursor=pointer]: Kwanyama
+        - generic [ref=e556] [cursor=pointer]: Kazakh
+        - generic [ref=e558] [cursor=pointer]: Kalaallisut
+        - generic [ref=e560] [cursor=pointer]: Khmer
+        - generic [ref=e562] [cursor=pointer]: Kannada
+        - generic [ref=e564] [cursor=pointer]: Korean
+        - generic [ref=e566] [cursor=pointer]: Kanuri
+        - generic [ref=e568] [cursor=pointer]: Kashmiri
+        - generic [ref=e570] [cursor=pointer]: Kurdish
+        - generic [ref=e572] [cursor=pointer]: Komi
+        - generic [ref=e574] [cursor=pointer]: Cornish
+        - generic [ref=e576] [cursor=pointer]: Kyrgyz
+        - generic [ref=e578] [cursor=pointer]: Latin
+        - generic [ref=e580] [cursor=pointer]: Luxembourgish
+        - generic [ref=e582] [cursor=pointer]: Ganda
+        - generic [ref=e584] [cursor=pointer]: Limburgish
+        - generic [ref=e586] [cursor=pointer]: Lingala
+        - generic [ref=e588] [cursor=pointer]: Lao
+        - generic [ref=e590] [cursor=pointer]: Lithuanian
+        - generic [ref=e592] [cursor=pointer]: Luba-Katanga
+        - generic [ref=e594] [cursor=pointer]: Latvian
+        - generic [ref=e596] [cursor=pointer]: Malagasy
+        - generic [ref=e598] [cursor=pointer]: Marshallese
+        - generic [ref=e600] [cursor=pointer]: Māori
+        - generic [ref=e602] [cursor=pointer]: Macedonian
+        - generic [ref=e604] [cursor=pointer]: Malayalam
+        - generic [ref=e606] [cursor=pointer]: Mongolian
+        - generic [ref=e608] [cursor=pointer]: Marathi
+        - generic [ref=e610] [cursor=pointer]: Malay
+        - generic [ref=e612] [cursor=pointer]: Maltese
+        - generic [ref=e614] [cursor=pointer]: Burmese
+        - generic [ref=e616] [cursor=pointer]: Nauru
+        - generic [ref=e618] [cursor=pointer]: Norwegian Bokmål
+        - generic [ref=e620] [cursor=pointer]: Northern Ndebele
+        - generic [ref=e622] [cursor=pointer]: Nepali
+        - generic [ref=e624] [cursor=pointer]: Ndonga
+        - generic [ref=e626] [cursor=pointer]: Dutch
+        - generic [ref=e628] [cursor=pointer]: Norwegian Nynorsk
+        - generic [ref=e630] [cursor=pointer]: Norwegian
+        - generic [ref=e632] [cursor=pointer]: Southern Ndebele
+        - generic [ref=e634] [cursor=pointer]: Navajo
+        - generic [ref=e636] [cursor=pointer]: Chichewa
+        - generic [ref=e638] [cursor=pointer]: Occitan
+        - generic [ref=e640] [cursor=pointer]: Ojibwe
+        - generic [ref=e642] [cursor=pointer]: Oromo
+        - generic [ref=e644] [cursor=pointer]: Odia
+        - generic [ref=e646] [cursor=pointer]: Ossetian
+        - generic [ref=e648] [cursor=pointer]: Punjabi
+        - generic [ref=e650] [cursor=pointer]: Pāli
+        - generic [ref=e652] [cursor=pointer]: Polish
+        - generic [ref=e654] [cursor=pointer]: Pashto
+        - generic [ref=e656] [cursor=pointer]: Portuguese
+        - generic [ref=e658] [cursor=pointer]: Quechua
+        - generic [ref=e660] [cursor=pointer]: Romansh
+        - generic [ref=e662] [cursor=pointer]: Kirundi
+        - generic [ref=e664] [cursor=pointer]: Romanian
+        - generic [ref=e666] [cursor=pointer]: Russian
+        - generic [ref=e668] [cursor=pointer]: Kinyarwanda
+        - generic [ref=e670] [cursor=pointer]: Sanskrit
+        - generic [ref=e672] [cursor=pointer]: Sardinian
+        - generic [ref=e674] [cursor=pointer]: Sindhi
+        - generic [ref=e676] [cursor=pointer]: Northern Sami
+        - generic [ref=e678] [cursor=pointer]: Sango
+        - generic [ref=e680] [cursor=pointer]: Sinhala
+        - generic [ref=e682] [cursor=pointer]: Slovak
+        - generic [ref=e684] [cursor=pointer]: Slovenian
+        - generic [ref=e686] [cursor=pointer]: Samoan
+        - generic [ref=e688] [cursor=pointer]: Shona
+        - generic [ref=e690] [cursor=pointer]: Somali
+        - generic [ref=e692] [cursor=pointer]: Albanian
+        - generic [ref=e694] [cursor=pointer]: Serbian
+        - generic [ref=e696] [cursor=pointer]: Swati
+        - generic [ref=e698] [cursor=pointer]: Southern Sotho
+        - generic [ref=e700] [cursor=pointer]: Sundanese
+        - generic [ref=e702] [cursor=pointer]: Swedish
+        - generic [ref=e704] [cursor=pointer]: Swahili
+        - generic [ref=e706] [cursor=pointer]: Tamil
+        - generic [ref=e708] [cursor=pointer]: Telugu
+        - generic [ref=e710] [cursor=pointer]: Tajik
+        - generic [ref=e712] [cursor=pointer]: Thai
+        - generic [ref=e714] [cursor=pointer]: Tigrinya
+        - generic [ref=e716] [cursor=pointer]: Turkmen
+        - generic [ref=e718] [cursor=pointer]: Tagalog
+        - generic [ref=e720] [cursor=pointer]: Tswana
+        - generic [ref=e722] [cursor=pointer]: Tonga
+        - generic [ref=e724] [cursor=pointer]: Turkish
+        - generic [ref=e726] [cursor=pointer]: Tsonga
+        - generic [ref=e728] [cursor=pointer]: Tatar
+        - generic [ref=e730] [cursor=pointer]: Twi
+        - generic [ref=e732] [cursor=pointer]: Tahitian
+        - generic [ref=e734] [cursor=pointer]: Uyghur
+        - generic [ref=e736] [cursor=pointer]: Ukrainian
+        - generic [ref=e738] [cursor=pointer]: Urdu
+        - generic [ref=e740] [cursor=pointer]: Uzbek
+        - generic [ref=e742] [cursor=pointer]: Venda
+        - generic [ref=e744] [cursor=pointer]: Vietnamese
+        - generic [ref=e746] [cursor=pointer]: Volapük
+        - generic [ref=e748] [cursor=pointer]: Walloon
+        - generic [ref=e750] [cursor=pointer]: Wolof
+        - generic [ref=e752] [cursor=pointer]: Xhosa
+        - generic [ref=e754] [cursor=pointer]: Yiddish
+        - generic [ref=e756] [cursor=pointer]: Yoruba
+        - generic [ref=e758] [cursor=pointer]: Zhuang
+        - generic [ref=e760] [cursor=pointer]: Chinese
+        - generic [ref=e762] [cursor=pointer]: Zulu
+        - generic [ref=e764] [cursor=pointer]: Filipino
+        - generic [ref=e766] [cursor=pointer]: Mandarin Chinese
+        - generic [ref=e768] [cursor=pointer]: Yue Chinese
+        - generic [ref=e770] [cursor=pointer]: Najdi Arabic
+        - generic [ref=e772] [cursor=pointer]: Moroccan Arabic
+        - generic [ref=e774] [cursor=pointer]: Egyptian Arabic
+        - generic [ref=e776] [cursor=pointer]: Dari
+        - generic [ref=e778] [cursor=pointer]: Iranian Persian
+        - generic [ref=e780] [cursor=pointer]: Bhojpuri
+        - generic [ref=e782] [cursor=pointer]: Maithili
+        - generic [ref=e784] [cursor=pointer]: Fiji Hindi
+        - generic [ref=e786] [cursor=pointer]: Central Atlas Tamazight
+        - generic [ref=e788] [cursor=pointer]: Kabyle
+        - generic [ref=e790] [cursor=pointer]: Berber
+        - generic [ref=e792] [cursor=pointer]: Sardinian
+        - generic [ref=e794] [cursor=pointer]: Asturian
+        - generic [ref=e796] [cursor=pointer]: Ladino
+        - generic [ref=e798] [cursor=pointer]: Lombard
+        - generic [ref=e800] [cursor=pointer]: Neapolitan
+        - generic [ref=e802] [cursor=pointer]: Central Kurdish
+        - generic [ref=e804] [cursor=pointer]: Hindi
+        - generic [ref=e806] [cursor=pointer]: Bengali
+        - generic [ref=e808] [cursor=pointer]: Telugu
+        - generic [ref=e810] [cursor=pointer]: Marathi
+        - generic [ref=e812] [cursor=pointer]: Kannada
+        - generic [ref=e814] [cursor=pointer]: Tamil
+        - generic [ref=e816] [cursor=pointer]: Malayalam
+        - generic [ref=e818] [cursor=pointer]: Gujarati
+        - generic [ref=e820] [cursor=pointer]: Punjabi
+        - generic [ref=e822] [cursor=pointer]: Odia
+        - generic [ref=e824] [cursor=pointer]: Assamese
+        - generic [ref=e826] [cursor=pointer]: English
+        - generic [ref=e828] [cursor=pointer]: Urdu
+        - generic [ref=e830] [cursor=pointer]: Kashmiri
+        - generic [ref=e832] [cursor=pointer]: Nepali
+        - generic [ref=e834] [cursor=pointer]: Sindhi
+        - generic [ref=e836] [cursor=pointer]: Sanskrit
+        - generic [ref=e838] [cursor=pointer]: Maithili
+        - generic [ref=e840] [cursor=pointer]: Bhojpuri
+        - generic [ref=e842] [cursor=pointer]: Magahi
+        - generic [ref=e844] [cursor=pointer]: Chhattisgarhi
+        - generic [ref=e846] [cursor=pointer]: Rajasthani
+        - generic [ref=e848] [cursor=pointer]: Dogri
+        - generic [ref=e850] [cursor=pointer]: Konkani
+        - generic [ref=e852] [cursor=pointer]: Santali
+        - generic [ref=e854] [cursor=pointer]: Bodo
+        - generic [ref=e856] [cursor=pointer]: Manipuri
+        - generic [ref=e858] [cursor=pointer]: Garo
+        - generic [ref=e860] [cursor=pointer]: Marwari
+        - generic [ref=e862] [cursor=pointer]: Haryanvi
+        - generic [ref=e864] [cursor=pointer]: Awadhi
+        - generic [ref=e866] [cursor=pointer]: Braj
+        - generic [ref=e868] [cursor=pointer]: Garhwali
+        - generic [ref=e870] [cursor=pointer]: Lambadi
+        - generic [ref=e872] [cursor=pointer]: Bhili
+        - generic [ref=e874] [cursor=pointer]: Bagri
+        - generic [ref=e876] [cursor=pointer]: Kumaoni
+        - generic [ref=e878] [cursor=pointer]: Kangri
+        - generic [ref=e880] [cursor=pointer]: Bagheli
+        - generic [ref=e882] [cursor=pointer]: Nimadi
+        - generic [ref=e884] [cursor=pointer]: Rajbanshi
+        - generic [ref=e886] [cursor=pointer]: Marwari
+        - generic [ref=e888] [cursor=pointer]: Mewari
+        - generic [ref=e890] [cursor=pointer]: Wagdi
+        - generic [ref=e892] [cursor=pointer]: Hadoti
+        - generic [ref=e894] [cursor=pointer]: Goan Konkani
+        - generic [ref=e896] [cursor=pointer]: Ahirani
+        - generic [ref=e898] [cursor=pointer]: Surgujia
+        - generic [ref=e900] [cursor=pointer]: Kurukh
+        - generic [ref=e902] [cursor=pointer]: Mundari
+        - generic [ref=e904] [cursor=pointer]: Sambalpuri
+        - generic [ref=e906] [cursor=pointer]: Kutchi
+        - generic [ref=e908] [cursor=pointer]: Tulu
+        - generic [ref=e910] [cursor=pointer]: Kodava
+        - generic [ref=e912] [cursor=pointer]: Sadri
+        - generic [ref=e914] [cursor=pointer]: Afar
+        - generic [ref=e916] [cursor=pointer]: Abkhaz
+        - generic [ref=e918] [cursor=pointer]: Avestan
+        - generic [ref=e920] [cursor=pointer]: Afrikaans
+        - generic [ref=e922] [cursor=pointer]: Akan
+        - generic [ref=e924] [cursor=pointer]: Amharic
+        - generic [ref=e926] [cursor=pointer]: Aragonese
+        - generic [ref=e928] [cursor=pointer]: Arabic
+        - generic [ref=e930] [cursor=pointer]: Assamese
+        - generic [ref=e932] [cursor=pointer]: Avaric
+        - generic [ref=e934] [cursor=pointer]: Aymara
+        - generic [ref=e936] [cursor=pointer]: Azerbaijani
+        - generic [ref=e938] [cursor=pointer]: Bashkir
+        - generic [ref=e940] [cursor=pointer]: Belarusian
+        - generic [ref=e942] [cursor=pointer]: Bulgarian
+        - generic [ref=e944] [cursor=pointer]: Bihari
+        - generic [ref=e946] [cursor=pointer]: Bislama
+        - generic [ref=e948] [cursor=pointer]: Bambara
+        - generic [ref=e950] [cursor=pointer]: Bengali
+        - generic [ref=e952] [cursor=pointer]: Tibetan
+        - generic [ref=e954] [cursor=pointer]: Breton
+        - generic [ref=e956] [cursor=pointer]: Bosnian
+        - generic [ref=e958] [cursor=pointer]: Catalan
+        - generic [ref=e960] [cursor=pointer]: Chechen
+        - generic [ref=e962] [cursor=pointer]: Chamorro
+        - generic [ref=e964] [cursor=pointer]: Corsican
+        - generic [ref=e966] [cursor=pointer]: Cree
+        - generic [ref=e968] [cursor=pointer]: Czech
+        - generic [ref=e970] [cursor=pointer]: Old Church Slavonic
+        - generic [ref=e972] [cursor=pointer]: Chuvash
+        - generic [ref=e974] [cursor=pointer]: Welsh
+        - generic [ref=e976] [cursor=pointer]: Danish
+        - generic [ref=e978] [cursor=pointer]: German
+        - generic [ref=e980] [cursor=pointer]: Divehi
+        - generic [ref=e982] [cursor=pointer]: Dzongkha
+        - generic [ref=e984] [cursor=pointer]: Ewe
+        - generic [ref=e986] [cursor=pointer]: Greek
+        - generic [ref=e988] [cursor=pointer]: English
+        - generic [ref=e990] [cursor=pointer]: Esperanto
+        - generic [ref=e992] [cursor=pointer]: Spanish
+        - generic [ref=e994] [cursor=pointer]: Estonian
+        - generic [ref=e996] [cursor=pointer]: Basque
+        - generic [ref=e998] [cursor=pointer]: Persian
+        - generic [ref=e1000] [cursor=pointer]: Fula
+        - generic [ref=e1002] [cursor=pointer]: Finnish
+        - generic [ref=e1004] [cursor=pointer]: Fijian
+        - generic [ref=e1006] [cursor=pointer]: Faroese
+        - generic [ref=e1008] [cursor=pointer]: French
+        - generic [ref=e1010] [cursor=pointer]: Western Frisian
+        - generic [ref=e1012] [cursor=pointer]: Irish
+        - generic [ref=e1014] [cursor=pointer]: Scottish Gaelic
+        - generic [ref=e1016] [cursor=pointer]: Galician
+        - generic [ref=e1018] [cursor=pointer]: Guaraní
+        - generic [ref=e1020] [cursor=pointer]: Gujarati
+        - generic [ref=e1022] [cursor=pointer]: Manx
+        - generic [ref=e1024] [cursor=pointer]: Hausa
+        - generic [ref=e1026] [cursor=pointer]: Hebrew
+        - generic [ref=e1028] [cursor=pointer]: Hindi
+        - generic [ref=e1030] [cursor=pointer]: Hiri Motu
+        - generic [ref=e1032] [cursor=pointer]: Croatian
+        - generic [ref=e1034] [cursor=pointer]: Haitian
+        - generic [ref=e1036] [cursor=pointer]: Hungarian
+        - generic [ref=e1038] [cursor=pointer]: Armenian
+        - generic [ref=e1040] [cursor=pointer]: Herero
+        - generic [ref=e1042] [cursor=pointer]: Interlingua
+        - generic [ref=e1044] [cursor=pointer]: Indonesian
+        - generic [ref=e1046] [cursor=pointer]: Interlingue
+        - generic [ref=e1048] [cursor=pointer]: Igbo
+        - generic [ref=e1050] [cursor=pointer]: Nuosu
+        - generic [ref=e1052] [cursor=pointer]: Inupiaq
+        - generic [ref=e1054] [cursor=pointer]: Ido
+        - generic [ref=e1056] [cursor=pointer]: Icelandic
+        - generic [ref=e1058] [cursor=pointer]: Italian
+        - generic [ref=e1060] [cursor=pointer]: Inuktitut
+        - generic [ref=e1062] [cursor=pointer]: Japanese
+        - generic [ref=e1064] [cursor=pointer]: Javanese
+        - generic [ref=e1066] [cursor=pointer]: Georgian
+        - generic [ref=e1068] [cursor=pointer]: Kongo
+        - generic [ref=e1070] [cursor=pointer]: Kikuyu
+        - generic [ref=e1072] [cursor=pointer]: Kwanyama
+        - generic [ref=e1074] [cursor=pointer]: Kazakh
+        - generic [ref=e1076] [cursor=pointer]: Kalaallisut
+        - generic [ref=e1078] [cursor=pointer]: Khmer
+        - generic [ref=e1080] [cursor=pointer]: Kannada
+        - generic [ref=e1082] [cursor=pointer]: Korean
+        - generic [ref=e1084] [cursor=pointer]: Kanuri
+        - generic [ref=e1086] [cursor=pointer]: Kashmiri
+        - generic [ref=e1088] [cursor=pointer]: Kurdish
+        - generic [ref=e1090] [cursor=pointer]: Komi
+        - generic [ref=e1092] [cursor=pointer]: Cornish
+        - generic [ref=e1094] [cursor=pointer]: Kyrgyz
+        - generic [ref=e1096] [cursor=pointer]: Latin
+        - generic [ref=e1098] [cursor=pointer]: Luxembourgish
+        - generic [ref=e1100] [cursor=pointer]: Ganda
+        - generic [ref=e1102] [cursor=pointer]: Limburgish
+        - generic [ref=e1104] [cursor=pointer]: Lingala
+        - generic [ref=e1106] [cursor=pointer]: Lao
+        - generic [ref=e1108] [cursor=pointer]: Lithuanian
+        - generic [ref=e1110] [cursor=pointer]: Luba-Katanga
+        - generic [ref=e1112] [cursor=pointer]: Latvian
+        - generic [ref=e1114] [cursor=pointer]: Malagasy
+        - generic [ref=e1116] [cursor=pointer]: Marshallese
+        - generic [ref=e1118] [cursor=pointer]: Māori
+        - generic [ref=e1120] [cursor=pointer]: Macedonian
+        - generic [ref=e1122] [cursor=pointer]: Malayalam
+        - generic [ref=e1124] [cursor=pointer]: Mongolian
+        - generic [ref=e1126] [cursor=pointer]: Marathi
+        - generic [ref=e1128] [cursor=pointer]: Malay
+        - generic [ref=e1130] [cursor=pointer]: Maltese
+        - generic [ref=e1132] [cursor=pointer]: Burmese
+        - generic [ref=e1134] [cursor=pointer]: Nauru
+        - generic [ref=e1136] [cursor=pointer]: Norwegian Bokmål
+        - generic [ref=e1138] [cursor=pointer]: Northern Ndebele
+        - generic [ref=e1140] [cursor=pointer]: Nepali
+        - generic [ref=e1142] [cursor=pointer]: Ndonga
+        - generic [ref=e1144] [cursor=pointer]: Dutch
+        - generic [ref=e1146] [cursor=pointer]: Norwegian Nynorsk
+        - generic [ref=e1148] [cursor=pointer]: Norwegian
+        - generic [ref=e1150] [cursor=pointer]: Southern Ndebele
+        - generic [ref=e1152] [cursor=pointer]: Navajo
+        - generic [ref=e1154] [cursor=pointer]: Chichewa
+        - generic [ref=e1156] [cursor=pointer]: Occitan
+        - generic [ref=e1158] [cursor=pointer]: Ojibwe
+        - generic [ref=e1160] [cursor=pointer]: Oromo
+        - generic [ref=e1162] [cursor=pointer]: Odia
+        - generic [ref=e1164] [cursor=pointer]: Ossetian
+        - generic [ref=e1166] [cursor=pointer]: Punjabi
+        - generic [ref=e1168] [cursor=pointer]: Pāli
+        - generic [ref=e1170] [cursor=pointer]: Polish
+        - generic [ref=e1172] [cursor=pointer]: Pashto
+        - generic [ref=e1174] [cursor=pointer]: Portuguese
+        - generic [ref=e1176] [cursor=pointer]: Quechua
+        - generic [ref=e1178] [cursor=pointer]: Romansh
+        - generic [ref=e1180] [cursor=pointer]: Kirundi
+        - generic [ref=e1182] [cursor=pointer]: Romanian
+        - generic [ref=e1184] [cursor=pointer]: Russian
+        - generic [ref=e1186] [cursor=pointer]: Kinyarwanda
+        - generic [ref=e1188] [cursor=pointer]: Sanskrit
+        - generic [ref=e1190] [cursor=pointer]: Sardinian
+        - generic [ref=e1192] [cursor=pointer]: Sindhi
+        - generic [ref=e1194] [cursor=pointer]: Northern Sami
+        - generic [ref=e1196] [cursor=pointer]: Sango
+        - generic [ref=e1198] [cursor=pointer]: Sinhala
+        - generic [ref=e1200] [cursor=pointer]: Slovak
+        - generic [ref=e1202] [cursor=pointer]: Slovenian
+        - generic [ref=e1204] [cursor=pointer]: Samoan
+        - generic [ref=e1206] [cursor=pointer]: Shona
+        - generic [ref=e1208] [cursor=pointer]: Somali
+        - generic [ref=e1210] [cursor=pointer]: Albanian
+        - generic [ref=e1212] [cursor=pointer]: Serbian
+        - generic [ref=e1214] [cursor=pointer]: Swati
+        - generic [ref=e1216] [cursor=pointer]: Southern Sotho
+        - generic [ref=e1218] [cursor=pointer]: Sundanese
+        - generic [ref=e1220] [cursor=pointer]: Swedish
+        - generic [ref=e1222] [cursor=pointer]: Swahili
+        - generic [ref=e1224] [cursor=pointer]: Tamil
+        - generic [ref=e1226] [cursor=pointer]: Telugu
+        - generic [ref=e1228] [cursor=pointer]: Tajik
+        - generic [ref=e1230] [cursor=pointer]: Thai
+        - generic [ref=e1232] [cursor=pointer]: Tigrinya
+        - generic [ref=e1234] [cursor=pointer]: Turkmen
+        - generic [ref=e1236] [cursor=pointer]: Tagalog
+        - generic [ref=e1238] [cursor=pointer]: Tswana
+        - generic [ref=e1240] [cursor=pointer]: Tonga
+        - generic [ref=e1242] [cursor=pointer]: Turkish
+        - generic [ref=e1244] [cursor=pointer]: Tsonga
+        - generic [ref=e1246] [cursor=pointer]: Tatar
+        - generic [ref=e1248] [cursor=pointer]: Twi
+        - generic [ref=e1250] [cursor=pointer]: Tahitian
+        - generic [ref=e1252] [cursor=pointer]: Uyghur
+        - generic [ref=e1254] [cursor=pointer]: Ukrainian
+        - generic [ref=e1256] [cursor=pointer]: Urdu
+        - generic [ref=e1258] [cursor=pointer]: Uzbek
+        - generic [ref=e1260] [cursor=pointer]: Venda
+        - generic [ref=e1262] [cursor=pointer]: Vietnamese
+        - generic [ref=e1264] [cursor=pointer]: Volapük
+        - generic [ref=e1266] [cursor=pointer]: Walloon
+        - generic [ref=e1268] [cursor=pointer]: Wolof
+        - generic [ref=e1270] [cursor=pointer]: Xhosa
+        - generic [ref=e1272] [cursor=pointer]: Yiddish
+        - generic [ref=e1274] [cursor=pointer]: Yoruba
+        - generic [ref=e1276] [cursor=pointer]: Zhuang
+        - generic [ref=e1278] [cursor=pointer]: Chinese
+        - generic [ref=e1280] [cursor=pointer]: Zulu
+        - generic [ref=e1282] [cursor=pointer]: Filipino
+        - generic [ref=e1284] [cursor=pointer]: Mandarin Chinese
+        - generic [ref=e1286] [cursor=pointer]: Yue Chinese
+        - generic [ref=e1288] [cursor=pointer]: Najdi Arabic
+        - generic [ref=e1290] [cursor=pointer]: Moroccan Arabic
+        - generic [ref=e1292] [cursor=pointer]: Egyptian Arabic
+        - generic [ref=e1294] [cursor=pointer]: Dari
+        - generic [ref=e1296] [cursor=pointer]: Iranian Persian
+        - generic [ref=e1298] [cursor=pointer]: Bhojpuri
+        - generic [ref=e1300] [cursor=pointer]: Maithili
+        - generic [ref=e1302] [cursor=pointer]: Fiji Hindi
+        - generic [ref=e1304] [cursor=pointer]: Central Atlas Tamazight
+        - generic [ref=e1306] [cursor=pointer]: Kabyle
+        - generic [ref=e1308] [cursor=pointer]: Berber
+        - generic [ref=e1310] [cursor=pointer]: Sardinian
+        - generic [ref=e1312] [cursor=pointer]: Asturian
+        - generic [ref=e1314] [cursor=pointer]: Ladino
+        - generic [ref=e1316] [cursor=pointer]: Lombard
+        - generic [ref=e1318] [cursor=pointer]: Neapolitan
+        - generic [ref=e1320] [cursor=pointer]: Central Kurdish
+        - generic [ref=e1322] [cursor=pointer]: Hindi
+        - generic [ref=e1324] [cursor=pointer]: Bengali
+        - generic [ref=e1326] [cursor=pointer]: Telugu
+        - generic [ref=e1328] [cursor=pointer]: Marathi
+        - generic [ref=e1330] [cursor=pointer]: Kannada
+        - generic [ref=e1332] [cursor=pointer]: Tamil
+        - generic [ref=e1334] [cursor=pointer]: Malayalam
+        - generic [ref=e1336] [cursor=pointer]: Gujarati
+        - generic [ref=e1338] [cursor=pointer]: Punjabi
+        - generic [ref=e1340] [cursor=pointer]: Odia
+        - generic [ref=e1342] [cursor=pointer]: Assamese
+        - generic [ref=e1344] [cursor=pointer]: English
+        - generic [ref=e1346] [cursor=pointer]: Urdu
+        - generic [ref=e1348] [cursor=pointer]: Kashmiri
+        - generic [ref=e1350] [cursor=pointer]: Nepali
+        - generic [ref=e1352] [cursor=pointer]: Sindhi
+        - generic [ref=e1354] [cursor=pointer]: Sanskrit
+        - generic [ref=e1356] [cursor=pointer]: Maithili
+        - generic [ref=e1358] [cursor=pointer]: Bhojpuri
+        - generic [ref=e1360] [cursor=pointer]: Magahi
+        - generic [ref=e1362] [cursor=pointer]: Chhattisgarhi
+        - generic [ref=e1364] [cursor=pointer]: Rajasthani
+        - generic [ref=e1366] [cursor=pointer]: Dogri
+        - generic [ref=e1368] [cursor=pointer]: Konkani
+        - generic [ref=e1370] [cursor=pointer]: Santali
+        - generic [ref=e1372] [cursor=pointer]: Bodo
+        - generic [ref=e1374] [cursor=pointer]: Manipuri
+        - generic [ref=e1376] [cursor=pointer]: Garo
+        - generic [ref=e1378] [cursor=pointer]: Marwari
+        - generic [ref=e1380] [cursor=pointer]: Haryanvi
+        - generic [ref=e1382] [cursor=pointer]: Awadhi
+        - generic [ref=e1384] [cursor=pointer]: Braj
+        - generic [ref=e1386] [cursor=pointer]: Garhwali
+        - generic [ref=e1388] [cursor=pointer]: Lambadi
+        - generic [ref=e1390] [cursor=pointer]: Bhili
+        - generic [ref=e1392] [cursor=pointer]: Bagri
+        - generic [ref=e1394] [cursor=pointer]: Kumaoni
+        - generic [ref=e1396] [cursor=pointer]: Kangri
+        - generic [ref=e1398] [cursor=pointer]: Bagheli
+        - generic [ref=e1400] [cursor=pointer]: Nimadi
+        - generic [ref=e1402] [cursor=pointer]: Rajbanshi
+        - generic [ref=e1404] [cursor=pointer]: Marwari
+        - generic [ref=e1406] [cursor=pointer]: Mewari
+        - generic [ref=e1408] [cursor=pointer]: Wagdi
+        - generic [ref=e1410] [cursor=pointer]: Hadoti
+        - generic [ref=e1412] [cursor=pointer]: Goan Konkani
+        - generic [ref=e1414] [cursor=pointer]: Ahirani
+        - generic [ref=e1416] [cursor=pointer]: Surgujia
+        - generic [ref=e1418] [cursor=pointer]: Kurukh
+        - generic [ref=e1420] [cursor=pointer]: Mundari
+        - generic [ref=e1422] [cursor=pointer]: Sambalpuri
+        - generic [ref=e1424] [cursor=pointer]: Kutchi
+        - generic [ref=e1426] [cursor=pointer]: Tulu
+        - generic [ref=e1428] [cursor=pointer]: Kodava
+        - generic [ref=e1430] [cursor=pointer]: Sadri
+      - link "See the full list of languages supported by Shunya Labs →" [ref=e1432] [cursor=pointer]:
         - /url: https://docs.shunyalabs.ai/models-languages/supported-languages
-    - contentinfo [ref=e1437]:
-      - generic [ref=e1438]:
-        - paragraph [ref=e1439]: The fastest way to add voice AI to your products
-        - paragraph [ref=e1440]: One platform for speech in and speech out-secure by design, built to scale.
-        - generic [ref=e1441]:
-          - link "Go to Pricing page" [ref=e1442] [cursor=pointer]:
+    - contentinfo [ref=e1433]:
+      - generic [ref=e1434]:
+        - paragraph [ref=e1435]: The fastest way to add voice AI to your products
+        - paragraph [ref=e1436]: One platform for speech in and speech out-secure by design, built to scale.
+        - generic [ref=e1437]:
+          - link "Go to Pricing page" [ref=e1438] [cursor=pointer]:
             - /url: /pricing
             - text: Get Started
-          - link "Contact Sales" [ref=e1443] [cursor=pointer]:
+          - link "Contact Sales" [ref=e1439] [cursor=pointer]:
             - /url: /contact
-    - contentinfo [ref=e1444]:
-      - generic [ref=e1445]:
-        - generic [ref=e1446]:
-          - img "Shunya Labs" [ref=e1447]
-          - paragraph [ref=e1448]: Shunya Labs, Inc.
-        - generic [ref=e1449]:
-          - paragraph [ref=e1450]: Product
-          - list [ref=e1451]:
-            - listitem [ref=e1452]:
-              - link "Overview" [ref=e1453] [cursor=pointer]:
+    - contentinfo [ref=e1440]:
+      - generic [ref=e1441]:
+        - generic [ref=e1442]:
+          - img "Shunya Labs" [ref=e1443]
+          - paragraph [ref=e1444]: Shunya Labs, Inc.
+        - generic [ref=e1445]:
+          - paragraph [ref=e1446]: Product
+          - list [ref=e1447]:
+            - listitem [ref=e1448]:
+              - link "Overview" [ref=e1449] [cursor=pointer]:
                 - /url: /overview
-            - listitem [ref=e1454]:
-              - link "Models" [ref=e1455] [cursor=pointer]:
+            - listitem [ref=e1450]:
+              - link "Models" [ref=e1451] [cursor=pointer]:
                 - /url: /models-page
-            - listitem [ref=e1456]:
-              - link "Voice Agents" [ref=e1457] [cursor=pointer]:
+            - listitem [ref=e1452]:
+              - link "Voice Agents" [ref=e1453] [cursor=pointer]:
                 - /url: /voice-agent
-            - listitem [ref=e1458]:
-              - link "Speech Intelligence" [ref=e1459] [cursor=pointer]:
+            - listitem [ref=e1454]:
+              - link "Speech Intelligence" [ref=e1455] [cursor=pointer]:
                 - /url: /speech-intelligence-page
-            - listitem [ref=e1460]:
-              - link "Audio Processing" [ref=e1461] [cursor=pointer]:
+            - listitem [ref=e1456]:
+              - link "Audio Processing" [ref=e1457] [cursor=pointer]:
                 - /url: /audio-processing
-            - listitem [ref=e1462]:
-              - link "Deployment" [ref=e1463] [cursor=pointer]:
+            - listitem [ref=e1458]:
+              - link "Deployment" [ref=e1459] [cursor=pointer]:
                 - /url: /deployment
-        - generic [ref=e1464]:
-          - paragraph [ref=e1465]: Models
-          - list [ref=e1466]:
-            - listitem [ref=e1467]:
-              - link "Language Models" [ref=e1468] [cursor=pointer]:
+        - generic [ref=e1460]:
+          - paragraph [ref=e1461]: Models
+          - list [ref=e1462]:
+            - listitem [ref=e1463]:
+              - link "Language Models" [ref=e1464] [cursor=pointer]:
                 - /url: /language-models
-            - listitem [ref=e1469]:
-              - link "Zero STT Indic" [ref=e1470] [cursor=pointer]:
+            - listitem [ref=e1465]:
+              - link "Zero STT Indic" [ref=e1466] [cursor=pointer]:
                 - /url: /zero-indic
-            - listitem [ref=e1471]:
-              - link "Zero STT Codeswitch" [ref=e1472] [cursor=pointer]:
+            - listitem [ref=e1467]:
+              - link "Zero STT Codeswitch" [ref=e1468] [cursor=pointer]:
                 - /url: /zero-code-switch
-            - listitem [ref=e1473]:
-              - link "Specialised Models" [ref=e1474] [cursor=pointer]:
+            - listitem [ref=e1469]:
+              - link "Specialised Models" [ref=e1470] [cursor=pointer]:
                 - /url: /domain-specialisation
-            - listitem [ref=e1475]:
-              - link "Zero STT Med" [ref=e1476] [cursor=pointer]:
+            - listitem [ref=e1471]:
+              - link "Zero STT Med" [ref=e1472] [cursor=pointer]:
                 - /url: /zero-med
-            - listitem [ref=e1477]:
-              - link "On Device Models" [ref=e1478] [cursor=pointer]:
+            - listitem [ref=e1473]:
+              - link "On Device Models" [ref=e1474] [cursor=pointer]:
                 - /url: /on-device-models
-        - generic [ref=e1479]:
-          - paragraph [ref=e1480]: Solutions
-          - list [ref=e1481]:
-            - listitem [ref=e1482]:
-              - link "Contact Centers" [ref=e1483] [cursor=pointer]:
+        - generic [ref=e1475]:
+          - paragraph [ref=e1476]: Solutions
+          - list [ref=e1477]:
+            - listitem [ref=e1478]:
+              - link "Contact Centers" [ref=e1479] [cursor=pointer]:
                 - /url: /contact-centers
-            - listitem [ref=e1484]:
-              - link "Media & Entertainment" [ref=e1485] [cursor=pointer]:
+            - listitem [ref=e1480]:
+              - link "Media & Entertainment" [ref=e1481] [cursor=pointer]:
                 - /url: /media-entertainment
-            - listitem [ref=e1486]:
-              - link "Healthcare" [ref=e1487] [cursor=pointer]:
+            - listitem [ref=e1482]:
+              - link "Healthcare" [ref=e1483] [cursor=pointer]:
                 - /url: /healthcare
-        - generic [ref=e1488]:
-          - paragraph [ref=e1489]: Resources
-          - list [ref=e1490]:
-            - listitem [ref=e1491]:
-              - link "Blogs" [ref=e1492] [cursor=pointer]:
+        - generic [ref=e1484]:
+          - paragraph [ref=e1485]: Resources
+          - list [ref=e1486]:
+            - listitem [ref=e1487]:
+              - link "Blogs" [ref=e1488] [cursor=pointer]:
                 - /url: /blog
-            - listitem [ref=e1493]:
-              - link "Benchmarks" [ref=e1494] [cursor=pointer]:
+            - listitem [ref=e1489]:
+              - link "Benchmarks" [ref=e1490] [cursor=pointer]:
                 - /url: /benchmarks
-            - listitem [ref=e1495]:
-              - link "News & Media" [ref=e1496] [cursor=pointer]:
+            - listitem [ref=e1491]:
+              - link "News & Media" [ref=e1492] [cursor=pointer]:
                 - /url: /media
-            - listitem [ref=e1497]:
-              - link "Patents" [ref=e1498] [cursor=pointer]:
+            - listitem [ref=e1493]:
+              - link "Patents" [ref=e1494] [cursor=pointer]:
                 - /url: /patents
-            - listitem [ref=e1499]:
-              - link "Research" [ref=e1500] [cursor=pointer]:
+            - listitem [ref=e1495]:
+              - link "Research" [ref=e1496] [cursor=pointer]:
                 - /url: /research
-        - paragraph [ref=e1502]:
-          - link "Documentation" [ref=e1503] [cursor=pointer]:
+        - paragraph [ref=e1498]:
+          - link "Documentation" [ref=e1499] [cursor=pointer]:
             - /url: https://docs.shunyalabs.ai/overview
+        - list [ref=e1501]:
+          - listitem [ref=e1502]:
+            - link "About us" [ref=e1503] [cursor=pointer]:
+              - /url: /about
         - list [ref=e1505]:
           - listitem [ref=e1506]:
-            - link "About us" [ref=e1507] [cursor=pointer]:
-              - /url: /about
-        - list [ref=e1509]:
-          - listitem [ref=e1510]:
-            - link "Pricing" [ref=e1511] [cursor=pointer]:
+            - link "Pricing" [ref=e1507] [cursor=pointer]:
               - /url: /pricing
-      - generic [ref=e1512]:
-        - paragraph [ref=e1513]: Follow us on
-        - generic [ref=e1514]:
-          - link [ref=e1515] [cursor=pointer]:
+      - generic [ref=e1508]:
+        - paragraph [ref=e1509]: Follow us on
+        - generic [ref=e1510]:
+          - link [ref=e1511] [cursor=pointer]:
             - /url: https://www.linkedin.com/company/shunya-labs-ai/
-            - img [ref=e1516]
-          - link [ref=e1518] [cursor=pointer]:
+            - img [ref=e1512]
+          - link [ref=e1514] [cursor=pointer]:
             - /url: https://www.facebook.com/people/ShunyaLabsAI/61577801851308/
-            - img [ref=e1519]
-          - link [ref=e1521] [cursor=pointer]:
+            - img [ref=e1515]
+          - link [ref=e1517] [cursor=pointer]:
             - /url: https://www.instagram.com/shunyalabsai/
-            - img [ref=e1522]
-          - link [ref=e1524] [cursor=pointer]:
+            - img [ref=e1518]
+          - link [ref=e1520] [cursor=pointer]:
             - /url: https://x.com/ShunyaLabsAI
-            - img [ref=e1525]
-      - generic [ref=e1527]:
-        - paragraph [ref=e1528]: © 2026 Shunya Labs, Inc. All rights reserved.
-        - generic [ref=e1529]:
-          - link "Privacy" [ref=e1530] [cursor=pointer]:
+            - img [ref=e1521]
+      - generic [ref=e1523]:
+        - paragraph [ref=e1524]: © 2026 Shunya Labs, Inc. All rights reserved.
+        - generic [ref=e1525]:
+          - link "Privacy" [ref=e1526] [cursor=pointer]:
             - /url: /privacy-policy
-          - link "Terms" [ref=e1531] [cursor=pointer]:
+          - link "Terms" [ref=e1527] [cursor=pointer]:
             - /url: /terms-conditions
-          - link "Security" [ref=e1532] [cursor=pointer]:
+          - link "Security" [ref=e1528] [cursor=pointer]:
             - /url: /security-policy
-          - link "General License" [ref=e1533] [cursor=pointer]:
+          - link "General License" [ref=e1529] [cursor=pointer]:
             - /url: /general-rail-m-license
-          - link "Custom License" [ref=e1534] [cursor=pointer]:
+          - link "Custom License" [ref=e1530] [cursor=pointer]:
             - /url: /shunya-labs-custom-model-rail-m-license
-  - alert [ref=e1535]
+  - alert [ref=e1531]
 ```
 
 # Test source
