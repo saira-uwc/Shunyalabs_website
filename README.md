@@ -15,6 +15,7 @@ Google Sheets reporting and a generated dashboard.
 ## Common Commands
 - Run all tests: `npm test`
 - Run one module: `npx playwright test tests/modules/<module>`
+- **Sync live site** (nav/footer expectations + all design baselines): `npm run sync:live`
 - Generate dashboard: `npm run dashboard`
 - Publish dashboard: `npm run dashboard:publish`
 

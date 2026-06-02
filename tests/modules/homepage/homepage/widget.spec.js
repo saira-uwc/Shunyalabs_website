@@ -15,17 +15,18 @@ test.describe('Homepage - hero demo (Vāk)', () => {
       reportFileName: 'module-actions-report.csv',
     });
 
-    // Homepage embeds the Vāk real-time speech translation demo (replaces legacy STT playground tabs).
+    // Homepage embeds the Vāk real-time Indic translation demo (live site June 2026).
     const demoReady = await page.evaluate(async () => {
-      const deadline = Date.now() + 60000;
+      const deadline = Date.now() + 90_000;
       while (Date.now() < deadline) {
         const t = document.body?.innerText || '';
-        const hasHeadline =
-          t.includes('Real-Time Speech-to-Speech') || t.includes('Speech-to-Speech Translation');
-        const hasLanguages = t.includes('55 Languages');
+        const hasVak = t.includes('Vāk') || t.includes('Vak');
+        const hasSubtitle =
+          t.includes('Real-Time Translation') && t.includes('55');
         const hasInputHint =
-          t.includes('Tap mic to speak') || t.includes('type and press Enter');
-        if (hasHeadline && hasLanguages && hasInputHint) return true;
+          t.includes('Tap mic to speak') ||
+          (t.includes('type and press Enter') && t.includes('translate'));
+        if (hasVak && hasSubtitle && hasInputHint) return true;
         await new Promise((r) => setTimeout(r, 500));
       }
       return false;
@@ -33,6 +34,6 @@ test.describe('Homepage - hero demo (Vāk)', () => {
 
     expect(demoReady).toBe(true);
 
-    await writeResult('Homepage Vāk demo', 'PASS', 'Translation demo section visible');
+    await writeResult('Homepage Vāk demo', 'PASS', 'Vāk translation demo section visible');
   });
 });

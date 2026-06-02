@@ -7,6 +7,8 @@ import { pageRegistry } from '../test-data/page-registry.js';
 import { BasePage } from '../pages/base.page.js';
 import { HomepagePage } from '../pages/homepage/homepage.page.js';
 import { BlogsPage } from '../pages/resources/blogs.page.js';
+import { extractHomepageNavDropdowns } from '../utils/homepage-nav-extract.js';
+import { gotoAndWaitForPageReady } from '../utils/page-readiness.js';
 
 const ROOT = process.cwd();
 const BASE_URL = process.env.BASE_URL || 'https://www.shunyalabs.ai';
@@ -136,34 +138,10 @@ async function updateHomepageExpectations(page) {
 
 async function updateHomepageNavExpectations(page) {
   console.log('Updating homepage nav expectations...');
-  const homepage = new HomepagePage(page);
-  await homepage.open();
+  await gotoAndWaitForPageReady(page, '/', { waitForImages: true });
 
   const navPath = path.join(EXPECTATIONS_DIR, 'homepage-nav.json');
-  const navExpectations = JSON.parse(fs.readFileSync(navPath, 'utf8'));
-
-  const menuNames = await page.evaluate(() => {
-    const normalize = (value) =>
-      (value || '').replace(/\s+/g, ' ').replace(/\u00a0/g, ' ').trim();
-    const nav = document.querySelector('nav');
-    if (!nav) return [];
-    return Array.from(nav.querySelectorAll('button'))
-      .map((button) => normalize(button.textContent))
-      .filter(Boolean);
-  });
-
-  const dropdowns = {};
-  for (const menuName of menuNames) {
-    const menuButton = page.getByRole('button', { name: menuName }).first();
-    await menuButton.click().catch(() => {});
-    const items = await homepage.getNavDropdownItems(menuName);
-    if (items.length) {
-      dropdowns[menuName] = items;
-    }
-    await page.keyboard.press('Escape').catch(() => {});
-  }
-
-  navExpectations.dropdowns = dropdowns;
+  const navExpectations = { dropdowns: await extractHomepageNavDropdowns(page) };
   fs.writeFileSync(navPath, JSON.stringify(navExpectations, null, 2));
 }
 

@@ -27,6 +27,7 @@
     "test:design": "npx playwright test tests/modules --grep \"design compliance\"",
     "test:desktop": "npx playwright test tests/modules --project=desktop",
     "test:mobile": "npx playwright test tests/modules --project=mobile",
+    "sync:live": "node scripts/sync-live-site.js",
     "baseline:design": "npm run baseline:design:desktop && npm run baseline:design:mobile",
     "baseline:design:desktop": "npx playwright test tests/snapshots/generate-design-baselines.spec.js --config=playwright.desktop-baseline.config.js",
     "baseline:design:mobile": "npx playwright test tests/snapshots/generate-design-baselines.spec.js --config=playwright.mobile-baseline.config.js",
