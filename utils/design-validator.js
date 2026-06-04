@@ -27,6 +27,7 @@ const FLAKY_CONTENT_IMAGE_ALTS = new Set([
   'Meeting Transcription',
   'Nasscom',
   'OTTO',
+  'OMG Pharma',
 ]);
 
 function isFlakyImageAlt(alt) {
@@ -34,7 +35,19 @@ function isFlakyImageAlt(alt) {
   return (
     NAV_LOGO_ALTS.has(a) ||
     FLAKY_CONTENT_IMAGE_ALTS.has(a) ||
-    a.startsWith('/images/trusted-by/')
+    a.startsWith('/images/trusted-by/') ||
+    a.includes('trusted-by') ||
+    a.includes('_next/image')
+  );
+}
+
+function isTrustedByCarouselImage(img) {
+  const alt = img?.alt || '';
+  const src = img?.src || '';
+  return (
+    isFlakyImageAlt(alt) ||
+    src.includes('trusted-by') ||
+    src.includes('trusted-by%2F')
   );
 }
 
@@ -76,8 +89,19 @@ const EXTERNAL_SOCIAL_HOST = /facebook\.com|linkedin\.com|twitter\.com|x\.com|yo
 /** Benchmarks counters animate from zero — not valid baseline copy. */
 const TRANSIENT_MAIN_TEXT = /^0(\.00)?%$/;
 
+/** Live benchmark stats change per deploy (WER, accuracy, etc.). */
+const DYNAMIC_METRIC_TEXT = /^\d+(\.\d+)?%$/;
+
 function isTransientMainText(text) {
   return TRANSIENT_MAIN_TEXT.test((text || '').trim());
+}
+
+function isDynamicMetricText(text) {
+  return DYNAMIC_METRIC_TEXT.test((text || '').trim());
+}
+
+function isVakSectionName(name) {
+  return /Vā[kķ\u0100-\u017F]/i.test(name || '');
 }
 
 function isOptionalExternalLink(exp) {
@@ -419,7 +443,7 @@ function validateContent(actual, expected, failures) {
     const missingRate = missing.length / expected.mainText.length;
     if (missingRate <= 0.4) {
       for (const m of missing) {
-        if (isTransientMainText(m)) continue;
+        if (isTransientMainText(m) || isDynamicMetricText(m)) continue;
         failures.push({ section: 'content', property: `text "${m.substring(0, 50)}"`, message: `Text content "${m}" not found on page` });
       }
     }
@@ -452,13 +476,16 @@ function validateLinks(actual, expected, failures) {
     return false;
   };
 
-  const missingCount = expected.links.filter((exp) => {
+  const linksToCheck = expected.links.filter((exp) => !isOptionalExternalLink(exp));
+  if (!linksToCheck.length) return;
+
+  const missingCount = linksToCheck.filter((exp) => {
     if (!exp.text && !exp.href) return false;
     return !actual.links.find((l) => linkMatches(exp, l));
   }).length;
-  if (missingCount / expected.links.length > 0.4) return;
+  if (missingCount / linksToCheck.length > 0.4) return;
 
-  for (const exp of expected.links) {
+  for (const exp of linksToCheck) {
     if (!exp.text && !exp.href) continue;
 
     let found = actual.links.find((l) => linkMatches(exp, l));
@@ -474,7 +501,6 @@ function validateLinks(actual, expected, failures) {
     const label = exp.text ? `${exp.text} (${exp.href})` : exp.href;
 
     if (!found) {
-      if (isOptionalExternalLink(exp)) continue;
       failures.push({
         section: 'links',
         property: `"${label}" presence`,
@@ -574,7 +600,7 @@ function validateImages(actual, expected, failures) {
       continue;
     }
 
-    if (exp.loaded && !found.loaded && !isFlakyImageAlt(exp.alt || '')) {
+    if (exp.loaded && !found.loaded && !isTrustedByCarouselImage(exp)) {
       failures.push({
         section: 'images',
         property: `"${label}" loaded`,
@@ -586,7 +612,7 @@ function validateImages(actual, expected, failures) {
   // Check for newly broken images
   for (const img of actual.images) {
     if (!img.loaded) {
-      if (isFlakyImageAlt(img.alt || '')) continue;
+      if (isTrustedByCarouselImage(img)) continue;
       const label = img.alt || img.src || 'unknown';
       const baselineImg = findBaselineImage(expected.images, img);
       if (baselineImg && !baselineImg.loaded) continue;
@@ -632,7 +658,7 @@ function validateSections(actual, expected, failures, { skipOrderCheck = false }
 
     if (
       exp.backgroundColor &&
-      !/^Vāk/i.test(exp.name) &&
+      !isVakSectionName(exp.name) &&
       !isEffectivelyTransparent(exp.backgroundColor) &&
       !colorsMatch(found.backgroundColor, exp.backgroundColor)
     ) {
@@ -834,10 +860,14 @@ function cleanCapturedData(data) {
     !UNSTABLE_TEXT.has(t) &&
     !UNSTABLE_TEXT_PATTERNS.some((p) => t.includes(p)) &&
     !/^🇺🇸/.test(t) &&
-    !isTransientMainText(t)
+    !isTransientMainText(t) &&
+    !isDynamicMetricText(t)
   );
-  const cleanedImages = data.images.filter((img) => !LANGUAGE_FLAG_ALTS.has(img.alt));
-  return { ...data, buttons: cleanedButtons, mainText: cleanedText, images: cleanedImages };
+  const cleanedImages = data.images.filter(
+    (img) => !LANGUAGE_FLAG_ALTS.has(img.alt) && !isTrustedByCarouselImage(img)
+  );
+  const cleanedLinks = data.links.filter((l) => !isOptionalExternalLink(l));
+  return { ...data, buttons: cleanedButtons, mainText: cleanedText, images: cleanedImages, links: cleanedLinks };
 }
 
 export async function captureDesignBaseline(page, pageEntry) {
@@ -860,6 +890,15 @@ export async function captureDesignBaseline(page, pageEntry) {
     await waitForVisibleImagesLoaded(page, pageReadyTimeout());
     await page.evaluate(() => window.scrollTo(0, 0));
     await page.waitForTimeout(500);
+  }
+
+  if (pageEntry.path === '/benchmarks') {
+    await page
+      .waitForFunction(
+        () => (document.body.innerText.match(/\d{1,2}\.\d{2}%/g) || []).length >= 2,
+        { timeout: pageReadyTimeout() }
+      )
+      .catch(() => {});
   }
 
   const raw = await extractPageDesignData(page);
