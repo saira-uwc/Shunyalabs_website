@@ -12,7 +12,7 @@
 # Error details
 
 ```
-Error: [content] Text content "© 2026 Shunya Labs, Inc. All rights reserved." not found on page
+Error: [links] CTA/Link "https://www.facebook.com/people/ShunyaLabsAI/61577801851308/" not found on page
 
 expect(received).toBeTruthy()
 
@@ -36,10 +36,10 @@ Received: 1
     - generic [ref=e3]:
       - navigation [ref=e4]:
         - generic [ref=e5]:
-          - link "Shunya Labs Logo" [ref=e6] [cursor=pointer]:
+          - link "Shunya Labs Logo" [ref=e7] [cursor=pointer]:
             - /url: /
-            - img "Shunya Labs Logo" [ref=e7]
-          - button "☰" [ref=e8] [cursor=pointer]
+            - img "Shunya Labs Logo" [ref=e8]
+          - button "☰" [ref=e9] [cursor=pointer]
         - generic:
           - generic:
             - generic:
@@ -72,159 +72,159 @@ Received: 1
               - button "Sign In"
               - link "Contact Sales":
                 - /url: /contact
-      - generic [ref=e11]:
-        - generic [ref=e12]:
-          - heading "Indic language transcription backed by data" [level=1] [ref=e13]
-          - paragraph [ref=e14]: Get world-class speed and accuracy for major Indian languages, so your users experience natural, reliable transcription in the languages they actually speak.
-        - generic [ref=e15]:
-          - generic [ref=e17]:
-            - heading "Hindi" [level=3] [ref=e19]
-            - generic [ref=e20]:
-              - paragraph [ref=e21]: Hindi ASR built for 350M+ native speakers
-              - paragraph [ref=e22]: Trained on 430.6 hours of real-world audio from OpenSLR, Gramvaani, Shrutilipi, Kathbath, Vaani, and proprietary data in just 35.9 hours on dual A100 GPUs.
-          - generic [ref=e25]:
-            - heading "Telugu" [level=3] [ref=e27]
-            - generic [ref=e28]:
-              - paragraph [ref=e29]: Telugu ASR built for 80M+ native speakers
-              - paragraph [ref=e30]: Trained on 110.6 hours of real-world audio from Kathbath and Google Fleurs in just 13.43 hours on dual A100 GPUs.
-          - generic [ref=e33]:
-            - heading "Kannada" [level=3] [ref=e35]
-            - generic [ref=e36]:
-              - paragraph [ref=e37]: Kannada ASR built for 40M+ native speakers
-              - paragraph [ref=e38]: Trained on 90.6 hours of real-world audio from OpenSLR, Kathbath, and Vaani in just 9.9 hours on dual A100 GPUs.
-          - generic [ref=e41]:
-            - heading "Bengali" [level=3] [ref=e43]
-            - generic [ref=e44]:
-              - paragraph [ref=e45]: Bengali ASR built for 230M+ native speakers
-              - paragraph [ref=e46]: Trained on 110.6 hours of real-world audio from OpenSLR, Kathbath, Vaani, and Shrutilipi in just 12.9 hours on dual A100 GPUs.
-        - link "Try now" [ref=e48] [cursor=pointer]:
+      - generic [ref=e12]:
+        - generic [ref=e13]:
+          - heading "Indic language transcription backed by data" [level=1] [ref=e14]
+          - paragraph [ref=e15]: Get world-class speed and accuracy for major Indian languages, so your users experience natural, reliable transcription in the languages they actually speak.
+        - generic [ref=e16]:
+          - generic [ref=e18]:
+            - heading "Hindi" [level=3] [ref=e20]
+            - generic [ref=e21]:
+              - paragraph [ref=e22]: Hindi ASR built for 350M+ native speakers
+              - paragraph [ref=e23]: Trained on 430.6 hours of real-world audio from OpenSLR, Gramvaani, Shrutilipi, Kathbath, Vaani, and proprietary data in just 35.9 hours on dual A100 GPUs.
+          - generic [ref=e26]:
+            - heading "Telugu" [level=3] [ref=e28]
+            - generic [ref=e29]:
+              - paragraph [ref=e30]: Telugu ASR built for 80M+ native speakers
+              - paragraph [ref=e31]: Trained on 110.6 hours of real-world audio from Kathbath and Google Fleurs in just 13.43 hours on dual A100 GPUs.
+          - generic [ref=e34]:
+            - heading "Kannada" [level=3] [ref=e36]
+            - generic [ref=e37]:
+              - paragraph [ref=e38]: Kannada ASR built for 40M+ native speakers
+              - paragraph [ref=e39]: Trained on 90.6 hours of real-world audio from OpenSLR, Kathbath, and Vaani in just 9.9 hours on dual A100 GPUs.
+          - generic [ref=e42]:
+            - heading "Bengali" [level=3] [ref=e44]
+            - generic [ref=e45]:
+              - paragraph [ref=e46]: Bengali ASR built for 230M+ native speakers
+              - paragraph [ref=e47]: Trained on 110.6 hours of real-world audio from OpenSLR, Kathbath, Vaani, and Shrutilipi in just 12.9 hours on dual A100 GPUs.
+        - link "Try now" [ref=e49] [cursor=pointer]:
           - /url: https://docs.shunyalabs.ai/models/language
-    - contentinfo [ref=e49]:
-      - generic [ref=e50]:
-        - paragraph [ref=e51]: The fastest way to add voice AI to your products
-        - paragraph [ref=e52]: One platform for speech in and speech out—secure by design, built to scale.
-        - generic [ref=e53]:
-          - link "Try for Free" [ref=e54] [cursor=pointer]:
+    - contentinfo [ref=e50]:
+      - generic [ref=e51]:
+        - paragraph [ref=e52]: The fastest way to add voice AI to your products
+        - paragraph [ref=e53]: One platform for speech in and speech out—secure by design, built to scale.
+        - generic [ref=e54]:
+          - link "Try for Free" [ref=e55] [cursor=pointer]:
             - /url: /pricing
-          - link "Contact Sales" [ref=e55] [cursor=pointer]:
+          - link "Contact Sales" [ref=e56] [cursor=pointer]:
             - /url: /contact
-    - contentinfo [ref=e56]:
-      - generic [ref=e57]:
-        - generic [ref=e58]:
-          - img "Shunya Labs" [ref=e59]
-          - paragraph [ref=e60]: Shunya Labs, Inc.
-        - generic [ref=e61]:
-          - paragraph [ref=e62]: Product
-          - list [ref=e63]:
-            - listitem [ref=e64]:
-              - link "Overview" [ref=e65] [cursor=pointer]:
+    - contentinfo [ref=e57]:
+      - generic [ref=e58]:
+        - generic [ref=e59]:
+          - img "Shunya Labs" [ref=e60]
+          - paragraph [ref=e61]: Shunya Labs, Inc.
+        - generic [ref=e62]:
+          - paragraph [ref=e63]: Product
+          - list [ref=e64]:
+            - listitem [ref=e65]:
+              - link "Overview" [ref=e66] [cursor=pointer]:
                 - /url: /overview
-            - listitem [ref=e66]:
-              - link "Models" [ref=e67] [cursor=pointer]:
+            - listitem [ref=e67]:
+              - link "Models" [ref=e68] [cursor=pointer]:
                 - /url: /models-page
-            - listitem [ref=e68]:
-              - link "Voice Agents" [ref=e69] [cursor=pointer]:
+            - listitem [ref=e69]:
+              - link "Voice Agents" [ref=e70] [cursor=pointer]:
                 - /url: /voice-agent
-            - listitem [ref=e70]:
-              - link "Speech Intelligence" [ref=e71] [cursor=pointer]:
+            - listitem [ref=e71]:
+              - link "Speech Intelligence" [ref=e72] [cursor=pointer]:
                 - /url: /speech-intelligence-page
-            - listitem [ref=e72]:
-              - link "Audio Processing" [ref=e73] [cursor=pointer]:
+            - listitem [ref=e73]:
+              - link "Audio Processing" [ref=e74] [cursor=pointer]:
                 - /url: /audio-processing
-            - listitem [ref=e74]:
-              - link "Deployment" [ref=e75] [cursor=pointer]:
+            - listitem [ref=e75]:
+              - link "Deployment" [ref=e76] [cursor=pointer]:
                 - /url: /deployment
-        - generic [ref=e76]:
-          - paragraph [ref=e77]: Models
-          - list [ref=e78]:
-            - listitem [ref=e79]:
-              - link "Language Models" [ref=e80] [cursor=pointer]:
+        - generic [ref=e77]:
+          - paragraph [ref=e78]: Models
+          - list [ref=e79]:
+            - listitem [ref=e80]:
+              - link "Language Models" [ref=e81] [cursor=pointer]:
                 - /url: /language-models
-            - listitem [ref=e81]:
-              - link "Zero STT Indic" [ref=e82] [cursor=pointer]:
+            - listitem [ref=e82]:
+              - link "Zero STT Indic" [ref=e83] [cursor=pointer]:
                 - /url: /zero-indic
-            - listitem [ref=e83]:
-              - link "Zero STT Codeswitch" [ref=e84] [cursor=pointer]:
+            - listitem [ref=e84]:
+              - link "Zero STT Codeswitch" [ref=e85] [cursor=pointer]:
                 - /url: /zero-code-switch
-            - listitem [ref=e85]:
-              - link "Specialised Models" [ref=e86] [cursor=pointer]:
+            - listitem [ref=e86]:
+              - link "Specialised Models" [ref=e87] [cursor=pointer]:
                 - /url: /domain-specialisation
-            - listitem [ref=e87]:
-              - link "Zero STT Med" [ref=e88] [cursor=pointer]:
+            - listitem [ref=e88]:
+              - link "Zero STT Med" [ref=e89] [cursor=pointer]:
                 - /url: /zero-med
-            - listitem [ref=e89]:
-              - link "On Device Models" [ref=e90] [cursor=pointer]:
+            - listitem [ref=e90]:
+              - link "On Device Models" [ref=e91] [cursor=pointer]:
                 - /url: /on-device-models
-        - generic [ref=e91]:
-          - paragraph [ref=e92]: Solutions
-          - list [ref=e93]:
-            - listitem [ref=e94]:
-              - link "Contact Centers" [ref=e95] [cursor=pointer]:
+        - generic [ref=e92]:
+          - paragraph [ref=e93]: Solutions
+          - list [ref=e94]:
+            - listitem [ref=e95]:
+              - link "Contact Centers" [ref=e96] [cursor=pointer]:
                 - /url: /contact-centers
-            - listitem [ref=e96]:
-              - link "Media & Entertainment" [ref=e97] [cursor=pointer]:
+            - listitem [ref=e97]:
+              - link "Media & Entertainment" [ref=e98] [cursor=pointer]:
                 - /url: /media-entertainment
-            - listitem [ref=e98]:
-              - link "Healthcare" [ref=e99] [cursor=pointer]:
+            - listitem [ref=e99]:
+              - link "Healthcare" [ref=e100] [cursor=pointer]:
                 - /url: /healthcare
-        - generic [ref=e100]:
-          - paragraph [ref=e101]: Resources
-          - list [ref=e102]:
-            - listitem [ref=e103]:
-              - link "Blogs" [ref=e104] [cursor=pointer]:
+        - generic [ref=e101]:
+          - paragraph [ref=e102]: Resources
+          - list [ref=e103]:
+            - listitem [ref=e104]:
+              - link "Blogs" [ref=e105] [cursor=pointer]:
                 - /url: /blog
-            - listitem [ref=e105]:
-              - link "Benchmarks" [ref=e106] [cursor=pointer]:
+            - listitem [ref=e106]:
+              - link "Benchmarks" [ref=e107] [cursor=pointer]:
                 - /url: /benchmarks
-            - listitem [ref=e107]:
-              - link "News & Media" [ref=e108] [cursor=pointer]:
+            - listitem [ref=e108]:
+              - link "News & Media" [ref=e109] [cursor=pointer]:
                 - /url: /media
-            - listitem [ref=e109]:
-              - link "Patents" [ref=e110] [cursor=pointer]:
+            - listitem [ref=e110]:
+              - link "Patents" [ref=e111] [cursor=pointer]:
                 - /url: /patents
-            - listitem [ref=e111]:
-              - link "Research" [ref=e112] [cursor=pointer]:
+            - listitem [ref=e112]:
+              - link "Research" [ref=e113] [cursor=pointer]:
                 - /url: /research
-        - paragraph [ref=e114]:
-          - link "Documentation" [ref=e115] [cursor=pointer]:
+        - paragraph [ref=e115]:
+          - link "Documentation" [ref=e116] [cursor=pointer]:
             - /url: https://docs.shunyalabs.ai/overview
-        - list [ref=e117]:
-          - listitem [ref=e118]:
-            - link "About us" [ref=e119] [cursor=pointer]:
+        - list [ref=e118]:
+          - listitem [ref=e119]:
+            - link "About us" [ref=e120] [cursor=pointer]:
               - /url: /about
-        - list [ref=e121]:
-          - listitem [ref=e122]:
-            - link "Pricing" [ref=e123] [cursor=pointer]:
+        - list [ref=e122]:
+          - listitem [ref=e123]:
+            - link "Pricing" [ref=e124] [cursor=pointer]:
               - /url: /pricing
-      - generic [ref=e124]:
-        - paragraph [ref=e125]: Follow us on
-        - generic [ref=e126]:
-          - link [ref=e127] [cursor=pointer]:
+      - generic [ref=e125]:
+        - paragraph [ref=e126]: Follow us on
+        - generic [ref=e127]:
+          - link [ref=e128] [cursor=pointer]:
             - /url: https://www.linkedin.com/company/shunya-labs-ai/
-            - img [ref=e128]
-          - link [ref=e130] [cursor=pointer]:
-            - /url: https://www.facebook.com/people/ShunyaLabsAI/61577801851308/
-            - img [ref=e131]
-          - link [ref=e133] [cursor=pointer]:
+            - img [ref=e129]
+          - link [ref=e131] [cursor=pointer]:
+            - /url: https://www.facebook.com/profile.php?id=61577801651308
+            - img [ref=e132]
+          - link [ref=e134] [cursor=pointer]:
             - /url: https://www.instagram.com/shunyalabsai/
-            - img [ref=e134]
-          - link [ref=e136] [cursor=pointer]:
+            - img [ref=e135]
+          - link [ref=e137] [cursor=pointer]:
             - /url: https://x.com/ShunyaLabsAI
-            - img [ref=e137]
-      - generic [ref=e139]:
-        - paragraph [ref=e140]: © 2026 Shunya Labs Inc. All rights reserved.
-        - generic [ref=e141]:
-          - link "Privacy" [ref=e142] [cursor=pointer]:
+            - img [ref=e138]
+      - generic [ref=e140]:
+        - paragraph [ref=e141]: © 2026 Shunya Labs, Inc. All rights reserved.
+        - generic [ref=e142]:
+          - link "Privacy" [ref=e143] [cursor=pointer]:
             - /url: /privacy-policy
-          - link "Terms" [ref=e143] [cursor=pointer]:
+          - link "Terms" [ref=e144] [cursor=pointer]:
             - /url: /terms-conditions
-          - link "Security" [ref=e144] [cursor=pointer]:
+          - link "Security" [ref=e145] [cursor=pointer]:
             - /url: /security-policy
-          - link "General License" [ref=e145] [cursor=pointer]:
+          - link "General License" [ref=e146] [cursor=pointer]:
             - /url: /general-rail-m-license
-          - link "Custom License" [ref=e146] [cursor=pointer]:
+          - link "Custom License" [ref=e147] [cursor=pointer]:
             - /url: /shunya-labs-custom-model-rail-m-license
-  - alert [ref=e147]
+  - alert [ref=e148]
 ```
 
 # Test source

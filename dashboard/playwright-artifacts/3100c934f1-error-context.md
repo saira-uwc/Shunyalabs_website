@@ -12,7 +12,7 @@
 # Error details
 
 ```
-Error: [global] Footer background: expected rgb(255, 255, 255) but got rgb(0, 0, 0)
+Error: [links] CTA/Link "https://www.facebook.com/people/ShunyaLabsAI/61577801851308/" not found on page
 
 expect(received).toBeTruthy()
 
@@ -20,36 +20,12 @@ Received: null
 ```
 
 ```
-Error: [content] Footer item "One platform for speech in and speech out-secure by design, built to scale." not found
-
-expect(received).toBeTruthy()
-
-Received: null
-```
-
-```
-Error: [content] Text content "One platform for speech in and speech out-secure by design, built to scale." not found on page
-
-expect(received).toBeTruthy()
-
-Received: null
-```
-
-```
-Error: [content] Text content "© 2026 Shunya Labs, Inc. All rights reserved." not found on page
-
-expect(received).toBeTruthy()
-
-Received: null
-```
-
-```
-Error: 4 design compliance issue(s) found
+Error: 1 design compliance issue(s) found
 
 expect(received).toBe(expected) // Object.is equality
 
 Expected: 0
-Received: 4
+Received: 1
 ```
 
 # Page snapshot
@@ -60,203 +36,205 @@ Received: 4
     - generic [ref=e4]:
       - navigation [ref=e5]:
         - generic [ref=e6]:
-          - link "Shunya Labs Logo" [ref=e7] [cursor=pointer]:
-            - /url: /
-            - img "Shunya Labs Logo" [ref=e8]
-          - generic [ref=e9]:
-            - button "Product" [ref=e11] [cursor=pointer]:
-              - text: Product
-              - img [ref=e12]
-            - button "Models" [ref=e15] [cursor=pointer]:
-              - text: Models
-              - img [ref=e16]
-            - button "Solutions" [ref=e19] [cursor=pointer]:
-              - text: Solutions
-              - img [ref=e20]
-            - button "Resources" [ref=e23] [cursor=pointer]:
-              - text: Resources
-              - img [ref=e24]
-            - link "Documentation" [ref=e26] [cursor=pointer]:
-              - /url: https://docs.shunyalabs.ai/overview
-            - link "About Us" [ref=e27] [cursor=pointer]:
-              - /url: /about
-            - link "Pricing" [ref=e28] [cursor=pointer]:
-              - /url: /pricing
-          - link "Playground" [ref=e29] [cursor=pointer]:
-            - /url: https://playground.shunyalabs.ai/
-            - img [ref=e30]
-            - text: Playground
-          - generic [ref=e32]:
-            - button "Sign In" [ref=e33] [cursor=pointer]
-            - link "Contact Sales" [ref=e34] [cursor=pointer]:
-              - /url: /contact
-      - generic [ref=e36]:
-        - heading "On device speech-to-text for real-time transcription" [level=1] [ref=e37]
-        - heading "Run fast, accurate speech-to-text directly on your devices with Shunya Labs’ ONNX-based English ASR model" [level=2] [ref=e38]
-      - generic [ref=e40]:
-        - generic [ref=e41]:
-          - generic [ref=e43]:
-            - img [ref=e45]
-            - generic [ref=e47]:
-              - heading "Offline-ready" [level=3] [ref=e48]
-              - paragraph [ref=e49]: Operates without network connectivity or in low-bandwidth environments
-          - generic [ref=e51]:
-            - img [ref=e53]
-            - generic [ref=e56]:
-              - heading "Lightweight models" [level=3] [ref=e57]
-              - paragraph [ref=e58]: Optimized edge architectures for resource-constrained devices
-          - generic [ref=e60]:
-            - img [ref=e62]
-            - generic [ref=e65]:
-              - heading "ONNX format" [level=3] [ref=e66]
-              - paragraph [ref=e67]: Portable models deploy seamlessly across iOS, Android, Linux, and embedded systems
-          - generic [ref=e69]:
-            - img [ref=e71]
-            - generic [ref=e73]:
-              - heading "Low latency" [level=3] [ref=e74]
-              - paragraph [ref=e75]: Fast local processing without round-trip delays
-        - paragraph [ref=e76]: Ideal for healthcare, automotive, mobile apps, and privacy-critical use cases.
-      - generic [ref=e78]:
-        - heading "Tiny ONNX model, big performance" [level=2] [ref=e79]
-        - generic [ref=e80]:
-          - generic [ref=e81]:
-            - paragraph [ref=e83]: Small enough to fit on edge devices and existing servers without a hardware refresh
-            - heading "Lightweight" [level=3] [ref=e85]
-          - generic [ref=e87]:
-            - heading "Fast" [level=3] [ref=e89]
-            - paragraph [ref=e91]: Transcribes as people speak, with sub-100 ms latency for partials
-          - generic [ref=e93]:
-            - paragraph [ref=e95]: Trained on high entropy data to achieve industry best 3.10% WER
-            - heading "Accurate" [level=3] [ref=e97]
-    - link "Contact Us" [ref=e99] [cursor=pointer]:
+          - generic [ref=e7]:
+            - link "Shunya Labs Logo" [ref=e8] [cursor=pointer]:
+              - /url: /
+              - img "Shunya Labs Logo" [ref=e9]
+            - generic [ref=e10]:
+              - button "Product" [ref=e12] [cursor=pointer]:
+                - text: Product
+                - img [ref=e13]
+              - button "Models" [ref=e16] [cursor=pointer]:
+                - text: Models
+                - img [ref=e17]
+              - button "Solutions" [ref=e20] [cursor=pointer]:
+                - text: Solutions
+                - img [ref=e21]
+              - button "Resources" [ref=e24] [cursor=pointer]:
+                - text: Resources
+                - img [ref=e25]
+              - link "Documentation" [ref=e27] [cursor=pointer]:
+                - /url: https://docs.shunyalabs.ai/overview
+              - link "About Us" [ref=e28] [cursor=pointer]:
+                - /url: /about
+              - link "Pricing" [ref=e29] [cursor=pointer]:
+                - /url: /pricing
+          - generic [ref=e30]:
+            - link "Playground" [ref=e31] [cursor=pointer]:
+              - /url: https://playground.shunyalabs.ai/
+              - img [ref=e32]
+              - text: Playground
+            - generic [ref=e34]:
+              - button "Sign In" [ref=e35] [cursor=pointer]
+              - link "Contact Sales" [ref=e36] [cursor=pointer]:
+                - /url: /contact
+      - generic [ref=e38]:
+        - heading "On device speech-to-text for real-time transcription" [level=1] [ref=e39]
+        - heading "Run fast, accurate speech-to-text directly on your devices with Shunya Labs’ ONNX-based English ASR model" [level=2] [ref=e40]
+      - generic [ref=e42]:
+        - generic [ref=e43]:
+          - generic [ref=e45]:
+            - img [ref=e47]
+            - generic [ref=e49]:
+              - heading "Offline-ready" [level=3] [ref=e50]
+              - paragraph [ref=e51]: Operates without network connectivity or in low-bandwidth environments
+          - generic [ref=e53]:
+            - img [ref=e55]
+            - generic [ref=e58]:
+              - heading "Lightweight models" [level=3] [ref=e59]
+              - paragraph [ref=e60]: Optimized edge architectures for resource-constrained devices
+          - generic [ref=e62]:
+            - img [ref=e64]
+            - generic [ref=e67]:
+              - heading "ONNX format" [level=3] [ref=e68]
+              - paragraph [ref=e69]: Portable models deploy seamlessly across iOS, Android, Linux, and embedded systems
+          - generic [ref=e71]:
+            - img [ref=e73]
+            - generic [ref=e75]:
+              - heading "Low latency" [level=3] [ref=e76]
+              - paragraph [ref=e77]: Fast local processing without round-trip delays
+        - paragraph [ref=e78]: Ideal for healthcare, automotive, mobile apps, and privacy-critical use cases.
+      - generic [ref=e80]:
+        - heading "Tiny ONNX model, big performance" [level=2] [ref=e81]
+        - generic [ref=e82]:
+          - generic [ref=e83]:
+            - paragraph [ref=e85]: Small enough to fit on edge devices and existing servers without a hardware refresh
+            - heading "Lightweight" [level=3] [ref=e87]
+          - generic [ref=e89]:
+            - heading "Fast" [level=3] [ref=e91]
+            - paragraph [ref=e93]: Transcribes as people speak, with sub-100 ms latency for partials
+          - generic [ref=e95]:
+            - paragraph [ref=e97]: Trained on high entropy data to achieve industry best 3.10% WER
+            - heading "Accurate" [level=3] [ref=e99]
+    - link "Contact Us" [ref=e101] [cursor=pointer]:
       - /url: contact
-    - contentinfo [ref=e100]:
-      - generic [ref=e104]:
-        - paragraph [ref=e105]: The fastest way to add voice AI to your products
-        - paragraph [ref=e106]: One platform for speech in and speech out—secure by design, built to scale.
-        - generic [ref=e107]:
-          - link "Go to Pricing page" [ref=e108] [cursor=pointer]:
+    - contentinfo [ref=e102]:
+      - generic [ref=e103]:
+        - paragraph [ref=e104]: The fastest way to add voice AI to your products
+        - paragraph [ref=e105]: One platform for speech in and speech out-secure by design, built to scale.
+        - generic [ref=e106]:
+          - link "Go to Pricing page" [ref=e107] [cursor=pointer]:
             - /url: /pricing
             - text: Get Started
-          - link "Contact Sales" [ref=e109] [cursor=pointer]:
+          - link "Contact Sales" [ref=e108] [cursor=pointer]:
             - /url: /contact
-    - contentinfo [ref=e110]:
-      - generic [ref=e111]:
-        - generic [ref=e112]:
-          - img "Shunya Labs" [ref=e113]
-          - paragraph [ref=e114]: Shunya Labs, Inc.
-        - generic [ref=e115]:
-          - paragraph [ref=e116]: Product
-          - list [ref=e117]:
-            - listitem [ref=e118]:
-              - link "Overview" [ref=e119] [cursor=pointer]:
+    - contentinfo [ref=e109]:
+      - generic [ref=e110]:
+        - generic [ref=e111]:
+          - img "Shunya Labs" [ref=e112]
+          - paragraph [ref=e113]: Shunya Labs, Inc.
+        - generic [ref=e114]:
+          - paragraph [ref=e115]: Product
+          - list [ref=e116]:
+            - listitem [ref=e117]:
+              - link "Overview" [ref=e118] [cursor=pointer]:
                 - /url: /overview
-            - listitem [ref=e120]:
-              - link "Models" [ref=e121] [cursor=pointer]:
+            - listitem [ref=e119]:
+              - link "Models" [ref=e120] [cursor=pointer]:
                 - /url: /models-page
-            - listitem [ref=e122]:
-              - link "Voice Agents" [ref=e123] [cursor=pointer]:
+            - listitem [ref=e121]:
+              - link "Voice Agents" [ref=e122] [cursor=pointer]:
                 - /url: /voice-agent
-            - listitem [ref=e124]:
-              - link "Speech Intelligence" [ref=e125] [cursor=pointer]:
+            - listitem [ref=e123]:
+              - link "Speech Intelligence" [ref=e124] [cursor=pointer]:
                 - /url: /speech-intelligence-page
-            - listitem [ref=e126]:
-              - link "Audio Processing" [ref=e127] [cursor=pointer]:
+            - listitem [ref=e125]:
+              - link "Audio Processing" [ref=e126] [cursor=pointer]:
                 - /url: /audio-processing
-            - listitem [ref=e128]:
-              - link "Deployment" [ref=e129] [cursor=pointer]:
+            - listitem [ref=e127]:
+              - link "Deployment" [ref=e128] [cursor=pointer]:
                 - /url: /deployment
-        - generic [ref=e130]:
-          - paragraph [ref=e131]: Models
-          - list [ref=e132]:
-            - listitem [ref=e133]:
-              - link "Language Models" [ref=e134] [cursor=pointer]:
+        - generic [ref=e129]:
+          - paragraph [ref=e130]: Models
+          - list [ref=e131]:
+            - listitem [ref=e132]:
+              - link "Language Models" [ref=e133] [cursor=pointer]:
                 - /url: /language-models
-            - listitem [ref=e135]:
-              - link "Zero STT Indic" [ref=e136] [cursor=pointer]:
+            - listitem [ref=e134]:
+              - link "Zero STT Indic" [ref=e135] [cursor=pointer]:
                 - /url: /zero-indic
-            - listitem [ref=e137]:
-              - link "Zero STT Codeswitch" [ref=e138] [cursor=pointer]:
+            - listitem [ref=e136]:
+              - link "Zero STT Codeswitch" [ref=e137] [cursor=pointer]:
                 - /url: /zero-code-switch
-            - listitem [ref=e139]:
-              - link "Specialised Models" [ref=e140] [cursor=pointer]:
+            - listitem [ref=e138]:
+              - link "Specialised Models" [ref=e139] [cursor=pointer]:
                 - /url: /domain-specialisation
-            - listitem [ref=e141]:
-              - link "Zero STT Med" [ref=e142] [cursor=pointer]:
+            - listitem [ref=e140]:
+              - link "Zero STT Med" [ref=e141] [cursor=pointer]:
                 - /url: /zero-med
-            - listitem [ref=e143]:
-              - link "On Device Models" [ref=e144] [cursor=pointer]:
+            - listitem [ref=e142]:
+              - link "On Device Models" [ref=e143] [cursor=pointer]:
                 - /url: /on-device-models
-        - generic [ref=e145]:
-          - paragraph [ref=e146]: Solutions
-          - list [ref=e147]:
-            - listitem [ref=e148]:
-              - link "Contact Centers" [ref=e149] [cursor=pointer]:
+        - generic [ref=e144]:
+          - paragraph [ref=e145]: Solutions
+          - list [ref=e146]:
+            - listitem [ref=e147]:
+              - link "Contact Centers" [ref=e148] [cursor=pointer]:
                 - /url: /contact-centers
-            - listitem [ref=e150]:
-              - link "Media & Entertainment" [ref=e151] [cursor=pointer]:
+            - listitem [ref=e149]:
+              - link "Media & Entertainment" [ref=e150] [cursor=pointer]:
                 - /url: /media-entertainment
-            - listitem [ref=e152]:
-              - link "Healthcare" [ref=e153] [cursor=pointer]:
+            - listitem [ref=e151]:
+              - link "Healthcare" [ref=e152] [cursor=pointer]:
                 - /url: /healthcare
-        - generic [ref=e154]:
-          - paragraph [ref=e155]: Resources
-          - list [ref=e156]:
-            - listitem [ref=e157]:
-              - link "Blogs" [ref=e158] [cursor=pointer]:
+        - generic [ref=e153]:
+          - paragraph [ref=e154]: Resources
+          - list [ref=e155]:
+            - listitem [ref=e156]:
+              - link "Blogs" [ref=e157] [cursor=pointer]:
                 - /url: /blog
-            - listitem [ref=e159]:
-              - link "Benchmarks" [ref=e160] [cursor=pointer]:
+            - listitem [ref=e158]:
+              - link "Benchmarks" [ref=e159] [cursor=pointer]:
                 - /url: /benchmarks
-            - listitem [ref=e161]:
-              - link "News & Media" [ref=e162] [cursor=pointer]:
+            - listitem [ref=e160]:
+              - link "News & Media" [ref=e161] [cursor=pointer]:
                 - /url: /media
-            - listitem [ref=e163]:
-              - link "Patents" [ref=e164] [cursor=pointer]:
+            - listitem [ref=e162]:
+              - link "Patents" [ref=e163] [cursor=pointer]:
                 - /url: /patents
-            - listitem [ref=e165]:
-              - link "Research" [ref=e166] [cursor=pointer]:
+            - listitem [ref=e164]:
+              - link "Research" [ref=e165] [cursor=pointer]:
                 - /url: /research
-        - paragraph [ref=e168]:
-          - link "Documentation" [ref=e169] [cursor=pointer]:
+        - paragraph [ref=e167]:
+          - link "Documentation" [ref=e168] [cursor=pointer]:
             - /url: https://docs.shunyalabs.ai/overview
-        - list [ref=e171]:
-          - listitem [ref=e172]:
-            - link "About us" [ref=e173] [cursor=pointer]:
+        - list [ref=e170]:
+          - listitem [ref=e171]:
+            - link "About us" [ref=e172] [cursor=pointer]:
               - /url: /about
-        - list [ref=e175]:
-          - listitem [ref=e176]:
-            - link "Pricing" [ref=e177] [cursor=pointer]:
+        - list [ref=e174]:
+          - listitem [ref=e175]:
+            - link "Pricing" [ref=e176] [cursor=pointer]:
               - /url: /pricing
-      - generic [ref=e178]:
-        - paragraph [ref=e179]: Follow us on
-        - generic [ref=e180]:
-          - link [ref=e181] [cursor=pointer]:
+      - generic [ref=e177]:
+        - paragraph [ref=e178]: Follow us on
+        - generic [ref=e179]:
+          - link [ref=e180] [cursor=pointer]:
             - /url: https://www.linkedin.com/company/shunya-labs-ai/
-            - img [ref=e182]
-          - link [ref=e184] [cursor=pointer]:
-            - /url: https://www.facebook.com/people/ShunyaLabsAI/61577801851308/
-            - img [ref=e185]
-          - link [ref=e187] [cursor=pointer]:
+            - img [ref=e181]
+          - link [ref=e183] [cursor=pointer]:
+            - /url: https://www.facebook.com/profile.php?id=61577801651308
+            - img [ref=e184]
+          - link [ref=e186] [cursor=pointer]:
             - /url: https://www.instagram.com/shunyalabsai/
-            - img [ref=e188]
-          - link [ref=e190] [cursor=pointer]:
+            - img [ref=e187]
+          - link [ref=e189] [cursor=pointer]:
             - /url: https://x.com/ShunyaLabsAI
-            - img [ref=e191]
-      - generic [ref=e193]:
-        - paragraph [ref=e194]: © 2026 Shunya Labs Inc. All rights reserved.
-        - generic [ref=e195]:
-          - link "Privacy" [ref=e196] [cursor=pointer]:
+            - img [ref=e190]
+      - generic [ref=e192]:
+        - paragraph [ref=e193]: © 2026 Shunya Labs, Inc. All rights reserved.
+        - generic [ref=e194]:
+          - link "Privacy" [ref=e195] [cursor=pointer]:
             - /url: /privacy-policy
-          - link "Terms" [ref=e197] [cursor=pointer]:
+          - link "Terms" [ref=e196] [cursor=pointer]:
             - /url: /terms-conditions
-          - link "Security" [ref=e198] [cursor=pointer]:
+          - link "Security" [ref=e197] [cursor=pointer]:
             - /url: /security-policy
-          - link "General License" [ref=e199] [cursor=pointer]:
+          - link "General License" [ref=e198] [cursor=pointer]:
             - /url: /general-rail-m-license
-          - link "Custom License" [ref=e200] [cursor=pointer]:
+          - link "Custom License" [ref=e199] [cursor=pointer]:
             - /url: /shunya-labs-custom-model-rail-m-license
-  - alert [ref=e201]
+  - alert [ref=e200]
 ```
 
 # Test source
@@ -292,7 +270,7 @@ Received: 4
   28 |       }
   29 | 
 > 30 |       expect(failures.length, `${failures.length} design compliance issue(s) found`).toBe(0);
-     |                                                                                      ^ Error: 4 design compliance issue(s) found
+     |                                                                                      ^ Error: 1 design compliance issue(s) found
   31 |     });
   32 |   });
   33 | }

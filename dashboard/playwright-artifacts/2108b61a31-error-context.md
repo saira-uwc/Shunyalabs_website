@@ -12,7 +12,7 @@
 # Error details
 
 ```
-Error: [content] Footer item "© 2026 Shunya Labs, Inc. All rights reserved." not found
+Error: [links] CTA/Link "https://www.facebook.com/people/ShunyaLabsAI/61577801851308/" not found on page
 
 expect(received).toBeTruthy()
 
@@ -20,20 +20,12 @@ Received: null
 ```
 
 ```
-Error: [content] Text content "© 2026 Shunya Labs, Inc. All rights reserved." not found on page
-
-expect(received).toBeTruthy()
-
-Received: null
-```
-
-```
-Error: 2 design compliance issue(s) found
+Error: 1 design compliance issue(s) found
 
 expect(received).toBe(expected) // Object.is equality
 
 Expected: 0
-Received: 2
+Received: 1
 ```
 
 # Page snapshot
@@ -44,10 +36,10 @@ Received: 2
     - generic [ref=e3]:
       - navigation [ref=e4]:
         - generic [ref=e5]:
-          - link "Shunya Labs Logo" [ref=e6] [cursor=pointer]:
+          - link "Shunya Labs Logo" [ref=e7] [cursor=pointer]:
             - /url: /
-            - img "Shunya Labs Logo" [ref=e7]
-          - button "☰" [ref=e8] [cursor=pointer]
+            - img "Shunya Labs Logo" [ref=e8]
+          - button "☰" [ref=e9] [cursor=pointer]
         - generic:
           - generic:
             - generic:
@@ -80,24 +72,24 @@ Received: 2
               - button "Sign In"
               - link "Contact Sales":
                 - /url: /contact
-      - generic [ref=e9]:
-        - complementary [ref=e10]:
-          - generic [ref=e11]:
-            - heading "Speech to text" [level=1] [ref=e12]
-            - navigation [ref=e13]:
-              - button "Livestream Transcriptions" [ref=e15] [cursor=pointer]:
-                - generic [ref=e16]: Livestream Transcriptions
-                - img [ref=e18]
-              - button "Batch Transcriptions" [ref=e21] [cursor=pointer]:
-                - generic [ref=e22]: Batch Transcriptions
-                - img [ref=e24]
-              - button "Models" [ref=e27] [cursor=pointer]:
-                - generic [ref=e28]: Models
-                - img [ref=e30]
-              - button "Features" [ref=e33] [cursor=pointer]:
-                - generic [ref=e34]: Features
-                - img [ref=e36]
-        - generic [ref=e38]:
+      - generic [ref=e10]:
+        - complementary [ref=e11]:
+          - generic [ref=e12]:
+            - heading "Speech to text" [level=1] [ref=e13]
+            - navigation [ref=e14]:
+              - button "Livestream Transcriptions" [ref=e16] [cursor=pointer]:
+                - generic [ref=e17]: Livestream Transcriptions
+                - img [ref=e19]
+              - button "Batch Transcriptions" [ref=e22] [cursor=pointer]:
+                - generic [ref=e23]: Batch Transcriptions
+                - img [ref=e25]
+              - button "Models" [ref=e28] [cursor=pointer]:
+                - generic [ref=e29]: Models
+                - img [ref=e31]
+              - button "Features" [ref=e34] [cursor=pointer]:
+                - generic [ref=e35]: Features
+                - img [ref=e37]
+        - generic [ref=e39]:
           - generic:
             - generic:
               - heading "Quickstart" [level=1]
@@ -110,7 +102,7 @@ Received: 2
               - list:
                 - listitem:
                   - text: Contact
-                  - link "api@shunyalabs.ai" [ref=e39] [cursor=pointer]:
+                  - link "api@shunyalabs.ai" [ref=e40] [cursor=pointer]:
                     - /url: mailto:api@shunyalabs.ai
                 - listitem: Request API access for your use case
                 - listitem: Receive your unique API key via email
@@ -119,36 +111,36 @@ Received: 2
               - paragraph: The REST API provides a simple interface for batch transcription.
               - 'heading "Step 1: Install the requests library" [level=4]'
               - generic:
-                - button "Copy code" [ref=e40] [cursor=pointer]:
-                  - img [ref=e41]
-                - code [ref=e45]: pip install requests
+                - button "Copy code" [ref=e41] [cursor=pointer]:
+                  - img [ref=e42]
+                - code [ref=e46]: pip install requests
               - 'heading "Step 2: Transcribe your audio file" [level=4]'
               - generic:
-                - button "Copy code" [ref=e46] [cursor=pointer]:
-                  - img [ref=e47]
-                - code [ref=e51]:
+                - button "Copy code" [ref=e47] [cursor=pointer]:
+                  - img [ref=e48]
+                - code [ref=e52]:
                   - text: "import requests url = \"https://tb.shunyalabs.ai/transcribe\" headers = {\"X-API-Key\": \"your_api_key_here\"}"
                   - text: "with open(\"your_audio.wav\", \"rb\") as audio_file: files = {\"file\": audio_file} data = { \"language_code\": \"en\" } response = requests.post(url, headers=headers, files=files, data=data) result = response.json()"
                   - text: print(result["text"])
               - 'heading "Step 3: View the response" [level=4]'
               - generic:
-                - button "Copy code" [ref=e52] [cursor=pointer]:
-                  - img [ref=e53]
-                - code [ref=e57]:
+                - button "Copy code" [ref=e53] [cursor=pointer]:
+                  - img [ref=e54]
+                - code [ref=e58]:
                   - text: "{ \"success\": true, \"text\": \"Hello, this is your transcribed text.\", \"detected_language\": \"English\", \"total_time\": 2.34"
                   - text: "}"
               - heading "WebSocket API" [level=3]
               - paragraph: The WebSocket API provides a persistent connection for faster transcription and real-time processing feedback.
               - 'heading "Step 1: Install dependencies" [level=4]'
               - generic:
-                - button "Copy code" [ref=e58] [cursor=pointer]:
-                  - img [ref=e59]
-                - code [ref=e63]: pip install websockets
+                - button "Copy code" [ref=e59] [cursor=pointer]:
+                  - img [ref=e60]
+                - code [ref=e64]: pip install websockets
               - 'heading "Step 2: Connect and send audio" [level=4]'
               - generic:
-                - button "Copy code" [ref=e64] [cursor=pointer]:
-                  - img [ref=e65]
-                - code [ref=e69]:
+                - button "Copy code" [ref=e65] [cursor=pointer]:
+                  - img [ref=e66]
+                - code [ref=e70]:
                   - text: import asyncio
                   - text: import websockets
                   - text: import base64
@@ -157,126 +149,126 @@ Received: 2
               - heading "Using cURL" [level=3]
               - paragraph: "You can also quickly test your transcription without writing any code:"
               - generic:
-                - button "Copy code" [ref=e70] [cursor=pointer]:
-                  - img [ref=e71]
-                - code [ref=e75]: "curl -X POST \"https://tb.shunyalabs.ai/transcribe\" \\ -H \"X-API-Key: your_api_key_here\" \\ -F \"file=@your_audio.wav\" \\ -F \"language_code=en\" \\"
-    - contentinfo [ref=e76]:
-      - generic [ref=e77]:
-        - generic [ref=e78]:
-          - img "Shunya Labs" [ref=e79]
-          - paragraph [ref=e80]: Shunya Labs, Inc.
-        - generic [ref=e81]:
-          - paragraph [ref=e82]: Product
-          - list [ref=e83]:
-            - listitem [ref=e84]:
-              - link "Overview" [ref=e85] [cursor=pointer]:
+                - button "Copy code" [ref=e71] [cursor=pointer]:
+                  - img [ref=e72]
+                - code [ref=e76]: "curl -X POST \"https://tb.shunyalabs.ai/transcribe\" \\ -H \"X-API-Key: your_api_key_here\" \\ -F \"file=@your_audio.wav\" \\ -F \"language_code=en\" \\"
+    - contentinfo [ref=e77]:
+      - generic [ref=e78]:
+        - generic [ref=e79]:
+          - img "Shunya Labs" [ref=e80]
+          - paragraph [ref=e81]: Shunya Labs, Inc.
+        - generic [ref=e82]:
+          - paragraph [ref=e83]: Product
+          - list [ref=e84]:
+            - listitem [ref=e85]:
+              - link "Overview" [ref=e86] [cursor=pointer]:
                 - /url: /overview
-            - listitem [ref=e86]:
-              - link "Models" [ref=e87] [cursor=pointer]:
+            - listitem [ref=e87]:
+              - link "Models" [ref=e88] [cursor=pointer]:
                 - /url: /models-page
-            - listitem [ref=e88]:
-              - link "Voice Agents" [ref=e89] [cursor=pointer]:
+            - listitem [ref=e89]:
+              - link "Voice Agents" [ref=e90] [cursor=pointer]:
                 - /url: /voice-agent
-            - listitem [ref=e90]:
-              - link "Speech Intelligence" [ref=e91] [cursor=pointer]:
+            - listitem [ref=e91]:
+              - link "Speech Intelligence" [ref=e92] [cursor=pointer]:
                 - /url: /speech-intelligence-page
-            - listitem [ref=e92]:
-              - link "Audio Processing" [ref=e93] [cursor=pointer]:
+            - listitem [ref=e93]:
+              - link "Audio Processing" [ref=e94] [cursor=pointer]:
                 - /url: /audio-processing
-            - listitem [ref=e94]:
-              - link "Deployment" [ref=e95] [cursor=pointer]:
+            - listitem [ref=e95]:
+              - link "Deployment" [ref=e96] [cursor=pointer]:
                 - /url: /deployment
-        - generic [ref=e96]:
-          - paragraph [ref=e97]: Models
-          - list [ref=e98]:
-            - listitem [ref=e99]:
-              - link "Language Models" [ref=e100] [cursor=pointer]:
+        - generic [ref=e97]:
+          - paragraph [ref=e98]: Models
+          - list [ref=e99]:
+            - listitem [ref=e100]:
+              - link "Language Models" [ref=e101] [cursor=pointer]:
                 - /url: /language-models
-            - listitem [ref=e101]:
-              - link "Zero STT Indic" [ref=e102] [cursor=pointer]:
+            - listitem [ref=e102]:
+              - link "Zero STT Indic" [ref=e103] [cursor=pointer]:
                 - /url: /zero-indic
-            - listitem [ref=e103]:
-              - link "Zero STT Codeswitch" [ref=e104] [cursor=pointer]:
+            - listitem [ref=e104]:
+              - link "Zero STT Codeswitch" [ref=e105] [cursor=pointer]:
                 - /url: /zero-code-switch
-            - listitem [ref=e105]:
-              - link "Specialised Models" [ref=e106] [cursor=pointer]:
+            - listitem [ref=e106]:
+              - link "Specialised Models" [ref=e107] [cursor=pointer]:
                 - /url: /domain-specialisation
-            - listitem [ref=e107]:
-              - link "Zero STT Med" [ref=e108] [cursor=pointer]:
+            - listitem [ref=e108]:
+              - link "Zero STT Med" [ref=e109] [cursor=pointer]:
                 - /url: /zero-med
-            - listitem [ref=e109]:
-              - link "On Device Models" [ref=e110] [cursor=pointer]:
+            - listitem [ref=e110]:
+              - link "On Device Models" [ref=e111] [cursor=pointer]:
                 - /url: /on-device-models
-        - generic [ref=e111]:
-          - paragraph [ref=e112]: Solutions
-          - list [ref=e113]:
-            - listitem [ref=e114]:
-              - link "Contact Centers" [ref=e115] [cursor=pointer]:
+        - generic [ref=e112]:
+          - paragraph [ref=e113]: Solutions
+          - list [ref=e114]:
+            - listitem [ref=e115]:
+              - link "Contact Centers" [ref=e116] [cursor=pointer]:
                 - /url: /contact-centers
-            - listitem [ref=e116]:
-              - link "Media & Entertainment" [ref=e117] [cursor=pointer]:
+            - listitem [ref=e117]:
+              - link "Media & Entertainment" [ref=e118] [cursor=pointer]:
                 - /url: /media-entertainment
-            - listitem [ref=e118]:
-              - link "Healthcare" [ref=e119] [cursor=pointer]:
+            - listitem [ref=e119]:
+              - link "Healthcare" [ref=e120] [cursor=pointer]:
                 - /url: /healthcare
-        - generic [ref=e120]:
-          - paragraph [ref=e121]: Resources
-          - list [ref=e122]:
-            - listitem [ref=e123]:
-              - link "Blogs" [ref=e124] [cursor=pointer]:
+        - generic [ref=e121]:
+          - paragraph [ref=e122]: Resources
+          - list [ref=e123]:
+            - listitem [ref=e124]:
+              - link "Blogs" [ref=e125] [cursor=pointer]:
                 - /url: /blog
-            - listitem [ref=e125]:
-              - link "Benchmarks" [ref=e126] [cursor=pointer]:
+            - listitem [ref=e126]:
+              - link "Benchmarks" [ref=e127] [cursor=pointer]:
                 - /url: /benchmarks
-            - listitem [ref=e127]:
-              - link "News & Media" [ref=e128] [cursor=pointer]:
+            - listitem [ref=e128]:
+              - link "News & Media" [ref=e129] [cursor=pointer]:
                 - /url: /media
-            - listitem [ref=e129]:
-              - link "Patents" [ref=e130] [cursor=pointer]:
+            - listitem [ref=e130]:
+              - link "Patents" [ref=e131] [cursor=pointer]:
                 - /url: /patents
-            - listitem [ref=e131]:
-              - link "Research" [ref=e132] [cursor=pointer]:
+            - listitem [ref=e132]:
+              - link "Research" [ref=e133] [cursor=pointer]:
                 - /url: /research
-        - paragraph [ref=e134]:
-          - link "Documentation" [ref=e135] [cursor=pointer]:
+        - paragraph [ref=e135]:
+          - link "Documentation" [ref=e136] [cursor=pointer]:
             - /url: https://docs.shunyalabs.ai/overview
-        - list [ref=e137]:
-          - listitem [ref=e138]:
-            - link "About us" [ref=e139] [cursor=pointer]:
+        - list [ref=e138]:
+          - listitem [ref=e139]:
+            - link "About us" [ref=e140] [cursor=pointer]:
               - /url: /about
-        - list [ref=e141]:
-          - listitem [ref=e142]:
-            - link "Pricing" [ref=e143] [cursor=pointer]:
+        - list [ref=e142]:
+          - listitem [ref=e143]:
+            - link "Pricing" [ref=e144] [cursor=pointer]:
               - /url: /pricing
-      - generic [ref=e144]:
-        - paragraph [ref=e145]: Follow us on
-        - generic [ref=e146]:
-          - link [ref=e147] [cursor=pointer]:
+      - generic [ref=e145]:
+        - paragraph [ref=e146]: Follow us on
+        - generic [ref=e147]:
+          - link [ref=e148] [cursor=pointer]:
             - /url: https://www.linkedin.com/company/shunya-labs-ai/
-            - img [ref=e148]
-          - link [ref=e150] [cursor=pointer]:
-            - /url: https://www.facebook.com/people/ShunyaLabsAI/61577801851308/
-            - img [ref=e151]
-          - link [ref=e153] [cursor=pointer]:
+            - img [ref=e149]
+          - link [ref=e151] [cursor=pointer]:
+            - /url: https://www.facebook.com/profile.php?id=61577801651308
+            - img [ref=e152]
+          - link [ref=e154] [cursor=pointer]:
             - /url: https://www.instagram.com/shunyalabsai/
-            - img [ref=e154]
-          - link [ref=e156] [cursor=pointer]:
+            - img [ref=e155]
+          - link [ref=e157] [cursor=pointer]:
             - /url: https://x.com/ShunyaLabsAI
-            - img [ref=e157]
-      - generic [ref=e159]:
-        - paragraph [ref=e160]: © 2026 Shunya Labs Inc. All rights reserved.
-        - generic [ref=e161]:
-          - link "Privacy" [ref=e162] [cursor=pointer]:
+            - img [ref=e158]
+      - generic [ref=e160]:
+        - paragraph [ref=e161]: © 2026 Shunya Labs, Inc. All rights reserved.
+        - generic [ref=e162]:
+          - link "Privacy" [ref=e163] [cursor=pointer]:
             - /url: /privacy-policy
-          - link "Terms" [ref=e163] [cursor=pointer]:
+          - link "Terms" [ref=e164] [cursor=pointer]:
             - /url: /terms-conditions
-          - link "Security" [ref=e164] [cursor=pointer]:
+          - link "Security" [ref=e165] [cursor=pointer]:
             - /url: /security-policy
-          - link "General License" [ref=e165] [cursor=pointer]:
+          - link "General License" [ref=e166] [cursor=pointer]:
             - /url: /general-rail-m-license
-          - link "Custom License" [ref=e166] [cursor=pointer]:
+          - link "Custom License" [ref=e167] [cursor=pointer]:
             - /url: /shunya-labs-custom-model-rail-m-license
-  - alert [ref=e167]
+  - alert [ref=e168]
 ```
 
 # Test source
@@ -312,7 +304,7 @@ Received: 2
   28 |       }
   29 | 
 > 30 |       expect(failures.length, `${failures.length} design compliance issue(s) found`).toBe(0);
-     |                                                                                      ^ Error: 2 design compliance issue(s) found
+     |                                                                                      ^ Error: 1 design compliance issue(s) found
   31 |     });
   32 |   });
   33 | }

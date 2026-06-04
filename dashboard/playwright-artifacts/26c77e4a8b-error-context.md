@@ -12,7 +12,7 @@
 # Error details
 
 ```
-Error: [global] Footer background: expected rgb(255, 255, 255) but got rgb(0, 0, 0)
+Error: [links] CTA/Link "https://www.facebook.com/people/ShunyaLabsAI/61577801851308/" not found on page
 
 expect(received).toBeTruthy()
 
@@ -20,36 +20,12 @@ Received: null
 ```
 
 ```
-Error: [content] Footer item "One platform for speech in and speech out-secure by design, built to scale." not found
-
-expect(received).toBeTruthy()
-
-Received: null
-```
-
-```
-Error: [content] Text content "One platform for speech in and speech out-secure by design, built to scale." not found on page
-
-expect(received).toBeTruthy()
-
-Received: null
-```
-
-```
-Error: [content] Text content "© 2026 Shunya Labs, Inc. All rights reserved." not found on page
-
-expect(received).toBeTruthy()
-
-Received: null
-```
-
-```
-Error: 4 design compliance issue(s) found
+Error: 1 design compliance issue(s) found
 
 expect(received).toBe(expected) // Object.is equality
 
 Expected: 0
-Received: 4
+Received: 1
 ```
 
 # Page snapshot
@@ -60,227 +36,229 @@ Received: 4
     - generic [ref=e3]:
       - navigation [ref=e4]:
         - generic [ref=e5]:
-          - link "Shunya Labs Logo" [ref=e6] [cursor=pointer]:
-            - /url: /
-            - img "Shunya Labs Logo" [ref=e7]
-          - generic [ref=e8]:
-            - button "Product" [ref=e10] [cursor=pointer]:
-              - text: Product
-              - img [ref=e11]
-            - button "Models" [ref=e14] [cursor=pointer]:
-              - text: Models
-              - img [ref=e15]
-            - button "Solutions" [ref=e18] [cursor=pointer]:
-              - text: Solutions
-              - img [ref=e19]
-            - button "Resources" [ref=e22] [cursor=pointer]:
-              - text: Resources
-              - img [ref=e23]
-            - link "Documentation" [ref=e25] [cursor=pointer]:
-              - /url: https://docs.shunyalabs.ai/overview
-            - link "About Us" [ref=e26] [cursor=pointer]:
-              - /url: /about
-            - link "Pricing" [ref=e27] [cursor=pointer]:
-              - /url: /pricing
-          - link "Playground" [ref=e28] [cursor=pointer]:
-            - /url: https://playground.shunyalabs.ai/
-            - img [ref=e29]
-            - text: Playground
-          - generic [ref=e31]:
-            - button "Sign In" [ref=e32] [cursor=pointer]
-            - link "Contact Sales" [ref=e33] [cursor=pointer]:
-              - /url: /contact
-      - heading "Discover our ever-growing collection of patents." [level=1] [ref=e36]
-      - generic [ref=e37]:
-        - generic [ref=e38] [cursor=pointer]:
-          - img [ref=e41]
-          - generic [ref=e44]:
+          - generic [ref=e6]:
+            - link "Shunya Labs Logo" [ref=e7] [cursor=pointer]:
+              - /url: /
+              - img "Shunya Labs Logo" [ref=e8]
+            - generic [ref=e9]:
+              - button "Product" [ref=e11] [cursor=pointer]:
+                - text: Product
+                - img [ref=e12]
+              - button "Models" [ref=e15] [cursor=pointer]:
+                - text: Models
+                - img [ref=e16]
+              - button "Solutions" [ref=e19] [cursor=pointer]:
+                - text: Solutions
+                - img [ref=e20]
+              - button "Resources" [ref=e23] [cursor=pointer]:
+                - text: Resources
+                - img [ref=e24]
+              - link "Documentation" [ref=e26] [cursor=pointer]:
+                - /url: https://docs.shunyalabs.ai/overview
+              - link "About Us" [ref=e27] [cursor=pointer]:
+                - /url: /about
+              - link "Pricing" [ref=e28] [cursor=pointer]:
+                - /url: /pricing
+          - generic [ref=e29]:
+            - link "Playground" [ref=e30] [cursor=pointer]:
+              - /url: https://playground.shunyalabs.ai/
+              - img [ref=e31]
+              - text: Playground
+            - generic [ref=e33]:
+              - button "Sign In" [ref=e34] [cursor=pointer]
+              - link "Contact Sales" [ref=e35] [cursor=pointer]:
+                - /url: /contact
+      - heading "Discover our ever-growing collection of patents." [level=1] [ref=e38]
+      - generic [ref=e39]:
+        - generic [ref=e40] [cursor=pointer]:
+          - img [ref=e43]
+          - generic [ref=e46]:
             - text: PATENT
-            - paragraph [ref=e45]: Translation with Clinical Precision
-        - generic [ref=e46] [cursor=pointer]:
-          - img [ref=e49]
-          - generic [ref=e52]:
+            - paragraph [ref=e47]: Translation with Clinical Precision
+        - generic [ref=e48] [cursor=pointer]:
+          - img [ref=e51]
+          - generic [ref=e54]:
             - text: PATENT
-            - paragraph [ref=e53]: Text to emotion vector generation
-        - generic [ref=e54] [cursor=pointer]:
-          - img [ref=e57]
-          - generic [ref=e60]:
+            - paragraph [ref=e55]: Text to emotion vector generation
+        - generic [ref=e56] [cursor=pointer]:
+          - img [ref=e59]
+          - generic [ref=e62]:
             - text: PATENT
-            - paragraph [ref=e61]: LLM Hallucination Mitigation
-        - generic [ref=e62] [cursor=pointer]:
-          - img [ref=e65]
-          - generic [ref=e68]:
+            - paragraph [ref=e63]: LLM Hallucination Mitigation
+        - generic [ref=e64] [cursor=pointer]:
+          - img [ref=e67]
+          - generic [ref=e70]:
             - text: PATENT
-            - paragraph [ref=e69]: Fake information classification
-        - generic [ref=e70] [cursor=pointer]:
-          - img [ref=e73]
-          - generic [ref=e76]:
+            - paragraph [ref=e71]: Fake information classification
+        - generic [ref=e72] [cursor=pointer]:
+          - img [ref=e75]
+          - generic [ref=e78]:
             - text: PATENT
-            - paragraph [ref=e77]: Clinician like Discharge Summary generation
-        - generic [ref=e78] [cursor=pointer]:
-          - img [ref=e81]
-          - generic [ref=e84]:
+            - paragraph [ref=e79]: Clinician like Discharge Summary generation
+        - generic [ref=e80] [cursor=pointer]:
+          - img [ref=e83]
+          - generic [ref=e86]:
             - text: PATENT
-            - paragraph [ref=e85]: Causality driven Graph Neural Network for Mental Health Prognosis
-        - generic [ref=e86] [cursor=pointer]:
-          - img [ref=e89]
-          - generic [ref=e92]:
+            - paragraph [ref=e87]: Causality driven Graph Neural Network for Mental Health Prognosis
+        - generic [ref=e88] [cursor=pointer]:
+          - img [ref=e91]
+          - generic [ref=e94]:
             - text: PATENT
-            - paragraph [ref=e93]: Stochastic Actor Oriented Model driven Clinician Suggestion
-        - generic [ref=e94] [cursor=pointer]:
-          - img [ref=e97]
-          - generic [ref=e100]:
+            - paragraph [ref=e95]: Stochastic Actor Oriented Model driven Clinician Suggestion
+        - generic [ref=e96] [cursor=pointer]:
+          - img [ref=e99]
+          - generic [ref=e102]:
             - text: PATENT
-            - paragraph [ref=e101]: Clinical Case History Generation
-        - generic [ref=e102] [cursor=pointer]:
-          - img [ref=e105]
-          - generic [ref=e108]:
+            - paragraph [ref=e103]: Clinical Case History Generation
+        - generic [ref=e104] [cursor=pointer]:
+          - img [ref=e107]
+          - generic [ref=e110]:
             - text: PATENT
-            - paragraph [ref=e109]: Deltawave guided wearable EEG happiness Monitors
-        - generic [ref=e110] [cursor=pointer]:
-          - img [ref=e113]
-          - generic [ref=e116]:
+            - paragraph [ref=e111]: Deltawave guided wearable EEG happiness Monitors
+        - generic [ref=e112] [cursor=pointer]:
+          - img [ref=e115]
+          - generic [ref=e118]:
             - text: PATENT
-            - paragraph [ref=e117]: Interoperable EHR Taxonomy and Data Mapper
-        - generic [ref=e118] [cursor=pointer]:
-          - img [ref=e121]
-          - generic [ref=e124]:
+            - paragraph [ref=e119]: Interoperable EHR Taxonomy and Data Mapper
+        - generic [ref=e120] [cursor=pointer]:
+          - img [ref=e123]
+          - generic [ref=e126]:
             - text: PATENT
-            - paragraph [ref=e125]: Stella for Clinician
-        - generic [ref=e126] [cursor=pointer]:
-          - img [ref=e129]
-          - generic [ref=e132]:
+            - paragraph [ref=e127]: Stella for Clinician
+        - generic [ref=e128] [cursor=pointer]:
+          - img [ref=e131]
+          - generic [ref=e134]:
             - text: PATENT
-            - paragraph [ref=e133]: Phoneme Viseme
-      - link "Contact Us" [ref=e135] [cursor=pointer]:
+            - paragraph [ref=e135]: Phoneme Viseme
+      - link "Contact Us" [ref=e137] [cursor=pointer]:
         - /url: /contact
-    - contentinfo [ref=e136]:
-      - generic [ref=e140]:
-        - paragraph [ref=e141]: The fastest way to add voice AI to your products
-        - paragraph [ref=e142]: One platform for speech in and speech out—secure by design, built to scale.
-        - generic [ref=e143]:
-          - link "Go to Pricing page" [ref=e144] [cursor=pointer]:
+    - contentinfo [ref=e138]:
+      - generic [ref=e139]:
+        - paragraph [ref=e140]: The fastest way to add voice AI to your products
+        - paragraph [ref=e141]: One platform for speech in and speech out-secure by design, built to scale.
+        - generic [ref=e142]:
+          - link "Go to Pricing page" [ref=e143] [cursor=pointer]:
             - /url: /pricing
             - text: Get Started
-          - link "Contact Sales" [ref=e145] [cursor=pointer]:
+          - link "Contact Sales" [ref=e144] [cursor=pointer]:
             - /url: /contact
-    - contentinfo [ref=e146]:
-      - generic [ref=e147]:
-        - generic [ref=e148]:
-          - img "Shunya Labs" [ref=e149]
-          - paragraph [ref=e150]: Shunya Labs, Inc.
-        - generic [ref=e151]:
-          - paragraph [ref=e152]: Product
-          - list [ref=e153]:
-            - listitem [ref=e154]:
-              - link "Overview" [ref=e155] [cursor=pointer]:
+    - contentinfo [ref=e145]:
+      - generic [ref=e146]:
+        - generic [ref=e147]:
+          - img "Shunya Labs" [ref=e148]
+          - paragraph [ref=e149]: Shunya Labs, Inc.
+        - generic [ref=e150]:
+          - paragraph [ref=e151]: Product
+          - list [ref=e152]:
+            - listitem [ref=e153]:
+              - link "Overview" [ref=e154] [cursor=pointer]:
                 - /url: /overview
-            - listitem [ref=e156]:
-              - link "Models" [ref=e157] [cursor=pointer]:
+            - listitem [ref=e155]:
+              - link "Models" [ref=e156] [cursor=pointer]:
                 - /url: /models-page
-            - listitem [ref=e158]:
-              - link "Voice Agents" [ref=e159] [cursor=pointer]:
+            - listitem [ref=e157]:
+              - link "Voice Agents" [ref=e158] [cursor=pointer]:
                 - /url: /voice-agent
-            - listitem [ref=e160]:
-              - link "Speech Intelligence" [ref=e161] [cursor=pointer]:
+            - listitem [ref=e159]:
+              - link "Speech Intelligence" [ref=e160] [cursor=pointer]:
                 - /url: /speech-intelligence-page
-            - listitem [ref=e162]:
-              - link "Audio Processing" [ref=e163] [cursor=pointer]:
+            - listitem [ref=e161]:
+              - link "Audio Processing" [ref=e162] [cursor=pointer]:
                 - /url: /audio-processing
-            - listitem [ref=e164]:
-              - link "Deployment" [ref=e165] [cursor=pointer]:
+            - listitem [ref=e163]:
+              - link "Deployment" [ref=e164] [cursor=pointer]:
                 - /url: /deployment
-        - generic [ref=e166]:
-          - paragraph [ref=e167]: Models
-          - list [ref=e168]:
-            - listitem [ref=e169]:
-              - link "Language Models" [ref=e170] [cursor=pointer]:
+        - generic [ref=e165]:
+          - paragraph [ref=e166]: Models
+          - list [ref=e167]:
+            - listitem [ref=e168]:
+              - link "Language Models" [ref=e169] [cursor=pointer]:
                 - /url: /language-models
-            - listitem [ref=e171]:
-              - link "Zero STT Indic" [ref=e172] [cursor=pointer]:
+            - listitem [ref=e170]:
+              - link "Zero STT Indic" [ref=e171] [cursor=pointer]:
                 - /url: /zero-indic
-            - listitem [ref=e173]:
-              - link "Zero STT Codeswitch" [ref=e174] [cursor=pointer]:
+            - listitem [ref=e172]:
+              - link "Zero STT Codeswitch" [ref=e173] [cursor=pointer]:
                 - /url: /zero-code-switch
-            - listitem [ref=e175]:
-              - link "Specialised Models" [ref=e176] [cursor=pointer]:
+            - listitem [ref=e174]:
+              - link "Specialised Models" [ref=e175] [cursor=pointer]:
                 - /url: /domain-specialisation
-            - listitem [ref=e177]:
-              - link "Zero STT Med" [ref=e178] [cursor=pointer]:
+            - listitem [ref=e176]:
+              - link "Zero STT Med" [ref=e177] [cursor=pointer]:
                 - /url: /zero-med
-            - listitem [ref=e179]:
-              - link "On Device Models" [ref=e180] [cursor=pointer]:
+            - listitem [ref=e178]:
+              - link "On Device Models" [ref=e179] [cursor=pointer]:
                 - /url: /on-device-models
-        - generic [ref=e181]:
-          - paragraph [ref=e182]: Solutions
-          - list [ref=e183]:
-            - listitem [ref=e184]:
-              - link "Contact Centers" [ref=e185] [cursor=pointer]:
+        - generic [ref=e180]:
+          - paragraph [ref=e181]: Solutions
+          - list [ref=e182]:
+            - listitem [ref=e183]:
+              - link "Contact Centers" [ref=e184] [cursor=pointer]:
                 - /url: /contact-centers
-            - listitem [ref=e186]:
-              - link "Media & Entertainment" [ref=e187] [cursor=pointer]:
+            - listitem [ref=e185]:
+              - link "Media & Entertainment" [ref=e186] [cursor=pointer]:
                 - /url: /media-entertainment
-            - listitem [ref=e188]:
-              - link "Healthcare" [ref=e189] [cursor=pointer]:
+            - listitem [ref=e187]:
+              - link "Healthcare" [ref=e188] [cursor=pointer]:
                 - /url: /healthcare
-        - generic [ref=e190]:
-          - paragraph [ref=e191]: Resources
-          - list [ref=e192]:
-            - listitem [ref=e193]:
-              - link "Blogs" [ref=e194] [cursor=pointer]:
+        - generic [ref=e189]:
+          - paragraph [ref=e190]: Resources
+          - list [ref=e191]:
+            - listitem [ref=e192]:
+              - link "Blogs" [ref=e193] [cursor=pointer]:
                 - /url: /blog
-            - listitem [ref=e195]:
-              - link "Benchmarks" [ref=e196] [cursor=pointer]:
+            - listitem [ref=e194]:
+              - link "Benchmarks" [ref=e195] [cursor=pointer]:
                 - /url: /benchmarks
-            - listitem [ref=e197]:
-              - link "News & Media" [ref=e198] [cursor=pointer]:
+            - listitem [ref=e196]:
+              - link "News & Media" [ref=e197] [cursor=pointer]:
                 - /url: /media
-            - listitem [ref=e199]:
-              - link "Patents" [ref=e200] [cursor=pointer]:
+            - listitem [ref=e198]:
+              - link "Patents" [ref=e199] [cursor=pointer]:
                 - /url: /patents
-            - listitem [ref=e201]:
-              - link "Research" [ref=e202] [cursor=pointer]:
+            - listitem [ref=e200]:
+              - link "Research" [ref=e201] [cursor=pointer]:
                 - /url: /research
-        - paragraph [ref=e204]:
-          - link "Documentation" [ref=e205] [cursor=pointer]:
+        - paragraph [ref=e203]:
+          - link "Documentation" [ref=e204] [cursor=pointer]:
             - /url: https://docs.shunyalabs.ai/overview
-        - list [ref=e207]:
-          - listitem [ref=e208]:
-            - link "About us" [ref=e209] [cursor=pointer]:
+        - list [ref=e206]:
+          - listitem [ref=e207]:
+            - link "About us" [ref=e208] [cursor=pointer]:
               - /url: /about
-        - list [ref=e211]:
-          - listitem [ref=e212]:
-            - link "Pricing" [ref=e213] [cursor=pointer]:
+        - list [ref=e210]:
+          - listitem [ref=e211]:
+            - link "Pricing" [ref=e212] [cursor=pointer]:
               - /url: /pricing
-      - generic [ref=e214]:
-        - paragraph [ref=e215]: Follow us on
-        - generic [ref=e216]:
-          - link [ref=e217] [cursor=pointer]:
+      - generic [ref=e213]:
+        - paragraph [ref=e214]: Follow us on
+        - generic [ref=e215]:
+          - link [ref=e216] [cursor=pointer]:
             - /url: https://www.linkedin.com/company/shunya-labs-ai/
-            - img [ref=e218]
-          - link [ref=e220] [cursor=pointer]:
-            - /url: https://www.facebook.com/people/ShunyaLabsAI/61577801851308/
-            - img [ref=e221]
-          - link [ref=e223] [cursor=pointer]:
+            - img [ref=e217]
+          - link [ref=e219] [cursor=pointer]:
+            - /url: https://www.facebook.com/profile.php?id=61577801651308
+            - img [ref=e220]
+          - link [ref=e222] [cursor=pointer]:
             - /url: https://www.instagram.com/shunyalabsai/
-            - img [ref=e224]
-          - link [ref=e226] [cursor=pointer]:
+            - img [ref=e223]
+          - link [ref=e225] [cursor=pointer]:
             - /url: https://x.com/ShunyaLabsAI
-            - img [ref=e227]
-      - generic [ref=e229]:
-        - paragraph [ref=e230]: © 2026 Shunya Labs Inc. All rights reserved.
-        - generic [ref=e231]:
-          - link "Privacy" [ref=e232] [cursor=pointer]:
+            - img [ref=e226]
+      - generic [ref=e228]:
+        - paragraph [ref=e229]: © 2026 Shunya Labs, Inc. All rights reserved.
+        - generic [ref=e230]:
+          - link "Privacy" [ref=e231] [cursor=pointer]:
             - /url: /privacy-policy
-          - link "Terms" [ref=e233] [cursor=pointer]:
+          - link "Terms" [ref=e232] [cursor=pointer]:
             - /url: /terms-conditions
-          - link "Security" [ref=e234] [cursor=pointer]:
+          - link "Security" [ref=e233] [cursor=pointer]:
             - /url: /security-policy
-          - link "General License" [ref=e235] [cursor=pointer]:
+          - link "General License" [ref=e234] [cursor=pointer]:
             - /url: /general-rail-m-license
-          - link "Custom License" [ref=e236] [cursor=pointer]:
+          - link "Custom License" [ref=e235] [cursor=pointer]:
             - /url: /shunya-labs-custom-model-rail-m-license
-  - alert [ref=e237]
+  - alert [ref=e236]
 ```
 
 # Test source
@@ -316,7 +294,7 @@ Received: 4
   28 |       }
   29 | 
 > 30 |       expect(failures.length, `${failures.length} design compliance issue(s) found`).toBe(0);
-     |                                                                                      ^ Error: 4 design compliance issue(s) found
+     |                                                                                      ^ Error: 1 design compliance issue(s) found
   31 |     });
   32 |   });
   33 | }

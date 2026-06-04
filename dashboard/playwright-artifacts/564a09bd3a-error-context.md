@@ -12,7 +12,7 @@
 # Error details
 
 ```
-Error: [global] Footer background: expected rgb(255, 255, 255) but got rgb(0, 0, 0)
+Error: [links] CTA/Link "https://www.facebook.com/people/ShunyaLabsAI/61577801851308/" not found on page
 
 expect(received).toBeTruthy()
 
@@ -20,36 +20,12 @@ Received: null
 ```
 
 ```
-Error: [content] Footer item "One platform for speech in and speech out-secure by design, built to scale." not found
-
-expect(received).toBeTruthy()
-
-Received: null
-```
-
-```
-Error: [content] Text content "One platform for speech in and speech out-secure by design, built to scale." not found on page
-
-expect(received).toBeTruthy()
-
-Received: null
-```
-
-```
-Error: [content] Text content "© 2026 Shunya Labs, Inc. All rights reserved." not found on page
-
-expect(received).toBeTruthy()
-
-Received: null
-```
-
-```
-Error: 4 design compliance issue(s) found
+Error: 1 design compliance issue(s) found
 
 expect(received).toBe(expected) // Object.is equality
 
 Expected: 0
-Received: 4
+Received: 1
 ```
 
 # Page snapshot
@@ -60,319 +36,321 @@ Received: 4
     - generic [ref=e3]:
       - navigation [ref=e4]:
         - generic [ref=e5]:
-          - link "Shunya Labs Logo" [ref=e6] [cursor=pointer]:
-            - /url: /
-            - img "Shunya Labs Logo" [ref=e7]
-          - generic [ref=e8]:
-            - button "Product" [ref=e10] [cursor=pointer]:
-              - text: Product
-              - img [ref=e11]
-            - button "Models" [ref=e14] [cursor=pointer]:
-              - text: Models
-              - img [ref=e15]
-            - button "Solutions" [ref=e18] [cursor=pointer]:
-              - text: Solutions
-              - img [ref=e19]
-            - button "Resources" [ref=e22] [cursor=pointer]:
-              - text: Resources
-              - img [ref=e23]
-            - link "Documentation" [ref=e25] [cursor=pointer]:
-              - /url: https://docs.shunyalabs.ai/overview
-            - link "About Us" [ref=e26] [cursor=pointer]:
-              - /url: /about
-            - link "Pricing" [ref=e27] [cursor=pointer]:
-              - /url: /pricing
-          - link "Playground" [ref=e28] [cursor=pointer]:
-            - /url: https://playground.shunyalabs.ai/
-            - img [ref=e29]
-            - text: Playground
-          - generic [ref=e31]:
-            - button "Sign In" [ref=e32] [cursor=pointer]
-            - link "Contact Sales" [ref=e33] [cursor=pointer]:
-              - /url: /contact
-      - generic [ref=e35]:
-        - heading "Enterprise Use Cases" [level=1] [ref=e36]
-        - img "Enterprise Use Cases" [ref=e39]
-      - generic [ref=e40]:
-        - heading "Custom applications tailored to your specific context and workflows." [level=2] [ref=e41]
-        - generic [ref=e42]:
-          - generic [ref=e43]:
-            - img [ref=e45]
-            - generic [ref=e48]:
-              - heading "Custom vocabularies" [level=3] [ref=e49]
-              - paragraph [ref=e50]: Add custom vocabularies and pronunciations to specialized models
-          - generic [ref=e51]:
-            - img [ref=e53]
-            - generic [ref=e56]:
-              - heading "Business logic integration" [level=3] [ref=e57]
-              - paragraph [ref=e58]: Embed your rules, workflows, and context
-          - generic [ref=e59]:
-            - img [ref=e61]
-            - generic [ref=e63]:
-              - heading "Flexible deployment" [level=3] [ref=e64]
-              - paragraph [ref=e65]: Cloud, edge, or on-premises based on your needs
-          - generic [ref=e66]:
-            - img [ref=e68]
-            - generic [ref=e71]:
-              - heading "Speaker identification" [level=3] [ref=e72]
-              - paragraph [ref=e73]: Register workplace voices for personalized speaker tags
-          - generic [ref=e74]:
-            - img [ref=e76]
-            - generic [ref=e79]:
-              - heading "Structured outputs" [level=3] [ref=e80]
-              - paragraph [ref=e81]: Format data for seamless system integration
-        - generic [ref=e82]:
-          - generic [ref=e83]:
-            - generic [ref=e84]:
-              - img [ref=e87]
-              - generic [ref=e89]:
-                - heading "Voice Agents & Assistants" [level=2] [ref=e90]
-                - paragraph [ref=e91]: Conversational automation with intelligent action execution.
-            - generic [ref=e92]:
-              - img "Voice Agents & Assistants" [ref=e94]
-              - generic [ref=e95]:
-                - generic [ref=e96]:
-                  - generic [ref=e97]: •
-                  - generic [ref=e98]:
-                    - paragraph [ref=e99]: 200+ language
-                    - paragraph [ref=e100]: Wide coverage with multilingual support
-                - generic [ref=e101]:
-                  - generic [ref=e102]: •
-                  - generic [ref=e103]:
-                    - paragraph [ref=e104]: Context-aware
-                    - paragraph [ref=e105]: Understands your business workflows
-                - generic [ref=e106]:
-                  - generic [ref=e107]: •
-                  - generic [ref=e108]:
-                    - paragraph [ref=e109]: One integration
-                    - paragraph [ref=e110]: Single API for workflows & automation
-                - generic [ref=e111]:
-                  - generic [ref=e112]: •
-                  - generic [ref=e113]:
-                    - paragraph [ref=e114]: Custom entities
-                    - paragraph [ref=e115]: Recognizes your business terminology
-                - link "Learn more →" [ref=e116] [cursor=pointer]:
+          - generic [ref=e6]:
+            - link "Shunya Labs Logo" [ref=e7] [cursor=pointer]:
+              - /url: /
+              - img "Shunya Labs Logo" [ref=e8]
+            - generic [ref=e9]:
+              - button "Product" [ref=e11] [cursor=pointer]:
+                - text: Product
+                - img [ref=e12]
+              - button "Models" [ref=e15] [cursor=pointer]:
+                - text: Models
+                - img [ref=e16]
+              - button "Solutions" [ref=e19] [cursor=pointer]:
+                - text: Solutions
+                - img [ref=e20]
+              - button "Resources" [ref=e23] [cursor=pointer]:
+                - text: Resources
+                - img [ref=e24]
+              - link "Documentation" [ref=e26] [cursor=pointer]:
+                - /url: https://docs.shunyalabs.ai/overview
+              - link "About Us" [ref=e27] [cursor=pointer]:
+                - /url: /about
+              - link "Pricing" [ref=e28] [cursor=pointer]:
+                - /url: /pricing
+          - generic [ref=e29]:
+            - link "Playground" [ref=e30] [cursor=pointer]:
+              - /url: https://playground.shunyalabs.ai/
+              - img [ref=e31]
+              - text: Playground
+            - generic [ref=e33]:
+              - button "Sign In" [ref=e34] [cursor=pointer]
+              - link "Contact Sales" [ref=e35] [cursor=pointer]:
+                - /url: /contact
+      - generic [ref=e37]:
+        - heading "Enterprise Use Cases" [level=1] [ref=e38]
+        - img "Enterprise Use Cases" [ref=e41]
+      - generic [ref=e42]:
+        - heading "Custom applications tailored to your specific context and workflows." [level=2] [ref=e43]
+        - generic [ref=e44]:
+          - generic [ref=e45]:
+            - img [ref=e47]
+            - generic [ref=e50]:
+              - heading "Custom vocabularies" [level=3] [ref=e51]
+              - paragraph [ref=e52]: Add custom vocabularies and pronunciations to specialized models
+          - generic [ref=e53]:
+            - img [ref=e55]
+            - generic [ref=e58]:
+              - heading "Business logic integration" [level=3] [ref=e59]
+              - paragraph [ref=e60]: Embed your rules, workflows, and context
+          - generic [ref=e61]:
+            - img [ref=e63]
+            - generic [ref=e65]:
+              - heading "Flexible deployment" [level=3] [ref=e66]
+              - paragraph [ref=e67]: Cloud, edge, or on-premises based on your needs
+          - generic [ref=e68]:
+            - img [ref=e70]
+            - generic [ref=e73]:
+              - heading "Speaker identification" [level=3] [ref=e74]
+              - paragraph [ref=e75]: Register workplace voices for personalized speaker tags
+          - generic [ref=e76]:
+            - img [ref=e78]
+            - generic [ref=e81]:
+              - heading "Structured outputs" [level=3] [ref=e82]
+              - paragraph [ref=e83]: Format data for seamless system integration
+        - generic [ref=e84]:
+          - generic [ref=e85]:
+            - generic [ref=e86]:
+              - img [ref=e89]
+              - generic [ref=e91]:
+                - heading "Voice Agents & Assistants" [level=2] [ref=e92]
+                - paragraph [ref=e93]: Conversational automation with intelligent action execution.
+            - generic [ref=e94]:
+              - img "Voice Agents & Assistants" [ref=e96]
+              - generic [ref=e97]:
+                - generic [ref=e98]:
+                  - generic [ref=e99]: •
+                  - generic [ref=e100]:
+                    - paragraph [ref=e101]: 200+ language
+                    - paragraph [ref=e102]: Wide coverage with multilingual support
+                - generic [ref=e103]:
+                  - generic [ref=e104]: •
+                  - generic [ref=e105]:
+                    - paragraph [ref=e106]: Context-aware
+                    - paragraph [ref=e107]: Understands your business workflows
+                - generic [ref=e108]:
+                  - generic [ref=e109]: •
+                  - generic [ref=e110]:
+                    - paragraph [ref=e111]: One integration
+                    - paragraph [ref=e112]: Single API for workflows & automation
+                - generic [ref=e113]:
+                  - generic [ref=e114]: •
+                  - generic [ref=e115]:
+                    - paragraph [ref=e116]: Custom entities
+                    - paragraph [ref=e117]: Recognizes your business terminology
+                - link "Learn more →" [ref=e118] [cursor=pointer]:
                   - /url: /voice-agent
-          - generic [ref=e117]:
-            - generic [ref=e118]:
-              - img [ref=e121]
-              - generic [ref=e124]:
-                - heading "Medical Documentation" [level=2] [ref=e125]
-                - paragraph [ref=e126]: Clinical-grade speech recognition with structured EHR integration.
-            - generic [ref=e127]:
-              - img "Medical Documentation" [ref=e129]
-              - generic [ref=e130]:
-                - generic [ref=e131]:
-                  - generic [ref=e132]: •
-                  - generic [ref=e133]:
-                    - paragraph [ref=e134]: Medical specialized
-                    - paragraph [ref=e135]: Trained on medications, procedures, and diagnoses
-                - generic [ref=e136]:
-                  - generic [ref=e137]: •
-                  - generic [ref=e138]:
-                    - paragraph [ref=e139]: Noise-optimized
-                    - paragraph [ref=e140]: Performs in clinical environments with equipment noise
-                - generic [ref=e141]:
-                  - generic [ref=e142]: •
-                  - generic [ref=e143]:
-                    - paragraph [ref=e144]: Structured outputs
-                    - paragraph [ref=e145]: Direct FHIR, HL7, and EHR format compatibility
-                - generic [ref=e146]:
-                  - generic [ref=e147]: •
-                  - generic [ref=e148]:
-                    - paragraph [ref=e149]: HIPAA-compliant
-                    - paragraph [ref=e150]: On-premises or dedicated tenant deployment
-                - link "Learn more →" [ref=e151] [cursor=pointer]:
+          - generic [ref=e119]:
+            - generic [ref=e120]:
+              - img [ref=e123]
+              - generic [ref=e126]:
+                - heading "Medical Documentation" [level=2] [ref=e127]
+                - paragraph [ref=e128]: Clinical-grade speech recognition with structured EHR integration.
+            - generic [ref=e129]:
+              - img "Medical Documentation" [ref=e131]
+              - generic [ref=e132]:
+                - generic [ref=e133]:
+                  - generic [ref=e134]: •
+                  - generic [ref=e135]:
+                    - paragraph [ref=e136]: Medical specialized
+                    - paragraph [ref=e137]: Trained on medications, procedures, and diagnoses
+                - generic [ref=e138]:
+                  - generic [ref=e139]: •
+                  - generic [ref=e140]:
+                    - paragraph [ref=e141]: Noise-optimized
+                    - paragraph [ref=e142]: Performs in clinical environments with equipment noise
+                - generic [ref=e143]:
+                  - generic [ref=e144]: •
+                  - generic [ref=e145]:
+                    - paragraph [ref=e146]: Structured outputs
+                    - paragraph [ref=e147]: Direct FHIR, HL7, and EHR format compatibility
+                - generic [ref=e148]:
+                  - generic [ref=e149]: •
+                  - generic [ref=e150]:
+                    - paragraph [ref=e151]: HIPAA-compliant
+                    - paragraph [ref=e152]: On-premises or dedicated tenant deployment
+                - link "Learn more →" [ref=e153] [cursor=pointer]:
                   - /url: /healthcare
-          - generic [ref=e152]:
-            - generic [ref=e153]:
-              - img [ref=e156]
-              - generic [ref=e158]:
-                - heading "Contact Center Intelligence" [level=2] [ref=e159]
-                - paragraph [ref=e160]: Real-time analytics and agent assistance with conversational insights.
-            - generic [ref=e161]:
-              - img "Contact Center Intelligence" [ref=e163]
-              - generic [ref=e164]:
-                - generic [ref=e165]:
-                  - generic [ref=e166]: •
-                  - generic [ref=e167]:
-                    - paragraph [ref=e168]: Live transcription
-                    - paragraph [ref=e169]: Streaming ASR with <100ms latency for continuous support
-                - generic [ref=e170]:
-                  - generic [ref=e171]: •
-                  - generic [ref=e172]:
-                    - paragraph [ref=e173]: Emotion tracking
-                    - paragraph [ref=e174]: Speaker-level sentiment throughout conversations
-                - generic [ref=e175]:
-                  - generic [ref=e176]: •
-                  - generic [ref=e177]:
-                    - paragraph [ref=e178]: Agent assist
-                    - paragraph [ref=e179]: Real-time guidance for upsell opportunities
-                - generic [ref=e180]:
-                  - generic [ref=e181]: •
-                  - generic [ref=e182]:
-                    - paragraph [ref=e183]: Automated ticketing
-                    - paragraph [ref=e184]: Structured extraction with CRM integration
-                - link "Learn more →" [ref=e185] [cursor=pointer]:
+          - generic [ref=e154]:
+            - generic [ref=e155]:
+              - img [ref=e158]
+              - generic [ref=e160]:
+                - heading "Contact Center Intelligence" [level=2] [ref=e161]
+                - paragraph [ref=e162]: Real-time analytics and agent assistance with conversational insights.
+            - generic [ref=e163]:
+              - img "Contact Center Intelligence" [ref=e165]
+              - generic [ref=e166]:
+                - generic [ref=e167]:
+                  - generic [ref=e168]: •
+                  - generic [ref=e169]:
+                    - paragraph [ref=e170]: Live transcription
+                    - paragraph [ref=e171]: Streaming ASR with <100ms latency for continuous support
+                - generic [ref=e172]:
+                  - generic [ref=e173]: •
+                  - generic [ref=e174]:
+                    - paragraph [ref=e175]: Emotion tracking
+                    - paragraph [ref=e176]: Speaker-level sentiment throughout conversations
+                - generic [ref=e177]:
+                  - generic [ref=e178]: •
+                  - generic [ref=e179]:
+                    - paragraph [ref=e180]: Agent assist
+                    - paragraph [ref=e181]: Real-time guidance for upsell opportunities
+                - generic [ref=e182]:
+                  - generic [ref=e183]: •
+                  - generic [ref=e184]:
+                    - paragraph [ref=e185]: Automated ticketing
+                    - paragraph [ref=e186]: Structured extraction with CRM integration
+                - link "Learn more →" [ref=e187] [cursor=pointer]:
                   - /url: /contact-centers
-          - generic [ref=e186]:
-            - generic [ref=e187]:
-              - img [ref=e190]
-              - generic [ref=e195]:
-                - heading "Meeting Transcription" [level=2] [ref=e196]
-                - paragraph [ref=e197]: High-fidelity capture with speaker attribution and structured output.
-            - generic [ref=e198]:
-              - img "Meeting Transcription" [ref=e200]
-              - generic [ref=e201]:
-                - generic [ref=e202]:
-                  - generic [ref=e203]: •
-                  - generic [ref=e204]:
-                    - paragraph [ref=e205]: Speaker diarization
-                    - paragraph [ref=e206]: Identifies who said what, even with crosstalk
-                - generic [ref=e207]:
-                  - generic [ref=e208]: •
-                  - generic [ref=e209]:
-                    - paragraph [ref=e210]: Numerical extraction
-                    - paragraph [ref=e211]: Captures amounts, dates, and percentages accurately
-                - generic [ref=e212]:
-                  - generic [ref=e213]: •
-                  - generic [ref=e214]:
-                    - paragraph [ref=e215]: Word timestamps
-                    - paragraph [ref=e216]: Precise alignment for video synchronization
-                - generic [ref=e217]:
-                  - generic [ref=e218]: •
-                  - generic [ref=e219]:
-                    - paragraph [ref=e220]: Custom vocabulary
-                    - paragraph [ref=e221]: Recognizes brand names and proper nouns
-                - link "Learn more →" [ref=e222] [cursor=pointer]:
+          - generic [ref=e188]:
+            - generic [ref=e189]:
+              - img [ref=e192]
+              - generic [ref=e197]:
+                - heading "Meeting Transcription" [level=2] [ref=e198]
+                - paragraph [ref=e199]: High-fidelity capture with speaker attribution and structured output.
+            - generic [ref=e200]:
+              - img "Meeting Transcription" [ref=e202]
+              - generic [ref=e203]:
+                - generic [ref=e204]:
+                  - generic [ref=e205]: •
+                  - generic [ref=e206]:
+                    - paragraph [ref=e207]: Speaker diarization
+                    - paragraph [ref=e208]: Identifies who said what, even with crosstalk
+                - generic [ref=e209]:
+                  - generic [ref=e210]: •
+                  - generic [ref=e211]:
+                    - paragraph [ref=e212]: Numerical extraction
+                    - paragraph [ref=e213]: Captures amounts, dates, and percentages accurately
+                - generic [ref=e214]:
+                  - generic [ref=e215]: •
+                  - generic [ref=e216]:
+                    - paragraph [ref=e217]: Word timestamps
+                    - paragraph [ref=e218]: Precise alignment for video synchronization
+                - generic [ref=e219]:
+                  - generic [ref=e220]: •
+                  - generic [ref=e221]:
+                    - paragraph [ref=e222]: Custom vocabulary
+                    - paragraph [ref=e223]: Recognizes brand names and proper nouns
+                - link "Learn more →" [ref=e224] [cursor=pointer]:
                   - /url: /contact
-    - contentinfo [ref=e223]:
-      - generic [ref=e227]:
-        - paragraph [ref=e228]: The fastest way to add voice AI to your products
-        - paragraph [ref=e229]: One platform for speech in and speech out—secure by design, built to scale.
-        - generic [ref=e230]:
-          - link "Go to Pricing page" [ref=e231] [cursor=pointer]:
+    - contentinfo [ref=e225]:
+      - generic [ref=e226]:
+        - paragraph [ref=e227]: The fastest way to add voice AI to your products
+        - paragraph [ref=e228]: One platform for speech in and speech out-secure by design, built to scale.
+        - generic [ref=e229]:
+          - link "Go to Pricing page" [ref=e230] [cursor=pointer]:
             - /url: /pricing
             - text: Get Started
-          - link "Contact Sales" [ref=e232] [cursor=pointer]:
+          - link "Contact Sales" [ref=e231] [cursor=pointer]:
             - /url: /contact
-    - contentinfo [ref=e233]:
-      - generic [ref=e234]:
-        - generic [ref=e235]:
-          - img "Shunya Labs" [ref=e236]
-          - paragraph [ref=e237]: Shunya Labs, Inc.
-        - generic [ref=e238]:
-          - paragraph [ref=e239]: Product
-          - list [ref=e240]:
-            - listitem [ref=e241]:
-              - link "Overview" [ref=e242] [cursor=pointer]:
+    - contentinfo [ref=e232]:
+      - generic [ref=e233]:
+        - generic [ref=e234]:
+          - img "Shunya Labs" [ref=e235]
+          - paragraph [ref=e236]: Shunya Labs, Inc.
+        - generic [ref=e237]:
+          - paragraph [ref=e238]: Product
+          - list [ref=e239]:
+            - listitem [ref=e240]:
+              - link "Overview" [ref=e241] [cursor=pointer]:
                 - /url: /overview
-            - listitem [ref=e243]:
-              - link "Models" [ref=e244] [cursor=pointer]:
+            - listitem [ref=e242]:
+              - link "Models" [ref=e243] [cursor=pointer]:
                 - /url: /models-page
-            - listitem [ref=e245]:
-              - link "Voice Agents" [ref=e246] [cursor=pointer]:
+            - listitem [ref=e244]:
+              - link "Voice Agents" [ref=e245] [cursor=pointer]:
                 - /url: /voice-agent
-            - listitem [ref=e247]:
-              - link "Speech Intelligence" [ref=e248] [cursor=pointer]:
+            - listitem [ref=e246]:
+              - link "Speech Intelligence" [ref=e247] [cursor=pointer]:
                 - /url: /speech-intelligence-page
-            - listitem [ref=e249]:
-              - link "Audio Processing" [ref=e250] [cursor=pointer]:
+            - listitem [ref=e248]:
+              - link "Audio Processing" [ref=e249] [cursor=pointer]:
                 - /url: /audio-processing
-            - listitem [ref=e251]:
-              - link "Deployment" [ref=e252] [cursor=pointer]:
+            - listitem [ref=e250]:
+              - link "Deployment" [ref=e251] [cursor=pointer]:
                 - /url: /deployment
-        - generic [ref=e253]:
-          - paragraph [ref=e254]: Models
-          - list [ref=e255]:
-            - listitem [ref=e256]:
-              - link "Language Models" [ref=e257] [cursor=pointer]:
+        - generic [ref=e252]:
+          - paragraph [ref=e253]: Models
+          - list [ref=e254]:
+            - listitem [ref=e255]:
+              - link "Language Models" [ref=e256] [cursor=pointer]:
                 - /url: /language-models
-            - listitem [ref=e258]:
-              - link "Zero STT Indic" [ref=e259] [cursor=pointer]:
+            - listitem [ref=e257]:
+              - link "Zero STT Indic" [ref=e258] [cursor=pointer]:
                 - /url: /zero-indic
-            - listitem [ref=e260]:
-              - link "Zero STT Codeswitch" [ref=e261] [cursor=pointer]:
+            - listitem [ref=e259]:
+              - link "Zero STT Codeswitch" [ref=e260] [cursor=pointer]:
                 - /url: /zero-code-switch
-            - listitem [ref=e262]:
-              - link "Specialised Models" [ref=e263] [cursor=pointer]:
+            - listitem [ref=e261]:
+              - link "Specialised Models" [ref=e262] [cursor=pointer]:
                 - /url: /domain-specialisation
-            - listitem [ref=e264]:
-              - link "Zero STT Med" [ref=e265] [cursor=pointer]:
+            - listitem [ref=e263]:
+              - link "Zero STT Med" [ref=e264] [cursor=pointer]:
                 - /url: /zero-med
-            - listitem [ref=e266]:
-              - link "On Device Models" [ref=e267] [cursor=pointer]:
+            - listitem [ref=e265]:
+              - link "On Device Models" [ref=e266] [cursor=pointer]:
                 - /url: /on-device-models
-        - generic [ref=e268]:
-          - paragraph [ref=e269]: Solutions
-          - list [ref=e270]:
-            - listitem [ref=e271]:
-              - link "Contact Centers" [ref=e272] [cursor=pointer]:
+        - generic [ref=e267]:
+          - paragraph [ref=e268]: Solutions
+          - list [ref=e269]:
+            - listitem [ref=e270]:
+              - link "Contact Centers" [ref=e271] [cursor=pointer]:
                 - /url: /contact-centers
-            - listitem [ref=e273]:
-              - link "Media & Entertainment" [ref=e274] [cursor=pointer]:
+            - listitem [ref=e272]:
+              - link "Media & Entertainment" [ref=e273] [cursor=pointer]:
                 - /url: /media-entertainment
-            - listitem [ref=e275]:
-              - link "Healthcare" [ref=e276] [cursor=pointer]:
+            - listitem [ref=e274]:
+              - link "Healthcare" [ref=e275] [cursor=pointer]:
                 - /url: /healthcare
-        - generic [ref=e277]:
-          - paragraph [ref=e278]: Resources
-          - list [ref=e279]:
-            - listitem [ref=e280]:
-              - link "Blogs" [ref=e281] [cursor=pointer]:
+        - generic [ref=e276]:
+          - paragraph [ref=e277]: Resources
+          - list [ref=e278]:
+            - listitem [ref=e279]:
+              - link "Blogs" [ref=e280] [cursor=pointer]:
                 - /url: /blog
-            - listitem [ref=e282]:
-              - link "Benchmarks" [ref=e283] [cursor=pointer]:
+            - listitem [ref=e281]:
+              - link "Benchmarks" [ref=e282] [cursor=pointer]:
                 - /url: /benchmarks
-            - listitem [ref=e284]:
-              - link "News & Media" [ref=e285] [cursor=pointer]:
+            - listitem [ref=e283]:
+              - link "News & Media" [ref=e284] [cursor=pointer]:
                 - /url: /media
-            - listitem [ref=e286]:
-              - link "Patents" [ref=e287] [cursor=pointer]:
+            - listitem [ref=e285]:
+              - link "Patents" [ref=e286] [cursor=pointer]:
                 - /url: /patents
-            - listitem [ref=e288]:
-              - link "Research" [ref=e289] [cursor=pointer]:
+            - listitem [ref=e287]:
+              - link "Research" [ref=e288] [cursor=pointer]:
                 - /url: /research
-        - paragraph [ref=e291]:
-          - link "Documentation" [ref=e292] [cursor=pointer]:
+        - paragraph [ref=e290]:
+          - link "Documentation" [ref=e291] [cursor=pointer]:
             - /url: https://docs.shunyalabs.ai/overview
-        - list [ref=e294]:
-          - listitem [ref=e295]:
-            - link "About us" [ref=e296] [cursor=pointer]:
+        - list [ref=e293]:
+          - listitem [ref=e294]:
+            - link "About us" [ref=e295] [cursor=pointer]:
               - /url: /about
-        - list [ref=e298]:
-          - listitem [ref=e299]:
-            - link "Pricing" [ref=e300] [cursor=pointer]:
+        - list [ref=e297]:
+          - listitem [ref=e298]:
+            - link "Pricing" [ref=e299] [cursor=pointer]:
               - /url: /pricing
-      - generic [ref=e301]:
-        - paragraph [ref=e302]: Follow us on
-        - generic [ref=e303]:
-          - link [ref=e304] [cursor=pointer]:
+      - generic [ref=e300]:
+        - paragraph [ref=e301]: Follow us on
+        - generic [ref=e302]:
+          - link [ref=e303] [cursor=pointer]:
             - /url: https://www.linkedin.com/company/shunya-labs-ai/
-            - img [ref=e305]
-          - link [ref=e307] [cursor=pointer]:
-            - /url: https://www.facebook.com/people/ShunyaLabsAI/61577801851308/
-            - img [ref=e308]
-          - link [ref=e310] [cursor=pointer]:
+            - img [ref=e304]
+          - link [ref=e306] [cursor=pointer]:
+            - /url: https://www.facebook.com/profile.php?id=61577801651308
+            - img [ref=e307]
+          - link [ref=e309] [cursor=pointer]:
             - /url: https://www.instagram.com/shunyalabsai/
-            - img [ref=e311]
-          - link [ref=e313] [cursor=pointer]:
+            - img [ref=e310]
+          - link [ref=e312] [cursor=pointer]:
             - /url: https://x.com/ShunyaLabsAI
-            - img [ref=e314]
-      - generic [ref=e316]:
-        - paragraph [ref=e317]: © 2026 Shunya Labs Inc. All rights reserved.
-        - generic [ref=e318]:
-          - link "Privacy" [ref=e319] [cursor=pointer]:
+            - img [ref=e313]
+      - generic [ref=e315]:
+        - paragraph [ref=e316]: © 2026 Shunya Labs, Inc. All rights reserved.
+        - generic [ref=e317]:
+          - link "Privacy" [ref=e318] [cursor=pointer]:
             - /url: /privacy-policy
-          - link "Terms" [ref=e320] [cursor=pointer]:
+          - link "Terms" [ref=e319] [cursor=pointer]:
             - /url: /terms-conditions
-          - link "Security" [ref=e321] [cursor=pointer]:
+          - link "Security" [ref=e320] [cursor=pointer]:
             - /url: /security-policy
-          - link "General License" [ref=e322] [cursor=pointer]:
+          - link "General License" [ref=e321] [cursor=pointer]:
             - /url: /general-rail-m-license
-          - link "Custom License" [ref=e323] [cursor=pointer]:
+          - link "Custom License" [ref=e322] [cursor=pointer]:
             - /url: /shunya-labs-custom-model-rail-m-license
-  - alert [ref=e324]
+  - alert [ref=e323]
 ```
 
 # Test source
@@ -408,7 +386,7 @@ Received: 4
   28 |       }
   29 | 
 > 30 |       expect(failures.length, `${failures.length} design compliance issue(s) found`).toBe(0);
-     |                                                                                      ^ Error: 4 design compliance issue(s) found
+     |                                                                                      ^ Error: 1 design compliance issue(s) found
   31 |     });
   32 |   });
   33 | }

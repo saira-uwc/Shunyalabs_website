@@ -12,7 +12,7 @@
 # Error details
 
 ```
-Error: [content] Text content "© 2026 Shunya Labs, Inc. All rights reserved." not found on page
+Error: [links] CTA/Link "https://www.facebook.com/people/ShunyaLabsAI/61577801851308/" not found on page
 
 expect(received).toBeTruthy()
 
@@ -36,219 +36,221 @@ Received: 1
     - generic [ref=e3]:
       - navigation [ref=e4]:
         - generic [ref=e5]:
-          - link "Shunya Labs Logo" [ref=e6] [cursor=pointer]:
-            - /url: /
-            - img "Shunya Labs Logo" [ref=e7]
-          - generic [ref=e8]:
-            - button "Product" [ref=e10] [cursor=pointer]:
-              - text: Product
-              - img [ref=e11]
-            - button "Models" [ref=e14] [cursor=pointer]:
-              - text: Models
-              - img [ref=e15]
-            - button "Solutions" [ref=e18] [cursor=pointer]:
-              - text: Solutions
-              - img [ref=e19]
-            - button "Resources" [ref=e22] [cursor=pointer]:
-              - text: Resources
-              - img [ref=e23]
-            - link "Documentation" [ref=e25] [cursor=pointer]:
-              - /url: https://docs.shunyalabs.ai/overview
-            - link "About Us" [ref=e26] [cursor=pointer]:
-              - /url: /about
-            - link "Pricing" [ref=e27] [cursor=pointer]:
-              - /url: /pricing
-          - link "Playground" [ref=e28] [cursor=pointer]:
-            - /url: https://playground.shunyalabs.ai/
-            - img [ref=e29]
-            - text: Playground
-          - generic [ref=e31]:
-            - button "Sign In" [ref=e32] [cursor=pointer]
-            - link "Contact Sales" [ref=e33] [cursor=pointer]:
-              - /url: /contact
-      - generic [ref=e35]:
-        - heading "Intelligence That Cares. APIs That Power Clinical Systems." [level=1] [ref=e36]
-        - paragraph [ref=e37]: Modular clinical AI — speech, reasoning, and documentation built for accuracy, privacy, and scale.
-        - link "Live Demo" [ref=e38] [cursor=pointer]:
+          - generic [ref=e6]:
+            - link "Shunya Labs Logo" [ref=e7] [cursor=pointer]:
+              - /url: /
+              - img "Shunya Labs Logo" [ref=e8]
+            - generic [ref=e9]:
+              - button "Product" [ref=e11] [cursor=pointer]:
+                - text: Product
+                - img [ref=e12]
+              - button "Models" [ref=e15] [cursor=pointer]:
+                - text: Models
+                - img [ref=e16]
+              - button "Solutions" [ref=e19] [cursor=pointer]:
+                - text: Solutions
+                - img [ref=e20]
+              - button "Resources" [ref=e23] [cursor=pointer]:
+                - text: Resources
+                - img [ref=e24]
+              - link "Documentation" [ref=e26] [cursor=pointer]:
+                - /url: https://docs.shunyalabs.ai/overview
+              - link "About Us" [ref=e27] [cursor=pointer]:
+                - /url: /about
+              - link "Pricing" [ref=e28] [cursor=pointer]:
+                - /url: /pricing
+          - generic [ref=e29]:
+            - link "Playground" [ref=e30] [cursor=pointer]:
+              - /url: https://playground.shunyalabs.ai/
+              - img [ref=e31]
+              - text: Playground
+            - generic [ref=e33]:
+              - button "Sign In" [ref=e34] [cursor=pointer]
+              - link "Contact Sales" [ref=e35] [cursor=pointer]:
+                - /url: /contact
+      - generic [ref=e37]:
+        - heading "Intelligence That Cares. APIs That Power Clinical Systems." [level=1] [ref=e38]
+        - paragraph [ref=e39]: Modular clinical AI — speech, reasoning, and documentation built for accuracy, privacy, and scale.
+        - link "Live Demo" [ref=e40] [cursor=pointer]:
           - /url: /
-          - button "Live Demo" [ref=e39]:
-            - img [ref=e40]
+          - button "Live Demo" [ref=e41]:
+            - img [ref=e42]
             - text: Live Demo
-      - generic [ref=e42]:
-        - generic [ref=e44]:
-          - heading "Capture clinical encounters—accurate, structured, compliant" [level=2] [ref=e46]
-          - generic [ref=e47]:
-            - generic [ref=e48]:
-              - generic [ref=e50]:
-                - generic [ref=e51] [cursor=pointer]:
-                  - heading "Real-time clinical transcription" [level=3] [ref=e52]
-                  - paragraph [ref=e53]: <3% WER, noise-resilient, tuned for medical vocab with clean labels for Doctor/Patient/Nurse.
-                - generic [ref=e54] [cursor=pointer]:
-                  - heading "Speaker-aware notes" [level=3] [ref=e55]
-                  - paragraph [ref=e56]: Automatic diarization for clear who-said-what and action items.
-                - generic [ref=e57] [cursor=pointer]:
-                  - heading "Secure by design" [level=3] [ref=e58]
-                  - paragraph [ref=e59]: HIPAA-ready APIs & SDKs; deploy in your private cloud or on-prem.
-              - button "Try Now" [ref=e60] [cursor=pointer]
-            - img "Capture clinical encounters—accurate, structured, compliant" [ref=e63]
-        - generic [ref=e65]:
-          - heading "Turn paperwork into EMR-ready data" [level=2] [ref=e67]
-          - generic [ref=e68]:
-            - generic [ref=e69]:
-              - generic [ref=e71]:
-                - generic [ref=e72] [cursor=pointer]:
-                  - heading "Advanced healthcare OCR" [level=3] [ref=e73]
-                  - paragraph [ref=e74]: Handwritten prescriptions, scans, lab forms, and tabular reports—no sweat.
-                - generic [ref=e75] [cursor=pointer]:
-                  - heading "Reasoning engine" [level=3] [ref=e76]
-                  - paragraph [ref=e77]: LLM-powered understanding to normalize and disambiguate clinical meaning.
-                - generic [ref=e78] [cursor=pointer]:
-                  - heading "Structured outputs" [level=3] [ref=e79]
-                  - paragraph [ref=e80]: Diagnoses, labs, vitals, prescriptions—exported as EMR-ready JSON.
-              - button "Try Now" [ref=e81] [cursor=pointer]
-            - img "Turn paperwork into EMR-ready data" [ref=e84]
-        - generic [ref=e86]:
-          - heading "Safer prescribing and stigma-free virtual care" [level=2] [ref=e88]
-          - generic [ref=e89]:
-            - generic [ref=e90]:
-              - generic [ref=e92]:
-                - generic [ref=e93] [cursor=pointer]:
-                  - heading "Prescription validation" [level=3] [ref=e94]
-                  - paragraph [ref=e95]: Real-time alerts for drug–drug and drug–disease risks, backed by a clinical knowledge graph.
-                - generic [ref=e96] [cursor=pointer]:
-                  - heading "Healthcare AI SDK" [level=3] [ref=e97]
-                  - paragraph [ref=e98]: CBT, mindfulness, and coaching with clinical guardrails; detects risk and escalates safely.
-                - generic [ref=e99] [cursor=pointer]:
-                  - heading "Easy to integrate" [level=3] [ref=e100]
-                  - paragraph [ref=e101]: Plug into EMRs and telehealth in minutes; clinician dashboard, multi-language support.
-              - button "Try Now" [ref=e102] [cursor=pointer]
-            - img "Safer prescribing and stigma-free virtual care" [ref=e105]
-    - contentinfo [ref=e106]:
-      - generic [ref=e107]:
-        - paragraph [ref=e108]: Get Started
-        - paragraph [ref=e109]: Provide safe, customised and instant care to your patients .
-        - generic [ref=e110]:
-          - link "Try for Free" [ref=e111] [cursor=pointer]:
+      - generic [ref=e44]:
+        - generic [ref=e46]:
+          - heading "Capture clinical encounters—accurate, structured, compliant" [level=2] [ref=e48]
+          - generic [ref=e49]:
+            - generic [ref=e50]:
+              - generic [ref=e52]:
+                - generic [ref=e53] [cursor=pointer]:
+                  - heading "Real-time clinical transcription" [level=3] [ref=e54]
+                  - paragraph [ref=e55]: <3% WER, noise-resilient, tuned for medical vocab with clean labels for Doctor/Patient/Nurse.
+                - generic [ref=e56] [cursor=pointer]:
+                  - heading "Speaker-aware notes" [level=3] [ref=e57]
+                  - paragraph [ref=e58]: Automatic diarization for clear who-said-what and action items.
+                - generic [ref=e59] [cursor=pointer]:
+                  - heading "Secure by design" [level=3] [ref=e60]
+                  - paragraph [ref=e61]: HIPAA-ready APIs & SDKs; deploy in your private cloud or on-prem.
+              - button "Try Now" [ref=e62] [cursor=pointer]
+            - img "Capture clinical encounters—accurate, structured, compliant" [ref=e65]
+        - generic [ref=e67]:
+          - heading "Turn paperwork into EMR-ready data" [level=2] [ref=e69]
+          - generic [ref=e70]:
+            - generic [ref=e71]:
+              - generic [ref=e73]:
+                - generic [ref=e74] [cursor=pointer]:
+                  - heading "Advanced healthcare OCR" [level=3] [ref=e75]
+                  - paragraph [ref=e76]: Handwritten prescriptions, scans, lab forms, and tabular reports—no sweat.
+                - generic [ref=e77] [cursor=pointer]:
+                  - heading "Reasoning engine" [level=3] [ref=e78]
+                  - paragraph [ref=e79]: LLM-powered understanding to normalize and disambiguate clinical meaning.
+                - generic [ref=e80] [cursor=pointer]:
+                  - heading "Structured outputs" [level=3] [ref=e81]
+                  - paragraph [ref=e82]: Diagnoses, labs, vitals, prescriptions—exported as EMR-ready JSON.
+              - button "Try Now" [ref=e83] [cursor=pointer]
+            - img "Turn paperwork into EMR-ready data" [ref=e86]
+        - generic [ref=e88]:
+          - heading "Safer prescribing and stigma-free virtual care" [level=2] [ref=e90]
+          - generic [ref=e91]:
+            - generic [ref=e92]:
+              - generic [ref=e94]:
+                - generic [ref=e95] [cursor=pointer]:
+                  - heading "Prescription validation" [level=3] [ref=e96]
+                  - paragraph [ref=e97]: Real-time alerts for drug–drug and drug–disease risks, backed by a clinical knowledge graph.
+                - generic [ref=e98] [cursor=pointer]:
+                  - heading "Healthcare AI SDK" [level=3] [ref=e99]
+                  - paragraph [ref=e100]: CBT, mindfulness, and coaching with clinical guardrails; detects risk and escalates safely.
+                - generic [ref=e101] [cursor=pointer]:
+                  - heading "Easy to integrate" [level=3] [ref=e102]
+                  - paragraph [ref=e103]: Plug into EMRs and telehealth in minutes; clinician dashboard, multi-language support.
+              - button "Try Now" [ref=e104] [cursor=pointer]
+            - img "Safer prescribing and stigma-free virtual care" [ref=e107]
+    - contentinfo [ref=e108]:
+      - generic [ref=e109]:
+        - paragraph [ref=e110]: Get Started
+        - paragraph [ref=e111]: Provide safe, customised and instant care to your patients .
+        - generic [ref=e112]:
+          - link "Try for Free" [ref=e113] [cursor=pointer]:
             - /url: /pricing
-          - link "Contact Sales" [ref=e112] [cursor=pointer]:
+          - link "Contact Sales" [ref=e114] [cursor=pointer]:
             - /url: /contact
-    - contentinfo [ref=e113]:
-      - generic [ref=e114]:
-        - generic [ref=e115]:
-          - img "Shunya Labs" [ref=e116]
-          - paragraph [ref=e117]: Shunya Labs, Inc.
-        - generic [ref=e118]:
-          - paragraph [ref=e119]: Product
-          - list [ref=e120]:
-            - listitem [ref=e121]:
-              - link "Overview" [ref=e122] [cursor=pointer]:
-                - /url: /overview
+    - contentinfo [ref=e115]:
+      - generic [ref=e116]:
+        - generic [ref=e117]:
+          - img "Shunya Labs" [ref=e118]
+          - paragraph [ref=e119]: Shunya Labs, Inc.
+        - generic [ref=e120]:
+          - paragraph [ref=e121]: Product
+          - list [ref=e122]:
             - listitem [ref=e123]:
-              - link "Models" [ref=e124] [cursor=pointer]:
-                - /url: /models-page
+              - link "Overview" [ref=e124] [cursor=pointer]:
+                - /url: /overview
             - listitem [ref=e125]:
-              - link "Voice Agents" [ref=e126] [cursor=pointer]:
-                - /url: /voice-agent
+              - link "Models" [ref=e126] [cursor=pointer]:
+                - /url: /models-page
             - listitem [ref=e127]:
-              - link "Speech Intelligence" [ref=e128] [cursor=pointer]:
-                - /url: /speech-intelligence-page
+              - link "Voice Agents" [ref=e128] [cursor=pointer]:
+                - /url: /voice-agent
             - listitem [ref=e129]:
-              - link "Audio Processing" [ref=e130] [cursor=pointer]:
-                - /url: /audio-processing
+              - link "Speech Intelligence" [ref=e130] [cursor=pointer]:
+                - /url: /speech-intelligence-page
             - listitem [ref=e131]:
-              - link "Deployment" [ref=e132] [cursor=pointer]:
+              - link "Audio Processing" [ref=e132] [cursor=pointer]:
+                - /url: /audio-processing
+            - listitem [ref=e133]:
+              - link "Deployment" [ref=e134] [cursor=pointer]:
                 - /url: /deployment
-        - generic [ref=e133]:
-          - paragraph [ref=e134]: Models
-          - list [ref=e135]:
-            - listitem [ref=e136]:
-              - link "Language Models" [ref=e137] [cursor=pointer]:
-                - /url: /language-models
+        - generic [ref=e135]:
+          - paragraph [ref=e136]: Models
+          - list [ref=e137]:
             - listitem [ref=e138]:
-              - link "Zero STT Indic" [ref=e139] [cursor=pointer]:
-                - /url: /zero-indic
+              - link "Language Models" [ref=e139] [cursor=pointer]:
+                - /url: /language-models
             - listitem [ref=e140]:
-              - link "Zero STT Codeswitch" [ref=e141] [cursor=pointer]:
-                - /url: /zero-code-switch
+              - link "Zero STT Indic" [ref=e141] [cursor=pointer]:
+                - /url: /zero-indic
             - listitem [ref=e142]:
-              - link "Specialised Models" [ref=e143] [cursor=pointer]:
-                - /url: /domain-specialisation
+              - link "Zero STT Codeswitch" [ref=e143] [cursor=pointer]:
+                - /url: /zero-code-switch
             - listitem [ref=e144]:
-              - link "Zero STT Med" [ref=e145] [cursor=pointer]:
-                - /url: /zero-med
+              - link "Specialised Models" [ref=e145] [cursor=pointer]:
+                - /url: /domain-specialisation
             - listitem [ref=e146]:
-              - link "On Device Models" [ref=e147] [cursor=pointer]:
+              - link "Zero STT Med" [ref=e147] [cursor=pointer]:
+                - /url: /zero-med
+            - listitem [ref=e148]:
+              - link "On Device Models" [ref=e149] [cursor=pointer]:
                 - /url: /on-device-models
-        - generic [ref=e148]:
-          - paragraph [ref=e149]: Solutions
-          - list [ref=e150]:
-            - listitem [ref=e151]:
-              - link "Contact Centers" [ref=e152] [cursor=pointer]:
-                - /url: /contact-centers
+        - generic [ref=e150]:
+          - paragraph [ref=e151]: Solutions
+          - list [ref=e152]:
             - listitem [ref=e153]:
-              - link "Media & Entertainment" [ref=e154] [cursor=pointer]:
-                - /url: /media-entertainment
+              - link "Contact Centers" [ref=e154] [cursor=pointer]:
+                - /url: /contact-centers
             - listitem [ref=e155]:
-              - link "Healthcare" [ref=e156] [cursor=pointer]:
+              - link "Media & Entertainment" [ref=e156] [cursor=pointer]:
+                - /url: /media-entertainment
+            - listitem [ref=e157]:
+              - link "Healthcare" [ref=e158] [cursor=pointer]:
                 - /url: /healthcare
-        - generic [ref=e157]:
-          - paragraph [ref=e158]: Resources
-          - list [ref=e159]:
-            - listitem [ref=e160]:
-              - link "Blogs" [ref=e161] [cursor=pointer]:
-                - /url: /blog
+        - generic [ref=e159]:
+          - paragraph [ref=e160]: Resources
+          - list [ref=e161]:
             - listitem [ref=e162]:
-              - link "Benchmarks" [ref=e163] [cursor=pointer]:
-                - /url: /benchmarks
+              - link "Blogs" [ref=e163] [cursor=pointer]:
+                - /url: /blog
             - listitem [ref=e164]:
-              - link "News & Media" [ref=e165] [cursor=pointer]:
-                - /url: /media
+              - link "Benchmarks" [ref=e165] [cursor=pointer]:
+                - /url: /benchmarks
             - listitem [ref=e166]:
-              - link "Patents" [ref=e167] [cursor=pointer]:
-                - /url: /patents
+              - link "News & Media" [ref=e167] [cursor=pointer]:
+                - /url: /media
             - listitem [ref=e168]:
-              - link "Research" [ref=e169] [cursor=pointer]:
+              - link "Patents" [ref=e169] [cursor=pointer]:
+                - /url: /patents
+            - listitem [ref=e170]:
+              - link "Research" [ref=e171] [cursor=pointer]:
                 - /url: /research
-        - paragraph [ref=e171]:
-          - link "Documentation" [ref=e172] [cursor=pointer]:
+        - paragraph [ref=e173]:
+          - link "Documentation" [ref=e174] [cursor=pointer]:
             - /url: https://docs.shunyalabs.ai/overview
-        - list [ref=e174]:
-          - listitem [ref=e175]:
-            - link "About us" [ref=e176] [cursor=pointer]:
+        - list [ref=e176]:
+          - listitem [ref=e177]:
+            - link "About us" [ref=e178] [cursor=pointer]:
               - /url: /about
-        - list [ref=e178]:
-          - listitem [ref=e179]:
-            - link "Pricing" [ref=e180] [cursor=pointer]:
+        - list [ref=e180]:
+          - listitem [ref=e181]:
+            - link "Pricing" [ref=e182] [cursor=pointer]:
               - /url: /pricing
-      - generic [ref=e181]:
-        - paragraph [ref=e182]: Follow us on
-        - generic [ref=e183]:
-          - link [ref=e184] [cursor=pointer]:
+      - generic [ref=e183]:
+        - paragraph [ref=e184]: Follow us on
+        - generic [ref=e185]:
+          - link [ref=e186] [cursor=pointer]:
             - /url: https://www.linkedin.com/company/shunya-labs-ai/
-            - img [ref=e185]
-          - link [ref=e187] [cursor=pointer]:
-            - /url: https://www.facebook.com/people/ShunyaLabsAI/61577801851308/
-            - img [ref=e188]
-          - link [ref=e190] [cursor=pointer]:
+            - img [ref=e187]
+          - link [ref=e189] [cursor=pointer]:
+            - /url: https://www.facebook.com/profile.php?id=61577801651308
+            - img [ref=e190]
+          - link [ref=e192] [cursor=pointer]:
             - /url: https://www.instagram.com/shunyalabsai/
-            - img [ref=e191]
-          - link [ref=e193] [cursor=pointer]:
+            - img [ref=e193]
+          - link [ref=e195] [cursor=pointer]:
             - /url: https://x.com/ShunyaLabsAI
-            - img [ref=e194]
-      - generic [ref=e196]:
-        - paragraph [ref=e197]: © 2026 Shunya Labs Inc. All rights reserved.
-        - generic [ref=e198]:
-          - link "Privacy" [ref=e199] [cursor=pointer]:
+            - img [ref=e196]
+      - generic [ref=e198]:
+        - paragraph [ref=e199]: © 2026 Shunya Labs, Inc. All rights reserved.
+        - generic [ref=e200]:
+          - link "Privacy" [ref=e201] [cursor=pointer]:
             - /url: /privacy-policy
-          - link "Terms" [ref=e200] [cursor=pointer]:
+          - link "Terms" [ref=e202] [cursor=pointer]:
             - /url: /terms-conditions
-          - link "Security" [ref=e201] [cursor=pointer]:
+          - link "Security" [ref=e203] [cursor=pointer]:
             - /url: /security-policy
-          - link "General License" [ref=e202] [cursor=pointer]:
+          - link "General License" [ref=e204] [cursor=pointer]:
             - /url: /general-rail-m-license
-          - link "Custom License" [ref=e203] [cursor=pointer]:
+          - link "Custom License" [ref=e205] [cursor=pointer]:
             - /url: /shunya-labs-custom-model-rail-m-license
-  - alert [ref=e204]
+  - alert [ref=e206]
 ```
 
 # Test source

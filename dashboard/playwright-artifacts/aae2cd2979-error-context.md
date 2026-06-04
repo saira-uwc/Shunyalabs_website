@@ -12,7 +12,7 @@
 # Error details
 
 ```
-Error: [headings] Heading "Foundation models" font-size: expected 26px but got 20px
+Error: [links] CTA/Link "https://www.facebook.com/people/ShunyaLabsAI/61577801851308/" not found on page
 
 expect(received).toBeTruthy()
 
@@ -20,76 +20,12 @@ Received: null
 ```
 
 ```
-Error: [headings] Heading "Built for you" (h3) not found on page
-
-expect(received).toBeTruthy()
-
-Received: null
-```
-
-```
-Error: [content] Footer item "© 2026 Shunya Labs, Inc. All rights reserved." not found
-
-expect(received).toBeTruthy()
-
-Received: null
-```
-
-```
-Error: [content] Text content "We build foundation models for voice, including models that understand and produce codeswitched speech." not found on page
-
-expect(received).toBeTruthy()
-
-Received: null
-```
-
-```
-Error: [content] Text content "Built for you" not found on page
-
-expect(received).toBeTruthy()
-
-Received: null
-```
-
-```
-Error: [content] Text content "Custom SLMs trained on your corpus, your speakers, your terminology." not found on page
-
-expect(received).toBeTruthy()
-
-Received: null
-```
-
-```
-Error: [content] Text content "Lightweight models designed to run on CPUs for maximum accessibility." not found on page
-
-expect(received).toBeTruthy()
-
-Received: null
-```
-
-```
-Error: [content] Text content "End to end platform for agent orchestration, with custom logic for enterprise workflows." not found on page
-
-expect(received).toBeTruthy()
-
-Received: null
-```
-
-```
-Error: [content] Text content "© 2026 Shunya Labs, Inc. All rights reserved." not found on page
-
-expect(received).toBeTruthy()
-
-Received: null
-```
-
-```
-Error: 9 design compliance issue(s) found
+Error: 1 design compliance issue(s) found
 
 expect(received).toBe(expected) // Object.is equality
 
 Expected: 0
-Received: 9
+Received: 1
 ```
 
 # Page snapshot
@@ -100,304 +36,319 @@ Received: 9
     - generic [ref=e3]:
       - navigation [ref=e4]:
         - generic [ref=e5]:
-          - link "Shunya Labs Logo" [ref=e6] [cursor=pointer]:
-            - /url: /
-            - img "Shunya Labs Logo" [ref=e7]
-          - generic [ref=e8]:
-            - button "Product" [ref=e10] [cursor=pointer]:
-              - text: Product
-              - img [ref=e11]
-            - button "Models" [ref=e14] [cursor=pointer]:
-              - text: Models
-              - img [ref=e15]
-            - button "Solutions" [ref=e18] [cursor=pointer]:
-              - text: Solutions
-              - img [ref=e19]
-            - button "Resources" [ref=e22] [cursor=pointer]:
-              - text: Resources
-              - img [ref=e23]
-            - link "Documentation" [ref=e25] [cursor=pointer]:
-              - /url: https://docs.shunyalabs.ai/overview
-            - link "About Us" [ref=e26] [cursor=pointer]:
-              - /url: /about
-            - link "Pricing" [ref=e27] [cursor=pointer]:
-              - /url: /pricing
-          - link "Playground" [ref=e28] [cursor=pointer]:
-            - /url: https://playground.shunyalabs.ai/
-            - img [ref=e29]
-            - text: Playground
-          - generic [ref=e31]:
-            - button "Sign In" [ref=e32] [cursor=pointer]
-            - link "Contact Sales" [ref=e33] [cursor=pointer]:
-              - /url: /contact
-      - generic [ref=e34]:
-        - heading "About Shunya Labs" [level=1] [ref=e36]
-        - generic [ref=e41]:
-          - paragraph [ref=e42]: We’re a research-forward organization building custom voice models for regional languages and mixed speech. Our goal is to make the voice interface of technology accessible to everyone.
-          - paragraph [ref=e43]: We started our journey with Zero STT, the world’s most accurate transcription model, and expanded into complete voice agents that can be deployed in air-gapped environments.
-      - generic [ref=e45]:
-        - heading "What Sets Us Apart" [level=2] [ref=e46]
-        - generic [ref=e47]:
-          - generic [ref=e48]:
-            - img [ref=e49]
-            - generic [ref=e52]: RESEARCH
-            - heading "First-principles research" [level=3] [ref=e53]
-            - paragraph [ref=e54]: Proprietary training methodology, model architecture, and training data to improve baseline accuracy.
-          - generic [ref=e55]:
-            - img [ref=e56]
-            - generic [ref=e59]: MODELS
-            - heading "Foundation models" [level=3] [ref=e60]
-            - paragraph [ref=e61]: We build foundation models for voice, including models that understand and produce state-of-the-art speech.
+          - generic [ref=e6]:
+            - link "Shunya Labs Logo" [ref=e7] [cursor=pointer]:
+              - /url: /
+              - img "Shunya Labs Logo" [ref=e8]
+            - generic [ref=e9]:
+              - button "Product" [ref=e11] [cursor=pointer]:
+                - text: Product
+                - img [ref=e12]
+              - button "Models" [ref=e15] [cursor=pointer]:
+                - text: Models
+                - img [ref=e16]
+              - button "Solutions" [ref=e19] [cursor=pointer]:
+                - text: Solutions
+                - img [ref=e20]
+              - button "Resources" [ref=e23] [cursor=pointer]:
+                - text: Resources
+                - img [ref=e24]
+              - link "Documentation" [ref=e26] [cursor=pointer]:
+                - /url: https://docs.shunyalabs.ai/overview
+              - link "About Us" [ref=e27] [cursor=pointer]:
+                - /url: /about
+              - link "Pricing" [ref=e28] [cursor=pointer]:
+                - /url: /pricing
+          - generic [ref=e29]:
+            - link "Playground" [ref=e30] [cursor=pointer]:
+              - /url: https://playground.shunyalabs.ai/
+              - img [ref=e31]
+              - text: Playground
+            - generic [ref=e33]:
+              - button "Sign In" [ref=e34] [cursor=pointer]
+              - link "Contact Sales" [ref=e35] [cursor=pointer]:
+                - /url: /contact
+      - generic [ref=e36]:
+        - heading "About Shunya Labs" [level=1] [ref=e38]
+        - generic [ref=e43]:
+          - paragraph [ref=e44]: We’re a research-forward organization building custom voice models for regional languages and mixed speech. Our goal is to make the voice interface of technology accessible to everyone.
+          - paragraph [ref=e45]: We started our journey with Zero STT, the world’s most accurate transcription model, and expanded into complete voice agents that can be deployed in air-gapped environments.
+      - generic [ref=e47]:
+        - heading "What Sets Us Apart" [level=2] [ref=e48]
+        - generic [ref=e50]:
+          - img [ref=e51]
           - generic [ref=e62]:
-            - img [ref=e63]
-            - generic [ref=e65]: SECURITY
-            - heading "Privacy-first solutioning" [level=3] [ref=e66]
-            - paragraph [ref=e67]: On-prem deployment and custom agent architectures for enterprise-grade security.
-          - generic [ref=e68]:
-            - img [ref=e69]
-            - generic [ref=e72]: DEPLOYMENT
-            - heading "CPU-first architecture" [level=3] [ref=e73]
-            - paragraph [ref=e74]: Lightweight models designed to run on a CPU for maximum accessibility.
+            - generic [ref=e63]: CUSTOM
+            - heading "Foundation models" [level=3] [ref=e64]
+            - paragraph [ref=e65]: We build foundation models for voice, including models that understand and produce codeswitched speech.
+        - generic [ref=e66]:
+          - generic [ref=e67]:
+            - img [ref=e68]
+            - generic [ref=e71]:
+              - generic [ref=e72]: RESEARCH
+              - heading "First-principles research" [level=3] [ref=e73]
+              - paragraph [ref=e74]: Proprietary training methodology, model architecture, and training data to improve baseline accuracy.
           - generic [ref=e75]:
             - img [ref=e76]
-            - generic [ref=e83]: PLATFORM
-            - heading "Full stack orchestration" [level=3] [ref=e84]
-            - paragraph [ref=e85]: End-to-end platform for agent orchestration, with custom logic for enterprise workflows.
-          - generic [ref=e86]:
-            - img [ref=e87]
-            - generic [ref=e94]: COMMUNITY
-            - heading "Open-source community" [level=3] [ref=e95]
-            - paragraph [ref=e96]: Commitment to open models for the community on Hugging Face.
-      - generic [ref=e98]:
-        - heading "Meet the Team" [level=2] [ref=e99]
-        - generic [ref=e100]:
-          - generic [ref=e102]:
-            - img "Ritu Mehrotra profile" [ref=e104]
-            - generic [ref=e105]:
-              - heading "Ritu Mehrotra" [level=2] [ref=e106]
-              - paragraph [ref=e107]: Co-founder & CEO
-              - paragraph [ref=e108]: 2X founder. Booking.com, Zomato, Mahindra. Understands how AI fails in regulated environments, and how to make it work. MBA, IIFT Delhi.
-              - link "LinkedIn profile" [ref=e109] [cursor=pointer]:
-                - /url: https://www.linkedin.com/in/ritu-mehrotra-4861043/
-                - img [ref=e110]
-          - generic [ref=e115]:
-            - img "Sourav Bandyopadhyay profile" [ref=e117]
-            - generic [ref=e118]:
-              - heading "Sourav Bandyopadhyay" [level=2] [ref=e119]
-              - paragraph [ref=e120]: Co-Founder & Chief Scientist
-              - paragraph [ref=e121]: PhD Scholar, IIT Kharagpur. Proven LLMs will always hallucinate (using Gödel's Incompleteness Theorem). 12 patents, 18 papers, 23 world records. Obsessed with correctness.
-              - link "LinkedIn profile" [ref=e122] [cursor=pointer]:
-                - /url: https://www.linkedin.com/in/souravbandyo/
-                - img [ref=e123]
+            - generic [ref=e79]:
+              - generic [ref=e80]: MODELS
+              - heading "Built for you" [level=3] [ref=e81]
+              - paragraph [ref=e82]: Custom SLMs trained on your corpus, your speakers, your terminology.
+          - generic [ref=e83]:
+            - img [ref=e84]
+            - generic [ref=e86]:
+              - generic [ref=e87]: SECURITY
+              - heading "Privacy-first solutioning" [level=3] [ref=e88]
+              - paragraph [ref=e89]: On-prem deployment and custom agent architectures for enterprise-grade security.
+        - generic [ref=e90]:
+          - generic [ref=e91]:
+            - img [ref=e92]
+            - generic [ref=e95]:
+              - generic [ref=e96]: DEPLOYMENT
+              - heading "CPU-first architecture" [level=3] [ref=e97]
+              - paragraph [ref=e98]: Lightweight models designed to run on CPUs for maximum accessibility.
+          - generic [ref=e99]:
+            - img [ref=e100]
+            - generic [ref=e107]:
+              - generic [ref=e108]: PLATFORM
+              - heading "Full stack orchestration" [level=3] [ref=e109]
+              - paragraph [ref=e110]: End to end platform for agent orchestration, with custom logic for enterprise workflows.
+          - generic [ref=e111]:
+            - img [ref=e112]
+            - generic [ref=e119]:
+              - generic [ref=e120]: COMMUNITY
+              - heading "Open-source community" [level=3] [ref=e121]
+              - paragraph [ref=e122]: Commitment to open models for the community on Hugging Face.
+      - generic [ref=e124]:
+        - heading "Meet the Team" [level=2] [ref=e125]
+        - generic [ref=e126]:
           - generic [ref=e128]:
-            - img "Abhishek Sharma profile" [ref=e130]
+            - img "Ritu Mehrotra profile" [ref=e130]
             - generic [ref=e131]:
-              - heading "Abhishek Sharma" [level=2] [ref=e132]
-              - paragraph [ref=e133]: Co-founder & CBO
-              - paragraph [ref=e134]: Helped build TenMarks (acquired by Amazon) and Dineout (acquired by Swiggy) alongside incredible teams. Learned more from the journey than the outcomes. ISB’Hyderabad (PGPMAX).
+              - heading "Ritu Mehrotra" [level=2] [ref=e132]
+              - paragraph [ref=e133]: Co-founder & CEO
+              - paragraph [ref=e134]: 2X founder. Booking.com, Zomato, Mahindra. Understands how AI fails in regulated environments, and how to make it work. MBA, IIFT Delhi.
               - link "LinkedIn profile" [ref=e135] [cursor=pointer]:
-                - /url: https://www.linkedin.com/in/abhishek78/
+                - /url: https://www.linkedin.com/in/ritu-mehrotra-4861043/
                 - img [ref=e136]
           - generic [ref=e141]:
-            - img "Arti Khanijo profile" [ref=e143]
+            - img "Sourav Bandyopadhyay profile" [ref=e143]
             - generic [ref=e144]:
-              - heading "Arti Khanijo" [level=2] [ref=e145]
-              - paragraph [ref=e146]: Chief Product Officer
-              - paragraph [ref=e147]: Worked with global brands like Airtel, ibibo, and Tencent with over 20 years of experience across wellness and consumer tech—known for building scalable, user-first products that create real human impact at the intersection of technology and purpose.
+              - heading "Sourav Bandyopadhyay" [level=2] [ref=e145]
+              - paragraph [ref=e146]: Co-Founder & Chief Scientist
+              - paragraph [ref=e147]: PhD Scholar, IIT Kharagpur. Proven LLMs will always hallucinate (using Gödel's Incompleteness Theorem). 12 patents, 18 papers, 23 world records. Obsessed with correctness.
               - link "LinkedIn profile" [ref=e148] [cursor=pointer]:
-                - /url: https://www.linkedin.com/in/arti-khanijo-28697514/
+                - /url: https://www.linkedin.com/in/souravbandyo/
                 - img [ref=e149]
           - generic [ref=e154]:
-            - img "Vivek Jain profile" [ref=e156]
+            - img "Abhishek Sharma profile" [ref=e156]
             - generic [ref=e157]:
-              - heading "Vivek Jain" [level=2] [ref=e158]
-              - paragraph [ref=e159]: Chief Technology Officer
-              - paragraph [ref=e160]: Built large-scale data science solutions at Amazon. Expert at turning big ideas into small tasks and small problems into big insights. NIT Trichy.
+              - heading "Abhishek Sharma" [level=2] [ref=e158]
+              - paragraph [ref=e159]: Co-founder & CBO
+              - paragraph [ref=e160]: Helped build TenMarks (acquired by Amazon) and Dineout (acquired by Swiggy) alongside incredible teams. Learned more from the journey than the outcomes. ISB’Hyderabad (PGPMAX).
               - link "LinkedIn profile" [ref=e161] [cursor=pointer]:
-                - /url: https://www.linkedin.com/in/vivekjain2/
+                - /url: https://www.linkedin.com/in/abhishek78/
                 - img [ref=e162]
-      - generic [ref=e165]:
-        - heading "Built by a Team of Iconoclastic Researchers and Engineers" [level=2] [ref=e166]
-        - img "Research Team" [ref=e168]
-        - generic [ref=e169]:
-          - generic [ref=e170]:
-            - generic [ref=e171]:
-              - img "Patents background" [ref=e172]
-              - generic [ref=e174]:
-                - heading "12" [level=2] [ref=e175]
-                - paragraph [ref=e176]: patents
-            - generic [ref=e177]:
-              - generic [ref=e178]:
-                - heading "18+" [level=3] [ref=e179]
-                - paragraph [ref=e180]: peer-reviewed publications
-              - generic [ref=e181]:
-                - paragraph [ref=e182]: "Zero STT:"
-                - generic [ref=e183]:
-                  - heading "3.10%" [level=3] [ref=e184]
-                  - generic [ref=e185]: word error rate
-                - paragraph [ref=e186]: best in the industry.
-              - generic [ref=e187]:
-                - img "World records background" [ref=e188]
-                - generic [ref=e190]:
-                  - heading "23" [level=3] [ref=e191]
-                  - paragraph [ref=e192]: world records
-              - paragraph [ref=e195]:
+          - generic [ref=e167]:
+            - img "Arti Khanijo profile" [ref=e169]
+            - generic [ref=e170]:
+              - heading "Arti Khanijo" [level=2] [ref=e171]
+              - paragraph [ref=e172]: Chief Product Officer
+              - paragraph [ref=e173]: Worked with global brands like Airtel, ibibo, and Tencent with over 20 years of experience across wellness and consumer tech—known for building scalable, user-first products that create real human impact at the intersection of technology and purpose.
+              - link "LinkedIn profile" [ref=e174] [cursor=pointer]:
+                - /url: https://www.linkedin.com/in/arti-khanijo-28697514/
+                - img [ref=e175]
+          - generic [ref=e180]:
+            - img "Vivek Jain profile" [ref=e182]
+            - generic [ref=e183]:
+              - heading "Vivek Jain" [level=2] [ref=e184]
+              - paragraph [ref=e185]: Chief Technology Officer
+              - paragraph [ref=e186]: Built large-scale data science solutions at Amazon. Expert at turning big ideas into small tasks and small problems into big insights. NIT Trichy.
+              - link "LinkedIn profile" [ref=e187] [cursor=pointer]:
+                - /url: https://www.linkedin.com/in/vivekjain2/
+                - img [ref=e188]
+      - generic [ref=e191]:
+        - heading "Built by a Team of Iconoclastic Researchers and Engineers" [level=2] [ref=e192]
+        - img "Research Team" [ref=e194]
+        - generic [ref=e195]:
+          - generic [ref=e196]:
+            - generic [ref=e197]:
+              - img "Patents background" [ref=e198]
+              - generic [ref=e200]:
+                - heading "12" [level=2] [ref=e201]
+                - paragraph [ref=e202]: patents
+            - generic [ref=e203]:
+              - generic [ref=e204]:
+                - heading "18+" [level=3] [ref=e205]
+                - paragraph [ref=e206]: peer-reviewed publications
+              - generic [ref=e207]:
+                - paragraph [ref=e208]: "Zero STT:"
+                - generic [ref=e209]:
+                  - heading "3.10%" [level=3] [ref=e210]
+                  - generic [ref=e211]: word error rate
+                - paragraph [ref=e212]: best in the industry.
+              - generic [ref=e213]:
+                - img "World records background" [ref=e214]
+                - generic [ref=e216]:
+                  - heading "23" [level=3] [ref=e217]
+                  - paragraph [ref=e218]: world records
+              - paragraph [ref=e221]:
                 - text: Research informs
                 - text: production.
                 - text: Production sharpens
                 - text: research.
-          - link "Read our research" [ref=e197] [cursor=pointer]:
+          - link "Read our research" [ref=e223] [cursor=pointer]:
             - /url: https://www.shunyalabs.ai/patents
-      - generic [ref=e199]:
-        - heading "Who Uses Shunya" [level=2] [ref=e200]
-        - generic [ref=e201]:
-          - link "Healthcare Healthcare Clinical documentation, transcription" [ref=e202] [cursor=pointer]:
+      - generic [ref=e225]:
+        - heading "Who Uses Shunya" [level=2] [ref=e226]
+        - generic [ref=e227]:
+          - link "Healthcare Healthcare Clinical documentation, transcription" [ref=e228] [cursor=pointer]:
             - /url: /healthcare
-            - img "Healthcare" [ref=e204]
-            - generic [ref=e205]:
-              - generic [ref=e206]:
-                - heading "Healthcare" [level=3] [ref=e207]
-                - paragraph [ref=e208]: Clinical documentation, transcription
-              - img [ref=e211]
-          - link "Contact Centers Contact Centers Transcription, sentiment, agent intelligence" [ref=e214] [cursor=pointer]:
+            - img "Healthcare" [ref=e230]
+            - generic [ref=e231]:
+              - generic [ref=e232]:
+                - heading "Healthcare" [level=3] [ref=e233]
+                - paragraph [ref=e234]: Clinical documentation, transcription
+              - img [ref=e237]
+          - link "Contact Centers Contact Centers Transcription, sentiment, agent intelligence" [ref=e240] [cursor=pointer]:
             - /url: /contact-centers
-            - img "Contact Centers" [ref=e216]
-            - generic [ref=e217]:
-              - generic [ref=e218]:
-                - heading "Contact Centers" [level=3] [ref=e219]
-                - paragraph [ref=e220]: Transcription, sentiment, agent intelligence
-              - img [ref=e223]
-          - link "Media & Entertainment Media & Entertainment Dubbing, lipsync, 200+ languages" [ref=e226] [cursor=pointer]:
+            - img "Contact Centers" [ref=e242]
+            - generic [ref=e243]:
+              - generic [ref=e244]:
+                - heading "Contact Centers" [level=3] [ref=e245]
+                - paragraph [ref=e246]: Transcription, sentiment, agent intelligence
+              - img [ref=e249]
+          - link "Media & Entertainment Media & Entertainment Dubbing, lipsync, 200+ languages" [ref=e252] [cursor=pointer]:
             - /url: /media-entertainment
-            - img "Media & Entertainment" [ref=e228]
-            - generic [ref=e229]:
-              - generic [ref=e230]:
-                - heading "Media & Entertainment" [level=3] [ref=e231]
-                - paragraph [ref=e232]: Dubbing, lipsync, 200+ languages
-              - img [ref=e235]
-      - generic [ref=e241]:
-        - heading "Join Us" [level=2] [ref=e242]
-        - paragraph [ref=e243]: We're building voice infrastructure for the next decade.
-        - paragraph [ref=e244]: Hiring engineers, researchers and linguists who care about deployable intelligence.
-        - link "careers@shunyalabs.ai" [ref=e246] [cursor=pointer]:
+            - img "Media & Entertainment" [ref=e254]
+            - generic [ref=e255]:
+              - generic [ref=e256]:
+                - heading "Media & Entertainment" [level=3] [ref=e257]
+                - paragraph [ref=e258]: Dubbing, lipsync, 200+ languages
+              - img [ref=e261]
+      - generic [ref=e267]:
+        - heading "Join Us" [level=2] [ref=e268]
+        - paragraph [ref=e269]: We're building voice infrastructure for the next decade.
+        - paragraph [ref=e270]: Hiring engineers, researchers and linguists who care about deployable intelligence.
+        - link "careers@shunyalabs.ai" [ref=e272] [cursor=pointer]:
           - /url: mailto:0@shunyalabs.ai
-    - contentinfo [ref=e247]:
-      - generic [ref=e248]:
-        - generic [ref=e249]:
-          - img "Shunya Labs" [ref=e250]
-          - paragraph [ref=e251]: Shunya Labs, Inc.
-        - generic [ref=e252]:
-          - paragraph [ref=e253]: Product
-          - list [ref=e254]:
-            - listitem [ref=e255]:
-              - link "Overview" [ref=e256] [cursor=pointer]:
+    - contentinfo [ref=e273]:
+      - generic [ref=e274]:
+        - generic [ref=e275]:
+          - img "Shunya Labs" [ref=e276]
+          - paragraph [ref=e277]: Shunya Labs, Inc.
+        - generic [ref=e278]:
+          - paragraph [ref=e279]: Product
+          - list [ref=e280]:
+            - listitem [ref=e281]:
+              - link "Overview" [ref=e282] [cursor=pointer]:
                 - /url: /overview
-            - listitem [ref=e257]:
-              - link "Models" [ref=e258] [cursor=pointer]:
+            - listitem [ref=e283]:
+              - link "Models" [ref=e284] [cursor=pointer]:
                 - /url: /models-page
-            - listitem [ref=e259]:
-              - link "Voice Agents" [ref=e260] [cursor=pointer]:
-                - /url: /voice-agent
-            - listitem [ref=e261]:
-              - link "Speech Intelligence" [ref=e262] [cursor=pointer]:
-                - /url: /speech-intelligence-page
-            - listitem [ref=e263]:
-              - link "Audio Processing" [ref=e264] [cursor=pointer]:
-                - /url: /audio-processing
-            - listitem [ref=e265]:
-              - link "Deployment" [ref=e266] [cursor=pointer]:
-                - /url: /deployment
-        - generic [ref=e267]:
-          - paragraph [ref=e268]: Models
-          - list [ref=e269]:
-            - listitem [ref=e270]:
-              - link "Language Models" [ref=e271] [cursor=pointer]:
-                - /url: /language-models
-            - listitem [ref=e272]:
-              - link "Zero STT Indic" [ref=e273] [cursor=pointer]:
-                - /url: /zero-indic
-            - listitem [ref=e274]:
-              - link "Zero STT Codeswitch" [ref=e275] [cursor=pointer]:
-                - /url: /zero-code-switch
-            - listitem [ref=e276]:
-              - link "Specialised Models" [ref=e277] [cursor=pointer]:
-                - /url: /domain-specialisation
-            - listitem [ref=e278]:
-              - link "Zero STT Med" [ref=e279] [cursor=pointer]:
-                - /url: /zero-med
-            - listitem [ref=e280]:
-              - link "On Device Models" [ref=e281] [cursor=pointer]:
-                - /url: /on-device-models
-        - generic [ref=e282]:
-          - paragraph [ref=e283]: Solutions
-          - list [ref=e284]:
             - listitem [ref=e285]:
-              - link "Contact Centers" [ref=e286] [cursor=pointer]:
-                - /url: /contact-centers
+              - link "Voice Agents" [ref=e286] [cursor=pointer]:
+                - /url: /voice-agent
             - listitem [ref=e287]:
-              - link "Media & Entertainment" [ref=e288] [cursor=pointer]:
-                - /url: /media-entertainment
+              - link "Speech Intelligence" [ref=e288] [cursor=pointer]:
+                - /url: /speech-intelligence-page
             - listitem [ref=e289]:
-              - link "Healthcare" [ref=e290] [cursor=pointer]:
-                - /url: /healthcare
-        - generic [ref=e291]:
-          - paragraph [ref=e292]: Resources
-          - list [ref=e293]:
-            - listitem [ref=e294]:
-              - link "Blogs" [ref=e295] [cursor=pointer]:
-                - /url: /blog
+              - link "Audio Processing" [ref=e290] [cursor=pointer]:
+                - /url: /audio-processing
+            - listitem [ref=e291]:
+              - link "Deployment" [ref=e292] [cursor=pointer]:
+                - /url: /deployment
+        - generic [ref=e293]:
+          - paragraph [ref=e294]: Models
+          - list [ref=e295]:
             - listitem [ref=e296]:
-              - link "Benchmarks" [ref=e297] [cursor=pointer]:
-                - /url: /benchmarks
+              - link "Language Models" [ref=e297] [cursor=pointer]:
+                - /url: /language-models
             - listitem [ref=e298]:
-              - link "News & Media" [ref=e299] [cursor=pointer]:
-                - /url: /media
+              - link "Zero STT Indic" [ref=e299] [cursor=pointer]:
+                - /url: /zero-indic
             - listitem [ref=e300]:
-              - link "Patents" [ref=e301] [cursor=pointer]:
-                - /url: /patents
+              - link "Zero STT Codeswitch" [ref=e301] [cursor=pointer]:
+                - /url: /zero-code-switch
             - listitem [ref=e302]:
-              - link "Research" [ref=e303] [cursor=pointer]:
-                - /url: /research
-        - paragraph [ref=e305]:
-          - link "Documentation" [ref=e306] [cursor=pointer]:
-            - /url: https://docs.shunyalabs.ai/overview
-        - list [ref=e308]:
-          - listitem [ref=e309]:
-            - link "About us" [ref=e310] [cursor=pointer]:
-              - /url: /about
-        - list [ref=e312]:
-          - listitem [ref=e313]:
-            - link "Pricing" [ref=e314] [cursor=pointer]:
-              - /url: /pricing
-      - generic [ref=e315]:
-        - paragraph [ref=e316]: Follow us on
+              - link "Specialised Models" [ref=e303] [cursor=pointer]:
+                - /url: /domain-specialisation
+            - listitem [ref=e304]:
+              - link "Zero STT Med" [ref=e305] [cursor=pointer]:
+                - /url: /zero-med
+            - listitem [ref=e306]:
+              - link "On Device Models" [ref=e307] [cursor=pointer]:
+                - /url: /on-device-models
+        - generic [ref=e308]:
+          - paragraph [ref=e309]: Solutions
+          - list [ref=e310]:
+            - listitem [ref=e311]:
+              - link "Contact Centers" [ref=e312] [cursor=pointer]:
+                - /url: /contact-centers
+            - listitem [ref=e313]:
+              - link "Media & Entertainment" [ref=e314] [cursor=pointer]:
+                - /url: /media-entertainment
+            - listitem [ref=e315]:
+              - link "Healthcare" [ref=e316] [cursor=pointer]:
+                - /url: /healthcare
         - generic [ref=e317]:
-          - link [ref=e318] [cursor=pointer]:
+          - paragraph [ref=e318]: Resources
+          - list [ref=e319]:
+            - listitem [ref=e320]:
+              - link "Blogs" [ref=e321] [cursor=pointer]:
+                - /url: /blog
+            - listitem [ref=e322]:
+              - link "Benchmarks" [ref=e323] [cursor=pointer]:
+                - /url: /benchmarks
+            - listitem [ref=e324]:
+              - link "News & Media" [ref=e325] [cursor=pointer]:
+                - /url: /media
+            - listitem [ref=e326]:
+              - link "Patents" [ref=e327] [cursor=pointer]:
+                - /url: /patents
+            - listitem [ref=e328]:
+              - link "Research" [ref=e329] [cursor=pointer]:
+                - /url: /research
+        - paragraph [ref=e331]:
+          - link "Documentation" [ref=e332] [cursor=pointer]:
+            - /url: https://docs.shunyalabs.ai/overview
+        - list [ref=e334]:
+          - listitem [ref=e335]:
+            - link "About us" [ref=e336] [cursor=pointer]:
+              - /url: /about
+        - list [ref=e338]:
+          - listitem [ref=e339]:
+            - link "Pricing" [ref=e340] [cursor=pointer]:
+              - /url: /pricing
+      - generic [ref=e341]:
+        - paragraph [ref=e342]: Follow us on
+        - generic [ref=e343]:
+          - link [ref=e344] [cursor=pointer]:
             - /url: https://www.linkedin.com/company/shunya-labs-ai/
-            - img [ref=e319]
-          - link [ref=e321] [cursor=pointer]:
-            - /url: https://www.facebook.com/people/ShunyaLabsAI/61577801851308/
-            - img [ref=e322]
-          - link [ref=e324] [cursor=pointer]:
+            - img [ref=e345]
+          - link [ref=e347] [cursor=pointer]:
+            - /url: https://www.facebook.com/profile.php?id=61577801651308
+            - img [ref=e348]
+          - link [ref=e350] [cursor=pointer]:
             - /url: https://www.instagram.com/shunyalabsai/
-            - img [ref=e325]
-          - link [ref=e327] [cursor=pointer]:
+            - img [ref=e351]
+          - link [ref=e353] [cursor=pointer]:
             - /url: https://x.com/ShunyaLabsAI
-            - img [ref=e328]
-      - generic [ref=e330]:
-        - paragraph [ref=e331]: © 2026 Shunya Labs Inc. All rights reserved.
-        - generic [ref=e332]:
-          - link "Privacy" [ref=e333] [cursor=pointer]:
+            - img [ref=e354]
+      - generic [ref=e356]:
+        - paragraph [ref=e357]: © 2026 Shunya Labs, Inc. All rights reserved.
+        - generic [ref=e358]:
+          - link "Privacy" [ref=e359] [cursor=pointer]:
             - /url: /privacy-policy
-          - link "Terms" [ref=e334] [cursor=pointer]:
+          - link "Terms" [ref=e360] [cursor=pointer]:
             - /url: /terms-conditions
-          - link "Security" [ref=e335] [cursor=pointer]:
+          - link "Security" [ref=e361] [cursor=pointer]:
             - /url: /security-policy
-          - link "General License" [ref=e336] [cursor=pointer]:
+          - link "General License" [ref=e362] [cursor=pointer]:
             - /url: /general-rail-m-license
-          - link "Custom License" [ref=e337] [cursor=pointer]:
+          - link "Custom License" [ref=e363] [cursor=pointer]:
             - /url: /shunya-labs-custom-model-rail-m-license
-  - alert [ref=e338]
+  - alert [ref=e364]
 ```
 
 # Test source
@@ -433,7 +384,7 @@ Received: 9
   28 |       }
   29 | 
 > 30 |       expect(failures.length, `${failures.length} design compliance issue(s) found`).toBe(0);
-     |                                                                                      ^ Error: 9 design compliance issue(s) found
+     |                                                                                      ^ Error: 1 design compliance issue(s) found
   31 |     });
   32 |   });
   33 | }
