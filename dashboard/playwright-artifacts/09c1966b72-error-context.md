@@ -12,7 +12,7 @@
 # Error details
 
 ```
-Error: [links] CTA/Link "https://www.facebook.com/people/ShunyaLabsAI/61577801851308/" not found on page
+Error: [content] Text content "0.59%" not found on page
 
 expect(received).toBeTruthy()
 
@@ -20,12 +20,20 @@ Received: null
 ```
 
 ```
-Error: 1 design compliance issue(s) found
+Error: [content] Text content "0.59%" not found on page
+
+expect(received).toBeTruthy()
+
+Received: null
+```
+
+```
+Error: 2 design compliance issue(s) found
 
 expect(received).toBe(expected) // Object.is equality
 
 Expected: 0
-Received: 1
+Received: 2
 ```
 
 # Page snapshot
@@ -185,11 +193,11 @@ Received: 1
             - paragraph [ref=e163]: languages & dialects
         - generic [ref=e164]:
           - generic [ref=e165]:
-            - paragraph [ref=e166]: 0%
+            - paragraph [ref=e166]: 41%
             - paragraph [ref=e167]: GPU cost saved for a Fortune 100 logistics client
           - generic [ref=e168]:
             - paragraph [ref=e169]:
-              - generic [ref=e170]: 0.00%
+              - generic [ref=e170]: 1.39%
             - paragraph [ref=e171]: Word error rate
     - contentinfo [ref=e172]:
       - generic [ref=e173]:
@@ -353,7 +361,7 @@ Received: 1
   28 |       }
   29 | 
 > 30 |       expect(failures.length, `${failures.length} design compliance issue(s) found`).toBe(0);
-     |                                                                                      ^ Error: 1 design compliance issue(s) found
+     |                                                                                      ^ Error: 2 design compliance issue(s) found
   31 |     });
   32 |   });
   33 | }
