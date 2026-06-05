@@ -8,6 +8,13 @@ import fs from 'fs';
 import path from 'path';
 import crypto from 'crypto';
 import { humanizeError } from '../utils/humanize-error.js';
+import {
+  aggregateTestsByCase,
+  summarizeAggregatedTests,
+  summarizeBrowserColumns,
+  BROWSER_KEYS,
+  BROWSER_LABELS,
+} from '../utils/browser-matrix.js';
 
 const RESULTS_DIR = path.join(process.cwd(), 'test-results');
 const HISTORY_DIR = path.join(process.cwd(), 'dashboard', 'history');
@@ -230,15 +237,28 @@ function readPlaywrightReport() {
 
   report.suites.forEach(suite => walkSuite(suite, []));
 
-  const stats = report.stats || {};
-  const passed = Number(stats.expected || stats.passed || 0);
-  const failed = Number(stats.unexpected || stats.failed || 0);
-  const total = passed + failed;
+  const aggregated = aggregateTestsByCase(tests);
+  const summary = summarizeAggregatedTests(aggregated);
+  const browserStats = summarizeBrowserColumns(aggregated);
 
   return {
-    summary: { total, passed, failed, passRate: total > 0 ? Math.round((passed / total) * 100) : 0 },
-    tests,
+    summary: { ...summary, browserStats },
+    tests: aggregated,
+    rawTests: tests,
   };
+}
+
+function renderBrowserBadgesHtml(browsers, compact = false) {
+  if (!browsers || !Object.keys(browsers).length) return '';
+  const badges = BROWSER_KEYS.map((key) => {
+    const result = browsers[key];
+    if (!result) return '';
+    const label = BROWSER_LABELS[key];
+    const statusClass = result.status === 'PASS' ? 'pass' : 'fail';
+    const icon = result.status === 'PASS' ? '✓' : '✗';
+    return `<span class="browser-badge ${key} ${statusClass}" title="${label}: ${result.status}">${compact ? icon : `${label} ${icon}`}</span>`;
+  }).filter(Boolean).join('');
+  return badges ? `<div class="browser-badges">${badges}</div>` : '';
 }
 
 /**
@@ -308,7 +328,8 @@ function saveToHistory(results, playwrightRun) {
       status: r.status,
       comment: humanizeError(r.comment || '').substring(0, 500),
       timestamp: r.dateTime || r.timestamp,
-      attachments: r.attachments || []
+      attachments: r.attachments || [],
+      browsers: r.browsers || undefined,
     }))
   };
   
@@ -434,6 +455,19 @@ function generateDashboard(currentResults, history, playwrightRun) {
     : new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true });
 
   const latestRun = history[history.length - 1];
+  const browserStats = summary?.browserStats || summarizeBrowserColumns(currentTestResults);
+
+  const browserSummaryHtml = BROWSER_KEYS.map((key) => {
+    const stat = browserStats[key] || { passed: 0, failed: 0, total: 0 };
+    const rate = stat.total > 0 ? Math.round((stat.passed / stat.total) * 100) : 0;
+    const color = rate === 100 ? 'var(--success)' : rate >= 80 ? 'var(--warning)' : 'var(--danger)';
+    return `
+        <div class="browser-summary-card">
+          <div class="browser-summary-label">${BROWSER_LABELS[key]}</div>
+          <div class="browser-summary-value" style="color: ${color};">${stat.passed}/${stat.total}</div>
+          <div style="font-size: 11px; color: var(--text-muted);">${stat.total ? `${rate}%` : '—'}</div>
+        </div>`;
+  }).join('');
 
   const html = `<!DOCTYPE html>
 <html lang="en">
@@ -1299,6 +1333,63 @@ function generateDashboard(currentResults, history, playwrightRun) {
     }
 
     .test-type-badge.design { background: rgba(99, 102, 241, 0.15); color: #818cf8; }
+
+    .browser-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .browser-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 600;
+      border: 1px solid transparent;
+    }
+
+    .browser-badge.pass {
+      background: var(--success-bg);
+      color: var(--success);
+      border-color: rgba(34, 197, 94, 0.25);
+    }
+
+    .browser-badge.fail {
+      background: var(--danger-bg);
+      color: var(--danger);
+      border-color: rgba(239, 68, 68, 0.25);
+    }
+
+    .browser-summary-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .browser-summary-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+      text-align: center;
+    }
+
+    .browser-summary-label {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+      font-weight: 600;
+    }
+
+    .browser-summary-value {
+      font-size: 18px;
+      font-weight: 700;
+    }
     .test-type-badge.nav { background: rgba(14, 165, 233, 0.15); color: #38bdf8; }
     .test-type-badge.widget { background: rgba(168, 85, 247, 0.15); color: #c084fc; }
     .test-type-badge.footer { background: rgba(107, 114, 128, 0.15); color: #9ca3af; }
@@ -1382,6 +1473,9 @@ function generateDashboard(currentResults, history, playwrightRun) {
       </div>
       ` : ``}
 
+      <h2 class="section-title" style="margin-top: 0;">Browser Coverage</h2>
+      <div class="browser-summary-grid">${browserSummaryHtml}</div>
+
       <!-- Charts -->
       <div class="charts-section">
         <div class="chart-card">
@@ -1413,7 +1507,7 @@ function generateDashboard(currentResults, history, playwrightRun) {
             const pageName = (t.testPoint || '').split(' design compliance')[0].replace(/^.*? - /, '');
             return `<div class="design-module-chip ${t.status.toLowerCase()}">
               <div class="chip-status ${t.status.toLowerCase()}">${t.status === 'PASS' ? '✓' : '✗'}</div>
-              <div class="chip-name">${pageName}</div>
+              <div class="chip-name">${pageName}${renderBrowserBadgesHtml(t.browsers, true)}</div>
             </div>`;
           }).join('')}
         </div>
@@ -1443,6 +1537,7 @@ function generateDashboard(currentResults, history, playwrightRun) {
               <div class="test-name" style="flex: 1;">
                 ${ct.name}
                 <span class="test-type-badge ${ct.type}">${ct.icon} ${ct.type.toUpperCase()}</span>
+                ${renderBrowserBadgesHtml(t.browsers)}
               </div>
               ${t.status === 'FAIL' && t.comment ? `<div class="test-comment" style="width: 100%; padding-left: 36px;" title="${escapeHtmlAttr(t.comment)}">${stripAnsi(t.comment).substring(0, 120)}${t.comment.length > 120 ? '...' : ''}</div>` : ''}
             </div>`;
@@ -1539,6 +1634,7 @@ function generateDashboard(currentResults, history, playwrightRun) {
           tests: (r.tests || []).map(t => ({
             ...t,
             comment: t.comment ? t.comment.substring(0, 150) : '',
+            browsers: t.browsers || null,
             attachments: (t.attachments || [])
               .filter(a => a.url && fs.existsSync(path.join(process.cwd(), 'dashboard', a.url)))
               .map(a => ({ name: a.name, contentType: a.contentType, url: a.url }))
@@ -1681,6 +1777,22 @@ function generateDashboard(currentResults, history, playwrightRun) {
     let currentFilter = 'all';
     let currentRunData = null;
 
+    const BROWSER_LABELS = ${JSON.stringify(BROWSER_LABELS)};
+    const BROWSER_KEYS = ${JSON.stringify(BROWSER_KEYS)};
+
+    function renderBrowserBadges(browsers) {
+      if (!browsers || !Object.keys(browsers).length) return '';
+      const badges = BROWSER_KEYS.map((key) => {
+        const result = browsers[key];
+        if (!result) return '';
+        const label = BROWSER_LABELS[key] || key;
+        const statusClass = result.status === 'PASS' ? 'pass' : 'fail';
+        const icon = result.status === 'PASS' ? '✓' : '✗';
+        return '<span class="browser-badge ' + key + ' ' + statusClass + '">' + label + ' ' + icon + '</span>';
+      }).filter(Boolean).join('');
+      return badges ? '<div class="browser-badges">' + badges + '</div>' : '';
+    }
+
     // Run details modal
     function showRunDetails(runId) {
       selectedRunId = runId;
@@ -1774,6 +1886,7 @@ function generateDashboard(currentResults, history, playwrightRun) {
             <div class="modal-test-info">
               <div class="modal-test-name">\${test.testPoint}</div>
               <div class="modal-test-category">\${test.category || 'Test'} • \${test.moduleName || 'Module'}</div>
+              \${renderBrowserBadges(test.browsers)}
               \${commentHtml}
               \${attachmentsHtml}
             </div>

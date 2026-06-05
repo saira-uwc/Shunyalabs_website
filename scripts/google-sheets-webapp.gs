@@ -3,7 +3,7 @@
  * Deploy as: Web app → Execute as Me → Anyone has access
  *
  * Expected headers in sheet row 1:
- *   Testcase ID | Test Name | Description | Update Date & time | Status | Reason | Comment(proof)
+ *   Testcase ID | Test Name | Description | Update Date & time | Chrome | Safari | iOS | Android | Status | Reason | Comment(proof)
  *
  * POST payload:
  *   { action: "updateCoverage", rows: [...], spreadsheetId?, sheetName?, clearSheet? }
@@ -24,12 +24,12 @@ function doPost(e) {
       // Create sheet with headers if it doesn't exist
       if (!sheet) {
         sheet = spreadsheet.insertSheet(sheetName);
-        sheet.appendRow(["Testcase ID", "Test Name", "Description", "Update Date & time", "Status", "Reason", "Comment(proof)"]);
+        sheet.appendRow(["Testcase ID", "Test Name", "Description", "Update Date & time", "Chrome", "Safari", "iOS", "Android", "Status", "Reason", "Comment(proof)"]);
       }
 
       var headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0];
       var col = {};
-      ["Testcase ID", "Test Name", "Description", "Update Date & time", "Status"].forEach(function(h) {
+      ["Testcase ID", "Test Name", "Description", "Update Date & time", "Chrome", "Safari", "iOS", "Android", "Status"].forEach(function(h) {
         col[h] = headers.indexOf(h) + 1;
       });
       // Reason column — human-readable failure explanation
@@ -71,6 +71,10 @@ function doPost(e) {
           if (col["Testcase ID"] && item.testId) sheet.getRange(rowIdx, col["Testcase ID"]).setValue(item.testId);
           if (col["Description"] && item.description) sheet.getRange(rowIdx, col["Description"]).setValue(item.description);
           if (col["Update Date & time"]) sheet.getRange(rowIdx, col["Update Date & time"]).setValue(item.updatedAt || new Date().toISOString());
+          if (col["Chrome"] && item.browsers) sheet.getRange(rowIdx, col["Chrome"]).setValue(item.browsers.chrome || "");
+          if (col["Safari"] && item.browsers) sheet.getRange(rowIdx, col["Safari"]).setValue(item.browsers.safari || "");
+          if (col["iOS"] && item.browsers) sheet.getRange(rowIdx, col["iOS"]).setValue(item.browsers.ios || "");
+          if (col["Android"] && item.browsers) sheet.getRange(rowIdx, col["Android"]).setValue(item.browsers.android || "");
           if (col["Status"]) sheet.getRange(rowIdx, col["Status"]).setValue(item.status || "");
           if (col["Reason"]) sheet.getRange(rowIdx, col["Reason"]).setValue(item.reason || "");
           if (col["Comment"]) sheet.getRange(rowIdx, col["Comment"]).setValue(item.comment || "");
@@ -82,6 +86,10 @@ function doPost(e) {
           if (col["Test Name"]) newRow[col["Test Name"] - 1] = item.testName || "";
           if (col["Description"]) newRow[col["Description"] - 1] = item.description || "";
           if (col["Update Date & time"]) newRow[col["Update Date & time"] - 1] = item.updatedAt || new Date().toISOString();
+          if (col["Chrome"] && item.browsers) newRow[col["Chrome"] - 1] = item.browsers.chrome || "";
+          if (col["Safari"] && item.browsers) newRow[col["Safari"] - 1] = item.browsers.safari || "";
+          if (col["iOS"] && item.browsers) newRow[col["iOS"] - 1] = item.browsers.ios || "";
+          if (col["Android"] && item.browsers) newRow[col["Android"] - 1] = item.browsers.android || "";
           if (col["Status"]) newRow[col["Status"] - 1] = item.status || "";
           if (col["Reason"]) newRow[col["Reason"] - 1] = item.reason || "";
           if (col["Comment"]) newRow[col["Comment"] - 1] = item.comment || "";

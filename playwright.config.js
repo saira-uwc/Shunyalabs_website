@@ -1,6 +1,7 @@
-import { defineConfig } from '@playwright/test';
+import { defineConfig, devices } from '@playwright/test';
 import fs from 'fs';
 import path from 'path';
+import { MOBILE_TEST_IGNORE } from './utils/browser-matrix.js';
 
 // Only override browser path locally when a matching vendored Chromium exists.
 // Otherwise leave PLAYWRIGHT_BROWSERS_PATH unset so Playwright uses the default
@@ -24,6 +25,9 @@ const launchOptions = hasBundledChromium ? { executablePath: CHROMIUM_EXECUTABLE
 if (process.env.CONTACT_MAIL_MOCK == null) {
   process.env.CONTACT_MAIL_MOCK = 'true';
 }
+
+const sharedIgnore = [/\/snapshots\//, /contact-daily-mail\.api\.spec\.js/];
+const jsonOutput = process.env.PW_JSON_OUTPUT || 'reports/json-report.json';
 
 export default defineConfig({
   testDir: './tests',
@@ -55,30 +59,40 @@ export default defineConfig({
       testMatch: /contact-daily-mail\.api\.spec\.js/,
     },
     {
-      name: 'desktop',
-      use: { viewport: { width: 1920, height: 1080 } },
-      testIgnore: [/\/snapshots\//, /contact-daily-mail\.api\.spec\.js/],
+      name: 'desktop-chrome',
+      use: {
+        ...devices['Desktop Chrome'],
+        viewport: { width: 1920, height: 1080 },
+      },
+      testIgnore: sharedIgnore,
     },
     {
-      name: 'mobile',
-      use: { viewport: { width: 375, height: 667 } },
-      testIgnore: [
-        /\/snapshots\//,
-        /homepage\/nav\.spec\.js/,
-        /nav-links-live\.spec\.js/,
-        /\/zero-stt-universal\//,
-        /contact-daily-mail\.api\.spec\.js/,
-      ],
+      name: 'desktop-safari',
+      use: {
+        ...devices['Desktop Safari'],
+        viewport: { width: 1920, height: 1080 },
+      },
+      testIgnore: sharedIgnore,
+    },
+    {
+      name: 'mobile-ios',
+      use: { ...devices['iPhone 14'] },
+      testIgnore: MOBILE_TEST_IGNORE,
+    },
+    {
+      name: 'mobile-android',
+      use: { ...devices['Pixel 7'] },
+      testIgnore: MOBILE_TEST_IGNORE,
     },
   ],
 
-  fullyParallel: true,
+  fullyParallel: false,
   retries: process.env.CI ? 1 : 1,
-  workers: process.env.CI ? 2 : 2,
+  workers: 1,
 
   reporter: [
     ['html', { outputFolder: 'reports/html-report', open: 'never' }],
-    ['json', { outputFile: 'reports/json-report.json' }],
-    ['list']
+    ['json', { outputFile: jsonOutput }],
+    ['list'],
   ],
 });

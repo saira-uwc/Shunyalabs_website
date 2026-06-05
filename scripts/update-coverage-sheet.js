@@ -3,7 +3,12 @@ import fs from 'fs';
 import path from 'path';
 import dotenv from 'dotenv';
 import crypto from 'crypto';
-import { humanizeError, stripAnsi } from '../utils/humanize-error.js';
+import { humanizeError } from '../utils/humanize-error.js';
+import {
+  aggregateTestsByCase,
+  BROWSER_KEYS,
+  browserStatusLine,
+} from '../utils/browser-matrix.js';
 
 dotenv.config();
 
@@ -43,7 +48,7 @@ function buildRows(report) {
           attachmentMap.set(test.testPoint, urls);
         }
       });
-    } catch (error) {
+    } catch {
       // ignore history parsing errors
     }
   }
@@ -60,7 +65,7 @@ function buildRows(report) {
     return `Validates: ${leaf}`;
   };
 
-  const rows = [];
+  const rawRows = [];
   const findAttachments = (name) => {
     if (!name) return [];
     if (attachmentMap.has(name)) return attachmentMap.get(name);
@@ -69,6 +74,7 @@ function buildRows(report) {
     }
     return [];
   };
+
   const walkSuite = (suite, titlePath = []) => {
     const suiteTitles = suite.title ? [...titlePath, suite.title] : titlePath;
     (suite.specs || []).forEach(spec => {
@@ -92,14 +98,13 @@ function buildRows(report) {
         const attachments = findAttachments(testName);
         const comment = attachments.length ? attachments.join('\n') : '';
 
-        rows.push({
-          testId: createTestId(testName),
-          description: createDescription(testName),
-          testName,
+        rawRows.push({
+          testPoint: testName,
+          baseTestPoint: baseName,
+          projectName,
           status,
           reason,
           comment,
-          updatedAt: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true }),
         });
       });
     });
@@ -107,7 +112,46 @@ function buildRows(report) {
   };
 
   report.suites.forEach(suite => walkSuite(suite, []));
-  return rows;
+
+  const aggregated = aggregateTestsByCase(
+    rawRows.map((row) => ({
+      category: 'Playwright',
+      moduleName: 'Playwright',
+      testPoint: row.testPoint,
+      status: row.status,
+      comment: row.reason,
+      attachments: row.comment ? [{ url: row.comment }] : [],
+    }))
+  );
+
+  return aggregated.map((test) => {
+    const testName = test.testPoint;
+    const browserStatuses = Object.fromEntries(
+      BROWSER_KEYS.map((key) => [key, test.browsers?.[key]?.status || ''])
+    );
+    const attachments = findAttachments(testName);
+    const comment = attachments.length ? attachments.join('\n') : (test.attachments || []).map((a) => a.url).filter(Boolean).join('\n');
+
+    return {
+      testId: createTestId(testName),
+      description: createDescription(testName),
+      testName,
+      status: test.status,
+      reason: test.comment || browserStatusLine(test) || '',
+      comment,
+      browsers: browserStatuses,
+      updatedAt: new Date().toLocaleString('en-IN', {
+        timeZone: 'Asia/Kolkata',
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: true,
+      }),
+    };
+  });
 }
 
 async function main() {
@@ -136,9 +180,6 @@ async function main() {
   });
 
   try {
-    // Google Apps Script redirects POST (302) which causes fetch() to convert
-    // POST→GET, dropping the body. Use redirect:'manual' and re-POST to the
-    // redirect URL to preserve the body.
     let response = await fetch(WEB_APP_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -149,7 +190,7 @@ async function main() {
     if (response.status >= 300 && response.status < 400) {
       const redirectUrl = response.headers.get('location');
       if (redirectUrl) {
-        console.log(`  Following redirect to Apps Script...`);
+        console.log('  Following redirect to Apps Script...');
         response = await fetch(redirectUrl, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -164,10 +205,9 @@ async function main() {
       return;
     }
     const result = await response.json().catch(() => null);
-    // Support both response formats: {ok, rows} (new) and {success, updated} (old)
     if (result && (result.ok || result.success)) {
       const count = result.rows ?? result.updated ?? rows.length;
-      console.log(`✅ Coverage sheet updated (${count} rows).`);
+      console.log(`✅ Coverage sheet updated (${count} rows, deduplicated by test case).`);
     } else {
       console.log('⚠️  Coverage update response:', JSON.stringify(result) || 'unknown');
     }

@@ -59,15 +59,15 @@ jobs:
           key: playwright-${{ runner.os }}-${{ hashFiles('package.json', 'package-lock.json') }}
 
       - name: Install Playwright browsers
-        run: npx playwright install chromium --with-deps
+        run: npx playwright install chromium webkit --with-deps
         if: steps.pw-cache.outputs.cache-hit != 'true'
 
       - name: Install Playwright system deps (on cache hit)
-        run: npx playwright install-deps chromium
+        run: npx playwright install-deps chromium webkit
         if: steps.pw-cache.outputs.cache-hit == 'true'
 
       - name: Verify Playwright browser exists
-        run: npx playwright install chromium --with-deps
+        run: npx playwright install chromium webkit --with-deps
 
       # Browser contact form: mocked send-mail (UI only). Daily real email uses API + X-Automation-Secret.
       - name: Set contact daily E2E slot (first run after midnight IST)
@@ -97,7 +97,7 @@ jobs:
           CONTACT_MAIL_LIVE_TZ: Asia/Kolkata
         run: |
           set +e
-          npx playwright test tests/modules
+          node scripts/run-multi-browser-tests.js
           echo "exit_code=$?" >> "$GITHUB_OUTPUT"
 
       - name: Generate dashboard

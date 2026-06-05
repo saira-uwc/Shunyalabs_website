@@ -23,10 +23,10 @@ if [[ -z "${PLAYWRIGHT_HOST_PLATFORM:-}" ]]; then
 fi
 export PLAYWRIGHT_HTML_OPEN="never"
 
-# Run tests (capture exit code, don't fail yet)
+# Run tests across Chrome, Safari, iOS, Android sequentially (capture exit code)
 TEST_EXIT=0
 set +e
-npx playwright test tests/modules
+node scripts/run-multi-browser-tests.js
 TEST_EXIT=$?
 set -e
 
