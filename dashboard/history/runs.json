@@ -1,461 +1,5 @@
 [
   {
-    "runId": "run_1778035562650_wegk5e6eh",
-    "runDate": "2026-05-06T02:44:14.509Z",
-    "passed": 44,
-    "failed": 2,
-    "total": 46,
-    "passRate": 96,
-    "tests": [
-      {
-        "category": "Playwright",
-        "moduleName": "Contact",
-        "testPoint": "[desktop] modules/contact/contact/design.spec.js › Contact - Contact Us design compliance › Figma design compliance",
-        "status": "PASS",
-        "comment": "",
-        "timestamp": "2026-05-06T02:44:11.281Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Contact",
-        "testPoint": "[mobile] modules/contact/contact/design.spec.js › Contact - Contact Us design compliance › Figma design compliance",
-        "status": "PASS",
-        "comment": "",
-        "timestamp": "2026-05-06T02:45:08.113Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Homepage",
-        "testPoint": "[desktop] modules/homepage/homepage/design.spec.js › Homepage - Homepage design compliance › Figma design compliance",
-        "status": "PASS",
-        "comment": "",
-        "timestamp": "2026-05-06T02:44:11.311Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Homepage",
-        "testPoint": "[mobile] modules/homepage/homepage/design.spec.js › Homepage - Homepage design compliance › Figma design compliance",
-        "status": "PASS",
-        "comment": "",
-        "timestamp": "2026-05-06T02:45:13.932Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Homepage",
-        "testPoint": "[desktop] modules/homepage/homepage/footer.spec.js › Homepage - footer menu (Figma exact) › Footer columns, follow us, copyright",
-        "status": "PASS",
-        "comment": "",
-        "timestamp": "2026-05-06T02:44:11.302Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Homepage",
-        "testPoint": "[desktop] modules/homepage/homepage/nav.spec.js › Homepage - navigation (Figma exact) › Top nav dropdowns match labels, descriptions, and hrefs",
-        "status": "PASS",
-        "comment": "",
-        "timestamp": "2026-05-06T02:44:14.986Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Homepage",
-        "testPoint": "[desktop] modules/homepage/homepage/widget.spec.js › Homepage - widget (Figma exact) › Widget content and actions",
-        "status": "PASS",
-        "comment": "",
-        "timestamp": "2026-05-06T02:44:17.246Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Models",
-        "testPoint": "[desktop] modules/models/language-models/design.spec.js › Models - Language Models design compliance › Figma design compliance",
-        "status": "PASS",
-        "comment": "",
-        "timestamp": "2026-05-06T02:44:19.702Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Models",
-        "testPoint": "[mobile] modules/models/language-models/design.spec.js › Models - Language Models design compliance › Figma design compliance",
-        "status": "PASS",
-        "comment": "",
-        "timestamp": "2026-05-06T02:45:14.156Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Models",
-        "testPoint": "[desktop] modules/models/on-device-models/design.spec.js › Models - On Device Models design compliance › Figma design compliance",
-        "status": "PASS",
-        "comment": "",
-        "timestamp": "2026-05-06T02:44:20.260Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Models",
-        "testPoint": "[mobile] modules/models/on-device-models/design.spec.js › Models - On Device Models design compliance › Figma design compliance",
-        "status": "PASS",
-        "comment": "",
-        "timestamp": "2026-05-06T02:45:15.397Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Models",
-        "testPoint": "[desktop] modules/models/specialised-models/design.spec.js › Models - Specialised Models design compliance › Figma design compliance",
-        "status": "PASS",
-        "comment": "",
-        "timestamp": "2026-05-06T02:44:20.527Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Models",
-        "testPoint": "[mobile] modules/models/specialised-models/design.spec.js › Models - Specialised Models design compliance › Figma design compliance",
-        "status": "PASS",
-        "comment": "",
-        "timestamp": "2026-05-06T02:45:20.926Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Models",
-        "testPoint": "[desktop] modules/models/zero-stt-codeswitch/design.spec.js › Models - Zero STT Codeswitch design compliance › Figma design compliance",
-        "status": "PASS",
-        "comment": "",
-        "timestamp": "2026-05-06T02:44:27.885Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Models",
-        "testPoint": "[mobile] modules/models/zero-stt-codeswitch/design.spec.js › Models - Zero STT Codeswitch design compliance › Figma design compliance",
-        "status": "PASS",
-        "comment": "",
-        "timestamp": "2026-05-06T02:45:21.995Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Models",
-        "testPoint": "[desktop] modules/models/zero-stt-indic/design.spec.js › Models - Zero STT Indic design compliance › Figma design compliance",
-        "status": "FAIL",
-        "comment": "As per Figma design: Heading \"Indic language transcription backed by data\" tag: expected <h2> but got <h1>",
-        "timestamp": "2026-05-06T02:44:28.053Z",
-        "attachments": [
-          {
-            "name": "screenshot",
-            "contentType": "image/png",
-            "url": "playwright-artifacts/64998739fe-test-failed-1.png"
-          },
-          {
-            "name": "video",
-            "contentType": "video/webm",
-            "url": "playwright-artifacts/f5805ad151-video.webm"
-          },
-          {
-            "name": "error-context",
-            "contentType": "text/markdown",
-            "url": "playwright-artifacts/7d0383f0ad-error-context.md"
-          }
-        ]
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Models",
-        "testPoint": "[mobile] modules/models/zero-stt-indic/design.spec.js › Models - Zero STT Indic design compliance › Figma design compliance",
-        "status": "FAIL",
-        "comment": "As per Figma design: Heading \"Indic language transcription backed by data\" tag: expected <h2> but got <h1>",
-        "timestamp": "2026-05-06T02:45:22.138Z",
-        "attachments": [
-          {
-            "name": "screenshot",
-            "contentType": "image/png",
-            "url": "playwright-artifacts/aaceed5bde-test-failed-1.png"
-          },
-          {
-            "name": "video",
-            "contentType": "video/webm",
-            "url": "playwright-artifacts/910d1d0aad-video.webm"
-          },
-          {
-            "name": "error-context",
-            "contentType": "text/markdown",
-            "url": "playwright-artifacts/35ca002ff9-error-context.md"
-          }
-        ]
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Models",
-        "testPoint": "[desktop] modules/models/zero-stt-med/design.spec.js › Models - Zero STT Med design compliance › Figma design compliance",
-        "status": "PASS",
-        "comment": "",
-        "timestamp": "2026-05-06T02:44:28.352Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Models",
-        "testPoint": "[mobile] modules/models/zero-stt-med/design.spec.js › Models - Zero STT Med design compliance › Figma design compliance",
-        "status": "PASS",
-        "comment": "",
-        "timestamp": "2026-05-06T02:45:27.484Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Models",
-        "testPoint": "[desktop] modules/models/zero-stt-universal/design.spec.js › Models - Zero STT Universal design compliance › Figma design compliance",
-        "status": "PASS",
-        "comment": "",
-        "timestamp": "2026-05-06T02:44:36.732Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Pricing",
-        "testPoint": "[desktop] modules/pricing/pricing/design.spec.js › Pricing - Pricing design compliance › Figma design compliance",
-        "status": "PASS",
-        "comment": "",
-        "timestamp": "2026-05-06T02:44:35.937Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Pricing",
-        "testPoint": "[mobile] modules/pricing/pricing/design.spec.js › Pricing - Pricing design compliance › Figma design compliance",
-        "status": "PASS",
-        "comment": "",
-        "timestamp": "2026-05-06T02:45:29.456Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Product",
-        "testPoint": "[desktop] modules/product/audio-processing/design.spec.js › Product - Audio Processing design compliance › Figma design compliance",
-        "status": "PASS",
-        "comment": "",
-        "timestamp": "2026-05-06T02:44:36.921Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Product",
-        "testPoint": "[mobile] modules/product/audio-processing/design.spec.js › Product - Audio Processing design compliance › Figma design compliance",
-        "status": "PASS",
-        "comment": "",
-        "timestamp": "2026-05-06T02:45:29.481Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Product",
-        "testPoint": "[desktop] modules/product/deployment/design.spec.js › Product - Deployment design compliance › Figma design compliance",
-        "status": "PASS",
-        "comment": "",
-        "timestamp": "2026-05-06T02:44:43.339Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Product",
-        "testPoint": "[mobile] modules/product/deployment/design.spec.js › Product - Deployment design compliance › Figma design compliance",
-        "status": "PASS",
-        "comment": "",
-        "timestamp": "2026-05-06T02:45:34.972Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Product",
-        "testPoint": "[desktop] modules/product/models/design.spec.js › Product - Models design compliance › Figma design compliance",
-        "status": "PASS",
-        "comment": "",
-        "timestamp": "2026-05-06T02:44:43.928Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Product",
-        "testPoint": "[mobile] modules/product/models/design.spec.js › Product - Models design compliance › Figma design compliance",
-        "status": "PASS",
-        "comment": "",
-        "timestamp": "2026-05-06T02:45:36.080Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Product",
-        "testPoint": "[desktop] modules/product/overview/design.spec.js › Product - Overview design compliance › Figma design compliance",
-        "status": "PASS",
-        "comment": "",
-        "timestamp": "2026-05-06T02:44:45.259Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Product",
-        "testPoint": "[mobile] modules/product/overview/design.spec.js › Product - Overview design compliance › Figma design compliance",
-        "status": "PASS",
-        "comment": "",
-        "timestamp": "2026-05-06T02:45:36.244Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Product",
-        "testPoint": "[desktop] modules/product/speech-intelligence/design.spec.js › Product - Speech Intelligence design compliance › Figma design compliance",
-        "status": "PASS",
-        "comment": "",
-        "timestamp": "2026-05-06T02:44:50.818Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Product",
-        "testPoint": "[mobile] modules/product/speech-intelligence/design.spec.js › Product - Speech Intelligence design compliance › Figma design compliance",
-        "status": "PASS",
-        "comment": "",
-        "timestamp": "2026-05-06T02:45:41.390Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Product",
-        "testPoint": "[desktop] modules/product/voice-agents/design.spec.js › Product - Voice Agents design compliance › Figma design compliance",
-        "status": "PASS",
-        "comment": "",
-        "timestamp": "2026-05-06T02:44:51.198Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Product",
-        "testPoint": "[mobile] modules/product/voice-agents/design.spec.js › Product - Voice Agents design compliance › Figma design compliance",
-        "status": "PASS",
-        "comment": "",
-        "timestamp": "2026-05-06T02:45:42.731Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Resources",
-        "testPoint": "[desktop] modules/resources/benchmarks/design.spec.js › Resources - Benchmarks design compliance › Figma design compliance",
-        "status": "PASS",
-        "comment": "",
-        "timestamp": "2026-05-06T02:44:52.246Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Resources",
-        "testPoint": "[mobile] modules/resources/benchmarks/design.spec.js › Resources - Benchmarks design compliance › Figma design compliance",
-        "status": "PASS",
-        "comment": "",
-        "timestamp": "2026-05-06T02:45:42.747Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Resources",
-        "testPoint": "[desktop] modules/resources/patents/design.spec.js › Resources - Patents design compliance › Figma design compliance",
-        "status": "PASS",
-        "comment": "",
-        "timestamp": "2026-05-06T02:44:57.876Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Resources",
-        "testPoint": "[mobile] modules/resources/patents/design.spec.js › Resources - Patents design compliance › Figma design compliance",
-        "status": "PASS",
-        "comment": "",
-        "timestamp": "2026-05-06T02:45:47.736Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Solutions",
-        "testPoint": "[desktop] modules/solutions/contact-centers/design.spec.js › Solutions - Contact Centers design compliance › Figma design compliance",
-        "status": "PASS",
-        "comment": "",
-        "timestamp": "2026-05-06T02:44:58.185Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Solutions",
-        "testPoint": "[mobile] modules/solutions/contact-centers/design.spec.js › Solutions - Contact Centers design compliance › Figma design compliance",
-        "status": "PASS",
-        "comment": "",
-        "timestamp": "2026-05-06T02:45:49.291Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Solutions",
-        "testPoint": "[desktop] modules/solutions/healthcare/design.spec.js › Solutions - Healthcare design compliance › Figma design compliance",
-        "status": "PASS",
-        "comment": "",
-        "timestamp": "2026-05-06T02:44:59.871Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Solutions",
-        "testPoint": "[mobile] modules/solutions/healthcare/design.spec.js › Solutions - Healthcare design compliance › Figma design compliance",
-        "status": "PASS",
-        "comment": "",
-        "timestamp": "2026-05-06T02:45:49.437Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Solutions",
-        "testPoint": "[desktop] modules/solutions/media-entertainment/design.spec.js › Solutions - Media & Entertainment design compliance › Figma design compliance",
-        "status": "PASS",
-        "comment": "",
-        "timestamp": "2026-05-06T02:45:05.591Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Solutions",
-        "testPoint": "[mobile] modules/solutions/media-entertainment/design.spec.js › Solutions - Media & Entertainment design compliance › Figma design compliance",
-        "status": "PASS",
-        "comment": "",
-        "timestamp": "2026-05-06T02:45:54.053Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Solutions",
-        "testPoint": "[desktop] modules/solutions/use-cases/design.spec.js › Solutions - Use Cases design compliance › Figma design compliance",
-        "status": "PASS",
-        "comment": "",
-        "timestamp": "2026-05-06T02:45:05.682Z",
-        "attachments": []
-      },
-      {
-        "category": "Playwright",
-        "moduleName": "Solutions",
-        "testPoint": "[mobile] modules/solutions/use-cases/design.spec.js › Solutions - Use Cases design compliance › Figma design compliance",
-        "status": "PASS",
-        "comment": "",
-        "timestamp": "2026-05-06T02:45:55.969Z",
-        "attachments": []
-      }
-    ]
-  },
-  {
     "runId": "run_1778042743740_49mppy30x",
     "runDate": "2026-05-06T04:44:01.746Z",
     "passed": 44,
@@ -153902,7 +153446,7 @@
     "tests": [
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "About",
         "testPoint": "[desktop] modules/about/about-us/design.spec.js › About - About Us design compliance › Figma design compliance",
         "status": "FAIL",
         "comment": "As per Figma design: Page title: expected \"About Shunya Labs | Voice AI Platform\" but got \"About Custom Voice AI & Speech Research | Shunya Labs\"",
@@ -153932,7 +153476,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "About",
         "testPoint": "[mobile] modules/about/about-us/design.spec.js › About - About Us design compliance › Figma design compliance",
         "status": "FAIL",
         "comment": "As per Figma design: Page title: expected \"About Shunya Labs | Voice AI Platform\" but got \"About Custom Voice AI & Speech Research | Shunya Labs\"",
@@ -153962,7 +153506,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Contact",
         "testPoint": "[desktop] modules/contact/contact/contact-form.spec.js › Contact — lead form › Contact Sales → contact page → fill form → submit shows confirmation",
         "status": "PASS",
         "comment": "",
@@ -153971,7 +153515,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Contact",
         "testPoint": "[mobile] modules/contact/contact/contact-form.spec.js › Contact — lead form › Contact Sales → contact page → fill form → submit shows confirmation",
         "status": "PASS",
         "comment": "",
@@ -153980,7 +153524,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Contact",
         "testPoint": "[desktop] modules/contact/contact/design.spec.js › Contact - Contact Us design compliance › Figma design compliance",
         "status": "FAIL",
         "comment": "As per Figma design: Page title: expected \"Contact Shunya Labs\" but got \"Contact for Voice AI & Enterprise Support | Shunya Labs\"",
@@ -154010,7 +153554,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Contact",
         "testPoint": "[mobile] modules/contact/contact/design.spec.js › Contact - Contact Us design compliance › Figma design compliance",
         "status": "FAIL",
         "comment": "As per Figma design: Page title: expected \"Contact Shunya Labs\" but got \"Contact for Voice AI & Enterprise Support | Shunya Labs\"",
@@ -154040,7 +153584,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Documentation",
         "testPoint": "[desktop] modules/documentation/documentation/design.spec.js › Documentation - Documentation design compliance › Figma design compliance",
         "status": "PASS",
         "comment": "",
@@ -154049,7 +153593,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Documentation",
         "testPoint": "[mobile] modules/documentation/documentation/design.spec.js › Documentation - Documentation design compliance › Figma design compliance",
         "status": "PASS",
         "comment": "",
@@ -154058,7 +153602,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Homepage",
         "testPoint": "[desktop] modules/homepage/homepage/custom-slms-carousel.spec.js › Homepage - Custom SLMs carousel › All four carousel steps show expected headings",
         "status": "PASS",
         "comment": "",
@@ -154067,7 +153611,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Homepage",
         "testPoint": "[mobile] modules/homepage/homepage/custom-slms-carousel.spec.js › Homepage - Custom SLMs carousel › All four carousel steps show expected headings",
         "status": "PASS",
         "comment": "",
@@ -154076,7 +153620,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Homepage",
         "testPoint": "[desktop] modules/homepage/homepage/design.spec.js › Homepage - Homepage design compliance › Figma design compliance",
         "status": "PASS",
         "comment": "",
@@ -154085,7 +153629,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Homepage",
         "testPoint": "[mobile] modules/homepage/homepage/design.spec.js › Homepage - Homepage design compliance › Figma design compliance",
         "status": "PASS",
         "comment": "",
@@ -154094,7 +153638,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Homepage",
         "testPoint": "[desktop] modules/homepage/homepage/footer-links-live.spec.js › Homepage - footer link health › All footer hrefs return HTTP success",
         "status": "PASS",
         "comment": "",
@@ -154103,7 +153647,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Homepage",
         "testPoint": "[mobile] modules/homepage/homepage/footer-links-live.spec.js › Homepage - footer link health › All footer hrefs return HTTP success",
         "status": "PASS",
         "comment": "",
@@ -154112,7 +153656,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Homepage",
         "testPoint": "[desktop] modules/homepage/homepage/footer.spec.js › Homepage - footer menu (Figma exact) › Footer columns, follow us, copyright",
         "status": "PASS",
         "comment": "",
@@ -154121,7 +153665,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Homepage",
         "testPoint": "[mobile] modules/homepage/homepage/footer.spec.js › Homepage - footer menu (Figma exact) › Footer columns, follow us, copyright",
         "status": "PASS",
         "comment": "",
@@ -154130,7 +153674,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Homepage",
         "testPoint": "[desktop] modules/homepage/homepage/hero-ctas.spec.js › Homepage - hero and bottom CTAs › Get Started and Contact Sales navigate correctly",
         "status": "PASS",
         "comment": "",
@@ -154139,7 +153683,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Homepage",
         "testPoint": "[mobile] modules/homepage/homepage/hero-ctas.spec.js › Homepage - hero and bottom CTAs › Get Started and Contact Sales navigate correctly",
         "status": "PASS",
         "comment": "",
@@ -154148,7 +153692,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Homepage",
         "testPoint": "[desktop] modules/homepage/homepage/homepage-sections.spec.js › Homepage - major sections › Live homepage exposes all primary marketing sections",
         "status": "PASS",
         "comment": "",
@@ -154157,7 +153701,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Homepage",
         "testPoint": "[mobile] modules/homepage/homepage/homepage-sections.spec.js › Homepage - major sections › Live homepage exposes all primary marketing sections",
         "status": "PASS",
         "comment": "",
@@ -154166,7 +153710,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Homepage",
         "testPoint": "[desktop] modules/homepage/homepage/language-regions.spec.js › Homepage - language regions › Language regions map and language list are present",
         "status": "PASS",
         "comment": "",
@@ -154175,7 +153719,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Homepage",
         "testPoint": "[mobile] modules/homepage/homepage/language-regions.spec.js › Homepage - language regions › Language regions map and language list are present",
         "status": "PASS",
         "comment": "",
@@ -154184,7 +153728,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Homepage",
         "testPoint": "[desktop] modules/homepage/homepage/nav-links-live.spec.js › Homepage - navigation link health › All header nav dropdown hrefs return HTTP success",
         "status": "PASS",
         "comment": "",
@@ -154193,7 +153737,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Homepage",
         "testPoint": "[desktop] modules/homepage/homepage/nav.spec.js › Homepage - navigation (Figma exact) › Top nav dropdowns match labels, descriptions, and hrefs",
         "status": "PASS",
         "comment": "",
@@ -154202,7 +153746,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Homepage",
         "testPoint": "[desktop] modules/homepage/homepage/widget.spec.js › Homepage - hero demo (Vāk) › Live translation demo loads and shows primary controls",
         "status": "PASS",
         "comment": "",
@@ -154211,7 +153755,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Homepage",
         "testPoint": "[mobile] modules/homepage/homepage/widget.spec.js › Homepage - hero demo (Vāk) › Live translation demo loads and shows primary controls",
         "status": "PASS",
         "comment": "",
@@ -154220,7 +153764,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Models",
         "testPoint": "[desktop] modules/models/language-models/design.spec.js › Models - Language Models design compliance › Figma design compliance",
         "status": "PASS",
         "comment": "",
@@ -154229,7 +153773,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Models",
         "testPoint": "[mobile] modules/models/language-models/design.spec.js › Models - Language Models design compliance › Figma design compliance",
         "status": "PASS",
         "comment": "",
@@ -154238,7 +153782,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Models",
         "testPoint": "[desktop] modules/models/on-device-models/design.spec.js › Models - On Device Models design compliance › Figma design compliance",
         "status": "PASS",
         "comment": "",
@@ -154247,7 +153791,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Models",
         "testPoint": "[mobile] modules/models/on-device-models/design.spec.js › Models - On Device Models design compliance › Figma design compliance",
         "status": "PASS",
         "comment": "",
@@ -154256,7 +153800,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Models",
         "testPoint": "[desktop] modules/models/specialised-models/design.spec.js › Models - Specialised Models design compliance › Figma design compliance",
         "status": "PASS",
         "comment": "",
@@ -154265,7 +153809,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Models",
         "testPoint": "[mobile] modules/models/specialised-models/design.spec.js › Models - Specialised Models design compliance › Figma design compliance",
         "status": "PASS",
         "comment": "",
@@ -154274,7 +153818,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Models",
         "testPoint": "[desktop] modules/models/vak/design.spec.js › Models - Translation Models (Vāk) design compliance › Figma design compliance",
         "status": "PASS",
         "comment": "",
@@ -154283,7 +153827,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Models",
         "testPoint": "[mobile] modules/models/vak/design.spec.js › Models - Translation Models (Vāk) design compliance › Figma design compliance",
         "status": "PASS",
         "comment": "",
@@ -154292,7 +153836,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Models",
         "testPoint": "[desktop] modules/models/vak/vak-page.spec.js › Models - Vāk page › Vāk page loads translation demo controls",
         "status": "PASS",
         "comment": "",
@@ -154301,7 +153845,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Models",
         "testPoint": "[mobile] modules/models/vak/vak-page.spec.js › Models - Vāk page › Vāk page loads translation demo controls",
         "status": "PASS",
         "comment": "",
@@ -154310,7 +153854,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Models",
         "testPoint": "[desktop] modules/models/zero-stt-codeswitch/design.spec.js › Models - Zero STT Codeswitch design compliance › Figma design compliance",
         "status": "FAIL",
         "comment": "As per Figma design: Page title: expected \"Zero Indic - Hinglish ASR\" but got \"Zero Code Switch Hinglish ASR Platform | Shunya Labs\"",
@@ -154340,7 +153884,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Models",
         "testPoint": "[mobile] modules/models/zero-stt-codeswitch/design.spec.js › Models - Zero STT Codeswitch design compliance › Figma design compliance",
         "status": "FAIL",
         "comment": "As per Figma design: Page title: expected \"Zero Indic - Hinglish ASR\" but got \"Zero Code Switch Hinglish ASR Platform | Shunya Labs\"",
@@ -154370,7 +153914,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Models",
         "testPoint": "[desktop] modules/models/zero-stt-indic/design.spec.js › Models - Zero STT Indic design compliance › Figma design compliance",
         "status": "PASS",
         "comment": "",
@@ -154379,7 +153923,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Models",
         "testPoint": "[mobile] modules/models/zero-stt-indic/design.spec.js › Models - Zero STT Indic design compliance › Figma design compliance",
         "status": "PASS",
         "comment": "",
@@ -154388,7 +153932,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Models",
         "testPoint": "[desktop] modules/models/zero-stt-med/design.spec.js › Models - Zero STT Med design compliance › Figma design compliance",
         "status": "PASS",
         "comment": "",
@@ -154397,7 +153941,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Models",
         "testPoint": "[mobile] modules/models/zero-stt-med/design.spec.js › Models - Zero STT Med design compliance › Figma design compliance",
         "status": "PASS",
         "comment": "",
@@ -154406,7 +153950,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Models",
         "testPoint": "[desktop] modules/models/zero-stt-universal/design.spec.js › Models - Zero STT Universal design compliance › Figma design compliance",
         "status": "PASS",
         "comment": "",
@@ -154415,7 +153959,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Pricing",
         "testPoint": "[desktop] modules/pricing/pricing/design.spec.js › Pricing - Pricing design compliance › Figma design compliance",
         "status": "FAIL",
         "comment": "As per Figma design: Page title: expected \"Shunya Labs Pricing\" but got \"STT, TTS, Voice Agents & Audio AI Pricing | Shunya Labs\"",
@@ -154445,7 +153989,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Pricing",
         "testPoint": "[mobile] modules/pricing/pricing/design.spec.js › Pricing - Pricing design compliance › Figma design compliance",
         "status": "FAIL",
         "comment": "As per Figma design: Page title: expected \"Shunya Labs Pricing\" but got \"STT, TTS, Voice Agents & Audio AI Pricing | Shunya Labs\"",
@@ -154475,7 +154019,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Product",
         "testPoint": "[desktop] modules/product/audio-processing/design.spec.js › Product - Audio Processing design compliance › Figma design compliance",
         "status": "PASS",
         "comment": "",
@@ -154484,7 +154028,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Product",
         "testPoint": "[mobile] modules/product/audio-processing/design.spec.js › Product - Audio Processing design compliance › Figma design compliance",
         "status": "PASS",
         "comment": "",
@@ -154493,7 +154037,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Product",
         "testPoint": "[desktop] modules/product/deployment/design.spec.js › Product - Deployment design compliance › Figma design compliance",
         "status": "PASS",
         "comment": "",
@@ -154502,7 +154046,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Product",
         "testPoint": "[mobile] modules/product/deployment/design.spec.js › Product - Deployment design compliance › Figma design compliance",
         "status": "PASS",
         "comment": "",
@@ -154511,7 +154055,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Product",
         "testPoint": "[desktop] modules/product/models/design.spec.js › Product - Models design compliance › Figma design compliance",
         "status": "PASS",
         "comment": "",
@@ -154520,7 +154064,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Product",
         "testPoint": "[mobile] modules/product/models/design.spec.js › Product - Models design compliance › Figma design compliance",
         "status": "PASS",
         "comment": "",
@@ -154529,7 +154073,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Product",
         "testPoint": "[desktop] modules/product/overview/design.spec.js › Product - Overview design compliance › Figma design compliance",
         "status": "PASS",
         "comment": "",
@@ -154538,7 +154082,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Product",
         "testPoint": "[mobile] modules/product/overview/design.spec.js › Product - Overview design compliance › Figma design compliance",
         "status": "PASS",
         "comment": "",
@@ -154547,7 +154091,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Product",
         "testPoint": "[desktop] modules/product/speech-intelligence/design.spec.js › Product - Speech Intelligence design compliance › Figma design compliance",
         "status": "PASS",
         "comment": "",
@@ -154556,7 +154100,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Product",
         "testPoint": "[mobile] modules/product/speech-intelligence/design.spec.js › Product - Speech Intelligence design compliance › Figma design compliance",
         "status": "PASS",
         "comment": "",
@@ -154565,7 +154109,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Product",
         "testPoint": "[desktop] modules/product/voice-agents/design.spec.js › Product - Voice Agents design compliance › Figma design compliance",
         "status": "PASS",
         "comment": "",
@@ -154574,7 +154118,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Product",
         "testPoint": "[mobile] modules/product/voice-agents/design.spec.js › Product - Voice Agents design compliance › Figma design compliance",
         "status": "PASS",
         "comment": "",
@@ -154583,7 +154127,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Resources",
         "testPoint": "[desktop] modules/resources/benchmarks/design.spec.js › Resources - Benchmarks design compliance › Figma design compliance",
         "status": "PASS",
         "comment": "",
@@ -154592,7 +154136,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Resources",
         "testPoint": "[mobile] modules/resources/benchmarks/design.spec.js › Resources - Benchmarks design compliance › Figma design compliance",
         "status": "PASS",
         "comment": "",
@@ -154601,7 +154145,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Resources",
         "testPoint": "[desktop] modules/resources/news-media/design.spec.js › Resources - News & Media design compliance › Figma design compliance",
         "status": "PASS",
         "comment": "",
@@ -154610,7 +154154,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Resources",
         "testPoint": "[mobile] modules/resources/news-media/design.spec.js › Resources - News & Media design compliance › Figma design compliance",
         "status": "PASS",
         "comment": "",
@@ -154619,7 +154163,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Resources",
         "testPoint": "[desktop] modules/resources/patents/design.spec.js › Resources - Patents design compliance › Figma design compliance",
         "status": "PASS",
         "comment": "",
@@ -154628,7 +154172,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Resources",
         "testPoint": "[mobile] modules/resources/patents/design.spec.js › Resources - Patents design compliance › Figma design compliance",
         "status": "PASS",
         "comment": "",
@@ -154637,7 +154181,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Resources",
         "testPoint": "[desktop] modules/resources/research/design.spec.js › Resources - Research design compliance › Figma design compliance",
         "status": "PASS",
         "comment": "",
@@ -154646,7 +154190,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Resources",
         "testPoint": "[mobile] modules/resources/research/design.spec.js › Resources - Research design compliance › Figma design compliance",
         "status": "PASS",
         "comment": "",
@@ -154655,7 +154199,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Solutions",
         "testPoint": "[desktop] modules/solutions/contact-centers/design.spec.js › Solutions - Contact Centers design compliance › Figma design compliance",
         "status": "PASS",
         "comment": "",
@@ -154664,7 +154208,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Solutions",
         "testPoint": "[mobile] modules/solutions/contact-centers/design.spec.js › Solutions - Contact Centers design compliance › Figma design compliance",
         "status": "PASS",
         "comment": "",
@@ -154673,7 +154217,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Solutions",
         "testPoint": "[desktop] modules/solutions/healthcare/design.spec.js › Solutions - Healthcare design compliance › Figma design compliance",
         "status": "PASS",
         "comment": "",
@@ -154682,7 +154226,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Solutions",
         "testPoint": "[mobile] modules/solutions/healthcare/design.spec.js › Solutions - Healthcare design compliance › Figma design compliance",
         "status": "PASS",
         "comment": "",
@@ -154691,7 +154235,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Solutions",
         "testPoint": "[desktop] modules/solutions/media-entertainment/design.spec.js › Solutions - Media & Entertainment design compliance › Figma design compliance",
         "status": "PASS",
         "comment": "",
@@ -154700,7 +154244,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Solutions",
         "testPoint": "[mobile] modules/solutions/media-entertainment/design.spec.js › Solutions - Media & Entertainment design compliance › Figma design compliance",
         "status": "PASS",
         "comment": "",
@@ -154709,7 +154253,7 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Solutions",
         "testPoint": "[desktop] modules/solutions/use-cases/design.spec.js › Solutions - Use Cases design compliance › Figma design compliance",
         "status": "PASS",
         "comment": "",
@@ -154718,11 +154262,846 @@
       },
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Solutions",
         "testPoint": "[mobile] modules/solutions/use-cases/design.spec.js › Solutions - Use Cases design compliance › Figma design compliance",
         "status": "PASS",
         "comment": "",
         "timestamp": "2026-06-05T02:40:24.073Z",
+        "attachments": []
+      }
+    ]
+  },
+  {
+    "runId": "run_1780634432086_72p5aifw0",
+    "runDate": "2026-06-05T04:35:22.453Z",
+    "passed": 65,
+    "failed": 8,
+    "total": 73,
+    "passRate": 89,
+    "tests": [
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[desktop] modules/about/about-us/design.spec.js › About - About Us design compliance › Figma design compliance",
+        "status": "FAIL",
+        "comment": "As per Figma design: Page title: expected \"About Shunya Labs | Voice AI Platform\" but got \"About Custom Voice AI & Speech Research | Shunya Labs\"",
+        "timestamp": "2026-06-05T04:34:50.228Z",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/f7e5c3df7c-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/91b757ba98-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/aae2cd2979-error-context.md"
+          },
+          {
+            "name": "trace",
+            "contentType": "application/zip",
+            "url": "playwright-artifacts/29936b09c3-trace.zip"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[mobile] modules/about/about-us/design.spec.js › About - About Us design compliance › Figma design compliance",
+        "status": "FAIL",
+        "comment": "As per Figma design: Page title: expected \"About Shunya Labs | Voice AI Platform\" but got \"About Custom Voice AI & Speech Research | Shunya Labs\"",
+        "timestamp": "2026-06-05T04:37:27.111Z",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/18823c96ee-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/d4450c67d4-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/3bd0b1e394-error-context.md"
+          },
+          {
+            "name": "trace",
+            "contentType": "application/zip",
+            "url": "playwright-artifacts/29c5b71da0-trace.zip"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[desktop] modules/contact/contact/contact-form.spec.js › Contact — lead form › Contact Sales → contact page → fill form → submit shows confirmation",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-06-05T04:34:25.506Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[mobile] modules/contact/contact/contact-form.spec.js › Contact — lead form › Contact Sales → contact page → fill form → submit shows confirmation",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-06-05T04:37:18.396Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[desktop] modules/contact/contact/design.spec.js › Contact - Contact Us design compliance › Figma design compliance",
+        "status": "FAIL",
+        "comment": "As per Figma design: Page title: expected \"Contact Shunya Labs\" but got \"Contact for Voice AI & Enterprise Support | Shunya Labs\"",
+        "timestamp": "2026-06-05T04:34:37.704Z",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/4be22337a2-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/6198c634a0-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/a0e1c9420d-error-context.md"
+          },
+          {
+            "name": "trace",
+            "contentType": "application/zip",
+            "url": "playwright-artifacts/0785bf60c1-trace.zip"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[mobile] modules/contact/contact/design.spec.js › Contact - Contact Us design compliance › Figma design compliance",
+        "status": "FAIL",
+        "comment": "As per Figma design: Page title: expected \"Contact Shunya Labs\" but got \"Contact for Voice AI & Enterprise Support | Shunya Labs\"",
+        "timestamp": "2026-06-05T04:37:25.353Z",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/380a4dbb40-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/8b18b97f49-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/8343d7318b-error-context.md"
+          },
+          {
+            "name": "trace",
+            "contentType": "application/zip",
+            "url": "playwright-artifacts/250ee03f2b-trace.zip"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[desktop] modules/documentation/documentation/design.spec.js › Documentation - Documentation design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-06-05T04:34:42.614Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[mobile] modules/documentation/documentation/design.spec.js › Documentation - Documentation design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-06-05T04:37:29.002Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[desktop] modules/homepage/homepage/custom-slms-carousel.spec.js › Homepage - Custom SLMs carousel › All four carousel steps show expected headings",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-06-05T04:34:44.786Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[mobile] modules/homepage/homepage/custom-slms-carousel.spec.js › Homepage - Custom SLMs carousel › All four carousel steps show expected headings",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-06-05T04:37:31.025Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[desktop] modules/homepage/homepage/design.spec.js › Homepage - Homepage design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-06-05T04:34:49.898Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[mobile] modules/homepage/homepage/design.spec.js › Homepage - Homepage design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-06-05T04:37:32.873Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[desktop] modules/homepage/homepage/footer-links-live.spec.js › Homepage - footer link health › All footer hrefs return HTTP success",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-06-05T04:35:16.087Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[mobile] modules/homepage/homepage/footer-links-live.spec.js › Homepage - footer link health › All footer hrefs return HTTP success",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-06-05T04:37:50.967Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[desktop] modules/homepage/homepage/footer.spec.js › Homepage - footer menu (Figma exact) › Footer columns, follow us, copyright",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-06-05T04:35:22.868Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[mobile] modules/homepage/homepage/footer.spec.js › Homepage - footer menu (Figma exact) › Footer columns, follow us, copyright",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-06-05T04:37:56.294Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[desktop] modules/homepage/homepage/hero-ctas.spec.js › Homepage - hero and bottom CTAs › Get Started and Contact Sales navigate correctly",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-06-05T04:35:24.525Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[mobile] modules/homepage/homepage/hero-ctas.spec.js › Homepage - hero and bottom CTAs › Get Started and Contact Sales navigate correctly",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-06-05T04:37:57.911Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[desktop] modules/homepage/homepage/homepage-sections.spec.js › Homepage - major sections › Live homepage exposes all primary marketing sections",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-06-05T04:35:30.206Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[mobile] modules/homepage/homepage/homepage-sections.spec.js › Homepage - major sections › Live homepage exposes all primary marketing sections",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-06-05T04:38:02.018Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[desktop] modules/homepage/homepage/language-regions.spec.js › Homepage - language regions › Language regions map and language list are present",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-06-05T04:35:31.835Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[mobile] modules/homepage/homepage/language-regions.spec.js › Homepage - language regions › Language regions map and language list are present",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-06-05T04:38:03.459Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[desktop] modules/homepage/homepage/nav-links-live.spec.js › Homepage - navigation link health › All header nav dropdown hrefs return HTTP success",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-06-05T04:35:34.941Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[desktop] modules/homepage/homepage/nav.spec.js › Homepage - navigation (Figma exact) › Top nav dropdowns match labels, descriptions, and hrefs",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-06-05T04:35:36.464Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[desktop] modules/homepage/homepage/widget.spec.js › Homepage - hero demo (Vāk) › Live translation demo loads and shows primary controls",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-06-05T04:35:38.234Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[mobile] modules/homepage/homepage/widget.spec.js › Homepage - hero demo (Vāk) › Live translation demo loads and shows primary controls",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-06-05T04:38:05.265Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[desktop] modules/models/language-models/design.spec.js › Models - Language Models design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-06-05T04:35:40.071Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[mobile] modules/models/language-models/design.spec.js › Models - Language Models design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-06-05T04:38:07.094Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[desktop] modules/models/on-device-models/design.spec.js › Models - On Device Models design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-06-05T04:35:40.510Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[mobile] modules/models/on-device-models/design.spec.js › Models - On Device Models design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-06-05T04:38:14.849Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[desktop] modules/models/specialised-models/design.spec.js › Models - Specialised Models design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-06-05T04:35:41.619Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[mobile] modules/models/specialised-models/design.spec.js › Models - Specialised Models design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-06-05T04:38:15.760Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[desktop] modules/models/vak/design.spec.js › Models - Translation Models (Vāk) design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-06-05T04:35:42.615Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[mobile] modules/models/vak/design.spec.js › Models - Translation Models (Vāk) design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-06-05T04:38:16.652Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[desktop] modules/models/vak/vak-page.spec.js › Models - Vāk page › Vāk page loads translation demo controls",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-06-05T04:35:43.629Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[mobile] modules/models/vak/vak-page.spec.js › Models - Vāk page › Vāk page loads translation demo controls",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-06-05T04:38:28.420Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[desktop] modules/models/zero-stt-codeswitch/design.spec.js › Models - Zero STT Codeswitch design compliance › Figma design compliance",
+        "status": "FAIL",
+        "comment": "As per Figma design: Page title: expected \"Zero Indic - Hinglish ASR\" but got \"Zero Code Switch Hinglish ASR Platform | Shunya Labs\"",
+        "timestamp": "2026-06-05T04:35:46.797Z",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/b716369a0f-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/adae677b32-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/1d3f45ed64-error-context.md"
+          },
+          {
+            "name": "trace",
+            "contentType": "application/zip",
+            "url": "playwright-artifacts/2341f9969f-trace.zip"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[mobile] modules/models/zero-stt-codeswitch/design.spec.js › Models - Zero STT Codeswitch design compliance › Figma design compliance",
+        "status": "FAIL",
+        "comment": "As per Figma design: Page title: expected \"Zero Indic - Hinglish ASR\" but got \"Zero Code Switch Hinglish ASR Platform | Shunya Labs\"",
+        "timestamp": "2026-06-05T04:38:31.430Z",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/09ac92898e-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/dc812d1ba9-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/2348207847-error-context.md"
+          },
+          {
+            "name": "trace",
+            "contentType": "application/zip",
+            "url": "playwright-artifacts/57086d9c72-trace.zip"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[desktop] modules/models/zero-stt-indic/design.spec.js › Models - Zero STT Indic design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-06-05T04:35:49.020Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[mobile] modules/models/zero-stt-indic/design.spec.js › Models - Zero STT Indic design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-06-05T04:38:33.529Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[desktop] modules/models/zero-stt-med/design.spec.js › Models - Zero STT Med design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-06-05T04:35:50.203Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[mobile] modules/models/zero-stt-med/design.spec.js › Models - Zero STT Med design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-06-05T04:38:34.607Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[desktop] modules/models/zero-stt-universal/design.spec.js › Models - Zero STT Universal design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-06-05T04:35:51.297Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[desktop] modules/pricing/pricing/design.spec.js › Pricing - Pricing design compliance › Figma design compliance",
+        "status": "FAIL",
+        "comment": "As per Figma design: Page title: expected \"Shunya Labs Pricing\" but got \"STT, TTS, Voice Agents & Audio AI Pricing | Shunya Labs\"",
+        "timestamp": "2026-06-05T04:36:14.739Z",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/2a20ad915d-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/8b44a5f388-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/1de44221cd-error-context.md"
+          },
+          {
+            "name": "trace",
+            "contentType": "application/zip",
+            "url": "playwright-artifacts/79f6482ff4-trace.zip"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[mobile] modules/pricing/pricing/design.spec.js › Pricing - Pricing design compliance › Figma design compliance",
+        "status": "FAIL",
+        "comment": "As per Figma design: Page title: expected \"Shunya Labs Pricing\" but got \"STT, TTS, Voice Agents & Audio AI Pricing | Shunya Labs\"",
+        "timestamp": "2026-06-05T04:38:57.532Z",
+        "attachments": [
+          {
+            "name": "screenshot",
+            "contentType": "image/png",
+            "url": "playwright-artifacts/61a174a066-test-failed-1.png"
+          },
+          {
+            "name": "video",
+            "contentType": "video/webm",
+            "url": "playwright-artifacts/20f6d9a072-video.webm"
+          },
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/a485859f1e-error-context.md"
+          },
+          {
+            "name": "trace",
+            "contentType": "application/zip",
+            "url": "playwright-artifacts/616d040e8a-trace.zip"
+          }
+        ]
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[desktop] modules/product/audio-processing/design.spec.js › Product - Audio Processing design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-06-05T04:36:02.090Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[mobile] modules/product/audio-processing/design.spec.js › Product - Audio Processing design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-06-05T04:38:38.111Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[desktop] modules/product/deployment/design.spec.js › Product - Deployment design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-06-05T04:36:03.050Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[mobile] modules/product/deployment/design.spec.js › Product - Deployment design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-06-05T04:38:39.007Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[desktop] modules/product/models/design.spec.js › Product - Models design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-06-05T04:36:04.112Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[mobile] modules/product/models/design.spec.js › Product - Models design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-06-05T04:38:39.931Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[desktop] modules/product/overview/design.spec.js › Product - Overview design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-06-05T04:36:05.069Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[mobile] modules/product/overview/design.spec.js › Product - Overview design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-06-05T04:38:40.849Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[desktop] modules/product/speech-intelligence/design.spec.js › Product - Speech Intelligence design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-06-05T04:36:26.866Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[mobile] modules/product/speech-intelligence/design.spec.js › Product - Speech Intelligence design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-06-05T04:39:02.231Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[desktop] modules/product/voice-agents/design.spec.js › Product - Voice Agents design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-06-05T04:36:27.931Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[mobile] modules/product/voice-agents/design.spec.js › Product - Voice Agents design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-06-05T04:39:19.975Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[desktop] modules/resources/benchmarks/design.spec.js › Resources - Benchmarks design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-06-05T04:36:28.937Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[mobile] modules/resources/benchmarks/design.spec.js › Resources - Benchmarks design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-06-05T04:39:21.043Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[desktop] modules/resources/news-media/design.spec.js › Resources - News & Media design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-06-05T04:36:30.141Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[mobile] modules/resources/news-media/design.spec.js › Resources - News & Media design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-06-05T04:39:23.757Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[desktop] modules/resources/patents/design.spec.js › Resources - Patents design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-06-05T04:36:37.551Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[mobile] modules/resources/patents/design.spec.js › Resources - Patents design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-06-05T04:39:42.588Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[desktop] modules/resources/research/design.spec.js › Resources - Research design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-06-05T04:36:38.691Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[mobile] modules/resources/research/design.spec.js › Resources - Research design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-06-05T04:39:43.482Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[desktop] modules/solutions/contact-centers/design.spec.js › Solutions - Contact Centers design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-06-05T04:36:39.665Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[mobile] modules/solutions/contact-centers/design.spec.js › Solutions - Contact Centers design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-06-05T04:39:44.527Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[desktop] modules/solutions/healthcare/design.spec.js › Solutions - Healthcare design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-06-05T04:36:41.031Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[mobile] modules/solutions/healthcare/design.spec.js › Solutions - Healthcare design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-06-05T04:39:45.708Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[desktop] modules/solutions/media-entertainment/design.spec.js › Solutions - Media & Entertainment design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-06-05T04:36:42.359Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[mobile] modules/solutions/media-entertainment/design.spec.js › Solutions - Media & Entertainment design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-06-05T04:39:46.633Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[desktop] modules/solutions/use-cases/design.spec.js › Solutions - Use Cases design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-06-05T04:36:53.876Z",
+        "attachments": []
+      },
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "[mobile] modules/solutions/use-cases/design.spec.js › Solutions - Use Cases design compliance › Figma design compliance",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-06-05T04:40:08.369Z",
         "attachments": []
       }
     ]
