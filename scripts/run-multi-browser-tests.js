@@ -21,9 +21,10 @@ function runProject(projectName) {
 
   console.log(`\n--- Running project: ${projectName} ---`);
 
+  const playwrightBin = path.join(ROOT, 'node_modules', '.bin', 'playwright');
   const result = spawnSync(
-    'npx',
-    ['playwright', 'test', 'tests/modules', `--project=${projectName}`],
+    playwrightBin,
+    ['test', 'tests/modules', `--project=${projectName}`],
     {
       cwd: ROOT,
       stdio: 'inherit',

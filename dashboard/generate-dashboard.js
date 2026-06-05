@@ -14,6 +14,9 @@ import {
   summarizeBrowserColumns,
   BROWSER_KEYS,
   BROWSER_LABELS,
+  formatTestDisplayName,
+  getFailedTests,
+  browserFailureReasons,
 } from '../utils/browser-matrix.js';
 
 const RESULTS_DIR = path.join(process.cwd(), 'test-results');
@@ -248,6 +251,32 @@ function readPlaywrightReport() {
   };
 }
 
+function renderBrowserStatusCell(result) {
+  if (!result) {
+    return '<td class="browser-status-cell na">—</td>';
+  }
+  const statusClass = result.status === 'PASS' ? 'pass' : 'fail';
+  const icon = result.status === 'PASS' ? '✓' : '✗';
+  return `<td class="browser-status-cell ${statusClass}">${icon} ${result.status}</td>`;
+}
+
+function renderFailureReportTableRows(failedTests) {
+  return failedTests.map((test) => {
+    const moduleName = resolveModuleName(test);
+    const testName = formatTestDisplayName(test.testPoint);
+    const browserCells = BROWSER_KEYS.map((key) => renderBrowserStatusCell(test.browsers?.[key])).join('');
+    const reasons = browserFailureReasons(test);
+    const reasonText = reasons.length ? reasons.join(' | ') : (test.comment || '');
+    return `
+          <tr class="failure-report-row">
+            <td class="failure-report-module">${moduleName}</td>
+            <td class="failure-report-test">${testName}</td>
+            ${browserCells}
+            <td class="failure-report-reason" title="${escapeHtmlAttr(reasonText)}">${stripAnsi(reasonText).substring(0, 160)}${reasonText.length > 160 ? '…' : ''}</td>
+          </tr>`;
+  }).join('');
+}
+
 function renderBrowserBadgesHtml(browsers, compact = false) {
   if (!browsers || !Object.keys(browsers).length) return '';
   const badges = BROWSER_KEYS.map((key) => {
@@ -382,7 +411,8 @@ function generateDashboard(currentResults, history, playwrightRun) {
   const total = summary?.total ?? csvTotal;
   const passRate = total > 0 ? Math.round((passed / total) * 100) : 0;
 
-  const failureTests = currentTestResults.filter(t => t.status === 'FAIL');
+  const failureTests = getFailedTests(currentTestResults);
+  const failureReportRows = renderFailureReportTableRows(failureTests);
   
   // Group current results by category
   const byCategory = {};
@@ -1390,6 +1420,70 @@ function generateDashboard(currentResults, history, playwrightRun) {
       font-size: 18px;
       font-weight: 700;
     }
+
+    .failure-report-section {
+      margin-bottom: 32px;
+    }
+
+    .failure-report-table-wrap {
+      overflow-x: auto;
+      border: 1px solid rgba(239, 68, 68, 0.25);
+      border-radius: var(--radius-sm);
+      background: var(--bg-card);
+    }
+
+    .failure-report-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+
+    .failure-report-table th {
+      text-align: center;
+      padding: 12px 10px;
+      background: rgba(239, 68, 68, 0.12);
+      color: var(--text-secondary);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .failure-report-table th.align-left { text-align: left; }
+
+    .failure-report-table td {
+      padding: 12px 10px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    .failure-report-module {
+      font-weight: 600;
+      color: var(--text-primary);
+      white-space: nowrap;
+    }
+
+    .failure-report-test {
+      color: var(--text-secondary);
+      min-width: 180px;
+    }
+
+    .failure-report-reason {
+      color: var(--danger);
+      font-size: 12px;
+      max-width: 320px;
+    }
+
+    .browser-status-cell {
+      text-align: center;
+      font-weight: 700;
+      font-size: 11px;
+      white-space: nowrap;
+    }
+
+    .browser-status-cell.pass { color: var(--success); }
+    .browser-status-cell.fail { color: var(--danger); background: var(--danger-bg); }
+    .browser-status-cell.na { color: var(--text-muted); }
     .test-type-badge.nav { background: rgba(14, 165, 233, 0.15); color: #38bdf8; }
     .test-type-badge.widget { background: rgba(168, 85, 247, 0.15); color: #c084fc; }
     .test-type-badge.footer { background: rgba(107, 114, 128, 0.15); color: #9ca3af; }
@@ -1510,6 +1604,28 @@ function generateDashboard(currentResults, history, playwrightRun) {
               <div class="chip-name">${pageName}${renderBrowserBadgesHtml(t.browsers, true)}</div>
             </div>`;
           }).join('')}
+        </div>
+      </div>
+      ` : ''}
+
+      ${failed > 0 ? `
+      <div class="failure-report-section">
+        <h2 class="section-title">Failure Report (${failed} test case${failed === 1 ? '' : 's'})</h2>
+        <p style="color: var(--text-muted); font-size: 13px; margin: -8px 0 16px 0;">One row per test case — browser columns show PASS/FAIL without duplicating the testcase.</p>
+        <div class="failure-report-table-wrap">
+          <table class="failure-report-table">
+            <thead>
+              <tr>
+                <th class="align-left">Module</th>
+                <th class="align-left">Test Case</th>
+                ${BROWSER_KEYS.map((key) => `<th>${BROWSER_LABELS[key]}</th>`).join('')}
+                <th class="align-left">Failure Reason</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${failureReportRows}
+            </tbody>
+          </table>
         </div>
       </div>
       ` : ''}
@@ -1793,6 +1909,41 @@ function generateDashboard(currentResults, history, playwrightRun) {
       return badges ? '<div class="browser-badges">' + badges + '</div>' : '';
     }
 
+    function renderBrowserStatusCellModal(result) {
+      if (!result) return '<td class="browser-status-cell na">—</td>';
+      const statusClass = result.status === 'PASS' ? 'pass' : 'fail';
+      const icon = result.status === 'PASS' ? '✓' : '✗';
+      return '<td class="browser-status-cell ' + statusClass + '">' + icon + ' ' + result.status + '</td>';
+    }
+
+    function formatTestDisplayNameModal(testPoint) {
+      const tp = testPoint || '';
+      if (tp.includes('design compliance')) {
+        const page = tp.split(' design compliance')[0].replace(/^.*? - /, '').trim();
+        return page ? page + ' — Design Compliance' : 'Design Compliance';
+      }
+      const parts = tp.split(' › ').map(p => p.trim()).filter(Boolean);
+      return parts[parts.length - 1] || tp;
+    }
+
+    function renderFailureTableModal(tests) {
+      const header = '<div class="failure-report-table-wrap"><table class="failure-report-table"><thead><tr>' +
+        '<th class="align-left">Module</th><th class="align-left">Test Case</th>' +
+        BROWSER_KEYS.map(key => '<th>' + (BROWSER_LABELS[key] || key) + '</th>').join('') +
+        '<th class="align-left">Failure Reason</th></tr></thead><tbody>';
+      const rows = tests.map(test => {
+        const browserCells = BROWSER_KEYS.map(key => renderBrowserStatusCellModal(test.browsers && test.browsers[key])).join('');
+        const reason = test.comment || '';
+        return '<tr class="failure-report-row">' +
+          '<td class="failure-report-module">' + escapeHtml(test.moduleName || 'Module') + '</td>' +
+          '<td class="failure-report-test">' + escapeHtml(formatTestDisplayNameModal(test.testPoint)) + '</td>' +
+          browserCells +
+          '<td class="failure-report-reason">' + escapeHtml(reason.substring(0, 160)) + (reason.length > 160 ? '…' : '') + '</td>' +
+          '</tr>';
+      }).join('');
+      return header + rows + '</tbody></table></div>';
+    }
+
     // Run details modal
     function showRunDetails(runId) {
       selectedRunId = runId;
@@ -1848,8 +1999,10 @@ function generateDashboard(currentResults, history, playwrightRun) {
       </div>
       
       <div class="modal-tests-list" id="testsListContainer">\`;
-      
-      if (filteredTests.length > 0) {
+
+      if (filter === 'fail' && filteredTests.length > 0) {
+        html += renderFailureTableModal(filteredTests);
+      } else if (filteredTests.length > 0) {
         const attachmentLabel = (attachment) => {
           const type = (attachment.contentType || '').toLowerCase();
           if (type.includes('image')) return '📸 Screenshot';

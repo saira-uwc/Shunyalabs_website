@@ -5,6 +5,9 @@ import {
   BROWSER_KEYS,
   BROWSER_LABELS,
   summarizeBrowserColumns,
+  formatTestDisplayName,
+  getFailedTests,
+  browserFailureReasons,
 } from '../utils/browser-matrix.js';
 
 const ROOT = process.cwd();
@@ -60,6 +63,16 @@ function resolveModuleName(test) {
   const match = tp.match(/(?:tests\/)?modules\/([^/]+)\//);
   if (match) return toTitleCase(match[1]);
   return stored || 'General';
+}
+
+function browserStatusCellEmail(result) {
+  if (!result) {
+    return '<span style="color: #d1d5db;">—</span>';
+  }
+  const color = result.status === 'PASS' ? '#16a34a' : '#dc2626';
+  const bg = result.status === 'PASS' ? '#f0fdf4' : '#fef2f2';
+  const icon = result.status === 'PASS' ? '✓' : '✗';
+  return `<span style="display:inline-block; background:${bg}; color:${color}; padding:2px 8px; border-radius:10px; font-size:10px; font-weight:700;">${icon} ${result.status}</span>`;
 }
 
 function browserCellHtml(browserStats) {
@@ -118,8 +131,14 @@ function buildLatestRunSummary(run) {
     }
   });
 
+  const failedTests = getFailedTests(run.tests || []).map((test) => ({
+    ...test,
+    moduleName: resolveModuleName(test),
+    displayName: formatTestDisplayName(test.testPoint),
+  }));
+
   return {
-    total, passed, failed, passRate, runDate, modules, browserStats,
+    total, passed, failed, passRate, runDate, modules, browserStats, failedTests,
   };
 }
 
@@ -151,28 +170,38 @@ function buildEmailBody(summary) {
               </tr>`;
   }).join('');
 
-  // Build failure details (only if there are failures)
-  const allFailures = sortedModules
-    .filter(([, data]) => data.failedTests.length > 0)
-    .map(([name, data]) => {
-      const items = data.failedTests.map(f => {
-        const browserLabel = f.failedBrowsers?.length ? `[${f.failedBrowsers.join(', ')}]` : '';
-        const reason = f.comment ? ` — ${f.comment.substring(0, 120)}` : '';
-        return `<li style="margin-bottom: 6px; font-size: 12px; color: #4b5563;">${browserLabel} ${f.name}${reason}</li>`;
-      }).join('');
-      return `
-              <div style="margin-bottom: 12px;">
-                <div style="font-size: 13px; font-weight: 700; color: #991b1b; margin-bottom: 4px;">${name}</div>
-                <ul style="margin: 0; padding-left: 20px;">${items}</ul>
-              </div>`;
-    }).join('');
+  const failureRows = (summary.failedTests || []).map((test) => {
+    const browserCells = BROWSER_KEYS.map((key) =>
+      `<td style="padding: 10px 8px; border-bottom: 1px solid #f3f4f6; text-align: center;">${browserStatusCellEmail(test.browsers?.[key])}</td>`
+    ).join('');
+    const reasons = browserFailureReasons(test);
+    const reasonText = reasons.length ? reasons.join(' | ') : (test.comment || '');
+    return `
+              <tr>
+                <td style="padding: 10px 12px; border-bottom: 1px solid #f3f4f6; font-weight: 600; color: #1f2937; font-size: 12px; white-space: nowrap;">${test.moduleName}</td>
+                <td style="padding: 10px 12px; border-bottom: 1px solid #f3f4f6; color: #4b5563; font-size: 12px;">${test.displayName}</td>
+                ${browserCells}
+                <td style="padding: 10px 12px; border-bottom: 1px solid #f3f4f6; color: #b91c1c; font-size: 11px;">${reasonText.substring(0, 180)}${reasonText.length > 180 ? '…' : ''}</td>
+              </tr>`;
+  }).join('');
 
   const failureSection = summary.failed > 0 ? `
       <div style="margin: 24px 0;">
-        <h3 style="font-size: 14px; font-weight: 700; color: #991b1b; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid #fecaca;">
-          Failure Details
+        <h3 style="font-size: 14px; font-weight: 700; color: #991b1b; margin: 0 0 6px 0; padding-bottom: 8px; border-bottom: 1px solid #fecaca;">
+          Failure Report (${summary.failed} test case${summary.failed === 1 ? '' : 's'})
         </h3>
-        ${allFailures}
+        <p style="font-size: 12px; color: #6b7280; margin: 0 0 12px 0;">One row per test case — each browser column shows PASS or FAIL (no duplicate rows).</p>
+        <table width="100%" cellpadding="0" cellspacing="0" style="border-radius: 8px; overflow: hidden; border: 1px solid #fecaca;">
+          <thead>
+            <tr style="background: #fef2f2;">
+              <th style="padding: 10px 12px; text-align: left; font-size: 10px; font-weight: 700; color: #991b1b; text-transform: uppercase; border-bottom: 2px solid #fecaca;">Module</th>
+              <th style="padding: 10px 12px; text-align: left; font-size: 10px; font-weight: 700; color: #991b1b; text-transform: uppercase; border-bottom: 2px solid #fecaca;">Test Case</th>
+              ${BROWSER_KEYS.map((key) => `<th style="padding: 10px 8px; text-align: center; font-size: 10px; font-weight: 700; color: #991b1b; text-transform: uppercase; border-bottom: 2px solid #fecaca;">${BROWSER_LABELS[key]}</th>`).join('')}
+              <th style="padding: 10px 12px; text-align: left; font-size: 10px; font-weight: 700; color: #991b1b; text-transform: uppercase; border-bottom: 2px solid #fecaca;">Failure Reason</th>
+            </tr>
+          </thead>
+          <tbody>${failureRows}</tbody>
+        </table>
       </div>` : '';
 
   const browserSummaryRows = BROWSER_KEYS.map((key) => {
@@ -322,24 +351,33 @@ async function sendEmail(subject, body) {
 }
 
 async function main() {
-  if (!RECIPIENTS.length) {
-    console.log('No REPORT_RECIPIENTS set. Skipping email.');
-    return;
-  }
-
+  const previewMode = process.argv.includes('--preview');
   const runs = loadRuns();
   if (!runs.length) {
     console.log('No runs found in history. Skipping email.');
     return;
   }
 
-  // Use the LATEST run only (not all runs for the day)
   const latestRun = runs[runs.length - 1];
   const summary = buildLatestRunSummary(latestRun);
   summary.totalRuns = runs.length;
   const dateLabel = formatDate(new Date(latestRun.runDate));
   const subject = `QC ${PROJECT_NAME} – ${dateLabel} – ${summary.passRate}% Pass Rate`;
   const body = buildEmailBody(summary);
+
+  if (previewMode) {
+    const previewFile = path.join(ROOT, 'reports', 'failure-email-preview.html');
+    fs.mkdirSync(path.dirname(previewFile), { recursive: true });
+    fs.writeFileSync(previewFile, body);
+    console.log(`📧 Email preview written: ${previewFile}`);
+    console.log(`   ${summary.total} tests | ${summary.passRate}% pass | ${summary.failed} failed`);
+    return;
+  }
+
+  if (!RECIPIENTS.length) {
+    console.log('No REPORT_RECIPIENTS set. Skipping email.');
+    return;
+  }
 
   await sendEmail(subject, body);
   console.log(`✅ Report email sent to ${RECIPIENTS.join(', ')} (${summary.total} tests, ${summary.passRate}% pass rate)`);

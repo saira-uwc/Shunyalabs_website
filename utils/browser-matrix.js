@@ -183,3 +183,30 @@ export function browserStatusLine(test) {
     .filter(Boolean)
     .join(' | ');
 }
+
+/** Short label for failure report rows (no browser prefix). */
+export function formatTestDisplayName(testPoint) {
+  const tp = testPoint || '';
+  if (tp.includes('design compliance')) {
+    const page = tp.split(' design compliance')[0].replace(/^.*? - /, '').trim();
+    return page ? `${page} — Design Compliance` : 'Design Compliance';
+  }
+  const parts = tp.split(' › ').map((p) => p.trim()).filter(Boolean);
+  return parts[parts.length - 1] || tp;
+}
+
+/** Collect failed test cases only (already deduplicated). */
+export function getFailedTests(tests) {
+  return (tests || []).filter((t) => t.status === 'FAIL');
+}
+
+/** Per-browser failure reason for a single test case. */
+export function browserFailureReasons(test) {
+  return BROWSER_KEYS.map((key) => {
+    const result = test.browsers?.[key];
+    if (!result || result.status !== 'FAIL') return null;
+    const label = BROWSER_LABELS[key];
+    const msg = (result.comment || 'Failed').trim();
+    return `${label}: ${msg}`;
+  }).filter(Boolean);
+}

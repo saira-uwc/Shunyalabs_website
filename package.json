@@ -26,6 +26,7 @@
     "parse:figma:generate": "node scripts/parse-figma-specs.js --generate",
     "test:design": "npx playwright test tests/modules --grep \"design compliance\"",
     "test:browsers": "node scripts/run-multi-browser-tests.js",
+    "email:preview": "node scripts/email-daily-report.js --preview",
     "test:desktop": "npx playwright test tests/modules --project=desktop-chrome",
     "test:mobile": "npx playwright test tests/modules --project=mobile-ios",
     "test:desktop-chrome": "npx playwright test tests/modules --project=desktop-chrome",
