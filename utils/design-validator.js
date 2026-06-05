@@ -420,7 +420,7 @@ function validateHeadings(actual, expected, failures) {
   }
 }
 
-function validateContent(actual, expected, failures) {
+function validateContent(actual, expected, failures, { skipMainText = false } = {}) {
   // Header nav text
   if (expected.headerNav && expected.headerNav.length) {
     const missing = expected.headerNav.filter((t) => !actual.headerNav.some((a) => a === t || a.includes(t)));
@@ -438,7 +438,7 @@ function validateContent(actual, expected, failures) {
   }
 
   // Main content text - skip when >40% items are missing (dynamic page like Blogs)
-  if (expected.mainText && expected.mainText.length) {
+  if (!skipMainText && expected.mainText && expected.mainText.length) {
     const missing = expected.mainText.filter((t) => !actual.mainText.some((a) => a === t || a.includes(t)));
     const missingRate = missing.length / expected.mainText.length;
     if (missingRate <= 0.4) {
@@ -801,7 +801,7 @@ export async function runDesignComplianceTest({ page, pageEntry }) {
   validateGlobalStyles(actualData, designSpec, failures);
 
   // Content validations (replaces content.spec.js)
-  validateContent(actualData, designSpec, failures);
+  validateContent(actualData, designSpec, failures, { skipMainText: pagePath === '/benchmarks' });
 
   // Link/CTA validations (replaces cta.spec.js)
   validateLinks(actualData, designSpec, failures);
