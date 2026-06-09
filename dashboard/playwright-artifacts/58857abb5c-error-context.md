@@ -660,7 +660,59 @@ Call Log:
           - generic [ref=e362]:
             - status "Loading Vāk demo" [ref=e363]
             - iframe [ref=e370]:
-              
+              - generic [active] [ref=f1e1]:
+                - generic [ref=f1e4]:
+                  - generic [ref=f1e6]:
+                    - generic [ref=f1e7]: SOURCE
+                    - generic [ref=f1e8]: Hindi
+                    - generic [ref=f1e9]: →
+                    - generic [ref=f1e10]: DESTINATION
+                    - generic [ref=f1e11]: Indian English
+                  - generic [ref=f1e12]:
+                    - generic [ref=f1e14]:
+                      - generic [ref=f1e15]:
+                        - generic [ref=f1e17]: Hindi
+                        - paragraph [ref=f1e19]: Tap mic to speak, or type and press Enter to translate
+                      - generic [ref=f1e21]:
+                        - generic [ref=f1e23]: Indian English
+                        - paragraph [ref=f1e25]: Translation will appear here
+                    - generic [ref=f1e26]:
+                      - generic [ref=f1e27]:
+                        - generic [ref=f1e28]:
+                          - generic [ref=f1e29]: Source
+                          - button "हिन्दी (Hindi)" [ref=f1e30] [cursor=pointer]:
+                            - generic [ref=f1e31]: हिन्दी (Hindi)
+                            - img [ref=f1e32]
+                        - button "Swap languages" [ref=f1e34] [cursor=pointer]:
+                          - img [ref=f1e35]
+                        - generic [ref=f1e38]:
+                          - generic [ref=f1e39]: Destination
+                          - button "Indian English" [ref=f1e40] [cursor=pointer]:
+                            - generic [ref=f1e41]: Indian English
+                            - img [ref=f1e42]
+                        - generic [ref=f1e44]:
+                          - generic [ref=f1e45]: Speaker
+                          - button "English ⬤ Nisha ♀" [ref=f1e46] [cursor=pointer]:
+                            - generic [ref=f1e47]:
+                              - generic [ref=f1e48]: English
+                              - generic [ref=f1e49]: ⬤
+                              - generic [ref=f1e50]: Nisha
+                              - generic [ref=f1e51]: ♀
+                            - img [ref=f1e52]
+                        - generic [ref=f1e54]:
+                          - generic [ref=f1e55]: Emotions
+                          - button "😐 Neutral" [ref=f1e56] [cursor=pointer]:
+                            - generic [ref=f1e57]: 😐 Neutral
+                            - img [ref=f1e58]
+                      - generic [ref=f1e61]:
+                        - textbox "Type text in source language to translate..." [ref=f1e63]
+                        - button "Press to speak" [ref=f1e64] [cursor=pointer]:
+                          - img [ref=f1e65]
+                  - generic [ref=f1e68]:
+                    - generic [ref=f1e69]: 55 Languages
+                    - generic [ref=f1e71]: 46 Speakers
+                    - generic [ref=f1e73]: 11 Emotions
+                - alert [ref=f1e75]
       - generic [ref=e372]:
         - generic [ref=e373]:
           - generic [ref=e374]:
