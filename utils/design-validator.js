@@ -65,7 +65,8 @@ function isTrustedByCarouselImage(img) {
     isFlakyImageAlt(alt) ||
     src.includes('trusted-by') ||
     src.includes('trusted-by%2F') ||
-    src.includes('SecurityStandards')
+    src.includes('SecurityStandards') ||
+    src.includes('media-ent')
   );
 }
 
@@ -788,7 +789,7 @@ export async function runDesignComplianceTest({ page, pageEntry }) {
     actualData = await extractPageDesignData(page);
   }
 
-  if (pagePath === '/media' || pagePath === '/use-cases' || pagePath === '/about') {
+  if (pagePath === '/media' || pagePath === '/media-entertainment' || pagePath === '/use-cases' || pagePath === '/about') {
     const scrollWait = viewport === 'mobile' ? (process.env.CI ? 3500 : 2500) : (process.env.CI ? 2000 : 1000);
     await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
     await page.waitForTimeout(scrollWait);
@@ -905,7 +906,7 @@ export async function captureDesignBaseline(page, pageEntry) {
   await page.locator('footer').last().scrollIntoViewIfNeeded().catch(() => {});
   await page.waitForTimeout(300);
 
-  if (pageEntry.path === '/media' || pageEntry.path === '/use-cases') {
+  if (pageEntry.path === '/media' || pageEntry.path === '/media-entertainment' || pageEntry.path === '/use-cases') {
     await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
     await page.waitForTimeout(process.env.CI ? 2000 : 1000);
     await waitForVisibleImagesLoaded(page, pageReadyTimeout());
