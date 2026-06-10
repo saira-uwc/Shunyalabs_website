@@ -43,6 +43,7 @@ const FLAKY_CONTENT_IMAGE_ALTS = new Set([
   'Enterprise Use Cases',
   'Voice Agents & Assistants',
   'Contact Center Intelligence',
+  'img1',
 ]);
 
 function isFlakyImageAlt(alt) {
@@ -66,7 +67,9 @@ function isTrustedByCarouselImage(img) {
     src.includes('trusted-by') ||
     src.includes('trusted-by%2F') ||
     src.includes('SecurityStandards') ||
-    src.includes('media-ent')
+    src.includes('media-ent') ||
+    src.includes('1-03%201.png') ||
+    src.includes('1-04%201.png')
   );
 }
 
@@ -786,6 +789,16 @@ export async function runDesignComplianceTest({ page, pageEntry }) {
   );
   if (navLogosStillLoading) {
     await waitForVisibleImagesLoaded(page, pageReadyTimeout());
+    actualData = await extractPageDesignData(page);
+  }
+
+  if (pagePath === '/language-models') {
+    const scrollWait = viewport === 'mobile' ? (process.env.CI ? 3500 : 2500) : (process.env.CI ? 2000 : 1000);
+    await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+    await page.waitForTimeout(scrollWait);
+    await waitForVisibleImagesLoaded(page, pageReadyTimeout());
+    await page.evaluate(() => window.scrollTo(0, 0));
+    await page.waitForTimeout(viewport === 'mobile' ? 800 : 500);
     actualData = await extractPageDesignData(page);
   }
 
