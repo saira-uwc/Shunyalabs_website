@@ -29,7 +29,13 @@ function postDispatch(eventType) {
 }
 
 function triggerRunTests() {
+  // TEMP: currently CI run-tests sends real Contact Us email (CONTACT_ONLY=mail).
   postDispatch("run-tests");
+}
+
+function triggerSendContactEmail() {
+  // Real Contact Us email only (API + X-Automation-Secret).
+  postDispatch("send-contact-email");
 }
 
 function triggerSendEmail() {

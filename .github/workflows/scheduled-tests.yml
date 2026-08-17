@@ -2,7 +2,7 @@ name: Scheduled Test Runs
 
 on:
   repository_dispatch:
-    types: [run-tests, send-email, deploy-dashboard]
+    types: [run-tests, send-email, deploy-dashboard, send-contact-email]
   workflow_dispatch:
     inputs:
       mode:
@@ -31,6 +31,7 @@ jobs:
     if: >-
       github.event.action != 'send-email' &&
       github.event.action != 'deploy-dashboard' &&
+      github.event.action != 'send-contact-email' &&
       (github.event_name != 'workflow_dispatch' || (inputs.mode != 'deploy-dashboard' && inputs.mode != 'send-contact-email' && inputs.mode != 'contact-form-only'))
     runs-on: ubuntu-latest
     steps:
@@ -92,16 +93,17 @@ jobs:
         id: tests
         env:
           PLAYWRIGHT_HTML_OPEN: never
-          # TEMP: only Contact Us form fill+submit. Set to empty string to restore full suite.
-          CONTACT_ONLY: ui
-          CONTACT_MAIL_MOCK: 'true'
-          CONTACT_MAIL_MODE: mock
-          CONTACT_DAILY_E2E: ${{ steps.contact_daily.outputs.run_daily }}
+          # TEMP: Contact Us real email only (API + secret). Empty CONTACT_ONLY = full suite later.
+          CONTACT_ONLY: mail
+          CONTACT_MAIL_MOCK: 'false'
+          CONTACT_MAIL_MODE: live
+          CONTACT_DAILY_E2E: 'true'
+          CONTACT_REAL_MAIL: 'true'
           CONTACT_AUTOMATION_SECRET: ${{ secrets.CONTACT_AUTOMATION_SECRET }}
           CONTACT_MAIL_LIVE_TZ: Asia/Kolkata
         run: |
           set +e
-          echo "CONTACT_ONLY=${CONTACT_ONLY:-<full suite>}"
+          echo "CONTACT_ONLY=${CONTACT_ONLY:-<full suite>} (real send-mail when mail)"
           node scripts/run-multi-browser-tests.js
           echo "exit_code=$?" >> "$GITHUB_OUTPUT"
 
@@ -144,7 +146,9 @@ jobs:
 
   # ─── Job: Force real contact email via API + X-Automation-Secret ───
   send-contact-email:
-    if: github.event_name == 'workflow_dispatch' && inputs.mode == 'send-contact-email'
+    if: >-
+      (github.event_name == 'workflow_dispatch' && inputs.mode == 'send-contact-email') ||
+      github.event.action == 'send-contact-email'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
