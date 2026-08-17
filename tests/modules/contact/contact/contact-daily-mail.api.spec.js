@@ -7,12 +7,14 @@ import {
 
 /**
  * Daily real email delivery — API only (X-Automation-Secret cannot be sent from the browser form).
- * Runs on the first CI slot after midnight IST; other runs are skipped.
+ * CI: first slot after midnight IST. Local: set CONTACT_DAILY_E2E=true to force.
  * Browser UI test stays mocked — see contact-form.spec.js
  */
 test.describe('Contact — daily E2E email (API)', () => {
   test('send-mail with X-Automation-Secret delivers email once per day', async ({ request }) => {
-    test.skip(!shouldRunContactDailyE2e(), 'Not the daily E2E slot (00:00–01:59 Asia/Kolkata)');
+    // Allow local forced real-mail runs even outside the midnight IST window.
+    const forceLocal = process.env.CONTACT_DAILY_E2E === 'true' || process.env.CONTACT_REAL_MAIL === 'true';
+    test.skip(!forceLocal && !shouldRunContactDailyE2e(), 'Not the daily E2E slot (00:00–01:59 Asia/Kolkata)');
 
     const secret = process.env.CONTACT_AUTOMATION_SECRET || '';
     test.skip(!secret, 'CONTACT_AUTOMATION_SECRET not configured');

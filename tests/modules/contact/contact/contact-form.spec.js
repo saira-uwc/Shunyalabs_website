@@ -32,7 +32,7 @@ test.describe('Contact — lead form', () => {
     await installContactFormTestHooks(page);
   });
 
-  test('Contact Sales → contact page → fill form → submit shows confirmation', async ({ page }) => {
+  test('Contact Us → contact page → fill form → submit shows confirmation', async ({ page }) => {
     const homepage = new HomepagePage(page);
     const contact = new ContactPage(page);
     const timeout = pageReadyTimeout();

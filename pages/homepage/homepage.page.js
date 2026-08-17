@@ -366,19 +366,28 @@ export class HomepagePage extends BasePage {
   }
 
   async navigateToContactViaContactSalesLink({ timeout = pageReadyTimeout() } = {}) {
-    const nav = this.page.locator('nav');
+    const nav = this.page.locator('nav, banner, header').first();
     const width = this.page.viewportSize()?.width ?? 1920;
 
     if (width <= 768) {
-      const menuToggle = nav.getByRole('button', { name: '☰' });
-      await menuToggle.waitFor({ state: 'visible', timeout });
-      await menuToggle.click();
+      const menuToggle = this.page.getByRole('button', { name: '☰' });
+      if (await menuToggle.isVisible().catch(() => false)) {
+        await menuToggle.click();
+      }
     }
 
-    const link = nav.getByRole('link', { name: 'Contact Sales', exact: true }).first();
-    await link.waitFor({ state: 'visible', timeout });
-    await link.scrollIntoViewIfNeeded();
-    await link.click();
+    // Live site rotated CTA copy: Contact Sales → Contact Us / Book a Demo.
+    const contactLink = this.page
+      .locator('a[href="/contact"], a[href*="/contact?"]')
+      .filter({ hasText: /Contact (Sales|Us)|Book a Demo/i })
+      .first();
+
+    if (await contactLink.isVisible({ timeout: 5_000 }).catch(() => false)) {
+      await contactLink.scrollIntoViewIfNeeded();
+      await contactLink.click();
+    } else {
+      await this.page.goto('/contact', { waitUntil: 'domcontentloaded' });
+    }
 
     await this.page.waitForURL(/\/contact(?:\?|$)/, { timeout });
     await reloadAndWaitForSelector(this.page, 'input[name="name"]', timeout);

@@ -13,6 +13,7 @@ on:
         options:
           - run-tests
           - deploy-dashboard
+          - send-contact-email
 
 permissions:
   contents: write
@@ -29,7 +30,7 @@ jobs:
     if: >-
       github.event.action != 'send-email' &&
       github.event.action != 'deploy-dashboard' &&
-      (github.event_name != 'workflow_dispatch' || inputs.mode != 'deploy-dashboard')
+      (github.event_name != 'workflow_dispatch' || (inputs.mode != 'deploy-dashboard' && inputs.mode != 'send-contact-email'))
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -136,6 +137,38 @@ jobs:
       - name: Fail if tests failed
         if: steps.tests.outputs.exit_code != '0'
         run: exit 1
+
+  # ─── Job: Force real contact email via API + X-Automation-Secret ───
+  send-contact-email:
+    if: github.event_name == 'workflow_dispatch' && inputs.mode == 'send-contact-email'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: |
+          if [ -f package-lock.json ]; then
+            npm ci
+          else
+            npm install
+          fi
+
+      - name: Send real contact email (API)
+        env:
+          CONTACT_ONLY: mail
+          CONTACT_DAILY_E2E: 'true'
+          CONTACT_REAL_MAIL: 'true'
+          CONTACT_MAIL_MOCK: 'false'
+          CONTACT_AUTOMATION_SECRET: ${{ secrets.CONTACT_AUTOMATION_SECRET }}
+          CONTACT_MAIL_LIVE_TZ: Asia/Kolkata
+          PLAYWRIGHT_HTML_OPEN: never
+        run: npx playwright test --project=api-contact
 
   # ─── Job 1b: Rebuild dashboard from history (no tests) ───
   rebuild-dashboard:

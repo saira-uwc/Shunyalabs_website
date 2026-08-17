@@ -22,12 +22,16 @@ if (!process.env.CI && hasBundledChromium) {
 const launchOptions = hasBundledChromium ? { executablePath: CHROMIUM_EXECUTABLE } : {};
 
 // Match CI: mock contact send-mail so UI tests do not hit reCAPTCHA.
+// Real email uses api-contact + CONTACT_AUTOMATION_SECRET (see contact-daily-mail.api.spec.js).
 if (process.env.CONTACT_MAIL_MOCK == null) {
   process.env.CONTACT_MAIL_MOCK = 'true';
 }
 
 const sharedIgnore = [/\/snapshots\//, /contact-daily-mail\.api\.spec\.js/];
 const jsonOutput = process.env.PW_JSON_OUTPUT || 'reports/json-report.json';
+
+// Local-only: CONTACT_ONLY=ui|mail to run just contact tests without commenting everything out.
+const contactOnly = process.env.CONTACT_ONLY;
 
 export default defineConfig({
   testDir: './tests',
@@ -53,38 +57,56 @@ export default defineConfig({
     bypassCSP: false,
   },
 
-  projects: [
-    {
-      name: 'api-contact',
-      testMatch: /contact-daily-mail\.api\.spec\.js/,
-    },
-    {
-      name: 'desktop-chrome',
-      use: {
-        ...devices['Desktop Chrome'],
-        viewport: { width: 1920, height: 1080 },
-      },
-      testIgnore: sharedIgnore,
-    },
-    {
-      name: 'desktop-safari',
-      use: {
-        ...devices['Desktop Safari'],
-        viewport: { width: 1920, height: 1080 },
-      },
-      testIgnore: sharedIgnore,
-    },
-    {
-      name: 'mobile-ios',
-      use: { ...devices['iPhone 14'] },
-      testIgnore: MOBILE_TEST_IGNORE,
-    },
-    {
-      name: 'mobile-android',
-      use: { ...devices['Pixel 7'] },
-      testIgnore: MOBILE_TEST_IGNORE,
-    },
-  ],
+  projects: contactOnly === 'mail'
+    ? [
+        {
+          name: 'api-contact',
+          testMatch: /contact-daily-mail\.api\.spec\.js/,
+        },
+      ]
+    : contactOnly === 'ui'
+      ? [
+          {
+            name: 'desktop-chrome',
+            use: {
+              ...devices['Desktop Chrome'],
+              viewport: { width: 1920, height: 1080 },
+            },
+            testMatch: /contact\/contact\/contact-form\.spec\.js/,
+          },
+        ]
+      : [
+          {
+            name: 'api-contact',
+            testMatch: /contact-daily-mail\.api\.spec\.js/,
+          },
+          {
+            name: 'desktop-chrome',
+            use: {
+              ...devices['Desktop Chrome'],
+              viewport: { width: 1920, height: 1080 },
+            },
+            testIgnore: sharedIgnore,
+          },
+          {
+            name: 'desktop-safari',
+            use: {
+              ...devices['Desktop Safari'],
+              viewport: { width: 1920, height: 1080 },
+            },
+            testIgnore: sharedIgnore,
+          },
+          {
+            name: 'mobile-ios',
+            use: { ...devices['iPhone 14'] },
+            testIgnore: MOBILE_TEST_IGNORE,
+          },
+          {
+            name: 'mobile-android',
+            use: { ...devices['Pixel 7'] },
+            testIgnore: MOBILE_TEST_IGNORE,
+          },
+        ],
 
   fullyParallel: false,
   retries: process.env.CI ? 1 : 1,
