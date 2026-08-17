@@ -1,6 +1,9 @@
 #!/usr/bin/env node
 /**
  * Run Playwright projects sequentially (one browser at a time) and merge JSON reports.
+ *
+ * CONTACT_ONLY=ui   → only contact-form.spec.js (desktop-chrome)
+ * CONTACT_ONLY=mail → only contact-daily-mail.api.spec.js (api-contact)
  */
 import { spawnSync } from 'child_process';
 import fs from 'fs';
@@ -13,13 +16,22 @@ const REPORTS_DIR = path.join(ROOT, 'reports');
 const PARTIAL_DIR = path.join(REPORTS_DIR, 'partial');
 const MERGED_REPORT = path.join(REPORTS_DIR, 'json-report.json');
 
-const RUN_ORDER = ['api-contact', ...BROWSER_PROJECTS];
+const contactOnly = process.env.CONTACT_ONLY;
+const RUN_ORDER =
+  contactOnly === 'ui'
+    ? ['desktop-chrome']
+    : contactOnly === 'mail'
+      ? ['api-contact']
+      : ['api-contact', ...BROWSER_PROJECTS];
 
 function runProject(projectName) {
   const partialFile = path.join(PARTIAL_DIR, `${projectName}.json`);
   fs.mkdirSync(PARTIAL_DIR, { recursive: true });
 
   console.log(`\n--- Running project: ${projectName} ---`);
+  if (contactOnly) {
+    console.log(`CONTACT_ONLY=${contactOnly} — skipping all other projects/tests`);
+  }
 
   const playwrightBin = path.join(ROOT, 'node_modules', '.bin', 'playwright');
   const result = spawnSync(

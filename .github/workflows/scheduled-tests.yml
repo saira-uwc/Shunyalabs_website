@@ -14,6 +14,7 @@ on:
           - run-tests
           - deploy-dashboard
           - send-contact-email
+          - contact-form-only
 
 permissions:
   contents: write
@@ -30,7 +31,7 @@ jobs:
     if: >-
       github.event.action != 'send-email' &&
       github.event.action != 'deploy-dashboard' &&
-      (github.event_name != 'workflow_dispatch' || (inputs.mode != 'deploy-dashboard' && inputs.mode != 'send-contact-email'))
+      (github.event_name != 'workflow_dispatch' || (inputs.mode != 'deploy-dashboard' && inputs.mode != 'send-contact-email' && inputs.mode != 'contact-form-only'))
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -91,6 +92,8 @@ jobs:
         id: tests
         env:
           PLAYWRIGHT_HTML_OPEN: never
+          # TEMP: only Contact Us form fill+submit. Set to empty string to restore full suite.
+          CONTACT_ONLY: ui
           CONTACT_MAIL_MOCK: 'true'
           CONTACT_MAIL_MODE: mock
           CONTACT_DAILY_E2E: ${{ steps.contact_daily.outputs.run_daily }}
@@ -98,6 +101,7 @@ jobs:
           CONTACT_MAIL_LIVE_TZ: Asia/Kolkata
         run: |
           set +e
+          echo "CONTACT_ONLY=${CONTACT_ONLY:-<full suite>}"
           node scripts/run-multi-browser-tests.js
           echo "exit_code=$?" >> "$GITHUB_OUTPUT"
 
@@ -169,6 +173,40 @@ jobs:
           CONTACT_MAIL_LIVE_TZ: Asia/Kolkata
           PLAYWRIGHT_HTML_OPEN: never
         run: npx playwright test --project=api-contact
+
+  # ─── Job: Contact Us form UI only (fill + submit, mocked send-mail) ───
+  contact-form-only:
+    if: github.event_name == 'workflow_dispatch' && inputs.mode == 'contact-form-only'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: |
+          if [ -f package-lock.json ]; then
+            npm ci
+          else
+            npm install
+          fi
+
+      - name: Install Playwright Chromium
+        run: npx playwright install chromium --with-deps
+
+      - name: Run Contact Us form test only
+        env:
+          CONTACT_ONLY: ui
+          CONTACT_MAIL_MOCK: 'true'
+          CONTACT_MAIL_MODE: mock
+          PLAYWRIGHT_HTML_OPEN: never
+        run: |
+          echo "Running ONLY contact-form.spec.js"
+          node scripts/run-multi-browser-tests.js
 
   # ─── Job 1b: Rebuild dashboard from history (no tests) ───
   rebuild-dashboard:
