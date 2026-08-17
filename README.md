@@ -35,8 +35,8 @@ Google Sheets reporting and a generated dashboard.
 - `contact-daily-mail.api.spec.js` calls `POST /api/send-mail` with header **`X-Automation-Secret`** (cannot be sent from the browser form).
 - Runs on the **first CI slot after midnight IST** (~00:13 IST).
 - **GitHub secret required:** `CONTACT_AUTOMATION_SECRET` (value shared separately by the web team).
-- **HTTP 200** → real email sent. **HTTP 403** → secret missing/wrong (fail).
-- TEMP: client no longer soft-passes HTTP 429 (“already ran today”); schedule is once/day so only 200 counts as pass.
+- **HTTP 200** → real email sent. **HTTP 429** → already sent today (pass — live API 24h limit). **HTTP 403** → secret missing/wrong (fail).
+- The once-per-day cap is enforced by **shunyalabs.ai** `/api/send-mail`, not by this repo. Soft-pass keeps a once-daily schedule green after the first successful send.
 
 Manual run:
 ```bash

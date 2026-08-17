@@ -25,14 +25,16 @@ if (result.mode === 'skipped') {
 
 const testPoint = 'Contact daily E2E email (API)';
 
-if (result.ok && result.mode === 'success') {
-  const note = `LIVE send-mail HTTP ${result.status} — ${result.message}`;
+if (result.ok) {
+  const note =
+    result.mode === 'success'
+      ? `LIVE send-mail HTTP ${result.status} — ${result.message}`
+      : `HTTP ${result.status} — ${result.message} (already sent today — server 24h limit)`;
   await writeResult(testPoint, 'PASS', note);
   console.log(`✅ ${note}`);
   process.exit(0);
 }
 
-// TEMP: 24h already_ran soft-pass disabled — non-200 (incl. 429) fails.
 await writeResult(testPoint, 'FAIL', `HTTP ${result.status} — ${result.message}`);
 console.error(`❌ Daily contact E2E failed: HTTP ${result.status} — ${result.message}`);
 process.exit(1);

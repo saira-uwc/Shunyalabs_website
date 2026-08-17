@@ -39,15 +39,17 @@ test.describe('Contact — daily E2E email (API)', () => {
     const result = await runContactDailyE2eMail({ secret, baseURL, fetchImpl });
     const testPoint = 'Contact daily E2E email (API)';
 
-    if (result.ok && result.mode === 'success') {
-      const note = `LIVE send-mail HTTP ${result.status} — ${result.message}`;
+    if (result.ok) {
+      const note =
+        result.mode === 'success'
+          ? `LIVE send-mail HTTP ${result.status} — ${result.message}`
+          : `HTTP ${result.status} — ${result.message} (already sent today — server 24h limit)`;
       await writeResult(testPoint, 'PASS', note);
-      expect(result.mode).toBe('success');
+      expect(result.mode).toMatch(/success|already_ran/);
       return;
     }
 
-    // TEMP: 24h already_ran soft-pass disabled — fail on 429 / other non-success.
     await writeResult(testPoint, 'FAIL', `HTTP ${result.status} — ${result.message}`);
-    expect(result.ok && result.mode === 'success', `send-mail failed: HTTP ${result.status} — ${result.message}`).toBe(true);
+    expect(result.ok, `send-mail failed: HTTP ${result.status} — ${result.message}`).toBe(true);
   });
 });
