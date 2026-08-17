@@ -19330,7 +19330,7 @@
     "tests": [
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Contact",
         "testPoint": "modules/contact/contact/contact-form.spec.js › Contact — lead form › Contact Us → contact page → fill form → submit shows confirmation",
         "status": "PASS",
         "comment": "",
@@ -19344,6 +19344,26 @@
             "project": "desktop-chrome"
           }
         }
+      }
+    ]
+  },
+  {
+    "runId": "run_1786964107263_4zwgaz75s",
+    "runDate": "2026-08-17T10:55:07.115Z",
+    "passed": 1,
+    "failed": 0,
+    "total": 1,
+    "passRate": 100,
+    "tests": [
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/contact/contact/contact-daily-mail.api.spec.js › Contact — daily E2E email (API) › send-mail with X-Automation-Secret delivers email once per day",
+        "status": "PASS",
+        "comment": "",
+        "timestamp": "2026-08-17T10:55:06.375Z",
+        "attachments": [],
+        "browsers": {}
       }
     ]
   }
