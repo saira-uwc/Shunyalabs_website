@@ -19357,12 +19357,43 @@
     "tests": [
       {
         "category": "Playwright",
-        "moduleName": "Playwright",
+        "moduleName": "Contact",
         "testPoint": "modules/contact/contact/contact-daily-mail.api.spec.js › Contact — daily E2E email (API) › send-mail with X-Automation-Secret delivers email once per day",
         "status": "PASS",
         "comment": "",
         "timestamp": "2026-08-17T10:55:06.375Z",
         "attachments": [],
+        "browsers": {}
+      }
+    ]
+  },
+  {
+    "runId": "run_1786964530179_yvzp3t8ho",
+    "runDate": "2026-08-17T11:02:08.869Z",
+    "passed": 0,
+    "failed": 1,
+    "total": 1,
+    "passRate": 0,
+    "tests": [
+      {
+        "category": "Playwright",
+        "moduleName": "Playwright",
+        "testPoint": "modules/contact/contact/contact-daily-mail.api.spec.js › Contact — daily E2E email (API) › send-mail with X-Automation-Secret delivers email",
+        "status": "FAIL",
+        "comment": "As per Figma, expected \"true\" but the live website shows \"false\"",
+        "timestamp": "2026-08-17T11:02:09.374Z",
+        "attachments": [
+          {
+            "name": "error-context",
+            "contentType": "text/markdown",
+            "url": "playwright-artifacts/bd627c55f1-error-context.md"
+          },
+          {
+            "name": "trace",
+            "contentType": "application/zip",
+            "url": "playwright-artifacts/5188d4eb0e-trace.zip"
+          }
+        ],
         "browsers": {}
       }
     ]
