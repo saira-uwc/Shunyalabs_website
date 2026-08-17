@@ -17,7 +17,7 @@ export const CONTACT_SEND_MAIL_PATH = '/api/send-mail';
 
 /**
  * @param {{ secret: string, baseURL?: string, fetchImpl?: typeof fetch }} options
- * @returns {Promise<{ ok: boolean, status: number, message: string, mode: 'success' | 'already_ran' | 'failed' | 'skipped', body?: unknown }>}
+ * @returns {Promise<{ ok: boolean, status: number, message: string, mode: 'success' | 'failed' | 'skipped', body?: unknown }>}
  */
 export async function runContactDailyE2eMail({
   secret,
@@ -68,15 +68,17 @@ export async function runContactDailyE2eMail({
     };
   }
 
-  if (response.status === 429) {
-    return {
-      ok: true,
-      status: response.status,
-      message: apiMessage || 'Automation test already ran today.',
-      mode: 'already_ran',
-      body,
-    };
-  }
+  // TEMP: 24h "already ran today" soft-pass disabled — schedule runs once/day, so treat
+  // any non-200 (including former 429) as a real failure instead of ok/already_ran.
+  // if (response.status === 429) {
+  //   return {
+  //     ok: true,
+  //     status: response.status,
+  //     message: apiMessage || 'Automation test already ran today.',
+  //     mode: 'already_ran',
+  //     body,
+  //   };
+  // }
 
   return {
     ok: false,

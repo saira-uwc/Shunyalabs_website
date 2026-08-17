@@ -7,12 +7,11 @@ import {
 
 /**
  * Daily real email delivery — API only (X-Automation-Secret cannot be sent from the browser form).
- * CI: first slot after midnight IST. Local: set CONTACT_DAILY_E2E=true to force.
- * Browser UI test stays mocked — see contact-form.spec.js
+ * CI: force with CONTACT_DAILY_E2E=true. Browser UI test stays mocked — see contact-form.spec.js
  */
 test.describe('Contact — daily E2E email (API)', () => {
-  test('send-mail with X-Automation-Secret delivers email once per day', async ({ request }) => {
-    // Allow local forced real-mail runs even outside the midnight IST window.
+  test('send-mail with X-Automation-Secret delivers email', async ({ request }) => {
+    // Allow forced real-mail runs even outside the midnight IST window.
     const forceLocal = process.env.CONTACT_DAILY_E2E === 'true' || process.env.CONTACT_REAL_MAIL === 'true';
     test.skip(!forceLocal && !shouldRunContactDailyE2e(), 'Not the daily E2E slot (00:00–01:59 Asia/Kolkata)');
 
@@ -40,17 +39,15 @@ test.describe('Contact — daily E2E email (API)', () => {
     const result = await runContactDailyE2eMail({ secret, baseURL, fetchImpl });
     const testPoint = 'Contact daily E2E email (API)';
 
-    if (result.ok) {
-      const note =
-        result.mode === 'success'
-          ? `LIVE send-mail HTTP ${result.status} — ${result.message}`
-          : `HTTP ${result.status} — ${result.message} (already sent today)`;
+    if (result.ok && result.mode === 'success') {
+      const note = `LIVE send-mail HTTP ${result.status} — ${result.message}`;
       await writeResult(testPoint, 'PASS', note);
-      expect(result.mode).toMatch(/success|already_ran/);
+      expect(result.mode).toBe('success');
       return;
     }
 
+    // TEMP: 24h already_ran soft-pass disabled — fail on 429 / other non-success.
     await writeResult(testPoint, 'FAIL', `HTTP ${result.status} — ${result.message}`);
-    expect(result.ok, `send-mail failed: HTTP ${result.status} — ${result.message}`).toBe(true);
+    expect(result.ok && result.mode === 'success', `send-mail failed: HTTP ${result.status} — ${result.message}`).toBe(true);
   });
 });

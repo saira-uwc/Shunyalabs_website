@@ -35,7 +35,8 @@ Google Sheets reporting and a generated dashboard.
 - `contact-daily-mail.api.spec.js` calls `POST /api/send-mail` with header **`X-Automation-Secret`** (cannot be sent from the browser form).
 - Runs on the **first CI slot after midnight IST** (~00:13 IST).
 - **GitHub secret required:** `CONTACT_AUTOMATION_SECRET` (value shared separately by the web team).
-- **HTTP 200** → real email sent (once per 24h). **HTTP 429** → already ran today (pass). **HTTP 403** → secret missing/wrong (fail).
+- **HTTP 200** → real email sent. **HTTP 403** → secret missing/wrong (fail).
+- TEMP: client no longer soft-passes HTTP 429 (“already ran today”); schedule is once/day so only 200 counts as pass.
 
 Manual run:
 ```bash
